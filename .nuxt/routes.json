@@ -1,8 +1,37 @@
 [
   {
+    "name": "faq",
+    "path": "/faq",
+    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/faq/index.vue",
+    "chunkName": "pages/faq/index",
+    "_name": "_6e965741"
+  },
+  {
+    "name": "news",
+    "path": "/news",
+    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/news/index.vue",
+    "chunkName": "pages/news/index",
+    "_name": "_678a0f9e"
+  },
+  {
+    "name": "roadmap",
+    "path": "/roadmap",
+    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/roadmap/index.vue",
+    "chunkName": "pages/roadmap/index",
+    "_name": "_f90bc232"
+  },
+  {
+    "name": "utility",
+    "path": "/utility",
+    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/utility/index.vue",
+    "chunkName": "pages/utility/index",
+    "_name": "_616fbbd2"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_3e839a0c"
   }
 ]

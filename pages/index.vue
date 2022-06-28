@@ -17,6 +17,7 @@ if (process.client) {
 }
 export default {
   name: "IndexPage",
+  layout: "defalut",
   data() {
     return {};
   },
