@@ -1,9 +1,8 @@
 <template>
   <div class="main">
-    <div class="blank" />
     <div class="image_scroll">
       <canvas></canvas>
-      <div class="text">Some Text</div>
+      <div class="text">DON’T WORRY</div>
     </div>
     <div class="blank" />
   </div>
@@ -39,25 +38,14 @@ export default {
         canvas.height = 1080
 
         const frameCount = 111
-        const currentFrame = (index) =>
-          `https://radioactivecrocsclub.com/images/hero/${(
-            index + 1
-          )
-            .toString()}.png`
-
-        // const currentFrame = (index) =>
-        //   `https://www.apple.com/105/media/us/airpods-pro/2019/1299e2f5_9206_4470_b28e_08307a42f19b/anim/sequence/large/01-hero-lightpass/${(
-        //     index + 1
-        //   )
-        //     .toString()
-        //     .padStart(4, '0')}.jpg`
+        const currentFrame = (index) => require(`@/assets/images/hero/${(index + 1).toString()}.png`)
 
         const images = []
         const airpods = {
           frame: 0,
         }
 
-        for (let i = 0; i < frameCount; i++) {
+        for (let i = 8; i < frameCount; i++) {
           const img = new Image()
           img.src = currentFrame(i)
           images.push(img)
@@ -102,28 +90,6 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-html {
-  box-sizing: border-box;
-  font-size: 100%;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  width: 100%;
-  -webkit-font-smoothing: antialiased;
-  font-family: 'Open Sans', sans-serif;
-  overflow-x: hidden;
-  color: black;
-  font-size: 16px;
-}
-
 .blank {
   width: 100%;
   height: 100vh;
@@ -141,7 +107,7 @@ body {
 
 .image_scroll {
   height: 100vh;
-  background: #ccc;
+  background: #000;
   canvas {
     width: 100%;
     height: 100%;
