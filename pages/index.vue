@@ -1,54 +1,54 @@
 <template>
-  <div class="main">
-    <div class="image_scroll">
+  <main class="main">
+    <section class="section-1">
       <canvas></canvas>
-      <div class="text">DON’T WORRY</div>
-    </div>
-    <div class="blank" />
-  </div>
+      <span class="text">DON’T WORRY</span>
+      <span class="text2">BE BERRY</span>
+    </section>
+    <section class="section-2"></section>
+  </main>
 </template>
 
 <script>
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 if (process.client) {
-  gsap.registerPlugin(ScrollTrigger)
+  gsap.registerPlugin(ScrollTrigger);
 }
 export default {
-  name: 'IndexPage',
+  name: "IndexPage",
   data() {
-    return {}
+    return {};
   },
   mounted() {
-    this.imageAnimation()
+    this.imageAnimation();
   },
   methods: {
     imageAnimation() {
-      gsap.registerPlugin(ScrollTrigger)
-
-      const ele = document.querySelector('.image_scroll')
-      const canvas = ele.querySelector('canvas')
-
-      initCanvas(ele, canvas)
-
+      gsap.registerPlugin(ScrollTrigger);
+      const secEle1 = document.querySelector(".section-1");
+      const canvas = secEle1.querySelector("canvas");
+      initCanvas(secEle1, canvas);
       function initCanvas(section, canvas) {
-        const text = section.querySelector('.text')
-        const context = canvas.getContext('2d')
-        canvas.width = 1920
-        canvas.height = 1080
+        const text = section.querySelector(".text");
+        const text2 = section.querySelector(".text2");
+        const context = canvas.getContext("2d");
+        canvas.width = 1920;
+        canvas.height = 1080;
 
-        const frameCount = 111
-        const currentFrame = (index) => require(`@/assets/images/hero/${(index + 1).toString()}.png`)
+        const frameCount = 111;
+        const currentFrame = (index) =>
+          require(`@/assets/images/hero/${(index + 1).toString()}.png`);
 
-        const images = []
-        const airpods = {
-          frame: 0,
-        }
+        const images = [];
+        const belly = {
+          frame: 8,
+        };
 
         for (let i = 8; i < frameCount; i++) {
-          const img = new Image()
-          img.src = currentFrame(i)
-          images.push(img)
+          const img = new Image();
+          img.src = currentFrame(i);
+          images.push(img);
         }
 
         gsap
@@ -58,8 +58,7 @@ export default {
               trigger: section,
               pin: true,
               scrub: 0.5,
-              end: '+=200%',
-              markers: false,
+              end: 0,
             },
           })
           .to(text, {
@@ -67,45 +66,35 @@ export default {
             x: -100,
             duration: 0.5,
           })
+          .to(text2, {
+            opacity: 1,
+            x: 100,
+            duration: 0.5,
+          })
           .to(
-            airpods,
+            belly,
             {
               frame: frameCount - 1,
-              snap: 'frame',
-              ease: 'none',
+              snap: "frame",
+              ease: "none",
               duration: 1,
             },
             0
-          )
+          );
 
-        images[0].onload = render
+        images[0].onload = render;
 
         function render() {
-          context.clearRect(0, 0, canvas.width, canvas.height)
-          context.drawImage(images[airpods.frame], 0, 0)
+          context.clearRect(0, 0, canvas.width, canvas.height);
+          context.drawImage(images[belly.frame], 0, 0);
         }
       }
     },
   },
-}
+};
 </script>
 <style scoped lang="scss">
-.blank {
-  width: 100%;
-  height: 100vh;
-}
-
-.wrapper {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  overflow: hidden;
-}
-
-.image_scroll {
+.section-1 {
   height: 100vh;
   background: #000;
   canvas {
@@ -119,6 +108,15 @@ export default {
     position: absolute;
     top: 25%;
     left: 100px;
+    opacity: 0;
+  }
+
+  .text2 {
+    font-size: 48px;
+    color: white;
+    position: absolute;
+    top: 80%;
+    right: 100px;
     opacity: 0;
   }
 }
