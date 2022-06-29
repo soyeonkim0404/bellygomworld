@@ -41,7 +41,12 @@
         </div>
       </div>
     </section>
-    <section class="section-3"></section>
+    <section class="section-3">
+      <div>로드맵</div>
+    </section>
+    <section class="section-4">
+      <div>faq</div>
+    </section>
   </main>
 </template>
 
