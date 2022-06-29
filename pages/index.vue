@@ -5,7 +5,7 @@
       <span class="text">DON’T WORRY</span>
       <span class="text2">BE BERRY</span>
     </section>
-    <section class="section-2"></section>
+    <section class="section-2">test</section>
   </main>
 </template>
 
