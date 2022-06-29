@@ -6,15 +6,38 @@
       <span class="text2">BE BERRY</span>
     </section>
     <section class="section-2">
-      <div class="box_wrapper">
-        <div class="box box1 horizon_box">
-          <h1>1</h1>
-        </div>
-        <div class="box box2 horizon_box">
-          <h1>2</h1>
-        </div>
-        <div class="box box3 horizon_box">
-          <h1>3</h1>
+      <div class="slide-wrap">
+        <div class="slide">
+          <div class="slide-item">
+            <p>
+              <span>1</span>
+              Whatever the solution, it is only a first step of a great journey.
+              We’ll be by your side when the need for further improvements,
+              optimization or additional functionality arises. Feel free to
+              contact when it is time to level up – we’ll accompany you in
+              exploring new paths.
+            </p>
+          </div>
+          <div class="slide-item">
+            <p>
+              <span>2</span>
+              Whatever the solution, it is only a first step of a great journey.
+              We’ll be by your side when the need for further improvements,
+              optimization or additional functionality arises. Feel free to
+              contact when it is time to level up – we’ll accompany you in
+              exploring new paths.
+            </p>
+          </div>
+          <div class="slide-item">
+            <p>
+              <span>3</span>
+              Whatever the solution, it is only a first step of a great journey.
+              We’ll be by your side when the need for further improvements,
+              optimization or additional functionality arises. Feel free to
+              contact when it is time to level up – we’ll accompany you in
+              exploring new paths.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -107,22 +130,26 @@ export default {
       }
     },
     horizonAnimation() {
-      const $sections = document.querySelectorAll(".horizon_box");
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".section-2",
-          pin: true,
-          scrub: 0.3,
-          start: "top top",
-          end: "+=3000",
-        },
-      });
-      tl.to($sections, {
-        xPercent: -100,
-        duration: 2,
-        ease: "none",
-        stagger: 3,
-      }).to({}, { duration: 1 });
+      gsap.registerPlugin(ScrollTrigger);
+
+      {
+        const slideEle = document.querySelector(".slide");
+        if (typeof slideEle != "undefined" && slideEle != null) {
+          let items = gsap.utils.toArray(".slide-item");
+          gsap.to(items, {
+            xPercent: -100 * (items.length - 1),
+            ease: "none",
+            scrollTrigger: {
+              trigger: slideEle,
+              markers: false,
+              scrub: 1,
+              pin: true,
+              snap: 1 / (items.length - 1),
+              end: () => "+=" + document.querySelector(".slide").offsetWidth,
+            },
+          });
+        }
+      }
     },
   },
 };
@@ -160,30 +187,25 @@ export default {
 }
 
 .section-2 {
-  .horizon_box {
-    position: absolute;
-    top: 0;
-    left: 100%;
+  .slide-wrap {
+    //overflow: hidden;
   }
-  .box {
+  .slide {
+    width: 300%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-  }
-  .box h1 {
-    font-size: 50px;
-    text-align: center;
-  }
-  .box1 {
+    flex-wrap: nowrap;
+    align-self: center;
+    height: 100vh !important;
     background: cadetblue;
-  }
-  .box2 {
-    background: crimson;
-  }
-  .box3 {
-    background: darkorchid;
+    &-item {
+      display: flex;
+      align-items: center;
+      padding: 0 100px;
+      span {
+        font-size: 30px;
+        display: block;
+      }
+    }
   }
 }
 </style>

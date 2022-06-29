@@ -10,13 +10,15 @@ export default {
 
 <style scoped lang="scss">
 nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  right: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   height: 50px;
   font-size: 48px;
   background: #fff;
-  z-index: 10;
+  z-index: 99;
 }
 </style>

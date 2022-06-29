@@ -1,27 +1,27 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'bellygomworld',
+    title: "bellygomworld",
     htmlAttrs: {
-      lang: 'en',
+      lang: "en",
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' },
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { hid: "description", name: "description", content: "" },
+      { name: "format-detection", content: "telephone=no" },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    script: [{ src: 'js/common.js', type: 'text/javascript' }],
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    script: [{ src: "js/common.js", type: "text/javascript" }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['~assets/scss/common.scss'],
+  css: ["~assets/scss/common.scss"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     {
-      src: '~plugins/vue-scrollmagic.js',
+      src: "~plugins/vue-scrollmagic.js",
       ssr: false,
     },
   ],
@@ -33,26 +33,26 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     //'@nuxtjs/eslint-module',
-    '@nuxtjs/style-resources',
+    "@nuxtjs/style-resources",
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
-    '@nuxtjs/style-resources',
+    "@nuxtjs/axios",
+    "@nuxtjs/style-resources",
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/',
+    baseURL: "/",
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    vendor: ['external_library'],
-    transpile: ['gsap'],
+    vendor: ["external_library"],
+    transpile: ["gsap"],
   },
   styleResources: {
     scss: [],
@@ -64,4 +64,7 @@ export default {
 
   /*eslint false*/
   lintOnSave: false,
-}
+  server: {
+    host: "0",
+  },
+};
