@@ -5,7 +5,20 @@
       <span class="text">DON’T WORRY</span>
       <span class="text2">BE BERRY</span>
     </section>
-    <section class="section-2">test</section>
+    <section class="section-2">
+      <div class="box_wrapper">
+        <div class="box box1 horizon_box">
+          <h1>1</h1>
+        </div>
+        <div class="box box2 horizon_box">
+          <h1>2</h1>
+        </div>
+        <div class="box box3 horizon_box">
+          <h1>3</h1>
+        </div>
+      </div>
+    </section>
+    <section class="section-3"></section>
   </main>
 </template>
 
@@ -23,6 +36,7 @@ export default {
   },
   mounted() {
     this.imageAnimation();
+    this.horizonAnimation();
   },
   methods: {
     imageAnimation() {
@@ -59,7 +73,8 @@ export default {
               trigger: section,
               pin: true,
               scrub: 0.5,
-              end: 0,
+              end: "+=200%",
+              markers: false,
             },
           })
           .to(text, {
@@ -91,12 +106,34 @@ export default {
         }
       }
     },
+    horizonAnimation() {
+      const $sections = document.querySelectorAll(".horizon_box");
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".section-2",
+          pin: true,
+          scrub: 0.3,
+          start: "top top",
+          end: "+=3000",
+        },
+      });
+      tl.to($sections, {
+        xPercent: -100,
+        duration: 2,
+        ease: "none",
+        stagger: 3,
+      }).to({}, { duration: 1 });
+    },
   },
 };
 </script>
 <style scoped lang="scss">
-.section-1 {
+[class^="section"] {
+  position: relative;
+  width: 100%;
   height: 100vh;
+}
+.section-1 {
   background: #000;
   canvas {
     width: 100%;
@@ -119,6 +156,34 @@ export default {
     top: 80%;
     right: 100px;
     opacity: 0;
+  }
+}
+
+.section-2 {
+  .horizon_box {
+    position: absolute;
+    top: 0;
+    left: 100%;
+  }
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  .box h1 {
+    font-size: 50px;
+    text-align: center;
+  }
+  .box1 {
+    background: cadetblue;
+  }
+  .box2 {
+    background: crimson;
+  }
+  .box3 {
+    background: darkorchid;
   }
 }
 </style>
