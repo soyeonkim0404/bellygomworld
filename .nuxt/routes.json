@@ -1,30 +1,60 @@
 [
   {
-    "name": "faq",
+    "name": "index___en",
+    "path": "/en",
+    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/index.vue",
+    "chunkName": "pages/index"
+  },
+  {
+    "name": "faq___ko",
     "path": "/faq",
     "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/faq/index.vue",
     "chunkName": "pages/faq/index"
   },
   {
-    "name": "news",
+    "name": "news___ko",
     "path": "/news",
     "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/news/index.vue",
     "chunkName": "pages/news/index"
   },
   {
-    "name": "roadmap",
+    "name": "roadmap___ko",
     "path": "/roadmap",
     "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/roadmap/index.vue",
     "chunkName": "pages/roadmap/index"
   },
   {
-    "name": "utility",
+    "name": "utility___ko",
     "path": "/utility",
     "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/utility/index.vue",
     "chunkName": "pages/utility/index"
   },
   {
-    "name": "index",
+    "name": "faq___en",
+    "path": "/en/faq",
+    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/faq/index.vue",
+    "chunkName": "pages/faq/index"
+  },
+  {
+    "name": "news___en",
+    "path": "/en/news",
+    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/news/index.vue",
+    "chunkName": "pages/news/index"
+  },
+  {
+    "name": "roadmap___en",
+    "path": "/en/roadmap",
+    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/roadmap/index.vue",
+    "chunkName": "pages/roadmap/index"
+  },
+  {
+    "name": "utility___en",
+    "path": "/en/utility",
+    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/utility/index.vue",
+    "chunkName": "pages/utility/index"
+  },
+  {
+    "name": "index___ko",
     "path": "/",
     "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/index.vue",
     "chunkName": "pages/index"

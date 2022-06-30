@@ -12,10 +12,9 @@ export default {
 nav {
   position: fixed;
   top: 0;
-  right: 0;
-  left: 0;
   display: flex;
   justify-content: center;
+  width: 100%;
   height: 50px;
   font-size: 48px;
   background: #fff;
