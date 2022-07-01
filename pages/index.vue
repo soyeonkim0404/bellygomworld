@@ -185,21 +185,6 @@
         </div>
       </div>
     </section>
-    <!--    <section class="section-3">
-      <div class="roadmap">
-        <div class="test-lan">{{ $t("name") }}</div>
-      </div>
-    </section>-->
-    <!--    <section class="section-5">
-      <div class="main-faq">
-        <AccordionComponent :list="list">
-          <template #title="{ item }"> {{ item.title }} </template>
-          <template #cont="{ item }">
-            {{ item.cont }}
-          </template>
-        </AccordionComponent>
-      </div>
-    </section>-->
     <section class="section-4">
       <div class="nft-preview">
         <div v-swiper:mySwiper="swiperOption" class="swiper-container">
@@ -221,7 +206,6 @@
 <script>
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import AccordionComponent from "@/components/AccordionComponent";
 
 if (process.client) {
   gsap.registerPlugin(ScrollTrigger);
@@ -229,27 +213,8 @@ if (process.client) {
 export default {
   name: "IndexPage",
   layout: "defalut",
-  components: { AccordionComponent },
   data() {
     return {
-      list: [
-        {
-          title: "아코디언1",
-          cont: "김소연김소연김소연김소연김소연김소연김소연김소연김소연김소연김소연김소연김소연김소연",
-        },
-        {
-          title: "아코디언2",
-          cont: "박보검박보검박보검박보검박보검박보검박보검박보검박보검박보검박보검박보검박보검박보검박보검",
-        },
-        {
-          title: "아코디언3",
-          cont: "송강송강송강송강송강송강송강송강송강송강송강송강송강송강송강송강송강송강송강송강송강",
-        },
-        {
-          title: "아코디언4",
-          cont: "공유공유공유공유공유공유공유공유공유공유공유공유공유공유공유공유공유공유",
-        },
-      ],
       swiperImages: [
         {
           url: "https://www.bloobies.art/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F1270.91fed644.png&w=3840&q=100",
