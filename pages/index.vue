@@ -1,77 +1,77 @@
 <template>
   <main class="main">
-    <section class="section-1">
-      <div class="main-top">
+    <section>
+      <div class="visual">
         <canvas></canvas>
       </div>
     </section>
-    <section class="section-2">
-      <div class="nft-story">
+    <section>
+      <div class="story">
+        <h2 class="story-title"></h2>
         <div class="story-item fade-in-left">
           <div class="text">
-            <h2 class="heading_large gs_reveal">
-              Supercharge immersive <strong>WebGL</strong> experiences
-            </h2>
-            <p class="gs_reveal">
-              GreenSock is used in some of the most popular
-              <a href="//threejs.org/">Three.js</a> powered WebGL projects.
-              Animate any object in a scene.
-              <a href="https://greensock.com/PixiPlugin/">PixiPlugin</a> makes
-              animating <a href="//www.pixijs.com/">Pixi.js</a> objects with
-              GSAP a breeze. Animate position, scale, color effects and more
-              with all the power and control of GSAP and the rendering speed of
-              Pixi.js.
+            <h3 class="title">
+              벨리곰,<br />
+              유령의 집에서 태어나다.
+            </h3>
+            <p class="desc">
+              어느 날, 유령의 집에 놀러 온 꼬마가 흘린 풍선껌, 그 속에서 커여운
+              벨리곰이 탄생했다. 벨리곰은 사람들을 놀래키며 행복을 주는 일을
+              좋아하지만, 과도한 식탐과 귀여운 외모가 유령의 집에 어울리지
+              않는다며 쫓겨나게 된다.
             </p>
           </div>
-          <div class="image">
-            <img src="https://picsum.photos/479/479?index=2" />
+          <div class="images">
+            <img
+              src="../assets/images/main/img_main_story01.png"
+              alt="story01"
+            />
           </div>
         </div>
-
         <div class="story-item fade-in-right">
-          <div class="image">
-            <img src="https://picsum.photos/479/479?index=2" />
+          <div class="images">
+            <img
+              src="../assets/images/main/img_main_story01.png"
+              alt="story01"
+            />
           </div>
           <div class="text">
-            <h2 class="heading_large gs_reveal">
-              Supercharge immersive <strong>WebGL</strong> experiences
-            </h2>
-            <p class="gs_reveal">
-              GreenSock is used in some of the most popular
-              <a href="//threejs.org/">Three.js</a> powered WebGL projects.
-              Animate any object in a scene.
-              <a href="https://greensock.com/PixiPlugin/">PixiPlugin</a> makes
-              animating <a href="//www.pixijs.com/">Pixi.js</a> objects with
-              GSAP a breeze. Animate position, scale, color effects and more
-              with all the power and control of GSAP and the rendering speed of
-              Pixi.js.
+            <h3 class="title">
+              벨리곰,<br />
+              유령의 집에서 태어나다.
+            </h3>
+            <p class="desc">
+              어느 날, 유령의 집에 놀러 온 꼬마가 흘린 풍선껌, 그 속에서 커여운
+              벨리곰이 탄생했다. 벨리곰은 사람들을 놀래키며 행복을 주는 일을
+              좋아하지만, 과도한 식탐과 귀여운 외모가 유령의 집에 어울리지
+              않는다며 쫓겨나게 된다.
             </p>
           </div>
         </div>
-
         <div class="story-item fade-in-left">
           <div class="text">
-            <h2 class="heading_large gs_reveal">
-              Supercharge immersive <strong>WebGL</strong> experiences
-            </h2>
-            <p class="gs_reveal">
-              GreenSock is used in some of the most popular
-              <a href="//threejs.org/">Three.js</a> powered WebGL projects.
-              Animate any object in a scene.
-              <a href="https://greensock.com/PixiPlugin/">PixiPlugin</a> makes
-              animating <a href="//www.pixijs.com/">Pixi.js</a> objects with
-              GSAP a breeze. Animate position, scale, color effects and more
-              with all the power and control of GSAP and the rendering speed of
-              Pixi.js.
+            <h3 class="title">
+              벨리곰,<br />
+              유령의 집에서 태어나다.
+            </h3>
+            <p class="desc">
+              어느 날, 유령의 집에 놀러 온 꼬마가 흘린 풍선껌, 그 속에서 커여운
+              벨리곰이 탄생했다. 벨리곰은 사람들을 놀래키며 행복을 주는 일을
+              좋아하지만, 과도한 식탐과 귀여운 외모가 유령의 집에 어울리지
+              않는다며 쫓겨나게 된다.
             </p>
           </div>
-          <div class="image">
-            <img src="https://picsum.photos/479/479?index=2" />
+          <div class="images">
+            <img
+              src="../assets/images/main/img_main_story01.png"
+              alt="story01"
+            />
           </div>
         </div>
       </div>
     </section>
-    <section class="section-4">
+    <section></section>
+    <section>
       <div class="nft-preview">
         <div v-swiper:mySwiper="swiperOption" class="swiper-container">
           <div class="swiper-wrapper">
@@ -103,47 +103,31 @@ export default {
     return {
       swiperImages: [
         {
-          url: "https://www.bloobies.art/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F1270.91fed644.png&w=3840&q=100",
+          url: require("@/assets/images/main/img_main_nft01.png"),
           alt: "nft-images",
         },
         {
-          url: "https://www.bloobies.art/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F747.00e188c1.png&w=3840&q=100",
+          url: require("@/assets/images/main/img_main_nft02.png"),
           alt: "nft-images",
         },
         {
-          url: "https://www.bloobies.art/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F152.40b1b711.png&w=3840&q=100",
+          url: require("@/assets/images/main/img_main_nft03.png"),
           alt: "nft-images",
         },
         {
-          url: "https://www.bloobies.art/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F600.471255c6.png&w=3840&q=100",
+          url: require("@/assets/images/main/img_main_nft04.png"),
           alt: "nft-images",
         },
         {
-          url: "https://www.bloobies.art/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F875.56e847e8.png&w=3840&q=100",
-          alt: "nft-images",
-        },
-        {
-          url: "https://www.bloobies.art/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F1270.91fed644.png&w=3840&q=100",
-          alt: "nft-images",
-        },
-        {
-          url: "https://www.bloobies.art/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F747.00e188c1.png&w=3840&q=100",
-          alt: "nft-images",
-        },
-        {
-          url: "https://www.bloobies.art/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F152.40b1b711.png&w=3840&q=100",
-          alt: "nft-images",
-        },
-        {
-          url: "https://www.bloobies.art/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F152.40b1b711.png&w=3840&q=100",
+          url: require("@/assets/images/main/img_main_nft05.png"),
           alt: "nft-images",
         },
       ],
       swiperOption: {
-        slidesPerView: 9,
+        slidesPerView: 4,
         spaceBetween: 30,
         loop: true,
-        speed: 700,
+        speed: 1000,
         autoplay: {
           delay: 0,
         },
@@ -151,69 +135,71 @@ export default {
     };
   },
   mounted() {
-    this.imageAnimation();
-    this.textFade();
+    this.scrollAnimation();
   },
   methods: {
-    imageAnimation() {
+    scrollAnimation() {
       gsap.registerPlugin(ScrollTrigger);
-      const secEle1 = document.querySelector(".main-top");
-      const canvas = secEle1.querySelector("canvas");
-      initCanvas(secEle1, canvas);
-      function initCanvas(section, canvas) {
-        const context = canvas.getContext("2d");
-        canvas.width = 1920;
-        canvas.height = 1080;
-
-        const frameCount = 59;
-        const currentFrame = (index) =>
-          require(`@/assets/images/vellygom/vellygomv2_sq_${(index + 1)
-            .toString()
-            .padStart(5, "0")}.webp`);
-
-        const images = [];
-        const belly = {
-          frame: 0,
-        };
-
-        for (let i = 0; i < frameCount; i++) {
-          const img = new Image();
-          img.src = currentFrame(i);
-          images.push(img);
-        }
-
-        gsap
-          .timeline({
-            onUpdate: render,
-            scrollTrigger: {
-              trigger: section,
-              pin: true,
-              scrub: 0.5,
-              end: "+=200%",
-              markers: false,
-            },
-          })
-          .to(
-            belly,
-            {
-              frame: frameCount - 1,
-              snap: "frame",
-              ease: "none",
-              duration: 1,
-            },
-            0
-          );
-
-        images[0].onload = render;
-
-        function render() {
-          context.clearRect(0, 0, canvas.width, canvas.height);
-          context.drawImage(images[belly.frame], 0, 0);
-        }
+      const keyVisual = document.querySelector(".visual");
+      const canvas = keyVisual.querySelector("canvas");
+      const context = canvas.getContext("2d");
+      canvas.width = 1920;
+      canvas.height = 1080;
+      const frameCount = 59;
+      const currentFrame = (index) =>
+        require(`@/assets/images/vellygom/vellygomv2_sq_${(index + 1)
+          .toString()
+          .padStart(5, "0")}.webp`);
+      const images = [];
+      const belly = {
+        frame: 0,
+      };
+      for (let i = 0; i < frameCount; i++) {
+        const img = new Image();
+        img.src = currentFrame(i);
+        images.push(img);
       }
-    },
-    textFade() {
-      gsap.registerPlugin(ScrollTrigger);
+      images[0].onload = render;
+      function render() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.drawImage(images[belly.frame], 0, 0);
+      }
+
+      gsap
+        .timeline({
+          onUpdate: render,
+          scrollTrigger: {
+            trigger: keyVisual,
+            pin: true,
+            scrub: 0.5,
+            end: "+=200%",
+            markers: false,
+          },
+        })
+        .to(
+          belly,
+          {
+            frame: frameCount - 1,
+            snap: "frame",
+            ease: "none",
+            duration: 1,
+          },
+          0
+        );
+
+      const story = document.querySelector(".story");
+
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: story,
+          pin: false,
+          scrub: 0.5,
+          start: "top",
+          end: "+=200%",
+          markers: false,
+        },
+      });
+
       const animateItems = gsap.utils.toArray(".story-item");
       animateItems.forEach((item, idx) => {
         let stData = {
@@ -221,6 +207,7 @@ export default {
           start: item.start,
           scrub: 2.2,
         };
+
         if (item.classList.contains("fade-in-left")) {
           gsap.set(".text", { opacity: 0, x: -100 });
           gsap.to(".text", {
@@ -229,17 +216,25 @@ export default {
             x: 0,
             scrollTrigger: stData,
           });
-          gsap.set(".image", { opacity: 0, x: 100 });
-          gsap.to(".image", {
+          gsap.set(".images", { opacity: 0, x: 100 });
+          gsap.to(".images", {
             duration: 1,
             opacity: 1,
             x: 0,
             scrollTrigger: stData,
           });
         }
+
         if (item.classList.contains("fade-in-right")) {
-          gsap.set(item, { opacity: 0, x: 100 });
-          gsap.to(item, {
+          gsap.set(".text", { opacity: 0, x: 100 });
+          gsap.to(".text", {
+            duration: 1,
+            opacity: 1,
+            x: 0,
+            scrollTrigger: stData,
+          });
+          gsap.set(".images", { opacity: 0, x: -100 });
+          gsap.to(".images", {
             duration: 1,
             opacity: 1,
             x: 0,
@@ -252,144 +247,61 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-[class^="section"] {
-  position: relative;
-  width: 100%;
-  overflow-x: hidden;
+.main {
+  max-width: 1920px;
+  margin: 0 auto;
+  background: $yellow;
 }
-.section-1 {
-  .main-top {
-    background: radial-gradient(
-        41.98% 53.8% at 50% 89.35%,
-        rgba(142, 78, 59, 0.55) 0%,
-        rgba(252, 201, 162, 0) 100%
-      ),
-      conic-gradient(
-        from -38.65deg at 50% 109.17%,
-        #fdb8d7 -44.69deg,
-        #ffc1b7 4.78deg,
-        rgba(255, 233, 209, 0.81) 158.16deg,
-        #fdb8d7 315.31deg,
-        #ffc1b7 364.78deg
-      ),
-      #fcd91e;
-    height: 100vh;
-  }
-  canvas {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-  .text {
-    font-size: 48px;
-    color: white;
-    position: absolute;
-    top: 25%;
-    left: 100px;
-    opacity: 0;
-  }
-
-  .text2 {
-    font-size: 48px;
-    color: white;
-    position: absolute;
-    top: 80%;
-    right: 100px;
-    opacity: 0;
-  }
-}
-
-.section-2 {
-}
-
-.section-3 {
-  #wrapper {
-    width: 100vw;
-    height: 100vh;
-    background-size: cover;
-  }
-  #wrapper #ImageContainer {
-    position: absolute;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    left: 50%;
-  }
-  #wrapper #ImageContainer img {
-    width: 200px;
-    height: auto;
-    margin-left: 40px;
-  }
-  #wrapper #slide {
-    position: absolute;
-    right: 50%;
-    height: 100vh;
-    margin-right: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    flex-flow: column;
-    cursor: default;
-  }
-  #wrapper #slide h1 {
-    font-size: 40px;
-    font-weight: 700;
-    color: #000;
-  }
-  #wrapper #slide p {
-    margin-top: 20px;
-    width: 400px;
-    font-weight: 400;
-    font-size: 20px;
-    color: #000;
-    text-align: right;
-  }
-}
-
-.roadmap {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background: #adb5bd;
+.story {
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-size: 60px;
-}
-
-.nft-preview {
-  .swiper-container {
-    .swiper-wrapper {
-      .swiper-slide {
-        width: 200px !important;
-        height: 200px !important;
-        img {
-          max-width: 100%;
-        }
-      }
-    }
+  justify-content: center;
+  flex-direction: column;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 80px 0;
+  box-sizing: border-box;
+  transform: scale(0.8);
+  .story-title {
+    display: block;
+    width: 618px;
+    height: 420px;
+    background: #ddd;
+    margin: 0 auto;
   }
-}
-
-.nft-story {
-  margin-top: 500px;
   .story-item {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-top: 250px;
     .text {
-      max-width: 400px;
-    }
-    .image {
-      width: 300px;
-      height: auto;
-      img {
-        max-width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      flex: 0 0 calc(100% - 618px);
+      padding-right: 135px;
+      .title {
+        text-align: left;
+        font-size: 38px;
+        color: $black;
+        text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      }
+      .desc {
+        font-size: 18px;
+        color: $black;
       }
     }
+    .images {
+      flex: 0 0 618px;
+      width: 618px;
+      height: 390px;
+    }
     & + .story-item {
-      margin-top: 500px;
+      margin-top: 250px;
+    }
+    &.fade-in-right {
+      .text {
+        padding-left: 135px;
+        padding-right: 0;
+      }
     }
   }
 }

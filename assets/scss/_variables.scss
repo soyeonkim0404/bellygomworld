@@ -1,0 +1,28 @@
+$safeTop: env(safe-area-inset-top);
+$safeBottom: env(safe-area-inset-bottom);
+$maxLayoutWidth: 1920px;
+$minLayoutWidth: 1024px;
+$h100: var(--innerHeight);
+
+$black: #000000;
+$yellow: #fff7eb;
+$gradient: radial-gradient(
+    79.45% 70.96% at 40.78% 108.22%,
+    #ffb9ae 0%,
+    rgba(255, 214, 226, 0) 100%
+  ),
+  linear-gradient(199.91deg, rgba(255, 214, 226, 0) 21.21%, #ffadde 122.82%);
+
+$mainGradient: radial-gradient(
+    59.5% 48.61% at 50% 109.68%,
+    rgba(142, 78, 59, 0.5) 0%,
+    rgba(252, 201, 162, 0) 100%
+  ),
+  conic-gradient(
+    from -38.65deg at 50% 109.17%,
+    #ffc1b7 -8.37deg,
+    #fcedcf 112.53deg,
+    #fdb8d7 297.16deg,
+    #ffc1b7 351.63deg,
+    #fcedcf 472.53deg
+  );
