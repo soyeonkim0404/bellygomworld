@@ -17,6 +17,6 @@ footer {
   width: 100%;
   height: 200px;
   font-size: 20px;
-  background: #ddd;
+  background: #111;
 }
 </style>

@@ -8,8 +8,8 @@
     <section>
       <div class="story">
         <h2 class="story-title"></h2>
-        <div class="story-item fade-in-left">
-          <div class="text">
+        <div class="story-item">
+          <div class="text ani">
             <h3 class="title">
               벨리곰,<br />
               유령의 집에서 태어나다.
@@ -21,21 +21,21 @@
               않는다며 쫓겨나게 된다.
             </p>
           </div>
-          <div class="images">
+          <div class="images ani fade-in-right">
             <img
               src="../assets/images/main/img_main_story01.png"
               alt="story01"
             />
           </div>
         </div>
-        <div class="story-item fade-in-right">
-          <div class="images">
+        <div class="story-item">
+          <div class="images ani fade-in-left">
             <img
               src="../assets/images/main/img_main_story01.png"
               alt="story01"
             />
           </div>
-          <div class="text">
+          <div class="text ani">
             <h3 class="title">
               벨리곰,<br />
               유령의 집에서 태어나다.
@@ -48,8 +48,8 @@
             </p>
           </div>
         </div>
-        <div class="story-item fade-in-left">
-          <div class="text">
+        <div class="story-item">
+          <div class="text ani">
             <h3 class="title">
               벨리곰,<br />
               유령의 집에서 태어나다.
@@ -61,7 +61,7 @@
               않는다며 쫓겨나게 된다.
             </p>
           </div>
-          <div class="images">
+          <div class="images ani fade-in-right">
             <img
               src="../assets/images/main/img_main_story01.png"
               alt="story01"
@@ -72,7 +72,7 @@
     </section>
     <section></section>
     <section>
-      <div class="nft-preview">
+      <div class="nft-slide">
         <div v-swiper:mySwiper="swiperOption" class="swiper-container">
           <div class="swiper-wrapper">
             <div
@@ -84,6 +84,13 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+    <section>
+      <div class="loop-holder">
+        <div class="loop-holder__text">Don't worry be BELLY</div>
+        <div class="loop-holder__text">Don't worry be BELLY</div>
+        <div class="loop-holder__text">Don't worry be BELLY</div>
       </div>
     </section>
   </main>
@@ -127,9 +134,11 @@ export default {
         slidesPerView: 4,
         spaceBetween: 30,
         loop: true,
-        speed: 1000,
+        loopFillGroupWithBlank: false,
+        speed: 3500,
         autoplay: {
           delay: 0,
+          disableOnInteraction: false,
         },
       },
     };
@@ -187,61 +196,48 @@ export default {
           0
         );
 
-      const story = document.querySelector(".story");
-
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: story,
-          pin: false,
-          scrub: 0.5,
-          start: "top",
-          end: "+=200%",
-          markers: false,
-        },
-      });
-
-      const animateItems = gsap.utils.toArray(".story-item");
-      animateItems.forEach((item, idx) => {
-        let stData = {
-          trigger: item,
-          start: item.start,
-          scrub: 2.2,
-        };
-
-        if (item.classList.contains("fade-in-left")) {
-          gsap.set(".text", { opacity: 0, x: -100 });
-          gsap.to(".text", {
-            duration: 1,
-            opacity: 1,
-            x: 0,
-            scrollTrigger: stData,
-          });
-          gsap.set(".images", { opacity: 0, x: 100 });
-          gsap.to(".images", {
-            duration: 1,
-            opacity: 1,
-            x: 0,
-            scrollTrigger: stData,
-          });
+      /* start story fade*/
+      function animateFrom(elem, direction) {
+        direction = direction || 1;
+        let x = 0,
+          y = direction * 100;
+        if (elem.classList.contains("fade-in-left")) {
+          x = -100;
+          y = 0;
+        } else if (elem.classList.contains("fade-in-right")) {
+          x = 100;
+          y = 0;
         }
+        elem.style.transform = "translate(" + x + "px, " + y + "px)";
+        elem.style.opacity = "0";
+        gsap.fromTo(
+          elem,
+          { x: x, y: y, autoAlpha: 0 },
+          {
+            duration: 1.25,
+            x: 0,
+            y: 0,
+            autoAlpha: 1,
+            ease: "expo",
+            overwrite: "auto",
+          }
+        );
+      }
 
-        if (item.classList.contains("fade-in-right")) {
-          gsap.set(".text", { opacity: 0, x: 100 });
-          gsap.to(".text", {
-            duration: 1,
-            opacity: 1,
-            x: 0,
-            scrollTrigger: stData,
-          });
-          gsap.set(".images", { opacity: 0, x: -100 });
-          gsap.to(".images", {
-            duration: 1,
-            opacity: 1,
-            x: 0,
-            scrollTrigger: stData,
-          });
-        }
+      function hide(elem) {
+        gsap.set(elem, { autoAlpha: 0 });
+      }
+
+      gsap.utils.toArray(".ani").forEach((elem) => {
+        hide(elem);
+        ScrollTrigger.create({
+          trigger: elem,
+          onEnter: () => animateFrom(elem),
+          onEnterBack: () => animateFrom(elem, -1),
+          onLeave: () => hide(elem),
+        });
       });
+      /* end story fade*/
     },
   },
 };
@@ -252,6 +248,13 @@ export default {
   margin: 0 auto;
   background: $yellow;
 }
+.visual {
+  width: 100%;
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
+}
 .story {
   display: flex;
   align-items: center;
@@ -259,7 +262,6 @@ export default {
   flex-direction: column;
   max-width: 1260px;
   margin: 0 auto;
-  padding: 80px 0;
   box-sizing: border-box;
   transform: scale(0.8);
   .story-title {
@@ -303,6 +305,38 @@ export default {
         padding-right: 0;
       }
     }
+  }
+}
+
+/*.nft-slide {
+  .swiper-wrapper {
+    .swiper-slide {
+      width: 512px !important;
+      height: 512px !important;
+    }
+  }
+}*/
+
+.loop-holder {
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.loop-holder__text {
+  animation: textLoop 20s linear infinite;
+  font-size: 6vw;
+  padding-right: 0.35em;
+}
+
+@keyframes textLoop {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
 </style>

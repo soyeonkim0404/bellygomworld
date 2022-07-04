@@ -1,23 +1,47 @@
 <template>
   <div class="header">
     <div class="logo">
-      <nuxt-link to="/">로고로고</nuxt-link>
+      <nuxt-link to="/">
+        <img src="@/assets/images/commons/logo.svg" alt="logo" />
+      </nuxt-link>
     </div>
     <div class="menu">
       <nav class="gnb">
-        <nuxt-link to="/news">뉴스</nuxt-link>
-        <nuxt-link to="/roadmap">카테고리</nuxt-link>
-        <nuxt-link to="/faq">에프에이큐</nuxt-link>
-        <nuxt-link to="/utility">블라블라</nuxt-link>
+        <a href="javascript:alert('comming soon');">GALLERY</a>
+        <nuxt-link to="/news">NEWS</nuxt-link>
+        <nuxt-link to="/roadmap">ROADMAP</nuxt-link>
+        <nuxt-link to="/utility">UTILITY</nuxt-link>
+        <nuxt-link to="/faq">FAQ</nuxt-link>
       </nav>
       <ul class="sns">
         <li>
-          <nuxt-link to="/">링크</nuxt-link>
+          <a href="#">
+            <img src="@/assets/images/commons/ic_mall.svg" alt="mall" />
+          </a>
         </li>
         <li>
-          <nuxt-link to="/">링크</nuxt-link>
+          <a href="#">
+            <img src="@/assets/images/commons/ic_wallet.svg" alt="wallet" />
+          </a>
+        </li>
+        <li>
+          <button type="button" class="btn-link" @click="openLink">
+            <img src="@/assets/images/commons/ic_link.svg" alt="link" />
+          </button>
+          <ul class="link-list" v-if="this.isShow">
+            <li v-for="(item, index) in linkList" :key="index">
+              <a :href="item.url">{{ item.name }}</a>
+            </li>
+          </ul>
         </li>
       </ul>
+      <!--      <div class="lang">
+        <select v-model="$i18n.locale">
+          <option v-for="(lang, i) in langArr" :key="`lang-${i}`" :value="lang">
+            {{ lang }}
+          </option>
+        </select>
+      </div>-->
     </div>
   </div>
 </template>
@@ -25,6 +49,45 @@
 <script>
 export default {
   name: "Header",
+  data() {
+    return {
+      isShow: false,
+      linkList: [
+        {
+          url: "https://www.naver.com/",
+          name: "Discord",
+        },
+        {
+          url: "https://www.naver.com/",
+          name: "Telegram",
+        },
+        {
+          url: "https://www.naver.com/",
+          name: "twitter",
+        },
+        {
+          url: "https://www.naver.com/",
+          name: "YouTube",
+        },
+        {
+          url: "https://www.naver.com/",
+          name: "Opensea",
+        },
+        {
+          url: "https://www.naver.com/",
+          name: "Instagram",
+        },
+      ],
+    };
+  },
+  methods: {
+    openLink(e) {
+      this.isShow = !this.isShow;
+      this.isShow
+        ? e.target.classList.add("on")
+        : e.target.classList.remove("on");
+    },
+  },
 };
 </script>
 
@@ -55,6 +118,43 @@ export default {
         a {
         }
       }
+    }
+  }
+}
+
+.btn-link {
+  width: 120px;
+  height: 36px;
+  padding: 8px 30px 8px 15px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 20px;
+  color: $black;
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    background: url("../assets/images/commons/24_arrow.svg");
+  }
+  &.on {
+    &::after {
+    }
+  }
+}
+.link-list {
+  margin-top: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid $black;
+  background: $white;
+  li {
+    font-size: 14px;
+    line-height: 20px;
+    text-align: left;
+    & + li {
+      margin-top: 10px;
     }
   }
 }

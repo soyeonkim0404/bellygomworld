@@ -49,7 +49,7 @@ export default {
 
 <style scoped lang="scss">
 .main-faq {
-  margin: 120px auto 295px;
+  margin: 120px auto 0;
   max-width: 1259px;
   .title-area {
     margin: 0 0 190px 0;
