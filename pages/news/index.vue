@@ -2,11 +2,6 @@
   <div class="sub-wrap">news</div>
 </template>
 
-<script>
-export default {
-  name: "index",
-  layout: "defalut",
-};
-</script>
+<script></script>
 
-<style scoped></style>
+<style scoped lang="scss"></style>

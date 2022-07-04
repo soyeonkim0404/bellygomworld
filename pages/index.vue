@@ -6,43 +6,9 @@
       </div>
     </section>
     <section class="section-2">
-      <div class="features">
-        <div
-          class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone"
-        >
-          <div
-            class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromLeft"
-          >
-            <div class="card">
-              <img
-                width="479"
-                src="https://picsum.photos/479/479?index=1"
-                alt=""
-              />
-            </div>
-          </div>
-
-          <div class="ipsGrid_span7 ipsType_left">
-            <h2 class="heading_large gs_reveal">
-              Create amazing <strong>SVG</strong> animations
-            </h2>
-            <p class="gs_reveal">
-              <a href="https://greensock.com/drawsvg/">DrawSVGPlugin</a> allows
-              you to progressively reveal (or hide) SVG strokes to make them
-              look like they're being drawn.
-              <a href="https://greensock.com/morphsvg/">MorphSVGPlugin</a> to
-              Morph any SVG shape into any other shape smoothly regardless of
-              the number of points in each.
-              <a href="/docs/v3/Plugins/MotionPathPlugin">MotionPathPlugin</a>
-              allows you to easily move any object along a path.
-            </p>
-          </div>
-        </div>
-
-        <div
-          class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone"
-        >
-          <div class="ipsGrid_span7 ipsType_right">
+      <div class="nft-story">
+        <div class="story-item fade-in-left">
+          <div class="text">
             <h2 class="heading_large gs_reveal">
               Supercharge immersive <strong>WebGL</strong> experiences
             </h2>
@@ -57,131 +23,51 @@
               Pixi.js.
             </p>
           </div>
-
-          <div
-            class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromRight"
-          >
-            <div class="card">
-              <img
-                width="479"
-                src="https://picsum.photos/479/479?index=2"
-                alt=""
-              />
-            </div>
+          <div class="image">
+            <img src="https://picsum.photos/479/479?index=2" />
           </div>
         </div>
 
-        <div
-          class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone"
-        >
-          <div
-            class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromLeft"
-          >
-            <div class="card">
-              <img
-                width="479"
-                src="https://picsum.photos/479/479?index=3"
-                alt=""
-              />
-            </div>
+        <div class="story-item fade-in-right">
+          <div class="image">
+            <img src="https://picsum.photos/479/479?index=2" />
           </div>
-
-          <div class="ipsGrid_span7 ipsType_left">
+          <div class="text">
             <h2 class="heading_large gs_reveal">
-              Control performant <strong>Canvas</strong> animations
+              Supercharge immersive <strong>WebGL</strong> experiences
             </h2>
             <p class="gs_reveal">
-              GSAP makes animating with Canvas even easier by providing an
-              easier way to look and sequence animations. GSAP works great with
-              <a href="//www.adobe.com/products/animate.html">Adobe Animate</a>
-              and <a href="//createjs.com/easeljs">EaseJS</a> through GSAP's
-              <a href="https://greensock.com/easelplugin/">EaselJSPlugin</a>.
+              GreenSock is used in some of the most popular
+              <a href="//threejs.org/">Three.js</a> powered WebGL projects.
+              Animate any object in a scene.
+              <a href="https://greensock.com/PixiPlugin/">PixiPlugin</a> makes
+              animating <a href="//www.pixijs.com/">Pixi.js</a> objects with
+              GSAP a breeze. Animate position, scale, color effects and more
+              with all the power and control of GSAP and the rendering speed of
+              Pixi.js.
             </p>
           </div>
         </div>
 
-        <div
-          class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone"
-        >
-          <div class="ipsGrid_span7 ipsType_right">
+        <div class="story-item fade-in-left">
+          <div class="text">
             <h2 class="heading_large gs_reveal">
-              <strong>Award winning</strong> websites
+              Supercharge immersive <strong>WebGL</strong> experiences
             </h2>
             <p class="gs_reveal">
-              GSAP is used on over 8,500,000 sites and over 1,000 sites featured
-              on
-              <a
-                href="https://www.awwwards.com/websites/gsap-animation/"
-                target="_blank"
-                >Awwwards</a
-              >. For some of our favorites, check out
-              <a href="https://greensock.com/showcase/">our showcase</a>.
+              GreenSock is used in some of the most popular
+              <a href="//threejs.org/">Three.js</a> powered WebGL projects.
+              Animate any object in a scene.
+              <a href="https://greensock.com/PixiPlugin/">PixiPlugin</a> makes
+              animating <a href="//www.pixijs.com/">Pixi.js</a> objects with
+              GSAP a breeze. Animate position, scale, color effects and more
+              with all the power and control of GSAP and the rendering speed of
+              Pixi.js.
             </p>
           </div>
-
-          <div
-            class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromRight"
-          >
-            <div class="card">
-              <img
-                width="479"
-                src="https://picsum.photos/479/479?index=4"
-                alt=""
-              />
-            </div>
+          <div class="image">
+            <img src="https://picsum.photos/479/479?index=2" />
           </div>
-        </div>
-      </div>
-    </section>
-    <section class="section-3">
-      <div id="wrapper" class="slide1">
-        <div id="ImageContainer">
-          <img
-            src="https://icodeayush.github.io/Dora/img/ModernLiving.jpg"
-            alt="ModernLiving"
-          />
-        </div>
-        <div id="slide">
-          <h1>Modern Living</h1>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
-            enim in, perspiciatis sunt expedita consectetur! Repellat delectus
-            fugit, laboriosam qui deleniti iure.
-          </p>
-        </div>
-      </div>
-
-      <div id="wrapper" class="slide2">
-        <div id="ImageContainer">
-          <img
-            src="https://icodeayush.github.io/Dora/img/CoffeeTable.jpg"
-            alt="CoffeeTable"
-          />
-        </div>
-        <div id="slide">
-          <h1>Coffee Table</h1>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum
-            perspiciatis veritatis reprehenderit, officiis incidunt itaque
-            facilis placeat sint dignissimos accusantium tenetur repellendus.
-          </p>
-        </div>
-      </div>
-
-      <div id="wrapper" class="slide3">
-        <div id="ImageContainer">
-          <img
-            src="https://icodeayush.github.io/Dora/img/BedroomInterior.jpg"
-            alt="BedroomInterior"
-          />
-        </div>
-        <div id="slide">
-          <h1>Bedroom Interior</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-            deleniti quo odit dolorum laudantium aut magnam impedit. Placeat
-            magni at culpa ex.
-          </p>
         </div>
       </div>
     </section>
@@ -236,6 +122,22 @@ export default {
           url: "https://www.bloobies.art/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F875.56e847e8.png&w=3840&q=100",
           alt: "nft-images",
         },
+        {
+          url: "https://www.bloobies.art/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F1270.91fed644.png&w=3840&q=100",
+          alt: "nft-images",
+        },
+        {
+          url: "https://www.bloobies.art/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F747.00e188c1.png&w=3840&q=100",
+          alt: "nft-images",
+        },
+        {
+          url: "https://www.bloobies.art/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F152.40b1b711.png&w=3840&q=100",
+          alt: "nft-images",
+        },
+        {
+          url: "https://www.bloobies.art/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F152.40b1b711.png&w=3840&q=100",
+          alt: "nft-images",
+        },
       ],
       swiperOption: {
         slidesPerView: 9,
@@ -250,8 +152,7 @@ export default {
   },
   mounted() {
     this.imageAnimation();
-    this.textScrollAnimation();
-    this.scrollAni();
+    this.textFade();
   },
   methods: {
     imageAnimation() {
@@ -311,132 +212,41 @@ export default {
         }
       }
     },
-    textScrollAnimation() {
-      function animateFrom(elem, direction) {
-        direction = direction || 1;
-        var x = 0,
-          y = direction * 100;
-        if (elem.classList.contains("gs_reveal_fromLeft")) {
-          x = -100;
-          y = 0;
-        } else if (elem.classList.contains("gs_reveal_fromRight")) {
-          x = 100;
-          y = 0;
-        }
-        elem.style.transform = "translate(" + x + "px, " + y + "px)";
-        elem.style.opacity = "0";
-        gsap.fromTo(
-          elem,
-          { x: x, y: y, autoAlpha: 0 },
-          {
-            duration: 1.25,
-            x: 0,
-            y: 0,
-            autoAlpha: 1,
-            ease: "expo",
-            overwrite: "auto",
-          }
-        );
-      }
-
-      function hide(elem) {
-        gsap.set(elem, { autoAlpha: 0 });
-      }
-
-      document.addEventListener("DOMContentLoaded", function () {
-        gsap.registerPlugin(ScrollTrigger);
-
-        gsap.utils.toArray(".gs_reveal").forEach(function (elem) {
-          hide(elem); // assure that the element is hidden when scrolled into view
-
-          ScrollTrigger.create({
-            trigger: elem,
-            onEnter: function () {
-              animateFrom(elem);
-            },
-            onEnterBack: function () {
-              animateFrom(elem, -1);
-            },
-            onLeave: function () {
-              hide(elem);
-            }, // assure that the element is hidden when scrolled into view
-          });
-        });
-      });
-    },
-    scrollAni() {
+    textFade() {
       gsap.registerPlugin(ScrollTrigger);
-      let Slide1 = gsap.timeline({
-        // Slide1---------------------
-        scrollTrigger: {
-          trigger: ".slide1",
-          start: "100% 100%",
-          end: "300% 0%",
-          // markers: "true",
+      const animateItems = gsap.utils.toArray(".story-item");
+      animateItems.forEach((item, idx) => {
+        let stData = {
+          trigger: item,
+          start: item.start,
           scrub: 2.2,
-          pin: ".slide1",
-        },
+        };
+        if (item.classList.contains("fade-in-left")) {
+          gsap.set(".text", { opacity: 0, x: -100 });
+          gsap.to(".text", {
+            duration: 1,
+            opacity: 1,
+            x: 0,
+            scrollTrigger: stData,
+          });
+          gsap.set(".image", { opacity: 0, x: 100 });
+          gsap.to(".image", {
+            duration: 1,
+            opacity: 1,
+            x: 0,
+            scrollTrigger: stData,
+          });
+        }
+        if (item.classList.contains("fade-in-right")) {
+          gsap.set(item, { opacity: 0, x: 100 });
+          gsap.to(item, {
+            duration: 1,
+            opacity: 1,
+            x: 0,
+            scrollTrigger: stData,
+          });
+        }
       });
-      Slide1.from(".slide1 #slide h1", {
-        opacity: 0,
-        x: "-22%",
-      })
-        .from(".slide1 #slide p", {
-          opacity: 0,
-          y: "22%",
-        })
-        .from(".slide1 #ImageContainer", {
-          opacity: 0,
-          y: "22%",
-        }); // Slide1---------------------
-
-      let Slide2 = gsap.timeline({
-        // Slide2---------------------
-        scrollTrigger: {
-          trigger: ".slide2",
-          start: "100% 100%",
-          end: "300% 0%",
-          // markers: "true",
-          scrub: 2.2,
-          pin: ".slide2",
-        },
-      });
-      Slide2.from(".slide2 #slide h1", {
-        opacity: 0,
-        x: "-22%",
-      })
-        .from(".slide2 #slide p", {
-          opacity: 0,
-          y: "22%",
-        })
-        .from(".slide2 #ImageContainer", {
-          opacity: 0,
-          y: "22%",
-        }); // Slide2---------------------
-
-      let Slide3 = gsap.timeline({
-        // Slide3---------------------
-        scrollTrigger: {
-          trigger: ".slide3",
-          start: "100% 100%",
-          end: "300% 0%",
-          // markers: "true",
-          scrub: 2.2,
-          pin: ".slide3",
-        },
-      });
-      Slide3.from(".slide3 #slide h1", {
-        opacity: 0,
-        x: "-22%",
-      })
-        .from(".slide3 #slide p", {
-          opacity: 0,
-          y: "22%",
-        })
-        .from(".slide3 #ImageContainer", {
-          opacity: 0,
-          y: "22%",
-        }); // Slide3---------------------
     },
   },
 };
@@ -490,85 +300,6 @@ export default {
 }
 
 .section-2 {
-  .ipsType_right {
-    text-align: right;
-  }
-  .ipsType_center {
-    text-align: center;
-  }
-  .cInnerContent {
-    max-width: 1240px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .ipsSpacer_bottom_double {
-    margin-bottom: 30px;
-  }
-  .ipsGrid {
-    display: inline-block;
-    display: -ms-flexbox;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .ipsGrid::before,
-  .ipsGrid::after {
-    display: table;
-    content: "";
-    line-height: 0;
-  }
-  .ipsGrid > [class*="ipsGrid_span"] {
-    display: block;
-    width: 100%;
-    min-height: 30px;
-    box-sizing: border-box;
-  }
-  .ipsGrid > .ipsGrid_span5 {
-    width: 40.42553191489362%;
-  }
-  .ipsGrid > .ipsGrid_span7 {
-    width: 57.44680851063829%;
-  }
-  .ipsGrid > [class*="ipsGrid_span"] {
-    float: left;
-    margin-left: 2%;
-  }
-  .ipsGrid > [class*="ipsGrid_span"]:first-child {
-    margin-left: 0;
-  }
-  .feature {
-    display: flex;
-    align-items: center;
-  }
-  .card {
-    margin-bottom: 30px;
-    border: 1px solid #cccccc;
-    border-radius: 8px;
-    overflow: hidden;
-    background: #ffffff;
-    box-shadow: 1px 1px 5px 1px #cccccc;
-    /*   transition: 0.3s; */
-  }
-  .featured-image-container .card {
-    padding: 10px;
-    height: 0;
-    padding-bottom: calc(100% - 10px);
-  }
-  h2.heading_large {
-    font-size: 1.8em;
-  }
-  img {
-    max-width: 100%;
-  }
-
-  .header-section {
-    margin: 200px auto;
-  }
-
-  .gs_reveal {
-    opacity: 0;
-    visibility: hidden;
-    will-change: transform, opacity;
-  }
 }
 
 .section-3 {
@@ -637,6 +368,28 @@ export default {
           max-width: 100%;
         }
       }
+    }
+  }
+}
+
+.nft-story {
+  margin-top: 500px;
+  .story-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .text {
+      max-width: 400px;
+    }
+    .image {
+      width: 300px;
+      height: auto;
+      img {
+        max-width: 100%;
+      }
+    }
+    & + .story-item {
+      margin-top: 500px;
     }
   }
 }
