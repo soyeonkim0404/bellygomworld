@@ -41,30 +41,34 @@ export default {
     //'@nuxtjs/eslint-module',
     "@nuxtjs/style-resources",
   ],
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    // https://go.nuxtjs.dev/axios
-    "@nuxtjs/axios",
-    "@nuxtjs/style-resources",
-    [
-      "@nuxtjs/i18n",
-      {
-        locales: ["en", "ko"],
-        defaultLocale: "ko",
-        vueI18n: {
-          fallbackLocale: "ko",
-          messages: {
-            ko: {
-              name: "김소연",
-            },
-            en: {
-              name: "kim so yeon",
-            },
-          },
+  modules: ["@nuxtjs/axios", "@nuxtjs/style-resources", "@nuxtjs/i18n"],
+
+  i18n: {
+    locales: [
+      { code: "ENG", iso: "en-US", file: "en.json" },
+      { code: "KOR", iso: "ko-KR", file: "ko.json" },
+    ],
+    langDir: "~/locales/",
+    defaultLocale: "ko-KR",
+    lazy: true,
+    strategy: "prefix_except_default",
+    detectBrowserLanguage: {
+      alwaysRedirect: true,
+      useCookie: true,
+      cookieKey: "t_locale",
+      fallbackLocale: "ko-KR",
+    },
+    vueI18n: {
+      messages: {
+        ko: {
+          name: "김소연",
+        },
+        en: {
+          name: "kim so yeon",
         },
       },
-    ],
-  ],
+    },
+  },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308

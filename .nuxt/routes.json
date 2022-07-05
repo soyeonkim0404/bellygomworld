@@ -1,72 +1,86 @@
 [
   {
-    "name": "index___en",
-    "path": "/en",
-    "component": "/Users/soyeon/Desktop/works/emotion/bellygomworld/pages/index.vue",
+    "name": "index___ENG",
+    "path": "/ENG",
+    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_785f9677"
+    "_name": "_3e839a0c"
   },
   {
-    "name": "faq___ko",
-    "path": "/faq",
-    "component": "/Users/soyeon/Desktop/works/emotion/bellygomworld/pages/faq/index.vue",
-    "chunkName": "pages/faq/index",
-    "_name": "_70a09784"
-  },
-  {
-    "name": "news___ko",
-    "path": "/news",
-    "component": "/Users/soyeon/Desktop/works/emotion/bellygomworld/pages/news/index.vue",
-    "chunkName": "pages/news/index",
-    "_name": "_319c5241"
-  },
-  {
-    "name": "roadmap___ko",
-    "path": "/roadmap",
-    "component": "/Users/soyeon/Desktop/works/emotion/bellygomworld/pages/roadmap/index.vue",
-    "chunkName": "pages/roadmap/index",
-    "_name": "_731a9538"
-  },
-  {
-    "name": "utility___ko",
-    "path": "/utility",
-    "component": "/Users/soyeon/Desktop/works/emotion/bellygomworld/pages/utility/index.vue",
-    "chunkName": "pages/utility/index",
-    "_name": "_1240b894"
-  },
-  {
-    "name": "faq___en",
-    "path": "/en/faq",
-    "component": "/Users/soyeon/Desktop/works/emotion/bellygomworld/pages/faq/index.vue",
-    "chunkName": "pages/faq/index",
-    "_name": "_70a09784"
-  },
-  {
-    "name": "news___en",
-    "path": "/en/news",
-    "component": "/Users/soyeon/Desktop/works/emotion/bellygomworld/pages/news/index.vue",
-    "chunkName": "pages/news/index",
-    "_name": "_319c5241"
-  },
-  {
-    "name": "roadmap___en",
-    "path": "/en/roadmap",
-    "component": "/Users/soyeon/Desktop/works/emotion/bellygomworld/pages/roadmap/index.vue",
-    "chunkName": "pages/roadmap/index",
-    "_name": "_731a9538"
-  },
-  {
-    "name": "utility___en",
-    "path": "/en/utility",
-    "component": "/Users/soyeon/Desktop/works/emotion/bellygomworld/pages/utility/index.vue",
-    "chunkName": "pages/utility/index",
-    "_name": "_1240b894"
-  },
-  {
-    "name": "index___ko",
-    "path": "/",
-    "component": "/Users/soyeon/Desktop/works/emotion/bellygomworld/pages/index.vue",
+    "name": "index___KOR",
+    "path": "/KOR",
+    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_785f9677"
+    "_name": "_3e839a0c"
+  },
+  {
+    "name": "faq___ENG",
+    "path": "/ENG/faq",
+    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/faq/index.vue",
+    "chunkName": "pages/faq/index",
+    "_name": "_6e965741"
+  },
+  {
+    "name": "index_bak___ENG",
+    "path": "/ENG/index_bak",
+    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/index_bak.vue",
+    "chunkName": "pages/index_bak",
+    "_name": "_83012272"
+  },
+  {
+    "name": "news___ENG",
+    "path": "/ENG/news",
+    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/news/index.vue",
+    "chunkName": "pages/news/index",
+    "_name": "_678a0f9e"
+  },
+  {
+    "name": "roadmap___ENG",
+    "path": "/ENG/roadmap",
+    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/roadmap/index.vue",
+    "chunkName": "pages/roadmap/index",
+    "_name": "_f90bc232"
+  },
+  {
+    "name": "utility___ENG",
+    "path": "/ENG/utility",
+    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/utility/index.vue",
+    "chunkName": "pages/utility/index",
+    "_name": "_616fbbd2"
+  },
+  {
+    "name": "faq___KOR",
+    "path": "/KOR/faq",
+    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/faq/index.vue",
+    "chunkName": "pages/faq/index",
+    "_name": "_6e965741"
+  },
+  {
+    "name": "index_bak___KOR",
+    "path": "/KOR/index_bak",
+    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/index_bak.vue",
+    "chunkName": "pages/index_bak",
+    "_name": "_83012272"
+  },
+  {
+    "name": "news___KOR",
+    "path": "/KOR/news",
+    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/news/index.vue",
+    "chunkName": "pages/news/index",
+    "_name": "_678a0f9e"
+  },
+  {
+    "name": "roadmap___KOR",
+    "path": "/KOR/roadmap",
+    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/roadmap/index.vue",
+    "chunkName": "pages/roadmap/index",
+    "_name": "_f90bc232"
+  },
+  {
+    "name": "utility___KOR",
+    "path": "/KOR/utility",
+    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/utility/index.vue",
+    "chunkName": "pages/utility/index",
+    "_name": "_616fbbd2"
   }
 ]
