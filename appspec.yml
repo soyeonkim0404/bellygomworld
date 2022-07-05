@@ -20,7 +20,7 @@ hooks:
 #      timeout: 300
 #      runas: ec2-user
     - location: shell/12.cfCacheInvalidate.sh
-      timeout: 300
+      timeout: 3600
       runas: root
   ApplicationStart:
     - location: shell/20.restartNginx.sh
