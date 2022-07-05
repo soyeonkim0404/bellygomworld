@@ -19,6 +19,9 @@ hooks:
 #    - location: shell/11.syncS3.sh
 #      timeout: 300
 #      runas: ec2-user
+    - location: shell/12.cfCacheInvalidate.sh
+      timeout: 300
+      runas: ec2-user
   ApplicationStart:
     - location: shell/20.restartNginx.sh
       timeout: 600
