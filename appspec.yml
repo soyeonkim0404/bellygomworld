@@ -4,26 +4,26 @@ files:
   - source: /index.html
     destination: /app/world_deploy
   - source: /shell
-    destination: /app/world_deploy/
+    destination: /app/world_deploy/shell
 hooks:
 #  ApplicationStop:
-#    - location: /app/world_deploy/shell/20.restartNginx.sh
+#    - location: shell/20.restartNginx.sh
 #      timeout: 600
 #      runas: ec2-user
 #  BeforeInstall:
 #    - location:
   AfterInstall:
-    - location: /app/world_deploy/shell/10.copySource.sh
+    - location: shell/10.copySource.sh
       timeout: 300
       runas: ec2-user
-#    - location: /app/world_deploy/shell/11.syncS3.sh
+#    - location: shell/11.syncS3.sh
 #      timeout: 300
 #      runas: ec2-user
   ApplicationStart:
-    - location: /app/world_deploy/shell/20.restartNginx.sh
+    - location: shell/20.restartNginx.sh
       timeout: 600
       runas: ec2-user
 #  ValidateService:
-#    - location: /app/world_deploy/shell/30.healthCheck.sh
+#    - location: shell/30.healthCheck.sh
 #      timeout: 3600
 #      runas: ec2-user
