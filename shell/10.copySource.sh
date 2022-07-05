@@ -1,0 +1,1 @@
+cp -R /app/world_deploy/* /app/world/

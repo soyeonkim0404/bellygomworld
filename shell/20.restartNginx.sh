@@ -1,0 +1,1 @@
+sudo su service nginx restart
