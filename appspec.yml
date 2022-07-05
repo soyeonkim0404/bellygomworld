@@ -1,0 +1,10 @@
+version: 0.0
+  os: linux
+  files:
+    - source: /index.html
+      destination: /app/world_deploy
+  hooks:
+    BeforeInstall:
+      -
+    ApplicationStop:
+      -
