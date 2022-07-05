@@ -22,7 +22,7 @@ hooks:
   ApplicationStart:
     - location: shell/20.restartNginx.sh
       timeout: 600
-      runas: ec2-user
+      runas: root
 #  ValidateService:
 #    - location: shell/30.healthCheck.sh
 #      timeout: 3600
