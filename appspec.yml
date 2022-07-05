@@ -1,8 +1,10 @@
 version: 0.0
 os: linux
 files:
-  - source: source
+  - source: /index.html
     destination: /app/world_deploy
+  - source: /shell
+    destination: /app/world_deploy/
 hooks:
 #  ApplicationStop:
 #    - location: shell/20.restartNginx.sh
