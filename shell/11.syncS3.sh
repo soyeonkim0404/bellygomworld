@@ -1,0 +1,1 @@
+aws s3 sync /app/world_deploy s3://dev-bellygomworld-static
