@@ -1,0 +1,15 @@
+$safeTop: env(safe-area-inset-top);
+$safeBottom: env(safe-area-inset-bottom);
+$maxLayoutWidth: 1920px;
+$minLayoutWidth: 1024px;
+$h100: var(--innerHeight);
+
+$black: #000000;
+$white: #ffffff;
+$themeColor: #4835c6;
+$gradient: radial-gradient(
+    100.97% 100.08% at 73.44% 137.41%,
+    #159dea 0%,
+    rgba(46, 51, 192, 0) 100%
+  ),
+  linear-gradient(192.1deg, #4835c6 22.36%, #ffadde 130.28%);
