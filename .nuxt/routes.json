@@ -2,85 +2,71 @@
   {
     "name": "index___ENG",
     "path": "/ENG",
-    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/index.vue",
+    "component": "/Users/Jay/IdeaProjects/test22/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_3e839a0c"
+    "_name": "_1cfafa33"
   },
   {
-    "name": "index___KOR",
-    "path": "/KOR",
-    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_3e839a0c"
+    "name": "faq___KOR",
+    "path": "/faq",
+    "component": "/Users/Jay/IdeaProjects/test22/pages/faq/index.vue",
+    "chunkName": "pages/faq/index",
+    "_name": "_243ad9fa"
+  },
+  {
+    "name": "news___KOR",
+    "path": "/news",
+    "component": "/Users/Jay/IdeaProjects/test22/pages/news/index.vue",
+    "chunkName": "pages/news/index",
+    "_name": "_6675e405"
+  },
+  {
+    "name": "roadmap___KOR",
+    "path": "/roadmap",
+    "component": "/Users/Jay/IdeaProjects/test22/pages/roadmap/index.vue",
+    "chunkName": "pages/roadmap/index",
+    "_name": "_0d86c5c0"
+  },
+  {
+    "name": "utility___KOR",
+    "path": "/utility",
+    "component": "/Users/Jay/IdeaProjects/test22/pages/utility/index.vue",
+    "chunkName": "pages/utility/index",
+    "_name": "_450aa050"
   },
   {
     "name": "faq___ENG",
     "path": "/ENG/faq",
-    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/faq/index.vue",
+    "component": "/Users/Jay/IdeaProjects/test22/pages/faq/index.vue",
     "chunkName": "pages/faq/index",
-    "_name": "_6e965741"
-  },
-  {
-    "name": "index_bak___ENG",
-    "path": "/ENG/index_bak",
-    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/index_bak.vue",
-    "chunkName": "pages/index_bak",
-    "_name": "_83012272"
+    "_name": "_243ad9fa"
   },
   {
     "name": "news___ENG",
     "path": "/ENG/news",
-    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/news/index.vue",
+    "component": "/Users/Jay/IdeaProjects/test22/pages/news/index.vue",
     "chunkName": "pages/news/index",
-    "_name": "_678a0f9e"
+    "_name": "_6675e405"
   },
   {
     "name": "roadmap___ENG",
     "path": "/ENG/roadmap",
-    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/roadmap/index.vue",
+    "component": "/Users/Jay/IdeaProjects/test22/pages/roadmap/index.vue",
     "chunkName": "pages/roadmap/index",
-    "_name": "_f90bc232"
+    "_name": "_0d86c5c0"
   },
   {
     "name": "utility___ENG",
     "path": "/ENG/utility",
-    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/utility/index.vue",
+    "component": "/Users/Jay/IdeaProjects/test22/pages/utility/index.vue",
     "chunkName": "pages/utility/index",
-    "_name": "_616fbbd2"
+    "_name": "_450aa050"
   },
   {
-    "name": "faq___KOR",
-    "path": "/KOR/faq",
-    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/faq/index.vue",
-    "chunkName": "pages/faq/index",
-    "_name": "_6e965741"
-  },
-  {
-    "name": "index_bak___KOR",
-    "path": "/KOR/index_bak",
-    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/index_bak.vue",
-    "chunkName": "pages/index_bak",
-    "_name": "_83012272"
-  },
-  {
-    "name": "news___KOR",
-    "path": "/KOR/news",
-    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/news/index.vue",
-    "chunkName": "pages/news/index",
-    "_name": "_678a0f9e"
-  },
-  {
-    "name": "roadmap___KOR",
-    "path": "/KOR/roadmap",
-    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/roadmap/index.vue",
-    "chunkName": "pages/roadmap/index",
-    "_name": "_f90bc232"
-  },
-  {
-    "name": "utility___KOR",
-    "path": "/KOR/utility",
-    "component": "/Users/kimsoyeon/Desktop/KimSoYeon/emotion/bellygomworld/pages/utility/index.vue",
-    "chunkName": "pages/utility/index",
-    "_name": "_616fbbd2"
+    "name": "index___KOR",
+    "path": "/",
+    "component": "/Users/Jay/IdeaProjects/test22/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_1cfafa33"
   }
 ]

@@ -49,7 +49,7 @@ export default {
       { code: "KOR", iso: "ko-KR", file: "ko.json" },
     ],
     langDir: "~/locales/",
-    defaultLocale: "ko-KR",
+    defaultLocale: "KOR",
     lazy: true,
     strategy: "prefix_except_default",
     detectBrowserLanguage: {
