@@ -45,8 +45,8 @@ export default {
 
   i18n: {
     locales: [
-      { code: "ENG", iso: "en-US", file: "en.json" },
       { code: "KOR", iso: "ko-KR", file: "ko.json" },
+      { code: "ENG", iso: "en-US", file: "en.json" },
     ],
     langDir: "~/locales/",
     defaultLocale: "KOR",

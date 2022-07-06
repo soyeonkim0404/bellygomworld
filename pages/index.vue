@@ -2,6 +2,7 @@
   <main class="main">
     <section class="key">
       <div class="visual">
+        1
         <img
           src="../assets/images/main/test_belly.svg"
           alt="메인 키비주얼"
