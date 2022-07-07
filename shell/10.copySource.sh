@@ -15,14 +15,12 @@ cd /app/world_deploy/
 echo "CURRENT DIR 2"
 pwd
 
-/app/world_deploy/test.sh
+#sh /app/world_deploy/test.sh
 
-./test.sh
+yarn install
 
-#yarn install
-#
-#yarn build
-#
-#yarn start &
+yarn build
+
+yarn start &
 
 echo "NODE RUN..... END"
