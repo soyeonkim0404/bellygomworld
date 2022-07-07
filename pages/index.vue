@@ -1,53 +1,27 @@
 <template>
   <main class="main">
-    <section class="key">
-      <div class="visual">
-        <img
-          src="../assets/images/main/test_belly.svg"
-          alt="메인 키비주얼"
-          class="key-img"
-        />
-      </div>
-    </section>
-    <section>
+    <div class="visual">
+      <canvas></canvas>
+    </div>
+    <div class="belly">
       <div class="story">
-        <div class="inner">
-          <div class="title-area">
-            <h2 class="story-title">
-              Don't<br />
-              worry<br />
-              be BELLY
-            </h2>
-            <div class="belly-fri bounce">
-              <img src="../assets/images/main/belly_friend.svg" alt="" />
-            </div>
-            <div class="belly-dong bounce">
-              <img src="../assets/images/main/story_belly.svg" alt="" />
-            </div>
+        <div class="title-area">
+          <h2 class="story-title">
+            Don't<br />
+            worry<br />
+            be BELLY
+          </h2>
+          <div class="belly-fri bounce">
+            <img src="../assets/images/main/belly_friend.svg" alt="" />
           </div>
-          <p class="ani-text ani">
-            {{ $t("mainStory_1") }}
-          </p>
-          <!--          <p class="ani-text ani">
-            어느 날, 유령의 집에 놀러 온 꼬마가 흘린 풍선껌, 그 속에서 커여운
-            벨리곰이 탄생했다. 벨리곰은 사람들을 놀래키며 행복을 주는 일을
-            좋아하지만, 과도한 식탐과 귀여운 외모가 유령의 집에 어울리지
-            않는다며
-          </p>
-          <p class="ani-text ani">
-            어느 날, 유령의 집에 놀러 온 꼬마가 흘린 풍선껌, 그 속에서 커여운
-            벨리곰이 탄생했다. 벨리곰은 사람들을 놀래키며 행복을 주는 일을
-            좋아하지만, 과도한 식탐과 귀여운 외모가 유령의 집에 어울리지
-            않는다며 쫓겨나게 된다.
-          </p>
-          <p class="ani-text big ani">
-            1만 개의 신비로운 능력을 얻은 벨리곰은 사람들에게 어떤 서프라이즈를
-            가져다 줄까?
-          </p>-->
+          <div class="belly-dong bounce">
+            <img src="../assets/images/main/story_belly.svg" alt="" />
+          </div>
         </div>
+        <p class="ani-text ani">
+          {{ $t("mainStory_1") }}
+        </p>
       </div>
-    </section>
-    <section>
       <div class="nft-slide">
         <div v-swiper:mySwiper="swiperOption" class="swiper-container">
           <div class="swiper-wrapper">
@@ -61,7 +35,18 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
+    <div id="fixed-ele">
+      <a href="@/assets/pdf/test.pdf" download target="_self" class="guide">
+        <img
+          src="@/assets/images/main/minting_guide_btn.svg"
+          alt="민팅가이드문서"
+        />
+      </a>
+      <div class="audio">
+        <button @click="playSound"></button>
+      </div>
+    </div>
   </main>
 </template>
 
@@ -109,6 +94,16 @@ export default {
           delay: 0,
           disableOnInteraction: false,
         },
+        breakpoints: {
+          360: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          1200: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
+        },
       },
     };
   },
@@ -119,16 +114,56 @@ export default {
     triggerMethod() {
       gsap.registerPlugin(ScrollTrigger);
 
-      ScrollTrigger.create({
-        trigger: ".visual",
-        start: "top top",
-        pin: true,
-        pinSpacing: false,
-      });
+      /*START key visual canvas*/
+      const keyVisual = document.querySelector(".visual");
+      const canvas = keyVisual.querySelector("canvas");
+      const context = canvas.getContext("2d");
+      canvas.width = 1750;
+      canvas.height = 1650;
+      const frameCount = 87;
+      const currentFrame = (index) =>
+        require(`@/assets/images/vellygom/vellygomv2_sq_Main_24fps_${index
+          .toString()
+          .padStart(5, "0")}.webp`);
+      const images = [];
+      const belly = {
+        frame: 0,
+      };
+      for (let i = 0; i < frameCount; i++) {
+        const img = new Image();
+        img.src = currentFrame(i);
+        images.push(img);
+      }
+      images[0].onload = render;
+      function render() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.drawImage(images[belly.frame], 0, 0);
+      }
 
-      /*ScrollTrigger.create({
-        snap: 1 / 4, // snap whole page to the closest section!
-      });*/
+      gsap
+        .timeline({
+          onUpdate: render,
+          scrollTrigger: {
+            trigger: keyVisual,
+            pin: true,
+            scrub: 0.5,
+            markers: false,
+            onLeave: () => {
+              gsap.set(".visual", {
+                position: "fixed",
+                y: 0,
+                left: 0,
+                width: "100%",
+              });
+            },
+          },
+        })
+        .to(belly, {
+          frame: frameCount - 1,
+          snap: "frame",
+          ease: "none",
+          duration: 1,
+        });
 
       /* start story scrollup*/
       function animateFrom(elem, direction) {
@@ -172,32 +207,47 @@ export default {
 <style scoped lang="scss">
 .main {
   background: $themeColor;
-  padding-bottom: 200px;
 }
-
 .visual {
+  position: relative;
   width: 100%;
   background: $gradient;
-  .key-img {
+  &:before {
+    content: "";
     display: block;
-    width: 1071px;
-    height: 1242px;
+    position: absolute;
+    top: 110px;
+    left: 50%;
+    width: 1588px;
+    height: 764px;
+    background: url("../assets/images/main/key_bg_star.svg") center no-repeat;
+    transform: translateX(-50%);
+    z-index: 3;
+  }
+  canvas {
+    display: block;
+    width: 70%;
+    height: auto;
     margin: 0 auto;
-    padding-top: 250px;
-    box-sizing: border-box;
+  }
+  .mobile & {
+    canvas {
+      width: 250%;
+      margin-left: -73%;
+    }
   }
 }
 
-.story {
+.belly {
   position: relative;
   width: 100%;
-  padding-top: 100px;
+  padding: 100px 0 250px;
   background: $themeColor;
   &::before {
     content: "";
     display: block;
     position: absolute;
-    top: -22%;
+    top: -500px;
     left: 50%;
     width: 100%;
     height: 500px;
@@ -206,10 +256,20 @@ export default {
     background-repeat: repeat-x;
     background-size: 1920px auto;
     transform: translateX(-50%);
+    .mobile & {
+      top: -280px;
+      left: 0;
+      height: 280px;
+      background-size: 100% auto;
+      transform: none;
+    }
   }
-  .inner {
-    max-width: 1170px;
-    margin: 0 auto;
+  .story {
+    padding-bottom: 250px;
+    .pc & {
+      max-width: 1170px;
+      margin: 0 auto;
+    }
     .title-area {
       position: relative;
       .story-title {
@@ -217,6 +277,9 @@ export default {
         line-height: 1.2;
         color: $white;
         text-align: center;
+        .mobile & {
+          font-size: 90px;
+        }
       }
       .belly-fri {
         position: absolute;
@@ -224,11 +287,20 @@ export default {
         right: 0;
         width: 328px;
         height: 489px;
+        .mobile & {
+          width: 100%;
+          height: auto;
+        }
       }
       .belly-dong {
         width: 1030px;
         height: 1207px;
         margin: -260px auto 0;
+        .mobile & {
+          width: 100%;
+          height: auto;
+          margin: 0 auto;
+        }
       }
     }
     .ani-text {
@@ -246,10 +318,14 @@ export default {
       }
     }
   }
-}
-
-.nft-slide {
-  margin-top: 250px;
+  .nft-slide {
+  }
+  .mobile & {
+    padding: 0 0 150px;
+    .story {
+      padding: 0 20px 100px;
+    }
+  }
 }
 
 .bounce {
@@ -272,6 +348,17 @@ export default {
 
   100% {
     top: 0;
+  }
+}
+
+#fixed-ele {
+  position: fixed;
+  bottom: 100px;
+  right: 50px;
+  z-index: 99;
+  .guide {
+    width: 110px;
+    height: 110px;
   }
 }
 </style>
