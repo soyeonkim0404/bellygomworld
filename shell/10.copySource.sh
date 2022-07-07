@@ -16,24 +16,14 @@ cd /app/world_deploy/
 echo "CURRENT DIR 2"
 pwd
 
-echo "BEFORE ENV ---------------------->"
-env
-
 export PATH="/root/.nvm/versions/node/v16.15.1/bin:$PATH"
 echo "AFTER ENV ---------------------->"
 env
-
-#sh /app/world_deploy/test.sh
 
 yarn install
 
 yarn build
 
 nohup yarn start >/dev/null 2>&1 &
-
-pwd
-
-echo "SLEEP 20sec ---------------------->"
-sleep 20
 
 echo "NODE RUN..... END"
