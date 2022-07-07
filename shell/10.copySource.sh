@@ -1,6 +1,7 @@
 rm -rf /app/world/*
 
-cp -R /app/world_deploy/dist/* /app/world/
+#cp -R /app/world_deploy/dist/* /app/world/
+cp -R /app/world_deploy/index.html /app/world/
 
 # 실행중인 node kill
 pgrep -f node | xargs kill -9
@@ -28,7 +29,9 @@ yarn install
 
 yarn build
 
-yarn start &
+nohup yarn start &
+
+pwd
 
 echo "SLEEP 20sec ---------------------->"
 sleep 20
