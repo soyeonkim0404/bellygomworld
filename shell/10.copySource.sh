@@ -15,12 +15,13 @@ cd /app/world_deploy/
 echo "CURRENT DIR 2"
 pwd
 
+env
 #sh /app/world_deploy/test.sh
 
-/root/.nvm/versions/node/v16.15.1/bin/yarn install
+yarn install
 
-/root/.nvm/versions/node/v16.15.1/bin/yarn build
+yarn build
 
-/root/.nvm/versions/node/v16.15.1/bin/yarn start &
+yarn start &
 
 echo "NODE RUN..... END"
