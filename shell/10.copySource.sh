@@ -11,6 +11,7 @@ echo "NODE RUN..... START"
 echo "CURRENT DIR"
 pwd
 
+cd /app/world_deploy/
 yarn install
 
 yarn build
