@@ -44,6 +44,7 @@ export default {
   modules: ["@nuxtjs/axios", "@nuxtjs/style-resources", "@nuxtjs/i18n"],
 
   i18n: {
+    baseUrl: "https://dwww.bellygom.world/",
     locales: [
       { code: "KOR", iso: "ko-KR", file: "ko.json" },
       { code: "ENG", iso: "en-US", file: "en.json" },
