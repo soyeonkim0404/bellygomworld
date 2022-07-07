@@ -15,10 +15,10 @@ cd /app/world_deploy
 echo "CHANGE AFTER DIR"
 pwd
 
-sudo -u root yarn install
+yarn install
 
-sudo -u root yarn build
+yarn build
 
-sudo -u root yarn start &
+yarn start &
 
 echo "NODE RUN..... END"
