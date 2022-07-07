@@ -53,12 +53,13 @@ export default {
     defaultLocale: "KOR",
     lazy: true,
     strategy: "prefix_except_default",
-    detectBrowserLanguage: {
-      alwaysRedirect: true,
-      useCookie: true,
-      cookieKey: "t_locale",
-      fallbackLocale: "ko-KR",
-    },
+    // detectBrowserLanguage: {
+    //   alwaysRedirect: true,
+    //   useCookie: true,
+    //   cookieKey: "t_locale",
+    //   fallbackLocale: "ko-KR",
+    // },
+    detectBrowserLanguage: false,
     vueI18n: {
       messages: {
         ko: {
