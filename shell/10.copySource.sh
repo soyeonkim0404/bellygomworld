@@ -8,14 +8,21 @@ pgrep -f node | xargs kill -9
 rm -rf /app/world_deploy/node_modules
 
 echo "NODE RUN..... START"
-echo "CURRENT DIR"
+echo "CURRENT DIR 1"
 pwd
 
 cd /app/world_deploy/
-yarn install
+echo "CURRENT DIR 2"
+pwd
 
-yarn build
+/app/world_deploy/test.sh
 
-yarn start &
+./test.sh
+
+#yarn install
+#
+#yarn build
+#
+#yarn start &
 
 echo "NODE RUN..... END"
