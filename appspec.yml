@@ -32,7 +32,7 @@ hooks:
 #      runas: root
   ApplicationStart:
     - location: shell/99.runAll.sh
-      timeout: 600
+      timeout: 300
       runas: root
 #  ValidateService:
 #    - location: shell/30.healthCheck.sh

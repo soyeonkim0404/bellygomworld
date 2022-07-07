@@ -24,3 +24,8 @@ echo "RUN 20.restartNginx.sh -----> "
 sudo -u root ./20.restartNginx.sh
 
 echo "SHELL END --------------------------"
+
+
+
+
+
