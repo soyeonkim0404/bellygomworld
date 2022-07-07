@@ -29,7 +29,7 @@ yarn install
 
 yarn build
 
-nohup yarn start &
+nohup yarn start >/dev/null 2>&1 &
 
 pwd
 
