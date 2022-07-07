@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :class="$mq">
     <Header />
     <Nuxt />
     <Footer />
@@ -16,5 +16,8 @@ export default {
 #app {
   width: 100%;
   margin: 0 auto;
+  &.mobile {
+    overflow-x: hidden;
+  }
 }
 </style>

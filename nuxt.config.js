@@ -3,7 +3,7 @@ export default {
   head: {
     title: "bellygomworld",
     htmlAttrs: {
-      lang: " ko",
+      lang: "ko",
     },
     meta: [
       { charset: "utf-8" },
@@ -21,13 +21,9 @@ export default {
     ],
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["~assets/scss/common.scss"],
+  css: ["~/assets/scss/common.scss"],
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    {
-      src: "~plugins/vue-scrollmagic.js",
-      ssr: false,
-    },
     {
       src: "~plugins/swiper.js",
       ssr: false,
@@ -41,10 +37,13 @@ export default {
     //'@nuxtjs/eslint-module',
     "@nuxtjs/style-resources",
   ],
-  modules: ["@nuxtjs/axios", "@nuxtjs/style-resources", "@nuxtjs/i18n"],
-
+  modules: [
+    "@nuxtjs/axios",
+    "@nuxtjs/style-resources",
+    "@nuxtjs/i18n",
+    "nuxt-mq",
+  ],
   i18n: {
-    baseUrl: "https://dwww.bellygom.world/",
     locales: [
       { code: "KOR", iso: "ko-KR", file: "ko.json" },
       { code: "ENG", iso: "en-US", file: "en.json" },
@@ -53,22 +52,18 @@ export default {
     defaultLocale: "KOR",
     lazy: true,
     strategy: "prefix_except_default",
-    // detectBrowserLanguage: {
-    //   alwaysRedirect: true,
-    //   useCookie: true,
-    //   cookieKey: "t_locale",
-    //   fallbackLocale: "ko-KR",
-    // },
-    detectBrowserLanguage: false,
-    vueI18n: {
-      messages: {
-        ko: {
-          name: "김소연",
-        },
-        en: {
-          name: "kim so yeon",
-        },
-      },
+    vueI18nLoader: true,
+    detectBrowserLanguage: {
+      alwaysRedirect: true,
+      useCookie: true,
+      cookieKey: "t_locale",
+      fallbackLocale: "ko-KR",
+    },
+  },
+  mq: {
+    breakpoints: {
+      mobile: 480,
+      pc: Infinity,
     },
   },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -80,9 +75,25 @@ export default {
   build: {
     vendor: ["external_library"],
     transpile: ["gsap"],
+    loaders: {
+      vue: {
+        transformAssetUrls: {
+          audio: "src",
+        },
+      },
+    },
+    extend(config, ctx) {
+      config.module.rules.push({
+        test: /\.(ogg|mp3|wav|mpe?g)$/i,
+        loader: "file-loader",
+        options: {
+          name: "[path][name].[ext]",
+        },
+      });
+    },
   },
   styleResources: {
-    scss: ["./assets/scss/*.scss"],
+    scss: ["./assets/scss/_variables.scss"],
   },
 
   gsap: {

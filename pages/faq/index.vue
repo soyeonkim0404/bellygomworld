@@ -1,19 +1,34 @@
 <template>
   <div class="sub-wrap">
-    <div class="main-faq">
-      <div class="title-area">
-        <h1>FAQ</h1>
-        <p>벨리곰한테 궁금한거 다-아 물어봐!</p>
+    <div class="title-wrap">
+      <h1>FAQ</h1>
+      <p class="sub">벨리곰한테 궁금한거 다-아 물어봐!</p>
+    </div>
+    <div class="content">
+      <div class="inner">
+        <div class="content-wrap">
+          <AccordionComponent :list="list">
+            <template #title="{ item }"> {{ item.title }} </template>
+            <template #cont="{ item }">
+              {{ item.cont }}
+            </template>
+          </AccordionComponent>
+        </div>
       </div>
-      <AccordionComponent :list="list">
-        <template #title="{ item }"> {{ item.title }} </template>
-        <template #cont="{ item }">
-          {{ item.cont }}
-        </template>
-      </AccordionComponent>
     </div>
   </div>
 </template>
+
+<i18n>
+{
+  "ENG": {
+    "hello": "hello world!"
+  },
+  "KOR": {
+    "hello": "안녕"
+  }
+}
+</i18n>
 
 <script>
 import AccordionComponent from "~/components/AccordionComponent";
@@ -47,24 +62,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-.main-faq {
-  margin: 120px auto 0;
-  max-width: 1259px;
-  .title-area {
-    margin: 0 0 190px 0;
-    text-align: center;
-    h1 {
-      font-size: 80px;
-      font-weight: 400;
-      line-height: 92px;
-    }
-    p {
-      margin: 30px 0 0 0;
-      font-size: 26px;
-      font-weight: 400;
-      line-height: 27px;
-    }
-  }
-}
-</style>
+<style scoped lang="scss"></style>
