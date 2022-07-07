@@ -7,10 +7,13 @@ pgrep -f node | xargs kill -9
 
 rm -rf /app/world_deploy/node_modules
 
+echo "NODE RUN..... START"
+
 cd /app/world_deploy
-yarn install
+sudo -u root yarn install
 
-yarn build
+sudo -u root yarn build
 
-yarn start &
+sudo -u root yarn start &
 
+echo "NODE RUN..... END"
