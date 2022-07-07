@@ -3,10 +3,10 @@ os: linux
 files:
   - source: /
     destination: /app/world_deploy
-permissions:  # CodeDeploy에서 EC2서버로 넘겨준 파일들을 모두 ec2-user권한을 갖도록 변경
-  - object: /
-    owner: ec2-user
-    group: ec2-user
+#permissions:  # CodeDeploy에서 EC2서버로 넘겨준 파일들을 모두 ec2-user권한을 갖도록 변경
+#  - object: /
+#    owner: ec2-user
+#    group: ec2-user
 #  - object: /app/world_deploy/shell/*.sh
 #    mode: 744
 #    owner: ec2-user
@@ -14,10 +14,10 @@ permissions:  # CodeDeploy에서 EC2서버로 넘겨준 파일들을 모두 ec2-
 #    type:
 #      - file
 hooks:
-  ApplicationStop:
-    - location: shell/00.permissionSet.sh
-      timeout: 60
-      runas: ec2-user
+#  ApplicationStop:
+#    - location: shell/00.permissionSet.sh
+#      timeout: 60
+#      runas: ec2-user
 #  BeforeInstall:
 #    - location:
   AfterInstall:

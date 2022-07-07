@@ -7,6 +7,7 @@ pgrep -f node | xargs kill -9
 
 rm -rf /app/world_deploy/node_modules
 
+cd /app/world_deploy
 yarn install
 
 yarn build
