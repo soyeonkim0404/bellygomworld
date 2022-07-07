@@ -8,8 +8,13 @@ pgrep -f node | xargs kill -9
 rm -rf /app/world_deploy/node_modules
 
 echo "NODE RUN..... START"
+echo "CURRENT DIR"
+pwd
 
 cd /app/world_deploy
+echo "CHANGE AFTER DIR"
+pwd
+
 sudo -u root yarn install
 
 sudo -u root yarn build
