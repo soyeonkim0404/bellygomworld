@@ -11,10 +11,6 @@ echo "NODE RUN..... START"
 echo "CURRENT DIR"
 pwd
 
-cd /app/world_deploy
-echo "CHANGE AFTER DIR"
-pwd
-
 yarn install
 
 yarn build

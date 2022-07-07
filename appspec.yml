@@ -20,18 +20,18 @@ hooks:
 #      runas: ec2-user
 #  BeforeInstall:
 #    - location:
-  AfterInstall:
-    - location: shell/10.copySource.sh
-      timeout: 60
-      runas: root
-#    - location: shell/11.syncS3.sh
-#      timeout: 300
-#      runas: ec2-user
-    - location: shell/12.cfCacheInvalidate.sh
-      timeout: 120
-      runas: root
+#  AfterInstall:
+#    - location: shell/10.copySource.sh
+#      timeout: 60
+#      runas: root
+##    - location: shell/11.syncS3.sh
+##      timeout: 300
+##      runas: ec2-user
+#    - location: shell/12.cfCacheInvalidate.sh
+#      timeout: 120
+#      runas: root
   ApplicationStart:
-    - location: shell/20.restartNginx.sh
+    - location: shell/99.runAll.sh
       timeout: 60
       runas: root
 #  ValidateService:
