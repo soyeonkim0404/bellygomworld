@@ -62,4 +62,10 @@ export default {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.content {
+  .mobile & {
+    padding: 107px 20px 150px;
+  }
+}
+</style>

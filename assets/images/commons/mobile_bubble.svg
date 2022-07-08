@@ -1,0 +1,18 @@
+<svg width="360" height="280" viewBox="0 0 360 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_1961_13706" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="360" height="280">
+<rect width="360" height="280" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_1961_13706)">
+<path d="M-195.47 107.069C-293.84 99.2619 -373.84 135.26 -479.322 285.779L-479.322 399.556L778.753 399.556C772.714 329.556 773.713 104.367 767.79 35.7046C570.783 9.6141 521.76 -12.0102 319.382 107.069C117.005 226.148 -45.9735 118.933 -195.47 107.069Z" fill="#4835C6"/>
+<circle cx="110.605" cy="207.558" r="98.0741" fill="#4835C6"/>
+<circle cx="-38.9259" cy="203.074" r="98.0741" fill="#4835C6"/>
+<circle cx="47" cy="141" r="36" fill="#4835C6"/>
+<circle cx="318.704" cy="172.704" r="71.7038" fill="#4835C6"/>
+<circle cx="360" cy="98.8149" r="40" fill="#4835C6"/>
+<circle cy="98.8149" r="40" fill="#4835C6"/>
+<circle cx="266.481" cy="133.091" r="24.6026" transform="rotate(-37.3169 266.481 133.091)" fill="#4835C6"/>
+<circle cx="300.511" cy="114.193" r="25.3376" transform="rotate(-37.3169 300.511 114.193)" fill="#4835C6"/>
+<circle cx="244.23" cy="154.506" r="31.7037" transform="rotate(-37.3169 244.23 154.506)" fill="#4835C6"/>
+<circle cx="205.818" cy="155.209" r="16.5598" transform="rotate(-37.3169 205.818 155.209)" fill="#4835C6"/>
+</g>
+</svg>

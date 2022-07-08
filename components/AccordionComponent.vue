@@ -7,19 +7,23 @@
       >
         <slot name="title" :item="item"></slot>
       </button>
-      <div
-        class="accordion-content"
-        v-if="onContent.some((el) => index === el)"
-      >
-        <div class="cont">
-          <p>
-            <slot name="cont" :item="item"></slot>
-          </p>
-          <div class="download">
-            <a href="#" download class="btn-download">PDF Download</a>
+      <transition name="fade">
+        <div
+          class="accordion-content"
+          v-if="onContent.some((el) => index === el)"
+        >
+          <div class="cont">
+            <p>
+              <slot name="cont" :item="item"></slot>
+            </p>
+            <div class="download">
+              <a href="javascript:alert('작업중');" class="btn-download"
+                >PDF Download</a
+              >
+            </div>
           </div>
         </div>
-      </div>
+      </transition>
     </li>
   </ul>
 </template>
@@ -68,12 +72,13 @@ export default {
         margin-right: 20px;
         font-size: 32px;
         color: $white;
+        font-family: "Sandoll Odongtong", sans-serif;
       }
       &::after {
         content: "";
         display: block;
         position: absolute;
-        top: 0;
+        top: -10px;
         right: 0;
         width: 48px;
         height: 48px;
@@ -90,6 +95,7 @@ export default {
     }
     .accordion-content {
       margin: 42px 0 0 0;
+      transition: all 0.3s ease-in;
       .cont {
         padding: 40px 60px;
         background: #5515bc;
@@ -107,6 +113,13 @@ export default {
             margin-right: 20px;
             font-size: 32px;
             color: $white;
+            font-family: "Sandoll Odongtong", sans-serif;
+          }
+        }
+        .mobile & {
+          padding: 40px 40px;
+          p {
+            padding-left: 45px;
           }
         }
       }

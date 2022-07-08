@@ -543,6 +543,9 @@ export default {
   padding: 60px;
   background-color: #ffffff;
   border-radius: 50px;
+  .mobile & {
+    margin-top: 25px;
+  }
   .step {
     padding: 0 170px 0 0;
     background-position: right bottom;
