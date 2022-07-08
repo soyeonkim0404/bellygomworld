@@ -20,28 +20,35 @@
           <div
             v-for="(item, index) in roadMap"
             :key="index"
-            :class="{
-              item: true,
-              ani: true,
-              emphasis: item.emphasis,
-              phase: item.phase,
-              complete: item.complete,
-            }"
+            :class="item.phase ? `deco-${item.phase}` : ''"
+            class="con"
           >
-            <span class="complete-badge" v-if="item.complete">
-              <span class="date">{{ item.completeDate }}</span>
-            </span>
-            <span class="phase-title" v-if="item.phase">
-              PHASE {{ item.phase }}
-            </span>
-            <template v-if="$i18n.locale === 'ENG'">
-              <span class="tit" v-if="item.engTitle">{{ item.engTitle }}</span>
-              <p class="desc" v-if="item.engDesc" v-html="item.engDesc"></p>
-            </template>
-            <template v-else>
-              <span class="tit" v-if="item.title">{{ item.title }}</span>
-              <p class="desc" v-if="item.desc" v-html="item.desc"></p>
-            </template>
+            <div
+              :class="{
+                item: true,
+                ani: true,
+                emphasis: item.emphasis,
+                phase: item.phase,
+                complete: item.complete,
+              }"
+            >
+              <span class="complete-badge" v-if="item.complete">
+                <span class="date">{{ item.completeDate }}</span>
+              </span>
+              <span class="phase-title" v-if="item.phase">
+                PHASE {{ item.phase }}
+              </span>
+              <template v-if="$i18n.locale === 'ENG'">
+                <span class="tit" v-if="item.engTitle">{{
+                  item.engTitle
+                }}</span>
+                <p class="desc" v-if="item.engDesc" v-html="item.engDesc"></p>
+              </template>
+              <template v-else>
+                <span class="tit" v-if="item.title">{{ item.title }}</span>
+                <p class="desc" v-if="item.desc" v-html="item.desc"></p>
+              </template>
+            </div>
           </div>
         </div>
       </div>
@@ -85,19 +92,18 @@ export default {
           completeDate: "22.07",
         },
         {
-          desc: "민팅 후 <br>레어리티 & 랭킹 공개",
-          engDesc: "Rarity & Ranking revealed <br>after minting",
-          complete: true,
-          completeDate: "22.07",
+          desc: "완판 기념! 벨리곰의 <br/> 축하 세레머니 start!",
+          engDesc: "Sold Out' commemoration! <br>Bellygom's festivities begin!",
+          complete: false,
         },
         {
-          desc: "모든 홀더들을 위한 <br>깜짝 혜택 I 공개",
+          desc: "모든 홀더들을 위한 <br> 깜짝 혜택 I 공개",
           engDesc: "Surprise Rewards <br>Unveiled for All Holders",
           complete: false,
         },
         {
-          desc: "완판 기념! 벨리곰의 <br>축하 세레머니 start!",
-          engDesc: "Sold Out' commemoration! <br>Bellygom's festivities begin!",
+          desc: "민팅 후 <br>레어리티 & 랭킹 공개",
+          engDesc: "Rarity & Ranking revealed <br>after minting",
           complete: false,
         },
         {
@@ -271,12 +277,13 @@ export default {
 .title-wrap {
   .roadmap-belly {
     position: absolute;
-    bottom: -30px;
-    left: 0;
+    bottom: -6px;
+    left: 170px;
     width: 230px;
     height: 300px;
     z-index: 3;
     .mobile & {
+      bottom: -60px;
       left: 50%;
       transform: translateX(-50%);
     }
@@ -292,12 +299,39 @@ export default {
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(3, 1fr);
   }
+  .con {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 50%;
+      left: -24px;
+      width: 24px;
+      border-top: 2px dashed #ffffff;
+      opacity: 0.3;
+      transform: translateY(-50%);
+      .mobile & {
+        border-top: none;
+        border-left: 2px dashed #ffffff;
+        bottom: -30px;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    &:first-child {
+      &::before {
+        display: none;
+      }
+    }
+  }
   .item {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 50px 20px;
+    height: 160px;
     box-sizing: border-box;
     border-radius: 20px;
     font-size: 18px;
@@ -307,10 +341,14 @@ export default {
     .tit {
     }
     .desc {
+      line-height: 28px;
     }
     &.phase {
       background: transparent;
       .phase-title {
+        font-family: "Sandoll Odongtong", sans-serif;
+        font-size: 18px;
+        line-height: 18px;
       }
       .tit {
         margin-top: 5px;
@@ -323,10 +361,66 @@ export default {
       }
     }
     &.complete {
-      opacity: 0.5;
+      background: #5c40d4;
       .complete-badge {
-        background: url("../../assets/images/roadmap/complete_mark.svg") center
-          no-repeat;
+      }
+    }
+    &.emphasis {
+      border: 5px solid transparent;
+      background-image: linear-gradient(#480da7, #480da7),
+        linear-gradient(to right, #f85e92, #fc8abc, #ffcbad);
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+    }
+  }
+  .deco-2 {
+    position: relative;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -80px;
+      left: 0;
+      width: 414px;
+      height: 170px;
+      background: url("../../assets/images/roadmap/deco.svg") center no-repeat;
+      opacity: 1;
+      transform: none;
+      border: none;
+      .mobile & {
+        width: calc(100% + 40px);
+        height: 146px;
+        margin-left: -20px;
+        background-size: 98%;
+        border: none;
+        transform: translateX(-43%);
+        bottom: 0;
+        top: -70px;
+      }
+    }
+  }
+  .deco-3 {
+    position: relative;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 404px;
+      height: 398px;
+      background: url("../../assets/images/roadmap/deco_2.svg") center no-repeat;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      opacity: 1;
+      border: none;
+      .mobile & {
+        width: calc(100% + 40px);
+        height: 334px;
+        margin-left: -20px;
+        background-size: 98%;
+        transform: translate(-46%, -30%);
+        border: none;
       }
     }
   }
@@ -334,6 +428,7 @@ export default {
     grid-template-rows: repeat(1, 1fr);
     grid-template-columns: repeat(1, 1fr);
     gap: 20px 0;
+    z-index: 10;
     .item {
       width: 100%;
     }

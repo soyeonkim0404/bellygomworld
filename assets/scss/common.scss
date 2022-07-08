@@ -1,4 +1,8 @@
+@import "SDGothicNeoRound-eMd.scss";
+@import "SDGothicNeoRound-gBd.scss";
+@import "SDOdongtongBasic.scss";
 @import "reset.scss";
+
 html {
   box-sizing: border-box;
   font-size: 100%;
@@ -29,6 +33,7 @@ body {
     position: relative;
     padding-top: 110px;
     h1 {
+      font-family: "Sandoll Odongtong", sans-serif;
       margin-top: 80px;
       text-align: center;
       font-size: 80px;
@@ -85,6 +90,9 @@ body {
       width: 100%;
       height: 660px;
       background: $gradient;
+      .mobile & {
+        height: 560px;
+      }
       &::before {
         content: "";
         display: block;
@@ -93,15 +101,33 @@ body {
         left: 50%;
         width: 100%;
         height: 500px;
-        background-image: url("~assets/images/commons/bubble.svg");
+        background-image: url("~assets/images/commons/sub_bubble.svg");
         background-position: top center;
         background-repeat: repeat-x;
         background-size: 1920px auto;
         transform: translateX(-50%);
+        .mobile & {
+          left: 49.9%;
+          height: 280px;
+          background-image: url("~assets/images/commons/mobile_bubble.svg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 101% auto;
+        }
       }
     }
     .content {
       background: $gradient;
+      padding-top: 0;
     }
   }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }

@@ -5,17 +5,27 @@
     </div>
     <div class="footer-contents">
       <ul class="footer-list">
-        <li>(주)우리 홈쇼핑</li>
         <li>대표 이완신</li>
-        <li>서울특별시 영등포구 양평로21길10(양평동5가)</li>
+        <li>주소: 서울특별시 영등포구 양평로21길10(양평동5가)</li>
+        <li>사업자번호 117-81-33400</li>
+        <li>개인정보 보호책임자: 신성빈</li>
       </ul>
       <ul class="footer-list">
-        <li>사업자번호 117-81-33400</li>
-        <li>제휴문의 bellygom@bellygom.com</li>
-        <li><a href="#">이용조건</a></li>
+        <li>호스팅 서비스 사업자: (주)우리홈쇼핑</li>
+        <li>제휴 및 문의: master@lotteimall.com</li>
+        <li><a href="#">이용약관</a></li>
       </ul>
 
-      <p class="copyright">Copyright Ⓒ (주)우리홈쇼핑. All rights reserved.</p>
+      <p class="copyright">
+        Copyright Ⓒ
+        <span class="logo">
+          <img
+            src="../assets/images/commons/img_footer_logo_bellygom.svg"
+            alt="footer-logo"
+          />
+        </span>
+        All rights reserved.
+      </p>
     </div>
   </footer>
 </template>
@@ -31,9 +41,9 @@ footer {
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
-  padding: 70px 320px;
+  padding: 70px 0 70px 100px;
   background: #252157;
   box-sizing: border-box;
   .footer-logo {
@@ -74,9 +84,18 @@ footer {
       }
     }
     .copyright {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
       margin-top: 35px;
       font-size: 16px;
       color: #9e9e9e;
+      .logo {
+        display: inline-block;
+        margin: 0 5px;
+        width: 90px;
+        height: 26px;
+      }
     }
   }
   .mobile & {
