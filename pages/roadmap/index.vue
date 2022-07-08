@@ -3,8 +3,8 @@
     <div class="title-wrap">
       <h1>ROADMAP</h1>
       <p class="sub">
-        독보적인 NFT 2차 창작부터, 메타버스, 웹툰, 게임까지 이어지는 즐거운
-        여정!<br />
+        독보적인 NFT 이미지 사업권 부여부터, 메타버스, 웹툰, 게임까지 이어지는
+        즐거운 여정!<br />
         벨리곰은 더 많은 서프라이즈를 만들어 갑니다.
       </p>
       <span class="roadmap-belly">
@@ -78,33 +78,39 @@ export default {
           engDesc:
             "In August 2022, Bellygom NFTs will be released. <br>A breathtaking journey full of rewards begins.",
           complete: false,
+          order: 1,
         },
         {
           desc: "크립토파티에 깜짝 등장",
           engDesc: "Surprise Appearance <br> at Crypto Party",
           complete: true,
-          completeDate: "22.06",
+          completeDate: "2022.06",
+          order: 2,
         },
         {
           desc: "벨리곰 커뮤니티의 시작",
           engDesc: "The start of <br>the Bellygom community",
           complete: true,
-          completeDate: "22.07",
+          completeDate: "2022.07",
+          order: 3,
         },
         {
           desc: "완판 기념! 벨리곰의 <br/> 축하 세레머니 start!",
           engDesc: "Sold Out' commemoration! <br>Bellygom's festivities begin!",
           complete: false,
+          order: 6,
         },
         {
           desc: "모든 홀더들을 위한 <br> 깜짝 혜택 I 공개",
           engDesc: "Surprise Rewards <br>Unveiled for All Holders",
           complete: false,
+          order: 5,
         },
         {
-          desc: "민팅 후 <br>레어리티 & 랭킹 공개",
+          desc: "리빌 이후 <br> 레어리티 & 랭킹  공개",
           engDesc: "Rarity & Ranking revealed <br>after minting",
           complete: false,
+          order: 4,
         },
         {
           phase: 2,
@@ -114,55 +120,65 @@ export default {
           engDesc:
             "Perform 'Surprise!' events all over the place so that <br>more people get to know and like Bellygom.",
           complete: false,
+          order: 7,
         },
         {
           desc: "전국 방방곳곳에서 <br>‘벨리 페스티벌’ 개최",
           engDesc: "Hold ‘Belly Festivals’ <br>all over the country",
           complete: false,
+          order: 8,
         },
         {
           desc: "벨리곰과 함께 누리는 <br>벨리 패스 공개",
           engDesc: "Unveil the Belly Pass <br>you can have fun with Bellygom",
           complete: false,
-        },
-        {
-          desc: "벨리곰 X 탑티어 IP와 <br>콜라보레이션",
-          engDesc: "Bellygom X Top Tier <br>IP Collaboration",
-          complete: false,
-          emphasis: true,
-        },
-        {
-          desc: "벨리곰 친구들 & 홀더들의 <br>프라이빗 아지트 공개",
-          engDesc: "Private hideout of Bellygom <br>friends & holders revealed",
-          complete: false,
+          order: 9,
         },
         {
           desc: "한정판 홀더 굿즈 제작 및 증정",
           engDesc:
             "Production and presentation <br>of limited-edition holder's merch",
           complete: false,
+          order: 12,
+        },
+        {
+          desc: "벨리곰 친구들 & 홀더들의 <br>프라이빗 아지트 공개",
+          engDesc: "Private hideout of Bellygom <br>friends & holders revealed",
+          complete: false,
+          order: 11,
+        },
+        {
+          desc: "벨리곰 X 탑티어 IP와 <br>콜라보레이션",
+          engDesc: "Bellygom X Top Tier <br>IP Collaboration",
+          complete: false,
+          emphasis: true,
+          order: 10,
         },
         {
           desc: "홀더들만을 위한 <br>시크릿 라방 ON AIR",
           engDesc: "Secret live broadcast ON AIR <br>for holders only",
           complete: false,
+          order: 13,
         },
         {
           desc: "모든 홀더들을 위한 <br>깜짝 혜택 II 업그레이드",
           engDesc: "Surprise rewards <br>for all holders - Upgrade II",
           complete: false,
-          emphasis: true,
+          order: 14,
         },
         {
           desc: "2차 창작이 가능한 <br>벨리곰 NFT 에어드랍",
           engDesc: "Bellygom NFT 2nd airdrop",
           complete: false,
           emphasis: true,
+          order: 15,
         },
         {
-          desc: "크리에이터 스튜디오 대여 <br>&양성 프로그램 오픈",
-          engDesc: "Creator studio rental & training <br>program open",
+          desc: "벨리곰 친구들 및 랜드 NFT <br>에어드랍",
+          engDesc: "Bellygom Friends and Land <br>NFT Airdrop",
           complete: false,
+          emphasis: true,
+          order: 18,
         },
         {
           phase: 3,
@@ -171,16 +187,17 @@ export default {
           engTitle: "Open BellyWorld!",
           engDesc: "Bellygom and Friends metaverse opens.",
           complete: false,
+          order: 17,
+        },
+        {
+          desc: "크리에이터 스튜디오 대여 <br>&양성 프로그램 오픈",
+          engDesc: "Creator studio rental & training <br>program open",
+          complete: false,
+          order: 16,
         },
         {
           desc: "벨리곰과 친구들, <br>메타버스 세상으로 이주",
           engDesc: "Bellygom and friends <br>migrate to the metaverse world",
-          complete: false,
-          emphasis: true,
-        },
-        {
-          desc: "벨리곰 친구들 및 랜드 NFT <br>에어드랍",
-          engDesc: "Bellygom Friends and Land <br>NFT Airdrop",
           complete: false,
           emphasis: true,
         },
@@ -362,7 +379,27 @@ export default {
     }
     &.complete {
       background: #5c40d4;
+      position: relative;
       .complete-badge {
+        position: absolute;
+        top: 0;
+        right: 20px;
+        width: 90px;
+        height: 90px;
+        background: url("../../assets/images/roadmap/img_roadmap_done.svg")
+          center no-repeat;
+        .date {
+          font-size: 12px;
+          line-height: 13px;
+          color: #ffffff;
+          transform: rotate(-45deg);
+          display: block;
+          position: absolute;
+          top: 20px;
+          left: 20px;
+          opacity: 0.4;
+          font-family: "Sandoll Odongtong", sans-serif;
+        }
       }
     }
     &.emphasis {

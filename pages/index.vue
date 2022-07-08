@@ -257,9 +257,9 @@ export default {
   }
   canvas {
     display: block;
-    width: 100%;
+    width: 90%;
     height: auto;
-    margin: -150px auto 0;
+    margin: 0 auto;
   }
   .mobile & {
     min-height: 100vh !important;

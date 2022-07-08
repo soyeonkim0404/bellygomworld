@@ -354,6 +354,7 @@ export default {
       margin-top: 35px;
     }
     .mobile & {
+      min-height: 494px;
       flex-direction: column;
       padding: 25px 25px;
       .level {
@@ -393,6 +394,13 @@ export default {
     background: $white;
     border-radius: 100%;
     opacity: 1;
+  }
+  .mobile & {
+    padding: 0 30px 0 39px;
+    &::before {
+      top: 36px;
+      left: 27px;
+    }
   }
 }
 </style>
