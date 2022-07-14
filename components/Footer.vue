@@ -14,7 +14,7 @@
         <ul class="footer-list">
           <li>호스팅 서비스 사업자: (주)우리홈쇼핑</li>
           <li>제휴 및 문의: master@lotteimall.com</li>
-          <li><nuxt-link to="/terms">이용약관</nuxt-link></li>
+          <li><nuxt-link to="/terms" target="_blank">이용약관</nuxt-link></li>
         </ul>
 
         <p class="copyright">
