@@ -23,44 +23,27 @@
             <div class="slide" data-anchor="slide1">
               <div class="contents">
                 <img src="@/assets/m_images/main/getbelly_road_ko_1.png" />
-                <div
-                  v-once
-                  v-swiper:mySwiper="swiperOption"
-                  class="swiper-container"
-                >
-                  <div class="swiper-wrapper">
-                    <div
-                      v-for="(slide, index) in swiperImages"
-                      :key="index"
-                      class="swiper-slide"
-                    >
-                      <img :src="slide.url" alt="" />
+                <div class="text-con">
+                  <div
+                    v-once
+                    v-swiper:mySwiper="swiperOption"
+                    class="swiper-container"
+                  >
+                    <div class="swiper-wrapper">
+                      <div
+                        v-for="(slide, index) in cloudImg"
+                        :key="index"
+                        class="swiper-slide"
+                      >
+                        <template v-if="$store.getters.getLocale === 'ENG'">
+                          <img :src="slide.engUrl" alt="" />
+                        </template>
+                        <template v-else>
+                          <img :src="slide.url" alt="" />
+                        </template>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="text-con">
-                  <template v-if="$store.getters.getLocale === 'ENG'">
-                    <div class="item nm1">
-                      <img src="@/assets/m_images/main/cloud_02_en.png" />
-                    </div>
-                    <div class="item nm2">
-                      <img src="@/assets/m_images/main/cloud_01_en.png" />
-                    </div>
-                    <div class="item nm3">
-                      <img src="@/assets/m_images/main/cloud_03_en.png" />
-                    </div>
-                  </template>
-                  <template v-else>
-                    <div class="item nm1">
-                      <img src="@/assets/m_images/main/cloud_02.png" />
-                    </div>
-                    <div class="item nm2">
-                      <img src="@/assets/m_images/main/cloud_01.png" />
-                    </div>
-                    <div class="item nm3">
-                      <img src="@/assets/m_images/main/cloud_03.png" />
-                    </div>
-                  </template>
                 </div>
                 <button class="info-btn" @click="showInfo" />
               </div>
@@ -491,7 +474,7 @@ export default {
         scrollBar: false,
         navigation: false,
         scrollOverflow: true,
-        normalScrollElements: ".modal-container",
+        normalScrollElements: ".modal-container, .swiper-container",
         scrollHorizontally: true,
         scrollHorizontallyKey:
           "YmVsbHlnb20ud29ybGRfaktDYzJOeWIyeHNTRzl5YVhwdmJuUmhiR3g1NFN6",
@@ -582,7 +565,20 @@ export default {
           console.log(section, slide, position, direction);
         },
       },
-      cloudImg: [{}],
+      cloudImg: [
+        {
+          url: require("@/assets/m_images/main/cloud_01.png"),
+          engUrl: require("@/assets/m_images/main/cloud_01_en.png"),
+        },
+        {
+          url: require("@/assets/m_images/main/cloud_02.png"),
+          engUrl: require("@/assets/m_images/main/cloud_02_en.png"),
+        },
+        {
+          url: require("@/assets/m_images/main/cloud_03.png"),
+          engUrl: require("@/assets/m_images/main/cloud_03_en.png"),
+        },
+      ],
     };
   },
   created() {
