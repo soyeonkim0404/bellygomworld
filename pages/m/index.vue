@@ -27,7 +27,7 @@
                   <div
                     v-once
                     v-swiper:mySwiper="swiperOption"
-                    class="swiper-container"
+                    class="swiper-container cloud"
                   >
                     <div class="swiper-wrapper">
                       <div
@@ -43,6 +43,7 @@
                         </template>
                       </div>
                     </div>
+                    <div class="swiper-pagination" slot="pagination"></div>
                   </div>
                 </div>
                 <button class="info-btn" @click="showInfo" />
@@ -57,63 +58,87 @@
               <div class="contents">
                 <img src="@/assets/m_images/main/getbelly_road_ko_3.png" />
                 <div class="text-con">
-                  <button class="item2 nm1" @click="roadModal2">
-                    <img src="@/assets/m_images/main/img_road_balloon02.png" />
-                    <div class="txt">
-                      <span class="road">ROAD 2</span>
-                      <template v-if="$store.getters.getLocale === 'ENG'">
-                        <div class="title">
-                          Bellygom<br />
-                          Surprises!
-                        </div>
-                      </template>
-                      <template v-else>
-                        <div class="title">
-                          벨리곰이<br />
-                          놀래키다
-                        </div>
-                      </template>
-                      <span class="more">more</span>
+                  <div
+                    v-once
+                    v-swiper:mySwiper2="swiperOption2"
+                    class="swiper-container"
+                  >
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <button class="item2" @click="roadModal1">
+                          <img
+                            src="@/assets/m_images/main/img_road_balloon01.png"
+                          />
+                          <div class="txt">
+                            <span class="road">ROAD 1</span>
+                            <template v-if="$store.getters.getLocale === 'ENG'">
+                              <div class="title">
+                                Bellygom<br />
+                                Emerges!
+                              </div>
+                            </template>
+                            <template v-else>
+                              <div class="title">
+                                벨리곰이<br />
+                                나타나다
+                              </div>
+                            </template>
+                            <span class="more">more</span>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="item2" @click="roadModal2">
+                          <img
+                            src="@/assets/m_images/main/img_road_balloon02.png"
+                          />
+                          <div class="txt">
+                            <span class="road">ROAD 2</span>
+                            <template v-if="$store.getters.getLocale === 'ENG'">
+                              <div class="title">
+                                Bellygom<br />
+                                Surprises!
+                              </div>
+                            </template>
+                            <template v-else>
+                              <div class="title">
+                                벨리곰이<br />
+                                놀래키다
+                              </div>
+                            </template>
+                            <span class="more">more</span>
+                          </div>
+                        </button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="item2" @click="roadModal3">
+                          <img
+                            src="@/assets/m_images/main/img_road_balloon03.png"
+                          />
+                          <div class="txt">
+                            <span class="road">ROAD 3</span>
+                            <template v-if="$store.getters.getLocale === 'ENG'">
+                              <div class="title">
+                                BellyWorld<br />
+                                Opening
+                              </div>
+                            </template>
+                            <template v-else>
+                              <div class="title">
+                                벨리월드가<br />
+                                열리다
+                              </div>
+                            </template>
+                            <span class="more">more</span>
+                          </div>
+                        </button>
+                      </div>
                     </div>
-                  </button>
-                  <button class="item2 nm2" @click="roadModal1">
-                    <img src="@/assets/m_images/main/img_road_balloon01.png" />
-                    <div class="txt">
-                      <span class="road">ROAD 1</span>
-                      <template v-if="$store.getters.getLocale === 'ENG'">
-                        <div class="title">
-                          Bellygom<br />
-                          Emerges!
-                        </div>
-                      </template>
-                      <template v-else>
-                        <div class="title">
-                          벨리곰이<br />
-                          나타나다
-                        </div>
-                      </template>
-                      <span class="more">more</span>
-                    </div>
-                  </button>
-                  <button class="item2 nm3" @click="roadModal3">
-                    <img src="@/assets/m_images/main/img_road_balloon03.png" />
-                    <div class="txt">
-                      <span class="road">ROAD 3</span>
-                      <template v-if="$store.getters.getLocale === 'ENG'">
-                        <div class="title">
-                          BellyWorld<br />
-                          Opening
-                        </div>
-                      </template>
-                      <template v-else>
-                        <div class="title">
-                          벨리월드가<br />
-                          열리다
-                        </div>
-                      </template>
-                      <span class="more">more</span>
-                    </div>
-                  </button>
+                    <div
+                      class="swiper-pagination swiper2-page"
+                      slot="pagination"
+                    ></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -541,7 +566,22 @@ export default {
         spaceBetween: 0,
         loop: true,
         speed: 700,
-        pagination: {},
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          type: "bullets",
+        },
+      },
+      swiperOption2: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        loop: true,
+        speed: 700,
+        pagination: {
+          el: ".swiper2-page",
+          clickable: true,
+          dynamicBullets: true,
+        },
       },
       cloudImg: [
         {
@@ -648,36 +688,33 @@ export default {
       width: 100%;
       height: 100%;
       transform: translate(-50%, -50%);
-      .item {
-        opacity: 0;
-        position: absolute;
-        width: 22%;
-        height: 25%;
-        transform: translate(0, -30px);
-        transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-        -webkit-transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-        &.nm1 {
-          bottom: 59%;
-          left: 39%;
+      .swiper-container {
+        padding-top: 40%;
+        margin: 0 20px;
+        padding-bottom: 7%;
+        .swiper-slide {
+          display: flex;
+          justify-content: center;
+          img {
+            width: 100%;
+          }
         }
-        &.nm2 {
-          bottom: 43%;
-          left: 18%;
-        }
-        &.nm3 {
-          bottom: 42%;
-          right: 19%;
+        ::v-deep .swiper-pagination {
+          .swiper-pagination-bullet {
+            width: 5px;
+            height: 5px;
+            background: rgba(0, 0, 0, 0.2);
+          }
+          .swiper-pagination-bullet-active {
+            width: 10px;
+            border-radius: 2.5px;
+            background: $black;
+          }
         }
       }
+      .item {
+      }
       .item2 {
-        opacity: 0;
-        position: absolute;
-        width: 20%;
-        height: 43%;
-        transform: translate(0, -30px);
-        transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-        -webkit-transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-        color: $white;
         .txt {
           position: absolute;
           top: 50%;
@@ -688,61 +725,30 @@ export default {
             font-family: "Sandoll Odongtong", sans-serif;
             font-style: normal;
             font-weight: 400;
-            font-size: 1vw;
-            line-height: 1.2;
+            font-size: 14px;
+            line-height: 16px;
+            color: $white;
           }
           .title {
             font-family: "Sandoll Odongtong", sans-serif;
             font-style: normal;
             font-weight: 400;
             margin-top: 15px;
-            font-size: 2.5vw;
-            line-height: 1.2;
+            font-size: 26px;
+            line-height: 33px;
+            color: $white;
           }
           .more {
             display: block;
             font-family: "Sandoll Odongtong", sans-serif;
             font-style: normal;
             font-weight: 400;
-            font-size: 1vw;
-            line-height: 1.2;
+            font-size: 14px;
+            line-height: 16px;
             margin-top: 20px;
             text-decoration: underline;
             text-underline-position: under;
-          }
-        }
-        &.nm1 {
-          bottom: 47%;
-          left: 35%;
-        }
-        &.nm2 {
-          bottom: 35%;
-          left: 18%;
-        }
-        &.nm3 {
-          bottom: 33.5%;
-          right: 20.5%;
-        }
-      }
-    }
-  }
-  &.active {
-    .contents {
-      .text-con {
-        .item2 {
-          opacity: 1;
-          transform: translate(0, 30px);
-          &.nm1 {
-            transition-delay: 1.5s;
-            -webkit-transition-delay: 1.5s;
-          }
-          &.nm2 {
-            transition-delay: 1s;
-            -webkit-transition-delay: 1s;
-          }
-          &.nm3 {
-            transition-delay: 1.8s;
-            -webkit-transition-delay: 1.8s;
+            color: $white;
           }
         }
       }
@@ -822,6 +828,122 @@ export default {
     width: 100%;
     img {
       object-fit: contain;
+    }
+  }
+}
+
+footer {
+  clear: both;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 40px 20px;
+  background: #34343d;
+  box-sizing: border-box;
+  .inner {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    .footer-logo {
+      flex: 0 0 163px;
+      width: 163px;
+      height: auto;
+      img {
+        position: relative;
+      }
+    }
+    .footer-contents {
+      flex: 1 1 auto;
+      padding-left: 158px;
+      .footer-list {
+        li {
+          position: relative;
+          display: inline-flex;
+          font-size: 16px;
+          line-height: 25px;
+          color: $white;
+          box-sizing: border-box;
+          padding-right: 15px;
+          margin-right: 15px;
+          a {
+            text-decoration: underline;
+            text-underline-position: under;
+          }
+          &::after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: 3px;
+            right: 0;
+            width: 1px;
+            height: 18px;
+            background: rgba(255, 255, 255, 0.2);
+            box-sizing: border-box;
+            vertical-align: middle;
+          }
+          &:last-child {
+            &::after {
+              display: none;
+            }
+          }
+        }
+        & + .footer-list {
+          margin-top: 10px;
+        }
+      }
+      .copyright {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 35px;
+        font-size: 16px;
+        color: #9e9e9e;
+        .logo {
+          display: inline-block;
+          margin: -4px 5px 0;
+          width: 90px;
+          height: 26px;
+          img {
+            position: relative;
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+  .mobile & {
+    display: block;
+    padding: 40px 20px 65px;
+    .footer-logo {
+      flex: none;
+      width: 129px;
+    }
+    .footer-contents {
+      flex: none;
+      padding-left: 0;
+      margin-top: 30px;
+      .footer-list {
+        margin: 0;
+        li {
+          display: block;
+          margin-top: 8px;
+          font-size: 14px;
+          line-height: 22px;
+          & + li {
+            margin-left: 0;
+            padding-left: 0;
+            &::before {
+              content: none;
+            }
+          }
+        }
+      }
+      .copyright {
+        font-size: 14px;
+        line-height: 22px;
+      }
     }
   }
 }
