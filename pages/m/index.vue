@@ -565,6 +565,21 @@ export default {
           console.log(section, slide, position, direction);
         },
       },
+      swiperOption: {
+        slidesPerView: 9,
+        spaceBetween: 30,
+        loop: true,
+        speed: 700,
+        autoplay: {
+          delay: 0,
+        },
+        on: {
+          init: this.init,
+          sliderMove: this.stopAutoplay,
+          slideChangeTransitionStart: this.stopAutoplay,
+          transitionEnd: this.startAutoplay,
+        },
+      },
       cloudImg: [
         {
           url: require("@/assets/m_images/main/cloud_01.png"),
