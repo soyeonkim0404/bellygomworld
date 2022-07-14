@@ -8,7 +8,11 @@
 
     <div class="category">
       <div class="lang">
-        <button class="btn-lang" @click="openLang">
+        <button
+          class="btn-lang"
+          @click="openLang"
+          :class="{ on: this.showLang }"
+        >
           {{ $store.getters.getLocale }}
         </button>
         <transition name="fade">
@@ -304,15 +308,15 @@ export default {
           engTitle: "How do I make a Kaikas Wallet?",
           cont: "다운받기 눌러봐! 더 상세하게 설명해줄게!",
           engCont:
-            "Download the pdf file for a detailed step-by-step guide on creating a Kaikas Wallet.",
+            "Download the PDF file for a detailed step-by-step guide on creating a Kaikas Wallet.",
           pdf: 2,
         },
         {
           title: "오픈씨는 어떻게 이용하는거야?",
-          engTitle: "How do you use opensea?",
+          engTitle: "How do I use opensea?",
           cont: "다운받기 눌러봐!  더 상세하게 설명해줄게!",
           engCont:
-            "Download the pdf file for a detailed step-by-step guide on using OpenSea.",
+            "Download the PDF file for a detailed step-by-step guide on using OpenSea.",
           pdf: 3,
         },
         {
@@ -435,7 +439,8 @@ export default {
         border-radius: 25px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
         color: $black;
-        font-size: 18px;
+        font-size: 14px;
+        line-height: 1.5;
         box-sizing: border-box;
         font-weight: 700;
         &::after {
@@ -518,8 +523,7 @@ export default {
     right: 0;
     width: calc(100% - 80px);
     height: 100vh;
-    background: url("@/assets/m_images/main/ham_bg.png");
-    z-index: 999;
+    background-color: #ffcceb;
     .btn-close {
       position: absolute;
       right: 30px;
