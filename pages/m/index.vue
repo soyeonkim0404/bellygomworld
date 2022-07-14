@@ -520,7 +520,7 @@ export default {
           } else if (destination.index === 2) {
             this.charTop =
               window.innerHeight * 3 -
-              (window.innerWidth / 16) * 9 * 0.28 +
+              (window.innerWidth / 16) * 9 * 0.75 +
               "px";
           } else if (destination.index === 3) {
             // this.charTop =
@@ -677,7 +677,7 @@ export default {
     bottom: 0;
     height: auto;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate3d(-50%,0,0);
     .text-con {
       position: absolute;
       top: 50%;
