@@ -3,7 +3,8 @@
     <Header v-if="$mq === 'pc'" />
     <MobileHeader v-else />
     <Nuxt />
-    <Fixed />
+    <Fixed v-if="$mq === 'pc'"  />
+    <MobileFixed v-else/>
   </div>
 </template>
 

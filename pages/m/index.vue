@@ -36,13 +36,15 @@
                         class="swiper-slide"
                       >
                         <template v-if="$store.getters.getLocale === 'ENG'">
-                          <img :src="slide.engUrl" alt="" />
+                          <img :src="slide.engUrl" alt="" class="slide1-cloud-img"/>
                         </template>
                         <template v-else>
-                          <img :src="slide.url" alt="" />
+                          <img :src="slide.url" alt="" class="slide1-cloud-img"/>
                         </template>
                       </div>
                     </div>
+                    		<!-- pagination -->
+		                <div class="swiper-pagination swiper-pagination-1" slot="pagination"></div>
                   </div>
                 </div>
                 <button class="info-btn" @click="showInfo" />
@@ -542,10 +544,12 @@ export default {
       },
       swiperOption: {
         slidesPerView: 1,
-        spaceBetween: 0,
+        spaceBetween: 20,
         loop: true,
         speed: 700,
-        pagination: {},
+        pagination: {
+						el: '.swiper-pagination-1'
+        },
       },
       cloudImg: [
         {
@@ -649,13 +653,13 @@ export default {
       top: 50%;
       left: 50%;
       width: 100%;
-      height: 100%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -100%);
       .item {
         opacity: 0;
         position: absolute;
         width: 22%;
         height: 25%;
+        padding:2%;
         transform: translate(0, -30px);
         transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
         -webkit-transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
@@ -868,10 +872,10 @@ export default {
   position: fixed;
   top: 0px;
   left: 50%;
-  width: 87.5%;
+  width: 100%;
   z-index: 1;
-  transform: translate3d(-50%, -50%, 0);
-  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -53%, 0);
+  -webkit-transform: translate3d(-50%, -53%, 0);
   transition: top 1.5s ease-in-out;
   -webkit-transition: top 1.5s ease-in-out;
 }
@@ -930,5 +934,30 @@ export default {
 }
 .roads {
   position: absolute;bottom:0;width:100%;
+}
+
+.slide1-cloud-img {
+    padding: 10%;
+    width: 80%;
+}
+
+.swiper-pagination {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+}
+.swiper-pagination-bullet {
+    width: 8px;
+    margin: 0px 3px;
+    height: 8px;
+    background: #e1e1e1;
+    border-radius: 4px;
+}
+.swiper-pagination-bullet-active {
+  background: #000;
+  width:20px;
 }
 </style>
