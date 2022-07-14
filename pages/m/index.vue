@@ -186,7 +186,7 @@
                       <li>Hosting Service Provider: Woori Home Shopping</li>
                       <li>Affiliates & Inquiry: master@lotteimall.com</li>
                       <li>
-                        <nuxt-link to="ENG/terms" target="_blank">
+                        <nuxt-link to="/m/terms" target="_blank">
                           Terms of Service
                         </nuxt-link>
                       </li>
@@ -202,7 +202,7 @@
                       <li>호스팅 서비스 사업자: (주)우리홈쇼핑</li>
                       <li>제휴 및 문의: master@lotteimall.com</li>
                       <li>
-                        <nuxt-link to="/terms" target="_blank"
+                        <nuxt-link to="/m/terms" target="_blank"
                           >이용약관</nuxt-link
                         >
                       </li>

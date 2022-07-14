@@ -534,16 +534,7 @@ export default {
     }
   },
   methods: {
-    getCookie(name) {
-      let matches = document.cookie.match(
-        new RegExp(
-          "(?:^|; )" +
-            name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") +
-            "=([^;]*)"
-        )
-      );
-      return matches ? decodeURIComponent(matches[1]) : undefined;
-    },
+
     roadModal1() {
       this.$refs.fullpage.api.setAllowScrolling(false);
       this.showRoad1 = true;

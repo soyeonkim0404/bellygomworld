@@ -1,5 +1,6 @@
 <template>
   <div class="terms">
+    <HeaderSub />
     <div class="term-inner">
       <template v-if="$store.getters.getLocale === 'ENG'">
         <h1>Terms of Service</h1>
@@ -508,26 +509,22 @@
 </template>
 
 <script>
-import HeaderSub from "@/components/HeaderSub";
 import Footer from "@/components/Footer";
 export default {
   name: "term",
   layout: "clean",
   components: {
-    HeaderSub,
     Footer,
   },
-  mounted() {
 
-  }
 };
 </script>
 
 <style scoped lang="scss">
 .term-inner {
-  width: 1260px;
+  width: 100%;
   margin: 0 auto;
-  padding: 100px 0;
+  padding: 40px 25px;
 }
 h1 {
   font-size: 50px;
