@@ -42,9 +42,6 @@
                 <img src="@/assets/images/main/getbelly_road_ko_2.jpeg" />
               </div>
             </div>
-            <div class="road-img" :class="treeClass">
-              <img src="@/assets/images/main/img_getroad_layer.svg" alt="" />
-            </div>
             <div class="slide" data-anchor="slide3">
               <div class="contents">
                 <img src="@/assets/images/main/getbelly_road_ko_3.jpeg" />
@@ -112,13 +109,13 @@
             :style="{ top: charTop }"
           >
             <div class="fall">
-              <img src="../assets/images/char-fall.webp" type="image/webp"  />
+              <img src="../assets/images/char-fall.webp" type="image/webp" />
             </div>
             <div class="stand">
               <img src="@/assets/images/char-stand.png" />
             </div>
-            <div class="walk" >
-              <img src="../assets/images/char-walk.webp" type="image/webp"  />
+            <div class="walk">
+              <img src="../assets/images/char-walk.webp" type="image/webp" />
             </div>
             <div class="end">
               <img src="@/assets/images/char-end.png" />
@@ -127,6 +124,10 @@
         </full-page>
       </client-only>
     </div>
+
+    <a href="#getBelly" class="top-btn" :class="charClass">
+      <img src="@/assets/images/commons/top_btn.svg" />
+    </a>
 
     <!-- MODAL-->
     <modal v-if="showRoad1" @close="closeRoad1" class="road-modal">
@@ -238,7 +239,6 @@ export default {
       showRoad3: false,
       scrollToTop: true,
       cloudMoved: false,
-      treeClass: "left",
       charClass: "s0",
       footClass: "",
       charTop: "50%",
@@ -249,7 +249,7 @@ export default {
         scrollBar: false,
         navigation: false,
         scrollOverflow: true,
-        normalScrollElements: '.modal-container',
+        normalScrollElements: ".modal-container",
         scrollHorizontally: true,
         scrollHorizontallyKey:
           "YmVsbHlnb20ud29ybGRfaktDYzJOeWIyeHNTRzl5YVhwdmJuUmhiR3g1NFN6",
@@ -306,13 +306,6 @@ export default {
           }
         },
         onSlideLeave: (section, origin, destination) => {
-          if (destination.anchor === "slide1") {
-            this.treeClass = "slide1";
-          } else if (destination.anchor === "slide2") {
-            this.treeClass = "slide2";
-          } else if (destination.anchor === "slide3") {
-            this.treeClass = "slide3";
-          }
           if (destination.anchor === "slide2") {
             this.charClass = "slide2";
           }
@@ -327,64 +320,43 @@ export default {
       },
     };
   },
-  mounted() {
+  created() {
+    this.$nuxt.$on("scrollLock", (data) => {
+      this.$refs.fullpage.api.setAllowScrolling(data);
+    });
   },
   methods: {
     roadModal1() {
       this.$refs.fullpage.api.setAllowScrolling(false);
       this.showRoad1 = true;
-      if (this.showRoad1) {
-        document.body.classList.add("modalOn");
-      }
     },
     roadModal2() {
       this.$refs.fullpage.api.setAllowScrolling(false);
       this.showRoad2 = true;
-      if (this.showRoad2) {
-        document.body.classList.add("modalOn");
-      }
     },
     roadModal3() {
       this.$refs.fullpage.api.setAllowScrolling(false);
       this.showRoad3 = true;
-      if (this.showRoad3) {
-        document.body.classList.add("modalOn");
-      }
     },
     showInfo() {
       this.$refs.fullpage.api.setAllowScrolling(false);
       this.showInf = true;
-      if (this.showInf) {
-        document.body.classList.add("modalOn");
-      }
     },
     closeRoad1() {
       this.$refs.fullpage.api.setAllowScrolling(true);
       this.showRoad1 = false;
-      if (!this.showRoad1) {
-        document.body.classList.remove("modalOn");
-      }
     },
     closeRoad2() {
       this.$refs.fullpage.api.setAllowScrolling(true);
       this.showRoad2 = false;
-      if (!this.showRoad2) {
-        document.body.classList.remove("modalOn");
-      }
     },
     closeRoad3() {
       this.$refs.fullpage.api.setAllowScrolling(true);
       this.showRoad3 = false;
-      if (!this.showRoad3) {
-        document.body.classList.remove("modalOn");
-      }
     },
     closeInf() {
       this.$refs.fullpage.api.setAllowScrolling(true);
       this.showInf = false;
-      if (!this.showInf) {
-        document.body.classList.remove("modalOn");
-      }
     },
   },
 };

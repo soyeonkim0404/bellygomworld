@@ -171,8 +171,8 @@ body {
 }
 .story-modal {
   .modal-container {
-    width: 62.5vw !important;
-    height: 63.4vh !important;
+    width: 1000px !important;
+    height: 575px !important;
     border-radius: 40px;
     background-image: url("assets/images/main/img_storybook_book.png");
     background-size: contain;
@@ -182,76 +182,110 @@ body {
     box-shadow: none !important;
     position: relative;
     .modal-inner {
-      .box {
-        position: absolute;
-        width: 100%;
-        top: 50%;
-        left: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transform: translate(-50%, -50%);
-        .left-img {
-          width: 33.5%;
-          height: 100%;
-        }
-        .txt {
-          max-width: 45%;
-          margin-left: 50px;
-          padding-right: 45px;
-          h3 {
-            font-family: "Sandoll Odongtong", sans-serif;
-            font-weight: 400;
-            font-size: 1.5vw;
-            line-height: 1.2;
-          }
-          p {
-            font-family: "PoorStory Regular", sans-serif;
-            font-weight: 400;
-            margin-top: 20px;
-            font-size: 1.2vw;
-            line-height: 1.5;
-          }
-        }
-      }
-      .indicator {
-        position: absolute;
-        top: 50%;
-        left: 3%;
-        width: 3%;
-        height: 80%;
-        transform: translateY(-50%);
-        .indi {
+      .story {
+        .box {
           position: absolute;
-          top: 0;
-          left: 0;
+          width: 100%;
+          top: 50%;
+          left: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          .left-img {
+            width: 400px;
+            height: 320px;
+          }
+          .txt {
+            max-width: 45%;
+            margin-left: 50px;
+            padding-right: 45px;
+            padding-top: 20px;
+            h3 {
+              font-family: "Sandoll Odongtong", sans-serif;
+              font-weight: 400;
+              font-size: 30px;
+              line-height: 45px;
+            }
+            p {
+              font-family: "PoorStory Regular", sans-serif;
+              font-weight: 400;
+              margin-top: 20px;
+              font-size: 24px;
+              line-height: 36px;
+            }
+          }
+        }
+        .indicator {
+          position: absolute;
+          top: 50%;
+          left: 5px;
           width: 100%;
           height: 100%;
-          background: url("@/assets/images/main/img_storybook_bookmark_off.png")
-            center no-repeat;
-          z-index: 4;
-          &:nth-child(2) {
-            top: 30%;
-            left: 0;
-            z-index: 3;
-          }
-          &:nth-child(3) {
-            top: 60%;
-            left: 0;
-            z-index: 2;
-          }
-          &:nth-child(4) {
-            top: 90%;
-            left: 0;
-            z-index: 1;
-          }
-          &.on {
-            background: url("@/assets/images/main/img_storybook_bookmark_on.png")
+          transform: translateY(-50%);
+          .indi {
+            position: absolute;
+            top: 70px;
+            left: 6px;
+            width: 25px;
+            height: 115px;
+            background: url("@/assets/images/main/img_storybook_bookmark_off.png")
               center no-repeat;
+            background-size: contain;
+            z-index: 4;
+            &:nth-child(2) {
+              top: 150px;
+              left: 6px;
+              z-index: 3;
+            }
+            &:nth-child(3) {
+              top: 230px;
+              left: 6px;
+              z-index: 2;
+            }
+            &:nth-child(4) {
+              top: 310px;
+              left: 6px;
+              z-index: 1;
+            }
+            &.on {
+              background: url("@/assets/images/main/img_storybook_bookmark_on.png")
+                center no-repeat;
+              background-size: contain;
+            }
+          }
+        }
+        .arrow {
+          width: 100%;
+          position: absolute;
+          top: 45%;
+          transform: translateY(-50%);
+          .prev {
+            position: absolute;
+            left: -100px;
+            width: 70px;
+            height: 70px;
+            background: url("@/assets/images/main/img_storybook_prev_off.png");
+            &.on {
+              background: url("@/assets/images/main/img_storybook_prev_on.png");
+            }
+          }
+          .next {
+            position: absolute;
+            right: -100px;
+            width: 70px;
+            height: 70px;
+            background: url("@/assets/images/main/img_storybook_next_off.png");
+            &.on {
+              background: url("@/assets/images/main/img_storybook_next_on.png");
+            }
           }
         }
       }
       .modal-default-button {
+        top: 28px;
+        right: 10px;
+        z-index: 99;
       }
     }
   }
@@ -371,6 +405,10 @@ body {
     margin: 40px auto 0 !important;
     background: url("assets/images/main/info_modal_bg.png") right no-repeat;
     padding: 40px 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     .modal-inner {
       position: relative;
       height: 60vh;
@@ -474,5 +512,19 @@ body {
         }
       }
     }
+    .modal-default-button {
+      position: fixed;
+      top: 60px;
+      right: 60px;
+    }
   }
+}
+
+.top-btn {
+  position: fixed;
+  bottom: 100px;
+  right: 50px;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
 }
