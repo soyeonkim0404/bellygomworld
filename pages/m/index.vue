@@ -582,11 +582,7 @@ export default {
           console.log(section, slide, position, direction);
         },
       },
-      cloudImg:[
-        {
-          url:require("@/assets/");
-        }
-      ]
+      cloudImg: [{}],
     };
   },
   created() {
