@@ -13,7 +13,7 @@
       <div slot="header"></div>
       <div slot="body">
         <div class="story">
-          <div id="st_1" class="box">
+          <div  id="st_1" class="box"  :class="{'on':currIndi === 1}">
             <img
               src="@/assets/images/main/img_storybook_bellygom01.png"
               class="left-img"
@@ -30,7 +30,7 @@
               </p>
             </div>
           </div>
-          <div id="st_2" class="box">
+          <div  id="st_2" class="box"  :class="{'on':currIndi === 2}">
             <img
               src="@/assets/images/main/img_storybook_bellygom02.png"
               class="left-img"
@@ -47,7 +47,7 @@
               </p>
             </div>
           </div>
-          <div id="st_3" class="box">
+          <div  id="st_3" class="box"  :class="{'on':currIndi === 3}">
             <img
               src="@/assets/images/main/img_storybook_bellygom03.png"
               class="left-img"
@@ -66,7 +66,7 @@
               </p>
             </div>
           </div>
-          <div id="st_4" class="box">
+          <div  id="st_4" class="box"  :class="{'on':currIndi === 4}">
             <img
               src="@/assets/images/main/img_storybook_bellygom04.png"
               class="left-img"
@@ -80,14 +80,26 @@
             </div>
           </div>
           <div class="indicator">
-            <a href="#st_1" class="indi on"></a>
-            <a href="#st_2" class="indi"></a>
-            <a href="#st_3" class="indi"></a>
-            <a href="#st_4" class="indi"></a>
+            <div class="indi" @click="currIndi = 1">
+              <img v-if="currIndi === 1" src="@/assets/images/main/img_storybook_bookmark_on.png" >
+              <img v-else src="@/assets/images/main/img_storybook_bookmark_off.png" >
+            </div>
+            <div class="indi" @click="currIndi = 2">
+              <img v-if="currIndi === 2" src="@/assets/images/main/img_storybook_bookmark_on.png" >
+              <img v-else src="@/assets/images/main/img_storybook_bookmark_off.png" >
+            </div>
+            <div class="indi" @click="currIndi = 3">
+              <img v-if="currIndi === 3" src="@/assets/images/main/img_storybook_bookmark_on.png" >
+              <img v-else src="@/assets/images/main/img_storybook_bookmark_off.png" >
+            </div>
+            <div class="indi" @click="currIndi = 4">
+              <img v-if="currIndi === 4" src="@/assets/images/main/img_storybook_bookmark_on.png" >
+              <img v-else src="@/assets/images/main/img_storybook_bookmark_off.png" >
+            </div>
           </div>
           <div class="arrow">
-            <span class="prev"></span>
-            <span class="next on"></span>
+            <span class="prev" :class="{'on':currIndi > 1}" @click="storySlidePrev()"></span>
+            <span class="next" :class="{'on':currIndi < 4}" @click="storySlideNext()"></span>
           </div>
         </div>
       </div>
@@ -102,6 +114,7 @@ export default {
   data() {
     return {
       showStoryModal: false,
+      currIndi : 1
     };
   },
   methods: {
@@ -119,6 +132,7 @@ export default {
       this.$nuxt.$emit("scrollLock", data);
     },
     storyModal() {
+      this.currIndi = 1;
       this.scrollLock(false);
       this.showStoryModal = true;
     },
@@ -126,6 +140,14 @@ export default {
       this.scrollLock(true);
       this.showStoryModal = false;
     },
+    storySlideNext(){
+      this.currIndi++;
+      if(this.currIndi>4) this.currIndi=4;
+    },
+    storySlidePrev(){
+      this.currIndi--;
+      if(this.currIndi<1) this.currIndi=1;
+    }
   },
 };
 </script>

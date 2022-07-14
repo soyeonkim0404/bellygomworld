@@ -256,7 +256,12 @@ export default {
         scrollHorizontallyKey:
           "YmVsbHlnb20ud29ybGRfaktDYzJOeWIyeHNTRzl5YVhwdmJuUmhiR3g1NFN6",
         anchors: ["getBelly", "falling", "bellyRoad", "bellyShip"],
+        afterResize: (width, height) => {
+          // alert("The sections have finished resizing");
+          this.$refs.fullpage.api.rebuid();
+        },
         afterLoad: (origin, destination, direction) => {
+          console.log('afterLoad');
           if (destination.index === 0) {
             this.charTop = "0px";
             this.cloudMoved = false;
@@ -269,7 +274,7 @@ export default {
           }
         },
         onLeave: (origin, destination, direction) => {
-          console.log(destination);
+          console.log('onLeave');
           if (destination.index === 0) {
             this.charClass = "s0";
           } else if (destination.index === 1) {
@@ -313,12 +318,24 @@ export default {
           }
         },
         afterSlideLoad: (direction, origin, destination) => {
+          console.log('afterSlideLoad')
           if (destination.anchor === "slide1") {
             this.charClass = "slide1";
+
+          } else if (destination.anchor === "slide2") {
+            this.charClass = "slide2";
           } else if (destination.anchor === "slide3") {
             this.charClass = "slide3";
           }
         },
+        afterRender: function(){
+          console.log('afterRender')
+        },
+        afterReBuild: function(){},
+        afterResponsive: function(isResponsive){},
+        onScrollOverflow: function(section, slide, position, direction){
+          console.log(section, slide, position, direction)
+        }
       },
     };
   },
