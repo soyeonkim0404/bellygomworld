@@ -51,7 +51,7 @@
           </button>
           <ul class="anchor-nav">
             <li>
-              <button id="show-modal" @click="storyModal">BELLY FAQ</button>
+              <button id="show-modal" @click="storyModal">STORY BOOK</button>
             </li>
             <li data-menuanchor="firstSection">
               <a href="#bellyRoad/slide1" title="GET BELLY">GET BELLY</a>
@@ -75,7 +75,7 @@
 
     <!--STORY MODAL-->
     <modal v-if="showStoryModal" @close="closeStoryModal" class="story-modal">
-      <div slot="header"></div>
+      <div slot="header">STORY<br />BOOK</div>
       <div slot="body">
         <div class="story">
           <div id="st_1" class="box" :class="{ on: currIndi === 1 }">
@@ -198,60 +198,6 @@
                 어떤 서프라이즈를 가져다 줄까?
               </h3>
             </div>
-          </div>
-          <div class="indicator">
-            <div class="indi" @click="currIndi = 1">
-              <img
-                v-if="currIndi === 1"
-                src="@/assets/images/main/img_storybook_bookmark_on.png"
-              />
-              <img
-                v-else
-                src="@/assets/images/main/img_storybook_bookmark_off.png"
-              />
-            </div>
-            <div class="indi" @click="currIndi = 2">
-              <img
-                v-if="currIndi === 2"
-                src="@/assets/images/main/img_storybook_bookmark_on.png"
-              />
-              <img
-                v-else
-                src="@/assets/images/main/img_storybook_bookmark_off.png"
-              />
-            </div>
-            <div class="indi" @click="currIndi = 3">
-              <img
-                v-if="currIndi === 3"
-                src="@/assets/images/main/img_storybook_bookmark_on.png"
-              />
-              <img
-                v-else
-                src="@/assets/images/main/img_storybook_bookmark_off.png"
-              />
-            </div>
-            <div class="indi" @click="currIndi = 4">
-              <img
-                v-if="currIndi === 4"
-                src="@/assets/images/main/img_storybook_bookmark_on.png"
-              />
-              <img
-                v-else
-                src="@/assets/images/main/img_storybook_bookmark_off.png"
-              />
-            </div>
-          </div>
-          <div class="arrow">
-            <span
-              class="prev"
-              :class="{ on: currIndi > 1 }"
-              @click="storySlidePrev()"
-            ></span>
-            <span
-              class="next"
-              :class="{ on: currIndi < 4 }"
-              @click="storySlideNext()"
-            ></span>
           </div>
         </div>
       </div>

@@ -196,53 +196,43 @@ body {
 
   .story-modal {
     .modal-container {
-      width: 1000px !important;
-      height: 575px !important;
-      border-radius: 40px;
-      background-image: url("assets/images/main/img_storybook_book.png");
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-color: transparent !important;
-      box-shadow: none !important;
-      position: relative;
-
+      width: 100% !important;
+      height: 100%;
+      background: #ffd5ec !important;
+      overflow-y: scroll;
+      position: absolute;
+      top: 0;
+      left: 0;
       .modal-inner {
+        .modal-header {
+          div {
+            padding-top: 118px;
+            text-align: center;
+            font-family: "Sandoll Odongtong", sans-serif;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 52px;
+            color: $white;
+          }
+        }
+        .modal-body {
+          padding: 0 20px;
+        }
         .story {
+          margin-top: 50px;
+          background: #fff7eb;
+          border-radius: 30px;
+          padding: 85px 20px;
           .box {
-            position: absolute;
-            width: 100%;
-            top: 50%;
-            left: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transform: translate(-50%, -50%);
-
             .left-img {
-              opacity: 0;
-              width: 400px;
-              height: 320px;
-              transform: translateX(-50px);
-              transition: all 0.5s ease-in-out;
             }
-
             .txt {
-              transition: all 0.5s ease-in-out;
-              opacity: 0;
-              transform: translateX(50px);
-              max-width: 45%;
-              margin-left: 50px;
-              padding-right: 45px;
-              padding-top: 20px;
-
               h3 {
                 font-family: "Sandoll Odongtong", sans-serif;
                 font-weight: 400;
                 font-size: 30px;
                 line-height: 45px;
               }
-
               p {
                 font-family: "PoorStory Regular", sans-serif;
                 font-weight: 400;
@@ -370,8 +360,8 @@ body {
 
   .road-modal {
     .modal-container {
-      width: 640px !important;
-      border-radius: 40px;
+      width: 100% !important;
+      height: 100% !important;
       position: relative;
 
       .modal-inner {
@@ -493,9 +483,8 @@ body {
 
   .info-modal {
     .modal-container {
-      width: 820px !important;
-      border-radius: 40px;
-      margin: 40px auto 0 !important;
+      width: 100% !important;
+      height: 100% !important;
       background: url("assets/images/main/info_modal_bg.png") right no-repeat;
       padding: 40px 0;
       position: absolute;

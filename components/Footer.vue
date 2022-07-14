@@ -18,7 +18,7 @@
             <li>Hosting Service Provider: Woori Home Shopping</li>
             <li>Affiliates & Inquiry: master@lotteimall.com</li>
             <li>
-              <nuxt-link to="ENG/terms" target="_blank">
+              <nuxt-link to="/terms" target="_blank">
                 Terms of Service
               </nuxt-link>
             </li>

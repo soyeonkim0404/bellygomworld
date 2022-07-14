@@ -43,10 +43,26 @@
           </button>
           <transition name="fade">
             <div class="lang-list" v-if="this.showLang">
-              <a @click="openLang();$store.commit('setKOR');" :class="{'nuxt-link-active':$store.getters.getLocale === 'KOR'}">
+              <a
+                @click="
+                  openLang();
+                  $store.commit('setKOR');
+                "
+                :class="{
+                  'nuxt-link-active': $store.getters.getLocale === 'KOR',
+                }"
+              >
                 KOR
               </a>
-               <a @click="openLang();$store.commit('setENG');" :class="{'nuxt-link-active':$store.getters.getLocale === 'ENG'}">
+              <a
+                @click="
+                  openLang();
+                  $store.commit('setENG');
+                "
+                :class="{
+                  'nuxt-link-active': $store.getters.getLocale === 'ENG',
+                }"
+              >
                 ENG
               </a>
             </div>
@@ -76,14 +92,12 @@
                 <template #cont="{ item }">
                   <template v-if="$store.getters.getLocale === 'ENG'">
                     {{ item.engCont }}
-                    <span class="pdf" v-if="item.engPdfUrl">
-                      <a href="" download=""></a>
-                    </span>
+                    <button @click="downloadPdf(2, 'ENG')"></button>
                   </template>
                   <template v-else>
                     {{ item.cont }}
                     <span class="pdf" v-if="item.pdfUrl">
-                      <a href="" download=""></a>
+                      <button @click="downloadPdf(2, 'KOR')"></button>
                     </span>
                   </template>
                 </template>
