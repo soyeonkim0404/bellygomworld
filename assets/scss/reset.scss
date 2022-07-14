@@ -126,6 +126,7 @@ body {
   letter-spacing: -0.5px;
   font-size: 16px;
   color: #000;
+  text-rendering: geometricPrecision !important;
 }
 h1,
 h2,
@@ -345,6 +346,7 @@ video {
   border: 0;
   font: inherit;
   vertical-align: baseline;
+  text-rendering: geometricPrecision !important;
 }
 
 /* HTML5 display-role reset for older browsers */

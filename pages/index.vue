@@ -225,6 +225,7 @@ export default {
       cloudMoved: false,
       treeClass: "left",
       charClass: "s0",
+      footClass: "",
       charTop: "50%",
       walkSprite: "0% 0%",
       walkSpriteCnt: 0,
@@ -236,7 +237,7 @@ export default {
         navigation: false,
         scrollOverflow: true,
         scrollHorizontally: true,
-        scrollHorizontallyKey: ["domain1_key"],
+        scrollHorizontallyKey: "YmVsbHlnb20ud29ybGRfaktDYzJOeWIyeHNTRzl5YVhwdmJuUmhiR3g1NFN6",
         anchors: ["getBelly", "falling", "bellyRoad", "bellyShip"],
         afterLoad: (origin, destination, direction) => {
           if (destination.index === 0) {
@@ -279,6 +280,14 @@ export default {
               window.innerHeight * 4 -
               (window.innerWidth / 16) * 9 * 0.7 +
               "px";
+          }
+
+          if (destination.index === 4) {
+            document.getElementById("fixed").style.display = "none";
+          } else {
+            setTimeout(() => {
+              document.getElementById("fixed").style.display = "block";
+            }, 1000);
           }
         },
         onSlideLeave: (section, origin, destination) => {
@@ -423,8 +432,6 @@ export default {
         transform: translate(0, -30px);
         transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
         color: $white;
-        font-family: "Sandoll Odongtong", sans-serif;
-        font-weight: 400;
         .txt {
           position: absolute;
           top: 50%;
@@ -432,17 +439,26 @@ export default {
           width: 100%;
           transform: translate(-50%, -50%);
           .road {
-            font-size: 18px;
-            line-height: 21px;
+            font-family: "Sandoll Odongtong", sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1vw;
+            line-height: 1.2;
           }
           .title {
+            font-family: "Sandoll Odongtong", sans-serif;
+            font-style: normal;
+            font-weight: 400;
             margin-top: 15px;
-            font-size: 3vw;
+            font-size: 2.5vw;
             line-height: 1.2;
           }
           .more {
-            font-size: 18px;
-            line-height: 21px;
+            font-family: "Sandoll Odongtong", sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1vw;
+            line-height: 1.2;
             margin-top: 20px;
             text-decoration: underline;
             text-underline-position: under;
@@ -525,6 +541,10 @@ export default {
   height: 16%;
   bottom: 10%;
   left: 30%;
+}
+.fp-auto-height {
+  &.active {
+  }
 }
 </style>
 <style>

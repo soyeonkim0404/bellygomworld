@@ -136,14 +136,17 @@ body {
 .faq-modal {
   .modal-container {
     width: 100% !important;
+    height: 100% !important;
     background: url("../images/main/faq_bg.jpeg") center no-repeat;
     background-size: cover;
     margin: 0 auto !important;
     max-height: 100vh !important;
+    overflow-y: auto;
     .modal-inner {
       max-width: 1260px;
       margin: 0 auto;
       padding: 180px 30px;
+      height: auto !important;
       .modal-header {
         .title {
           font-family: "Sandoll Odongtong", sans-serif;
@@ -160,16 +163,8 @@ body {
     }
     .modal-default-button {
       position: fixed;
-      top: 40px;
-      right: 40px;
-      &::before {
-        content: "";
-        display: block;
-        width: 50px;
-        height: 50px;
-        background: url("assets/images/commons/ic_faq_close.svg") no-repeat
-          center center / 50px;
-      }
+      top: 80px;
+      right: 80px;
     }
   }
 }
@@ -181,17 +176,6 @@ body {
     .modal-inner {
       position: relative;
       .modal-default-button {
-        position: absolute;
-        top: 40px;
-        right: 40px;
-        &::before {
-          content: "";
-          display: block;
-          width: 50px;
-          height: 50px;
-          background: url("assets/images/commons/ic_faq_close.svg") no-repeat
-            center center / 50px;
-        }
       }
     }
   }
@@ -203,6 +187,7 @@ body {
     border-radius: 40px;
     .modal-inner {
       position: relative;
+      height: auto !important;
       padding: 60px;
       .modal-header {
         font-family: "Sandoll Odongtong", sans-serif;
@@ -269,16 +254,8 @@ body {
       }
       .modal-default-button {
         position: absolute;
-        top: 40px;
-        right: 40px;
-        &::before {
-          content: "";
-          display: block;
-          width: 50px;
-          height: 50px;
-          background: url("assets/images/commons/ic_faq_close.svg") no-repeat
-            center center / 50px;
-        }
+        top: 60px;
+        right: 60px;
       }
     }
   }
@@ -288,8 +265,14 @@ body {
   .modal-container {
     width: 820px !important;
     border-radius: 40px;
+    margin: 40px auto 0 !important;
+    background: url("assets/images/main/info_modal_bg.png") right no-repeat;
+    padding: 40px 0;
     .modal-inner {
       position: relative;
+      height: 60vh;
+      overflow-y: auto;
+      padding: 20px 60px;
       .modal-header {
         font-family: "Sandoll Odongtong", sans-serif;
         font-weight: 400;
