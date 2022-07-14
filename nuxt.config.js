@@ -18,11 +18,11 @@ export default {
         type: "text/javascript",
       },
       {
-        src: "fullpage.scrollHorizontally.min.js",
+        src: "/fullpage.scrollHorizontally.min.js",
         type: "text/javascript",
       },
       {
-        src: "scrolloverflow.js",
+        src: "/scrolloverflow.js",
         type: "text/javascript",
       },
     ],
