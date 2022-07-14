@@ -5,45 +5,45 @@
         <full-page ref="fullpage" :options="options" id="fullpage">
           <section class="section">
             <video id="mainBelly" loop muted data-autoplay playsinline>
-              <source src="@/assets/media/belly.mp4" type="video/mp4" />
+              <source src="@/assets/media/m_belly.mp4" type="video/mp4" />
             </video>
           </section>
           <div class="cloud-wrapper ignore" :class="{ moved: cloudMoved }">
-            <img src="@/assets/images/main/img_keyvisual_01.png" />
+            <img src="@/assets/m_images/main/img_keyvisual_01.png" />
           </div>
           <section class="section">
             <div class="second">
-              <img src="@/assets/images/main/img_keyvisual_02.png" />
+              <img src="@/assets/m_images/main/img_keyvisual_02.png" />
               <div class="sec-cloud">
-                <img src="@/assets/images/main/img_keyvisual_cloud.png" />
+                <img src="@/assets/m_images/main/img_keyvisual_cloud.png" />
               </div>
             </div>
           </section>
           <section class="section">
             <div class="slide" data-anchor="slide1">
               <div class="contents">
-                <img src="@/assets/images/main/getbelly_road_ko_1.jpeg" />
+                <img src="@/assets/m_images/main/getbelly_road_ko_1.jpeg" />
                 <div class="text-con">
                   <template v-if="$store.getters.getLocale === 'ENG'">
                     <div class="item nm1">
-                      <img src="@/assets/images/main/cloud_02_en.png" />
+                      <img src="@/assets/m_images/main/cloud_02_en.png" />
                     </div>
                     <div class="item nm2">
-                      <img src="@/assets/images/main/cloud_01_en.png" />
+                      <img src="@/assets/m_images/main/cloud_01_en.png" />
                     </div>
                     <div class="item nm3">
-                      <img src="@/assets/images/main/cloud_03_en.png" />
+                      <img src="@/assets/m_images/main/cloud_03_en.png" />
                     </div>
                   </template>
                   <template v-else>
                     <div class="item nm1">
-                      <img src="@/assets/images/main/cloud_02.png" />
+                      <img src="@/assets/m_images/main/cloud_02.png" />
                     </div>
                     <div class="item nm2">
-                      <img src="@/assets/images/main/cloud_01.png" />
+                      <img src="@/assets/m_images/main/cloud_01.png" />
                     </div>
                     <div class="item nm3">
-                      <img src="@/assets/images/main/cloud_03.png" />
+                      <img src="@/assets/m_images/main/cloud_03.png" />
                     </div>
                   </template>
                 </div>
@@ -52,15 +52,15 @@
             </div>
             <div class="slide" data-anchor="slide2">
               <div class="contents">
-                <img src="@/assets/images/main/getbelly_road_ko_2.jpeg" />
+                <img src="@/assets/m_images/main/getbelly_road_ko_2.jpeg" />
               </div>
             </div>
             <div class="slide" data-anchor="slide3">
               <div class="contents">
-                <img src="@/assets/images/main/getbelly_road_ko_3.jpeg" />
+                <img src="@/assets/m_images/main/getbelly_road_ko_3.jpeg" />
                 <div class="text-con">
                   <button class="item2 nm1" @click="roadModal2">
-                    <img src="@/assets/images/main/img_road_balloon02.png" />
+                    <img src="@/assets/m_images/main/img_road_balloon02.png" />
                     <div class="txt">
                       <span class="road">ROAD 2</span>
                       <template v-if="$store.getters.getLocale === 'ENG'">
@@ -79,7 +79,7 @@
                     </div>
                   </button>
                   <button class="item2 nm2" @click="roadModal1">
-                    <img src="@/assets/images/main/img_road_balloon01.png" />
+                    <img src="@/assets/m_images/main/img_road_balloon01.png" />
                     <div class="txt">
                       <span class="road">ROAD 1</span>
                       <template v-if="$store.getters.getLocale === 'ENG'">
@@ -98,7 +98,7 @@
                     </div>
                   </button>
                   <button class="item2 nm3" @click="roadModal3">
-                    <img src="@/assets/images/main/img_road_balloon03.png" />
+                    <img src="@/assets/m_images/main/img_road_balloon03.png" />
                     <div class="txt">
                       <span class="road">ROAD 3</span>
                       <template v-if="$store.getters.getLocale === 'ENG'">
@@ -123,41 +123,41 @@
           <section class="section">
             <template v-if="$store.getters.getLocale === 'ENG'">
               <div class="ending">
-                <img src="@/assets/images/main/img_bellyship_bg.jpeg" />
+                <img src="@/assets/m_images/main/img_bellyship_bg.jpeg" />
                 <div class="top">
                   <img
-                    src="@/assets/images/main/img_bellyship_top_en.png"
+                    src="@/assets/m_images/main/img_bellyship_top_en.png"
                     class="top"
                   />
                 </div>
                 <div class="bottom">
                   <img
-                    src="@/assets/images/main/img_bellyship_bottom_en.png"
+                    src="@/assets/m_images/main/img_bellyship_bottom_en.png"
                     class="bottom"
                   />
                 </div>
                 <div class="txt eng">
-                  <img src="@/assets/images/main/ship_bottom_en.png" />
+                  <img src="@/assets/m_images/main/ship_bottom_en.png" />
                 </div>
               </div>
             </template>
             <template v-else>
               <div class="ending">
-                <img src="@/assets/images/main/img_bellyship_bg.jpeg" />
+                <img src="@/assets/m_images/main/img_bellyship_bg.jpeg" />
                 <div class="top">
                   <img
-                    src="@/assets/images/main/img_bellyship_top.png"
+                    src="@/assets/m_images/main/img_bellyship_top.png"
                     class="top"
                   />
                 </div>
                 <div class="bottom">
                   <img
-                    src="@/assets/images/main/img_bellyship_bottom.png"
+                    src="@/assets/m_images/main/img_bellyship_bottom.png"
                     class="bottom"
                   />
                 </div>
                 <div class="txt">
-                  <img src="@/assets/images/main/ship_bottom.png" />
+                  <img src="@/assets/m_images/main/ship_bottom.png" />
                 </div>
               </div>
             </template>
@@ -172,16 +172,16 @@
             ref="mainChar"
           >
             <div class="fall">
-              <img src="@/assets/images/char-fall.webp" type="image/webp" />
+              <img src="@/assets/m_images/char-fall.webp" type="image/webp" />
             </div>
             <div class="stand">
-              <img src="@/assets/images/char-stand.png" />
+              <img src="@/assets/m_images/char-stand.png" />
             </div>
             <div class="walk">
-              <img src="@/assets/images/char-walk.webp" type="image/webp" />
+              <img src="@/assets/m_images/char-walk.webp" type="image/webp" />
             </div>
             <div class="end">
-              <img src="@/assets/images/char-end.png" />
+              <img src="@/assets/m_images/char-end.png" />
             </div>
           </div>
         </full-page>
@@ -902,7 +902,7 @@ export default {
   width: auto;
   height: 100%;
   background-size: auto 100%;
-  /*background-image: url("@/assets/images/walk-sprites-h.png");*/
+  /*background-image: url("@/assets/m_images/walk-sprites-h.png");*/
 }
 
 .fp-controlArrow.fp-prev,
