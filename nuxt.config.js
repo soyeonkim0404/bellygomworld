@@ -31,6 +31,7 @@ export default {
   css: ["~/assets/scss/common.scss","~/assets/scss/common_m.scss"],
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~plugins/mixins.js',
     {
       src: "~plugins/swiper.js",
       ssr: false,

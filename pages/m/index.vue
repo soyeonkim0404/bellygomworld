@@ -200,7 +200,7 @@
                       <li>Hosting Service Provider: Woori Home Shopping</li>
                       <li>Affiliates & Inquiry: master@lotteimall.com</li>
                       <li>
-                        <nuxt-link to="/terms" target="_blank">
+                        <nuxt-link to="/m/terms" target="_blank">
                           Terms of Service
                         </nuxt-link>
                       </li>
@@ -216,7 +216,7 @@
                       <li>호스팅 서비스 사업자: (주)우리홈쇼핑</li>
                       <li>제휴 및 문의: master@lotteimall.com</li>
                       <li>
-                        <nuxt-link to="/terms" target="_blank"
+                        <nuxt-link to="/m/terms" target="_blank"
                           >이용약관</nuxt-link
                         >
                       </li>
@@ -501,7 +501,7 @@ export default {
         scrollHorizontally: true,
         scrollHorizontallyKey:
           "YmVsbHlnb20ud29ybGRfaktDYzJOeWIyeHNTRzl5YVhwdmJuUmhiR3g1NFN6",
-        anchors: ["getBelly", "falling", "bellyRoad", "bellyShip"],
+        anchors: ["getBelly", "falling", "bellyRoad", "bellyShip", "footer"],
         afterResize: (width, height) => {
           // alert("The sections have finished resizing");
           this.$refs.fullpage.api.rebuid();

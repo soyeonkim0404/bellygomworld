@@ -426,7 +426,7 @@ export default {
         scrollHorizontally: true,
         scrollHorizontallyKey:
           "YmVsbHlnb20ud29ybGRfaktDYzJOeWIyeHNTRzl5YVhwdmJuUmhiR3g1NFN6",
-        anchors: ["getBelly", "falling", "bellyRoad", "bellyShip"],
+        anchors: ["getBelly", "falling", "bellyRoad", "bellyShip", "footer"],
         afterResize: (width, height) => {
           // alert("The sections have finished resizing");
           this.$refs.fullpage.api.rebuid();
@@ -521,6 +521,11 @@ export default {
     });
   },
   mounted() {
+
+    if(this.$mq === 'mobile'){
+      this.$router.push({'path':'/m'});
+    }
+
     let locale = this.getCookie("b_locale");
     if (locale && locale === "KOR") {
       this.$store.commit("setKOR");
@@ -529,16 +534,7 @@ export default {
     }
   },
   methods: {
-    getCookie(name) {
-      let matches = document.cookie.match(
-        new RegExp(
-          "(?:^|; )" +
-            name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") +
-            "=([^;]*)"
-        )
-      );
-      return matches ? decodeURIComponent(matches[1]) : undefined;
-    },
+
     roadModal1() {
       this.$refs.fullpage.api.setAllowScrolling(false);
       this.showRoad1 = true;

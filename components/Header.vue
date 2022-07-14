@@ -2,7 +2,7 @@
   <!--S : 앵커 헤드-->
   <header id="head" class="site-header" role="banner">
     <div class="logo">
-      <a href="/">
+      <a href="/" >
         <img src="@/assets/images/commons/logo-2.svg" alt="logo" />
       </a>
     </div>
@@ -224,6 +224,7 @@ export default {
         document.body.classList.remove("modalOn");
       }
     },
+
   },
 };
 </script>
