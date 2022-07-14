@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "bellygomworld",
+    title: "BELLY GOM",
     htmlAttrs: {
       lang: "ko",
     },
@@ -13,9 +13,16 @@ export default {
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     script: [
-      { src: "js/common.js", type: "text/javascript" },
       {
         src: "https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js",
+        type: "text/javascript",
+      },
+      {
+        src: "fullpage.scrollHorizontally.min.js",
+        type: "text/javascript",
+      },
+      {
+        src: "scrolloverflow.js",
         type: "text/javascript",
       },
     ],
@@ -28,6 +35,7 @@ export default {
       src: "~plugins/swiper.js",
       ssr: false,
     },
+    { src: "~plugins/fullpage", mode: "client" },
   ],
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -38,10 +46,20 @@ export default {
     "@nuxtjs/style-resources",
   ],
   modules: [
+    "nuxt-fullpage.js",
     "@nuxtjs/axios",
     "@nuxtjs/style-resources",
     "@nuxtjs/i18n",
     "nuxt-mq",
+
+    // ['@openafg/nuxt-fullpage', {
+    //     licenseKey: 'H68K9-OX8AH-GK457-17J28-VGRRP',
+    //     scrollBar: false,
+    //     navigation: true,
+    //     scrollHorizontally: true,
+    //     anchors: ['page1', 'page2', 'page3'],
+    //     sectionsColor: ['#000000', '#ff5f45', '#fec401', '#1bcee6', '#ee1a59', '#2c3e4f', '#ba5be9', '#b4b8ab']
+    // }]
   ],
   i18n: {
     locales: [
@@ -74,7 +92,7 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     vendor: ["external_library"],
-    transpile: ["gsap"],
+    transpile: ["gsap", "three"],
     loaders: {
       vue: {
         transformAssetUrls: {
@@ -88,6 +106,7 @@ export default {
         loader: "file-loader",
         options: {
           name: "[path][name].[ext]",
+          esModule: false,
         },
       });
     },
@@ -95,14 +114,19 @@ export default {
   styleResources: {
     scss: ["./assets/scss/_variables.scss"],
   },
-
   gsap: {
     /* Module Options */
   },
-
   /*eslint false*/
   lintOnSave: false,
   server: {
     host: "0",
+  },
+  chainWebpack: (config) => {
+    config.module
+      .rule("pdf")
+      .test(/\.pdf$/)
+      .use("file-loader")
+      .loader("file-loader");
   },
 };

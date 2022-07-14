@@ -7,23 +7,21 @@
       >
         <slot name="title" :item="item"></slot>
       </button>
-      <transition name="fade">
-        <div
-          class="accordion-content"
-          v-if="onContent.some((el) => index === el)"
-        >
-          <div class="cont">
-            <p>
-              <slot name="cont" :item="item"></slot>
-            </p>
-            <div class="download">
-              <a href="javascript:alert('작업중');" class="btn-download"
-                >PDF Download</a
-              >
-            </div>
-          </div>
+      <div
+        class="accordion-content"
+        v-if="onContent.some((el) => index === el)"
+      >
+        <div class="cont">
+          <p>
+            <slot name="cont" :item="item"></slot>
+          </p>
+          <!--          <div class="download">
+            <a href="javascript:alert('작업중');" class="btn-download"
+              >PDF Download</a
+            >
+          </div>-->
         </div>
-      </transition>
+      </div>
     </li>
   </ul>
 </template>
@@ -46,15 +44,20 @@ export default {
         this.onContent.push(index);
       }
     },
+    /*sendGaEvent(eventName, event_category) {
+      console.log(eventName + "|||||||" + event_category);
+      gtag("event", eventName, {
+        event_category: event_category,
+      });
+    },*/
   },
 };
 </script>
 
 <style scoped lang="scss">
+/*accordion*/
 .accordion-list {
   .accordion-item {
-    padding: 40px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.25);
     .title {
       position: relative;
       display: flex;
@@ -65,21 +68,27 @@ export default {
       font-size: 26px;
       font-weight: 400;
       line-height: 28px;
-      color: $white;
+      padding: 54px 40px 53px;
+      border-radius: 40px;
+      color: $black;
+      background: $white;
       &::before {
         content: "Q.";
         display: inline-block;
         margin-right: 20px;
         font-size: 32px;
-        color: $white;
         font-family: "Sandoll Odongtong", sans-serif;
+        color: #ff5290;
+        .mobile & {
+          font-size: 26px;
+        }
       }
       &::after {
         content: "";
         display: block;
         position: absolute;
-        top: -10px;
-        right: 0;
+        top: 44px;
+        right: 40px;
         width: 48px;
         height: 48px;
         background: url("assets/images/commons/icons_acd-down.svg") no-repeat
@@ -88,38 +97,53 @@ export default {
         transition: all 0.3s ease-in;
       }
       &.active {
+        border-radius: 40px 40px 0 0;
         &::after {
           transform: rotate(180deg);
+          .mobile & {
+            top: 6px;
+          }
         }
       }
     }
     .accordion-content {
-      margin: 42px 0 0 0;
-      transition: all 0.3s ease-in;
       .cont {
-        padding: 40px 60px;
-        background: #5515bc;
-        border-radius: 30px;
+        padding: 0 40px;
+        background: $white;
+        border-radius: 0 0 40px 40px;
         will-change: transform;
-        transition: all 0.3s ease-in;
         p {
+          padding: 40px 0;
           font-size: 26px;
           font-weight: 400;
           line-height: 27px;
-          color: $white;
+          border-top: 1px solid #bbb;
           &::before {
             content: "A.";
             display: inline-block;
             margin-right: 20px;
             font-size: 32px;
-            color: $white;
+            color: #686df4;
             font-family: "Sandoll Odongtong", sans-serif;
+            font-weight: 400;
           }
         }
         .mobile & {
           padding: 40px 40px;
           p {
+            position: relative;
             padding-left: 45px;
+            &::before {
+              content: "A.";
+              display: block;
+              position: absolute;
+              top: 3px;
+              left: 0;
+              margin-right: 20px;
+              font-size: 26px;
+              font-family: "Sandoll Odongtong", sans-serif;
+              font-weight: 400;
+            }
           }
         }
       }
@@ -131,7 +155,6 @@ export default {
           line-height: 37px;
           text-decoration: underline;
           text-underline-position: under;
-          color: $white;
           &::before {
             content: "";
             display: inline-block;
@@ -142,25 +165,17 @@ export default {
             background: url("assets/images/commons/akar-icons_cloud-download.svg")
               center no-repeat;
           }
+          .mobile & {
+            font-size: 16px;
+            &::before {
+              margin-right: 13px;
+            }
+          }
         }
       }
     }
-    &:last-child {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-    }
-    .mobile & {
-      padding: 35px 0;
-      .title {
-        padding-right: 63px;
-        font-size: 18px;
-        line-height: 28px;
-      }
-      .cont {
-        p {
-          font-size: 18px;
-          line-height: 28px;
-        }
-      }
+    & + .accordion-item {
+      margin-top: 20px;
     }
   }
 }

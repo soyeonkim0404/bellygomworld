@@ -3,16 +3,12 @@
     <div class="title-wrap">
       <h1>ROADMAP</h1>
       <p class="sub">
-        독보적인 NFT 이미지 사업권 부여부터, 메타버스, 웹툰, 게임까지 이어지는
-        즐거운 여정!<br />
-        벨리곰은 더 많은 서프라이즈를 만들어 갑니다.
+        독보적인 NFT 이미지 사업권 부여부터,<br v-show="$mq === 'mobile'" />
+        메타버스, 웹툰, 게임까지<br v-show="$mq === 'mobile'" />
+        이어지는 즐거운 여정!<br v-show="$mq === 'pc'" />
+        벨리곰은<br v-show="$mq === 'mobile'" />
+        더 많은 서프라이즈를 만들어 갑니다.
       </p>
-      <span class="roadmap-belly">
-        <img
-          src="../../assets/images/roadmap/img_roadmap_bellygom01.svg"
-          alt="로드맵 밸리"
-        />
-      </span>
     </div>
     <div class="content">
       <div class="inner">
@@ -200,23 +196,21 @@ export default {
           engDesc: "Bellygom and friends <br>migrate to the metaverse world",
           complete: false,
           emphasis: true,
+          order: 19,
         },
         {
           desc: "벨리월드 속 벨리곰과 <br>친구들(아바타) 활동시작",
           engDesc:
             "Bellygom and friends (avatars) <br>activities in Bellyworld begin",
           complete: false,
+          order: 20,
         },
         {
           desc: "벨리월드 속 작곡가 김형석과 <br>친구들의 음악 콘서트 개최",
           engDesc:
             "Music concert with Composer <br>Hyung Seok Kim and friends in Belly World",
           complete: false,
-        },
-        {
-          desc: "벨리곰 토크노믹스로 <br>생태계 구축",
-          engDesc: "Build an Ecosystem with Bellygom <br>Tokenomics",
-          complete: false,
+          order: 21,
         },
         {
           desc: "벨리월드 첫번째 프로젝트 <br>깜짝 테마곡 만들기",
@@ -224,24 +218,34 @@ export default {
             "BellyWorld's 1st project - <br>Create a surprise theme song",
           complete: false,
           emphasis: true,
+          order: 23,
         },
         {
           desc: "벨리월드 두번째 프로젝트 <br>깜짝 웹툰 만들기",
           engDesc: "BellyWorld's 2nd project - <br>Create a surprise webtoon",
           complete: false,
           emphasis: true,
+          order: 24,
+        },
+        {
+          desc: "벨리곰 토크노믹스로 <br>생태계 구축",
+          engDesc: "Build an Ecosystem with Bellygom <br>Tokenomics",
+          complete: false,
+          order: 22,
         },
         {
           desc: "벨리월드 세번째 프로젝트 <br>깜짝 게임 만들기",
           engDesc: "BellyWorld 3rd Project - <br>Create a surprise game",
           complete: false,
           emphasis: true,
+          order: 25,
         },
         {
           desc: "벨리곰과 친구들 X 홀더가 <br>함께 만드는 로드맵 2.0으로 GO!",
           engDesc:
             "GO! with Roadmap 2.0 created <br>by Bellygom and Friends X Holder!",
           complete: false,
+          order: 26,
         },
       ],
     };
@@ -292,18 +296,10 @@ export default {
 
 <style scoped lang="scss">
 .title-wrap {
-  .roadmap-belly {
+  &::after {
+    content: "";
+    display: block;
     position: absolute;
-    bottom: -6px;
-    left: 170px;
-    width: 230px;
-    height: 300px;
-    z-index: 3;
-    .mobile & {
-      bottom: -60px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
   }
 }
 .content-wrap {
@@ -312,6 +308,25 @@ export default {
   position: relative;
   -webkit-box-pack: center;
   justify-content: center;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -260px;
+    width: 230px;
+    height: 300px;
+    background: url("../../assets/images/roadmap/img_roadmap_bellygom01.svg")
+      center no-repeat;
+    .mobile & {
+      top: -230px;
+      left: 50%;
+      width: 182px;
+      height: 265px;
+      transform: translateX(-50%);
+      background-size: contain;
+    }
+  }
   .pc & {
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(3, 1fr);
@@ -334,7 +349,7 @@ export default {
         bottom: -30px;
         top: 0;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-20%);
       }
     }
     &:first-child {
@@ -359,6 +374,9 @@ export default {
     }
     .desc {
       line-height: 28px;
+      .mobile & {
+        font-size: 16px;
+      }
     }
     &.phase {
       background: transparent;
@@ -382,7 +400,7 @@ export default {
       position: relative;
       .complete-badge {
         position: absolute;
-        top: 0;
+        top: -5px;
         right: 20px;
         width: 90px;
         height: 90px;
@@ -395,9 +413,9 @@ export default {
           transform: rotate(-45deg);
           display: block;
           position: absolute;
-          top: 20px;
-          left: 20px;
-          opacity: 0.4;
+          top: 26px;
+          left: 12px;
+          opacity: 0.3;
           font-family: "Sandoll Odongtong", sans-serif;
         }
       }
@@ -462,12 +480,26 @@ export default {
     }
   }
   .mobile & {
+    margin-top: 100px;
     grid-template-rows: repeat(1, 1fr);
     grid-template-columns: repeat(1, 1fr);
     gap: 20px 0;
     z-index: 10;
     .item {
       width: 100%;
+    }
+    [class*="deco"] {
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        height: 15px;
+        border-left: 2px dashed #ffffff;
+        opacity: 0.3;
+        transform: translateX(-50%);
+      }
     }
   }
 }

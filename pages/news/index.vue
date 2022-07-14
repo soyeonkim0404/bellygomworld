@@ -14,7 +14,8 @@
         <p class="sub">
           10,000개의 벨리곰 중 오직 나만의 벨리곰을 가질 수 있는 기회가
           찾아옵니다. <br />
-          화이트리스트 세일과 퍼블릭 세일 일정 미리미리 체크하기!
+          화이트리스트 세일과 퍼블릭 세일 일정<br v-show="$mq === 'mobile'" />
+          미리미리 체크하기!
         </p>
       </template>
     </div>
@@ -99,9 +100,11 @@
                     </li>
                   </template>
                   <template v-else>
-                    <li v-for="(item, index) in caution.lists" :key="index">
-                      {{ item.li }}
-                    </li>
+                    <li
+                      v-for="(item, index) in caution.lists"
+                      :key="index"
+                      v-html="item.li"
+                    ></li>
                   </template>
                 </ul>
               </div>
@@ -145,7 +148,7 @@
             <template v-else>
               <div class="step discord">
                 <div class="label">
-                  <span>Step. 1</span>
+                  <span>Step 1</span>
                 </div>
                 <dl>
                   <dt>디스코드 소식 확인하기</dt>
@@ -158,13 +161,16 @@
               <i class="icon-arrow"></i>
               <div class="step kaikas">
                 <div class="label">
-                  <span>Step. 2</span>
+                  <span>Step 2</span>
                 </div>
                 <dl>
                   <dt>카이카스 지갑 생성하기</dt>
                   <dd>
-                    지갑을 미리 준비해두세요. 카이카스(Kaikas) <br />
-                    지갑으로 민팅에 참여할 수 있습니다.
+                    지갑을 미리 준비해두세요.<br v-show="$mq === 'mobile'" />
+                    카이카스(Kaikas) 지갑으로 민팅에<br
+                      v-show="$mq === 'mobile'"
+                    />
+                    참여할 수 있습니다.
                   </dd>
                 </dl>
               </div>
@@ -189,7 +195,7 @@ export default {
           volume: "3,000",
           date: "8월 9일",
           enDate: "Aug 09",
-          time: "20:00 ~ 20:30",
+          time: "20:00",
         },
         {
           title: "2차 화이트리스트 세일",
@@ -197,7 +203,7 @@ export default {
           volume: "3,000",
           date: "8월 9일",
           enDate: "Aug 09",
-          time: "20:00 ~ 20:30",
+          time: "20:00",
         },
         {
           title: "퍼블릭 세일",
@@ -206,7 +212,7 @@ export default {
           volume: "2,900",
           date: "8월 10일",
           enDate: "Aug 10",
-          time: "20:00 ~ 20:30",
+          time: "20:00 ",
         },
       ],
       caution: {
@@ -232,11 +238,11 @@ export default {
             ],
           },
           {
-            title: "3차 퍼블릭 세일",
+            title: "퍼블릭 세일",
             enTitle: "Public sale",
             lists: [
               {
-                li: "참여 자격 제한 없는 판매",
+                li: "선착순 판매, 참여자격 제한 없음",
                 enLi: "No restrictions on participation",
               },
             ],
@@ -248,7 +254,7 @@ export default {
             enLi: "You can purchase 2 pieces per wallet",
           },
           {
-            li: "화이트리스트 신청 및 선정 관련 상세 일정은 디스코드, 트위터를 통해 사전 공지될 예정입니다.",
+            li: "화이트리스트 신청 및 선정 관련 상세 일정은 <a href='https://discord.gg/TDYtz2fcSN' target='_blank' class='underline'>디스코드</a>, <a href='https://twitter.com/bellygom' target='_blank' class='underline'>트위터</a>를 통해 사전 공지될 예정입니다.",
             enLi: "Detailed schedule for whitelist application and selection criteria will be announced in advance, on Discord and Twitter.",
           },
           {
@@ -267,6 +273,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.content-wrap {
+  .mobile & {
+    margin-top: 60px;
+  }
+}
 .new-list {
   display: flex;
   margin: 50px 0 0 0;
@@ -317,7 +328,7 @@ export default {
         text-align: center;
         .date {
           font-size: 55px;
-          font-weight: 400;
+          font-weight: 700;
           line-height: 59px;
         }
         .time {
@@ -333,7 +344,7 @@ export default {
           border-radius: 20px;
           .value {
             font-size: 22px;
-            font-weight: 400;
+            font-weight: 700;
             line-height: 37px;
             text-align: center;
           }
@@ -352,7 +363,6 @@ export default {
       width: 100%;
       margin-top: 25px;
       .box {
-        border-radius: 20px;
         .tit {
           p {
             font-size: 20px;
@@ -402,6 +412,9 @@ export default {
       & + .wrap {
         margin: 25px 0 0 0;
       }
+      p {
+        font-weight: 700;
+      }
       ul {
         margin: 5px 0 0 0;
         li {
@@ -444,6 +457,7 @@ export default {
         background-size: 18px;
       }
       p {
+        font-weight: 700;
         padding: 0 0 0 5px;
         font-size: 16px;
         line-height: 26px;
@@ -480,8 +494,7 @@ export default {
     margin: 100px 0 0 0;
   }
   .mobile & {
-    padding: 30px 25px 30px 25px;
-    border-radius: 20px;
+    padding: 40px 30px 30px 30px;
     .d-list {
       font-size: 16px;
       line-height: 22px;
@@ -543,12 +556,9 @@ export default {
   padding: 60px;
   background-color: #ffffff;
   border-radius: 50px;
-  .mobile & {
-    margin-top: 25px;
-  }
   .step {
     padding: 0 170px 0 0;
-    background-position: right bottom;
+    background-position: right center;
     background-repeat: no-repeat;
     background-size: 170px 170px;
     &.discord {
@@ -571,7 +581,10 @@ export default {
     }
     dl {
       margin: 20px 0 0 0;
+      padding-right: 25px;
+      box-sizing: border-box;
       dt {
+        font-weight: 700;
         font-size: 26px;
         line-height: 44px;
       }
@@ -584,16 +597,16 @@ export default {
   }
   i.icon-arrow {
     display: block;
-    margin: 0 0 24px 0;
+    margin: 0 0 40px 0;
     align-self: end;
-    width: 61px;
-    height: 61px;
+    width: 60px;
+    height: 60px;
     background-image: url("../../assets/images/news/ic_arrow_right.svg");
   }
   .mobile & {
     display: block;
-    padding: 39px 25px 51px 25px;
-    border-radius: 20px;
+    margin-top: 25px;
+    padding: 40px 25px;
     .step {
       width: 100%;
       text-align: center;
@@ -608,18 +621,16 @@ export default {
         }
       }
       dl {
+        padding-right: 0;
         margin: 30px 0 0 0;
         dt {
           font-size: 20px;
           line-height: 20px;
         }
         dd {
-          margin: 5px 0 0 0;
+          margin: 10px 0 0 0;
           font-size: 16px;
           line-height: 25px;
-          br {
-            display: none;
-          }
         }
       }
     }
@@ -628,5 +639,12 @@ export default {
       margin: 20px auto;
     }
   }
+}
+
+::v-deep .underline {
+  display: inline-block;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-position: under;
 }
 </style>

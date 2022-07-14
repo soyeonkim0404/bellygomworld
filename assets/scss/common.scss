@@ -3,26 +3,16 @@
 @import "SDOdongtongBasic.scss";
 @import "reset.scss";
 
-html {
-  box-sizing: border-box;
-  font-size: 100%;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-  padding: 0;
-  margin: 0;
-}
-
 body {
   width: 100%;
-  overflow-x: hidden;
   color: #000;
   font-size: 16px;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  &.modalOn {
+    overflow: hidden !important;
+  }
 }
 
 .sub-wrap {
@@ -58,6 +48,7 @@ body {
       }
       .sub {
         margin: 10px 0 0 0;
+        padding: 0 20px;
         font-size: 16px;
         line-height: 25px;
       }
@@ -75,6 +66,10 @@ body {
           font-weight: 400;
           line-height: 62px;
           color: #ffffff;
+          .mobile & {
+            font-size: 27px;
+            line-height: 44px;
+          }
         }
       }
     }
@@ -91,7 +86,10 @@ body {
       height: 660px;
       background: $gradient;
       .mobile & {
-        height: 560px;
+        height: 470px;
+        h1 {
+          margin-top: 0;
+        }
       }
       &::before {
         content: "";
@@ -107,9 +105,10 @@ body {
         background-size: 1920px auto;
         transform: translateX(-50%);
         .mobile & {
+          top: 70px;
           left: 49.9%;
-          height: 280px;
-          background-image: url("~assets/images/commons/mobile_bubble.svg");
+          height: 462px;
+          background-image: url("~assets/images/commons/mobile_sub_bubble.svg");
           background-position: center;
           background-repeat: no-repeat;
           background-size: 101% auto;
@@ -123,6 +122,7 @@ body {
   }
 }
 
+/*transition fade*/
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;
@@ -130,4 +130,263 @@ body {
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
+}
+
+/*modal*/
+.faq-modal {
+  .modal-container {
+    width: 100% !important;
+    background: url("../images/main/faq_bg.jpeg") center no-repeat;
+    background-size: cover;
+    margin: 0 auto !important;
+    max-height: 100vh !important;
+    .modal-inner {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 180px 30px;
+      .modal-header {
+        .title {
+          font-family: "Sandoll Odongtong", sans-serif;
+          font-weight: 400;
+          color: $black;
+          font-size: 80px;
+          line-height: 104px;
+          text-align: center;
+        }
+      }
+      .modal-body {
+        margin-top: 100px;
+      }
+    }
+    .modal-default-button {
+      position: fixed;
+      top: 40px;
+      right: 40px;
+      &::before {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 50px;
+        background: url("assets/images/commons/ic_faq_close.svg") no-repeat
+          center center / 50px;
+      }
+    }
+  }
+}
+.story-modal {
+  .modal-container {
+    width: 1260px !important;
+    height: 660px !important;
+    border-radius: 40px;
+    .modal-inner {
+      position: relative;
+      .modal-default-button {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        &::before {
+          content: "";
+          display: block;
+          width: 50px;
+          height: 50px;
+          background: url("assets/images/commons/ic_faq_close.svg") no-repeat
+            center center / 50px;
+        }
+      }
+    }
+  }
+}
+
+.road-modal {
+  .modal-container {
+    width: 640px !important;
+    border-radius: 40px;
+    .modal-inner {
+      position: relative;
+      padding: 60px;
+      .modal-header {
+        font-family: "Sandoll Odongtong", sans-serif;
+        font-weight: 400;
+        .sub {
+          font-size: 18px;
+          line-height: 22px;
+          margin-top: 28px;
+          color: #5f82ff;
+        }
+        .title {
+          margin-top: 10px;
+          font-size: 38px;
+          line-height: 57px;
+          color: $black;
+        }
+      }
+      .modal-body {
+        .road-list {
+          margin-top: 20px;
+          li {
+            position: relative;
+            padding-left: 10px;
+            font-size: 20px;
+            line-height: 36px;
+            color: $black;
+            &::before {
+              content: "";
+              display: block;
+              position: absolute;
+              top: 15px;
+              left: 0;
+              width: 4px;
+              height: 4px;
+              border-radius: 100%;
+              background: $black;
+            }
+            & + li {
+              margin-top: 5px;
+            }
+          }
+        }
+        .notice {
+          display: block;
+          position: relative;
+          width: 100%;
+          background: #f4f4f4;
+          border-radius: 20px;
+          padding: 15px 15px 15px 55px;
+          margin-top: 20px;
+          font-size: 20px;
+          line-height: 36px;
+          &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top: 18px;
+            left: 15px;
+            background: url("assets/images/main/belly_icon.svg");
+          }
+        }
+      }
+      .modal-default-button {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        &::before {
+          content: "";
+          display: block;
+          width: 50px;
+          height: 50px;
+          background: url("assets/images/commons/ic_faq_close.svg") no-repeat
+            center center / 50px;
+        }
+      }
+    }
+  }
+}
+
+.info-modal {
+  .modal-container {
+    width: 820px !important;
+    border-radius: 40px;
+    .modal-inner {
+      position: relative;
+      .modal-header {
+        font-family: "Sandoll Odongtong", sans-serif;
+        font-weight: 400;
+        .sub {
+          font-size: 18px;
+          line-height: 22px;
+          margin-top: 28px;
+          color: #5f82ff;
+        }
+        .title {
+          margin-top: 10px;
+          font-size: 38px;
+          line-height: 57px;
+          color: $black;
+        }
+      }
+      .modal-body {
+        .list-title {
+          font-size: 20px;
+          line-height: 36px;
+          font-weight: 700;
+        }
+        .road-list {
+          margin-top: 20px;
+          li {
+            position: relative;
+            padding-left: 10px;
+            font-size: 20px;
+            line-height: 36px;
+            color: $black;
+            &::before {
+              content: "";
+              display: block;
+              position: absolute;
+              top: 15px;
+              left: 0;
+              width: 4px;
+              height: 4px;
+              border-radius: 100%;
+              background: $black;
+            }
+            & + li {
+              margin-top: 5px;
+            }
+          }
+        }
+        .notice {
+          display: block;
+          position: relative;
+          width: 100%;
+          background: #f4f4f4;
+          border-radius: 20px;
+          padding: 30px 40px;
+          margin-top: 20px;
+          strong {
+            font-size: 16px;
+            line-height: 25px;
+            opacity: 0.8;
+            position: relative;
+            padding-left: 20px;
+            &::before {
+              content: "";
+              display: block;
+              position: absolute;
+              width: 18px;
+              height: 18px;
+              top: 0;
+              left: 0;
+              background: url("assets/images/main/notice_ico.svg") center
+                no-repeat;
+            }
+          }
+          .notice-list {
+            margin-top: 5px;
+            li {
+              position: relative;
+              font-size: 16px;
+              line-height: 25px;
+              padding-left: 10px;
+              &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 9px;
+                left: 0;
+                width: 4px;
+                height: 4px;
+                border-radius: 100%;
+                background: $black;
+              }
+              & + li {
+                margin-top: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

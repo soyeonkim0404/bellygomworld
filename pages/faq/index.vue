@@ -2,7 +2,11 @@
   <div class="sub-wrap">
     <div class="title-wrap">
       <h1>FAQ</h1>
-      <p class="sub">벨리곰한테 궁금한거 다-아 물어봐!</p>
+      <p class="sub">
+        아직 벨리곰에게 궁금한 게 많다면<br v-show="$mq === 'mobile'" />
+        FAQ 내용을 확인해 보세요!<br v-show="$mq === 'pc'" />
+        벨리곰 NFT 궁금증을 모두 해결해 드립니다.
+      </p>
     </div>
     <div class="content">
       <div class="inner">
@@ -19,17 +23,6 @@
   </div>
 </template>
 
-<i18n>
-{
-  "ENG": {
-    "hello": "hello world!"
-  },
-  "KOR": {
-    "hello": "안녕"
-  }
-}
-</i18n>
-
 <script>
 import AccordionComponent from "~/components/AccordionComponent";
 
@@ -39,7 +32,7 @@ export default {
   components: { AccordionComponent },
   data() {
     return {
-      list: [
+      faqList: [
         {
           title: "벨리곰 NFT는 어떤 블록체인을 이용해?",
           cont: "다운받기 눌러봐!  더 상세하게 설명해줄게!",

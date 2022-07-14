@@ -2,7 +2,7 @@
   <div id="app" :class="$mq">
     <Header />
     <Nuxt />
-    <Footer />
+    <Fixed />
   </div>
 </template>
 
@@ -18,6 +18,9 @@ export default {
   margin: 0 auto;
   &.mobile {
     overflow-x: hidden;
+  }
+  &.pc {
+    min-width: 1000px;
   }
 }
 </style>

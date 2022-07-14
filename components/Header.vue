@@ -1,86 +1,31 @@
 <template>
-  <div class="header">
+  <!--S : 앵커 헤드-->
+  <header id="head" class="site-header" role="banner">
     <div class="logo">
-      <nuxt-link :to="localePath('/')">
-        <img src="@/assets/images/commons/logo.svg" alt="logo" />
-      </nuxt-link>
+      <img src="@/assets/images/commons/logo-2.svg" alt="logo" />
     </div>
-    <template v-if="$mq === 'mobile'">
-      <div class="mobile-area">
-        <!--        <div class="lang">
-          <button class="btn-lang" @click="openLang">{{ $i18n.locale }}</button>
-          <div class="lang-list" v-if="this.showLang">
-            <nuxt-link
-              v-for="localeCode in $i18n.localeCodes"
-              :key="localeCode"
-              :exact="true"
-              :to="switchLocalePath(localeCode)"
-              @click.native="openLang"
-            >
-              {{ localeCode }}
-            </nuxt-link>
-          </div>
-        </div>-->
-        <button type="button" class="btn-mobile-gnb" @click="openMobileGnb">
-          <img src="@/assets/images/commons/mobile_menu.svg" alt="메뉴" />
-        </button>
-        <transition name="fade">
-          <div
-            id="mobile-gnb"
-            v-if="this.mobileGnbShow"
-            :class="{ mobileGnb: true, open: this.mobileGnbShow }"
-          >
-            <div class="inner">
-              <button class="btn-close" @click="openMobileGnb">
-                <img src="@/assets/images/commons/ic_close.svg" alt="close" />
-              </button>
-              <nav class="gnb">
-                <a href="javascript:alert('comming soon');" class="soon"
-                  ><span>GALLERY</span></a
-                >
-                <nuxt-link :to="localePath('/news')"
-                  ><span @click="openMobileGnb">NEWS</span></nuxt-link
-                >
-                <nuxt-link :to="localePath('/roadmap')"
-                  ><span @click="openMobileGnb">ROADMAP</span></nuxt-link
-                >
-                <nuxt-link :to="localePath('/utility')"
-                  ><span @click="openMobileGnb">UTILITY</span></nuxt-link
-                >
-                <nuxt-link :to="localePath('/faq')"
-                  ><span @click="openMobileGnb">FAQ</span></nuxt-link
-                >
-              </nav>
-              <ul class="link-list">
-                <li v-for="(item, index) in linkList" :key="index">
-                  <a :href="item.url" @click="openMobileGnb"
-                    ><img :src="item.imgUrl" alt=""
-                  /></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </transition>
-      </div>
-    </template>
-    <template v-else>
-      <div class="menu">
-        <nav class="gnb">
-          <a href="javascript:alert('comming soon');" class="soon">GALLERY</a>
-          <nuxt-link :to="localePath('/news')">NEWS</nuxt-link>
-          <nuxt-link :to="localePath('/roadmap')">ROADMAP</nuxt-link>
-          <nuxt-link :to="localePath('/utility')">UTILITY</nuxt-link>
-          <nuxt-link :to="localePath('/faq')">FAQ</nuxt-link>
-        </nav>
+    <div class="category">
+      <ul class="anchor-nav">
+        <li data-menuanchor="firstSection">
+          <a href="#getBelly" title="GET BELLY">GET BELLY</a>
+        </li>
+        <li data-menuanchor="secondSection">
+          <a href="#bellyRoad" title="BELLY ROAD">BELLY ROAD</a>
+        </li>
+        <li data-menuanchor="thirdSection">
+          <a href="#bellyShip" title="BELLY SHIP">BELLY SHIP</a>
+        </li>
+        <li data-menuanchor="fourthSection">
+          <button id="show-modal" @click="faqModal">BELLY FAQ</button>
+        </li>
+      </ul>
+      <div class="etc-link">
         <ul class="sns">
           <li class="link1">
-            <a href="#" />
+            <a href="https://bellygom.com/" target="_blank" />
           </li>
-          <li class="link2">
-            <a href="#" />
-          </li>
-          <li class="linked">
-            <button type="button" class="btn-link" @click="openLink" />
+          <!--<li class="linked">
+            <button type="button" class="btn-link" @mouseover="mouseOver" />
             <transition name="fade">
               <ul class="link-list" v-if="this.isShow">
                 <li v-for="(item, index) in linkList" :key="index">
@@ -88,10 +33,12 @@
                 </li>
               </ul>
             </transition>
-          </li>
+          </li>-->
         </ul>
-        <!--        <div class="lang">
-          <button class="btn-lang" @click="openLang">{{ $i18n.locale }}</button>
+        <div class="lang">
+          <button class="btn-lang" @click="openLang">
+            {{ $i18n.locale }}
+          </button>
           <transition name="fade">
             <div class="lang-list" v-if="this.showLang">
               <nuxt-link
@@ -105,21 +52,68 @@
               </nuxt-link>
             </div>
           </transition>
-        </div>-->
+        </div>
       </div>
-    </template>
-  </div>
+    </div>
+
+    <!--FAQ MODAL-->
+    <modal v-if="showModal" @close="closeModal" class="faq-modal">
+      <div slot="header">
+        <h2 class="title">FAQ</h2>
+      </div>
+      <div slot="body">
+        <div class="content">
+          <div class="inner">
+            <div class="content-wrap">
+              <AccordionComponent :list="faqList">
+                <template #title="{ item }">
+                  <template v-if="$i18n.locale === 'ENG'">
+                    {{ item.engTitle }}
+                  </template>
+                  <template v-else>
+                    {{ item.title }}
+                  </template>
+                </template>
+                <template #cont="{ item }">
+                  <template v-if="$i18n.locale === 'ENG'">
+                    {{ item.engCont }}
+                    <span class="pdf" v-if="item.engPdfUrl">
+                      <a href="" download=""></a>
+                    </span>
+                  </template>
+                  <template v-else>
+                    {{ item.cont }}
+                    <span class="pdf" v-if="item.pdfUrl">
+                      <a href="" download=""></a>
+                    </span>
+                  </template>
+                </template>
+              </AccordionComponent>
+            </div>
+          </div>
+        </div>
+      </div>
+    </modal>
+  </header>
+  <!--E : 앵커 헤드-->
 </template>
 
 <script>
-import { gsap } from "gsap";
+import modal from "@/components/Modal";
+import AccordionComponent from "@/components/AccordionComponent";
+
 export default {
   name: "Header",
+  components: {
+    modal,
+    AccordionComponent,
+  },
   data() {
     return {
       isShow: false,
       showLang: false,
       mobileGnbShow: false,
+      showModal: false,
       linkList: [
         {
           url: "https://discord.gg/TDYtz2fcSN",
@@ -137,6 +131,79 @@ export default {
           imgUrl: require("@/assets/images/commons/img_menu_youtube.svg"),
         },
       ],
+      faqList: [
+        {
+          title: "벨리곰 NFT는 어떤 블록체인을 이용해?",
+          engTitle: "What blockchain does Bellygom NFT use?",
+          cont: "벨리곰 NFT는 클레이튼(Klaytn) 블록체인을 이용하고 있어!",
+          engCont: "Bellygom NFT uses the Klaytn blockchain!",
+        },
+        {
+          title: "카이카스 지갑은 어떻게 만드는거야?",
+          engTitle: "How do I make a Kaikas Wallet?",
+          cont: "다운받기 눌러봐! 더 상세하게 설명해줄게!",
+          engCont:
+            "Download the pdf file for a detailed step-by-step guide on creating a Kaikas Wallet.",
+          //pdfUrl: require("@/assets/media/kor/02_BELLYGOM_CreateaKaikaswallet.pdf"),
+          //engPdfUrl: require("@/assets/media/eng/02_BELLYGOM_CreateaKaikaswallet(EN).pdf"),
+        },
+        {
+          title: "오픈씨는 어떻게 이용하는거야?",
+          engTitle: "How do you use opensea?",
+          cont: "다운받기 눌러봐!  더 상세하게 설명해줄게!",
+          engCont:
+            "Download the pdf file for a detailed step-by-step guide on using OpenSea.",
+          // pdfUrl: require("@/assets/media/kor/03_BELLYGOM_HowtouseOpensea.pdf"),
+          //engPdfUrl: require("@/assets/media/eng/03_BELLYGOM_HowtouseOpensea(EN).pdf"),
+        },
+        {
+          title: "Klip 지갑으로 민팅 할 수 있어?",
+          engTitle: "Can I mint with a Klip wallet?",
+          cont: "카이카스 지갑만 지원하고 있어!",
+          engCont: "For now, only Kaikas wallets are supported.",
+        },
+        {
+          title: "Klip 지갑으로 전송 시, 벨리곰 NFT를 확인할 수 있어?",
+          engTitle:
+            "Can I check the Bellygom NFT when transferring to my Klip wallet?",
+          cont: "확인할 수 없어! 카이카스 지갑을 이용해줘!",
+          engCont: "Can't confirm! Please use Kaikas wallet!",
+        },
+        {
+          title: "리빌은 어떻게 하는거야?",
+          engTitle: "How does 'Reveal' work?",
+          cont: "8월 19일 (금) 자동으로 리빌이 진행돼!",
+          engCont:
+            "On August 19th (Friday),the Reveal will happen automatically!",
+        },
+        {
+          title: "랭킹은 어떻게 확인 할 수 있어?",
+          engTitle: "How can I check the ranking?",
+          cont: "8월 19일 (금) 19:00부터 우측 상단 검색 기능을 통해 확인 가능해!",
+          engCont:
+            "From August 19 (Fri) 19:00, you can check it through the search bar at the top right corner.",
+        },
+        {
+          title: "디스코드, 카카오톡, 텔레그램에 어떻게 참여할 수 있어?",
+          engTitle: "How can I join Discord, KakaoTalk, or Telegram?",
+          cont: "채널은 홈페이지 우측 상단 링크 아이콘을 눌러서 참여할 수 있어!",
+          engCont:
+            "You can join the channels by clicking the linked icons at the top right corner of the homepage.",
+        },
+        {
+          title: "2차 판매 수수료가 있어?",
+          engTitle: "Are there any secondary sales fees?",
+          cont: "2차 판매 수수료는 7.5%야!",
+          engCont: "Secondary sales commission is 7.5%!",
+        },
+        {
+          title: "벨리곰NFT는 저작권 활용할 수 있어?",
+          engTitle: "Can Bellygom NFTs be copyrighted?",
+          cont: "Phase1에는 소유권만 인정하고 있어. 그렇지만 Phase2에는 NFT 사업권을 사용할 수 있어!",
+          engCont:
+            "Phase 1 only recognizes ownership. However, you can use NFT licenses for Phase 2!",
+        },
+      ],
     };
   },
   asyncData({ req }) {
@@ -147,27 +214,25 @@ export default {
     return { lang: browserLang };
   },
   methods: {
-    openLink(e) {
-      this.isShow = !this.isShow;
-      this.isShow
-        ? e.target.classList.add("on")
-        : e.target.classList.remove("on");
-    },
     openLang(e) {
       this.showLang = !this.showLang;
       this.showLang
         ? e.target.classList.add("on")
         : e.target.classList.remove("on");
     },
-    openMobileGnb(e) {
-      this.mobileGnbShow = !this.mobileGnbShow;
-      this.mobileGnbShow
-        ? e.target.classList.add("open")
-        : e.target.classList.remove("open");
-      if (e.target.classList.contains("open")) {
-        document.body.style.overflow = "hidden";
-      } else {
-        document.body.style.overflow = "";
+    mouseOver() {
+      this.isShow = !this.isShow;
+    },
+    faqModal() {
+      this.showModal = true;
+      if (this.showModal) {
+        document.body.classList.add("modalOn");
+      }
+    },
+    closeModal() {
+      this.showModal = false;
+      if (!this.showModal) {
+        document.body.classList.remove("modalOn");
       }
     },
   },
@@ -175,98 +240,217 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.header {
+#head {
+  width: 100%;
+  min-width: 1000px;
+  height: 110px;
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 110px;
-  padding: 0 60px;
-  background: transparent;
+  padding: 8px 40px 0 30px;
   z-index: 999;
   .logo {
-    width: 160px;
-    height: 56px;
+    flex: 0 0 110px;
+    width: 110px;
+    height: 110px;
   }
-  .menu {
+  .category {
+    flex: 1 1 auto;
+    width: calc(100% - 110px);
     display: flex;
-    .gnb {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      a {
-        display: block;
-        font-size: 18px;
-        color: $white;
-        padding: 0 25px;
-        position: relative;
-        &.soon {
-          &:before {
-            content: "SOON";
-            display: block;
-            width: 49px;
-            height: 17px;
-            position: absolute;
-            left: 26px;
-            top: -25px;
-            background: #fc8abc;
-            border-radius: 2px;
-            font-size: 16px;
-            line-height: 18px;
-            color: $white;
-            text-align: center;
-          }
+    justify-content: flex-end;
+    align-items: center;
+    .anchor-nav {
+      li {
+        display: inline-flex;
+        a,
+        button {
+          font-size: 18px;
+          font-family: "Sandoll Odongtong", sans-serif;
+          font-weight: 400;
+          padding: 0 20px;
+          color: #333333;
         }
       }
     }
-    .sns {
+    .etc-link {
       display: flex;
-      margin-left: 25px;
-      li {
-        display: inline-flex;
-        position: relative;
-        a {
-          width: 48px;
-          height: 48px;
-          display: block;
-        }
-        .btn-link {
+      .sns {
+        display: flex;
+        margin-left: 25px;
+        li {
+          display: inline-flex;
           position: relative;
-          padding: 0;
-          width: 48px;
-          height: 48px;
-          display: block;
-          border-radius: 100%;
-          background: $white;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
-          &::before {
-            content: "";
+          a {
+            width: 48px;
+            height: 48px;
             display: block;
+          }
+          .btn-link {
+            position: relative;
+            padding: 0;
+            width: 48px;
+            height: 48px;
+            display: block;
+            border-radius: 100%;
+            background: $white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+            &::before {
+              content: "";
+              display: block;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 17px;
+              height: 22px;
+              background: url("assets/images/commons/ic_header_link_3.svg")
+                center no-repeat;
+              transform: translate(-50%, -50%);
+            }
+          }
+          .link-list {
             position: absolute;
-            top: 50%;
+            top: 63px;
             left: 50%;
-            width: 17px;
-            height: 22px;
-            background: url("../assets/images/commons/ic_header_link_3.svg")
-              center no-repeat;
-            transform: translate(-50%, -50%);
+            width: 152px;
+            padding: 20px 30px;
+            border-radius: 20px;
+            background: $white;
+            transform: translateX(-50%);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+            box-sizing: border-box;
+            &::before {
+              content: "";
+              display: block;
+              position: absolute;
+              top: -5px;
+              left: 50%;
+              width: 0;
+              height: 0;
+              border-left: 5px solid transparent;
+              border-right: 5px solid transparent;
+              border-bottom: 5px solid white;
+              transform: translateX(-50%);
+            }
+            li {
+              display: block;
+              font-size: 18px;
+              line-height: 28px;
+              text-align: left;
+              & + li {
+                margin-left: 0;
+                margin-top: 5px;
+              }
+              a {
+                width: auto;
+                height: auto;
+                color: $black;
+                opacity: 0.4;
+                &:hover {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+          &.link1,
+          &.link2 {
+            position: relative;
+            width: 48px;
+            height: 48px;
+            border-radius: 100%;
+            background: $white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+          }
+          &.link1 {
+            a {
+              position: relative;
+              &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 20px;
+                height: 20px;
+                background: url("assets/images/commons/ic_header_link.svg")
+                  center no-repeat;
+                transform: translate(-50%, -50%);
+              }
+            }
+          }
+          &.link2 {
+            &::before {
+              content: "";
+              display: block;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 27px;
+              height: 26px;
+              background: url("assets/images/commons/ic_header_link_2.svg")
+                center no-repeat;
+              transform: translate(-50%, -50%);
+            }
+          }
+          & + li {
+            margin-left: 15px;
           }
         }
-        .link-list {
+      }
+      .lang {
+        position: relative;
+        margin-left: 15px;
+        .btn-lang {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: auto;
+          height: 48px;
+          padding: 0 10px 0 15px;
+          background: $white;
+          border-radius: 25px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+          color: $black;
+          font-size: 18px;
+          box-sizing: border-box;
+          &::after {
+            content: "";
+            display: inline-flex;
+            width: 24px;
+            height: 24px;
+            background: url("assets/images/main/ic_arrow_down.svg") center
+              no-repeat;
+            transition: all 0.3s;
+          }
+          &.on {
+            &::after {
+              transform: rotate(180deg);
+            }
+          }
+        }
+        .lang-list {
           display: block;
           position: absolute;
           top: 63px;
           left: 50%;
-          width: 152px;
           padding: 20px 30px;
           border-radius: 20px;
           background: $white;
           transform: translateX(-50%);
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
-          box-sizing: border-box;
+          a {
+            font-size: 18px;
+            line-height: 28px;
+            color: $black;
+            opacity: 0.4;
+            & + a {
+              margin-top: 5px;
+            }
+            &.nuxt-link-active {
+              opacity: 1;
+            }
+          }
           &::before {
             content: "";
             display: block;
@@ -279,243 +463,6 @@ export default {
             border-right: 5px solid transparent;
             border-bottom: 5px solid white;
             transform: translateX(-50%);
-          }
-          li {
-            display: block;
-            font-size: 18px;
-            line-height: 28px;
-            text-align: left;
-            & + li {
-              margin-left: 0;
-              margin-top: 5px;
-            }
-            a {
-              width: auto;
-              height: auto;
-              color: $black;
-              opacity: 0.4;
-              &:hover {
-                opacity: 1;
-              }
-            }
-          }
-        }
-        &.link1,
-        &.link2 {
-          position: relative;
-          width: 48px;
-          height: 48px;
-          border-radius: 100%;
-          background: $white;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
-        }
-        &.link1 {
-          &::before {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 17px;
-            height: 22px;
-            background: url("../assets/images/commons/ic_header_link.svg")
-              center no-repeat;
-            transform: translate(-50%, -50%);
-          }
-        }
-        &.link2 {
-          &::before {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 27px;
-            height: 26px;
-            background: url("../assets/images/commons/ic_header_link_2.svg")
-              center no-repeat;
-            transform: translate(-50%, -50%);
-          }
-        }
-        & + li {
-          margin-left: 15px;
-        }
-      }
-    }
-  }
-
-  .lang {
-    position: relative;
-    margin-left: 15px;
-    .btn-lang {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: auto;
-      height: 48px;
-      padding: 0 10px 0 15px;
-      background: $white;
-      border-radius: 25px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
-      color: $black;
-      font-size: 18px;
-      box-sizing: border-box;
-      &::after {
-        content: "";
-        display: inline-flex;
-        width: 24px;
-        height: 24px;
-        background: url("assets/images/main/ic_arrow_down.svg") center no-repeat;
-        transition: all 0.3s;
-      }
-      &.on {
-        &::after {
-          transform: rotate(180deg);
-        }
-      }
-    }
-    .lang-list {
-      display: block;
-      position: absolute;
-      top: 63px;
-      left: 50%;
-      padding: 20px 30px;
-      border-radius: 20px;
-      background: $white;
-      transform: translateX(-50%);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
-      a {
-        font-size: 18px;
-        line-height: 28px;
-        color: $black;
-        opacity: 0.4;
-        & + a {
-          margin-top: 5px;
-        }
-        &.nuxt-link-active {
-          opacity: 1;
-        }
-      }
-      &::before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: -5px;
-        left: 50%;
-        width: 0;
-        height: 0;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-bottom: 5px solid white;
-        transform: translateX(-50%);
-      }
-    }
-  }
-  .mobile & {
-    height: 78px;
-    padding: 30px 20px 0;
-    box-sizing: border-box;
-    .mobile-area {
-      display: flex;
-      align-items: center;
-    }
-    .logo {
-      width: 110px;
-      height: auto;
-    }
-    .lang {
-      .btn-lang {
-        height: 40px;
-      }
-    }
-    .btn-mobile-gnb {
-      width: 51px;
-      height: 51px;
-      margin-left: 10px;
-    }
-    #mobile-gnb {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      &.open {
-        .inner {
-          overflow-y: auto;
-        }
-      }
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background: rgba(0, 0, 0, 0.5);
-      }
-      .inner {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: calc(100% - 80px);
-        height: 100vh;
-        background: $gradient;
-        z-index: 999;
-        .btn-close {
-          position: absolute;
-          top: 30px;
-          right: 20px;
-          width: 38px;
-          height: 38px;
-        }
-        .gnb {
-          padding: 110px 0 75px;
-          a {
-            span {
-              display: flex;
-              justify-content: flex-start;
-              align-items: center;
-              position: relative;
-              width: 100%;
-              height: 50px;
-              padding-left: 37px;
-              font-size: 18px;
-              line-height: 32px;
-              color: $white;
-            }
-            &.soon {
-              span {
-                &:before {
-                  content: "SOON";
-                  display: block;
-                  width: 39px;
-                  height: 15px;
-                  position: absolute;
-                  left: 37px;
-                  top: -7px;
-                  background: #fc8abc;
-                  border-radius: 2px;
-                  font-size: 12px;
-                  line-height: 17px;
-                  color: #ffffff;
-                  text-align: center;
-                }
-              }
-            }
-          }
-        }
-        .link-list {
-          border-top: 1px solid rgba(255, 255, 255, 0.2);
-          padding: 30px 35px 0 25px;
-          li {
-            display: inline-flex;
-            margin-left: 10px;
-            margin-top: 10px;
-            a {
-              display: block;
-              width: 35px;
-              height: 35px;
-            }
           }
         }
       }
