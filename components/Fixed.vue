@@ -22,7 +22,7 @@
               src="@/assets/images/main/img_storybook_bellygom01.png"
               class="left-img"
             />
-            <template v-if="$i18n.locale === 'ENG'">
+            <template v-if="$store.state.locale === 'ENG'">
               <div class="txt eng">
                 <h3>
                   Bellygom was born in a Haunted House. Here's how it happened…
@@ -59,7 +59,7 @@
               src="@/assets/images/main/img_storybook_bellygom02.png"
               class="left-img"
             />
-            <div class="txt eng" v-if="$i18n.locale === 'ENG'">
+            <div class="txt eng" v-if="$store.state.locale === 'ENG'">
               <h3>Soon, Bellygom moves into Belly Villa.</h3>
               <p>
                 Bellygom continues to surprise people here and there, despite
@@ -94,7 +94,7 @@
               src="@/assets/images/main/img_storybook_bellygom03.png"
               class="left-img"
             />
-            <div class="txt eng" v-if="$i18n.locale === 'ENG'">
+            <div class="txt eng" v-if="$store.state.locale === 'ENG'">
               <h3>Bellygom now has 10,000 mysterious powers!</h3>
               <p>
                 One day, Bellygom finds a vending machine, in front of the
@@ -124,7 +124,7 @@
               src="@/assets/images/main/img_storybook_bellygom04.png"
               class="left-img"
             />
-            <div class="txt eng" v-if="$i18n.locale === 'ENG'">
+            <div class="txt eng" v-if="$store.state.locale === 'ENG'">
               <h3>
                 Oh, Bellygom - now with 10,000 mysterious abilities - what kinds
                 of surprises will you bring to the people?
