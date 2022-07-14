@@ -249,6 +249,7 @@ export default {
         scrollBar: false,
         navigation: false,
         scrollOverflow: true,
+        normalScrollElements: '.modal-container',
         scrollHorizontally: true,
         scrollHorizontallyKey:
           "YmVsbHlnb20ud29ybGRfaktDYzJOeWIyeHNTRzl5YVhwdmJuUmhiR3g1NFN6",
@@ -330,48 +331,56 @@ export default {
   },
   methods: {
     roadModal1() {
+      this.$refs.fullpage.api.setAllowScrolling(false);
       this.showRoad1 = true;
       if (this.showRoad1) {
         document.body.classList.add("modalOn");
       }
     },
     roadModal2() {
+      this.$refs.fullpage.api.setAllowScrolling(false);
       this.showRoad2 = true;
       if (this.showRoad2) {
         document.body.classList.add("modalOn");
       }
     },
     roadModal3() {
+      this.$refs.fullpage.api.setAllowScrolling(false);
       this.showRoad3 = true;
       if (this.showRoad3) {
         document.body.classList.add("modalOn");
       }
     },
     showInfo() {
+      this.$refs.fullpage.api.setAllowScrolling(false);
       this.showInf = true;
       if (this.showInf) {
         document.body.classList.add("modalOn");
       }
     },
     closeRoad1() {
+      this.$refs.fullpage.api.setAllowScrolling(true);
       this.showRoad1 = false;
       if (!this.showRoad1) {
         document.body.classList.remove("modalOn");
       }
     },
     closeRoad2() {
+      this.$refs.fullpage.api.setAllowScrolling(true);
       this.showRoad2 = false;
       if (!this.showRoad2) {
         document.body.classList.remove("modalOn");
       }
     },
     closeRoad3() {
+      this.$refs.fullpage.api.setAllowScrolling(true);
       this.showRoad3 = false;
       if (!this.showRoad3) {
         document.body.classList.remove("modalOn");
       }
     },
     closeInf() {
+      this.$refs.fullpage.api.setAllowScrolling(true);
       this.showInf = false;
       if (!this.showInf) {
         document.body.classList.remove("modalOn");
@@ -612,13 +621,13 @@ export default {
 }
 .cloud-wrapper > img {
   position: absolute;
-  transition: transform 1s ease-in-out;
+  transition: transform 0.5s ease-in-out;
   width: 100%;
   top: 0%;
-  transform: translateY(-50%);
+  transform: translateY(-65%);
 }
 .cloud-wrapper.moved > img {
-  transform: translateY(-100%);
+  transform: translateY(-80%);
 }
 .section-2 {
   z-index: 1;
