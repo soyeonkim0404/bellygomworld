@@ -43,10 +43,12 @@ export default {
 
 <style scoped lang="scss">
 footer {
+  clear: both;
   position: relative;
   display: flex;
   justify-content: center;
   width: 100%;
+  min-width: 1000px;
   padding: 70px 0;
   background: #34343d;
   box-sizing: border-box;
@@ -73,25 +75,27 @@ footer {
           line-height: 25px;
           color: $white;
           box-sizing: border-box;
+          padding-right: 15px;
+          margin-right: 15px;
           a {
             text-decoration: underline;
             text-underline-position: under;
           }
-          & + li {
-            padding-left: 15px;
-            margin-left: 15px;
-            &::before {
-              content: "";
-              display: inline-block;
-              position: absolute;
-              top: 3px;
-              left: 0;
-              margin-right: 15px;
-              width: 1px;
-              height: 18px;
-              background: rgba(255, 255, 255, 0.2);
-              box-sizing: border-box;
-              vertical-align: middle;
+          &::after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: 3px;
+            right: 0;
+            width: 1px;
+            height: 18px;
+            background: rgba(255, 255, 255, 0.2);
+            box-sizing: border-box;
+            vertical-align: middle;
+          }
+          &:last-child {
+            &::after {
+              display: none;
             }
           }
         }

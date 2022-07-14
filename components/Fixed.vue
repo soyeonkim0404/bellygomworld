@@ -14,7 +14,7 @@
     <!--STORY MODAL-->
     <modal v-if="showStoryModal" @close="closeStoryModal" class="story-modal">
       <div slot="body">
-        <!--        <div id="st_1" class="box">
+        <div id="st_1" class="box">
           <img
             src="@/assets/images/main/img_storybook_bellygom01.png"
             class="left-img"
@@ -29,8 +29,8 @@
               식탐과 귀여운 외모가 유령의 집에 어울리지 않는다며 쫓겨나게 된다.
             </p>
           </div>
-        </div>-->
-        <div id="st_2" class="box">
+        </div>
+        <!--        <div id="st_2" class="box">
           <img
             src="@/assets/images/main/img_storybook_bellygom02.png"
             class="left-img"
@@ -47,7 +47,7 @@
             </p>
           </div>
         </div>
-        <!--        <div id="st_3" class="box">
+        <div id="st_3" class="box">
           <img
             src="@/assets/images/main/img_storybook_bellygom03.png"
             class="left-img"
@@ -78,6 +78,12 @@
               어떤 서프라이즈를 가져다 줄까?
             </h3>
           </div>
+        </div>-->
+        <!--        <div class="indicator">
+          <a href="#st_1" class="indi on"></a>
+          <a href="#st_2" class="indi"></a>
+          <a href="#st_3" class="indi"></a>
+          <a href="#st_4" class="indi"></a>
         </div>-->
       </div>
     </modal>
