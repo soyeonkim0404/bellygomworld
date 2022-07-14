@@ -50,7 +50,6 @@ export default {
     "nuxt-fullpage.js",
     "@nuxtjs/axios",
     "@nuxtjs/style-resources",
-    "@nuxtjs/i18n",
     "nuxt-mq",
 
     // ['@openafg/nuxt-fullpage', {
@@ -62,23 +61,6 @@ export default {
     //     sectionsColor: ['#000000', '#ff5f45', '#fec401', '#1bcee6', '#ee1a59', '#2c3e4f', '#ba5be9', '#b4b8ab']
     // }]
   ],
-  i18n: {
-    locales: [
-      { code: "KOR", iso: "ko-KR", file: "ko.json" },
-      { code: "ENG", iso: "en-US", file: "en.json" },
-    ],
-    langDir: "~/locales/",
-    defaultLocale: "KOR",
-    lazy: true,
-    strategy: "prefix_except_default",
-    vueI18nLoader: true,
-    detectBrowserLanguage: {
-      alwaysRedirect: false,
-      useCookie: false,
-      cookieKey: "t_locale",
-      fallbackLocale: "ko-KR",
-    },
-  },
   mq: {
     breakpoints: {
       mobile: 480,
