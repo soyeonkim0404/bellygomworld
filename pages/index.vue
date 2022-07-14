@@ -433,6 +433,7 @@ export default {
           this.$refs.fullpage.api.rebuid();
         },
         afterLoad: (origin, destination, direction) => {
+          this.$refs.fullpage.api.setAllowScrolling(true);
           console.log('afterLoad');
           if (destination.index === 0) {
             this.charTop = "0px";
@@ -446,6 +447,7 @@ export default {
           }
         },
         onLeave: (origin, destination, direction) => {
+          this.$refs.fullpage.api.setAllowScrolling(false);
           console.log('onLeave');
           if (destination.index === 0) {
             this.charClass = "s0";
@@ -485,11 +487,13 @@ export default {
           }
         },
         onSlideLeave: (section, origin, destination) => {
+          this.$refs.fullpage.api.setAllowScrolling(false);
           if (destination.anchor === "slide2") {
             this.charClass = "slide2";
           }
         },
         afterSlideLoad: (direction, origin, destination) => {
+          this.$refs.fullpage.api.setAllowScrolling(true);
           console.log('afterSlideLoad')
           if (destination.anchor === "slide1") {
             this.charClass = "slide1";
