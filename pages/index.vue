@@ -12,8 +12,11 @@
             <img src="@/assets/images/main/img_keyvisual_01.png" />
           </div>
           <section class="section">
-            <div>
+            <div class="second">
               <img src="@/assets/images/main/img_keyvisual_02.png" />
+              <div class="sec-cloud">
+                <img src="@/assets/images/main/img_keyvisual_cloud.png" />
+              </div>
             </div>
           </section>
           <section class="section">
@@ -586,6 +589,18 @@ export default {
   img {
     height: 100%;
     object-fit: cover;
+  }
+}
+.second {
+  position: relative;
+  .sec-cloud {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    img {
+      object-fit: contain;
+    }
   }
 }
 </style>

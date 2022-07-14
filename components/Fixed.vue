@@ -174,15 +174,15 @@ export default {
     position: fixed;
     bottom: 180px;
     right: 50px;
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
   }
   .top-btn {
     position: fixed;
     bottom: 100px;
     right: 50px;
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     border-radius: 100%;
   }
 }
