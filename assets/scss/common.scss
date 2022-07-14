@@ -170,11 +170,44 @@ body {
 }
 .story-modal {
   .modal-container {
-    width: 1260px !important;
-    height: 660px !important;
+    width: 62.5vw !important;
+    height: 63.4vh !important;
     border-radius: 40px;
+    background-image: url("assets/images/main/img_storybook_book.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    position: relative;
     .modal-inner {
-      position: relative;
+      .box {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translate(-50%, -50%);
+        .left-img {
+          width: 33.5%;
+          height: 100%;
+        }
+        .txt {
+          max-width: 45%;
+          margin-left: 50px;
+          h3 {
+            font-size: 30px;
+            line-height: 45px;
+          }
+          p {
+            margin-top: 20px;
+            font-size: 24px;
+            line-height: 36px;
+          }
+        }
+      }
       .modal-default-button {
       }
     }

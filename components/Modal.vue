@@ -5,11 +5,7 @@
         <div class="modal-container">
           <div class="modal-inner">
             <div class="modal-header">
-              <slot name="header">
-                <button class="modal-default-button" @click="$emit('close')">
-                  close
-                </button>
-              </slot>
+              <slot name="header"> </slot>
             </div>
 
             <div class="modal-body">
@@ -57,24 +53,19 @@ export default {
 
 .modal-container {
   width: 300px;
-  margin: 40px auto 0;
+  margin: 0 auto;
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
-  padding: 30px;
 }
 
 .modal-header {
 }
 
 .modal-inner {
-  height: 60vh;
-  overflow-y: auto;
-  padding: 30px;
 }
 
 .modal-body {
-  overflow-y: auto;
 }
 
 .modal-default-button {

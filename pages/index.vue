@@ -5,30 +5,30 @@
         <full-page ref="fullpage" :options="options" id="fullpage">
           <section class="section">
             <video id="mainBelly" loop muted data-autoplay playsinline>
-              <source src="../assets/media/belly.mp4" type="video/mp4" />
+              <source src="@/assets/media/belly.mp4" type="video/mp4" />
             </video>
           </section>
           <div class="cloud-wrapper ignore" :class="{ moved: cloudMoved }">
-            <img src="../assets/images/main_cloud_big.png" />
+            <img src="@/assets/images/main/img_keyvisual_01.png" />
           </div>
           <section class="section">
             <div>
-              <img src="../assets/images/s2_bg.jpeg" />
+              <img src="@/assets/images/main/img_keyvisual_02.png" />
             </div>
           </section>
           <section class="section">
             <div class="slide" data-anchor="slide1">
               <div class="contents">
-                <img src="../assets/images/main/getbelly_road_ko_1.jpeg" />
+                <img src="@/assets/images/main/getbelly_road_ko_1.jpeg" />
                 <div class="text-con">
                   <div class="item nm1">
-                    <img src="../assets/images/main/cloud_02.png" />
+                    <img src="@/assets/images/main/cloud_02.png" />
                   </div>
                   <div class="item nm2">
-                    <img src="../assets/images/main/cloud_01.png" />
+                    <img src="@/assets/images/main/cloud_01.png" />
                   </div>
                   <div class="item nm3">
-                    <img src="../assets/images/main/cloud_03.png" />
+                    <img src="@/assets/images/main/cloud_03.png" />
                   </div>
                 </div>
                 <button class="info-btn" @click="showInfo" />
@@ -36,18 +36,18 @@
             </div>
             <div class="slide" data-anchor="slide2">
               <div class="contents">
-                <img src="../assets/images/main/getbelly_road_ko_2.jpeg" />
+                <img src="@/assets/images/main/getbelly_road_ko_2.jpeg" />
               </div>
             </div>
             <div class="road-img" :class="treeClass">
-              <img src="../assets/images/main/img_getroad_layer.svg" alt="" />
+              <img src="@/assets/images/main/img_getroad_layer.svg" alt="" />
             </div>
             <div class="slide" data-anchor="slide3">
               <div class="contents">
-                <img src="../assets/images/main/getbelly_road_ko_3.jpeg" />
+                <img src="@/assets/images/main/getbelly_road_ko_3.jpeg" />
                 <div class="text-con">
                   <button class="item2 nm1" @click="roadModal2">
-                    <img src="../assets/images/main/img_road_balloon02.png" />
+                    <img src="@/assets/images/main/img_road_balloon02.png" />
                     <div class="txt">
                       <span class="road">ROAD 2</span>
                       <div class="title">
@@ -58,7 +58,7 @@
                     </div>
                   </button>
                   <button class="item2 nm2" @click="roadModal1">
-                    <img src="../assets/images/main/img_road_balloon01.png" />
+                    <img src="@/assets/images/main/img_road_balloon01.png" />
                     <div class="txt">
                       <span class="road">ROAD 1</span>
                       <div class="title">
@@ -69,7 +69,7 @@
                     </div>
                   </button>
                   <button class="item2 nm3" @click="roadModal3">
-                    <img src="../assets/images/main/img_road_balloon03.png" />
+                    <img src="@/assets/images/main/img_road_balloon03.png" />
                     <div class="txt">
                       <span class="road">ROAD 3</span>
                       <div class="title">
@@ -85,7 +85,19 @@
           </section>
           <section class="section">
             <div class="ending">
-              <img src="../assets/images/main/img_bellyship_bg.jpeg" />
+              <img src="@/assets/images/main/img_bellyship_bg.jpeg" />
+              <div class="top">
+                <img
+                  src="@/assets/images/main/img_bellyship_top.png"
+                  class="top"
+                />
+              </div>
+              <div class="bottom">
+                <img
+                  src="@/assets/images/main/img_bellyship_bottom.png"
+                  class="bottom"
+                />
+              </div>
             </div>
           </section>
           <section class="section fp-auto-height">
@@ -97,16 +109,16 @@
             :style="{ top: charTop }"
           >
             <div class="fall">
-              <img src="../assets/images/char-fall.png" />
+              <img src="@/assets/images/char-fall.png" />
             </div>
             <div class="stand">
-              <img src="../assets/images/char-stand.png" />
+              <img src="@/assets/images/char-stand.png" />
             </div>
             <div class="walk" :style="{ 'background-position': walkSprite }">
-              <img src="../assets/images/char-walk.png" />
+              <img src="@/assets/images/char-walk.png" />
             </div>
             <div class="end">
-              <img src="../assets/images/char-end.png" />
+              <img src="@/assets/images/char-end.png" />
             </div>
           </div>
         </full-page>
@@ -237,7 +249,8 @@ export default {
         navigation: false,
         scrollOverflow: true,
         scrollHorizontally: true,
-        scrollHorizontallyKey: "YmVsbHlnb20ud29ybGRfaktDYzJOeWIyeHNTRzl5YVhwdmJuUmhiR3g1NFN6",
+        scrollHorizontallyKey:
+          "YmVsbHlnb20ud29ybGRfaktDYzJOeWIyeHNTRzl5YVhwdmJuUmhiR3g1NFN6",
         anchors: ["getBelly", "falling", "bellyRoad", "bellyShip"],
         afterLoad: (origin, destination, direction) => {
           if (destination.index === 0) {
@@ -542,8 +555,37 @@ export default {
   bottom: 10%;
   left: 30%;
 }
-.fp-auto-height {
-  &.active {
+
+.ending {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  .top {
+    position: absolute;
+    top: 3%;
+    right: 6%;
+    width: 80%;
+    height: auto;
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  .bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  img {
+    height: 100%;
+    object-fit: cover;
   }
 }
 </style>
@@ -632,16 +674,6 @@ export default {
   height: 100%;
   background-size: auto 100%;
   /*background-image: url("@/assets/images/walk-sprites-h.png");*/
-}
-.ending {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-}
-.ending img {
-  height: 100%;
-  object-fit: cover;
 }
 
 .fp-controlArrow.fp-prev,
