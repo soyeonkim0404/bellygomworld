@@ -24,7 +24,7 @@
               <div class="contents">
                 <img src="@/assets/images/main/getbelly_road_ko_1.jpeg" />
                 <div class="text-con">
-                  <template v-if="$i18n.locale === 'ENG'">
+                  <template v-if="$store.state.locale === 'ENG'">
                     <div class="item nm1">
                       <img src="@/assets/images/main/cloud_02_en.png" />
                     </div>
@@ -63,7 +63,7 @@
                     <img src="@/assets/images/main/img_road_balloon02.png" />
                     <div class="txt">
                       <span class="road">ROAD 2</span>
-                      <template v-if="$i18n.locale === 'ENG'">
+                      <template v-if="$store.state.locale === 'ENG'">
                         <div class="title">
                           Bellygom<br />
                           Surprises!
@@ -82,7 +82,7 @@
                     <img src="@/assets/images/main/img_road_balloon01.png" />
                     <div class="txt">
                       <span class="road">ROAD 1</span>
-                      <template v-if="$i18n.locale === 'ENG'">
+                      <template v-if="$store.state.locale === 'ENG'">
                         <div class="title">
                           Bellygom<br />
                           Emerges!
@@ -101,7 +101,7 @@
                     <img src="@/assets/images/main/img_road_balloon03.png" />
                     <div class="txt">
                       <span class="road">ROAD 3</span>
-                      <template v-if="$i18n.locale === 'ENG'">
+                      <template v-if="$store.state.locale === 'ENG'">
                         <div class="title">
                           BellyWorld<br />
                           Opening
@@ -121,7 +121,7 @@
             </div>
           </section>
           <section class="section">
-            <template v-if="$i18n.locale === 'ENG'">
+            <template v-if="$store.state.locale === 'ENG'">
               <div class="ending">
                 <img src="@/assets/images/main/img_bellyship_bg.jpeg" />
                 <div class="top">
@@ -192,7 +192,7 @@
     <modal v-if="showRoad1" @close="closeRoad1" class="road-modal">
       <div slot="header">
         <span class="sub">ROAD 1</span>
-        <template v-if="$i18n.locale === 'ENG'">
+        <template v-if="$store.state.locale === 'ENG'">
           <div class="title">Bellygom Emerges!</div>
         </template>
         <template v-else>
@@ -200,7 +200,7 @@
         </template>
       </div>
       <div slot="body">
-        <template v-if="$i18n.locale === 'ENG'">
+        <template v-if="$store.state.locale === 'ENG'">
           <ul class="road-list">
             <li>Surprise Appears in Crypto Party</li>
             <li>The start of the Bellygom community</li>
@@ -225,7 +225,7 @@
     <modal v-if="showRoad2" @close="closeRoad2" class="road-modal">
       <div slot="header">
         <span class="sub">ROAD 2</span>
-        <template v-if="$i18n.locale === 'ENG'">
+        <template v-if="$store.state.locale === 'ENG'">
           <div class="title">Bellygom Surprises!</div>
         </template>
         <template v-else>
@@ -233,7 +233,7 @@
         </template>
       </div>
       <div slot="body">
-        <template v-if="$i18n.locale === 'ENG'">
+        <template v-if="$store.state.locale === 'ENG'">
           <ul class="road-list">
             <li>Surprise Valley Festival held</li>
             <li>Fast!!! Belly Pass with Bellygom</li>
@@ -256,7 +256,7 @@
     <modal v-if="showRoad3" @close="closeRoad3" class="road-modal">
       <div slot="header">
         <span class="sub">ROAD 3</span>
-        <template v-if="$i18n.locale === 'ENG'">
+        <template v-if="$store.state.locale === 'ENG'">
           <div class="title">BellyWorld Opening!</div>
         </template>
         <template v-else>
@@ -264,7 +264,7 @@
         </template>
       </div>
       <div slot="body">
-        <template v-if="$i18n.locale === 'ENG'">
+        <template v-if="$store.state.locale === 'ENG'">
           <ul class="road-list">
             <li>Bellygom and friends migrate to the metaverse world</li>
             <li>Belly World's Land NFT, Airdrop</li>
@@ -289,7 +289,7 @@
             <li>벨리월드 세 번째 프로젝트 깜짝 게임 만들기</li>
           </ul>
         </template>
-        <template v-if="$i18n.locale === 'ENG'">
+        <template v-if="$store.state.locale === 'ENG'">
           <span class="notice">Road 4 made with holder!!!</span>
         </template>
         <template v-else>
@@ -299,7 +299,7 @@
     </modal>
     <modal v-if="showInf" @close="closeInf" class="info-modal">
       <div slot="header">
-        <template v-if="$i18n.locale === 'ENG'">
+        <template v-if="$store.state.locale === 'ENG'">
           <span class="sub">To get Belly News,</span>
           <div class="title">Visit the Discord Channel ASAP!</div>
         </template>
@@ -312,7 +312,7 @@
         </template>
       </div>
       <div slot="body">
-        <template v-if="$i18n.locale === 'ENG'">
+        <template v-if="$store.state.locale === 'ENG'">
           <div class="list-title">1st Whitelist (Guaranteed)</div>
           <ul class="road-list">
             <li>
@@ -417,7 +417,7 @@ export default {
       charTop: "50%",
       options: {
         keyboardScrolling: false,
-        scrollingSpeed: 1000,
+        scrollingSpeed: 1500,
         licenseKey: "H68K9-OX8AH-GK457-17J28-VGRRP",
         scrollBar: false,
         navigation: false,
@@ -839,8 +839,8 @@ export default {
   z-index: 1;
   transform: translate3d(-50%, -50%,0);
   -webkit-transform: translate3d(-50%, -50%,0);
-  transition: top 1s ease-in-out;
-  -webkit-transition: top 1s ease-in-out;
+  transition: top 1.5s ease-in-out;
+  -webkit-transition: top 1.5s ease-in-out;
 }
 .main-char > div {
   display: none;

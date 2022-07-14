@@ -72,8 +72,8 @@ export default {
     strategy: "prefix_except_default",
     vueI18nLoader: true,
     detectBrowserLanguage: {
-      alwaysRedirect: true,
-      useCookie: true,
+      alwaysRedirect: false,
+      useCookie: false,
       cookieKey: "t_locale",
       fallbackLocale: "ko-KR",
     },

@@ -39,19 +39,16 @@
         </ul>
         <div class="lang">
           <button class="btn-lang" @click="openLang">
-            {{ $i18n.locale }}
+            {{ $store.state.locale }}
           </button>
           <transition name="fade">
             <div class="lang-list" v-if="this.showLang">
-              <nuxt-link
-                v-for="localeCode in $i18n.localeCodes"
-                :key="localeCode"
-                :exact="true"
-                :to="switchLocalePath(localeCode)"
-                @click.native="openLang"
-              >
-                {{ localeCode }}
-              </nuxt-link>
+              <a @click="openLang();$store.commit('setKOR');" :class="{'nuxt-link-active':$store.state.locale === 'KOR'}">
+                KOR
+              </a>
+               <a @click="openLang();$store.commit('setENG');" :class="{'nuxt-link-active':$store.state.locale === 'ENG'}">
+                ENG
+              </a>
             </div>
           </transition>
         </div>
@@ -69,7 +66,7 @@
             <div class="content-wrap">
               <AccordionComponent :list="faqList">
                 <template #title="{ item }">
-                  <template v-if="$i18n.locale === 'ENG'">
+                  <template v-if="$store.state.locale === 'ENG'">
                     {{ item.engTitle }}
                   </template>
                   <template v-else>
@@ -77,7 +74,7 @@
                   </template>
                 </template>
                 <template #cont="{ item }">
-                  <template v-if="$i18n.locale === 'ENG'">
+                  <template v-if="$store.state.locale === 'ENG'">
                     {{ item.engCont }}
                     <span class="pdf" v-if="item.engPdfUrl">
                       <a href="" download=""></a>
@@ -197,9 +194,6 @@ export default {
   methods: {
     openLang(e) {
       this.showLang = !this.showLang;
-      this.showLang
-        ? e.target.classList.add("on")
-        : e.target.classList.remove("on");
     },
     mouseOver() {
       this.isShow = !this.isShow;
