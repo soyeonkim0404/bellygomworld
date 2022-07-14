@@ -27,9 +27,7 @@
                   src="@/assets/m_images/main/getbelly_road_ko_1.png"
                 />
                 <div class="text-con">
-                  <div
-                    v-once
-                    v-swiper:mySwiper="swiperOption"
+                  <div v-swiper:mySwiper="swiperOption"
                     class="swiper-container cloud"
                   >
                     <div class="swiper-wrapper">
@@ -79,9 +77,7 @@
                   src="@/assets/m_images/main/getbelly_road_ko_3.png"
                 />
                 <div class="text-con">
-                  <div
-                    v-once
-                    v-swiper:mySwiper2="swiperOption2"
+                  <div v-swiper:mySwiper2="swiperOption2"
                     class="swiper-container"
                   >
                     <div class="swiper-wrapper">
@@ -92,18 +88,14 @@
                           />
                           <div class="txt">
                             <span class="road">ROAD 1</span>
-                            <template v-if="$store.getters.getLocale === 'ENG'">
-                              <div class="title">
+                              <div v-if="$store.getters.getLocale === 'ENG'" class="title">
                                 Bellygom<br />
                                 Emerges!
                               </div>
-                            </template>
-                            <template v-else>
-                              <div class="title">
+                              <div v-else class="title">
                                 벨리곰이<br />
                                 나타나다
                               </div>
-                            </template>
                             <span class="more">more</span>
                           </div>
                         </button>
@@ -590,7 +582,7 @@ export default {
       swiperOption: {
         slidesPerView: 1,
         spaceBetween: 20,
-        loop: true,
+        loop: false,
         speed: 700,
         pagination: {
           el: ".swiper-pagination-1",
@@ -599,7 +591,7 @@ export default {
       swiperOption2: {
         slidesPerView: 1,
         spaceBetween: 0,
-        loop: true,
+        loop: false,
         speed: 700,
         pagination: {
           el: ".swiper-pagination-2",
