@@ -2,7 +2,7 @@
   <!--S : 앵커 헤드-->
   <header id="head" class="site-header" role="banner">
     <div class="logo">
-      <a href="/" >
+      <a href="/">
         <img src="@/assets/images/commons/logo-2.svg" alt="logo" />
       </a>
     </div>
@@ -92,14 +92,18 @@
                 <template #cont="{ item }">
                   <template v-if="$store.getters.getLocale === 'ENG'">
                     {{ item.engCont }}
-                    <button @click="downloadPdf(2, 'ENG')"></button>
                   </template>
                   <template v-else>
                     {{ item.cont }}
-                    <span class="pdf" v-if="item.pdfUrl">
-                      <button @click="downloadPdf(2, 'KOR')"></button>
-                    </span>
                   </template>
+                  <span class="pdf" v-if="item.pdf">
+                    <button
+                      @click="downloadPdf(item.pdf, $store.getters.getLocale)"
+                      class="pdf-btn"
+                    >
+                      <img src="@/assets/images/main/pdf_download.png" />
+                    </button>
+                  </span>
                 </template>
               </AccordionComponent>
             </div>
@@ -157,8 +161,7 @@ export default {
           cont: "다운받기 눌러봐! 더 상세하게 설명해줄게!",
           engCont:
             "Download the pdf file for a detailed step-by-step guide on creating a Kaikas Wallet.",
-          //pdfUrl: require("@/assets/media/kor/02_BELLYGOM_CreateaKaikaswallet.pdf"),
-          //engPdfUrl: require("@/assets/media/eng/02_BELLYGOM_CreateaKaikaswallet(EN).pdf"),
+          pdf: 2,
         },
         {
           title: "오픈씨는 어떻게 이용하는거야?",
@@ -166,8 +169,7 @@ export default {
           cont: "다운받기 눌러봐!  더 상세하게 설명해줄게!",
           engCont:
             "Download the pdf file for a detailed step-by-step guide on using OpenSea.",
-          // pdfUrl: require("@/assets/media/kor/03_BELLYGOM_HowtouseOpensea.pdf"),
-          //engPdfUrl: require("@/assets/media/eng/03_BELLYGOM_HowtouseOpensea(EN).pdf"),
+          pdf: 3,
         },
         {
           title: "Klip 지갑으로 민팅 할 수 있어?",
@@ -224,7 +226,6 @@ export default {
         document.body.classList.remove("modalOn");
       }
     },
-
   },
 };
 </script>

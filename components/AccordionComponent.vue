@@ -144,6 +144,11 @@ export default {
             }
           }
         }
+        .pdf {
+          display: block;
+          margin-top: 20px;
+          margin-left: 60px;
+        }
       }
       .download {
         display: block;
