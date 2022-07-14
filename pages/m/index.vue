@@ -378,8 +378,7 @@
         <template v-else>
           <span class="sub">벨리곰 NFT 소식은?</span>
           <div class="title">
-            디스코드 채널을 통해<br />
-            가장 빠르게 확인할 수 있습니다.
+            디스코드 채널을 통해 가장 빠르게 확인할 수 있습니다.
           </div>
         </template>
       </div>
@@ -813,10 +812,10 @@ export default {
 }
 .info-btn {
   position: absolute;
-  width: 14%;
+  width: 34%;
   height: 16%;
   bottom: 10%;
-  left: 30%;
+  left: 3%;
 }
 
 .ending {
@@ -1075,4 +1074,6 @@ footer {
   background: #000;
   width: 20px;
 }
+
+
 </style>
