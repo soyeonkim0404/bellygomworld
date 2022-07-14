@@ -851,7 +851,7 @@ export default {
   position: fixed;
   top: 0px;
   left: 50%;
-  width: 37.5%;
+  width: 87.5%;
   z-index: 1;
   transform: translate3d(-50%, -50%, 0);
   -webkit-transform: translate3d(-50%, -50%, 0);
