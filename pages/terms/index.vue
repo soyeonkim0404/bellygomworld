@@ -2,7 +2,7 @@
   <div class="terms">
     <HeaderSub />
     <div class="term-inner">
-      <template v-if="$store.state.locale === 'ENG'">
+      <template v-if="$store.getters.getLocale === 'ENG'">
         <h1>Terms of Service</h1>
         <span class="mt30">
           Bellygom NFT refers to a project for digital art collections that
