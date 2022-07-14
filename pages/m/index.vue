@@ -19,10 +19,10 @@
               </div>
             </div>
           </section>
-          <section class="section">
-            <div class="slide" data-anchor="slide1">
+          <section class="section" >
+            <div class="slide fp-noscroll" data-anchor="slide1">
               <div class="contents">
-                <img src="@/assets/m_images/main/getbelly_road_ko_1.png" />
+                <img class="roads" src="@/assets/m_images/main/getbelly_road_ko_1.png" />
                 <div class="text-con">
                   <div
                     v-once
@@ -48,14 +48,14 @@
                 <button class="info-btn" @click="showInfo" />
               </div>
             </div>
-            <div class="slide" data-anchor="slide2">
+            <div class="slide fp-noscroll" data-anchor="slide2">
               <div class="contents">
-                <img src="@/assets/m_images/main/getbelly_road_ko_2.png" />
+                <img class="roads"  src="@/assets/m_images/main/getbelly_road_ko_2.png" />
               </div>
             </div>
-            <div class="slide" data-anchor="slide3">
+            <div class="slide fp-noscroll" data-anchor="slide3">
               <div class="contents">
-                <img src="@/assets/m_images/main/getbelly_road_ko_3.png" />
+                <img class="roads" src="@/assets/m_images/main/getbelly_road_ko_3.png" />
                 <div class="text-con">
                   <button class="item2 nm1" @click="roadModal2">
                     <img src="@/assets/m_images/main/img_road_balloon02.png" />
@@ -439,7 +439,11 @@ export default {
       footClass: "",
       charTop: "50%",
       options: {
+        controlArrows:false,
+        loopHorizontal:false,
+        verticalCentered:false,
         keyboardScrolling: false,
+        css3: true,
         scrollingSpeed: 1500,
         licenseKey: "H68K9-OX8AH-GK457-17J28-VGRRP",
         scrollBar: false,
@@ -625,7 +629,8 @@ export default {
 
 .slide {
   width: 100vw;
-  height: 100vh;
+  transform:translate3d(0,0,0);
+  -webkit-transform:translate3d(0,0,0);
   ::v-deep .fp-tableCell {
     position: relative;
     img {
@@ -636,11 +641,9 @@ export default {
   }
   .contents {
     width: 100%;
-    position: absolute;
-    bottom: 0;
-    height: auto;
-    left: 50%;
-    transform: translate3d(-50%, 0, 0);
+    position: relative;
+    height: 100%;
+    transform: translate3d(0, 0, 0);
     .text-con {
       position: absolute;
       top: 50%;
@@ -924,5 +927,8 @@ export default {
 .fp-controlArrow.fp-prev,
 .fp-controlArrow.fp-next {
   display: none;
+}
+.roads {
+  position: absolute;bottom:0;width:100%;
 }
 </style>
