@@ -4,8 +4,8 @@
       <client-only>
         <full-page ref="fullpage" :options="options" id="fullpage">
           <section class="section">
-            <video id="mainBelly" loop muted data-autoplay playsinline>
-              <source src="@/assets/media/m_belly.mp4" type="video/mp4" />
+            <video id="mainBelly" loop muted data-autoplay playsinline >
+              <source src="@/assets/media/m_belly.mp4" type="video/mp4" poster="poster.jpg"/>
             </video>
           </section>
           <div class="cloud-wrapper ignore" :class="{ moved: cloudMoved }">
