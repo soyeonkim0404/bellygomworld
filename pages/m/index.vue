@@ -23,6 +23,21 @@
             <div class="slide" data-anchor="slide1">
               <div class="contents">
                 <img src="@/assets/m_images/main/getbelly_road_ko_1.png" />
+                <div
+                  v-once
+                  v-swiper:mySwiper="swiperOption"
+                  class="swiper-container"
+                >
+                  <div class="swiper-wrapper">
+                    <div
+                      v-for="(slide, index) in swiperImages"
+                      :key="index"
+                      class="swiper-slide"
+                    >
+                      <img :src="slide.url" alt="" />
+                    </div>
+                  </div>
+                </div>
                 <div class="text-con">
                   <template v-if="$store.getters.getLocale === 'ENG'">
                     <div class="item nm1">
@@ -123,7 +138,7 @@
           <section class="section">
             <template v-if="$store.getters.getLocale === 'ENG'">
               <div class="ending">
-                <img src="@/assets/m_images/main/img_bellyship_bg.jpeg" />
+                <img src="@/assets/m_images/main/img_bellyship_bg.png" />
                 <div class="top">
                   <img
                     src="@/assets/m_images/main/img_bellyship_top_en.png"
@@ -567,6 +582,11 @@ export default {
           console.log(section, slide, position, direction);
         },
       },
+      cloudImg:[
+        {
+          url:require("@/assets/");
+        }
+      ]
     };
   },
   created() {
@@ -812,15 +832,6 @@ export default {
   width: 100%;
   height: 100%;
   .top {
-    position: absolute;
-    top: 3%;
-    right: 6%;
-    width: 80%;
-    height: auto;
-    img {
-      width: 100%;
-      object-fit: contain;
-    }
   }
   .bottom {
     position: absolute;
@@ -834,23 +845,15 @@ export default {
     }
   }
   .txt {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 30%;
-    height: auto;
-    transform: translateX(-50%);
     img {
-      width: 100%;
-      object-fit: contain;
     }
     &.eng {
-      width: 50%;
     }
   }
   img {
-    height: 100%;
-    object-fit: cover;
+    position: absolute;
+    height: auto;
+    bottom: 0;
   }
 }
 .second {
