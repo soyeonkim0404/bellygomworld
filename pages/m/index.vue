@@ -4,11 +4,11 @@
       <client-only>
         <full-page ref="fullpage" :options="options" id="fullpage">
           <section class="section">
-            <video id="mainBelly" loop muted autoplay playsinline >
+            <video ref="mainBelly" id="mainBelly" loop muted autoplay playsinline >
               <source src="@/assets/media/m_belly.mp4" type="video/mp4" poster="/power_saving.png"/>
             </video>
           </section>
-          <div class="cloud-wrapper ignore" :class="{ moved: cloudMoved }">
+          <div class="cloud-wrapper ignore" @click="videoPlay();" :class="{ moved: cloudMoved }">
             <img src="@/assets/m_images/main/img_keyvisual_01.png" />
           </div>
           <section class="section">
@@ -678,6 +678,9 @@ export default {
       this.$refs.fullpage.api.setAllowScrolling(true);
       this.showInf = false;
     },
+    videoPlay(){
+      this.$refs.mainBelly.play();
+    }
   },
 };
 </script>
