@@ -504,19 +504,13 @@
         </span>
       </template>
     </div>
-    <Footer />
   </div>
 </template>
 
 <script>
-import Footer from "@/components/Footer";
 export default {
   name: "term",
   layout: "clean",
-  components: {
-    Footer,
-  },
-
 };
 </script>
 

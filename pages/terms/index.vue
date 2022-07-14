@@ -503,23 +503,14 @@
         </span>
       </template>
     </div>
-    <Footer />
   </div>
 </template>
 
 <script>
-import HeaderSub from "@/components/HeaderSub";
-import Footer from "@/components/Footer";
 export default {
   name: "term",
   layout: "clean",
-  components: {
-    HeaderSub,
-    Footer,
-  },
-  mounted() {
-
-  }
+  mounted() {},
 };
 </script>
 
