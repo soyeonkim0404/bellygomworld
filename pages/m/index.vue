@@ -5,7 +5,7 @@
         <full-page ref="fullpage" :options="options" id="fullpage">
           <section class="section">
             <video id="mainBelly" loop muted data-autoplay playsinline >
-              <source src="@/assets/media/m_belly.mp4" type="video/mp4" poster="poster.jpg"/>
+              <source src="@/assets/media/m_belly.mp4" type="video/mp4" poster="power_saving.png"/>
             </video>
           </section>
           <div class="cloud-wrapper ignore" :class="{ moved: cloudMoved }">
