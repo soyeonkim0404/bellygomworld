@@ -5,7 +5,7 @@
         <img src="../assets/images/commons/footer_logo.svg" alt="footer-logo" />
       </div>
       <div class="footer-contents">
-        <template v-if="$i18n.locale === 'ENG'">
+        <template v-if="$store.getters.getLocale === 'ENG'">
           <ul class="footer-list">
             <li>CEO Lee, Wan Shin</li>
             <li>

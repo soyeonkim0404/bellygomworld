@@ -163,7 +163,64 @@
             </template>
           </section>
           <section class="section fp-auto-height">
-            <Footer />
+            <footer>
+              <div class="inner">
+                <div class="footer-logo">
+                  <img
+                    src="@/assets/images/commons/footer_logo.svg"
+                    alt="footer-logo"
+                  />
+                </div>
+                <div class="footer-contents">
+                  <template v-if="$store.getters.getLocale === 'ENG'">
+                    <ul class="footer-list">
+                      <li>CEO Lee, Wan Shin</li>
+                      <li>
+                        Address: (Yangpyeongdong 5-ga) 10 Yangpyeong-ro 21-gil
+                        Yeongdeungpo-gu, Seoul
+                      </li>
+                      <li>Privacy Policy Manager: Shin, Sung Bin</li>
+                    </ul>
+                    <ul class="footer-list">
+                      <li>Hosting Service Provider: Woori Home Shopping</li>
+                      <li>Affiliates & Inquiry: master@lotteimall.com</li>
+                      <li>
+                        <nuxt-link to="ENG/terms" target="_blank">
+                          Terms of Service
+                        </nuxt-link>
+                      </li>
+                    </ul>
+                  </template>
+                  <template v-else>
+                    <ul class="footer-list">
+                      <li>대표 이완신</li>
+                      <li>주소: 서울특별시 영등포구 양평로21길10(양평동5가)</li>
+                      <li>개인정보 보호책임자: 신성빈</li>
+                    </ul>
+                    <ul class="footer-list">
+                      <li>호스팅 서비스 사업자: (주)우리홈쇼핑</li>
+                      <li>제휴 및 문의: master@lotteimall.com</li>
+                      <li>
+                        <nuxt-link to="/terms" target="_blank"
+                          >이용약관</nuxt-link
+                        >
+                      </li>
+                    </ul>
+                  </template>
+
+                  <p class="copyright">
+                    Copyright Ⓒ
+                    <span class="logo">
+                      <img
+                        src="@/assets/images/commons/img_footer_logo_bellygom.svg"
+                        alt="footer-logo"
+                      />
+                    </span>
+                    All rights reserved.
+                  </p>
+                </div>
+              </div>
+            </footer>
           </section>
           <div
             class="main-char ignore"
@@ -399,11 +456,8 @@
 </template>
 
 <script>
-import Footer from "@/components/Footer";
 export default {
   name: "IndexPage",
-  layout: "defalut",
-  components: { Footer },
   data() {
     return {
       showInf: false,
