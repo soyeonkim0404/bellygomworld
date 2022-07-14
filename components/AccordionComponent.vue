@@ -66,12 +66,12 @@ export default {
       width: 100%;
       text-align: left;
       font-size: 26px;
-      font-weight: 400;
       line-height: 28px;
-      padding: 54px 40px 53px;
+      padding: 40px 80px 40px 40px;
       border-radius: 40px;
       color: $black;
       background: $white;
+      font-weight: 700;
       &::before {
         content: "Q.";
         display: inline-block;
@@ -87,7 +87,7 @@ export default {
         content: "";
         display: block;
         position: absolute;
-        top: 44px;
+        top: 29px;
         right: 40px;
         width: 48px;
         height: 48px;
@@ -100,9 +100,7 @@ export default {
         border-radius: 40px 40px 0 0;
         &::after {
           transform: rotate(180deg);
-          .mobile & {
-            top: 6px;
-          }
+          top: 35px;
         }
       }
     }
@@ -117,7 +115,7 @@ export default {
           font-size: 26px;
           font-weight: 400;
           line-height: 27px;
-          border-top: 1px solid #bbb;
+          border-top: 2px solid #eee;
           &::before {
             content: "A.";
             display: inline-block;

@@ -8,6 +8,10 @@
     <button @click="storyModal" class="story-modal-btn">
       <img src="../assets/images/commons/story_btn.svg" />
     </button>
+
+    <a href="#getBelly" class="top-btn"
+      ><img src="../assets/images/commons/top_btn.svg" />
+    </a>
     <!--STORY MODAL-->
     <modal v-if="showStoryModal" @close="closeStoryModal" class="story-modal">
       <div slot="header"></div>
@@ -157,7 +161,7 @@ export default {
 #fixed {
   .sound_btn {
     position: fixed;
-    bottom: 100px;
+    bottom: 50px;
     left: 50px;
     z-index: 99;
     width: 120px;
@@ -205,9 +209,17 @@ export default {
   .story-modal-btn {
     position: fixed;
     bottom: 180px;
+    right: 34px;
+    width: 120px;
+    height: 60px;
+  }
+  .top-btn {
+    position: fixed;
+    bottom: 40px;
     right: 50px;
-    width: 80px;
-    height: 80px;
+    width: 88px;
+    height: 88px;
+    border-radius: 100%;
   }
 }
 </style>

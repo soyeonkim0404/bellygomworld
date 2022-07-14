@@ -447,12 +447,13 @@ body {
       }
       .modal-body {
         .list-title {
+          margin-top: 20px;
           font-size: 20px;
           line-height: 36px;
           font-weight: 700;
         }
         .road-list {
-          margin-top: 20px;
+          margin-top: 5px;
           li {
             position: relative;
             padding-left: 10px;
@@ -508,6 +509,12 @@ body {
               font-size: 16px;
               line-height: 25px;
               padding-left: 10px;
+              .underline {
+                display: inline-block;
+                font-weight: 700;
+                text-decoration: underline;
+                text-underline-position: under;
+              }
               &::before {
                 content: "";
                 display: block;
@@ -532,65 +539,5 @@ body {
       top: 60px;
       right: 60px;
     }
-  }
-}
-
-.top-btn {
-  position: fixed;
-  bottom: 100px;
-  right: 50px;
-  width: 66px;
-  height: 66px;
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 20px;
-    height: 28px;
-    background: url("@/assets/images/commons/top_arr.png") center no-repeat;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-  }
-  .radialProgressBar {
-    border-radius: 50%;
-    width: 66px;
-    height: 66px;
-    display: flex;
-    background: #e8c0c9;
-  }
-  .radialProgressBar .overlay {
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    margin: auto;
-    background: #fff;
-    text-align: center;
-  }
-  .s0 {
-    background-image: linear-gradient(90deg, #e8c0c9 50%, transparent 50%),
-      linear-gradient(90deg, #fe3d6b 50%, #e8c0c9 50%);
-  }
-  .s1 {
-    background-image: linear-gradient(18deg, #e8c0c9 50%, transparent 50%),
-      linear-gradient(90deg, #fe3d6b 50%, #e8c0c9 50%);
-  }
-  .slide1 {
-    background-image: linear-gradient(-54deg, #e8c0c9 50%, transparent 50%),
-      linear-gradient(90deg, #fe3d6b 50%, #e8c0c9 50%);
-  }
-  .slide2 {
-    background-image: linear-gradient(90deg, #fe3d6b 50%, transparent 50%),
-      linear-gradient(54deg, #fe3d6b 50%, #e8c0c9 50%);
-  }
-  .slide3,
-  .s2 {
-    background-image: linear-gradient(90deg, #fe3d6b 50%, transparent 50%),
-      linear-gradient(-54deg, #fe3d6b 50%, #e8c0c9 50%);
-  }
-  .s3 {
-    background-image: linear-gradient(90deg, #fe3d6b 50%, transparent 50%),
-      linear-gradient(-90deg, #fe3d6b 50%, #e8c0c9 50%);
   }
 }

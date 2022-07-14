@@ -2,15 +2,17 @@
   <!--S : 앵커 헤드-->
   <header id="head" class="site-header" role="banner">
     <div class="logo">
-      <img src="@/assets/images/commons/logo-2.svg" alt="logo" />
+      <a href="/">
+        <img src="@/assets/images/commons/logo-2.svg" alt="logo" />
+      </a>
     </div>
     <div class="category">
       <ul class="anchor-nav">
         <li data-menuanchor="firstSection">
-          <a href="#getBelly" title="GET BELLY">GET BELLY</a>
+          <a href="#bellyRoad/slide1" title="GET BELLY">GET BELLY</a>
         </li>
         <li data-menuanchor="secondSection">
-          <a href="#bellyRoad" title="BELLY ROAD">BELLY ROAD</a>
+          <a href="#bellyRoad/slide3" title="BELLY ROAD">BELLY ROAD</a>
         </li>
         <li data-menuanchor="thirdSection">
           <a href="#bellyShip" title="BELLY SHIP">BELLY SHIP</a>
@@ -170,27 +172,6 @@ export default {
           engCont: "Can't confirm! Please use Kaikas wallet!",
         },
         {
-          title: "리빌은 어떻게 하는거야?",
-          engTitle: "How does 'Reveal' work?",
-          cont: "8월 19일 (금) 자동으로 리빌이 진행돼!",
-          engCont:
-            "On August 19th (Friday),the Reveal will happen automatically!",
-        },
-        {
-          title: "랭킹은 어떻게 확인 할 수 있어?",
-          engTitle: "How can I check the ranking?",
-          cont: "8월 19일 (금) 19:00부터 우측 상단 검색 기능을 통해 확인 가능해!",
-          engCont:
-            "From August 19 (Fri) 19:00, you can check it through the search bar at the top right corner.",
-        },
-        {
-          title: "디스코드, 카카오톡, 텔레그램에 어떻게 참여할 수 있어?",
-          engTitle: "How can I join Discord, KakaoTalk, or Telegram?",
-          cont: "채널은 홈페이지 우측 상단 링크 아이콘을 눌러서 참여할 수 있어!",
-          engCont:
-            "You can join the channels by clicking the linked icons at the top right corner of the homepage.",
-        },
-        {
           title: "2차 판매 수수료가 있어?",
           engTitle: "Are there any secondary sales fees?",
           cont: "2차 판매 수수료는 7.5%야!",
@@ -199,9 +180,9 @@ export default {
         {
           title: "벨리곰NFT는 저작권 활용할 수 있어?",
           engTitle: "Can Bellygom NFTs be copyrighted?",
-          cont: "Phase1에는 소유권만 인정하고 있어. 그렇지만 Phase2에는 NFT 사업권을 사용할 수 있어!",
+          cont: "Road1에는 소유권만 인정하고 있어. 그렇지만 Road2에는 NFT 사업권을 사용할 수 있어!",
           engCont:
-            "Phase 1 only recognizes ownership. However, you can use NFT licenses for Phase 2!",
+            "Road1 only recognizes ownership. However, you can use NFT licenses for Road2!",
         },
       ],
     };
@@ -414,6 +395,7 @@ export default {
           color: $black;
           font-size: 18px;
           box-sizing: border-box;
+          font-weight: 700;
           &::after {
             content: "";
             display: inline-flex;
@@ -444,6 +426,7 @@ export default {
             line-height: 28px;
             color: $black;
             opacity: 0.4;
+            font-weight: 700;
             & + a {
               margin-top: 5px;
             }
