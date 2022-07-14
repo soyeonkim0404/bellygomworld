@@ -1,0 +1,41 @@
+<svg width="1920" height="503" viewBox="0 0 1920 503" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_2154_6238" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="503">
+<rect width="1920" height="503" fill="url(#paint0_linear_2154_6238)"/>
+<rect width="1920" height="503" fill="url(#paint1_radial_2154_6238)"/>
+</mask>
+<g mask="url(#mask0_2154_6238)">
+<path d="M365.999 308.931C199.999 295.757 64.9985 356.504 -113.002 610.504L-113.005 689.503L2183.5 689.503C2173.31 571.378 2172 239.87 2162 124.002C1829.55 79.9743 1686.5 150.501 1480 285.004C1147.97 501.267 618.273 328.951 365.999 308.931Z" fill="#4835C6"/>
+<circle cx="1479.5" cy="337.5" r="104.5" fill="#4835C6"/>
+<circle cx="110.5" cy="284.5" r="165.5" fill="#4835C6"/>
+<circle cx="882.5" cy="478.5" r="165.5" fill="#4835C6"/>
+<circle cx="463.5" cy="470.5" r="165.5" fill="#4835C6"/>
+<circle cx="638.5" cy="437.5" r="165.5" fill="#4835C6"/>
+<circle cx="1373" cy="371" r="121" fill="#4835C6"/>
+<circle cx="1642.5" cy="185.5" r="82.5" fill="#4835C6"/>
+<ellipse cx="1763" cy="166.5" rx="73" ry="72.5" fill="#4835C6"/>
+<circle cx="1820" cy="211" r="89" fill="#4835C6"/>
+<circle cx="1918" cy="141" r="141" fill="#4835C6"/>
+<circle cx="1450.06" cy="423.053" r="103.5" transform="rotate(-37.3169 1450.06 423.053)" fill="#4835C6"/>
+<circle cx="1204.98" cy="374.983" r="53.5" transform="rotate(-37.3169 1204.98 374.983)" fill="#4835C6"/>
+<circle cx="1110.98" cy="410.983" r="53.5" transform="rotate(-37.3169 1110.98 410.983)" fill="#4835C6"/>
+<circle cx="1043.17" cy="390.165" r="27.9447" transform="rotate(-37.3169 1043.17 390.165)" fill="#4835C6"/>
+<circle cx="1564" cy="239" r="48" fill="#4835C6"/>
+<circle cx="184.847" cy="400.618" r="76.6908" fill="#4835C6"/>
+<circle cx="291.691" cy="282.691" r="76.6908" fill="#4835C6"/>
+<circle cx="379" cy="338" r="56" fill="#4835C6"/>
+<ellipse cx="10.5" cy="95" rx="93.5" ry="91" fill="#4835C6"/>
+<circle cy="141" r="141" fill="#4835C6"/>
+<circle cx="163.5" cy="55.5" r="21.5" fill="#4835C6"/>
+<circle cx="-0.0953827" cy="430.905" r="46.9046" fill="#4835C6"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_2154_6238" x1="1085" y1="65.0981" x2="1055.9" y2="622.448" gradientUnits="userSpaceOnUse">
+<stop stop-color="#4A2BCF"/>
+<stop offset="1" stop-color="#FFADDE"/>
+</linearGradient>
+<radialGradient id="paint1_radial_2154_6238" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(930.5 226.482) rotate(33.0015) scale(798.897 1088.7)">
+<stop stop-color="#198ED0"/>
+<stop offset="1" stop-color="#2E33C0" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>
