@@ -43,7 +43,7 @@
                         </template>
                       </div>
                     </div>
-                    		<!-- pagination -->
+                    <!-- pagination -->
 		                <div class="swiper-pagination swiper-pagination-1" slot="pagination"></div>
                   </div>
                 </div>
@@ -135,10 +135,8 @@
                         </button>
                       </div>
                     </div>
-                    <div
-                      class="swiper-pagination swiper2-page"
-                      slot="pagination"
-                    ></div>
+                    <!-- pagination -->
+		                <div class="swiper-pagination swiper-pagination-2" slot="pagination"></div>
                   </div>
                 </div>
               </div>
@@ -581,9 +579,7 @@ export default {
         loop: true,
         speed: 700,
         pagination: {
-          el: ".swiper2-page",
-          clickable: true,
-          dynamicBullets: true,
+						el: '.swiper-pagination-2'
         },
       },
       cloudImg: [
@@ -1052,20 +1048,27 @@ footer {
     padding: 10%;
     width: 80%;
 }
-
+.swiper-container {
+  padding:20px 0;
+}
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
 .swiper-pagination {
     position: absolute;
-    bottom: 0;
+    bottom: 0 !important;
     width: 100%;
     height: 20px;
     display: flex;
     justify-content: center;
+    align-item: end;
 }
 .swiper-pagination-bullet {
     width: 8px;
     margin: 0px 3px;
     height: 8px;
-    background: #e1e1e1;
+    background: #000000;
     border-radius: 4px;
 }
 .swiper-pagination-bullet-active {
