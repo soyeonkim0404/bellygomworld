@@ -79,7 +79,7 @@
               >
             </li>
             <li data-menuanchor="fourthSection">
-              <button id="show-modal" @click="faqModal">BELLY FAQ</button>
+              <button id="show-modal" @click="openMobileGnb($event);faqModal()">BELLY FAQ</button>
             </li>
             <li class="shop">
               <a href="https://bellygom.com/" target="_blank">SHOP</a>

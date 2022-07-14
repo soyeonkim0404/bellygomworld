@@ -1062,17 +1062,17 @@ footer {
   height: 20px;
   display: flex;
   justify-content: center;
-  align-item: end;
+  align-item: flex-end;
 }
 .swiper-pagination-bullet {
   width: 8px;
   margin: 0px 3px;
   height: 8px;
-  background: #000000;
+  background: #000000 !important;
   border-radius: 4px;
 }
 .swiper-pagination-bullet-active {
-  background: #000;
+  background: #000 !important;;
   width: 20px;
 }
 
