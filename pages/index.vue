@@ -97,13 +97,13 @@
             :style="{ top: charTop }"
           >
             <div class="fall">
-              <img src="../assets/images/char-fall.png" />
+              <img src="../assets/images/char-fall.webp" type="image/webp"  />
             </div>
             <div class="stand">
               <img src="../assets/images/char-stand.png" />
             </div>
-            <div class="walk" :style="{ 'background-position': walkSprite }">
-              <img src="../assets/images/char-walk.png" />
+            <div class="walk" >
+              <img src="../assets/images/char-walk.webp" type="image/webp"  />
             </div>
             <div class="end">
               <img src="../assets/images/char-end.png" />
@@ -227,8 +227,6 @@ export default {
       charClass: "s0",
       footClass: "",
       charTop: "50%",
-      walkSprite: "0% 0%",
-      walkSpriteCnt: 0,
       options: {
         keyboardScrolling: false,
         scrollingSpeed: 1000,
@@ -313,16 +311,8 @@ export default {
     };
   },
   mounted() {
-    //setInterval(this.runWalk, 50);
   },
   methods: {
-    runWalk() {
-      this.walkSpriteCnt++;
-      if (this.walkSpriteCnt > 79) this.walkSpriteCnt = 0;
-      const t = (this.walkSpriteCnt / 79) * 100;
-      console.log(t);
-      this.walkSprite = t + "% 0%";
-    },
     roadModal1() {
       this.showRoad1 = true;
       if (this.showRoad1) {
@@ -577,6 +567,8 @@ export default {
   z-index: 1;
 }
 .main-char {
+  overflow: hidden;
+  border-radius: 40%;
   pointer-events: none;
   position: fixed;
   top: 0px;
