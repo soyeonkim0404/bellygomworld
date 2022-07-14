@@ -183,7 +183,7 @@ body {
           }
         }
         .modal-body {
-          padding: 0 20px 230px;
+          padding: 0 20px 100px;
           .content-wrap {
             margin-top: 80px;
             .accordion-list {
@@ -204,10 +204,10 @@ body {
                     position: absolute;
                     top: 25px;
                     right: 25px;
-                    width: 30px;
-                    height: 30px;
+                    width: 25px;
+                    height: 25px;
                     background: url("@/assets/m_images/main/24_arrow.png")
-                      no-repeat center center / 30px;
+                      no-repeat center center / 25px;
                     will-change: transform;
                     transition: all 0.3s ease-in;
                   }
@@ -241,7 +241,7 @@ body {
                     display: block;
                     margin-top: 10px;
                     margin-left: 0;
-                    width: 160px;
+                    width: 130px;
                   }
                 }
               }
@@ -261,7 +261,7 @@ body {
 
   .story-modal {
     .modal-container {
-      background: #ffd5ec !important;
+      background: #ffb5c5 !important;
       position: absolute;
       top: 0;
       left: 0;
