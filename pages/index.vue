@@ -402,7 +402,7 @@
 import Footer from "@/components/Footer";
 export default {
   name: "IndexPage",
-  layout: "defalut",
+  layout: "default",
   components: { Footer },
   data() {
     return {
@@ -433,7 +433,7 @@ export default {
         },
         afterLoad: (origin, destination, direction) => {
           this.$refs.fullpage.api.setAllowScrolling(true);
-          console.log('afterLoad');
+          console.log("afterLoad");
           if (destination.index === 0) {
             this.charTop = "0px";
             this.cloudMoved = false;
@@ -447,7 +447,7 @@ export default {
         },
         onLeave: (origin, destination, direction) => {
           this.$refs.fullpage.api.setAllowScrolling(false);
-          console.log('onLeave');
+          console.log("onLeave");
           if (destination.index === 0) {
             this.charClass = "s0";
           } else if (destination.index === 1) {
@@ -475,9 +475,8 @@ export default {
             //   window.innerHeight * 4 -
             //   (window.innerWidth / 16) * 9 * 0.7 +
             //   "px";
-             this.charTop =
-              window.innerHeight * 4 -
-                 window.innerHeight*0.65 + "px";
+            this.charTop =
+              window.innerHeight * 4 - window.innerHeight * 0.65 + "px";
           }
 
           if (destination.index === 4) {
@@ -496,24 +495,23 @@ export default {
         },
         afterSlideLoad: (direction, origin, destination) => {
           this.$refs.fullpage.api.setAllowScrolling(true);
-          console.log('afterSlideLoad')
+          console.log("afterSlideLoad");
           if (destination.anchor === "slide1") {
             this.charClass = "slide1";
-
           } else if (destination.anchor === "slide2") {
             this.charClass = "slide2";
           } else if (destination.anchor === "slide3") {
             this.charClass = "slide3";
           }
         },
-        afterRender: function(){
-          console.log('afterRender')
+        afterRender: function () {
+          console.log("afterRender");
         },
-        afterReBuild: function(){},
-        afterResponsive: function(isResponsive){},
-        onScrollOverflow: function(section, slide, position, direction){
-          console.log(section, slide, position, direction)
-        }
+        afterReBuild: function () {},
+        afterResponsive: function (isResponsive) {},
+        onScrollOverflow: function (section, slide, position, direction) {
+          console.log(section, slide, position, direction);
+        },
       },
     };
   },
@@ -523,18 +521,22 @@ export default {
     });
   },
   mounted() {
-    let locale = this.getCookie('b_locale');
-    if(locale && locale === 'KOR'){
-      this.$store.commit('setKOR');
+    let locale = this.getCookie("b_locale");
+    if (locale && locale === "KOR") {
+      this.$store.commit("setKOR");
     } else {
-      this.$store.commit('setENG');
+      this.$store.commit("setENG");
     }
   },
   methods: {
     getCookie(name) {
-      let matches = document.cookie.match(new RegExp(
-        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-      ));
+      let matches = document.cookie.match(
+        new RegExp(
+          "(?:^|; )" +
+            name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") +
+            "=([^;]*)"
+        )
+      );
       return matches ? decodeURIComponent(matches[1]) : undefined;
     },
     roadModal1() {
@@ -851,8 +853,8 @@ export default {
   left: 50%;
   width: 37.5%;
   z-index: 1;
-  transform: translate3d(-50%, -50%,0);
-  -webkit-transform: translate3d(-50%, -50%,0);
+  transform: translate3d(-50%, -50%, 0);
+  -webkit-transform: translate3d(-50%, -50%, 0);
   transition: top 1.5s ease-in-out;
   -webkit-transition: top 1.5s ease-in-out;
 }

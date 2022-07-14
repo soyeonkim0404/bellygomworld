@@ -1,6 +1,7 @@
 <template>
   <div id="app" :class="$mq">
-    <Header />
+    <Header v-if="$mq === 'pc'" />
+    <MobileHeader v-else />
     <Nuxt />
     <Fixed />
   </div>

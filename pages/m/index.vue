@@ -121,42 +121,12 @@
           <section class="section">
             <template v-if="$store.getters.getLocale === 'ENG'">
               <div class="ending">
-                <img src="@/assets/m_images/main/img_bellyship_bg.png" />
-                <div class="top">
-                  <img
-                    src="@/assets/m_images/main/img_bellyship_top_en.png"
-                    class="top"
-                  />
-                </div>
-                <div class="bottom">
-                  <img
-                    src="@/assets/m_images/main/img_bellyship_bottom_en.png"
-                    class="bottom"
-                  />
-                </div>
-                <div class="txt eng">
-                  <img src="@/assets/m_images/main/ship_bottom_en.png" />
-                </div>
+                <img src="@/assets/m_images/main/bellyship.jpeg" />
               </div>
             </template>
             <template v-else>
               <div class="ending">
-                <img src="@/assets/m_images/main/img_bellyship_bg.jpeg" />
-                <div class="top">
-                  <img
-                    src="@/assets/m_images/main/img_bellyship_top.png"
-                    class="top"
-                  />
-                </div>
-                <div class="bottom">
-                  <img
-                    src="@/assets/m_images/main/img_bellyship_bottom.png"
-                    class="bottom"
-                  />
-                </div>
-                <div class="txt">
-                  <img src="@/assets/m_images/main/ship_bottom.png" />
-                </div>
+                <img src="@/assets/m_images/main/bellyship.jpeg" />
               </div>
             </template>
           </section>
@@ -456,6 +426,7 @@
 <script>
 export default {
   name: "IndexPage",
+  layout: "default",
   data() {
     return {
       showInf: false,
@@ -566,19 +537,11 @@ export default {
         },
       },
       swiperOption: {
-        slidesPerView: 9,
-        spaceBetween: 30,
+        slidesPerView: 1,
+        spaceBetween: 0,
         loop: true,
         speed: 700,
-        autoplay: {
-          delay: 0,
-        },
-        on: {
-          init: this.init,
-          sliderMove: this.stopAutoplay,
-          slideChangeTransitionStart: this.stopAutoplay,
-          transitionEnd: this.startAutoplay,
-        },
+        pagination: {},
       },
       cloudImg: [
         {
@@ -677,7 +640,7 @@ export default {
     bottom: 0;
     height: auto;
     left: 50%;
-    transform: translate3d(-50%,0,0);
+    transform: translate3d(-50%, 0, 0);
     .text-con {
       position: absolute;
       top: 50%;
@@ -834,21 +797,11 @@ export default {
 }
 
 .ending {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
+  position: relative;
   .top {
   }
   .bottom {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
     img {
-      width: 100%;
-      object-fit: contain;
     }
   }
   .txt {
@@ -858,9 +811,6 @@ export default {
     }
   }
   img {
-    position: absolute;
-    height: auto;
-    bottom: 0;
   }
 }
 .second {
