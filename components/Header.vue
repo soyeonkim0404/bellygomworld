@@ -39,14 +39,14 @@
         </ul>
         <div class="lang">
           <button class="btn-lang" @click="openLang">
-            {{ $store.state.locale }}
+            {{ $store.getters.getLocale }}
           </button>
           <transition name="fade">
             <div class="lang-list" v-if="this.showLang">
-              <a @click="openLang();$store.commit('setKOR');" :class="{'nuxt-link-active':$store.state.locale === 'KOR'}">
+              <a @click="openLang();$store.commit('setKOR');" :class="{'nuxt-link-active':$store.getters.getLocale === 'KOR'}">
                 KOR
               </a>
-               <a @click="openLang();$store.commit('setENG');" :class="{'nuxt-link-active':$store.state.locale === 'ENG'}">
+               <a @click="openLang();$store.commit('setENG');" :class="{'nuxt-link-active':$store.getters.getLocale === 'ENG'}">
                 ENG
               </a>
             </div>
@@ -66,7 +66,7 @@
             <div class="content-wrap">
               <AccordionComponent :list="faqList">
                 <template #title="{ item }">
-                  <template v-if="$store.state.locale === 'ENG'">
+                  <template v-if="$store.getters.getLocale === 'ENG'">
                     {{ item.engTitle }}
                   </template>
                   <template v-else>
@@ -74,7 +74,7 @@
                   </template>
                 </template>
                 <template #cont="{ item }">
-                  <template v-if="$store.state.locale === 'ENG'">
+                  <template v-if="$store.getters.getLocale === 'ENG'">
                     {{ item.engCont }}
                     <span class="pdf" v-if="item.engPdfUrl">
                       <a href="" download=""></a>

@@ -34,7 +34,7 @@
               <span class="phase-title" v-if="item.phase">
                 PHASE {{ item.phase }}
               </span>
-              <template v-if="$store.state.locale === 'ENG'">
+              <template v-if="$store.getters.getLocale === 'ENG'">
                 <span class="tit" v-if="item.engTitle">{{
                   item.engTitle
                 }}</span>

@@ -2,7 +2,7 @@
   <div class="sub-wrap">
     <div class="title-wrap">
       <h1>NEWS</h1>
-      <template v-if="$store.state.locale === 'ENG'">
+      <template v-if="$store.getters.getLocale === 'ENG'">
         <p class="sub">
           "Of the 10,000 extraordinary Bellygom's, you'll have the unique
           opportunity to obtain your very own rare Bellygom. <br />
@@ -22,7 +22,7 @@
     <div class="content">
       <div class="inner">
         <div class="content-wrap">
-          <template v-if="$store.state.locale === 'ENG'">
+          <template v-if="$store.getters.getLocale === 'ENG'">
             <h2>Bellygom Minting Day</h2>
           </template>
           <template v-else>
@@ -33,7 +33,7 @@
               <div class="box">
                 <div class="tit" :class="item.titleColor">
                   <!-- class-type: purple -->
-                  <template v-if="$store.state.locale === 'ENG'">
+                  <template v-if="$store.getters.getLocale === 'ENG'">
                     <p>{{ item.enTitle }}</p>
                   </template>
                   <template v-else>
@@ -41,7 +41,7 @@
                   </template>
                 </div>
                 <div class="cont">
-                  <template v-if="$store.state.locale === 'ENG'">
+                  <template v-if="$store.getters.getLocale === 'ENG'">
                     <div class="date">{{ item.enDate }}</div>
                   </template>
                   <template v-else>
@@ -62,14 +62,14 @@
                 v-for="(item, index) in caution.sale"
                 :key="index"
               >
-                <template v-if="$store.state.locale === 'ENG'">
+                <template v-if="$store.getters.getLocale === 'ENG'">
                   <p>{{ item.enTitle }}</p>
                 </template>
                 <template v-else>
                   <p>{{ item.title }}</p>
                 </template>
                 <ul>
-                  <template v-if="$store.state.locale === 'ENG'">
+                  <template v-if="$store.getters.getLocale === 'ENG'">
                     <li v-for="(list, index) in item.lists" :key="index">
                       {{ list.enLi }}
                     </li>
@@ -86,7 +86,7 @@
               <div class="wrap">
                 <div class="c-tit">
                   <i class="icon-caution"></i>
-                  <template v-if="$store.state.locale === 'ENG'">
+                  <template v-if="$store.getters.getLocale === 'ENG'">
                     <p>Common Applicable Matters</p>
                   </template>
                   <template v-else>
@@ -94,7 +94,7 @@
                   </template>
                 </div>
                 <ul>
-                  <template v-if="$store.state.locale === 'ENG'">
+                  <template v-if="$store.getters.getLocale === 'ENG'">
                     <li v-for="(item, index) in caution.lists" :key="index">
                       {{ item.enLi }}
                     </li>
@@ -110,14 +110,14 @@
               </div>
             </div>
           </div>
-          <template v-if="$store.state.locale === 'ENG'">
+          <template v-if="$store.getters.getLocale === 'ENG'">
             <h2>Bellygom Minting Preparation Tips</h2>
           </template>
           <template v-else>
             <h2>벨리곰 민팅 준비 팁</h2>
           </template>
           <div class="tip">
-            <template v-if="$store.state.locale === 'ENG'">
+            <template v-if="$store.getters.getLocale === 'ENG'">
               <div class="step discord">
                 <div class="label">
                   <span>Step. 1</span>
