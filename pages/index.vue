@@ -225,31 +225,29 @@
       <div slot="header">
         <span class="sub">ROAD 2</span>
         <template v-if="$i18n.locale === 'ENG'">
-          <div class="title">Bellygom Emerges!</div>
+          <div class="title">Bellygom Surprises!</div>
         </template>
         <template v-else>
-          <div class="title">Bellygom Surprises!</div>
+          <div class="title">벨리곰이 놀래키다</div>
         </template>
       </div>
       <div slot="body">
         <template v-if="$i18n.locale === 'ENG'">
-          <ul class="road-list">
-            <li>Surprise Appears in Crypto Party</li>
-            <li>The start of the Bellygom community</li>
-            <li>Rarity & Ranking Revealed After Reveal</li>
-            <li>Surprise Offer Revealed for All Holders</li>
-            <li>
-              Sold out celebration! Bellygom's celebration ceremony Start~
-            </li>
-          </ul>
-        </template>
-        <template v-else>
           <ul class="road-list">
             <li>Surprise Valley Festival held</li>
             <li>Fast!!! Belly Pass with Bellygom</li>
             <li>Bellygom and global projects and collaborations</li>
             <li>The second operation is possible! Bellygom NFT Airdrop</li>
             <li>Creator Studio, training program open</li>
+          </ul>
+        </template>
+        <template v-else>
+          <ul class="road-list">
+            <li>깜짝 벨리 페스티벌 개최</li>
+            <li>벨리곰과 빠르게!!! 벨리패스</li>
+            <li>벨리곰과 글로벌 프로젝트와 콜라보레이션</li>
+            <li>2차 창작 가능! 벨리곰 NFT 에어드랍</li>
+            <li>크리에이터 스튜디오, 양성 프로그램 오픈</li>
           </ul>
         </template>
       </div>
@@ -433,7 +431,7 @@ export default {
           this.$refs.fullpage.api.rebuid();
         },
         afterLoad: (origin, destination, direction) => {
-          console.log('afterLoad');
+          console.log("afterLoad");
           if (destination.index === 0) {
             this.charTop = "0px";
             this.cloudMoved = false;
@@ -446,7 +444,7 @@ export default {
           }
         },
         onLeave: (origin, destination, direction) => {
-          console.log('onLeave');
+          console.log("onLeave");
           if (destination.index === 0) {
             this.charClass = "s0";
           } else if (destination.index === 1) {
@@ -490,24 +488,23 @@ export default {
           }
         },
         afterSlideLoad: (direction, origin, destination) => {
-          console.log('afterSlideLoad')
+          console.log("afterSlideLoad");
           if (destination.anchor === "slide1") {
             this.charClass = "slide1";
-
           } else if (destination.anchor === "slide2") {
             this.charClass = "slide2";
           } else if (destination.anchor === "slide3") {
             this.charClass = "slide3";
           }
         },
-        afterRender: function(){
-          console.log('afterRender')
+        afterRender: function () {
+          console.log("afterRender");
         },
-        afterReBuild: function(){},
-        afterResponsive: function(isResponsive){},
-        onScrollOverflow: function(section, slide, position, direction){
-          console.log(section, slide, position, direction)
-        }
+        afterReBuild: function () {},
+        afterResponsive: function (isResponsive) {},
+        onScrollOverflow: function (section, slide, position, direction) {
+          console.log(section, slide, position, direction);
+        },
       },
     };
   },
