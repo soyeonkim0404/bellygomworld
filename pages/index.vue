@@ -125,8 +125,10 @@
       </client-only>
     </div>
 
-    <a href="#getBelly" class="top-btn" :class="charClass">
-      <img src="@/assets/images/commons/top_btn.svg" />
+    <a href="#getBelly" class="top-btn">
+      <div class="radialProgressBar" :class="charClass">
+        <div class="overlay"></div>
+      </div>
     </a>
 
     <!-- MODAL-->
