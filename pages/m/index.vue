@@ -160,7 +160,7 @@
           <section class="section">
             <template v-if="$store.getters.getLocale === 'ENG'">
               <div class="ending">
-                <img src="@/assets/m_images/main/bellyship.jpeg" />
+                <img src="@/assets/m_images/main/bellyship_en.jpeg" />
               </div>
             </template>
             <template v-else>
@@ -172,9 +172,18 @@
           <section class="section fp-auto-height">
             <footer>
               <div class="inner">
-                <div class="footer-logo">
+                <div
+                  class="footer-logo"
+                  v-if="$store.getters.getLocale === 'ENG'"
+                >
                   <img
-                    src="@/assets/images/commons/footer_logo.svg"
+                    src="@/assets/m_images/main/footer_logo_en.svg"
+                    alt="footer-logo"
+                  />
+                </div>
+                <div class="footer-logo" v-else>
+                  <img
+                    src="@/assets/m_images/main/footer_logo.svg"
                     alt="footer-logo"
                   />
                 </div>
@@ -582,7 +591,7 @@ export default {
       swiperOption: {
         slidesPerView: 1,
         spaceBetween: 20,
-        loop: false,
+        loop: true,
         speed: 700,
         pagination: {
           el: ".swiper-pagination-1",
@@ -591,7 +600,7 @@ export default {
       swiperOption2: {
         slidesPerView: 1,
         spaceBetween: 0,
-        loop: false,
+        loop: true,
         speed: 700,
         pagination: {
           el: ".swiper-pagination-2",

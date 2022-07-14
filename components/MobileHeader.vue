@@ -54,13 +54,25 @@
               <button id="show-modal" @click="storyModal">STORY BOOK</button>
             </li>
             <li data-menuanchor="firstSection">
-              <a href="#bellyRoad/slide1" title="GET BELLY">GET BELLY</a>
+              <a
+                href="#bellyRoad/slide1"
+                title="GET BELLY"
+                @click="openMobileGnb"
+                >GET BELLY</a
+              >
             </li>
             <li data-menuanchor="secondSection">
-              <a href="#bellyRoad/slide3" title="BELLY ROAD">BELLY ROAD</a>
+              <a
+                href="#bellyRoad/slide3"
+                title="BELLY ROAD"
+                @click="openMobileGnb"
+                >BELLY ROAD</a
+              >
             </li>
             <li data-menuanchor="thirdSection">
-              <a href="#bellyShip" title="BELLY SHIP">BELLY SHIP</a>
+              <a href="#bellyShip" title="BELLY SHIP" @click="openMobileGnb"
+                >BELLY SHIP</a
+              >
             </li>
             <li data-menuanchor="fourthSection">
               <button id="show-modal" @click="faqModal">BELLY FAQ</button>
@@ -526,6 +538,7 @@ export default {
           font-weight: 400;
           font-size: 18px;
           line-height: 27px;
+          color: $black;
         }
         &.shop {
           margin: 20px 40px;
