@@ -169,6 +169,7 @@
             class="main-char ignore"
             :class="charClass"
             :style="{ top: charTop }"
+            ref="mainChar"
           >
             <div class="fall">
               <img src="../assets/images/char-fall.webp" type="image/webp" />
@@ -431,7 +432,8 @@ export default {
           this.$refs.fullpage.api.rebuid();
         },
         afterLoad: (origin, destination, direction) => {
-          console.log("afterLoad");
+          this.$refs.fullpage.api.setAllowScrolling(true);
+          console.log('afterLoad');
           if (destination.index === 0) {
             this.charTop = "0px";
             this.cloudMoved = false;
@@ -444,7 +446,8 @@ export default {
           }
         },
         onLeave: (origin, destination, direction) => {
-          console.log("onLeave");
+          this.$refs.fullpage.api.setAllowScrolling(false);
+          console.log('onLeave');
           if (destination.index === 0) {
             this.charClass = "s0";
           } else if (destination.index === 1) {
@@ -468,10 +471,13 @@ export default {
               (window.innerWidth / 16) * 9 * 0.28 +
               "px";
           } else if (destination.index === 3) {
-            this.charTop =
+            // this.charTop =
+            //   window.innerHeight * 4 -
+            //   (window.innerWidth / 16) * 9 * 0.7 +
+            //   "px";
+             this.charTop =
               window.innerHeight * 4 -
-              (window.innerWidth / 16) * 9 * 0.7 +
-              "px";
+                 window.innerHeight*0.65 + "px";
           }
 
           if (destination.index === 4) {
@@ -483,28 +489,31 @@ export default {
           }
         },
         onSlideLeave: (section, origin, destination) => {
+          this.$refs.fullpage.api.setAllowScrolling(false);
           if (destination.anchor === "slide2") {
             this.charClass = "slide2";
           }
         },
         afterSlideLoad: (direction, origin, destination) => {
-          console.log("afterSlideLoad");
+          this.$refs.fullpage.api.setAllowScrolling(true);
+          console.log('afterSlideLoad')
           if (destination.anchor === "slide1") {
             this.charClass = "slide1";
+
           } else if (destination.anchor === "slide2") {
             this.charClass = "slide2";
           } else if (destination.anchor === "slide3") {
             this.charClass = "slide3";
           }
         },
-        afterRender: function () {
-          console.log("afterRender");
+        afterRender: function(){
+          console.log('afterRender')
         },
-        afterReBuild: function () {},
-        afterResponsive: function (isResponsive) {},
-        onScrollOverflow: function (section, slide, position, direction) {
-          console.log(section, slide, position, direction);
-        },
+        afterReBuild: function(){},
+        afterResponsive: function(isResponsive){},
+        onScrollOverflow: function(section, slide, position, direction){
+          console.log(section, slide, position, direction)
+        }
       },
     };
   },
@@ -586,6 +595,7 @@ export default {
         height: 25%;
         transform: translate(0, -30px);
         transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+        -webkit-transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
         &.nm1 {
           bottom: 59%;
           left: 39%;
@@ -606,6 +616,7 @@ export default {
         height: 43%;
         transform: translate(0, -30px);
         transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+        -webkit-transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
         color: $white;
         .txt {
           position: absolute;
@@ -663,12 +674,15 @@ export default {
           transform: translate(0, 30px);
           &.nm1 {
             transition-delay: 1.5s;
+            -webkit-transition-delay: 1.5s;
           }
           &.nm2 {
             transition-delay: 1s;
+            -webkit-transition-delay: 1s;
           }
           &.nm3 {
             transition-delay: 1.8s;
+            -webkit-transition-delay: 1.8s;
           }
         }
       }
@@ -699,12 +713,15 @@ export default {
           transform: translate(0, 30px);
           &.nm1 {
             transition-delay: 1s;
+            -webkit-transition-delay: 1s;
           }
           &.nm2 {
             transition-delay: 1.3s;
+            -webkit-transition-delay: 1.3s;
           }
           &.nm3 {
             transition-delay: 1.6s;
+            -webkit-transition-delay: 1.6s;
           }
         }
       }
@@ -798,12 +815,15 @@ export default {
 .cloud-wrapper > img {
   position: absolute;
   transition: transform 0.5s ease-in-out;
+  -webkit-transition: transform 0.5s ease-in-out;
   width: 100%;
   top: 0%;
   transform: translateY(-69%);
+  -webkit-transform: translateY(-69%);
 }
 .cloud-wrapper.moved > img {
   transform: translateY(-80%);
+  -webkit-transform: translateY(-80%);
 }
 .section-2 {
   z-index: 1;
@@ -817,8 +837,10 @@ export default {
   left: 50%;
   width: 37.5%;
   z-index: 1;
-  transform: translate(-50%, -50%);
+  transform: translate3d(-50%, -50%,0);
+  -webkit-transform: translate3d(-50%, -50%,0);
   transition: top 1s ease-in-out;
+  -webkit-transition: top 1s ease-in-out;
 }
 .main-char > div {
   display: none;
@@ -854,6 +876,7 @@ export default {
   z-index: 3;
   transform: translateX(-50%);
   transition: left 1s ease-in-out;
+  -webkit-transition: left 1s ease-in-out;
 }
 .road-img.slide1 {
   left: 110%;
