@@ -39,15 +39,26 @@
                         class="swiper-slide"
                       >
                         <template v-if="$store.getters.getLocale === 'ENG'">
-                          <img :src="slide.engUrl" alt="" class="slide1-cloud-img"/>
+                          <img
+                            :src="slide.engUrl"
+                            alt=""
+                            class="slide1-cloud-img"
+                          />
                         </template>
                         <template v-else>
-                          <img :src="slide.url" alt="" class="slide1-cloud-img"/>
+                          <img
+                            :src="slide.url"
+                            alt=""
+                            class="slide1-cloud-img"
+                          />
                         </template>
                       </div>
                     </div>
                     <!-- pagination -->
-		                <div class="swiper-pagination swiper-pagination-1" slot="pagination"></div>
+                    <div
+                      class="swiper-pagination swiper-pagination-1"
+                      slot="pagination"
+                    ></div>
                   </div>
                 </div>
                 <button class="info-btn" @click="showInfo" />
@@ -145,7 +156,10 @@
                       </div>
                     </div>
                     <!-- pagination -->
-		                <div class="swiper-pagination swiper-pagination-2" slot="pagination"></div>
+                    <div
+                      class="swiper-pagination swiper-pagination-2"
+                      slot="pagination"
+                    ></div>
                   </div>
                 </div>
               </div>
@@ -186,7 +200,7 @@
                       <li>Hosting Service Provider: Woori Home Shopping</li>
                       <li>Affiliates & Inquiry: master@lotteimall.com</li>
                       <li>
-                        <nuxt-link to="ENG/terms" target="_blank">
+                        <nuxt-link to="/terms" target="_blank">
                           Terms of Service
                         </nuxt-link>
                       </li>
@@ -482,7 +496,8 @@ export default {
         scrollBar: false,
         navigation: false,
         scrollOverflow: true,
-        normalScrollElements: ".modal-container, .swiper-container",
+        normalScrollElements:
+          ".modal-container, .swiper-container, #mobile-gnb",
         scrollHorizontally: true,
         scrollHorizontallyKey:
           "YmVsbHlnb20ud29ybGRfaktDYzJOeWIyeHNTRzl5YVhwdmJuUmhiR3g1NFN6",
@@ -579,7 +594,7 @@ export default {
         loop: true,
         speed: 700,
         pagination: {
-						el: '.swiper-pagination-1'
+          el: ".swiper-pagination-1",
         },
       },
       swiperOption2: {
@@ -588,7 +603,7 @@ export default {
         loop: true,
         speed: 700,
         pagination: {
-						el: '.swiper-pagination-2'
+          el: ".swiper-pagination-2",
         },
       },
       cloudImg: [
@@ -699,7 +714,7 @@ export default {
         position: absolute;
         width: 22%;
         height: 25%;
-        padding:2%;
+        padding: 2%;
         transform: translate(0, -30px);
         transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
         -webkit-transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
@@ -1030,34 +1045,34 @@ footer {
 }
 
 .slide1-cloud-img {
-    padding: 10%;
-    width: 80%;
+  padding: 10%;
+  width: 80%;
 }
 .swiper-container {
-  padding:20px 0;
+  padding: 20px 0;
 }
 .swiper-slide {
   display: flex;
   justify-content: center;
 }
 .swiper-pagination {
-    position: absolute;
-    bottom: 0 !important;
-    width: 100%;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-item: end;
+  position: absolute;
+  bottom: 0 !important;
+  width: 100%;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-item: end;
 }
 .swiper-pagination-bullet {
-    width: 8px;
-    margin: 0px 3px;
-    height: 8px;
-    background: #000000;
-    border-radius: 4px;
+  width: 8px;
+  margin: 0px 3px;
+  height: 8px;
+  background: #000000;
+  border-radius: 4px;
 }
 .swiper-pagination-bullet-active {
   background: #000;
-  width:20px;
+  width: 20px;
 }
 </style>

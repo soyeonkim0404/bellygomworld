@@ -153,53 +153,109 @@ body {
     opacity: 0;
   }
 
+  .modal-container {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 auto !important;
+    max-height: 100vh !important;
+    overflow-y: auto;
+    .modal-inner {
+      .modal-body {
+        padding: 0 20px 20px;
+      }
+    }
+  }
   /*modal*/
   .faq-modal {
     .modal-container {
-      width: 100% !important;
-      height: 100% !important;
-      background: url("../images/main/faq_bg.jpeg") center no-repeat;
+      background: url("@/assets/m_images/main/faq_bg.png") top left no-repeat;
       background-size: cover;
-      margin: 0 auto !important;
-      max-height: 100vh !important;
-      overflow-y: auto;
-
       .modal-inner {
-        max-width: 1260px;
-        margin: 0 auto;
-        padding: 180px 30px;
-        height: auto !important;
-
         .modal-header {
           .title {
             font-family: "Sandoll Odongtong", sans-serif;
             font-weight: 400;
             color: $black;
-            font-size: 80px;
-            line-height: 104px;
+            font-size: 40px;
+            line-height: 52px;
             text-align: center;
+            padding-top: 118px;
           }
         }
-
         .modal-body {
-          margin-top: 100px;
+          padding: 0 20px 230px;
+          .content-wrap {
+            margin-top: 80px;
+            .accordion-list {
+              .accordion-item {
+                .title {
+                  padding: 25px 55px 25px 60px;
+                  font-size: 16px;
+                  &::before {
+                    font-size: 18px;
+                    position: absolute;
+                    top: 25px;
+                    left: 27px;
+                    margin: 0;
+                  }
+                  &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 25px;
+                    right: 25px;
+                    width: 30px;
+                    height: 30px;
+                    background: url("@/assets/m_images/main/24_arrow.png")
+                      no-repeat center center / 30px;
+                    will-change: transform;
+                    transition: all 0.3s ease-in;
+                  }
+                  &.active {
+                    border-radius: 40px 40px 0 0;
+                    &::after {
+                      transform: rotate(180deg);
+                      top: 35px;
+                    }
+                  }
+                }
+              }
+              .accordion-content {
+                .cont {
+                  padding: 0 40px;
+                  border-radius: 0 0 40px 40px;
+                  will-change: transform;
+                  p {
+                    padding: 25px 15px 25px 20px;
+                    font-size: 16px;
+                    line-height: 25px;
+                    &::before {
+                      font-size: 18px;
+                      position: absolute;
+                      top: 25px;
+                      left: -10px;
+                      margin: 0;
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
 
       .modal-default-button {
         position: fixed;
-        top: 80px;
-        right: 80px;
+        top: 40px;
+        right: 40px;
+        z-index: 99;
       }
     }
   }
 
   .story-modal {
     .modal-container {
-      width: 100% !important;
-      height: 100%;
       background: #ffd5ec !important;
-      overflow-y: scroll;
       position: absolute;
       top: 0;
       left: 0;
@@ -216,17 +272,37 @@ body {
           }
         }
         .modal-body {
-          padding: 0 20px;
+          padding: 0 20px 20px;
         }
         .story {
+          position: relative;
           margin-top: 50px;
           background: #fff7eb;
           border-radius: 30px;
           padding: 85px 20px;
+          &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 60px;
+            background: url("@/assets/m_images/main/img_storybook_bookspring.png")
+              center no-repeat;
+          }
           .box {
             .left-img {
+              margin-top: 100px;
+            }
+            &:first-child {
+              .left-img {
+                margin-top: 0;
+              }
             }
             .txt {
+              margin-top: 20px;
               h3 {
                 font-family: "Sandoll Odongtong", sans-serif;
                 font-weight: 400;
@@ -258,100 +334,10 @@ body {
               }
             }
           }
-
-          .box {
-            &.on {
-              .left-img {
-                opacity: 1;
-                transform: translateX(0px);
-              }
-
-              .txt {
-                opacity: 1;
-                transform: translateX(0px);
-              }
-            }
-          }
-
-          .indicator {
-            position: absolute;
-            top: 53%;
-            left: 2px;
-            height: 75%;
-            transform: translateY(-50%);
-
-            .indi {
-              position: relative;
-              z-index: 4;
-              width: 100%;
-              height: 25%;
-
-              img {
-                width: auto;
-                height: 100%;
-              }
-
-              &:nth-child(1) {
-                left: 6px;
-                z-index: 4;
-                top: 0%;
-              }
-
-              &:nth-child(2) {
-                left: 6px;
-                z-index: 3;
-                top: -2%;
-              }
-
-              &:nth-child(3) {
-                left: 6px;
-                z-index: 2;
-                top: -4%;
-              }
-
-              &:nth-child(4) {
-                left: 6px;
-                z-index: 1;
-                top: -6%;
-              }
-            }
-          }
-
-          .arrow {
-            width: 100%;
-            position: absolute;
-            top: 45%;
-            transform: translateY(-50%);
-
-            .prev {
-              position: absolute;
-              left: -100px;
-              width: 70px;
-              height: 70px;
-              background: url("@/assets/images/main/img_storybook_prev_off.png");
-
-              &.on {
-                background: url("@/assets/images/main/img_storybook_prev_on.png");
-              }
-            }
-
-            .next {
-              position: absolute;
-              right: -100px;
-              width: 70px;
-              height: 70px;
-              background: url("@/assets/images/main/img_storybook_next_off.png");
-
-              &.on {
-                background: url("@/assets/images/main/img_storybook_next_on.png");
-              }
-            }
-          }
         }
 
         .modal-default-button {
-          top: 28px;
-          right: 10px;
+          position: fixed;
           z-index: 99;
         }
       }
