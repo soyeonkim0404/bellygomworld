@@ -168,6 +168,14 @@
                 <img src="@/assets/m_images/main/bellyship.jpeg" />
               </div>
             </template>
+              <div
+              class="main-char-ending"
+              :class="endCharClass "
+            >
+              <div class="fall">
+                <img src="@/assets/m_images/char-fall.webp" type="image/webp" />
+              </div>
+            </div>
           </section>
           <section class="section fp-auto-height">
             <footer>
@@ -484,7 +492,7 @@ export default {
       cloudMoved: false,
       charClass: "s0",
       footClass: "",
-      charTop: "50%",
+      charTop: "-100%",
       options: {
         controlArrows: false,
         loopHorizontal: false,
@@ -546,12 +554,8 @@ export default {
               (window.innerWidth / 16) * 9 * 0.75 +
               "px";
           } else if (destination.index === 3) {
-            // this.charTop =
-            //   window.innerHeight * 4 -
-            //   (window.innerWidth / 16) * 9 * 0.7 +
-            //   "px";
             this.charTop =
-              window.innerHeight * 4 - window.innerHeight * 0.65 + "px";
+              window.innerHeight * 4 - window.innerHeight * 3 + "px";
           }
 
           if (destination.index === 4) {
@@ -980,6 +984,24 @@ footer {
 .section-2 {
   z-index: 1;
 }
+.main-char-ending {
+  overflow: hidden;
+  border-radius: 40%;
+  pointer-events: none;
+  position: fixed;
+  top: 0px;
+  left: 50%;
+  width: 100%;
+  z-index: 1;
+  transform: translate3d(-50%, -100%, 0);
+  -webkit-transform: translate3d(-50%, -100%, 0);
+  transition: transform 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+}
+.fp-completely.active .main-char-ending {
+  transform: translate3d(-50%, 0%, 0);
+  -webkit-transform: translate3d(-50%, 0%, 0);
+}
 .main-char {
   overflow: hidden;
   border-radius: 40%;
@@ -1015,7 +1037,7 @@ footer {
 .main-char.slide3 .stand {
   display: block;
 }
-.main-char.s3 .end {
+.main-char.s3 .fall {
   display: block;
 }
 
@@ -1082,7 +1104,7 @@ footer {
 }
 .swiper-pagination-bullet-active {
   background: #000 !important;;
-  width: 20px;
+  width: 20px !important;
 }
 
 

@@ -416,7 +416,7 @@ export default {
       cloudMoved: false,
       charClass: "s0",
       footClass: "",
-      charTop: "50%",
+      charTop: "-50%",
       options: {
         keyboardScrolling: false,
         animateAnchor:false,
