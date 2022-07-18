@@ -476,7 +476,7 @@ export default {
             //   (window.innerWidth / 16) * 9 * 0.7 +
             //   "px";
             this.charTop =
-              window.innerHeight * 4 - window.innerHeight * 0.65 + "px";
+              window.innerHeight * 4 - window.innerHeight * 0.6 + "px";
           }
 
           if (destination.index === 4) {
@@ -754,7 +754,7 @@ export default {
   height: 100%;
   .top {
     position: absolute;
-    top: 3%;
+    top: 8%;
     right: 6%;
     width: 80%;
     height: auto;
@@ -769,6 +769,7 @@ export default {
     left: 0;
     width: 100%;
     height: auto;
+    transform: translateY(23%);
     img {
       width: 100%;
       object-fit: contain;
