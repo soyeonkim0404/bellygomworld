@@ -1,9 +1,18 @@
 <template>
   <ul class="accordion-list">
     <li class="accordion-item" v-for="(item, index) in list" :key="index">
-      <button
-        :class="{ title: true, active: onContent.some((el) => index === el) }"
-        @click="openCon(index)"
+      <button v-if="$mq === 'pc'"
+          :class="{ title: true, active: onContent.some((el) => index === el) }"
+          @click="openCon(index);
+        sendGaEvent('bf_faq'+(parseInt(index)+1), 'BF');"
+      >
+        <slot name="title" :item="item"></slot>
+      </button>
+
+      <button v-if="$mq === 'mobile'"
+              :class="{ title: true, active: onContent.some((el) => index === el) }"
+              @click="openCon(index);
+        sendGaEvent('M_bf_faq'+(parseInt(index)+1), 'BF');"
       >
         <slot name="title" :item="item"></slot>
       </button>
@@ -44,12 +53,12 @@ export default {
         this.onContent.push(index);
       }
     },
-    /*sendGaEvent(eventName, event_category) {
+    sendGaEvent(eventName, event_category) {
       console.log(eventName + "|||||||" + event_category);
       gtag("event", eventName, {
         event_category: event_category,
       });
-    },*/
+    },
   },
 };
 </script>

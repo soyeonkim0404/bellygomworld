@@ -47,7 +47,7 @@
                     </div>
                   </template>
                 </div>
-                <button class="info-btn" @click="showInfo" />
+                <button class="info-btn" @click="showInfo();sendGaEvent('gb_icon','GB')" />
               </div>
             </div>
             <div class="slide" data-anchor="slide2">
@@ -59,7 +59,7 @@
               <div class="contents">
                 <img src="@/assets/images/main/getbelly_road_ko_3.jpeg" />
                 <div class="text-con">
-                  <button class="item2 nm1" @click="roadModal2">
+                  <button class="item2 nm1" @click="roadModal2();sendGaEvent('br_rd2_more', 'BR');">
                     <img src="@/assets/images/main/img_road_balloon02.png" />
                     <div class="txt">
                       <span class="road">ROAD 2</span>
@@ -78,7 +78,9 @@
                       <span class="more">more</span>
                     </div>
                   </button>
-                  <button class="item2 nm2" @click="roadModal1">
+                  <button class="item2 nm2" @click="
+                  roadModal1();
+                  sendGaEvent('br_rd1_more', 'BR');">
                     <img src="@/assets/images/main/img_road_balloon01.png" />
                     <div class="txt">
                       <span class="road">ROAD 1</span>
@@ -97,7 +99,7 @@
                       <span class="more">more</span>
                     </div>
                   </button>
-                  <button class="item2 nm3" @click="roadModal3">
+                  <button class="item2 nm3" @click="roadModal3();sendGaEvent('br_rd3_more', 'BR');">
                     <img src="@/assets/images/main/img_road_balloon03.png" />
                     <div class="txt">
                       <span class="road">ROAD 3</span>
@@ -536,6 +538,7 @@ export default {
   methods: {
 
     roadModal1() {
+
       this.$refs.fullpage.api.setAllowScrolling(false);
       this.showRoad1 = true;
     },
@@ -566,6 +569,12 @@ export default {
     closeInf() {
       this.$refs.fullpage.api.setAllowScrolling(true);
       this.showInf = false;
+    },
+    sendGaEvent(eventName, event_category){
+      console.log(eventName +"|||||||"+ event_category);
+      gtag('event', eventName, {
+        "event_category": event_category
+      });
     },
   },
 };
