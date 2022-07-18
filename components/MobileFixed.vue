@@ -2,7 +2,7 @@
   <!--S : Fixed Contents-->
   <div id="fixed">
     <div class="audio">
-      <button class="sound_btn" ref="soundClick" @click="play()" />
+      <button class="sound_btn" ref="soundClick" @click="play();sendGaEvent('flt_bgmOn','FLT');" />
       <audio loop ref="audioElm" src="../assets/media/BELLY.mp3"></audio>
     </div>
 
@@ -235,6 +235,12 @@ export default {
     storySlidePrev() {
       this.currIndi--;
       if (this.currIndi < 1) this.currIndi = 1;
+    },
+    sendGaEvent(eventName, event_category){
+      console.log('M_' + eventName +"|||||||"+ event_category);
+      gtag('event', 'M_'+ eventName, {
+        "event_category": event_category
+      });
     },
   },
 };

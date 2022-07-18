@@ -1,7 +1,17 @@
 <template>
   <header id="head" class="site-header" role="banner">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-233928727-2" v-if="$mq === 'mobile'"></script>
+    <script v-if="$mq === 'mobile'">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-233928727-2');
+    </script>
+
     <div class="logo">
-      <a href="/m">
+      <a href="/m" @click="sendGaEvent( 'M_' + 'gnb_logo','GNB')">
         <img src="@/assets/images/commons/logo-2.svg" alt="logo" />
       </a>
     </div>
@@ -21,6 +31,7 @@
               @click="
                 openLang();
                 $store.commit('setKOR');
+                sendGaEvent( 'M_' + 'gnb_kor','GNB');
               "
               :class="{
                 'nuxt-link-active': $store.getters.getLocale === 'KOR',
@@ -32,6 +43,7 @@
               @click="
                 openLang();
                 $store.commit('setENG');
+                sendGaEvent( 'M_' + 'gnb_eng','GNB');
               "
               :class="{
                 'nuxt-link-active': $store.getters.getLocale === 'ENG',
@@ -55,9 +67,9 @@
           </button>
           <ul class="anchor-nav">
             <li>
-              <button id="show-modal" @click="storyModal">STORY BOOK</button>
+              <button id="show-modal" @click="storyModal();sendGaEvent( 'M_' + 'gnb_bellyStory','FLT')">STORY BOOK</button>
             </li>
-            <li data-menuanchor="firstSection">
+            <li data-menuanchor="firstSection" @click="sendGaEvent( 'M_' + 'gnb_getBelly','GNB')">
               <a
                 href="#bellyRoad/slide1"
                 title="GET BELLY"
@@ -65,7 +77,7 @@
                 >GET BELLY</a
               >
             </li>
-            <li data-menuanchor="secondSection">
+            <li data-menuanchor="secondSection" @click="sendGaEvent( 'M_' + 'gnb_bellyRoad','GNB')">
               <a
                 href="#bellyRoad/slide3"
                 title="BELLY ROAD"
@@ -73,16 +85,16 @@
                 >BELLY ROAD</a
               >
             </li>
-            <li data-menuanchor="thirdSection">
+            <li data-menuanchor="thirdSection" @click="sendGaEvent( 'M_' + 'gnb_bellyShip','GNB')">
               <a href="#bellyShip" title="BELLY SHIP" @click="openMobileGnb"
                 >BELLY SHIP</a
               >
             </li>
             <li data-menuanchor="fourthSection">
-              <button id="show-modal" @click="openMobileGnb($event);faqModal()">BELLY FAQ</button>
+              <button id="show-modal" @click="openMobileGnb($event);faqModal();sendGaEvent( 'M_' + 'gnb_bellyFaq','GNB')">BELLY FAQ</button>
             </li>
             <li class="shop">
-              <a href="https://bellygom.com/" target="_blank">SHOP</a>
+              <a href="https://bellygom.com/" target="_blank" @click="sendGaEvent( 'M_' + 'gnb_shop','GNB')">SHOP</a>
             </li>
           </ul>
         </div>
@@ -241,7 +253,8 @@
                   </template>
                   <span class="pdf" v-if="item.pdf">
                     <button
-                      @click="downloadPdf(item.pdf, $store.getters.getLocale)"
+                      @click="downloadPdf(item.pdf, $store.getters.getLocale);
+                      sendGaEvent( 'M_' + 'bf_faq'+ item.pdf +'_file', 'BR');"
                       class="pdf-btn"
                     >
                       <img src="@/assets/m_images/main/pdf_download.png" />
@@ -396,6 +409,12 @@ export default {
       this.currIndi--;
       if (this.currIndi < 1) this.currIndi = 1;
     },
+    sendGaEvent(eventName, event_category){
+      console.log( eventName +"|||||||"+ event_category);
+      gtag('event', eventName, {
+        "event_category": event_category
+      });
+    }
   },
 };
 </script>

@@ -2,11 +2,11 @@
   <!--S : Fixed Contents-->
   <div id="fixed">
     <div class="audio">
-      <button class="sound_btn" ref="soundClick" @click="play()" />
-      <audio loop ref="audioElm" src="../assets/media/BELLY.mp3"></audio>
+      <button class="sound_btn" ref="soundClick" @click="play();sendGaEvent('flt_bgmOn','FLT');" />
+      <audio loop ref="audioElm" src="../assets/media/BELLY.mp3" ></audio>
     </div>
     <button @click="storyModal" class="story-modal-btn">
-      <img src="../assets/images/commons/story_btn.svg" />
+      <img src="../assets/images/commons/story_btn.svg" @click="sendGaEvent('flt_bellyStory','FLT')" />
     </button>
 
     <a href="#getBelly" class="top-btn"
@@ -238,6 +238,12 @@ export default {
     storySlidePrev() {
       this.currIndi--;
       if (this.currIndi < 1) this.currIndi = 1;
+    },
+    sendGaEvent(eventName, event_category){
+      console.log(eventName +"|||||||"+ event_category);
+      gtag('event', eventName, {
+        "event_category": event_category
+      });
     },
   },
 };

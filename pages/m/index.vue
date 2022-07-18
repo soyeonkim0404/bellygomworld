@@ -59,7 +59,7 @@
                     ></div>
                   </div>
                 </div>
-                <button class="info-btn" @click="showInfo" />
+                <button class="info-btn" @click="showInfo(); sendGaEvent( 'M_' +'gb_icon','GB')" />
               </div>
             </div>
             <div class="slide fp-noscroll" data-anchor="slide2">
@@ -82,7 +82,7 @@
                   >
                     <div class="swiper-wrapper">
                       <div class="swiper-slide">
-                        <button class="item2" @click="roadModal1">
+                        <button class="item2" @click="roadModal1();  sendGaEvent( 'M_' +'br_rd1_more', 'BR');">
                           <img
                             src="@/assets/m_images/main/img_road_balloon01.png"
                           />
@@ -101,7 +101,7 @@
                         </button>
                       </div>
                       <div class="swiper-slide">
-                        <button class="item2" @click="roadModal2">
+                        <button class="item2" @click="roadModal2(); sendGaEvent( 'M_' +'br_rd2_more', 'BR')">
                           <img
                             src="@/assets/m_images/main/img_road_balloon02.png"
                           />
@@ -124,7 +124,7 @@
                         </button>
                       </div>
                       <div class="swiper-slide">
-                        <button class="item2" @click="roadModal3">
+                        <button class="item2" @click="roadModal3(), sendGaEvent( 'M_' +'br_rd3_more', 'BR')">
                           <img
                             src="@/assets/m_images/main/img_road_balloon03.png"
                           />
@@ -680,7 +680,13 @@ export default {
     },
     videoPlay(){
       this.$refs.mainBelly.play();
-    }
+    },
+    sendGaEvent(eventName, event_category){
+      console.log(eventName +"|||||||"+ event_category);
+      gtag('event', eventName, {
+        "event_category": event_category
+      });
+    },
   },
 };
 </script>

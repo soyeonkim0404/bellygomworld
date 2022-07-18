@@ -1,30 +1,39 @@
 <template>
   <!--S : 앵커 헤드-->
   <header id="head" class="site-header" role="banner">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-233928727-1" v-if="$mq === 'pc'"></script>
+    <script v-if="$mq === 'pc'">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-233928727-1');
+    </script>
     <div class="logo">
-      <a href="/">
+      <a href="/" @click="sendGaEvent('gnb_logo','GNB')">
         <img src="@/assets/images/commons/logo-2.svg" alt="logo" />
       </a>
     </div>
     <div class="category">
       <ul class="anchor-nav">
         <li data-menuanchor="firstSection">
-          <a href="#bellyRoad/slide1" title="GET BELLY">GET BELLY</a>
+          <a href="#bellyRoad/slide1" title="GET BELLY"><span @click="sendGaEvent('gnb_getBelly','GNB')">GET BELLY</span></a>
         </li>
         <li data-menuanchor="secondSection">
-          <a href="#bellyRoad/slide3" title="BELLY ROAD">BELLY ROAD</a>
+          <a href="#bellyRoad/slide3" title="BELLY ROAD"><span @click="sendGaEvent('gnb_bellyRoad','GNB')">BELLY ROAD</span></a>
         </li>
         <li data-menuanchor="thirdSection">
-          <a href="#bellyShip" title="BELLY SHIP">BELLY SHIP</a>
+          <a href="#bellyShip" title="BELLY SHIP"><span @click="sendGaEvent('gnb_bellyShip','GNB')">BELLY SHIP</span></a>
         </li>
         <li data-menuanchor="fourthSection">
-          <button id="show-modal" @click="faqModal">BELLY FAQ</button>
+          <button id="show-modal" @click="faqModal"><span @click="sendGaEvent('gnb_bellyFaq','GNB')">BELLY FAQ</span></button>
         </li>
       </ul>
       <div class="etc-link">
         <ul class="sns">
-          <li class="link1">
-            <a href="https://bellygom.com/" target="_blank" />
+          <li class="link1" @click="sendGaEvent('gnb_shop','GNB')">
+            <a href="https://bellygom.com/" target="_blank" ></a>
           </li>
           <!--<li class="linked">
             <button type="button" class="btn-link" @mouseover="mouseOver" />
@@ -47,6 +56,7 @@
                 @click="
                   openLang();
                   $store.commit('setKOR');
+                  sendGaEvent('gnb_kor','GNB');
                 "
                 :class="{
                   'nuxt-link-active': $store.getters.getLocale === 'KOR',
@@ -58,6 +68,7 @@
                 @click="
                   openLang();
                   $store.commit('setENG');
+                  sendGaEvent('gnb_eng','GNB');
                 "
                 :class="{
                   'nuxt-link-active': $store.getters.getLocale === 'ENG',
@@ -98,7 +109,8 @@
                   </template>
                   <span class="pdf" v-if="item.pdf">
                     <button
-                      @click="downloadPdf(item.pdf, $store.getters.getLocale)"
+                      @click="downloadPdf(item.pdf, $store.getters.getLocale);
+                              sendGaEvent('bf_faq'+ item.pdf +'_file', 'BR');"
                       class="pdf-btn"
                     >
                       <img src="@/assets/images/main/pdf_download.png" />
@@ -226,6 +238,12 @@ export default {
         document.body.classList.remove("modalOn");
       }
     },
+    sendGaEvent(eventName, event_category){
+      console.log(eventName +"|||||||"+ event_category);
+      gtag('event', eventName, {
+        "event_category": event_category
+      });
+    }
   },
 };
 </script>
