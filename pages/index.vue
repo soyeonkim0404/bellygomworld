@@ -577,7 +577,8 @@ export default {
 
 .slide {
   width: 100vw;
-  height: 100vh;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
   ::v-deep .fp-tableCell {
     position: relative;
     img {
