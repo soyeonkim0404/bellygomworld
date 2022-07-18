@@ -13,6 +13,11 @@ const mixin = {
     }
   },
   methods: {
+    mySilentScroll(section, slide) {
+      this.$refs.fullpage.api.setScrollingSpeed(0);
+      this.$refs.fullpage.api.moveTo(section, slide);
+      this.$refs.fullpage.api.setScrollingSpeed(700);
+    },
     downloadPdf(_no, _locale) {
       if (_no === 1) {
       } else if (_no === 2) {

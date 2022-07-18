@@ -4,7 +4,7 @@
       <client-only>
         <full-page ref="fullpage" :options="options" id="fullpage">
           <section class="section">
-            <video ref="mainBelly" id="mainBelly" loop muted autoplay playsinline >
+            <video ref="mainBelly" id="mainBelly" loop muted data-autoplay playsinline >
               <source src="@/assets/media/m_belly.mp4" type="video/mp4" poster="/power_saving.png"/>
             </video>
           </section>

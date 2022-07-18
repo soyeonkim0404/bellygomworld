@@ -419,6 +419,7 @@ export default {
       charTop: "50%",
       options: {
         keyboardScrolling: false,
+        animateAnchor:false,
         scrollingSpeed: 1500,
         licenseKey: "H68K9-OX8AH-GK457-17J28-VGRRP",
         scrollBar: false,
@@ -884,7 +885,7 @@ export default {
 .main-char.slide3 .stand {
   display: block;
 }
-.main-char.s3 .end {
+.main-char.s3 .fall {
   display: block;
 }
 
