@@ -170,7 +170,7 @@
           <div
             class="main-char ignore"
             :class="charClass"
-            :style="{ top: charTop }"
+            :style="{ 'transform': charTop ,'-webkit-transform': charTop }"
             ref="mainChar"
           >
             <div class="fall">
@@ -416,7 +416,7 @@ export default {
       cloudMoved: false,
       charClass: "s0",
       footClass: "",
-      charTop: "-50%",
+      charTop: "translate(-50%,0%)",
       options: {
         keyboardScrolling: false,
         animateAnchor:false,
@@ -462,24 +462,22 @@ export default {
           if (destination.index === 0) {
             this.cloudMoved = false;
           }
-
+          const charHeight = (window.innerWidth * 0.375)/2;
           if (destination.index === 0) {
-            this.charTop = "0px";
+            this.charTop = "translate(-50%,0px)";
           } else if (destination.index === 1) {
-            this.charTop =
-              window.innerHeight * 1 + window.innerHeight / 2 + "px";
+            const t = window.innerHeight * 1 + window.innerHeight / 2 - charHeight;
+            this.charTop = "translate(-50%,"+
+               t+ "px)";
           } else if (destination.index === 2) {
-            this.charTop =
-              window.innerHeight * 3 -
-              (window.innerWidth / 16) * 9 * 0.28 +
-              "px";
+            const t = window.innerHeight * 3 - (window.innerWidth / 16) * 9 * 0.28 - charHeight;
+            this.charTop = "translate(-50%,"+
+              t +
+              "px)";
           } else if (destination.index === 3) {
-            // this.charTop =
-            //   window.innerHeight * 4 -
-            //   (window.innerWidth / 16) * 9 * 0.7 +
-            //   "px";
-            this.charTop =
-              window.innerHeight * 4 - window.innerHeight * 0.6 + "px";
+            const t =  window.innerHeight * 4 - window.innerHeight * 0.6 - charHeight;
+            this.charTop = "translate(-50%,"+
+              t+ "px)";
           }
 
           if (destination.index === 4) {
@@ -861,8 +859,8 @@ export default {
   z-index: 1;
   transform: translate3d(-50%, -50%, 0);
   -webkit-transform: translate3d(-50%, -50%, 0);
-  transition: top 1.5s ease-in-out;
-  -webkit-transition: top 1.5s ease-in-out;
+  transition: transform 1.5s ease-in-out;
+  -webkit-transition: -webkit-transform 1.5s ease-in-out;
 }
 .main-char > div {
   display: none;
