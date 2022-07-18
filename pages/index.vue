@@ -22,7 +22,7 @@
           <section class="section">
             <div class="slide" data-anchor="slide1">
               <div class="contents">
-                <img src="@/assets/images/main/getbelly_road_ko_1.jpeg" />
+                <img src="@/assets/images/main/getbelly_road_ko_1.jpeg" class="roads"/>
                 <div class="text-con">
                   <template v-if="$store.getters.getLocale === 'ENG'">
                     <div class="item nm1">
@@ -52,12 +52,12 @@
             </div>
             <div class="slide" data-anchor="slide2">
               <div class="contents">
-                <img src="@/assets/images/main/getbelly_road_ko_2.jpeg" />
+                <img src="@/assets/images/main/getbelly_road_ko_2.jpeg" class="roads"/>
               </div>
             </div>
             <div class="slide" data-anchor="slide3">
               <div class="contents">
-                <img src="@/assets/images/main/getbelly_road_ko_3.jpeg" />
+                <img src="@/assets/images/main/getbelly_road_ko_3.jpeg" class="roads"/>
                 <div class="text-con">
                   <button class="item2 nm1" @click="roadModal2">
                     <img src="@/assets/images/main/img_road_balloon02.png" />
@@ -587,12 +587,10 @@ export default {
     }
   }
   .contents {
+    position: relative;
+    transform: translateZ(0);
     width: 100%;
-    position: absolute;
-    bottom: 0;
-    height: auto;
-    left: 50%;
-    transform: translateX(-50%);
+    height: 100%;
     .text-con {
       position: absolute;
       top: 50%;
