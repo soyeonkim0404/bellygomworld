@@ -1,8 +1,8 @@
 <template>
   <header id="head" class="site-header" role="banner">
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-233928727-2"></script>
-    <script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-233928727-2" v-if="$mq === 'mobile'"></script>
+    <script v-if="$mq === 'mobile'">
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -67,7 +67,7 @@
           </button>
           <ul class="anchor-nav">
             <li>
-              <button id="show-modal" @click="storyModal();sendGaEvent( 'M_' + 'flt_bellyStory','FLT')">STORY BOOK</button>
+              <button id="show-modal" @click="storyModal();sendGaEvent( 'M_' + 'gnb_bellyStory','FLT')">STORY BOOK</button>
             </li>
             <li data-menuanchor="firstSection" @click="sendGaEvent( 'M_' + 'gnb_getBelly','GNB')">
               <a

@@ -2,8 +2,8 @@
   <!--S : 앵커 헤드-->
   <header id="head" class="site-header" role="banner">
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-233928727-1"></script>
-    <script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-233928727-1" v-if="$mq === 'pc'"></script>
+    <script v-if="$mq === 'pc'">
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
