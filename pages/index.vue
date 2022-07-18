@@ -763,7 +763,7 @@ export default {
   height: 100%;
   .top {
     position: absolute;
-    top: 8%;
+    top: 9%;
     right: 6%;
     width: 80%;
     height: auto;
