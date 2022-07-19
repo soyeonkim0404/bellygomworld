@@ -125,7 +125,7 @@
           </ul>
           <ul class="link-list">
             <li v-for="(item, index) in linkList" :key="index">
-              <a :href="item.url" target="_blank"><img :src="item.imgUrl" /></a>
+              <a :href="item.url" target="_blank" @click="sendGaEvent('M_gnb_sns_' + item.name, 'GNB')"><img :src="item.imgUrl" /></a>
             </li>
           </ul>
         </div>

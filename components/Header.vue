@@ -64,7 +64,7 @@
                 @mouseleave="isShow = false"
               >
                 <li v-for="(item, index) in linkList" :key="index">
-                  <a :href="item.url" target="_blank">{{ item.name }}</a>
+                  <a :href="item.url" target="_blank" @click="sendGaEvent('gnb_sns_' + item.name, 'GNB')">{{ item.name }}</a>
                 </li>
               </ul>
             </transition>
