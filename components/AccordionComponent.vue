@@ -1,18 +1,24 @@
 <template>
   <ul class="accordion-list">
     <li class="accordion-item" v-for="(item, index) in list" :key="index">
-      <button v-if="$mq === 'pc'"
-          :class="{ title: true, active: onContent.some((el) => index === el) }"
-          @click="openCon(index);
-        sendGaEvent('bf_faq'+ parseInt(item.faqIndex), 'BF');"
+      <button
+        v-if="$mq === 'pc'"
+        :class="{ title: true, active: onContent.some((el) => index === el) }"
+        @click="
+          openCon(index);
+          sendGaEvent('bf_faq' + parseInt(item.faqIndex), 'BF');
+        "
       >
         <slot name="title" :item="item"></slot>
       </button>
 
-      <button v-if="$mq === 'mobile'"
-              :class="{ title: true, active: onContent.some((el) => index === el) }"
-              @click="openCon(index);
-        sendGaEvent('M_bf_faq'+ parseInt(item.faqIndex), 'BF');"
+      <button
+        v-if="$mq === 'mobile'"
+        :class="{ title: true, active: onContent.some((el) => index === el) }"
+        @click="
+          openCon(index);
+          sendGaEvent('M_bf_faq' + parseInt(item.faqIndex), 'BF');
+        "
       >
         <slot name="title" :item="item"></slot>
       </button>
@@ -80,6 +86,7 @@ export default {
       color: $black;
       background: $white;
       font-weight: 700;
+      white-space: nowrap;
       &::before {
         content: "";
         display: inline-block;

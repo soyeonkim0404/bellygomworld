@@ -4,6 +4,11 @@
       <client-only>
         <full-page ref="fullpage" :options="options" id="fullpage">
           <section class="section">
+            <img
+              src="/power_saving.png"
+              alt=""
+              style="object-fit: cover; width: 100%; height: 100%"
+            />
             <video
               ref="mainBelly"
               id="mainBelly"
@@ -11,6 +16,7 @@
               muted
               data-autoplay
               playsinline
+              preload="auto"
             >
               <source
                 src="@/assets/media/m_belly.mp4"
@@ -582,7 +588,7 @@ export default {
           this.$refs.fullpage.api.setAllowScrolling(true);
           console.log("afterLoad");
           if (destination.index === 0) {
-            this.charTop = "0px";
+            this.charTop = "-50%";
             this.cloudMoved = false;
             document.querySelector(".top-btn").style.display = "none";
           } else {

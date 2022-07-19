@@ -901,8 +901,8 @@ export default {
   -webkit-transform: translateY(-69%);
 }
 .cloud-wrapper.moved > img {
-  transform: translateY(-80%);
-  -webkit-transform: translateY(-80%);
+  transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
 }
 .section-2 {
   z-index: 1;

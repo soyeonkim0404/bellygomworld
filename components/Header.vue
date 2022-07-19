@@ -56,13 +56,9 @@
             <a href="https://bellygom.com/" target="_blank"></a>
           </li>
           <li class="linked">
-            <button type="button" class="btn-link" @mouseover="isShow = true" />
+            <button type="button" class="btn-link" @click="openLink" />
             <transition name="fade">
-              <ul
-                class="link-list"
-                v-if="this.isShow"
-                @mouseleave="isShow = false"
-              >
+              <ul class="link-list" v-if="this.isShow">
                 <li v-for="(item, index) in linkList" :key="index">
                   <a :href="item.url" target="_blank">{{ item.name }}</a>
                 </li>
@@ -257,8 +253,17 @@ export default {
     return { lang: browserLang };
   },
   methods: {
-    openLang(e) {
+    openLink() {
+      this.isShow = !this.isShow;
+      if (this.showLang) {
+        this.showLang = false;
+      }
+    },
+    openLang() {
       this.showLang = !this.showLang;
+      if (this.isShow) {
+        this.isShow = false;
+      }
     },
     faqModal() {
       this.showModal = true;
