@@ -22,12 +22,12 @@ export default {
       },
       {
         property: "og:description",
-        content: "서프라이즈! 벨리곰 NFT세계로",
+        content: "서프라이즈! 너도 가져봐 벨리곰NFT!",
         vmid: "og:description",
       },
       {
         property: "og:url",
-        content: "https://dwww.bellygom.world/",
+        content: "http://bellygom.world",
         vmid: "og:url",
       },
       {

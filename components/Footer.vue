@@ -98,6 +98,7 @@ footer {
           box-sizing: border-box;
           padding-right: 15px;
           margin-right: 15px;
+          white-space: nowrap;
           a {
             text-decoration: underline;
             text-underline-position: under;

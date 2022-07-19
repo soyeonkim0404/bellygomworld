@@ -56,13 +56,9 @@
             <a href="https://bellygom.com/" target="_blank"></a>
           </li>
           <li class="linked">
-            <button type="button" class="btn-link" @mouseover="isShow = true" />
+            <button type="button" class="btn-link" @click="openLink" />
             <transition name="fade">
-              <ul
-                class="link-list"
-                v-if="this.isShow"
-                @mouseleave="isShow = false"
-              >
+              <ul class="link-list" v-if="this.isShow">
                 <li v-for="(item, index) in linkList" :key="index">
                   <a :href="item.url" target="_blank" @click="sendGaEvent('gnb_sns_' + item.name, 'GNB')">{{ item.name }}</a>
                 </li>
@@ -175,19 +171,20 @@ export default {
       showModal: false,
       linkList: [
         {
+          url: "https://opensea.io/",
+          name: "Opensea",
+        },
+        {
           url: "https://discord.gg/TDYtz2fcSN",
           name: "Discord",
-          imgUrl: require("@/assets/images/commons/img_menu_discord.svg"),
         },
         {
           url: "https://twitter.com/bellygom",
-          name: "twitter",
-          imgUrl: require("@/assets/images/commons/img_menu_twitter.svg"),
+          name: "Twitter",
         },
         {
           url: "https://youtube.com/channel/UCN9NpIA1d-wB1MsQQfkQnig",
           name: "YouTube",
-          imgUrl: require("@/assets/images/commons/img_menu_youtube.svg"),
         },
       ],
       faqList: [
@@ -257,8 +254,17 @@ export default {
     return { lang: browserLang };
   },
   methods: {
-    openLang(e) {
+    openLink() {
+      this.isShow = !this.isShow;
+      if (this.showLang) {
+        this.showLang = false;
+      }
+    },
+    openLang() {
       this.showLang = !this.showLang;
+      if (this.isShow) {
+        this.isShow = false;
+      }
     },
     faqModal() {
       this.showModal = true;
