@@ -60,7 +60,12 @@
             <transition name="fade">
               <ul class="link-list" v-if="this.isShow">
                 <li v-for="(item, index) in linkList" :key="index">
-                  <a :href="item.url" target="_blank" @click="sendGaEvent('gnb_sns_' + item.name, 'GNB')">{{ item.name }}</a>
+                  <a
+                    :href="item.url"
+                    target="_blank"
+                    @click="sendGaEvent('gnb_sns_' + item.name, 'GNB')"
+                    >{{ item.name }}</a
+                  >
                 </li>
               </ul>
             </transition>
@@ -170,10 +175,10 @@ export default {
       mobileGnbShow: false,
       showModal: false,
       linkList: [
-        {
+        /*{
           url: "https://opensea.io/",
           name: "Opensea",
-        },
+        },*/
         {
           url: "https://discord.gg/TDYtz2fcSN",
           name: "Discord",

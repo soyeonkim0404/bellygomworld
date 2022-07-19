@@ -667,8 +667,10 @@ export default {
       swiperOption: {
         slidesPerView: 1,
         spaceBetween: 20,
-        loop: true,
+        loop: false,
         speed: 700,
+        observer: true,
+        observeParents: true,
         pagination: {
           el: ".swiper-pagination-1",
         },
@@ -679,8 +681,10 @@ export default {
       swiperOption2: {
         slidesPerView: 1,
         spaceBetween: 0,
-        loop: true,
+        loop: false,
         speed: 700,
+        observer: true,
+        observeParents: true,
         pagination: {
           el: ".swiper-pagination-2",
         },
