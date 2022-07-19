@@ -70,7 +70,7 @@ footer {
   justify-content: center;
   width: 100%;
   min-width: 1000px;
-  padding: 70px 0;
+  padding: 70px 20px;
   background: #34343d;
   box-sizing: border-box;
   .inner {

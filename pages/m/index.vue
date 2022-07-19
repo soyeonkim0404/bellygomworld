@@ -4,11 +4,26 @@
       <client-only>
         <full-page ref="fullpage" :options="options" id="fullpage">
           <section class="section">
-            <video ref="mainBelly" id="mainBelly" loop muted data-autoplay playsinline >
-              <source src="@/assets/media/m_belly.mp4" type="video/mp4" poster="/power_saving.png"/>
+            <video
+              ref="mainBelly"
+              id="mainBelly"
+              loop
+              muted
+              data-autoplay
+              playsinline
+            >
+              <source
+                src="@/assets/media/m_belly.mp4"
+                type="video/mp4"
+                poster="/power_saving.png"
+              />
             </video>
           </section>
-          <div class="cloud-wrapper ignore" @click="videoPlay();" :class="{ moved: cloudMoved }">
+          <div
+            class="cloud-wrapper ignore"
+            @click="videoPlay()"
+            :class="{ moved: cloudMoved }"
+          >
             <img src="@/assets/m_images/main/img_keyvisual_01.png" />
           </div>
           <section class="section">
@@ -27,7 +42,8 @@
                   src="@/assets/m_images/main/getbelly_road_ko_1.png"
                 />
                 <div class="text-con">
-                  <div v-swiper:mySwiper="swiperOption"
+                  <div
+                    v-swiper:mySwiper="swiperOption"
                     class="swiper-container cloud"
                   >
                     <div class="swiper-wrapper">
@@ -59,7 +75,13 @@
                     ></div>
                   </div>
                 </div>
-                <button class="info-btn" @click="showInfo(); sendGaEvent( 'M_' +'gb_icon','GB')" />
+                <button
+                  class="info-btn"
+                  @click="
+                    showInfo();
+                    sendGaEvent('M_' + 'gb_icon', 'GB');
+                  "
+                />
               </div>
             </div>
             <div class="slide fp-noscroll" data-anchor="slide2">
@@ -77,35 +99,51 @@
                   src="@/assets/m_images/main/getbelly_road_ko_3.png"
                 />
                 <div class="text-con">
-                  <div v-swiper:mySwiper2="swiperOption2"
+                  <div
+                    v-swiper:mySwiper2="swiperOption2"
                     class="swiper-container"
                   >
                     <div class="swiper-wrapper">
                       <div class="swiper-slide">
-                        <button class="item2" @click="roadModal1();  sendGaEvent( 'M_' +'br_rd1_more', 'BR');">
+                        <button
+                          class="item2"
+                          @click="
+                            roadModal1();
+                            sendGaEvent('M_' + 'br_rd1_more', 'BR');
+                          "
+                        >
                           <img
                             src="@/assets/m_images/main/img_road_balloon01.png"
                           />
                           <div class="txt">
                             <span class="road">ROAD 1</span>
-                              <div v-if="$store.getters.getLocale === 'ENG'" class="title">
-                                Bellygom<br />
-                                Emerges!
-                              </div>
-                              <div v-else class="title">
-                                벨리곰이<br />
-                                나타나다
-                              </div>
+                            <div
+                              v-if="$store.getters.getLocale === 'ENG'"
+                              class="title"
+                            >
+                              Bellygom<br />
+                              Emerges!
+                            </div>
+                            <div v-else class="title">
+                              벨리곰이<br />
+                              나타나다
+                            </div>
                             <span class="more">more</span>
                           </div>
                         </button>
                       </div>
                       <div class="swiper-slide">
-                        <button class="item2" @click="roadModal2(); sendGaEvent( 'M_' +'br_rd2_more', 'BR')">
+                        <button
+                          class="item2"
+                          @click="
+                            roadModal2();
+                            sendGaEvent('M_' + 'br_rd2_more', 'BR');
+                          "
+                        >
                           <img
                             src="@/assets/m_images/main/img_road_balloon02.png"
                           />
-                          <div class="txt">
+                          <div class="txt road2">
                             <span class="road">ROAD 2</span>
                             <template v-if="$store.getters.getLocale === 'ENG'">
                               <div class="title">
@@ -124,7 +162,13 @@
                         </button>
                       </div>
                       <div class="swiper-slide">
-                        <button class="item2" @click="roadModal3(), sendGaEvent( 'M_' +'br_rd3_more', 'BR')">
+                        <button
+                          class="item2"
+                          @click="
+                            roadModal3(),
+                              sendGaEvent('M_' + 'br_rd3_more', 'BR')
+                          "
+                        >
                           <img
                             src="@/assets/m_images/main/img_road_balloon03.png"
                           />
@@ -168,10 +212,7 @@
                 <img src="@/assets/m_images/main/bellyship.jpeg" />
               </div>
             </template>
-              <div
-              class="main-char-ending"
-              :class="endCharClass "
-            >
+            <div class="main-char-ending" :class="endCharClass">
               <div class="fall">
                 <img src="@/assets/m_images/char-fall.webp" type="image/webp" />
               </div>
@@ -520,8 +561,10 @@ export default {
           if (destination.index === 0) {
             this.charTop = "0px";
             this.cloudMoved = false;
+            document.querySelector(".top-btn").style.display = "none";
           } else {
             this.cloudMoved = true;
+            document.querySelector(".top-btn").style.display = "block";
           }
 
           if (destination.index === 2) {
@@ -682,13 +725,13 @@ export default {
       this.$refs.fullpage.api.setAllowScrolling(true);
       this.showInf = false;
     },
-    videoPlay(){
+    videoPlay() {
       this.$refs.mainBelly.play();
     },
-    sendGaEvent(eventName, event_category){
-      console.log(eventName +"|||||||"+ event_category);
-      gtag('event', eventName, {
-        "event_category": event_category
+    sendGaEvent(eventName, event_category) {
+      console.log(eventName + "|||||||" + event_category);
+      gtag("event", eventName, {
+        event_category: event_category,
       });
     },
   },
@@ -779,6 +822,9 @@ export default {
             text-decoration: underline;
             text-underline-position: under;
             color: $white;
+          }
+          &.road2 {
+            transform: translate(-50%, -60%);
           }
         }
       }
@@ -1103,9 +1149,8 @@ footer {
   border-radius: 4px;
 }
 .swiper-pagination-bullet-active {
-  background: #000 !important;;
+  background: #000 !important;
   width: 20px !important;
+  border-radius: 4px !important;
 }
-
-
 </style>

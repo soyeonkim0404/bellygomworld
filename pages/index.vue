@@ -22,7 +22,10 @@
           <section class="section">
             <div class="slide" data-anchor="slide1">
               <div class="contents">
-                <img src="@/assets/images/main/getbelly_road_ko_1.jpeg" class="roads"/>
+                <img
+                  src="@/assets/images/main/getbelly_road_ko_1.jpeg"
+                  class="roads"
+                />
                 <div class="text-con">
                   <template v-if="$store.getters.getLocale === 'ENG'">
                     <div class="item nm1">
@@ -47,19 +50,37 @@
                     </div>
                   </template>
                 </div>
-                <button class="info-btn" @click="showInfo();sendGaEvent('gb_icon','GB')" />
+                <button
+                  class="info-btn"
+                  @click="
+                    showInfo();
+                    sendGaEvent('gb_icon', 'GB');
+                  "
+                />
               </div>
             </div>
             <div class="slide" data-anchor="slide2">
               <div class="contents">
-                <img src="@/assets/images/main/getbelly_road_ko_2.jpeg" class="roads"/>
+                <img
+                  src="@/assets/images/main/getbelly_road_ko_2.jpeg"
+                  class="roads"
+                />
               </div>
             </div>
             <div class="slide" data-anchor="slide3">
               <div class="contents">
-                <img src="@/assets/images/main/getbelly_road_ko_3.jpeg" class="roads"/>
+                <img
+                  src="@/assets/images/main/getbelly_road_ko_3.jpeg"
+                  class="roads"
+                />
                 <div class="text-con">
-                  <button class="item2 nm1" @click="roadModal2();sendGaEvent('br_rd2_more', 'BR');">
+                  <button
+                    class="item2 nm1"
+                    @click="
+                      roadModal2();
+                      sendGaEvent('br_rd2_more', 'BR');
+                    "
+                  >
                     <img src="@/assets/images/main/img_road_balloon02.png" />
                     <div class="txt">
                       <span class="road">ROAD 2</span>
@@ -78,9 +99,13 @@
                       <span class="more">more</span>
                     </div>
                   </button>
-                  <button class="item2 nm2" @click="
-                  roadModal1();
-                  sendGaEvent('br_rd1_more', 'BR');">
+                  <button
+                    class="item2 nm2"
+                    @click="
+                      roadModal1();
+                      sendGaEvent('br_rd1_more', 'BR');
+                    "
+                  >
                     <img src="@/assets/images/main/img_road_balloon01.png" />
                     <div class="txt">
                       <span class="road">ROAD 1</span>
@@ -99,7 +124,13 @@
                       <span class="more">more</span>
                     </div>
                   </button>
-                  <button class="item2 nm3" @click="roadModal3();sendGaEvent('br_rd3_more', 'BR');">
+                  <button
+                    class="item2 nm3"
+                    @click="
+                      roadModal3();
+                      sendGaEvent('br_rd3_more', 'BR');
+                    "
+                  >
                     <img src="@/assets/images/main/img_road_balloon03.png" />
                     <div class="txt">
                       <span class="road">ROAD 3</span>
@@ -170,7 +201,7 @@
           <div
             class="main-char ignore"
             :class="charClass"
-            :style="{ 'transform': charTop ,'-webkit-transform': charTop }"
+            :style="{ transform: charTop, '-webkit-transform': charTop }"
             ref="mainChar"
           >
             <div class="fall">
@@ -308,8 +339,8 @@
         <template v-else>
           <span class="sub">벨리곰 NFT 소식은?</span>
           <div class="title">
-            디스코드 채널을 통해<br />
-            가장 빠르게 확인할 수 있습니다.
+            디스코드 채널을 통해 가장<br />
+            빠르게 확인할 수 있습니다.
           </div>
         </template>
       </div>
@@ -419,7 +450,7 @@ export default {
       charTop: "translate(-50%,0%)",
       options: {
         keyboardScrolling: false,
-        animateAnchor:false,
+        animateAnchor: false,
         scrollingSpeed: 1500,
         licenseKey: "H68K9-OX8AH-GK457-17J28-VGRRP",
         scrollBar: false,
@@ -461,23 +492,27 @@ export default {
 
           if (destination.index === 0) {
             this.cloudMoved = false;
+            document.querySelector(".top-btn").style.display = "none";
+          } else {
+            document.querySelector(".top-btn").style.display = "block";
           }
-          const charHeight = (window.innerWidth * 0.375)/2;
+          const charHeight = (window.innerWidth * 0.375) / 2;
           if (destination.index === 0) {
             this.charTop = "translate(-50%,0px)";
           } else if (destination.index === 1) {
-            const t = window.innerHeight * 1 + window.innerHeight / 2 - charHeight;
-            this.charTop = "translate(-50%,"+
-               t+ "px)";
+            const t =
+              window.innerHeight * 1 + window.innerHeight / 2 - charHeight;
+            this.charTop = "translate(-50%," + t + "px)";
           } else if (destination.index === 2) {
-            const t = window.innerHeight * 3 - (window.innerWidth / 16) * 9 * 0.28 - charHeight;
-            this.charTop = "translate(-50%,"+
-              t +
-              "px)";
+            const t =
+              window.innerHeight * 3 -
+              (window.innerWidth / 16) * 9 * 0.28 -
+              charHeight;
+            this.charTop = "translate(-50%," + t + "px)";
           } else if (destination.index === 3) {
-            const t =  window.innerHeight * 4 - window.innerHeight * 0.6 - charHeight;
-            this.charTop = "translate(-50%,"+
-              t+ "px)";
+            const t =
+              window.innerHeight * 4 - window.innerHeight * 0.6 - charHeight;
+            this.charTop = "translate(-50%," + t + "px)";
           }
 
           if (destination.index === 4) {
@@ -522,9 +557,8 @@ export default {
     });
   },
   mounted() {
-
-    if(this.$mq === 'mobile'){
-      this.$router.push({'path':'/m'});
+    if (this.$mq === "mobile") {
+      this.$router.push({ path: "/m" });
     }
 
     let locale = this.getCookie("b_locale");
@@ -535,9 +569,7 @@ export default {
     }
   },
   methods: {
-
     roadModal1() {
-
       this.$refs.fullpage.api.setAllowScrolling(false);
       this.showRoad1 = true;
     },
@@ -569,10 +601,10 @@ export default {
       this.$refs.fullpage.api.setAllowScrolling(true);
       this.showInf = false;
     },
-    sendGaEvent(eventName, event_category){
-      console.log(eventName +"|||||||"+ event_category);
-      gtag('event', eventName, {
-        "event_category": event_category
+    sendGaEvent(eventName, event_category) {
+      console.log(eventName + "|||||||" + event_category);
+      gtag("event", eventName, {
+        event_category: event_category,
       });
     },
   },
@@ -694,6 +726,9 @@ export default {
           &.nm1 {
             transition-delay: 1.5s;
             -webkit-transition-delay: 1.5s;
+            .txt {
+              transform: translate(-50%, -59%);
+            }
           }
           &.nm2 {
             transition-delay: 1s;
@@ -702,6 +737,9 @@ export default {
           &.nm3 {
             transition-delay: 1.8s;
             -webkit-transition-delay: 1.8s;
+            .txt {
+              transform: translate(-50%, -49%);
+            }
           }
         }
       }

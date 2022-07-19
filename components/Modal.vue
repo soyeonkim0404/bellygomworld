@@ -85,6 +85,19 @@ export default {
   }
 }
 
+.mobile {
+  .modal-default-button {
+    top: 40px;
+    right: 40px;
+    &::before {
+      width: 36px;
+      height: 36px;
+      background: url("assets/images/commons/ic_faq_close.svg") no-repeat center
+        center / 36px;
+    }
+  }
+}
+
 .modal-enter {
   opacity: 0;
 }
