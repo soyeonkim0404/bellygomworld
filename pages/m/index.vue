@@ -218,7 +218,7 @@
                 <img src="@/assets/m_images/main/bellyship.jpeg" />
               </div>
             </template>
-            <div class="main-char-ending" :class="endCharClass">
+            <div class="main-char-ending">
               <div class="fall">
                 <img src="@/assets/m_images/char-fall.webp" type="image/webp" />
               </div>
@@ -554,6 +554,8 @@ export default {
   layout: "default",
   data() {
     return {
+      mySwiper: null,
+      mySwiper2: null,
       showInf: false,
       showRoad1: false,
       showRoad2: false,
@@ -649,10 +651,12 @@ export default {
           console.log("afterSlideLoad");
           if (destination.anchor === "slide1") {
             this.charClass = "slide1";
+            this.mySwiper.autoplay.start();
           } else if (destination.anchor === "slide2") {
             this.charClass = "slide2";
           } else if (destination.anchor === "slide3") {
             this.charClass = "slide3";
+            this.mySwiper2.autoplay.start();
           }
         },
         afterRender: function () {
@@ -667,30 +671,28 @@ export default {
       swiperOption: {
         slidesPerView: 1,
         spaceBetween: 20,
-        loop: false,
+        loop: true,
         speed: 700,
-        observer: true,
-        observeParents: true,
+        disableOnInteraction: false,
         pagination: {
           el: ".swiper-pagination-1",
         },
-        autoplay: {
+        /*autoplay: {
           delay: 2000,
-        },
+        },*/
       },
       swiperOption2: {
         slidesPerView: 1,
         spaceBetween: 0,
-        loop: false,
+        loop: true,
         speed: 700,
-        observer: true,
-        observeParents: true,
+        disableOnInteraction: false,
         pagination: {
           el: ".swiper-pagination-2",
         },
-        autoplay: {
+        /* autoplay: {
           delay: 2000,
-        },
+        },*/
       },
       cloudImg: [
         {
