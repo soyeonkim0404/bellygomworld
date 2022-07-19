@@ -136,7 +136,7 @@
           </ul>
           <ul class="link-list">
             <li v-for="(item, index) in linkList" :key="index">
-              <a :href="item.url" target="_blank">{{ item.name }}</a>
+              <a :href="item.url" target="_blank"><img :src="item.imgUrl" /></a>
             </li>
           </ul>
         </div>
@@ -607,13 +607,25 @@ export default {
           color: $black;
         }
         &.shop {
-          margin: 20px 40px;
-          padding-top: 20px;
-          border-top: 1px solid #fff;
-          padding-left: 0;
           a {
             color: #ff6491;
           }
+        }
+      }
+    }
+    .link-list {
+      display: flex;
+      padding-top: 30px;
+      margin: 30px 40px 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      li {
+        display: flex;
+        a {
+          width: 30px;
+          height: 30px;
+        }
+        & + li {
+          margin-left: 15px;
         }
       }
     }
