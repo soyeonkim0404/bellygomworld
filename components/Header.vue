@@ -171,19 +171,20 @@ export default {
       showModal: false,
       linkList: [
         {
+          url: "https://opensea.io/",
+          name: "Opensea",
+        },
+        {
           url: "https://discord.gg/TDYtz2fcSN",
           name: "Discord",
-          imgUrl: require("@/assets/images/commons/img_menu_discord.svg"),
         },
         {
           url: "https://twitter.com/bellygom",
-          name: "twitter",
-          imgUrl: require("@/assets/images/commons/img_menu_twitter.svg"),
+          name: "Twitter",
         },
         {
           url: "https://youtube.com/channel/UCN9NpIA1d-wB1MsQQfkQnig",
           name: "YouTube",
-          imgUrl: require("@/assets/images/commons/img_menu_youtube.svg"),
         },
       ],
       faqList: [

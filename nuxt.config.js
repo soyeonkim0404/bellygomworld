@@ -27,7 +27,7 @@ export default {
       },
       {
         property: "og:url",
-        content: "https://dwww.bellygom.world/",
+        content: "http://bellygom.world",
         vmid: "og:url",
       },
       {

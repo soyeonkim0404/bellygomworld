@@ -467,7 +467,7 @@ export default {
       cloudMoved: false,
       charClass: "s0",
       footClass: "",
-      charTop: "translate(-50%,0%)",
+      charTop: "translate(-50%,-100%)",
       options: {
         keyboardScrolling: false,
         animateAnchor: false,
@@ -502,7 +502,6 @@ export default {
         onLeave: (origin, destination, direction) => {
           this.$refs.fullpage.api.setAllowScrolling(false);
           console.log("onLeave");
-          console.log("로딩 김소연", destination.index);
           if (destination.index === 0) {
             this.charClass = "s0";
           } else if (destination.index === 1) {
@@ -519,7 +518,7 @@ export default {
           }
           const charHeight = (window.innerWidth * 0.375) / 2;
           if (destination.index === 0) {
-            this.charTop = "translate(-50%,0px)";
+            this.charTop = "translate(-50%,-100%)";
           } else if (destination.index === 1) {
             const t =
               window.innerHeight * 1 + window.innerHeight / 2 - charHeight;

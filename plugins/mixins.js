@@ -27,7 +27,7 @@ const mixin = {
           );
         else if (_locale === "ENG")
           window.open(
-            "https://drive.google.com/file/d/1WJb7V84rDg_h6DLjCYKbZlsjdU_KVrSR/view?usp=sharing"
+            "https://drive.google.com/file/d/17wtIWstPmIIl-KfHGK6hmowgzCzgn_2y/view?usp=sharing"
           );
       } else if (_no === 3) {
         if (_locale === "KOR")
@@ -36,7 +36,7 @@ const mixin = {
           );
         else if (_locale === "ENG")
           window.open(
-            "https://drive.google.com/file/d/1OWJ4irCiqXttJseHfOVtP0BInZ-1JVwh/view?usp=sharing"
+            "https://drive.google.com/file/d/1t2Xuibgx_GqqNv-plfXOkukIzeeGXfPE/view?usp=sharing"
           );
       }
     },

@@ -73,9 +73,20 @@
           </button>
           <ul class="anchor-nav">
             <li>
-              <button id="show-modal" @click="storyModal();sendGaEvent( 'M_' + 'gnb_bellyStory','GNB')">STORY BOOK</button>
+              <button
+                id="show-modal"
+                @click="
+                  storyModal();
+                  sendGaEvent('M_' + 'gnb_bellyStory', 'GNB');
+                "
+              >
+                STORY BOOK
+              </button>
             </li>
-            <li data-menuanchor="firstSection" @click="sendGaEvent( 'M_' + 'gnb_getBelly','GNB')">
+            <li
+              data-menuanchor="firstSection"
+              @click="sendGaEvent('M_' + 'gnb_getBelly', 'GNB')"
+            >
               <a
                 href="#bellyRoad/slide1"
                 title="GET BELLY"
@@ -323,6 +334,11 @@ export default {
       showModal: false,
       linkList: [
         {
+          url: "https://opensea.io/",
+          name: "Opensea",
+          imgUrl: require("@/assets/images/commons/img_menu_opensea.svg"),
+        },
+        {
           url: "https://discord.gg/TDYtz2fcSN",
           name: "Discord",
           imgUrl: require("@/assets/images/commons/img_menu_discord.svg"),
@@ -416,15 +432,11 @@ export default {
     },
     faqModal() {
       this.showModal = true;
-      if (this.showModal) {
-        document.body.classList.add("modalOn");
-      }
+      this.scrollLock(false);
     },
     closeModal() {
       this.showModal = false;
-      if (!this.showModal) {
-        document.body.classList.remove("modalOn");
-      }
+      this.scrollLock(true);
     },
     openMobileGnb(e) {
       this.mobileGnbShow = !this.mobileGnbShow;
