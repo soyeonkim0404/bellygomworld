@@ -372,8 +372,19 @@
               <li>
                 Detailed schedule for whitelist application and selection
                 criteria will be announced in advance, on
-                <span class="underline">Discord</span> and
-                <span class="underline">Twitter</span>.
+                <a
+                  class="underline"
+                  href="https://discord.gg/bellygom"
+                  target="_blank"
+                  >Discord</a
+                >
+                and
+                <a
+                  class="underline"
+                  href=" https://twitter.com/bellygom"
+                  target="_blank"
+                  >Twitter</a
+                >.
               </li>
               <li>
                 Details on minting price can be found on Discord > mint-belly or
@@ -411,9 +422,18 @@
               <li>지갑당 2개 구매 가능</li>
               <li>
                 화이트리스트 신청 및 선정 관련 상세 일정은
-                <span class="underline">디스코드</span>,
-                <span class="underline">트위터</span>를 통해 사전 공지될
-                예정입니다.
+                <a
+                  class="underline"
+                  href="https://discord.gg/bellygom"
+                  target="_blank"
+                  >디스코드</a
+                >,
+                <a
+                  class="underline"
+                  href="https://twitter.com/bellygom"
+                  target="_blank"
+                  >트위터</a
+                >를 통해 사전 공지될 예정입니다.
               </li>
               <li>
                 민팅가격에 대한 자세한 사항은 디스코드 > mint-belly or
@@ -482,6 +502,7 @@ export default {
         onLeave: (origin, destination, direction) => {
           this.$refs.fullpage.api.setAllowScrolling(false);
           console.log("onLeave");
+          console.log("로딩 김소연", destination.index);
           if (destination.index === 0) {
             this.charClass = "s0";
           } else if (destination.index === 1) {

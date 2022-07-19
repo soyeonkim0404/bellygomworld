@@ -1,18 +1,24 @@
 <template>
   <ul class="accordion-list">
     <li class="accordion-item" v-for="(item, index) in list" :key="index">
-      <button v-if="$mq === 'pc'"
-          :class="{ title: true, active: onContent.some((el) => index === el) }"
-          @click="openCon(index);
-        sendGaEvent('bf_faq'+(parseInt(index)+1), 'BF');"
+      <button
+        v-if="$mq === 'pc'"
+        :class="{ title: true, active: onContent.some((el) => index === el) }"
+        @click="
+          openCon(index);
+          sendGaEvent('bf_faq' + (parseInt(index) + 1), 'BF');
+        "
       >
         <slot name="title" :item="item"></slot>
       </button>
 
-      <button v-if="$mq === 'mobile'"
-              :class="{ title: true, active: onContent.some((el) => index === el) }"
-              @click="openCon(index);
-        sendGaEvent('M_bf_faq'+(parseInt(index)+1), 'BF');"
+      <button
+        v-if="$mq === 'mobile'"
+        :class="{ title: true, active: onContent.some((el) => index === el) }"
+        @click="
+          openCon(index);
+          sendGaEvent('M_bf_faq' + (parseInt(index) + 1), 'BF');
+        "
       >
         <slot name="title" :item="item"></slot>
       </button>
@@ -69,39 +75,37 @@ export default {
   .accordion-item {
     .title {
       position: relative;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
       width: 100%;
+      display: flex;
+      align-items: center;
       text-align: left;
       font-size: 26px;
       line-height: 28px;
-      padding: 40px 80px 40px 40px;
+      padding: 45px 84px 45px 40px;
       border-radius: 40px;
       color: $black;
       background: $white;
       font-weight: 700;
       &::before {
-        content: "Q.";
+        content: "";
         display: inline-block;
-        margin-right: 20px;
-        font-size: 32px;
-        font-family: "Sandoll Odongtong", sans-serif;
-        color: #ff5290;
+        width: 44px;
+        height: 44px;
+        background: url("@/assets/images/commons/ic_Q.svg") center no-repeat;
+        margin-right: 10px;
         .mobile & {
-          font-size: 26px;
         }
       }
       &::after {
         content: "";
         display: block;
         position: absolute;
-        top: 29px;
+        top: 39px;
         right: 40px;
-        width: 48px;
-        height: 48px;
+        width: 44px;
+        height: 44px;
         background: url("assets/images/commons/icons_acd-down.svg") no-repeat
-          center center / 48px;
+          center center;
         will-change: transform;
         transition: all 0.3s ease-in;
       }
@@ -120,43 +124,25 @@ export default {
         border-radius: 0 0 40px 40px;
         will-change: transform;
         p {
-          padding: 40px 0;
+          padding: 45px 0 45px 54px;
           font-size: 26px;
           font-weight: 400;
-          line-height: 27px;
+          line-height: 44px;
           border-top: 2px solid #eee;
           &::before {
-            content: "A.";
+            content: "";
             display: inline-block;
-            margin-right: 20px;
-            font-size: 32px;
-            color: #686df4;
-            font-family: "Sandoll Odongtong", sans-serif;
-            font-weight: 400;
-          }
-        }
-        .mobile & {
-          padding: 40px 40px;
-          p {
-            position: relative;
-            padding-left: 45px;
-            &::before {
-              content: "A.";
-              display: block;
-              position: absolute;
-              top: 3px;
-              left: 0;
-              margin-right: 20px;
-              font-size: 26px;
-              font-family: "Sandoll Odongtong", sans-serif;
-              font-weight: 400;
-            }
+            position: absolute;
+            top: 45px;
+            left: 44px;
+            width: 44px;
+            height: 44px;
+            background: url("@/assets/images/commons/ic_A.svg") center no-repeat;
           }
         }
         .pdf {
           display: block;
-          margin-top: 20px;
-          margin-left: 60px;
+          margin-top: 10px;
         }
       }
       .download {

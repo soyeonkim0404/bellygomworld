@@ -55,19 +55,27 @@
           <li class="link1" @click="sendGaEvent('gnb_shop', 'GNB')">
             <a href="https://bellygom.com/" target="_blank"></a>
           </li>
-          <!--<li class="linked">
-            <button type="button" class="btn-link" @mouseover="mouseOver" />
+          <li class="linked">
+            <button type="button" class="btn-link" @mouseover="isShow = true" />
             <transition name="fade">
-              <ul class="link-list" v-if="this.isShow">
+              <ul
+                class="link-list"
+                v-if="this.isShow"
+                @mouseleave="isShow = false"
+              >
                 <li v-for="(item, index) in linkList" :key="index">
                   <a :href="item.url" target="_blank">{{ item.name }}</a>
                 </li>
               </ul>
             </transition>
-          </li>-->
+          </li>
         </ul>
         <div class="lang">
-          <button class="btn-lang" @click="openLang">
+          <button
+            class="btn-lang"
+            @click="openLang"
+            :class="{ on: this.showLang }"
+          >
             {{ $store.getters.getLocale }}
           </button>
           <transition name="fade">
@@ -245,9 +253,6 @@ export default {
     openLang(e) {
       this.showLang = !this.showLang;
     },
-    mouseOver() {
-      this.isShow = !this.isShow;
-    },
     faqModal() {
       this.showModal = true;
       if (this.showModal) {
@@ -369,6 +374,7 @@ export default {
               font-size: 18px;
               line-height: 28px;
               text-align: left;
+              font-weight: 700;
               & + li {
                 margin-left: 0;
                 margin-top: 5px;

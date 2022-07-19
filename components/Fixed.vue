@@ -325,6 +325,7 @@ export default {
     width: 88px;
     height: 88px;
     border-radius: 100%;
+    display: none;
   }
 }
 </style>

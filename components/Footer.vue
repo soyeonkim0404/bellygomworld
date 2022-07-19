@@ -38,14 +38,14 @@
         </template>
 
         <p class="copyright">
-          Copyright Ⓒ
+          <span>Copyright Ⓒ</span>
           <span class="logo">
             <img
               src="../assets/images/commons/img_footer_logo_bellygom.svg"
               alt="footer-logo"
             />
           </span>
-          All rights reserved.
+          <span>All rights reserved.</span>
         </p>
       </div>
     </div>
@@ -131,6 +131,7 @@ footer {
         margin-top: 35px;
         font-size: 16px;
         color: #9e9e9e;
+        word-break: break-all;
         .logo {
           display: inline-block;
           margin: -4px 5px 0;

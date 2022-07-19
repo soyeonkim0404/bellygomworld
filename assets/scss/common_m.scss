@@ -191,12 +191,15 @@ body {
                 .title {
                   padding: 25px 55px 25px 60px;
                   font-size: 16px;
+                  line-height: 25px;
                   &::before {
-                    font-size: 18px;
                     position: absolute;
+                    width: 26px;
+                    height: 26px;
                     top: 25px;
                     left: 27px;
                     margin: 0;
+                    background-size: 100%;
                   }
                   &::after {
                     content: "";
@@ -222,19 +225,21 @@ body {
               }
               .accordion-content {
                 .cont {
-                  padding: 0 40px;
+                  padding: 0 25px;
                   border-radius: 0 0 40px 40px;
                   will-change: transform;
                   p {
-                    padding: 25px 15px 25px 20px;
+                    padding: 25px 0 25px 35px;
                     font-size: 16px;
                     line-height: 25px;
                     &::before {
-                      font-size: 18px;
                       position: absolute;
                       top: 25px;
-                      left: -10px;
+                      left: 25px;
                       margin: 0;
+                      width: 26px;
+                      height: 26px;
+                      background-size: 100%;
                     }
                   }
                   .pdf {

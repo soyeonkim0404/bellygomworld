@@ -18,7 +18,7 @@
 
     <div class="logo">
       <a href="/m" @click="sendGaEvent('M_' + 'gnb_logo', 'GNB')">
-        <img src="@/assets/images/commons/logo-2.svg" alt="logo" />
+        <img src="@/assets/m_images/main/mobile_logo.svg" alt="logo" />
       </a>
     </div>
 
@@ -132,6 +132,11 @@
                 @click="sendGaEvent('M_' + 'gnb_shop', 'GNB')"
                 >SHOP</a
               >
+            </li>
+          </ul>
+          <ul class="link-list">
+            <li v-for="(item, index) in linkList" :key="index">
+              <a :href="item.url" target="_blank">{{ item.name }}</a>
             </li>
           </ul>
         </div>
@@ -472,13 +477,14 @@ export default {
     a {
       display: block;
     }
-    width: 77px;
+    width: 68px;
+    margin-top: 10px;
   }
   .category {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-
+    margin-top: 10px;
     .lang {
       position: relative;
       margin-left: 15px;
