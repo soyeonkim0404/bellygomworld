@@ -196,6 +196,7 @@ export default {
           engTitle: "What blockchain does Bellygom NFT use?",
           cont: "벨리곰 NFT는 클레이튼(Klaytn) 블록체인을 이용하고 있어!",
           engCont: "Bellygom NFT uses the Klaytn blockchain!",
+          faqIndex: 1,
         },
         {
           title: "카이카스 지갑은 어떻게 만드는거야?",
@@ -204,6 +205,7 @@ export default {
           engCont:
             "Download the pdf file for a detailed step-by-step guide on creating a Kaikas Wallet.",
           pdf: 2,
+          faqIndex: 2,
         },
         {
           title: "오픈씨는 어떻게 이용하는거야?",
@@ -212,12 +214,14 @@ export default {
           engCont:
             "Download the pdf file for a detailed step-by-step guide on using OpenSea.",
           pdf: 3,
+          faqIndex: 3,
         },
         {
           title: "Klip 지갑으로 민팅 할 수 있어?",
           engTitle: "Can I mint with a Klip wallet?",
           cont: "카이카스 지갑만 지원하고 있어!",
           engCont: "For now, only Kaikas wallets are supported.",
+          faqIndex: 4,
         },
         {
           title: "Klip 지갑으로 전송 시, 벨리곰 NFT를 확인할 수 있어?",
@@ -225,12 +229,14 @@ export default {
             "Can I check the Bellygom NFT when transferring to my Klip wallet?",
           cont: "확인할 수 없어! 카이카스 지갑을 이용해줘!",
           engCont: "Can't confirm! Please use Kaikas wallet!",
+          faqIndex: 5,
         },
         {
           title: "2차 판매 수수료가 있어?",
           engTitle: "Are there any secondary sales fees?",
           cont: "2차 판매 수수료는 7.5%야!",
           engCont: "Secondary sales commission is 7.5%!",
+          faqIndex: 9,
         },
         {
           title: "벨리곰NFT는 저작권 활용할 수 있어?",
@@ -238,6 +244,7 @@ export default {
           cont: "Road1에는 소유권만 인정하고 있어. 그렇지만 Road2에는 NFT 사업권을 사용할 수 있어!",
           engCont:
             "Road1 only recognizes ownership. However, you can use NFT licenses for Road2!",
+          faqIndex: 10,
         },
       ],
     };
