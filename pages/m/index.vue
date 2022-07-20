@@ -488,8 +488,7 @@
           <div class="list-title">2nd Whitelist (Competition)</div>
           <ul class="road-list">
             <li>
-              At least one NFT holder among Sunmiya Club, Smile Miya,
-              HappierTown, Noni Commando Entertainment, and Nick Place (Only for
+              At least one NFT holder among Sunmiya Club, Smile Miya (Only for
               applicants)
             </li>
           </ul>
@@ -539,10 +538,7 @@
           </ul>
           <div class="list-title">2차 화이트리스트(경쟁)</div>
           <ul class="road-list">
-            <li>
-              선미야클럽, 스마일미야, HappierTown, 노느니특공대 엔터테인먼트,
-              닉플레이스 중 1개 이상 NFT 홀더 (신청자에 한함)
-            </li>
+            <li>선미야클럽, 스마일미야 중 1개 이상 NFT 홀더 (신청자에 한함)</li>
           </ul>
           <div class="list-title">퍼블릭 세일</div>
           <ul class="road-list">
