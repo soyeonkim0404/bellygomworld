@@ -512,9 +512,11 @@ export default {
 
           if (destination.index === 0) {
             this.cloudMoved = false;
-            document.querySelector(".top-btn").style.display = "none";
+            document.querySelector(".top-btn").style.opacity = 0;
+            document.querySelector(".story-modal-btn").classList.remove("up");
           } else {
-            document.querySelector(".top-btn").style.display = "block";
+            document.querySelector(".top-btn").style.opacity = 1;
+            document.querySelector(".story-modal-btn").classList.add("up");
           }
           const charHeight = (window.innerWidth * 0.375) / 2;
           if (destination.index === 0) {

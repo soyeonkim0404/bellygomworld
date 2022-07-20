@@ -313,10 +313,14 @@ export default {
   }
   .story-modal-btn {
     position: fixed;
-    bottom: 130px;
+    bottom: 40px;
     right: 34px;
     width: 120px;
     height: auto;
+    transition: all 0.2s;
+    &.up {
+      bottom: 130px;
+    }
   }
   .top-btn {
     position: fixed;
@@ -325,7 +329,7 @@ export default {
     width: 88px;
     height: 88px;
     border-radius: 100%;
-    display: none;
+    opacity: 0;
   }
 }
 </style>
