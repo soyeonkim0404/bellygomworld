@@ -318,6 +318,7 @@ export default {
     width: 120px;
     height: auto;
     transition: all 0.2s;
+    z-index: 4;
     &.up {
       bottom: 130px;
     }
