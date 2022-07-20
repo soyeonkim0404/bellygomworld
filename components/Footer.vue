@@ -2,7 +2,7 @@
   <footer>
     <div class="inner">
       <div class="footer-logo">
-        <img src="../assets/images/commons/footer_logo.svg" alt="footer-logo" />
+        <img src="@/assets/images/footer_logo.svg" alt="footer-logo" />
       </div>
       <div class="footer-contents">
         <template v-if="$store.getters.getLocale === 'ENG'">
@@ -41,7 +41,7 @@
           <span>Copyright Ⓒ</span>
           <span class="logo">
             <img
-              src="../assets/images/commons/img_footer_logo_bellygom.svg"
+              src="@/assets/images/img_footer_logo_bellygom.svg"
               alt="footer-logo"
             />
           </span>

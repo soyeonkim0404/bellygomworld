@@ -53,25 +53,63 @@
                     class="swiper-container cloud"
                   >
                     <div class="swiper-wrapper">
-                      <div
-                        v-for="(slide, index) in cloudImg"
-                        :key="index"
-                        class="swiper-slide"
-                      >
-                        <template v-if="$store.getters.getLocale === 'ENG'">
+                      <div class="swiper-slide">
+                        <div class="item">
                           <img
-                            :src="slide.engUrl"
+                            src="@/assets/m_images/main/cloud_01.png"
                             alt=""
-                            class="slide1-cloud-img"
                           />
-                        </template>
-                        <template v-else>
+                          <div class="txt">
+                            <span
+                              class="sale"
+                              v-if="$store.getters.getLocale === 'ENG'"
+                              >1st Whitelist Sale</span
+                            >
+                            <span class="sale" v-else
+                              >1차 화이트리스트 세일</span
+                            >
+                            <span class="date">2022.08.17</span>
+                            <span class="date">8:00 pm</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="item">
                           <img
-                            :src="slide.url"
+                            src="@/assets/m_images/main/cloud_02.png"
                             alt=""
-                            class="slide1-cloud-img"
                           />
-                        </template>
+                          <div class="txt">
+                            <span
+                              class="sale"
+                              v-if="$store.getters.getLocale === 'ENG'"
+                              >2nd Whitelist Sale</span
+                            >
+                            <span class="sale" v-else
+                              >2차 화이트리스트 세일</span
+                            >
+                            <span class="date">2022.08.17</span>
+                            <span class="date">10:00 pm</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="item">
+                          <img
+                            src="@/assets/m_images/main/cloud_03.png"
+                            alt=""
+                          />
+                          <div class="txt">
+                            <span
+                              class="sale"
+                              v-if="$store.getters.getLocale === 'ENG'"
+                              >Public Sale</span
+                            >
+                            <span class="sale" v-else>퍼블릭 세일</span>
+                            <span class="date">2022.08.18</span>
+                            <span class="date">8:00 pm</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <!-- pagination -->
@@ -283,7 +321,7 @@
                     Copyright Ⓒ
                     <span class="logo">
                       <img
-                        src="@/assets/images/commons/img_footer_logo_bellygom.svg"
+                        src="@/assets/m_images/img_footer_logo_bellygom.svg"
                         alt="footer-logo"
                       />
                     </span>
@@ -694,20 +732,6 @@ export default {
           delay: 2000,
         },*/
       },
-      cloudImg: [
-        {
-          url: require("@/assets/m_images/main/cloud_01.png"),
-          engUrl: require("@/assets/m_images/main/cloud_01_en.png"),
-        },
-        {
-          url: require("@/assets/m_images/main/cloud_02.png"),
-          engUrl: require("@/assets/m_images/main/cloud_02_en.png"),
-        },
-        {
-          url: require("@/assets/m_images/main/cloud_03.png"),
-          engUrl: require("@/assets/m_images/main/cloud_03_en.png"),
-        },
-      ],
     };
   },
   created() {
@@ -807,25 +831,33 @@ export default {
       width: 100%;
       transform: translate(-50%, -100%);
       .item {
-        opacity: 0;
-        position: absolute;
-        width: 22%;
-        height: 25%;
-        padding: 2%;
-        transform: translate(0, -30px);
-        transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-        -webkit-transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-        &.nm1 {
-          bottom: 59%;
-          left: 39%;
-        }
-        &.nm2 {
-          bottom: 43%;
-          left: 18%;
-        }
-        &.nm3 {
-          bottom: 42%;
-          right: 19%;
+        margin-bottom: 20px;
+        .txt {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 90%;
+          transform: translate(-50%, -55%);
+          text-align: center;
+          .sale {
+            display: block;
+            font-size: 14px;
+            line-height: 21px;
+            color: #555;
+          }
+          .date {
+            display: block;
+            font-family: "Sandoll Odongtong", sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 26px;
+            line-height: 31px;
+            color: $black;
+            margin-top: 15px;
+            & + .date {
+              margin-top: 0;
+            }
+          }
         }
       }
       .item2 {
@@ -887,30 +919,7 @@ export default {
   object-fit: cover;
   z-index: 3;
 }
-::v-deep .active {
-  .active {
-    .contents {
-      .text-con {
-        .item {
-          opacity: 1;
-          transform: translate(0, 30px);
-          &.nm1 {
-            transition-delay: 1s;
-            -webkit-transition-delay: 1s;
-          }
-          &.nm2 {
-            transition-delay: 1.3s;
-            -webkit-transition-delay: 1.3s;
-          }
-          &.nm3 {
-            transition-delay: 1.6s;
-            -webkit-transition-delay: 1.6s;
-          }
-        }
-      }
-    }
-  }
-}
+
 .info-btn {
   position: absolute;
   width: 34%;

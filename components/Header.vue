@@ -18,7 +18,7 @@
     </script>
     <div class="logo">
       <a href="/" @click="sendGaEvent('gnb_logo', 'GNB')">
-        <img src="@/assets/images/commons/logo-2.svg" alt="logo" />
+        <img src="@/assets/images/logo-2.svg" alt="logo" />
       </a>
     </div>
     <div class="category">
@@ -358,8 +358,8 @@ export default {
               left: 50%;
               width: 17px;
               height: 22px;
-              background: url("assets/images/commons/ic_header_link_3.svg")
-                center no-repeat;
+              background: url("@/assets/images/ic_header_link_3.svg") center
+                no-repeat;
               transform: translate(-50%, -50%);
             }
           }
@@ -428,8 +428,8 @@ export default {
                 left: 50%;
                 width: 20px;
                 height: 20px;
-                background: url("assets/images/commons/ic_header_link.svg")
-                  center no-repeat;
+                background: url("@/assets/images/ic_header_link.svg") center
+                  no-repeat;
                 transform: translate(-50%, -50%);
               }
             }
@@ -443,8 +443,8 @@ export default {
               left: 50%;
               width: 27px;
               height: 26px;
-              background: url("assets/images/commons/ic_header_link_2.svg")
-                center no-repeat;
+              background: url("@/assets/images/ic_header_link_2.svg") center
+                no-repeat;
               transform: translate(-50%, -50%);
             }
           }

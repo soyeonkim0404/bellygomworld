@@ -3,15 +3,11 @@
     <div class="modal-mask">
       <div class="modal-wrapper">
         <div class="modal-container">
+          <button class="modal-default-button" @click="$emit('close')"></button>
           <div class="modal-inner">
-            <button
-              class="modal-default-button"
-              @click="$emit('close')"
-            ></button>
             <div class="modal-header">
               <slot name="header"> </slot>
             </div>
-
             <div class="modal-body">
               <slot name="body"></slot>
             </div>
@@ -58,19 +54,10 @@ export default {
   transition: all 0.3s ease;
 }
 
-.modal-header {
-}
-
-.modal-inner {
-}
-
-.modal-body {
-}
-
 .modal-default-button {
   position: absolute;
-  top: 40px;
-  right: 40px;
+  top: 60px;
+  right: 60px;
   &::before {
     content: "";
     display: block;
@@ -79,20 +66,21 @@ export default {
     position: absolute;
     top: 50%;
     left: 50%;
-    background: url("assets/images/commons/ic_faq_close.svg") no-repeat center
-      center / 50px;
+    background: url("@/assets/images/ic_faq_close.svg") no-repeat center center /
+      50px;
     transform: translate(-50%, -50%);
   }
 }
 
 .mobile {
   .modal-default-button {
+    z-index: 10;
     top: 40px;
     right: 40px;
     &::before {
       width: 36px;
       height: 36px;
-      background: url("assets/images/commons/ic_faq_close.svg") no-repeat center
+      background: url("@/assets/images/ic_faq_close.svg") no-repeat center
         center / 36px;
     }
   }

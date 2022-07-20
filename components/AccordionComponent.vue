@@ -92,7 +92,7 @@ export default {
         display: inline-block;
         width: 44px;
         height: 44px;
-        background: url("@/assets/images/commons/ic_Q.svg") center no-repeat;
+        background: url("@/assets/images/ic_Q.svg") center no-repeat;
         margin-right: 10px;
         .mobile & {
         }
@@ -105,8 +105,8 @@ export default {
         right: 40px;
         width: 44px;
         height: 44px;
-        background: url("assets/images/commons/icons_acd-down.svg") no-repeat
-          center center;
+        background: url("@/assets/images/icons_acd-down.svg") no-repeat center
+          center;
         will-change: transform;
         transition: all 0.3s ease-in;
       }
@@ -138,7 +138,7 @@ export default {
             left: 44px;
             width: 44px;
             height: 44px;
-            background: url("@/assets/images/commons/ic_A.svg") center no-repeat;
+            background: url("@/assets/images/ic_A.svg") center no-repeat;
           }
         }
         .pdf {
@@ -161,7 +161,7 @@ export default {
             height: 30px;
             margin-right: 20px;
             vertical-align: middle;
-            background: url("assets/images/commons/akar-icons_cloud-download.svg")
+            background: url("@/assets/images/akar-icons_cloud-download.svg")
               center no-repeat;
           }
           .mobile & {

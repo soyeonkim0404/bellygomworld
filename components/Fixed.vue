@@ -14,14 +14,14 @@
     </div>
     <button @click="storyModal" class="story-modal-btn">
       <img
-        src="../assets/images/commons/story_btn.svg"
+        src="@/assets/images/story_btn.svg"
         @click="sendGaEvent('flt_bellyStory', 'FLT')"
       />
     </button>
 
     <!--top btn-->
     <a href="#getBelly" class="top-btn">
-      <img src="@/assets/images/commons/top_btn.svg" />
+      <img src="@/assets/images/top_btn.svg" />
     </a>
     <!--top btn-->
     <!--STORY MODAL-->
@@ -282,7 +282,7 @@ export default {
       left: 10px;
       width: 50px;
       height: 50px;
-      background-image: url("assets/images/commons/sound_belly.svg");
+      background-image: url("@/assets/images/sound_belly.svg");
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
@@ -296,7 +296,7 @@ export default {
       right: 18px;
       width: 32px;
       height: 32px;
-      background-image: url("assets/images/commons/player.svg");
+      background-image: url("@/assets/images/player.svg");
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
@@ -304,10 +304,10 @@ export default {
     }
     &.play {
       &::before {
-        background-image: url("assets/images/commons/sound_belly_2.svg");
+        background-image: url("@/assets/images/sound_belly_2.svg");
       }
       &::after {
-        background-image: url("assets/images/commons/stop.svg");
+        background-image: url("@/assets/images/stop.svg");
       }
     }
   }

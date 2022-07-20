@@ -61,7 +61,7 @@
         </transition>
       </div>
       <button type="button" class="btn-mobile-gnb" @click="openMobileGnb">
-        <img src="@/assets/images/commons/mobile_menu.svg" alt="메뉴" />
+        <img src="@/assets/m_images/mobile_menu.svg" alt="메뉴" />
       </button>
     </div>
 
@@ -341,22 +341,22 @@ export default {
         /*{
           url: "https://opensea.io/",
           name: "Opensea",
-          imgUrl: require("@/assets/images/commons/img_menu_opensea.svg"),
+          imgUrl: require("@/assets/m_images/img_menu_opensea.svg"),
         },*/
         {
           url: "https://discord.gg/TDYtz2fcSN",
           name: "Discord",
-          imgUrl: require("@/assets/images/commons/img_menu_discord.svg"),
+          imgUrl: require("@/assets/m_images/img_menu_discord.svg"),
         },
         {
           url: "https://twitter.com/bellygom",
           name: "twitter",
-          imgUrl: require("@/assets/images/commons/img_menu_twitter.svg"),
+          imgUrl: require("@/assets/m_images/img_menu_twitter.svg"),
         },
         {
           url: "https://youtube.com/channel/UCN9NpIA1d-wB1MsQQfkQnig",
           name: "YouTube",
-          imgUrl: require("@/assets/images/commons/img_menu_youtube.svg"),
+          imgUrl: require("@/assets/m_images/img_menu_youtube.svg"),
         },
       ],
       faqList: [

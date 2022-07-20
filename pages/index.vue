@@ -29,24 +29,36 @@
                 <div class="text-con">
                   <template v-if="$store.getters.getLocale === 'ENG'">
                     <div class="item nm1">
-                      <img src="@/assets/images/main/cloud_02_en.png" />
+                      <span class="sale">1st Whitelist Sale</span>
+                      <span class="date">2022.08.17</span>
+                      <span class="date">8:00 pm</span>
                     </div>
                     <div class="item nm2">
-                      <img src="@/assets/images/main/cloud_01_en.png" />
+                      <span class="sale">2nd Whitelist Sale</span>
+                      <span class="date">2022.08.17</span>
+                      <span class="date">10:00 pm</span>
                     </div>
                     <div class="item nm3">
-                      <img src="@/assets/images/main/cloud_03_en.png" />
+                      <span class="sale">Public Sale</span>
+                      <span class="date">2022.08.18</span>
+                      <span class="date">8:00 pm</span>
                     </div>
                   </template>
                   <template v-else>
                     <div class="item nm1">
-                      <img src="@/assets/images/main/cloud_02.png" />
+                      <span class="sale">1차 화이트리스트 세일</span>
+                      <span class="date">2022.08.17</span>
+                      <span class="date">8:00 pm</span>
                     </div>
                     <div class="item nm2">
-                      <img src="@/assets/images/main/cloud_01.png" />
+                      <span class="sale">2차 화이트리스트 세일</span>
+                      <span class="date">2022.08.17</span>
+                      <span class="date">10:00 pm</span>
                     </div>
                     <div class="item nm3">
-                      <img src="@/assets/images/main/cloud_03.png" />
+                      <span class="sale">퍼블릭 세일</span>
+                      <span class="date">2022.08.18</span>
+                      <span class="date">8:00 pm</span>
                     </div>
                   </template>
                 </div>
@@ -632,143 +644,10 @@ export default {
   },
 };
 </script>
-<style scoped lang="scss">
+<style>
 #main {
   background: #ceedff;
 }
-
-.slide {
-  width: 100vw;
-  transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  ::v-deep .fp-tableCell {
-    position: relative;
-    img {
-      bottom: 0;
-      width: 100%;
-      height: auto;
-    }
-  }
-  .contents {
-    position: relative;
-    transform: translateZ(0);
-    width: 100%;
-    height: 100%;
-    .text-con {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 100%;
-      height: 100%;
-      transform: translate(-50%, -50%);
-      .item {
-        opacity: 0;
-        position: absolute;
-        width: 22%;
-        height: 25%;
-        transform: translate(0, -30px);
-        transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-        -webkit-transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-        &.nm1 {
-          bottom: 59%;
-          left: 39%;
-        }
-        &.nm2 {
-          bottom: 43%;
-          left: 18%;
-        }
-        &.nm3 {
-          bottom: 42%;
-          right: 19%;
-        }
-      }
-      .item2 {
-        opacity: 0;
-        position: absolute;
-        width: 20%;
-        height: 43%;
-        transform: translate(0, -30px);
-        transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-        -webkit-transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-        color: $white;
-        .txt {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 100%;
-          transform: translate(-50%, -50%);
-          .road {
-            font-family: "Sandoll Odongtong", sans-serif;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 1vw;
-            line-height: 1.2;
-          }
-          .title {
-            font-family: "Sandoll Odongtong", sans-serif;
-            font-style: normal;
-            font-weight: 400;
-            margin-top: 15px;
-            font-size: 2.5vw;
-            line-height: 1.2;
-          }
-          .more {
-            display: block;
-            font-family: "Sandoll Odongtong", sans-serif;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 1vw;
-            line-height: 1.2;
-            margin-top: 20px;
-            text-decoration: underline;
-            text-underline-position: under;
-          }
-        }
-        &.nm1 {
-          bottom: 47%;
-          left: 35%;
-        }
-        &.nm2 {
-          bottom: 35%;
-          left: 18%;
-        }
-        &.nm3 {
-          bottom: 33.5%;
-          right: 20.5%;
-        }
-      }
-    }
-  }
-  &.active {
-    .contents {
-      .text-con {
-        .item2 {
-          opacity: 1;
-          transform: translate(0, 30px);
-          &.nm1 {
-            transition-delay: 1.5s;
-            -webkit-transition-delay: 1.5s;
-            .txt {
-              transform: translate(-50%, -59%);
-            }
-          }
-          &.nm2 {
-            transition-delay: 1s;
-            -webkit-transition-delay: 1s;
-          }
-          &.nm3 {
-            transition-delay: 1.8s;
-            -webkit-transition-delay: 1.8s;
-            .txt {
-              transform: translate(-50%, -49%);
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
 #mainBelly {
   position: absolute;
   left: 0;
@@ -783,100 +662,6 @@ export default {
   object-fit: cover;
   z-index: 3;
 }
-::v-deep .active {
-  .active {
-    .contents {
-      .text-con {
-        .item {
-          opacity: 1;
-          transform: translate(0, 30px);
-          &.nm1 {
-            transition-delay: 1s;
-            -webkit-transition-delay: 1s;
-          }
-          &.nm2 {
-            transition-delay: 1.3s;
-            -webkit-transition-delay: 1.3s;
-          }
-          &.nm3 {
-            transition-delay: 1.6s;
-            -webkit-transition-delay: 1.6s;
-          }
-        }
-      }
-    }
-  }
-}
-.info-btn {
-  position: absolute;
-  width: 14%;
-  height: 16%;
-  bottom: 10%;
-  left: 30%;
-}
-
-.ending {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  .top {
-    position: absolute;
-    top: 9%;
-    right: 6%;
-    width: 80%;
-    height: auto;
-    img {
-      width: 100%;
-      object-fit: contain;
-    }
-  }
-  .bottom {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    transform: translateY(23%);
-    img {
-      width: 100%;
-      object-fit: contain;
-    }
-  }
-  .txt {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 30%;
-    height: auto;
-    transform: translateX(-50%);
-    img {
-      width: 100%;
-      object-fit: contain;
-    }
-    &.eng {
-      width: 50%;
-    }
-  }
-  img {
-    height: 100%;
-    object-fit: cover;
-  }
-}
-.second {
-  position: relative;
-  .sec-cloud {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    img {
-      object-fit: contain;
-    }
-  }
-}
-</style>
-<style>
 .section-1 {
   z-index: 2;
 }
@@ -946,7 +731,6 @@ export default {
 .main-char.s3 .fall {
   display: block;
 }
-
 .road-img {
   position: absolute;
   bottom: 0;
@@ -970,7 +754,6 @@ export default {
   background-size: auto 100%;
   /*background-image: url("@/assets/images/walk-sprites-h.png");*/
 }
-
 .fp-controlArrow.fp-prev,
 .fp-controlArrow.fp-next {
   display: none;

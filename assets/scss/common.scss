@@ -16,143 +16,15 @@ body {
   }
 }
 .pc {
-  .sub-wrap {
-    min-height: 100vh;
-    box-sizing: border-box;
-    background: $gradient;
-
-    .title-wrap {
-      position: relative;
-      padding-top: 110px;
-
-      h1 {
-        font-family: "Sandoll Odongtong", sans-serif;
-        margin-top: 80px;
-        text-align: center;
-        font-size: 80px;
-        font-weight: 400;
-        line-height: 92px;
-        color: #ffffff;
-      }
-
-      .sub {
-        text-align: center;
-        margin: 30px 0 0 0;
-        font-size: 26px;
-        font-weight: 400;
-        line-height: 38px;
-        color: #ffffff;
-      }
-
-      .mobile & {
-        padding: 110px 20px 0;
-
-        h1 {
-          margin-top: 60px;
-          font-size: 40px;
-          line-height: 1.2;
-        }
-
-        .sub {
-          margin: 10px 0 0 0;
-          padding: 0 20px;
-          font-size: 16px;
-          line-height: 25px;
-        }
-      }
-    }
-
-    .content {
-      padding: 150px 0 200px;
-
-      .inner {
-        margin: 0 auto;
-        max-width: 1260px;
-
-        .content-wrap {
-          h2 {
-            text-align: center;
-            font-size: 38px;
-            font-weight: 400;
-            line-height: 62px;
-            color: #ffffff;
-
-            .mobile & {
-              font-size: 27px;
-              line-height: 44px;
-            }
-          }
-        }
-      }
-
-      .mobile & {
-        padding: 20px 20px 150px;
-
-        .inner {
-        }
-      }
-    }
-
-    &.bubble {
-      background: #4835c6;
-
-      .title-wrap {
-        width: 100%;
-        height: 660px;
-        background: $gradient;
-
-        .mobile & {
-          height: 470px;
-
-          h1 {
-            margin-top: 0;
-          }
-        }
-
-        &::before {
-          content: "";
-          display: block;
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          width: 100%;
-          height: 500px;
-          background-image: url("~assets/images/commons/sub_bubble.svg");
-          background-position: top center;
-          background-repeat: repeat-x;
-          background-size: 1920px auto;
-          transform: translateX(-50%);
-
-          .mobile & {
-            top: 70px;
-            left: 49.9%;
-            height: 462px;
-            background-image: url("~assets/images/commons/mobile_sub_bubble.svg");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 101% auto;
-          }
-        }
-      }
-
-      .content {
-        background: $gradient;
-        padding-top: 0;
-      }
-    }
-  }
-
   /*transition fade*/
   .fade-enter-active,
   .fade-leave-active {
     transition: opacity 0.5s;
   }
-
   .fade-enter,
   .fade-leave-to {
     opacity: 0;
   }
-
   /*modal*/
   .faq-modal {
     .modal-container {
@@ -193,7 +65,6 @@ body {
       }
     }
   }
-
   .story-modal {
     .modal-container {
       width: 1000px !important;
@@ -206,7 +77,10 @@ body {
       background-color: transparent !important;
       box-shadow: none !important;
       position: relative;
-
+      .modal-default-button {
+        top: 28px;
+        right: 10px;
+      }
       .modal-inner {
         padding: 0;
         .story {
@@ -359,16 +233,9 @@ body {
             }
           }
         }
-
-        .modal-default-button {
-          top: 28px;
-          right: 10px;
-          z-index: 99;
-        }
       }
     }
   }
-
   .road-modal {
     .modal-container {
       width: 640px !important;
@@ -475,16 +342,9 @@ body {
             }
           }
         }
-
-        .modal-default-button {
-          position: absolute;
-          top: 60px;
-          right: 60px;
-        }
       }
     }
   }
-
   .info-modal {
     .modal-container {
       width: 820px !important;
@@ -494,11 +354,8 @@ body {
       background-color: #fff;
       background-position: right;
       background-repeat: no-repeat;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       padding: 88px 0 60px 60px;
+      position: relative;
       .modal-inner {
         position: relative;
         height: 60vh;
@@ -624,18 +481,267 @@ body {
           }
         }
       }
-
-      .modal-default-button {
-        position: fixed;
-        top: 60px;
-        right: 60px;
-      }
     }
   }
-
   .roads {
     position: absolute;
     bottom: 0;
     width: 100%;
+  }
+
+  /*main*/
+  .slide {
+    width: 100vw;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    .fp-tableCell {
+      position: relative;
+      img {
+        bottom: 0;
+        width: 100%;
+        height: auto;
+      }
+    }
+    .contents {
+      position: relative;
+      transform: translateZ(0);
+      width: 100%;
+      height: 100%;
+      .text-con {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        transform: translate(-50%, -50%);
+        .item {
+          opacity: 0;
+          position: absolute;
+          width: 22%;
+          height: 25%;
+          transform: translate(0, -30px);
+          transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+          -webkit-transition: opacity 0.4s ease-in-out,
+            transform 0.4s ease-in-out;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          &.nm1 {
+            bottom: 43%;
+            left: 18%;
+            background: url("@/assets/images/main/cloud_01.png") center
+              no-repeat;
+            background-size: contain;
+          }
+          &.nm2 {
+            bottom: 59%;
+            left: 39%;
+            background: url("@/assets/images/main/cloud_02.png") center
+              no-repeat;
+            background-size: contain;
+          }
+          &.nm3 {
+            bottom: 42%;
+            right: 19%;
+            background: url("@/assets/images/main/cloud_03.png") center
+              no-repeat;
+            background-size: contain;
+          }
+          .sale {
+            font-size: 1vw;
+            line-height: 1.2;
+            color: #555;
+          }
+          .date {
+            font-family: "Sandoll Odongtong", sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1.8vw;
+            line-height: 1.3;
+            color: $black;
+            margin-top: 15px;
+            & + .date {
+              margin-top: 0;
+            }
+          }
+        }
+        .item2 {
+          opacity: 0;
+          position: absolute;
+          width: 20%;
+          height: 43%;
+          transform: translate(0, -30px);
+          transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+          -webkit-transition: opacity 0.4s ease-in-out,
+            transform 0.4s ease-in-out;
+          color: $white;
+          .txt {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            transform: translate(-50%, -50%);
+            .road {
+              font-family: "Sandoll Odongtong", sans-serif;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 1vw;
+              line-height: 1.2;
+            }
+            .title {
+              font-family: "Sandoll Odongtong", sans-serif;
+              font-style: normal;
+              font-weight: 400;
+              margin-top: 15px;
+              font-size: 2.5vw;
+              line-height: 1.2;
+            }
+            .more {
+              display: block;
+              font-family: "Sandoll Odongtong", sans-serif;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 1vw;
+              line-height: 1.2;
+              margin-top: 20px;
+              text-decoration: underline;
+              text-underline-position: under;
+            }
+          }
+          &.nm1 {
+            bottom: 47%;
+            left: 35%;
+          }
+          &.nm2 {
+            bottom: 35%;
+            left: 18%;
+          }
+          &.nm3 {
+            bottom: 33.5%;
+            right: 20.5%;
+          }
+        }
+      }
+    }
+    &.active {
+      .contents {
+        .text-con {
+          .item2 {
+            opacity: 1;
+            transform: translate(0, 30px);
+            &.nm1 {
+              transition-delay: 1.5s;
+              -webkit-transition-delay: 1.5s;
+              .txt {
+                transform: translate(-50%, -59%);
+              }
+            }
+            &.nm2 {
+              transition-delay: 1s;
+              -webkit-transition-delay: 1s;
+            }
+            &.nm3 {
+              transition-delay: 1.8s;
+              -webkit-transition-delay: 1.8s;
+              .txt {
+                transform: translate(-50%, -49%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .active {
+    .active {
+      .contents {
+        .text-con {
+          .item {
+            opacity: 1;
+            transform: translate(0, 30px);
+            &.nm1 {
+              transition-delay: 1s;
+              -webkit-transition-delay: 1s;
+            }
+            &.nm2 {
+              transition-delay: 1.3s;
+              -webkit-transition-delay: 1.3s;
+            }
+            &.nm3 {
+              transition-delay: 1.6s;
+              -webkit-transition-delay: 1.6s;
+            }
+          }
+        }
+      }
+    }
+  }
+  .info-btn {
+    position: absolute;
+    width: 14%;
+    height: 16%;
+    bottom: 10%;
+    left: 30%;
+  }
+  .ending {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    .top {
+      position: absolute;
+      top: 9%;
+      right: 6%;
+      width: 80%;
+      height: auto;
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+    .bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      transform: translateY(23%);
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+    .txt {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 30%;
+      height: auto;
+      transform: translateX(-50%);
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+      &.eng {
+        width: 50%;
+      }
+    }
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .second {
+    position: relative;
+    .sec-cloud {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      img {
+        object-fit: contain;
+      }
+    }
   }
 }

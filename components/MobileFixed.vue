@@ -2,12 +2,19 @@
   <!--S : Fixed Contents-->
   <div id="fixed">
     <div class="audio">
-      <button class="sound_btn" ref="soundClick" @click="play();sendGaEvent('flt_bgmOn','FLT');" />
+      <button
+        class="sound_btn"
+        ref="soundClick"
+        @click="
+          play();
+          sendGaEvent('flt_bgmOn', 'FLT');
+        "
+      />
       <audio loop ref="audioElm" src="../assets/media/BELLY.mp3"></audio>
     </div>
 
     <a href="#getBelly" class="top-btn"
-      ><img src="../assets/images/commons/top_btn.svg" />
+      ><img src="@/assets/m_images/top_btn.svg" />
     </a>
     <!--STORY MODAL-->
     <modal v-if="showStoryModal" @close="closeStoryModal" class="story-modal">
@@ -236,10 +243,10 @@ export default {
       this.currIndi--;
       if (this.currIndi < 1) this.currIndi = 1;
     },
-    sendGaEvent(eventName, event_category){
-      console.log('M_' + eventName +"|||||||"+ event_category);
-      gtag('event', 'M_'+ eventName, {
-        "event_category": event_category
+    sendGaEvent(eventName, event_category) {
+      console.log("M_" + eventName + "|||||||" + event_category);
+      gtag("event", "M_" + eventName, {
+        event_category: event_category,
       });
     },
   },
@@ -267,7 +274,7 @@ export default {
       left: 5px;
       width: 30px;
       height: 30px;
-      background-image: url("assets/images/commons/sound_belly.svg");
+      background-image: url("@/assets/m_images/sound_belly.svg");
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
@@ -281,7 +288,7 @@ export default {
       right: 9px;
       width: 21px;
       height: 21px;
-      background-image: url("assets/images/commons/player.svg");
+      background-image: url("@/assets/m_images/player.svg");
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
@@ -289,10 +296,10 @@ export default {
     }
     &.play {
       &::before {
-        background-image: url("assets/images/commons/sound_belly_2.svg");
+        background-image: url("@/assets/m_images/sound_belly_2.svg");
       }
       &::after {
-        background-image: url("assets/images/commons/stop.svg");
+        background-image: url("@/assets/m_images/stop.svg");
       }
     }
   }
@@ -304,11 +311,11 @@ export default {
     height: auto;
   }
   .top-btn {
-  position: fixed;
-    bottom: 20px;
-    right: 15px;
-    width: 50px;
-    height: 40px;
+    position: fixed;
+    bottom: 18px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
     border-radius: 100%;
   }
 }
