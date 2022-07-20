@@ -829,9 +829,8 @@ export default {
       top: 50%;
       left: 50%;
       width: 100%;
-      transform: translate(-50%, -100%);
+      transform: translate(-50%, -80%);
       .item {
-        margin-bottom: 20px;
         .txt {
           position: absolute;
           top: 50%;
@@ -1178,6 +1177,11 @@ footer {
 .swiper-container {
   padding: 20px 0;
 }
+
+.swiper-container.cloud {
+  padding: 20px 0 40px;
+}
+
 .swiper-slide {
   display: flex;
   justify-content: center;
