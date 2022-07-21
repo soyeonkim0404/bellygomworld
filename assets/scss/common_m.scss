@@ -271,7 +271,7 @@ body {
         }
 
         height: auto !important;
-        padding: 100px 30px;
+        padding: 100px 20px;
 
         .modal-header {
           font-family: "Sandoll Odongtong", sans-serif;
@@ -281,7 +281,7 @@ body {
             font-size: 18px;
             line-height: 22px;
             margin-top: 28px;
-            color: #5f82ff;
+            color: #4944e4;
           }
 
           .title {
@@ -293,6 +293,7 @@ body {
         }
 
         .modal-body {
+          padding: 0;
           .road-list {
             margin-top: 20px;
 
