@@ -122,7 +122,7 @@
                 <button
                   class="info-btn"
                   @click="
-                    showInfo();
+                    //showInfo();
                     sendGaEvent('M_' + 'gb_icon', 'GB');
                   "
                 />
