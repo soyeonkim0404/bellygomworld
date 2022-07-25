@@ -3,8 +3,8 @@
     <Header v-if="$mq === 'pc'" />
     <MobileHeader v-else />
     <Nuxt />
-    <Fixed v-if="$mq === 'pc'"  />
-    <MobileFixed v-else/>
+    <Fixed v-if="$mq === 'pc'" />
+    <MobileFixed v-else />
   </div>
 </template>
 
@@ -18,11 +18,9 @@ export default {
 #app {
   width: 100%;
   margin: 0 auto;
-  &.mobile {
-    overflow-x: hidden;
-  }
   &.pc {
-    min-width: 1000px;
+    min-width: 1260px;
+    overflow-x: auto;
   }
 }
 </style>

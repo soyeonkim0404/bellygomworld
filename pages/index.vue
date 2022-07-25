@@ -22,6 +22,14 @@
           <section class="section">
             <div class="slide" data-anchor="slide1">
               <div class="contents">
+                <!--                <div class="firework">
+                  <div class="effect-group">
+                    <span class="effect"></span>
+                    <span class="effect"></span>
+                    <span class="effect"></span>
+                    <span class="effect"></span>
+                  </div>
+                </div>-->
                 <img
                   src="@/assets/images/main/getbelly_road_ko_1.jpeg"
                   class="roads"
@@ -65,8 +73,8 @@
                 <button
                   class="info-btn"
                   @click="
-                    showInfo();
-                    sendGaEvent('gb_icon', 'GB');
+                    /*showInfo();*/
+                    sendGaEvent('gb_icon', 'GB')
                   "
                 />
               </div>
@@ -247,22 +255,23 @@
       <div slot="body">
         <template v-if="$store.getters.getLocale === 'ENG'">
           <ul class="road-list">
-            <li>Surprise Appears in Crypto Party</li>
-            <li>The start of the Bellygom community</li>
-            <li>Rarity & Ranking Revealed After Reveal</li>
-            <li>Surprise Offer Revealed for All Holders</li>
+            <li>Surprise Appears in <strong>Crypto Party</strong></li>
+            <li>The start of the <strong>Bellygom community</strong></li>
+            <li><strong>Rarity & Ranking</strong> Revealed After Reveal</li>
+            <li><strong>Surprise Offer</strong> Revealed for All Holders</li>
             <li>
-              Sold out celebration! Bellygom's celebration ceremony Start~
+              <strong>Sold out celebration!</strong> Bellygom's celebration
+              ceremony Start~
             </li>
           </ul>
         </template>
         <template v-else>
           <ul class="road-list">
-            <li>크립토파티에 깜짝 등장</li>
-            <li>벨리곰 커뮤니티의 시작</li>
-            <li>리빌 이후 레어리티&랭킹 공개</li>
-            <li>모든 홀더들을 위한 깜짝 혜택 공개</li>
-            <li>완판 기념! 벨리곰의 축하 세레머니 START~</li>
+            <li><strong>크립토파티</strong>에 깜짝 등장</li>
+            <li><strong>벨리곰 커뮤니티</strong>의 시작</li>
+            <li>리빌 이후 <strong>레어리티&랭킹</strong> 공개</li>
+            <li>모든 홀더들을 위한 깜짝 <strong>혜택</strong> 공개</li>
+            <li><strong>완판 기념!</strong> 벨리곰의 축하 세레머니 START~</li>
           </ul>
         </template>
       </div>
@@ -280,20 +289,25 @@
       <div slot="body">
         <template v-if="$store.getters.getLocale === 'ENG'">
           <ul class="road-list">
-            <li>Surprise Valley Festival held</li>
-            <li>Fast!!! Belly Pass with Bellygom</li>
-            <li>Bellygom and global projects and collaborations</li>
-            <li>The second operation is possible! Bellygom NFT Airdrop</li>
-            <li>Creator Studio, training program open</li>
+            <li>Surprise <strong>Belly Festival</strong> held</li>
+            <li>Fast!!! <strong>Belly Pass</strong> with Bellygom</li>
+            <li>
+              Bellygom and global projects and <strong>collaborations</strong>
+            </li>
+            <li>
+              The second operation is possible!
+              <strong>Bellygom NFT Airdrop</strong>
+            </li>
+            <li><strong>Creator</strong> Studio, training program open</li>
           </ul>
         </template>
         <template v-else>
           <ul class="road-list">
-            <li>깜짝 벨리 페스티벌 개최</li>
-            <li>벨리곰과 빠르게!!! 벨리패스</li>
-            <li>벨리곰과 글로벌 프로젝트와 콜라보레이션</li>
-            <li>2차 창작 가능! 벨리곰 NFT 에어드랍</li>
-            <li>크리에이터 스튜디오, 양성 프로그램 오픈</li>
+            <li>깜짝 <strong>벨리 페스티벌</strong> 개최</li>
+            <li>벨리곰과 빠르게!!! <strong>벨리패스</strong></li>
+            <li>벨리곰과 글로벌 프로젝트와 <strong>콜라보레이션</strong></li>
+            <li>2차 창작 가능! <strong>벨리곰 NFT 에어드랍</strong></li>
+            <li><strong>크리에이터</strong> 스튜디오, 양성 프로그램 오픈</li>
           </ul>
         </template>
       </div>
@@ -311,31 +325,45 @@
       <div slot="body">
         <template v-if="$store.getters.getLocale === 'ENG'">
           <ul class="road-list">
-            <li>Bellygom and friends migrate to the metaverse world</li>
-            <li>Belly World's Land NFT, Airdrop</li>
-            <li>Belly World Big Celebrity Concert held</li>
             <li>
-              Making a surprise theme song for Belly World's 1st project (feat.
-              ?)
+              Bellygom and friends migrate to the
+              <strong>metaverse world</strong>
+            </li>
+            <li>Belly World's <strong>Land NFT, Airdrop</strong></li>
+            <li>Belly World <strong>Big Celebrity Concert</strong> held</li>
+            <li>
+              Making a surprise <strong>theme song</strong> for Belly World's
+              1st project (feat. ?)
             </li>
             <li>
-              Making a surprise webtoon for Belly World's 2nd project (feat. ?)
+              Making a surprise <strong>webtoon</strong> for Belly World's 2nd
+              project (feat. ?)
             </li>
-            <li>Belly World 3rd Project Make a surprise game</li>
+            <li>
+              Belly World 3rd Project Make a surprise <strong>game</strong>
+            </li>
           </ul>
         </template>
         <template v-else>
           <ul class="road-list">
-            <li>벨리곰과 친구들, 메타버스 세상으로 이주</li>
-            <li>벨리월드 랜드 NFT 에어드랍</li>
-            <li>벨리월드 빅 셀럽 콘서트 개최</li>
-            <li>벨리월드 첫 번째 프로젝트 깜짝 테마곡 만들기 (feat. ?)</li>
-            <li>벨리월드 두 번째 프로젝트 깜짝 웹툰 만들기 (feat. ?)</li>
-            <li>벨리월드 세 번째 프로젝트 깜짝 게임 만들기</li>
+            <li>벨리곰과 친구들, <strong>메타버스 세상</strong>으로 이주</li>
+            <li>벨리월드 <strong>랜드 NFT 에어드랍</strong></li>
+            <li>벨리월드 <strong>빅 셀럽 콘서트</strong> 개최</li>
+            <li>
+              벨리월드 첫 번째 프로젝트 깜짝 <strong>테마곡</strong> 만들기
+              (feat. ?)
+            </li>
+            <li>
+              벨리월드 두 번째 프로젝트 깜짝 <strong>웹툰</strong> 만들기 (feat.
+              ?)
+            </li>
+            <li>벨리월드 세 번째 프로젝트 깜짝 <strong>게임</strong> 만들기</li>
           </ul>
         </template>
         <template v-if="$store.getters.getLocale === 'ENG'">
-          <span class="notice">Road 4 made with holder!!!</span>
+          <span class="notice"
+            ><strong>Road 4 made with holder!!!</strong></span
+          >
         </template>
         <template v-else>
           <span class="notice">홀더와 함께 만드는 Road 4!!!</span>
@@ -494,7 +522,12 @@
                       "
                       class="pdf-btn"
                     >
-                      <img src="@/assets/images/main/pdf_download.png" />
+                      <span>
+                        <img
+                          src="@/assets/images/main/ic_download.png"
+                          alt=""
+                        />PDF Download
+                      </span>
                     </button>
                   </span>
                 </template>
