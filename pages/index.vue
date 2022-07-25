@@ -73,8 +73,8 @@
                 <button
                   class="info-btn"
                   @click="
-                    showInfo();
-                    sendGaEvent('gb_icon', 'GB');
+                    /*showInfo();*/
+                    sendGaEvent('gb_icon', 'GB')
                   "
                 />
               </div>
