@@ -1,8 +1,16 @@
 <template>
   <div class="terms">
+    <header class="site-header">
+      <div class="logo">
+        <a href="/" @click="sendGaEvent('gnb_logo', 'GNB')">
+          <img src="@/assets/images/logo-2.svg" alt="logo" />
+        </a>
+      </div>
+    </header>
+    <h1 v-if="$store.getters.getLocale === 'ENG'">Terms of Service</h1>
+    <h1 v-else>이용약관</h1>
     <div class="term-inner">
       <template v-if="$store.getters.getLocale === 'ENG'">
-        <h1>Terms of Service</h1>
         <span class="mt30">
           Bellygom NFT refers to a project for digital art collections that
           exist on the Klaytn Network. Users who purchase or own a Bellygom NFT
@@ -259,7 +267,6 @@
       </template>
       <!--한국어-->
       <template v-else>
-        <h1>이용약관</h1>
         <span class="mt30">
           벨리곰 NFT(Bellygom NFT)는 클레이튼 네트워크상에서 존재하는 디지털
           아트 수집품에 대한 프로젝트를 의미합니다. 벨리곰 NFT(Bellygom NFT)를
@@ -374,13 +381,13 @@
         </span>
 
         <span class="mt10"
-          >4. 지식재산권. 작품에 대하여 상기 허용된 권리 외에, 귀하에게는
+          >5. 지식재산권. 작품에 대하여 상기 허용된 권리 외에, 귀하에게는
           ‘롯데홈쇼핑’, 벨리곰(Bellygom) 기타 당사가 발행하는 다른 NFT 및 관련
           로고를 포함한 다른 상표 또는 지식재산권에 대한 어떠한 권리도 부여되지
           않습니다.
         </span>
         <span class="mt10"
-          >5. 라이선스 기간. 귀하가 보유하는 일체의 권리는 귀하가 벨리곰
+          >6. 라이선스 기간. 귀하가 보유하는 일체의 권리는 귀하가 벨리곰
           NFT(Bellygom NFT)를 보유하는 동안에만 행사가 가능합니다. 귀하가 벨리곰
           NFT(Bellygom NFT)에 대한 매매, 이전, 증여 기타 일체의 처분행위로
           인하여 보유권을 상실한 시점부터 귀하는 본 이용 조건에 따른 권리 일체를
@@ -511,17 +518,46 @@ export default {
   name: "term",
   layout: "clean",
   mounted() {},
+  methods: {
+    sendGaEvent(eventName, event_category) {
+      console.log(eventName + "|||||||" + event_category);
+      gtag("event", eventName, {
+        event_category: event_category,
+      });
+    },
+  },
 };
 </script>
 
 <style scoped lang="scss">
+.terms {
+  background: #ffcceb;
+  padding-bottom: 200px;
+}
 .term-inner {
+  position: relative;
   width: 1260px;
-  margin: 0 auto;
-  padding: 100px 0;
+  margin: 113px auto 0;
+  padding: 80px 100px 108px;
+  background: $white;
+  border-radius: 50px;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1144px;
+    height: 68px;
+    background: url("@/assets/images/terms_spring.png") no-repeat center;
+  }
 }
 h1 {
-  font-size: 50px;
+  margin-top: 30px;
+  font-family: "Sandoll Odongtong", sans-serif;
+  font-weight: 400;
+  font-size: 80px;
   text-align: center;
 }
 h2 {
@@ -565,5 +601,24 @@ span {
 }
 .red {
   color: red;
+}
+.site-header {
+  width: 100%;
+  min-width: 1000px;
+  height: 110px;
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 40px 0 30px;
+  z-index: 99;
+  .logo {
+    flex: 0 0 110px;
+    width: 110px;
+    height: 110px;
+    a {
+      display: block;
+    }
+  }
 }
 </style>

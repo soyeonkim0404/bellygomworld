@@ -198,6 +198,9 @@ export default {
     flex: 0 0 110px;
     width: 110px;
     height: 110px;
+    a {
+      display: block;
+    }
   }
   .category {
     flex: 1 1 auto;
@@ -415,6 +418,13 @@ export default {
         }
       }
     }
+  }
+}
+
+@media (max-width: 1000px) {
+  #head .category .anchor-nav li a,
+  #head .category .anchor-nav li button {
+    padding: 10px;
   }
 }
 </style>

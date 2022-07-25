@@ -1,9 +1,16 @@
 <template>
   <div class="terms">
-    <HeaderSub />
+    <header class="site-header">
+      <div class="logo">
+        <a href="/m">
+          <img src="@/assets/m_images/main/mobile_logo.svg" alt="logo" />
+        </a>
+      </div>
+    </header>
+    <h1 v-if="$store.getters.getLocale === 'ENG'">Terms of Service</h1>
+    <h1 v-else>이용약관</h1>
     <div class="term-inner">
       <template v-if="$store.getters.getLocale === 'ENG'">
-        <h1>Terms of Service</h1>
         <span class="mt30">
           Bellygom NFT refers to a project for digital art collections that
           exist on the Klaytn Network. Users who purchase or own a Bellygom NFT
@@ -260,7 +267,6 @@
       </template>
       <!--한국어-->
       <template v-else>
-        <h1>이용약관</h1>
         <span class="mt30">
           벨리곰 NFT(Bellygom NFT)는 클레이튼 네트워크상에서 존재하는 디지털
           아트 수집품에 대한 프로젝트를 의미합니다. 벨리곰 NFT(Bellygom NFT)를
@@ -375,13 +381,13 @@
         </span>
 
         <span class="mt10"
-          >4. 지식재산권. 작품에 대하여 상기 허용된 권리 외에, 귀하에게는
+          >5. 지식재산권. 작품에 대하여 상기 허용된 권리 외에, 귀하에게는
           ‘롯데홈쇼핑’, 벨리곰(Bellygom) 기타 당사가 발행하는 다른 NFT 및 관련
           로고를 포함한 다른 상표 또는 지식재산권에 대한 어떠한 권리도 부여되지
           않습니다.
         </span>
         <span class="mt10"
-          >5. 라이선스 기간. 귀하가 보유하는 일체의 권리는 귀하가 벨리곰
+          >6. 라이선스 기간. 귀하가 보유하는 일체의 권리는 귀하가 벨리곰
           NFT(Bellygom NFT)를 보유하는 동안에만 행사가 가능합니다. 귀하가 벨리곰
           NFT(Bellygom NFT)에 대한 매매, 이전, 증여 기타 일체의 처분행위로
           인하여 보유권을 상실한 시점부터 귀하는 본 이용 조건에 따른 권리 일체를
@@ -504,6 +510,65 @@
         </span>
       </template>
     </div>
+    <footer>
+      <div class="inner">
+        <div class="footer-logo" v-if="$store.getters.getLocale === 'ENG'">
+          <img
+            src="@/assets/m_images/main/footer_logo_en.svg"
+            alt="footer-logo"
+          />
+        </div>
+        <div class="footer-logo" v-else>
+          <img src="@/assets/m_images/main/footer_logo.svg" alt="footer-logo" />
+        </div>
+        <div class="footer-contents">
+          <template v-if="$store.getters.getLocale === 'ENG'">
+            <ul class="footer-list">
+              <li>CEO Lee, Wan Shin</li>
+              <li>
+                Address: (Yangpyeongdong 5-ga) 10 Yangpyeong-ro 21-gil
+                Yeongdeungpo-gu, Seoul
+              </li>
+              <li>Privacy Policy Manager: Shin, Sung Bin</li>
+            </ul>
+            <ul class="footer-list">
+              <li>Hosting Service Provider: Woori Home Shopping</li>
+              <li>Affiliates & Inquiry: master@lotteimall.com</li>
+              <li>
+                <nuxt-link to="/m/terms" target="_blank">
+                  Terms of Service
+                </nuxt-link>
+              </li>
+            </ul>
+          </template>
+          <template v-else>
+            <ul class="footer-list">
+              <li>대표 이완신</li>
+              <li>주소: 서울특별시 영등포구 양평로21길10(양평동5가)</li>
+              <li>개인정보 보호책임자: 신성빈</li>
+            </ul>
+            <ul class="footer-list">
+              <li>호스팅 서비스 사업자: (주)우리홈쇼핑</li>
+              <li>제휴 및 문의: master@lotteimall.com</li>
+              <li>
+                <nuxt-link to="/m/terms" target="_blank">이용약관</nuxt-link>
+              </li>
+            </ul>
+          </template>
+
+          <p class="copyright">
+            Copyright Ⓒ
+            <span class="logo">
+              <img
+                src="@/assets/m_images/img_footer_logo_bellygom.svg"
+                alt="footer-logo"
+              />
+            </span>
+            All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -511,18 +576,58 @@
 export default {
   name: "term",
   layout: "clean",
+  methods: {},
 };
 </script>
 
 <style scoped lang="scss">
-.term-inner {
+.terms {
+  background: #ffcceb;
+  overflow: hidden;
+}
+header {
   width: 100%;
-  margin: 0 auto;
-  padding: 40px 25px;
+  height: 60px;
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px 0 15px;
+  z-index: 99;
+  box-sizing: border-box;
+  .logo {
+    a {
+      display: block;
+    }
+    width: 68px;
+    margin-top: 10px;
+  }
+}
+.term-inner {
+  position: relative;
+  width: calc(100% - 40px);
+  margin: 60px auto 100px;
+  background: $white;
+  padding: 20px 20px 50px;
+  border-radius: 30px;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1144px;
+    height: 68px;
+    background: url("@/assets/m_images/terms_spring.png") no-repeat center;
+  }
 }
 h1 {
-  font-size: 50px;
+  font-family: "Sandoll Odongtong", sans-serif;
+  font-weight: 400;
+  font-size: 40px;
   text-align: center;
+  margin-top: 60px;
 }
 h2 {
   font-size: 21px;

@@ -1,6 +1,7 @@
 <template>
   <div id="app" :class="$mq">
     <Nuxt />
+    <Footer v-if="$mq === 'pc'" />
   </div>
 </template>
 
@@ -15,10 +16,10 @@ export default {
   width: 100%;
   margin: 0 auto;
   &.mobile {
-    overflow-x: hidden;
   }
   &.pc {
-    min-width: 1000px;
+    min-width: 1260px;
+    overflow-x: auto;
   }
 }
 </style>
