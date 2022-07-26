@@ -34,6 +34,22 @@
                   src="@/assets/images/main/getbelly_road_ko_1.jpeg"
                   class="roads"
                 />
+                <!--인터렉션-->
+                <!--                <img
+                  src="@/assets/images/main/img_get_pinkballoon_motion.png"
+                  alt=""
+                  id="pinkballoon"
+                />
+                <img
+                  src="@/assets/images/main/img_get_blueballoon_motion.png"
+                  alt=""
+                  id="blueballoon"
+                />
+                <img
+                  src="@/assets/images/main/img_get_arrow_motion.png"
+                  alt=""
+                  id="blueballoon"
+                />-->
                 <div class="text-con">
                   <template v-if="$store.getters.getLocale === 'ENG'">
                     <div class="item nm1">
@@ -73,8 +89,8 @@
                 <button
                   class="info-btn"
                   @click="
-                    /*showInfo();*/
-                    sendGaEvent('gb_icon', 'GB')
+                    showInfo();
+                    sendGaEvent('gb_icon', 'GB');
                   "
                 />
               </div>
@@ -366,7 +382,9 @@
           >
         </template>
         <template v-else>
-          <span class="notice">홀더와 함께 만드는 Road 4!!!</span>
+          <span class="notice"
+            ><strong>홀더와 함께 만드는 Road 4!!!</strong></span
+          >
         </template>
       </div>
     </modal>
@@ -379,8 +397,8 @@
         <template v-else>
           <span class="sub">벨리곰 NFT 소식은?</span>
           <div class="title">
-            디스코드 채널을 통해 가장<br />
-            빠르게 확인할 수 있습니다.
+            디스코드 채널을 통해<br />
+            가장 빠르게 확인할 수 있습니다.
           </div>
         </template>
       </div>
@@ -388,26 +406,39 @@
         <template v-if="$store.getters.getLocale === 'ENG'">
           <div class="list-title">1st Whitelist (Guaranteed)</div>
           <ul class="road-list">
-            <li>
-              Twitter and Bellygom Discord Channel Participation Event Lucky
-              Draw and Winners Announcement
-            </li>
+            <li>Remaining - 2,000</li>
+            <li>Per Wallet - 1</li>
           </ul>
           <div class="list-title">2nd Whitelist (Competition)</div>
           <ul class="road-list">
-            <li>
-              At least one NFT holder among Sunmiya Club, Smile Miya (Only for
-              applicants)
-            </li>
+            <li>Remaining - 3,000</li>
+            <li>Per Transaction - 2</li>
           </ul>
           <div class="list-title">Public Sale</div>
           <ul class="road-list">
-            <li>First come, first serve! No restrictions.</li>
+            <li>Remaining - 3,900</li>
+            <li>Per Transaction - 5</li>
           </ul>
           <div class="notice">
             <strong>General Terms of Use</strong>
             <ul class="notice-list">
-              <li>You can purchase 2 pcs per wallet</li>
+              <li>Minting price will be announced soon.</li>
+              <li>
+                For the confirmed minting round, Favor & Klay will be used. Klay
+                will also be used in all other rounds.
+              </li>
+              <li>
+                Unsold quantity from the 1st & 2nd Whitelist Sales will be
+                transferred to the Public Sale.
+              </li>
+              <li>
+                The reserved 1,100 pieces allocated to the team will be utilized
+                in partnerships, events, etc.
+              </li>
+              <li>
+                Details on minting price can be found on Discord > mint-belly or
+                announcements channel.
+              </li>
               <li>
                 Detailed schedule for whitelist application and selection
                 criteria will be announced in advance, on
@@ -425,37 +456,43 @@
                   >Twitter</a
                 >.
               </li>
-              <li>
-                Details on minting price can be found on Discord > mint-belly or
-                announcements channel.
-              </li>
-              <li>
-                Bellygom NFT's minting schedule and number of whitelists will be
-                announced soon.
-              </li>
             </ul>
           </div>
         </template>
         <template v-else>
-          <div class="list-title">1차 화이트리스트(확정)</div>
+          <div class="list-title">1차 확정 화이트리스트 세일</div>
           <ul class="road-list">
-            <li>
-              트위터, 벨리곰 디스코드 채널 참여 이벤트를 통해 추첨 및 대상자
-              확정
-            </li>
+            <li>수량 2,000개</li>
+            <li>지갑당 1개</li>
           </ul>
-          <div class="list-title">2차 화이트리스트(경쟁)</div>
+          <div class="list-title">2차 경쟁 화이트리스트 세일</div>
           <ul class="road-list">
-            <li>선미야클럽, 스마일미야 중 1개 이상 NFT 홀더 (신청자에 한함)</li>
+            <li>수량 3,000개</li>
+            <li>트랜잭션당 2개</li>
           </ul>
-          <div class="list-title">퍼블릭 세일</div>
+          <div class="list-title">3차 퍼블릭 세일</div>
           <ul class="road-list">
-            <li>선착순 판매, 참여자격 제한 없음</li>
+            <li>수량:3,900개</li>
+            <li>트랜잭션당 5개</li>
           </ul>
           <div class="notice">
             <strong>공통 해당 사항</strong>
             <ul class="notice-list">
-              <li>지갑당 2개 구매 가능</li>
+              <li>민팅가격은 추후 공지 됩니다.</li>
+              <li>
+                민팅 확정라운드는 Favor, Klay / 나머지 라운드는 Klay로
+                진행됩니다.
+              </li>
+              <li>
+                1,2차 화이트리스트 미판매 물량은 퍼블릭 세일로 이전됩니다.
+              </li>
+              <li>
+                팀 물량 1,100개는 파트너쉽, 이벤트 등 기타 목적으로 활용됩니다.
+              </li>
+              <li>
+                민팅가격에 대한 자세한 사항은 디스코드 > mint-belly or
+                announcements 채널에서 확인할 수 있습니다.
+              </li>
               <li>
                 화이트리스트 신청 및 선정 관련 상세 일정은
                 <a
@@ -470,14 +507,6 @@
                   target="_blank"
                   >트위터</a
                 >를 통해 사전 공지될 예정입니다.
-              </li>
-              <li>
-                민팅가격에 대한 자세한 사항은 디스코드 > mint-belly or
-                announcements 채널에서 확인할 수 있습니다.
-              </li>
-              <li>
-                벨리곰 NFT의 민팅 일정, 화이트리스트 개수가 곧 공지 될
-                예정입니다.
               </li>
             </ul>
           </div>

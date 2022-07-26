@@ -759,6 +759,7 @@ body {
   }
 }
 
+/*animation*/
 @keyframes fireworkLine {
   0% {
     right: 20%;
@@ -794,7 +795,6 @@ body {
     transform: scale(0, 0);
   }
 }
-
 .firework {
   position: absolute;
   bottom: 18%;
@@ -848,10 +848,30 @@ body {
     }
   }
 }
-
 .effect:before {
   animation: fireworkLine 1.5s linear 1s infinite;
 }
 .effect:after {
   animation: fireworkPoint 1.5s linear 1s infinite;
+}
+
+/*slide 1 pink balloon*/
+#pinkballoon {
+  width: 129px;
+  height: 192px;
+  z-index: 9;
+  position: absolute;
+  top: 0;
+  left: 210px;
+  transform: rotate(-8deg);
+  animation: pinkballoon 3s infinite alternate ease-in-out;
+}
+
+@keyframes pinkballoon {
+  0% {
+    transform: translateY(163px) rotate(16deg);
+  }
+  100% {
+    transform: translateY(183px) rotate(-16deg);
+  }
 }
