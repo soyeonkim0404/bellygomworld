@@ -795,7 +795,7 @@ body {
     background: #4944e4;
     transform: rotate(-3deg);
     margin-left: -10px;
-    width: 110%;
+    width: 130%;
     .loop-holder__text {
       animation: textLoopReverse 2s linear infinite;
       font-family: "Sandoll Odongtong", sans-serif;
@@ -853,16 +853,17 @@ body {
     overflow: hidden;
     height: 80px;
     background: #4944e4;
-    opacity: 0.9;
     transform: rotate(8deg);
     position: absolute;
     top: 370px;
     left: -50px;
+    width: 130%;
     .loop-holder__text {
       animation: textLoop 2s linear infinite;
       font-family: "Sandoll Odongtong", sans-serif;
       font-style: normal;
       font-weight: 400;
+      opacity: 0.6;
       font-size: 20px;
       line-height: 32px;
       height: 80px;
@@ -892,7 +893,7 @@ body {
     white-space: nowrap;
     overflow: hidden;
     .image-item {
-      animation: textLoop 10s linear infinite;
+      animation: textLoop 20s linear infinite;
     }
     .nft-img {
       width: 470px;

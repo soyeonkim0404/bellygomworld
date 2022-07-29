@@ -564,15 +564,27 @@ body {
     }
   }
 
-  .nft-wrap {
+  .bellyship {
     position: relative;
     width: 100%;
     height: auto;
-    background-image: url("@/assets/m_images/main/nft_bg.png");
+    background-image: url("@/assets/m_images/main/BELLYSHIP_MO_BG.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    padding-top: 120px;
+    .b_top {
+      display: block;
+      margin: 0 auto;
+      padding-top: 250px;
+    }
+    .b_mid {
+      margin-top: 200px;
+    }
+  }
+
+  .nft-wrap {
+    position: relative;
+    padding-top: 270px;
     .nft-slider {
       .swiper-container {
         .swiper-slide {
@@ -589,7 +601,7 @@ body {
     background: #4944e4;
     transform: rotate(-3deg);
     margin-left: -10px;
-    width: 110%;
+    width: 130%;
     .loop-holder__text {
       animation: textLoopReverse 2s linear infinite;
       font-family: "Sandoll Odongtong", sans-serif;
@@ -647,11 +659,11 @@ body {
     overflow: hidden;
     height: 40px;
     background: #4944e4;
-    opacity: 0.9;
     transform: rotate(8deg);
     position: absolute;
-    top: 335px;
+    top: 415px;
     left: -50px;
+    width: 130%;
     .loop-holder__text {
       animation: textLoop 2s linear infinite;
       font-family: "Sandoll Odongtong", sans-serif;
@@ -659,6 +671,7 @@ body {
       font-weight: 400;
       font-size: 12px;
       line-height: 20px;
+      opacity: 0.6;
       height: 40px;
       display: flex;
       align-items: center;

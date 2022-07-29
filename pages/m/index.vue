@@ -246,17 +246,31 @@
             </div>
           </section>
           <section class="section">
-            <template v-if="$store.getters.getLocale === 'ENG'">
-              <div class="ending">
-                <img src="@/assets/m_images/main/bellyship_en.jpeg" />
-              </div>
-            </template>
-            <template v-else>
-              <div class="ending">
-                <img src="@/assets/m_images/main/bellyship.jpeg" />
-              </div>
-            </template>
             <div class="bellyship">
+              <template v-if="$store.getters.getLocale === 'ENG'">
+                <img
+                  src="@/assets/m_images/main/img_bellyship_top_en.png"
+                  alt=""
+                  class="b_top"
+                />
+                <img
+                  src="@/assets/m_images/main/img_bellyship_middle_en.png"
+                  alt=""
+                  class="b_mid"
+                />
+              </template>
+              <template v-else>
+                <img
+                  src="@/assets/m_images/main/img_bellyship_top.png"
+                  alt=""
+                  class="b_top"
+                />
+                <img
+                  src="@/assets/m_images/main/img_bellyship_middle.png"
+                  alt=""
+                  class="b_mid"
+                />
+              </template>
               <div class="nft-wrap">
                 <!--nft 슬라이더-->
                 <div class="loop-holder-2">
