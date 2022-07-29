@@ -189,47 +189,189 @@
               </div>
             </div>
           </section>
-          <section class="section">
-            <template v-if="$store.getters.getLocale === 'ENG'">
-              <div class="ending">
-                <img src="@/assets/images/main/img_bellyship_bg.jpeg" />
-                <div class="top">
+          <section class="section fp-auto-height">
+            <div class="bellyship">
+              <!--벨리쉽 영역-->
+              <img
+                src="@/assets/images/main/BELLYSHIP_PC_ENG.png"
+                v-if="$store.getters.getLocale === 'ENG'"
+              />
+              <img src="@/assets/images/main/BELLYSHIP_PC_KOR.png" v-else />
+              <div class="nft-wrap">
+                <!--nft 슬라이더-->
+                <div class="loop-holder-2">
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                </div>
+                <div class="nft-image-loop">
                   <img
-                    src="@/assets/images/main/img_bellyship_top_en.png"
-                    class="top"
+                    src="@/assets/images/main/img_NFT_01.png"
+                    alt=""
+                    class="nft-img"
+                  />
+                  <img
+                    src="@/assets/images/main/img_NFT_02.png"
+                    alt=""
+                    class="nft-img"
+                  />
+                  <img
+                    src="@/assets/images/main/img_NFT_03.png"
+                    alt=""
+                    class="nft-img"
+                  />
+                  <img
+                    src="@/assets/images/main/img_NFT_04.png"
+                    alt=""
+                    class="nft-img"
+                  />
+                  <img
+                    src="@/assets/images/main/img_NFT_05.png"
+                    alt=""
+                    class="nft-img"
+                  />
+                  <img
+                    src="@/assets/images/main/img_NFT_01.png"
+                    alt=""
+                    class="nft-img"
+                  />
+                  <img
+                    src="@/assets/images/main/img_NFT_02.png"
+                    alt=""
+                    class="nft-img"
+                  />
+                  <img
+                    src="@/assets/images/main/img_NFT_03.png"
+                    alt=""
+                    class="nft-img"
+                  />
+                  <img
+                    src="@/assets/images/main/img_NFT_04.png"
+                    alt=""
+                    class="nft-img"
+                  />
+                  <img
+                    src="@/assets/images/main/img_NFT_05.png"
+                    alt=""
+                    class="nft-img"
+                  />
+                  <img
+                    src="@/assets/images/main/img_NFT_01.png"
+                    alt=""
+                    class="nft-img"
+                  />
+                  <img
+                    src="@/assets/images/main/img_NFT_02.png"
+                    alt=""
+                    class="nft-img"
+                  />
+                  <img
+                    src="@/assets/images/main/img_NFT_03.png"
+                    alt=""
+                    class="nft-img"
+                  />
+                  <img
+                    src="@/assets/images/main/img_NFT_04.png"
+                    alt=""
+                    class="nft-img"
+                  />
+                  <img
+                    src="@/assets/images/main/img_NFT_05.png"
+                    alt=""
+                    class="nft-img"
+                  />
+                  <img
+                    src="@/assets/images/main/img_NFT_01.png"
+                    alt=""
+                    class="nft-img"
+                  />
+                  <img
+                    src="@/assets/images/main/img_NFT_02.png"
+                    alt=""
+                    class="nft-img"
+                  />
+                  <img
+                    src="@/assets/images/main/img_NFT_03.png"
+                    alt=""
+                    class="nft-img"
+                  />
+                  <img
+                    src="@/assets/images/main/img_NFT_04.png"
+                    alt=""
+                    class="nft-img"
+                  />
+                  <img
+                    src="@/assets/images/main/img_NFT_05.png"
+                    alt=""
+                    class="nft-img"
                   />
                 </div>
-                <div class="bottom">
-                  <img
-                    src="@/assets/images/main/img_bellyship_bottom_en.png"
-                    class="bottom"
-                  />
+                <div class="loop-holder">
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
                 </div>
-                <div class="txt eng">
-                  <img src="@/assets/images/main/ship_bottom_en.png" />
+
+                <div class="partners">
+                  <div class="title">PARTNERS</div>
+                  <ul class="list">
+                    <li>
+                      <img
+                        src="@/assets/images/main/img_parteners_logo_sunmiya.png"
+                        alt=""
+                        style="width: 300px"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="@/assets/images/main/img_parteners_logo_happier_town.png"
+                        alt=""
+                        style="width: 307px"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="@/assets/images/main/img_parteners_logo_sandbox.png"
+                        alt=""
+                        style="width: 230px"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="@/assets/images/main/img_parteners_logo_mimyo.png"
+                        alt=""
+                        style="width: 196px"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="@/assets/images/main/img_parteners_logo_stepn.png"
+                        alt=""
+                        style="width: 239px"
+                      />
+                    </li>
+                    <li></li>
+                  </ul>
                 </div>
               </div>
-            </template>
-            <template v-else>
-              <div class="ending">
-                <img src="@/assets/images/main/img_bellyship_bg.jpeg" />
-                <div class="top">
-                  <img
-                    src="@/assets/images/main/img_bellyship_top.png"
-                    class="top"
-                  />
-                </div>
-                <div class="bottom">
-                  <img
-                    src="@/assets/images/main/img_bellyship_bottom.png"
-                    class="bottom"
-                  />
-                </div>
-                <div class="txt">
-                  <img src="@/assets/images/main/ship_bottom.png" />
-                </div>
+            </div>
+            <div class="main-char-ending">
+              <div class="fall">
+                <img src="@/assets/images/char-fall.webp" type="image/webp" />
               </div>
-            </template>
+            </div>
           </section>
           <section class="section fp-auto-height">
             <Footer />
@@ -307,6 +449,7 @@
           <ul class="road-list">
             <li>Surprise <strong>Belly Festival</strong> held</li>
             <li>Fast!!! <strong>Belly Pass</strong> with Bellygom</li>
+            <li>Global Project <strong>Collab NFT Airdrop</strong></li>
             <li>
               Bellygom and global projects and <strong>collaborations</strong>
             </li>
@@ -321,6 +464,7 @@
           <ul class="road-list">
             <li>깜짝 <strong>벨리 페스티벌</strong> 개최</li>
             <li>벨리곰과 빠르게!!! <strong>벨리패스</strong></li>
+            <li>글로벌 프로젝트와 <strong>콜라보 NFT 에어드랍</strong></li>
             <li>벨리곰과 글로벌 프로젝트와 <strong>콜라보레이션</strong></li>
             <li>2차 창작 가능! <strong>벨리곰 NFT 에어드랍</strong></li>
             <li><strong>크리에이터</strong> 스튜디오, 양성 프로그램 오픈</li>
@@ -796,7 +940,7 @@ export default {
         },
         afterLoad: (origin, destination, direction) => {
           this.$refs.fullpage.api.setAllowScrolling(true);
-          console.log("afterLoad");
+          // console.log("afterLoad");
           if (destination.index === 0) {
             this.charTop = "0px";
             this.cloudMoved = false;
@@ -810,7 +954,7 @@ export default {
         },
         onLeave: (origin, destination, direction) => {
           this.$refs.fullpage.api.setAllowScrolling(false);
-          console.log("onLeave");
+          // console.log("onLeave");
           if (destination.index === 0) {
             this.charClass = "s0";
           } else if (destination.index === 1) {
@@ -862,7 +1006,7 @@ export default {
         },
         afterSlideLoad: (direction, origin, destination) => {
           this.$refs.fullpage.api.setAllowScrolling(true);
-          console.log("afterSlideLoad");
+          // console.log("afterSlideLoad");
           if (destination.anchor === "slide1") {
             this.charClass = "slide1";
           } else if (destination.anchor === "slide2") {
@@ -872,12 +1016,12 @@ export default {
           }
         },
         afterRender: function () {
-          console.log("afterRender");
+          // console.log("afterRender");
         },
         afterReBuild: function () {},
         afterResponsive: function (isResponsive) {},
         onScrollOverflow: function (section, slide, position, direction) {
-          console.log(section, slide, position, direction);
+          // console.log(section, slide, position, direction);
         },
       },
       faqList: [
@@ -937,6 +1081,16 @@ export default {
           faqIndex: 10,
         },
       ],
+      swiperOption: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        loop: true,
+        speed: 700,
+        disableOnInteraction: false,
+        autoplay: {
+          delay: 1000,
+        },
+      },
     };
   },
   created() {
@@ -1078,6 +1232,26 @@ export default {
 .section-2 {
   z-index: 1;
 }
+
+.main-char-ending {
+  overflow: hidden;
+  border-radius: 40%;
+  pointer-events: none;
+  position: fixed;
+  top: 3.5%;
+  left: 50%;
+  width: 40%;
+  z-index: 1;
+  transform: translate3d(-50%, -130%, 0);
+  -webkit-transform: translate3d(-50%, -130%, 0);
+  transition: transform 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+}
+.fp-completely.active .main-char-ending {
+  transform: translate3d(-50%, 0%, 0);
+  -webkit-transform: translate3d(-50%, 0%, 0);
+}
+
 .main-char {
   overflow: hidden;
   border-radius: 40%;
@@ -1114,7 +1288,7 @@ export default {
   display: block;
 }
 .main-char.s3 .fall {
-  display: block;
+  display: none;
 }
 .road-img {
   position: absolute;
