@@ -237,6 +237,24 @@
                   <div class="loop-holder__text">NFT BELLYGOM</div>
                   <div class="loop-holder__text">NFT BELLYGOM</div>
                   <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
                 </div>
                 <div class="nft-image-loop">
                   <div class="image-item">
@@ -293,8 +311,80 @@
                       class="nft-img"
                     />
                   </div>
+                  <div class="image-item">
+                    <img
+                      src="@/assets/images/main/img_NFT_01.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/images/main/img_NFT_02.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/images/main/img_NFT_03.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/images/main/img_NFT_04.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/images/main/img_NFT_05.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                  </div>
+                  <div class="image-item">
+                    <img
+                      src="@/assets/images/main/img_NFT_01.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/images/main/img_NFT_02.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/images/main/img_NFT_03.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/images/main/img_NFT_04.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/images/main/img_NFT_05.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                  </div>
                 </div>
                 <div class="loop-holder">
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
                   <div class="loop-holder__text">NFT BELLYGOM</div>
                   <div class="loop-holder__text">NFT BELLYGOM</div>
                   <div class="loop-holder__text">NFT BELLYGOM</div>
