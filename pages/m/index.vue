@@ -246,16 +246,227 @@
             </div>
           </section>
           <section class="section">
-            <template v-if="$store.getters.getLocale === 'ENG'">
-              <div class="ending">
-                <img src="@/assets/m_images/main/bellyship_en.jpeg" />
+            <div class="bellyship">
+              <template v-if="$store.getters.getLocale === 'ENG'">
+                <img
+                  src="@/assets/m_images/main/img_bellyship_top_en.png"
+                  alt=""
+                  class="b_top"
+                />
+                <img
+                  src="@/assets/m_images/main/img_bellyship_middle_en.png"
+                  alt=""
+                  class="b_mid"
+                />
+              </template>
+              <template v-else>
+                <img
+                  src="@/assets/m_images/main/img_bellyship_top.png"
+                  alt=""
+                  class="b_top"
+                />
+                <img
+                  src="@/assets/m_images/main/img_bellyship_middle.png"
+                  alt=""
+                  class="b_mid"
+                />
+              </template>
+              <div class="nft-wrap">
+                <!--nft 슬라이더-->
+                <div class="loop-holder-2">
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                </div>
+                <div class="nft-image-loop">
+                  <div class="image-item">
+                    <img
+                      src="@/assets/images/main/img_NFT_01.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/images/main/img_NFT_02.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/images/main/img_NFT_03.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/images/main/img_NFT_04.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/images/main/img_NFT_05.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                  </div>
+                  <div class="image-item">
+                    <img
+                      src="@/assets/images/main/img_NFT_01.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/images/main/img_NFT_02.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/images/main/img_NFT_03.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/images/main/img_NFT_04.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/images/main/img_NFT_05.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                  </div>
+                  <div class="image-item">
+                    <img
+                      src="@/assets/images/main/img_NFT_01.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/images/main/img_NFT_02.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/images/main/img_NFT_03.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/images/main/img_NFT_04.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/images/main/img_NFT_05.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                  </div>
+                  <div class="image-item">
+                    <img
+                      src="@/assets/images/main/img_NFT_01.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/images/main/img_NFT_02.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/images/main/img_NFT_03.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/images/main/img_NFT_04.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/images/main/img_NFT_05.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                  </div>
+                </div>
+                <div class="loop-holder">
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                </div>
+
+                <div class="partners">
+                  <div class="title">PARTNERS</div>
+                  <ul class="list">
+                    <li>
+                      <img
+                        src="@/assets/images/main/img_parteners_logo_sunmiya.png"
+                        alt=""
+                        style="width: 127px"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="@/assets/images/main/img_parteners_logo_happier_town.png"
+                        alt=""
+                        style="width: 131px"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="@/assets/images/main/img_parteners_logo_sandbox.png"
+                        alt=""
+                        style="width: 97px"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="@/assets/images/main/img_parteners_logo_mimyo.png"
+                        alt=""
+                        style="width: 83px"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="@/assets/images/main/img_parteners_logo_stepn.png"
+                        alt=""
+                        style="width: 101px"
+                      />
+                    </li>
+                    <li></li>
+                  </ul>
+                </div>
               </div>
-            </template>
-            <template v-else>
-              <div class="ending">
-                <img src="@/assets/m_images/main/bellyship.jpeg" />
-              </div>
-            </template>
+            </div>
             <div class="main-char-ending">
               <div class="fall">
                 <img src="@/assets/m_images/char-fall.webp" type="image/webp" />
@@ -404,6 +615,7 @@
           <ul class="road-list">
             <li>Surprise <strong>Belly Festival</strong> held</li>
             <li>Fast!!! <strong>Belly Pass</strong> with Bellygom</li>
+            <li>Global Project <strong>Collab NFT Airdrop</strong></li>
             <li>
               Bellygom and global projects and <strong>collaborations</strong>
             </li>
@@ -418,6 +630,7 @@
           <ul class="road-list">
             <li>깜짝 <strong>벨리 페스티벌</strong> 개최</li>
             <li>벨리곰과 빠르게!!! <strong>벨리패스</strong></li>
+            <li>글로벌 프로젝트와 <strong>콜라보 NFT 에어드랍</strong></li>
             <li>벨리곰과 글로벌 프로젝트와 <strong>콜라보레이션</strong></li>
             <li>2차 창작 가능! <strong>벨리곰 NFT 에어드랍</strong></li>
             <li><strong>크리에이터</strong> 스튜디오, 양성 프로그램 오픈</li>

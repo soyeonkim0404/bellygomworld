@@ -563,4 +563,188 @@ body {
       }
     }
   }
+
+  .bellyship {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-image: url("@/assets/m_images/main/BELLYSHIP_MO_BG.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .b_top {
+      display: block;
+      margin: 0 auto;
+      padding-top: 250px;
+    }
+    .b_mid {
+    }
+  }
+
+  .nft-wrap {
+    position: relative;
+    .nft-slider {
+      .swiper-container {
+        .swiper-slide {
+          width: 470px !important;
+        }
+      }
+    }
+  }
+  .loop-holder {
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 40px;
+    background: #4944e4;
+    transform: rotate(-3deg);
+    margin-left: -10px;
+    width: 130%;
+    .loop-holder__text {
+      animation: textLoopReverse 2s linear infinite;
+      font-family: "Sandoll Odongtong", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      background: #4944e4;
+      color: #ff9ed8;
+      padding: 0 30px;
+      position: relative;
+      margin-left: -1px;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        background: url("@/assets/images/main/loop_star.png") center no-repeat;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  @keyframes textLoop {
+    0% {
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes textLoopReverse {
+    0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+    }
+  }
+
+  .loop-holder-2 {
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 40px;
+    background: #4944e4;
+    transform: rotate(8deg);
+    position: absolute;
+    top: 125px;
+    left: -50px;
+    width: 130%;
+    .loop-holder__text {
+      animation: textLoop 2s linear infinite;
+      font-family: "Sandoll Odongtong", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
+      opacity: 0.6;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      background: #4944e4;
+      color: #ff9ed8;
+      padding: 0 40px;
+      position: relative;
+      margin-left: -1px;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        background: url("@/assets/images/main/loop_star.png") center no-repeat;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  .nft-image-loop {
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+    .image-item {
+      animation: textLoop 20s linear infinite;
+    }
+    .nft-img {
+      width: 230px;
+    }
+  }
+
+  .partners {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 120px;
+    .title {
+      margin-top: 80px;
+      font-family: "Sandoll Odongtong", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 44px;
+      text-align: center;
+      color: #ffffff;
+    }
+    .list {
+      display: flex;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: none;
+      margin-top: 30px;
+      li {
+        flex: 0 0 50%;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 27px;
+        height: 80px;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        &:nth-child(2n) {
+          border-right: none;
+        }
+        img {
+          object-fit: cover;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+        }
+      }
+    }
+  }
 }

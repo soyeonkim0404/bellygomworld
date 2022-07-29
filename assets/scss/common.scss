@@ -757,6 +757,253 @@ body {
       }
     }
   }
+
+  .bellyship {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-image: url("@/assets/images/main/BELLYSHIP_PC.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .b_top {
+      display: block;
+      max-width: 1262px;
+      margin: 0 auto;
+      padding-top: 250px;
+    }
+    .b_mid {
+      margin-top: 200px;
+    }
+  }
+  .nft-wrap {
+    position: relative;
+    margin-top: 950px;
+    .nft-slider {
+      .swiper-container {
+        .swiper-slide {
+          width: 470px !important;
+        }
+      }
+    }
+  }
+  .loop-holder {
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 80px;
+    background: #4944e4;
+    transform: rotate(-3deg);
+    margin-left: -10px;
+    width: 150%;
+    .loop-holder__text {
+      animation: textLoopReverse 2s linear infinite;
+      font-family: "Sandoll Odongtong", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 32px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      background: #4944e4;
+      color: #ff9ed8;
+      padding: 0 40px;
+      position: relative;
+      margin-left: -1px;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        background: url("@/assets/images/main/loop_star.png") center no-repeat;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  @keyframes textLoop {
+    0% {
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes textLoopReverse {
+    0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+    }
+  }
+
+  .loop-holder-2 {
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 80px;
+    background: #4944e4;
+    transform: rotate(8deg);
+    position: absolute;
+    top: 370px;
+    left: -50px;
+    width: 150%;
+    .loop-holder__text {
+      animation: textLoop 2s linear infinite;
+      font-family: "Sandoll Odongtong", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      opacity: 0.6;
+      font-size: 20px;
+      line-height: 32px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      background: #4944e4;
+      color: #ff9ed8;
+      padding: 0 40px;
+      position: relative;
+      margin-left: -1px;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        background: url("@/assets/images/main/loop_star.png") center no-repeat;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  .nft-image-loop {
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+    .image-item {
+      animation: textLoop 20s linear infinite;
+    }
+    .nft-img {
+      width: 470px;
+      &.gif {
+      }
+    }
+  }
+
+  /*.sprite-img {
+    display: inline-block;
+    width: 311px;
+    background-image: url("@/assets/images/main/img_nft_candyboll.png");
+
+    -webkit-animation: play 1s steps(59) infinite;
+    -moz-animation: play 1s steps(59) infinite;
+    -ms-animation: play 1s steps(59) infinite;
+    -o-animation: play 1s steps(59) infinite;
+    animation: play 1s steps(59) infinite;
+
+    background-size: 18349px;
+  }
+
+  @-webkit-keyframes play {
+    from {
+      background-position: 0px;
+    }
+    to {
+      background-position: -18349px;
+    }
+  }
+
+  @-moz-keyframes play {
+    from {
+      background-position: 0px;
+    }
+    to {
+      background-position: -18349px;
+    }
+  }
+
+  @-ms-keyframes play {
+    from {
+      background-position: 0px;
+    }
+    to {
+      background-position: -18349px;
+    }
+  }
+
+  @-o-keyframes play {
+    from {
+      background-position: 0px;
+    }
+    to {
+      background-position: -18349px;
+    }
+  }
+
+  @keyframes play {
+    from {
+      background-position: 0px;
+    }
+    to {
+      background-position: -18349px;
+    }
+  }*/
+
+  .partners {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 216px;
+    .title {
+      margin-top: 200px;
+      font-family: "Sandoll Odongtong", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 60px;
+      line-height: 96px;
+      text-align: center;
+      color: #ffffff;
+    }
+    .list {
+      max-width: 1280px;
+      display: flex;
+      flex-wrap: wrap;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: none;
+      margin-top: 60px;
+      li {
+        flex: 0 0 33.33%;
+        width: 33.33%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 80px 60px;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        &:nth-child(3n) {
+          border-right: none;
+        }
+        img {
+          object-fit: cover;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+        }
+      }
+    }
+  }
 }
 
 /*animation*/
