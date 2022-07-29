@@ -443,16 +443,17 @@
                     </li>
                     <li>
                       <img
-                        src="@/assets/images/main/img_parteners_logo_sandbox.png"
-                        alt=""
-                        style="width: 97px"
-                      />
-                    </li>
-                    <li>
-                      <img
                         src="@/assets/images/main/img_parteners_logo_mimyo.png"
                         alt=""
                         style="width: 83px"
+                      />
+                    </li>
+                    <li></li>
+                    <!--                    <li>
+                      <img
+                          src="@/assets/images/main/img_parteners_logo_sandbox.png"
+                          alt=""
+                          style="width: 97px"
                       />
                     </li>
                     <li>
@@ -462,7 +463,7 @@
                         style="width: 101px"
                       />
                     </li>
-                    <li></li>
+                    -->
                   </ul>
                 </div>
               </div>

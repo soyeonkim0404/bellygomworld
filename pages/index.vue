@@ -424,16 +424,16 @@
                     </li>
                     <li>
                       <img
-                        src="@/assets/images/main/img_parteners_logo_sandbox.png"
-                        alt=""
-                        style="width: 230px"
-                      />
-                    </li>
-                    <li>
-                      <img
                         src="@/assets/images/main/img_parteners_logo_mimyo.png"
                         alt=""
                         style="width: 196px"
+                      />
+                    </li>
+                    <!--                    <li>
+                      <img
+                          src="@/assets/images/main/img_parteners_logo_sandbox.png"
+                          alt=""
+                          style="width: 230px"
                       />
                     </li>
                     <li>
@@ -443,7 +443,7 @@
                         style="width: 239px"
                       />
                     </li>
-                    <li></li>
+                    <li></li>-->
                   </ul>
                 </div>
               </div>
