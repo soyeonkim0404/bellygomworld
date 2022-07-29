@@ -463,7 +463,7 @@
                         style="width: 101px"
                       />
                     </li>
-                    x-->
+                    -->
                   </ul>
                 </div>
               </div>
