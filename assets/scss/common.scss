@@ -758,15 +758,27 @@ body {
     }
   }
 
-  .nft-wrap {
+  .bellyship {
     position: relative;
     width: 100%;
     height: auto;
-    background-image: url("@/assets/images/main/img_nft_background.png");
+    background-image: url("@/assets/images/main/BELLYSHIP_PC.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    padding-top: 417px;
+    .b_top {
+      display: block;
+      max-width: 1262px;
+      margin: 0 auto;
+      padding-top: 250px;
+    }
+    .b_mid {
+      margin-top: 200px;
+    }
+  }
+  .nft-wrap {
+    position: relative;
+    margin-top: 950px;
     .nft-slider {
       .swiper-container {
         .swiper-slide {
@@ -815,23 +827,23 @@ body {
 
   @keyframes textLoop {
     0% {
-      -webkit-transform: translate3d(-100%, 0, 0);
-      transform: translate3d(-100%, 0, 0);
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
     }
     100% {
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
     }
   }
 
   @keyframes textLoopReverse {
     0% {
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
     }
     100% {
-      -webkit-transform: translate3d(-100%, 0, 0);
-      transform: translate3d(-100%, 0, 0);
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
     }
   }
 
@@ -844,7 +856,7 @@ body {
     opacity: 0.9;
     transform: rotate(8deg);
     position: absolute;
-    top: 820px;
+    top: 370px;
     left: -50px;
     .loop-holder__text {
       animation: textLoop 2s linear infinite;
@@ -879,11 +891,74 @@ body {
     display: flex;
     white-space: nowrap;
     overflow: hidden;
+    .image-item {
+      animation: textLoop 5s linear infinite;
+    }
     .nft-img {
-      animation: textLoop 2s linear infinite;
       width: 470px;
+      &.gif {
+      }
     }
   }
+
+  /*.sprite-img {
+    display: inline-block;
+    width: 311px;
+    background-image: url("@/assets/images/main/img_nft_candyboll.png");
+
+    -webkit-animation: play 1s steps(59) infinite;
+    -moz-animation: play 1s steps(59) infinite;
+    -ms-animation: play 1s steps(59) infinite;
+    -o-animation: play 1s steps(59) infinite;
+    animation: play 1s steps(59) infinite;
+
+    background-size: 18349px;
+  }
+
+  @-webkit-keyframes play {
+    from {
+      background-position: 0px;
+    }
+    to {
+      background-position: -18349px;
+    }
+  }
+
+  @-moz-keyframes play {
+    from {
+      background-position: 0px;
+    }
+    to {
+      background-position: -18349px;
+    }
+  }
+
+  @-ms-keyframes play {
+    from {
+      background-position: 0px;
+    }
+    to {
+      background-position: -18349px;
+    }
+  }
+
+  @-o-keyframes play {
+    from {
+      background-position: 0px;
+    }
+    to {
+      background-position: -18349px;
+    }
+  }
+
+  @keyframes play {
+    from {
+      background-position: 0px;
+    }
+    to {
+      background-position: -18349px;
+    }
+  }*/
 
   .partners {
     position: relative;
@@ -1044,65 +1119,5 @@ body {
   }
   100% {
     transform: translateY(183px) rotate(-16deg);
-  }
-}
-
-.sprite-img {
-  display: inline-block;
-  width: 470px;
-  height: 610px;
-  background-image: url("@/assets/images/main/img_nft_candyboll.png");
-
-  -webkit-animation: play 1s steps(60) infinite;
-  -moz-animation: play 1s steps(60) infinite;
-  -ms-animation: play 1s steps(60) infinite;
-  -o-animation: play 1s steps(60) infinite;
-  animation: play 1s steps(60) infinite;
-
-  background-size: 27260px;
-}
-
-@-webkit-keyframes play {
-  from {
-    background-position: 0px;
-  }
-  to {
-    background-position: -27260px;
-  }
-}
-
-@-moz-keyframes play {
-  from {
-    background-position: 0px;
-  }
-  to {
-    background-position: -27260px;
-  }
-}
-
-@-ms-keyframes play {
-  from {
-    background-position: 0px;
-  }
-  to {
-    background-position: -27260px;
-  }
-}
-
-@-o-keyframes play {
-  from {
-    background-position: 0px;
-  }
-  to {
-    background-position: -27260px;
-  }
-}
-
-@keyframes play {
-  from {
-    background-position: 0px;
-  }
-  to {
-    background-position: -600px;
   }
 }

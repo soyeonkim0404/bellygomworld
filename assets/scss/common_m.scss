@@ -621,23 +621,23 @@ body {
 
   @keyframes textLoop {
     0% {
-      -webkit-transform: translate3d(-100%, 0, 0);
-      transform: translate3d(-100%, 0, 0);
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
     }
     100% {
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
     }
   }
 
   @keyframes textLoopReverse {
     0% {
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
     }
     100% {
-      -webkit-transform: translate3d(-100%, 0, 0);
-      transform: translate3d(-100%, 0, 0);
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
     }
   }
 
@@ -685,8 +685,10 @@ body {
     display: flex;
     white-space: nowrap;
     overflow: hidden;
+    .image-item {
+      animation: textLoop 5s linear infinite;
+    }
     .nft-img {
-      animation: textLoop 2s linear infinite;
       width: 230px;
     }
   }
