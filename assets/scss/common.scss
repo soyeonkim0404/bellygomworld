@@ -787,103 +787,91 @@ body {
       }
     }
   }
-  .loop-holder {
-    display: flex;
-    white-space: nowrap;
+  .loop-text {
+    position: relative;
     overflow: hidden;
-    height: 80px;
     background: #4944e4;
+    width: calc(100% + 20px);
+    --tw: 13rem;
+    --ad: 5s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     transform: rotate(-3deg);
-    margin-left: -10px;
-    width: 150%;
-    .loop-holder__text {
-      animation: textLoopReverse 2s linear infinite;
-      font-family: "Sandoll Odongtong", sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 20px;
-      line-height: 32px;
-      height: 80px;
+    .text {
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
       display: flex;
-      align-items: center;
-      background: #4944e4;
-      color: #ff9ed8;
-      padding: 0 40px;
       position: relative;
-      margin-left: -1px;
-      &::before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 10px;
-        height: 10px;
-        background: url("@/assets/images/main/loop_star.png") center no-repeat;
-        transform: translateY(-50%);
+      transform: translate3d(var(--move-none), 0, 0);
+      transform: translate3d(var(--move-initial), 0, 0);
+      -webkit-animation: marquee 5s linear infinite;
+      animation: marquee 5s linear infinite;
+      span {
+        font-family: "Sandoll Odongtong", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 80px;
+        color: #ff9ed8;
+        white-space: nowrap;
+        text-shadow: var(--tw) 0 currentColor,
+          calc(var(--tw) * 2) 0 currentColor, calc(var(--tw) * 3) 0 currentColor,
+          calc(var(--tw) * 4) 0 currentColor, calc(var(--tw) * 5) 0 currentColor,
+          calc(var(--tw) * 6) 0 currentColor, calc(var(--tw) * 7) 0 currentColor,
+          calc(var(--tw) * 8) 0 currentColor, calc(var(--tw) * 9) 0 currentColor,
+          calc(var(--tw) * 10) 0 currentColor;
+        will-change: transform;
+        -webkit-animation: marquee var(--ad) linear infinite;
+        animation: marquee var(--ad) linear infinite;
       }
     }
   }
 
-  @keyframes textLoop {
-    0% {
-      -webkit-transform: translateX(-100%);
-      transform: translateX(-100%);
-    }
-    100% {
-      -webkit-transform: translateX(0);
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes textLoopReverse {
-    0% {
-      -webkit-transform: translateX(0);
-      transform: translateX(0);
-    }
-    100% {
-      -webkit-transform: translateX(-100%);
-      transform: translateX(-100%);
-    }
-  }
-
-  .loop-holder-2 {
-    display: flex;
-    white-space: nowrap;
-    overflow: hidden;
-    height: 80px;
-    background: #4944e4;
-    transform: rotate(8deg);
+  .loop-text2 {
     position: absolute;
-    top: 370px;
-    left: -50px;
-    width: 150%;
-    .loop-holder__text {
-      animation: textLoop 2s linear infinite;
-      font-family: "Sandoll Odongtong", sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      opacity: 0.6;
-      font-size: 20px;
-      line-height: 32px;
-      height: 80px;
+    top: 125px;
+    left: -10px;
+    overflow: hidden;
+    background: #4944e4;
+    width: calc(100% + 20px);
+    --tw: 13rem;
+    --ad: 5s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transform: rotate(8deg);
+    .text {
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
       display: flex;
-      align-items: center;
-      background: #4944e4;
-      color: #ff9ed8;
-      padding: 0 40px;
       position: relative;
-      margin-left: -1px;
-      &::before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 10px;
-        height: 10px;
-        background: url("@/assets/images/main/loop_star.png") center no-repeat;
-        transform: translateY(-50%);
+      transform: translate3d(var(--move-none), 0, 0);
+      transform: translate3d(var(--move-initial), 0, 0);
+      -webkit-animation: marquee2 5s linear infinite;
+      animation: marquee2 5s linear infinite;
+      span {
+        font-family: "Sandoll Odongtong", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 80px;
+        color: #ff9ed8;
+        white-space: nowrap;
+        text-shadow: var(--tw) 0 currentColor,
+          calc(var(--tw) * 2) 0 currentColor, calc(var(--tw) * 3) 0 currentColor,
+          calc(var(--tw) * 4) 0 currentColor, calc(var(--tw) * 5) 0 currentColor,
+          calc(var(--tw) * 6) 0 currentColor, calc(var(--tw) * 7) 0 currentColor,
+          calc(var(--tw) * 8) 0 currentColor, calc(var(--tw) * 9) 0 currentColor,
+          calc(var(--tw) * 10) 0 currentColor;
+        will-change: transform;
+        -webkit-animation: marquee2 var(--ad) linear infinite;
+        animation: marquee2 var(--ad) linear infinite;
+        opacity: 0.6;
       }
     }
   }
@@ -893,12 +881,77 @@ body {
     white-space: nowrap;
     overflow: hidden;
     .image-item {
-      animation: textLoop 20s linear infinite;
+      -webkit-animation: imageLoop 20s linear infinite;
+      animation: imageLoop 20s linear infinite;
+      & + .image-item {
+        margin-left: 30px;
+      }
     }
     .nft-img {
       width: 470px;
-      &.gif {
+      & + .nft-img {
+        margin-left: 30px;
       }
+    }
+  }
+
+  @-webkit-keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  @-webkit-keyframes marquee2 {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes marquee2 {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @-webkit-keyframes imageLoop {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes imageLoop {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    to {
+      transform: translateX(0);
     }
   }
 
