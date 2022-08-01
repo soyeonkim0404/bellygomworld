@@ -592,24 +592,61 @@ body {
     }
   }
   .loop-holder {
-    display: flex;
-    white-space: nowrap;
     overflow: hidden;
+    position: relative;
     height: 40px;
     background: #4944e4;
     transform: rotate(-3deg);
     margin-left: -10px;
-    width: 130%;
+    width: 1000px;
     .loop-holder__text {
+      will-change: transform;
+      -webkit-transform: translateZ(0);
+      transform: translate3d(0, 0, 0);
+      scroll-behavior: smooth;
+      display: inline-block;
       animation: textLoopReverse 2s linear infinite;
       font-family: "Sandoll Odongtong", sans-serif;
       font-style: normal;
       font-weight: 400;
       font-size: 12px;
-      line-height: 20px;
+      line-height: 40px;
       height: 40px;
-      display: flex;
-      align-items: center;
+      background: #4944e4;
+      color: #ff9ed8;
+      padding: 0 30px;
+      position: relative;
+      margin-left: -1px;
+      left: 0;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        background: url("@/assets/images/main/loop_star.png") center no-repeat;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  .marquee {
+    overflow: hidden;
+    position: relative;
+    height: 40px;
+    background: #4944e4;
+    transform: rotate(-3deg);
+    margin-left: -10px;
+    width: 130%;
+    span {
+      font-family: "Sandoll Odongtong", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 40px;
+      height: 40px;
       background: #4944e4;
       color: #ff9ed8;
       padding: 0 30px;
@@ -629,12 +666,32 @@ body {
     }
   }
 
+  @-moz-keyframes textLoop {
+    0% {
+      -moz-transform: translateX(-100%);
+    }
+    100% {
+      -moz-transform: translateX(0);
+    }
+  }
+
+  @-webkit-keyframes textLoop {
+    0% {
+      -webkit-transform: translateX(-100%);
+    }
+    100% {
+      -webkit-transform: translateX(0);
+    }
+  }
+
   @keyframes textLoop {
     0% {
+      -moz-transform: translateX(-100%);
       -webkit-transform: translateX(-100%);
       transform: translateX(-100%);
     }
     100% {
+      -moz-transform: translateX(0);
       -webkit-transform: translateX(0);
       transform: translateX(0);
     }
@@ -642,12 +699,12 @@ body {
 
   @keyframes textLoopReverse {
     0% {
-      -webkit-transform: translateX(0);
-      transform: translateX(0);
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
     }
     100% {
-      -webkit-transform: translateX(-100%);
-      transform: translateX(-100%);
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
     }
   }
 
@@ -663,7 +720,7 @@ body {
     left: -50px;
     width: 130%;
     .loop-holder__text {
-      animation: textLoop 2s linear infinite;
+      animation: textLoop 10s linear infinite;
       font-family: "Sandoll Odongtong", sans-serif;
       font-style: normal;
       font-weight: 400;

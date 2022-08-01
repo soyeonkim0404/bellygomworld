@@ -403,7 +403,7 @@
                     />
                   </div>
                 </div>
-                <div class="loop-holder">
+                <!--                <div class="loop-holder">
                   <div class="loop-holder__text">NFT BELLYGOM</div>
                   <div class="loop-holder__text">NFT BELLYGOM</div>
                   <div class="loop-holder__text">NFT BELLYGOM</div>
@@ -420,9 +420,34 @@
                   <div class="loop-holder__text">NFT BELLYGOM</div>
                   <div class="loop-holder__text">NFT BELLYGOM</div>
                   <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                </div>
+                </div>-->
+
+                <marquee class="marquee">
+                  <span>NFT BELLYGOM</span>
+                  <span>NFT BELLYGOM</span>
+                  <span>NFT BELLYGOM</span>
+                  <span>NFT BELLYGOM</span>
+                  <span>NFT BELLYGOM</span>
+                  <span>NFT BELLYGOM</span>
+                  <span>NFT BELLYGOM</span>
+                  <span>NFT BELLYGOM</span>
+                  <span>NFT BELLYGOM</span>
+                  <span>NFT BELLYGOM</span>
+                  <span>NFT BELLYGOM</span>
+                  <span>NFT BELLYGOM</span>
+                  <span>NFT BELLYGOM</span>
+                  <span>NFT BELLYGOM</span>
+                  <span>NFT BELLYGOM</span>
+                  <span>NFT BELLYGOM</span>
+                  <span>NFT BELLYGOM</span>
+                  <span>NFT BELLYGOM</span>
+                  <span>NFT BELLYGOM</span>
+                  <span>NFT BELLYGOM</span>
+                  <span>NFT BELLYGOM</span>
+                  <span>NFT BELLYGOM</span>
+                  <span>NFT BELLYGOM</span>
+                  <span>NFT BELLYGOM</span>
+                </marquee>
 
                 <div class="partners">
                   <div class="title">PARTNERS</div>
@@ -1000,6 +1025,7 @@
 </template>
 
 <script>
+import gsap from "gsap";
 export default {
   name: "IndexPage",
   layout: "default",
@@ -1084,6 +1110,8 @@ export default {
           } else if (destination.index === 3) {
             this.charTop =
               window.innerHeight * 4 - window.innerHeight * 3 + "px";
+
+            //this.textLoop();
           }
 
           if (destination.index === 4) {
@@ -1333,6 +1361,20 @@ export default {
         event_category: event_category,
       });
     },
+    /*textLoop() {
+      let wrapWidth = document.querySelector(".loop-holder").offsetWidth;
+      console.log(wrapWidth);
+      const ele = document.querySelector(".loop-holder .loop-holder__text");
+      gsap.to(ele, {
+        duration: 5,
+        repeat: -1,
+        ease: "none",
+        x: "+=500",
+        modifiers: {
+          x: gsap.utils.unitize((x) => parseFloat(x) % 500),
+        },
+      });
+    },*/
   },
 };
 </script>
