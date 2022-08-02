@@ -542,6 +542,20 @@
       </client-only>
     </div>
 
+    <!--민팅 팝업-->
+    <modal
+      v-if="mintingModal"
+      @mintModal="mintModal"
+      @close="closemintModal"
+      class="mint-modal"
+    >
+      <div slot="body">
+        <!--        <div class="mint">
+          <img src="@/assets/m_images/main/minting_popup_img.png" />
+        </div>-->
+      </div>
+    </modal>
+
     <!-- MODAL-->
     <modal v-if="showRoad1" @close="closeRoad1" class="road-modal">
       <div slot="header">
@@ -982,6 +996,7 @@ export default {
   layout: "default",
   data() {
     return {
+      mintingModal: true,
       showModal: false,
       showStoryModal: false,
       currIndi: 1,
@@ -1297,6 +1312,14 @@ export default {
     closeStoryModal() {
       this.$refs.fullpage.api.setAllowScrolling(true);
       this.showStoryModal = false;
+    },
+    mintModal() {
+      this.$refs.fullpage.api.setAllowScrolling(false);
+      this.mintingModal = true;
+    },
+    closemintModal() {
+      this.$refs.fullpage.api.setAllowScrolling(true);
+      this.mintingModal = false;
     },
     storySlideNext() {
       this.currIndi++;

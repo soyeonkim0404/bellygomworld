@@ -547,6 +547,44 @@ body {
     }
   }
 
+  .mint-modal {
+    .modal-container {
+      width: 320px !important;
+      height: 454px !important;
+      position: relative;
+      background-color: transparent !important;
+      box-shadow: none;
+      transition: none !important;
+      background-image: url("@/assets/m_images/main/minting_popup_img.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      .modal-default-button {
+        top: 40px;
+        right: 30px;
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 48px;
+          height: 48px;
+          background: url("@/assets/m_images/main/btn_pop_close.png") center
+            no-repeat;
+        }
+      }
+      /*.modal-inner {
+        padding: 0;
+        .mint {
+          width: 95%;
+          height: auto;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-52%, -50%);
+        }
+      }*/
+    }
+  }
+
   .pdf-btn {
     span {
       display: flex;

@@ -419,6 +419,29 @@
       </client-only>
     </div>
 
+    <!--민팅 팝업-->
+    <modal
+      v-if="mintingModal"
+      @mintModal="mintModal"
+      @close="closemintModal"
+      class="mint-modal"
+    >
+      <div slot="header"></div>
+      <div slot="body">
+        <div class="mint">
+          <div class="tit">
+            벨리곰 NFT 민팅! 시작합니다!<br />
+            지금 벨리곰 민팅하러 GOGO
+          </div>
+          <p>Hurry Up! Go to Bellygom NFT minting site right now</p>
+          <a href="https://tnimmogd.bellygom.world" target="_blank">
+            Minting Now
+            <img src="@/assets/images/main/ic_24_arrow_down.png" />
+          </a>
+        </div>
+      </div>
+    </modal>
+
     <!-- MODAL-->
     <modal v-if="showRoad1" @close="closeRoad1" class="road-modal">
       <div slot="header">
@@ -929,6 +952,7 @@ export default {
   components: { Footer },
   data() {
     return {
+      mintingModal: true,
       showStoryModal: false,
       currIndi: 1,
       faqShow: false,
@@ -1193,6 +1217,14 @@ export default {
     storySlidePrev() {
       this.currIndi--;
       if (this.currIndi < 1) this.currIndi = 1;
+    },
+    mintModal() {
+      this.$refs.fullpage.api.setAllowScrolling(false);
+      this.mintingModal = true;
+    },
+    closemintModal() {
+      this.$refs.fullpage.api.setAllowScrolling(true);
+      this.mintingModal = false;
     },
     sendGaEvent(eventName, event_category) {
       console.log(eventName + "|||||||" + event_category);
