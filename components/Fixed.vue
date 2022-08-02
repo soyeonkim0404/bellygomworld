@@ -12,6 +12,9 @@
       />
       <audio loop ref="audioElm" src="../assets/media/BELLY.mp3"></audio>
     </div>
+    <!--    <button @click="mintModal" class="mint-modal-btn">
+      <img src="@/assets/images/main/btn_mint.svg" />
+    </button>-->
     <button @click="storyModal" class="story-modal-btn">
       <img
         src="@/assets/images/story_btn.svg"
@@ -49,6 +52,9 @@ export default {
     },
     storyModal() {
       this.$nuxt.$emit("storyModal");
+    },
+    mintModal() {
+      this.$nuxt.$emit("mintModal");
     },
     sendGaEvent(eventName, event_category) {
       console.log(eventName + "|||||||" + event_category);
@@ -120,6 +126,18 @@ export default {
     z-index: 4;
     &.up {
       bottom: 130px;
+    }
+  }
+  .mint-modal-btn {
+    position: fixed;
+    bottom: 150px;
+    right: 28px;
+    width: 130px;
+    height: auto;
+    transition: all 0.2s;
+    z-index: 4;
+    &.up {
+      bottom: 245px;
     }
   }
   .top-btn {

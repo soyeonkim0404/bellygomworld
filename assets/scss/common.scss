@@ -485,6 +485,77 @@ body {
     width: 100%;
   }
 
+  .mint-modal {
+    .modal-container {
+      width: 691px !important;
+      height: 657px !important;
+      border-radius: 40px;
+      background-image: url("assets/images/main/minting_popup_img.png");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: transparent !important;
+      box-shadow: none !important;
+      position: relative;
+      .modal-default-button {
+        top: 138px;
+        right: 36px;
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 80px;
+          height: 80px;
+          background: url("@/assets/images/main/img_mint_close.png") center
+            no-repeat;
+        }
+      }
+      .modal-inner {
+        padding: 0;
+        .mint {
+          min-width: 540px;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          text-align: center;
+          padding: 50px 12px 60px 0;
+          box-sizing: border-box;
+          .tit {
+            font-family: "Sandoll Odongtong", sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 38px;
+            line-height: 57px;
+            color: #caf9ff;
+          }
+          p {
+            font-size: 20px;
+            line-height: 30px;
+            color: #caf9ff;
+          }
+          a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            background: #ffffff;
+            border-radius: 20px;
+            font-weight: 700;
+            width: auto;
+            padding: 24px 50px 23px 60px;
+            font-size: 22px;
+            line-height: 33px;
+            margin: 30px auto 0;
+            img {
+              width: 32px;
+              height: 32px;
+            }
+          }
+        }
+      }
+    }
+  }
+
   /*main*/
   .slide {
     width: 100vw;
@@ -787,103 +858,91 @@ body {
       }
     }
   }
-  .loop-holder {
-    display: flex;
-    white-space: nowrap;
+  .loop-text {
+    position: relative;
     overflow: hidden;
-    height: 80px;
     background: #4944e4;
+    width: calc(100% + 20px);
+    --tw: 13rem;
+    --ad: 5s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     transform: rotate(-3deg);
-    margin-left: -10px;
-    width: 150%;
-    .loop-holder__text {
-      animation: textLoopReverse 2s linear infinite;
-      font-family: "Sandoll Odongtong", sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 20px;
-      line-height: 32px;
-      height: 80px;
+    .text {
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
       display: flex;
-      align-items: center;
-      background: #4944e4;
-      color: #ff9ed8;
-      padding: 0 40px;
       position: relative;
-      margin-left: -1px;
-      &::before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 10px;
-        height: 10px;
-        background: url("@/assets/images/main/loop_star.png") center no-repeat;
-        transform: translateY(-50%);
+      transform: translate3d(var(--move-none), 0, 0);
+      transform: translate3d(var(--move-initial), 0, 0);
+      -webkit-animation: marquee 5s linear infinite;
+      animation: marquee 5s linear infinite;
+      span {
+        font-family: "Sandoll Odongtong", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 80px;
+        color: #ff9ed8;
+        white-space: nowrap;
+        text-shadow: var(--tw) 0 currentColor,
+          calc(var(--tw) * 2) 0 currentColor, calc(var(--tw) * 3) 0 currentColor,
+          calc(var(--tw) * 4) 0 currentColor, calc(var(--tw) * 5) 0 currentColor,
+          calc(var(--tw) * 6) 0 currentColor, calc(var(--tw) * 7) 0 currentColor,
+          calc(var(--tw) * 8) 0 currentColor, calc(var(--tw) * 9) 0 currentColor,
+          calc(var(--tw) * 10) 0 currentColor;
+        will-change: transform;
+        -webkit-animation: marquee var(--ad) linear infinite;
+        animation: marquee var(--ad) linear infinite;
       }
     }
   }
 
-  @keyframes textLoop {
-    0% {
-      -webkit-transform: translateX(-100%);
-      transform: translateX(-100%);
-    }
-    100% {
-      -webkit-transform: translateX(0);
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes textLoopReverse {
-    0% {
-      -webkit-transform: translateX(0);
-      transform: translateX(0);
-    }
-    100% {
-      -webkit-transform: translateX(-100%);
-      transform: translateX(-100%);
-    }
-  }
-
-  .loop-holder-2 {
-    display: flex;
-    white-space: nowrap;
-    overflow: hidden;
-    height: 80px;
-    background: #4944e4;
-    transform: rotate(8deg);
+  .loop-text2 {
     position: absolute;
-    top: 370px;
-    left: -50px;
-    width: 150%;
-    .loop-holder__text {
-      animation: textLoop 2s linear infinite;
-      font-family: "Sandoll Odongtong", sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      opacity: 0.6;
-      font-size: 20px;
-      line-height: 32px;
-      height: 80px;
+    top: 125px;
+    left: -10px;
+    overflow: hidden;
+    background: #4944e4;
+    width: calc(100% + 20px);
+    --tw: 13rem;
+    --ad: 5s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transform: rotate(8deg);
+    .text {
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
       display: flex;
-      align-items: center;
-      background: #4944e4;
-      color: #ff9ed8;
-      padding: 0 40px;
       position: relative;
-      margin-left: -1px;
-      &::before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 10px;
-        height: 10px;
-        background: url("@/assets/images/main/loop_star.png") center no-repeat;
-        transform: translateY(-50%);
+      transform: translate3d(var(--move-none), 0, 0);
+      transform: translate3d(var(--move-initial), 0, 0);
+      -webkit-animation: marquee2 5s linear infinite;
+      animation: marquee2 5s linear infinite;
+      span {
+        font-family: "Sandoll Odongtong", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 80px;
+        color: #ff9ed8;
+        white-space: nowrap;
+        text-shadow: var(--tw) 0 currentColor,
+          calc(var(--tw) * 2) 0 currentColor, calc(var(--tw) * 3) 0 currentColor,
+          calc(var(--tw) * 4) 0 currentColor, calc(var(--tw) * 5) 0 currentColor,
+          calc(var(--tw) * 6) 0 currentColor, calc(var(--tw) * 7) 0 currentColor,
+          calc(var(--tw) * 8) 0 currentColor, calc(var(--tw) * 9) 0 currentColor,
+          calc(var(--tw) * 10) 0 currentColor;
+        will-change: transform;
+        -webkit-animation: marquee2 var(--ad) linear infinite;
+        animation: marquee2 var(--ad) linear infinite;
+        opacity: 0.6;
       }
     }
   }
@@ -893,73 +952,79 @@ body {
     white-space: nowrap;
     overflow: hidden;
     .image-item {
-      animation: textLoop 20s linear infinite;
+      -webkit-animation: imageLoop 20s linear infinite;
+      animation: imageLoop 20s linear infinite;
+      & + .image-item {
+        margin-left: 30px;
+      }
     }
     .nft-img {
       width: 470px;
-      &.gif {
+      & + .nft-img {
+        margin-left: 30px;
       }
     }
   }
 
-  /*.sprite-img {
-    display: inline-block;
-    width: 311px;
-    background-image: url("@/assets/images/main/img_nft_candyboll.png");
-
-    -webkit-animation: play 1s steps(59) infinite;
-    -moz-animation: play 1s steps(59) infinite;
-    -ms-animation: play 1s steps(59) infinite;
-    -o-animation: play 1s steps(59) infinite;
-    animation: play 1s steps(59) infinite;
-
-    background-size: 18349px;
-  }
-
-  @-webkit-keyframes play {
-    from {
-      background-position: 0px;
+  @-webkit-keyframes marquee {
+    0% {
+      transform: translateX(0);
     }
+
     to {
-      background-position: -18349px;
+      transform: translateX(-100%);
     }
   }
 
-  @-moz-keyframes play {
-    from {
-      background-position: 0px;
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
     }
+
     to {
-      background-position: -18349px;
+      transform: translateX(-100%);
     }
   }
 
-  @-ms-keyframes play {
-    from {
-      background-position: 0px;
+  @-webkit-keyframes marquee2 {
+    0% {
+      transform: translateX(-100%);
     }
+
     to {
-      background-position: -18349px;
+      transform: translateX(0);
     }
   }
 
-  @-o-keyframes play {
-    from {
-      background-position: 0px;
+  @keyframes marquee2 {
+    0% {
+      transform: translateX(-100%);
     }
+
     to {
-      background-position: -18349px;
+      transform: translateX(0);
     }
   }
 
-  @keyframes play {
-    from {
-      background-position: 0px;
+  @-webkit-keyframes imageLoop {
+    0% {
+      transform: translateX(-100%);
     }
+
     to {
-      background-position: -18349px;
+      transform: translateX(0);
     }
-  }*/
+  }
+
+  @keyframes imageLoop {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
 
   .partners {
     position: relative;

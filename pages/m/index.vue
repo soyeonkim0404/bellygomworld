@@ -273,155 +273,131 @@
               </template>
               <div class="nft-wrap">
                 <!--nft 슬라이더-->
-                <div class="loop-holder-2">
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                <div class="loop-text2">
+                  <div class="text">
+                    <span>&nbsp &middot &nbsp NFT BELLYGOM</span>
+                  </div>
                 </div>
-                <div class="nft-image-loop">
+                <div
+                  class="nft-image-loop"
+                  v-if="$store.getters.getLocale === 'ENG'"
+                >
                   <div class="image-item">
                     <img
-                      src="@/assets/images/main/img_NFT_01.png"
+                      src="@/assets/m_images/main/img_NFT_01_en.png"
                       alt=""
                       class="nft-img"
                     />
                     <img
-                      src="@/assets/images/main/img_NFT_02.png"
+                      src="@/assets/m_images/main/img_NFT_02_en.png"
                       alt=""
                       class="nft-img"
                     />
                     <img
-                      src="@/assets/images/main/img_NFT_03.png"
+                      src="@/assets/m_images/main/img_NFT_03_en.png"
                       alt=""
                       class="nft-img"
                     />
                     <img
-                      src="@/assets/images/main/img_NFT_04.png"
+                      src="@/assets/m_images/main/img_NFT_04_en.png"
                       alt=""
                       class="nft-img"
                     />
                     <img
-                      src="@/assets/images/main/img_NFT_05.png"
+                      src="@/assets/m_images/main/img_NFT_05_en.png"
                       alt=""
                       class="nft-img"
                     />
                   </div>
                   <div class="image-item">
                     <img
-                      src="@/assets/images/main/img_NFT_01.png"
+                      src="@/assets/m_images/main/img_NFT_01_en.png"
                       alt=""
                       class="nft-img"
                     />
                     <img
-                      src="@/assets/images/main/img_NFT_02.png"
+                      src="@/assets/m_images/main/img_NFT_02_en.png"
                       alt=""
                       class="nft-img"
                     />
                     <img
-                      src="@/assets/images/main/img_NFT_03.png"
+                      src="@/assets/m_images/main/img_NFT_03_en.png"
                       alt=""
                       class="nft-img"
                     />
                     <img
-                      src="@/assets/images/main/img_NFT_04.png"
+                      src="@/assets/m_images/main/img_NFT_04_en.png"
                       alt=""
                       class="nft-img"
                     />
                     <img
-                      src="@/assets/images/main/img_NFT_05.png"
-                      alt=""
-                      class="nft-img"
-                    />
-                  </div>
-                  <div class="image-item">
-                    <img
-                      src="@/assets/images/main/img_NFT_01.png"
-                      alt=""
-                      class="nft-img"
-                    />
-                    <img
-                      src="@/assets/images/main/img_NFT_02.png"
-                      alt=""
-                      class="nft-img"
-                    />
-                    <img
-                      src="@/assets/images/main/img_NFT_03.png"
-                      alt=""
-                      class="nft-img"
-                    />
-                    <img
-                      src="@/assets/images/main/img_NFT_04.png"
-                      alt=""
-                      class="nft-img"
-                    />
-                    <img
-                      src="@/assets/images/main/img_NFT_05.png"
-                      alt=""
-                      class="nft-img"
-                    />
-                  </div>
-                  <div class="image-item">
-                    <img
-                      src="@/assets/images/main/img_NFT_01.png"
-                      alt=""
-                      class="nft-img"
-                    />
-                    <img
-                      src="@/assets/images/main/img_NFT_02.png"
-                      alt=""
-                      class="nft-img"
-                    />
-                    <img
-                      src="@/assets/images/main/img_NFT_03.png"
-                      alt=""
-                      class="nft-img"
-                    />
-                    <img
-                      src="@/assets/images/main/img_NFT_04.png"
-                      alt=""
-                      class="nft-img"
-                    />
-                    <img
-                      src="@/assets/images/main/img_NFT_05.png"
+                      src="@/assets/m_images/main/img_NFT_05_en.png"
                       alt=""
                       class="nft-img"
                     />
                   </div>
                 </div>
-                <div class="loop-holder">
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
-                  <div class="loop-holder__text">NFT BELLYGOM</div>
+                <div class="nft-image-loop" v-else>
+                  <div class="image-item">
+                    <img
+                      src="@/assets/m_images/main/img_NFT_01.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/m_images/main/img_NFT_02.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/m_images/main/img_NFT_03.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/m_images/main/img_NFT_04.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/m_images/main/img_NFT_05.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                  </div>
+                  <div class="image-item">
+                    <img
+                      src="@/assets/m_images/main/img_NFT_01.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/m_images/main/img_NFT_02.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/m_images/main/img_NFT_03.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/m_images/main/img_NFT_04.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                    <img
+                      src="@/assets/m_images/main/img_NFT_05.png"
+                      alt=""
+                      class="nft-img"
+                    />
+                  </div>
+                </div>
+
+                <div class="loop-text">
+                  <div class="text">
+                    <span>&nbsp &middot &nbsp NFT BELLYGOM</span>
+                  </div>
                 </div>
 
                 <div class="partners">
@@ -565,6 +541,20 @@
         </full-page>
       </client-only>
     </div>
+
+    <!--민팅 팝업-->
+    <modal
+      v-if="mintingModal"
+      @mintModal="mintModal"
+      @close="closemintModal"
+      class="mint-modal"
+    >
+      <div slot="body">
+        <!--        <div class="mint">
+          <img src="@/assets/m_images/main/minting_popup_img.png" />
+        </div>-->
+      </div>
+    </modal>
 
     <!-- MODAL-->
     <modal v-if="showRoad1" @close="closeRoad1" class="road-modal">
@@ -996,11 +986,13 @@
 </template>
 
 <script>
+import gsap from "gsap";
 export default {
   name: "IndexPage",
   layout: "default",
   data() {
     return {
+      mintingModal: false,
       showModal: false,
       showStoryModal: false,
       currIndi: 1,
@@ -1080,6 +1072,8 @@ export default {
           } else if (destination.index === 3) {
             this.charTop =
               window.innerHeight * 4 - window.innerHeight * 3 + "px";
+
+            //this.textLoop();
           }
 
           if (destination.index === 4) {
@@ -1315,6 +1309,14 @@ export default {
       this.$refs.fullpage.api.setAllowScrolling(true);
       this.showStoryModal = false;
     },
+    mintModal() {
+      this.$refs.fullpage.api.setAllowScrolling(false);
+      this.mintingModal = true;
+    },
+    closemintModal() {
+      this.$refs.fullpage.api.setAllowScrolling(true);
+      this.mintingModal = false;
+    },
     storySlideNext() {
       this.currIndi++;
       if (this.currIndi > 4) this.currIndi = 4;
@@ -1329,6 +1331,20 @@ export default {
         event_category: event_category,
       });
     },
+    /*textLoop() {
+      let wrapWidth = document.querySelector(".loop-holder").offsetWidth;
+      console.log(wrapWidth);
+      const ele = document.querySelector(".loop-holder .loop-holder__text");
+      gsap.to(ele, {
+        duration: 5,
+        repeat: -1,
+        ease: "none",
+        x: "+=500",
+        modifiers: {
+          x: gsap.utils.unitize((x) => parseFloat(x) % 500),
+        },
+      });
+    },*/
   },
 };
 </script>
