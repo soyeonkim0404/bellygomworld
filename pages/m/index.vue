@@ -617,9 +617,9 @@
             <li>Surprise <strong>Belly Festival</strong> held</li>
             <li>Fast!!! <strong>Belly Pass</strong> with Bellygom</li>
             <li>Global Project <strong>Collab NFT Airdrop</strong></li>
-            <li>
+            <!--            <li>
               Bellygom and global projects and <strong>collaborations</strong>
-            </li>
+            </li>-->
             <li>
               The second operation is possible!
               <strong>Bellygom NFT Airdrop</strong>
@@ -632,7 +632,7 @@
             <li>깜짝 <strong>벨리 페스티벌</strong> 개최</li>
             <li>벨리곰과 빠르게!!! <strong>벨리패스</strong></li>
             <li>글로벌 프로젝트와 <strong>콜라보 NFT 에어드랍</strong></li>
-            <li>벨리곰과 글로벌 프로젝트와 <strong>콜라보레이션</strong></li>
+            <!--            <li>벨리곰과 글로벌 프로젝트와 <strong>콜라보레이션</strong></li>-->
             <li>2차 창작 가능! <strong>벨리곰 NFT 에어드랍</strong></li>
             <li><strong>크리에이터</strong> 스튜디오, 양성 프로그램 오픈</li>
           </ul>
