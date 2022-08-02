@@ -119,8 +119,8 @@ export default {
   .story-modal-btn {
     position: fixed;
     bottom: 40px;
-    right: 28px;
-    width: 135px;
+    right: 34px;
+    width: 120px;
     height: auto;
     transition: all 0.2s;
     z-index: 4;
@@ -131,11 +131,14 @@ export default {
   .mint-modal-btn {
     position: fixed;
     bottom: 150px;
-    right: 34px;
-    width: 120px;
+    right: 28px;
+    width: 130px;
     height: auto;
     transition: all 0.2s;
     z-index: 4;
+    &.up {
+      bottom: 245px;
+    }
   }
   .top-btn {
     position: fixed;
