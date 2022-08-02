@@ -992,7 +992,7 @@ export default {
   layout: "default",
   data() {
     return {
-      mintingModal: true,
+      mintingModal: false,
       showModal: false,
       showStoryModal: false,
       currIndi: 1,
