@@ -119,8 +119,8 @@ export default {
   .story-modal-btn {
     position: fixed;
     bottom: 40px;
-    right: 34px;
-    width: 120px;
+    right: 28px;
+    width: 135px;
     height: auto;
     transition: all 0.2s;
     z-index: 4;
