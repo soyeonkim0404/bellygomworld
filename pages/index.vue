@@ -1143,6 +1143,9 @@ export default {
     this.$nuxt.$on("storyModal", () => {
       this.storyModal();
     });
+    this.$nuxt.$on("mintModal", () => {
+      this.mintModal();
+    });
   },
   mounted() {
     if (this.$mq === "mobile") {
