@@ -948,7 +948,7 @@ export default {
   components: { Footer },
   data() {
     return {
-      mintingModal: false,
+      mintingModal: true,
       showStoryModal: false,
       currIndi: 1,
       faqShow: false,
@@ -1007,11 +1007,11 @@ export default {
             this.cloudMoved = false;
             document.querySelector(".top-btn").style.opacity = 0;
             document.querySelector(".story-modal-btn").classList.remove("up");
-            // document.querySelector(".mint-modal-btn").classList.remove("up");
+            document.querySelector(".mint-modal-btn").classList.remove("up");
           } else {
             document.querySelector(".top-btn").style.opacity = 1;
             document.querySelector(".story-modal-btn").classList.add("up");
-            // document.querySelector(".mint-modal-btn").classList.add("up");
+            document.querySelector(".mint-modal-btn").classList.add("up");
           }
           const charHeight = (window.innerWidth * 0.375) / 2;
           if (destination.index === 0) {
@@ -1144,9 +1144,6 @@ export default {
     });
     this.$nuxt.$on("storyModal", () => {
       this.storyModal();
-    });
-    this.$nuxt.$on("mintModal", () => {
-      this.mintModal();
     });
   },
   mounted() {
