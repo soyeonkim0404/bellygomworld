@@ -13,7 +13,7 @@
       <audio loop ref="audioElm" src="../assets/media/BELLY.mp3"></audio>
     </div>
     <button @click="mintModal" class="mint-modal-btn">
-      <img src="@/assets/images/main/btn_mint.png" />
+      <img src="@/assets/images/main/btn_mint.svg" />
     </button>
     <button @click="storyModal" class="story-modal-btn">
       <img
