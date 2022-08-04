@@ -259,7 +259,7 @@
                       alt=""
                       class="b_mid"
                   />
-                  <a href="#" class="button">버튼버튼</a>
+                  <a href="https://discord.gg/bellygom" target="_blank" class="button eng">discord</a>
                 </div>
               </template>
               <template v-else>
@@ -273,7 +273,7 @@
                       src="@/assets/m_images/main/img_bellyship_middle.png"
                       alt=""
                   />
-                  <a href="#" class="button">버튼버튼</a>
+                  <a href="https://discord.gg/bellygom" target="_blank" class="button">discord</a>
                 </div>
               </template>
               <div class="nft-wrap">

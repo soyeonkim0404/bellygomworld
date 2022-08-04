@@ -202,13 +202,14 @@
                       src="@/assets/images/main/img_bellyship_middle_en.png"
                       alt=""
                   />
-                  <a href="#" class="button">버튼버튼</a>
+                  <a href="https://discord.gg/bellygom" target="_blank" class="button en">discord</a>
                 </div>
               </template>
               <template v-else>
                 <img
                   src="@/assets/images/main/img_bellyship_top.png"
                   alt=""
+                  target="_blank"
                   class="b_top"
                 />
                 <div class="b_mid">
@@ -216,7 +217,7 @@
                       src="@/assets/images/main/img_bellyship_middle.png"
                       alt=""
                   />
-                  <a href="#" class="button">버튼버튼</a>
+                  <a href="https://discord.gg/bellygom" target="_blank" class="button">discord</a>
                 </div>
               </template>
 
