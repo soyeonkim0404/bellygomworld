@@ -52,6 +52,9 @@
       </ul>
       <div class="etc-link">
         <ul class="sns">
+          <li class="link0">
+            <a href="#" target="_blank"></a>
+          </li>
           <li class="link1" @click="sendGaEvent('gnb_shop', 'GNB')">
             <a href="https://bellygom.com/" target="_blank"></a>
           </li>
@@ -301,6 +304,7 @@ export default {
               }
             }
           }
+          &.link0,
           &.link1,
           &.link2 {
             position: relative;
@@ -309,6 +313,22 @@ export default {
             border-radius: 100%;
             background: $white;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+          }
+          &.link0 {
+            a {
+              position: relative;
+              &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 32px;
+                height: 32px;
+                background: url("@/assets/images/ic_header_kaikas.svg") center
+                no-repeat;
+                transform: translate(-50%, -50%);
+              }
+            }
           }
           &.link1 {
             a {
