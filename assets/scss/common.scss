@@ -844,7 +844,15 @@ body {
       padding-top: 250px;
     }
     .b_mid {
+      position: relative;
       margin-top: 200px;
+      .button {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        height: 50px;
+        background: #159dea;
+      }
     }
   }
   .nft-wrap {

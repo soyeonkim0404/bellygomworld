@@ -253,11 +253,14 @@
                   alt=""
                   class="b_top"
                 />
-                <img
-                  src="@/assets/m_images/main/img_bellyship_middle_en.png"
-                  alt=""
-                  class="b_mid"
-                />
+                <div class="b_mid">
+                  <img
+                      src="@/assets/m_images/main/img_bellyship_middle_en.png"
+                      alt=""
+                      class="b_mid"
+                  />
+                  <a href="#" class="button">버튼버튼</a>
+                </div>
               </template>
               <template v-else>
                 <img
@@ -265,11 +268,13 @@
                   alt=""
                   class="b_top"
                 />
-                <img
-                  src="@/assets/m_images/main/img_bellyship_middle.png"
-                  alt=""
-                  class="b_mid"
-                />
+                <div class="b_mid">
+                  <img
+                      src="@/assets/m_images/main/img_bellyship_middle.png"
+                      alt=""
+                  />
+                  <a href="#" class="button">버튼버튼</a>
+                </div>
               </template>
               <div class="nft-wrap">
                 <!--nft 슬라이더-->

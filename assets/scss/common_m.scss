@@ -616,6 +616,14 @@ body {
       padding-top: 250px;
     }
     .b_mid {
+      position: relative;
+      .button {
+        position: absolute;
+        left: 50%;
+        bottom: 10%;
+        height: 50px;
+        background: #159dea;
+      }
     }
   }
 
