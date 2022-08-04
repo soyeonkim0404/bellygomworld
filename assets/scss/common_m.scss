@@ -616,6 +616,22 @@ body {
       padding-top: 250px;
     }
     .b_mid {
+      position: relative;
+      .button {
+        position: absolute;
+        width: 18%;
+        height: 41px;
+        left: 58%;
+        bottom: 12%;
+        opacity: 0;
+        text-indent: -9999em;
+        font-size: 0;
+        background: #159dea;
+        &.eng {
+          left: 40%;
+          bottom: 9%;
+        }
+      }
     }
   }
 

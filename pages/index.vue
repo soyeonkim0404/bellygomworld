@@ -197,23 +197,28 @@
                   alt=""
                   class="b_top"
                 />
-                <img
-                  src="@/assets/images/main/img_bellyship_middle_en.png"
-                  alt=""
-                  class="b_mid"
-                />
+                <div class="b_mid">
+                  <img
+                      src="@/assets/images/main/img_bellyship_middle_en.png"
+                      alt=""
+                  />
+                  <a href="https://discord.gg/bellygom" target="_blank" class="button en">discord</a>
+                </div>
               </template>
               <template v-else>
                 <img
                   src="@/assets/images/main/img_bellyship_top.png"
                   alt=""
+                  target="_blank"
                   class="b_top"
                 />
-                <img
-                  src="@/assets/images/main/img_bellyship_middle.png"
-                  alt=""
-                  class="b_mid"
-                />
+                <div class="b_mid">
+                  <img
+                      src="@/assets/images/main/img_bellyship_middle.png"
+                      alt=""
+                  />
+                  <a href="https://discord.gg/bellygom" target="_blank" class="button">discord</a>
+                </div>
               </template>
 
               <div class="nft-wrap">
@@ -1007,11 +1012,11 @@ export default {
             this.cloudMoved = false;
             document.querySelector(".top-btn").style.opacity = 0;
             document.querySelector(".story-modal-btn").classList.remove("up");
-            // document.querySelector(".mint-modal-btn").classList.remove("up");
+            //document.querySelector(".mint-modal-btn").classList.remove("up");
           } else {
             document.querySelector(".top-btn").style.opacity = 1;
             document.querySelector(".story-modal-btn").classList.add("up");
-            // document.querySelector(".mint-modal-btn").classList.add("up");
+            //document.querySelector(".mint-modal-btn").classList.add("up");
           }
           const charHeight = (window.innerWidth * 0.375) / 2;
           if (destination.index === 0) {
@@ -1144,9 +1149,6 @@ export default {
     });
     this.$nuxt.$on("storyModal", () => {
       this.storyModal();
-    });
-    this.$nuxt.$on("mintModal", () => {
-      this.mintModal();
     });
   },
   mounted() {
