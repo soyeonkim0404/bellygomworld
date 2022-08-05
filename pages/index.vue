@@ -192,11 +192,16 @@
           <section class="section fp-auto-height">
             <div class="bellyship">
               <template v-if="$store.getters.getLocale === 'ENG'">
-                <img
-                  src="@/assets/images/main/img_bellyship_top_en.png"
-                  alt=""
-                  class="b_top"
-                />
+                <div class="b_top">
+                  <img
+                      src="@/assets/images/main/img_bellyship_top.png"
+                      alt=""
+                  />
+<!--                  <img class="balloon balloon1" src="@/assets/images/main/wordballoon1.png" alt="">
+                  <img class="balloon balloon2" src="@/assets/images/main/wordballoon2.png" alt="">
+                  <img class="balloon balloon3" src="@/assets/images/main/wordballoon3.png" alt="">
+                  <img class="balloon balloon4" src="@/assets/images/main/wordballoon4.png" alt="">
+           -->     </div>
                 <div class="b_mid">
                   <img
                       src="@/assets/images/main/img_bellyship_middle_en.png"
