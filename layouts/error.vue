@@ -1,22 +1,12 @@
 <template>
   <div id="errorWrapper">
     <span class="img-text">
-        <template v-if="$store.getters.getLocale === 'ENG'">
-         <img v-if="$mq === 'pc'"
-                src="@/assets/images/main/img_error_belly01_eng.png"
-             />
-         <img v-else
-              src="@/assets/m_images/main/img_error_belly01.png"
-         />
-        </template>
-        <template v-else>
-           <img v-if="$mq === 'pc'"
-              src="@/assets/images/main/img_error_belly01.png"
-           />
-           <img v-else
-              src="@/assets/m_images/main/img_error_belly01.png"
-           />
-        </template>
+       <img v-if="$mq === 'pc'"
+          src="@/assets/images/main/img_error_belly01.png"
+       />
+       <img v-else
+          src="@/assets/m_images/main/img_error_belly01.png"
+       />
     </span>
   </div>
 </template>
@@ -60,6 +50,9 @@ export default {
     width: 52%;
     max-width: 1000px;
     margin: auto;
+    .mobile & {
+      margin-top: 60px;
+    }
     img {
       width: 100%;
     }
