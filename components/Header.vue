@@ -375,6 +375,7 @@ export default {
           align-items: center;
           width: auto;
           height: 48px;
+          line-height: 49px;
           padding: 0 10px 0 15px;
           background: $white;
           border-radius: 25px;
