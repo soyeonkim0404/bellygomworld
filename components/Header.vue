@@ -53,7 +53,7 @@
       <div class="etc-link">
         <ul class="sns">
           <li class="link0">
-            <a href="#" target="_blank"></a>
+            <button>지갑연결</button>
           </li>
           <li class="link1" @click="sendGaEvent('gnb_shop', 'GNB')">
             <a href="https://bellygom.com/" target="_blank"></a>
@@ -80,7 +80,9 @@
             @click="openLang"
             :class="{ on: this.showLang }"
           >
-            {{ $store.getters.getLocale }}
+            <span class="txt">
+                {{ $store.getters.getLocale }}
+            </span>
           </button>
           <transition name="fade">
             <div class="lang-list" v-if="this.showLang">
@@ -232,7 +234,7 @@ export default {
         li {
           display: inline-flex;
           position: relative;
-          a {
+          a,button {
             width: 48px;
             height: 48px;
             display: block;
@@ -293,6 +295,7 @@ export default {
                 margin-left: 0;
                 margin-top: 5px;
               }
+              button,
               a {
                 width: auto;
                 height: auto;
@@ -313,10 +316,13 @@ export default {
             border-radius: 100%;
             background: $white;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+
           }
           &.link0 {
-            a {
+            button {
               position: relative;
+              text-indent: -9999em;
+              font-size: 0;
               &::before {
                 content: "";
                 position: absolute;
@@ -375,6 +381,7 @@ export default {
           align-items: center;
           width: auto;
           height: 48px;
+          line-height: 49px;
           padding: 0 10px 0 15px;
           background: $white;
           border-radius: 25px;
@@ -383,6 +390,10 @@ export default {
           font-size: 18px;
           box-sizing: border-box;
           font-weight: 700;
+          .txt {
+            display: inline-block;
+            padding-top: 2px;
+          }
           &::after {
             content: "";
             display: inline-flex;
