@@ -15,14 +15,6 @@
 export default {
   props: ['error'],
   layout: 'errorLayout',
-  mounted() {
-    let locale = this.getCookie("b_locale");
-    if (locale && locale === "KOR") {
-      this.$store.commit("setKOR");
-    } else {
-      this.$store.commit("setENG");
-    }
-  },
 }
 </script>
 
