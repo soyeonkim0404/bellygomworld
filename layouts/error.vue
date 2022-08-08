@@ -1,22 +1,12 @@
 <template>
   <div id="errorWrapper">
     <span class="img-text">
-        <template v-if="$store.getters.getLocale === 'ENG'">
-         <img v-if="$mq === 'pc'"
-                src="@/assets/images/main/img_error_belly01_eng.png"
-             />
-         <img v-else
-              src="@/assets/m_images/main/img_error_belly01.png"
-         />
-        </template>
-        <template v-else>
-           <img v-if="$mq === 'pc'"
-              src="@/assets/images/main/img_error_belly01.png"
-           />
-           <img v-else
-              src="@/assets/m_images/main/img_error_belly01.png"
-           />
-        </template>
+       <img v-if="$mq === 'pc'"
+          src="@/assets/images/main/img_error_belly01.png"
+       />
+       <img v-else
+          src="@/assets/m_images/main/img_error_belly01.png"
+       />
     </span>
   </div>
 </template>
@@ -25,14 +15,6 @@
 export default {
   props: ['error'],
   layout: 'errorLayout',
-  mounted() {
-    let locale = this.getCookie("b_locale");
-    if (locale && locale === "KOR") {
-      this.$store.commit("setKOR");
-    } else {
-      this.$store.commit("setENG");
-    }
-  },
 }
 </script>
 
@@ -60,10 +42,19 @@ export default {
     width: 52%;
     max-width: 1000px;
     margin: auto;
+    .mobile & {
+      margin-top: 60px;
+    }
     img {
       width: 100%;
     }
   }
 }
-
+@media screen and (max-width: 768px) {
+  #errorWrapper {
+    .img-text {
+      width: 65%;
+    }
+  }
+}
 </style>

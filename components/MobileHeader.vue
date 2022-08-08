@@ -29,7 +29,9 @@
           @click="openLang"
           :class="{ on: this.showLang }"
         >
-          {{ $store.getters.getLocale }}
+           <span class="txt">
+              {{ $store.getters.getLocale }}
+          </span>
         </button>
         <transition name="fade">
           <div class="lang-list" v-if="this.showLang">
@@ -255,6 +257,7 @@ export default {
         align-items: center;
         width: auto;
         height: 36px;
+        line-height: 47px;
         padding: 0 10px 0 15px;
         background: $white;
         border-radius: 25px;
@@ -264,6 +267,10 @@ export default {
         line-height: 1.5;
         box-sizing: border-box;
         font-weight: 700;
+        .txt {
+          display: inline-block;
+          padding-top: 2px;
+        }
         &::after {
           content: "";
           display: inline-flex;

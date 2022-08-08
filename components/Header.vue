@@ -52,6 +52,9 @@
       </ul>
       <div class="etc-link">
         <ul class="sns">
+<!--          <li class="link0">
+            <button @click="connectKaikas()">지갑연결</button>
+          </li>-->
           <li class="link1" @click="sendGaEvent('gnb_shop', 'GNB')">
             <a href="https://bellygom.com/" target="_blank"></a>
           </li>
@@ -77,7 +80,9 @@
             @click="openLang"
             :class="{ on: this.showLang }"
           >
-            {{ $store.getters.getLocale }}
+            <span class="txt">
+                {{ $store.getters.getLocale }}
+            </span>
           </button>
           <transition name="fade">
             <div class="lang-list" v-if="this.showLang">
@@ -130,6 +135,7 @@ export default {
       showLang: false,
       mobileGnbShow: false,
       showModal: false,
+      isConnect: false,
       linkList: [
         /*{
           url: "https://opensea.io/",
@@ -178,6 +184,25 @@ export default {
       gtag("event", eventName, {
         event_category: event_category,
       });
+    },
+    async connectKaikas() {
+      if (this.isConnect) {
+        if (window.confirm("지갑연결을 해제하시겠습니까?")) {
+          this.isConnect = false;
+        }
+      } else {
+        if (window.confirm("지갑연결을 하시겠습니까?")) {
+          try {
+            this.isConnect = true
+            const klaytn = window.klaytn; //크롬에 깔린 카이카스 확장프로그램 안에는 klaytn 이 내장되어있다.
+            const accounts = await klaytn.enable(); //카이카스 로그인
+          } catch (err) {
+            alert("Kaikas 지갑이 설치되어 있지 않습니다.\n크롬에서 Kaikas 확장 프로그램을 설치해주세요!");
+            window.open("https://chrome.google.com/webstore/detail/kaikas/jblndlipeogpafnldhgmapagcccfchpi")
+          }
+
+        }
+      }
     },
   },
 };
@@ -229,7 +254,7 @@ export default {
         li {
           display: inline-flex;
           position: relative;
-          a {
+          a,button {
             width: 48px;
             height: 48px;
             display: block;
@@ -290,6 +315,7 @@ export default {
                 margin-left: 0;
                 margin-top: 5px;
               }
+              button,
               a {
                 width: auto;
                 height: auto;
@@ -301,6 +327,7 @@ export default {
               }
             }
           }
+          &.link0,
           &.link1,
           &.link2 {
             position: relative;
@@ -309,6 +336,25 @@ export default {
             border-radius: 100%;
             background: $white;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+
+          }
+          &.link0 {
+            button {
+              position: relative;
+              text-indent: -9999em;
+              font-size: 0;
+              &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 32px;
+                height: 32px;
+                background: url("@/assets/images/ic_header_kaikas.svg") center
+                no-repeat;
+                transform: translate(-50%, -50%);
+              }
+            }
           }
           &.link1 {
             a {
@@ -355,6 +401,7 @@ export default {
           align-items: center;
           width: auto;
           height: 48px;
+          line-height: 49px;
           padding: 0 10px 0 15px;
           background: $white;
           border-radius: 25px;
@@ -363,6 +410,10 @@ export default {
           font-size: 18px;
           box-sizing: border-box;
           font-weight: 700;
+          .txt {
+            display: inline-block;
+            padding-top: 2px;
+          }
           &::after {
             content: "";
             display: inline-flex;
