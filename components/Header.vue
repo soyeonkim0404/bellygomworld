@@ -53,7 +53,8 @@
       <div class="etc-link">
         <ul class="sns">
           <li class="link0">
-            <a href="#" target="_blank"></a>
+            <!--            javascript:void(0); 안먹음.... 확인 필요-->
+            <a @click="connectKaikas()" target="_blank"></a>
           </li>
           <li class="link1" @click="sendGaEvent('gnb_shop', 'GNB')">
             <a href="https://bellygom.com/" target="_blank"></a>
@@ -183,6 +184,15 @@ export default {
       gtag("event", eventName, {
         event_category: event_category,
       });
+    },
+    async connectKaikas() {
+      try {
+        const klaytn = window.klaytn; //크롬에 깔린 카이카스 확장프로그램 안에는 klaytn 이 내장되어있다.
+        const accounts = await klaytn.enable(); //카이카스 로그인
+      } catch (err) {
+        alert("Kaikas 지갑이 설치되어 있지 않습니다.\n크롬에서 Kaikas 확장 프로그램을 설치해주세요!");
+        window.open("https://chrome.google.com/webstore/detail/kaikas/jblndlipeogpafnldhgmapagcccfchpi")
+      }
     },
   },
 };
