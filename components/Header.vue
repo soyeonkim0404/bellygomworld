@@ -53,8 +53,7 @@
       <div class="etc-link">
         <ul class="sns">
           <li class="link0">
-            <!--            javascript:void(0); 안먹음.... 확인 필요-->
-            <a @click="connectKaikas()" target="_blank"></a>
+            <button>지갑연결</button>
           </li>
           <li class="link1" @click="sendGaEvent('gnb_shop', 'GNB')">
             <a href="https://bellygom.com/" target="_blank"></a>
@@ -81,9 +80,9 @@
             @click="openLang"
             :class="{ on: this.showLang }"
           >
-          <span class="txt">
-              {{ $store.getters.getLocale }}
-          </span>
+            <span class="txt">
+                {{ $store.getters.getLocale }}
+            </span>
           </button>
           <transition name="fade">
             <div class="lang-list" v-if="this.showLang">
@@ -244,7 +243,7 @@ export default {
         li {
           display: inline-flex;
           position: relative;
-          a {
+          a,button {
             width: 48px;
             height: 48px;
             display: block;
@@ -305,6 +304,7 @@ export default {
                 margin-left: 0;
                 margin-top: 5px;
               }
+              button,
               a {
                 width: auto;
                 height: auto;
@@ -325,10 +325,13 @@ export default {
             border-radius: 100%;
             background: $white;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+
           }
           &.link0 {
-            a {
+            button {
               position: relative;
+              text-indent: -9999em;
+              font-size: 0;
               &::before {
                 content: "";
                 position: absolute;
