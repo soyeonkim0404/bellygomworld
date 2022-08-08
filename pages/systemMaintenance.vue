@@ -37,7 +37,6 @@ export default {
   height: 100vh;
   display: flex;
   align-content: center;
-  background: url("assets/images/main/img_error_404_bg.png") no-repeat center/cover;
   .img-text {
     display: inline-block;
     width: 21%;
