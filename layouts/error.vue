@@ -50,5 +50,11 @@ export default {
     }
   }
 }
-
+@media screen and (max-width: 768px) {
+  #errorWrapper {
+    .img-text {
+      width: 65%;
+    }
+  }
+}
 </style>
