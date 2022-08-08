@@ -53,7 +53,7 @@
       <div class="etc-link">
         <ul class="sns">
           <li class="link0">
-            <button>지갑연결</button>
+            <button @click="connectKaikas()">지갑연결</button>
           </li>
           <li class="link1" @click="sendGaEvent('gnb_shop', 'GNB')">
             <a href="https://bellygom.com/" target="_blank"></a>
