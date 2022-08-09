@@ -854,12 +854,12 @@ body {
   }
   .bellyship {
     position: relative;
-    width: 100%;
+    /* width: 100%;
     height: auto;
     background-image: url("@/assets/images/main/BELLYSHIP_PC.png");
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
     .b_top {
       display: block;
       max-width: 1262px;
@@ -1440,4 +1440,11 @@ body {
   100% {
     transform: translateY(183px) rotate(-16deg);
   }
+}
+
+.bellyship-special {
+  background-image: url("@/assets/images/main/belly_bubble_bg.jpeg ");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
