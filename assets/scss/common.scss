@@ -989,9 +989,10 @@ body {
         //width: 1232px;
         margin-top: 62px;
         li {
-          flex: 0 0 20%;
-          max-width: 228px;
-          margin: 0 15px;
+          + li {
+            margin-left: 30px;
+          }
+          max-width: 229px;
           .img-wrap {
             display: inline-block;
             width: 200px;
@@ -1005,6 +1006,7 @@ body {
             margin-top: 42px;
             font-size: 24px;
             line-height: 1.5;
+            font-weight: normal;
             font-family: "Sandoll Odongtong", sans-serif;
           }
           p {

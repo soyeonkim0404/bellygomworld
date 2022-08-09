@@ -456,7 +456,7 @@
                           <img src="@/assets/images/main/img__bubble_01.png" alt="">
                         </span>
                         <strong>익사이팅 롯데월드</strong>
-                        <p>롯데월드에서 10월 펼쳐지는 벨리곰의<br/>세계에 여러분을 초대합니다. (feat. 가족, 친구, 연인)</p>
+                        <p>롯데월드에서 10월 펼쳐지는 벨리곰의<br/>세계에 여러분을 초대합니다.<br/>(feat. 가족, 친구, 연인)</p>
                       </li>
                       <li>
                         <span class="img-wrap">
