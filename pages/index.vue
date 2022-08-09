@@ -212,6 +212,25 @@
                   target="_blank"
                   class="b_top"
                 />
+                <div class="common-util">
+                  <div class="title">
+                    <span class="label">
+                      벨리곰 슈퍼 서프라이즈 패키지 시즌 1
+                    </span>
+                    <h3>벨리곰의 친구들 모두가<br/>누릴 수 있는 놀라운 경험!</h3>
+                    <p>
+                      <span>자격요건 모든 벨리곰 NFT 홀더 대상</span>
+                      <span>운영플랜 1회 진행</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="content">
+                  <ul>
+                    <li>
+
+                    </li>
+                  </ul>
+                </div>
                 <div class="b_mid">
                   <img
                       src="@/assets/images/main/img_bellyship_middle.png"
@@ -406,6 +425,7 @@
                 </div>
               </div>
             </div>
+
             <div class="main-char-ending">
               <div class="fall">
                 <img src="@/assets/images/char-fall.webp" type="image/webp" />
