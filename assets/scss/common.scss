@@ -899,21 +899,21 @@ body {
           top: 7.8%;
         }
       }
-        &.balloon2 {
-          transform: translateX(-200%);
-          opacity: 0;
-        }
-
-        &.balloon3 {
-          transform: translateX(200%);
-          opacity: 0;
-        }
-
-        &.balloon4 {
-          transform: translateX(200%);
-          opacity: 0;
-        }
+      &.balloon2 {
+        transform: translateX(-200%);
+        opacity: 0;
       }
+
+      &.balloon3 {
+        transform: translateX(200%);
+        opacity: 0;
+      }
+
+      &.balloon4 {
+        transform: translateX(200%);
+        opacity: 0;
+      }
+    }
     .b_mid {
       position: relative;
       margin-top: 200px;
@@ -1158,6 +1158,169 @@ body {
           object-fit: cover;
         }
       }
+    }
+  }
+
+  /*level-belly*/
+  .level-belly {
+    position: relative;
+    width: 1260px;
+    height: 3012px;
+    margin: 430px auto 0;
+    .box {
+      width: 550px;
+      height: auto;
+      background: $white;
+      padding: 100px 50px;
+      border-radius: 50px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+      .tit {
+        font-family: "Sandoll Odongtong", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 42px;
+        line-height: 63px;
+      }
+      .sub {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 30px;
+      }
+      .benefit-list {
+        padding-top: 40px;
+        margin-top: 40px;
+        border-top: 1px solid #ddd;
+        li {
+          position: relative;
+          padding-left: 10px;
+          font-size: 16px;
+          line-height: 24px;
+          &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 100%;
+            background: $black;
+            top: 9px;
+            left: 0;
+          }
+          & + li {
+            margin-top: 10px;
+          }
+          .red {
+            font-size: 14px;
+            line-height: 21px;
+            color: #ff0000;
+          }
+        }
+      }
+      .condition {
+        display: block;
+        margin-top: 40px;
+        font-size: 16px;
+        line-height: 24px;
+        color: #666;
+        & + .condition {
+          margin-top: 5px;
+        }
+      }
+      &.belly {
+        position: absolute;
+        top: 0;
+        left: 0;
+        .tit {
+          span {
+            color: #ff5290;
+          }
+        }
+      }
+      &.holic {
+        position: absolute;
+        top: 295px;
+        right: 0;
+        .tit {
+          span {
+            color: #c03dfe;
+          }
+        }
+      }
+      &.mega {
+        position: absolute;
+        top: 884px;
+        left: 0;
+        .tit {
+          span {
+            color: #596aff;
+          }
+        }
+      }
+      &.super {
+        position: absolute;
+        top: 1632px;
+        left: 0;
+        .tit {
+          span {
+            color: #ff9d43;
+          }
+        }
+      }
+      &.surprise {
+        position: absolute;
+        top: 1860px;
+        right: 0;
+        .tit {
+          span {
+            color: #ff72e0;
+          }
+        }
+      }
+      &.friend {
+        position: absolute;
+        top: 2356px;
+        left: 0;
+        .tit {
+          span {
+            color: #8988ff;
+          }
+        }
+      }
+    }
+    .belly-dung {
+      position: absolute;
+      top: 850px;
+      right: -120px;
+      width: 580px;
+      height: 890px;
+      object-fit: contain;
+    }
+  }
+  .season {
+    position: relative;
+    text-align: center;
+    margin-top: 140px;
+    strong {
+      font-family: "Sandoll Odongtong", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      color: #4944e4;
+      font-size: 24px;
+      line-height: 36px;
+    }
+    .tit {
+      margin-top: 20px;
+      font-family: "Sandoll Odongtong", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 40px;
+      line-height: 60px;
+    }
+    p {
+      margin-top: 20px;
+      font-size: 18px;
+      line-height: 27px;
+      opacity: 0.5;
     }
   }
 }
