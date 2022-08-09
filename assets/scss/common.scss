@@ -937,7 +937,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 370px 0 250px;
+    margin: 510px 0 0;
     text-align: center;
     .title {
       .label {
@@ -947,7 +947,7 @@ body {
         margin: 0 auto;
         color: #fff;
         font-size: 16px;
-        background: #4944E4;
+        background: #4944e4;
         border-radius: 18px;
         border: 1px solid #000;
       }
@@ -969,7 +969,7 @@ body {
             position: relative;
             margin-left: 20px;
             &::before {
-              content: '';
+              content: "";
               position: absolute;
               width: 1px;
               height: 14px;
@@ -1016,6 +1016,43 @@ body {
           }
         }
       }
+    }
+  }
+  .belly-heart {
+    position: relative;
+    width: 1130px;
+    height: 440px;
+    margin: 0 auto;
+    /*padding-top: 211px;*/
+    img {
+      position: absolute;
+      object-fit: contain;
+    }
+    .h-1 {
+      top: 481px;
+      left: 0;
+      width: 190px;
+    }
+    .h-2 {
+      top: 291px;
+      left: 150px;
+      width: 234px;
+    }
+    .h-3 {
+      top: 211px;
+      left: 491px;
+      width: 331px;
+      z-index: 2;
+    }
+    .h-4 {
+      top: 359px;
+      left: 744px;
+      width: 230px;
+    }
+    .h-5 {
+      top: 481px;
+      right: 0;
+      width: 201px;
     }
   }
   .nft-wrap {
@@ -1320,6 +1357,22 @@ body {
             color: #ff5290;
           }
         }
+        .hide-mark {
+          margin-top: 40px;
+          border-radius: 30px;
+          background: #f9f9f9;
+          padding: 76px 140px;
+          text-align: center;
+          p {
+            font-family: "Sandoll Odongtong", sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #999;
+            text-align: center;
+          }
+        }
       }
       &.holic {
         position: absolute;
@@ -1328,6 +1381,22 @@ body {
         .tit {
           span {
             color: #c03dfe;
+          }
+        }
+        .hide-mark {
+          margin-top: 40px;
+          border-radius: 30px;
+          background: #f9f9f9;
+          padding: 45px 140px;
+          text-align: center;
+          p {
+            font-family: "Sandoll Odongtong", sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #999;
+            text-align: center;
           }
         }
       }
@@ -1340,6 +1409,22 @@ body {
             color: #596aff;
           }
         }
+        .hide-mark {
+          margin-top: 40px;
+          border-radius: 30px;
+          background: #f9f9f9;
+          padding: 45px 140px;
+          text-align: center;
+          p {
+            font-family: "Sandoll Odongtong", sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #999;
+            text-align: center;
+          }
+        }
       }
       &.super {
         position: absolute;
@@ -1348,6 +1433,26 @@ body {
         .tit {
           span {
             color: #ff9d43;
+          }
+        }
+        .hide-mark {
+          margin-top: 40px;
+          border-radius: 30px;
+          background: #f9f9f9;
+          padding: 35px 140px;
+          text-align: center;
+          .lock {
+            width: 140px;
+            height: 140px;
+          }
+          p {
+            font-family: "Sandoll Odongtong", sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #999;
+            text-align: center;
           }
         }
       }
@@ -1360,6 +1465,26 @@ body {
             color: #ff72e0;
           }
         }
+        .hide-mark {
+          margin-top: 40px;
+          border-radius: 30px;
+          background: #f9f9f9;
+          padding: 35px 140px;
+          text-align: center;
+          .lock {
+            width: 140px;
+            height: 140px;
+          }
+          p {
+            font-family: "Sandoll Odongtong", sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #999;
+            text-align: center;
+          }
+        }
       }
       &.friend {
         position: absolute;
@@ -1369,6 +1494,32 @@ body {
           span {
             color: #8988ff;
           }
+        }
+        .hide-mark {
+          margin-top: 40px;
+          border-radius: 30px;
+          background: #f9f9f9;
+          padding: 12px 140px;
+          text-align: center;
+          .lock {
+            width: 100px;
+            height: 100px;
+          }
+          p {
+            font-family: "Sandoll Odongtong", sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #999;
+            text-align: center;
+          }
+        }
+      }
+      &.hide {
+        .benefit-list,
+        .condition {
+          display: none;
         }
       }
     }
