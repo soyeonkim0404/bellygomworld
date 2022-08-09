@@ -1053,7 +1053,7 @@ body {
       font-family: "Sandoll Odongtong", sans-serif;
       font-style: normal;
       font-weight: 400;
-      font-size: 60px;
+      font-size: 50px;
       line-height: 96px;
       text-align: center;
       color: #ffffff;
@@ -1062,18 +1062,25 @@ body {
       max-width: 1280px;
       display: flex;
       flex-wrap: wrap;
-      border: 1px solid rgba(255, 255, 255, 0.1);
       border-bottom: none;
-      margin-top: 60px;
+      margin-top: 50px;
       li {
+        &.half-end {
+          justify-content: flex-end;
+          flex: 0 0 50%;
+          width: 50%;
+        }
+        &.half-start {
+          justify-content: flex-start;
+          flex: 0 0 50%;
+          width: 50%;
+        }
         flex: 0 0 33.33%;
         width: 33.33%;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 80px 60px;
-        border-right: 1px solid rgba(255, 255, 255, 0.1);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 50px 30px;
         &:nth-child(3n) {
           border-right: none;
         }
