@@ -610,6 +610,8 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    padding-top: 90px;
+
     .b_top {
       display: block;
       margin: 0 auto;
@@ -633,12 +635,18 @@ body {
         }
       }
     }
+    &.eng {
+      background-image: url("@/assets/m_images/main/BELLYSHIP_MO_ENG.png");
+      .nft-wrap {
+        margin-top: 590px;
+      }
+    }
   }
   .common-util {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 370px 0 250px;
+    padding: 100px 0 0;
     text-align: center;
     .title {
       .label {
@@ -651,7 +659,7 @@ body {
         color: #fff;
         font-size: 14px;
         line-height: 1.5;
-        background: #4944E4;
+        background: #4944e4;
         border-radius: 18px;
       }
       h3 {
@@ -674,7 +682,7 @@ body {
             margin-top: 5px;
           }
           &::before {
-            content: '';
+            content: "";
             position: absolute;
             width: 4px;
             height: 4px;
@@ -724,6 +732,7 @@ body {
   }
   .nft-wrap {
     position: relative;
+    margin-top: 410px;
     .nft-slider {
       .swiper-container {
         .swiper-slide {
@@ -1101,6 +1110,42 @@ body {
       font-size: 18px;
       line-height: 27px;
       opacity: 0.5;
+    }
+  }
+  .belly-heart {
+    position: relative;
+    width: 100%;
+    height: 290px;
+    box-sizing: border-box;
+    img {
+      position: absolute;
+      object-fit: contain;
+    }
+    .h-1 {
+      top: 190px;
+      left: 0;
+      width: 100px;
+    }
+    .h-2 {
+      top: 80px;
+      left: 20px;
+      width: 130px;
+    }
+    .h-3 {
+      top: 0;
+      left: 104px;
+      width: 150px;
+      z-index: 2;
+    }
+    .h-4 {
+      top: 85px;
+      right: 30px;
+      width: 120px;
+    }
+    .h-5 {
+      top: 180px;
+      right: 0;
+      width: 100px;
     }
   }
 }
