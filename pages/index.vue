@@ -1595,6 +1595,7 @@ export default {
               charHeight;
             this.charTop = "translate(-50%," + t + "px)";
           } else if (destination.index === 3) {
+            console.log(document.querySelector(".bellyship").offsetHeight);
             const t =
               window.innerHeight * 4 - window.innerHeight * 0.6 - charHeight;
             this.charTop = "translate(-50%," + -t + "px)";
