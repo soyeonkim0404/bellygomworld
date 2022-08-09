@@ -606,7 +606,7 @@ body {
     position: relative;
     width: 100%;
     height: auto;
-    background-image: url("@/assets/m_images/main/BELLYSHIP_MO_BG.png");
+    background-image: url("@/assets/m_images/main/BELLYSHIP_MO_KOR_NEW.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -636,7 +636,7 @@ body {
       }
     }
     &.eng {
-      background-image: url("@/assets/m_images/main/BELLYSHIP_MO_ENG.png");
+      background-image: url("@/assets/m_images/main/BELLYSHIP_MO_ENG_NEW.png");
       .nft-wrap {
         margin-top: 590px;
       }
@@ -915,7 +915,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 100px;
+    padding-bottom: 120px;
     .title {
       margin-top: 80px;
       font-family: "Sandoll Odongtong", sans-serif;
@@ -937,8 +937,10 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 0 16px;
-        height: 55px;
+        padding: 0 27px;
+        height: 80px;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         &.full {
           width: 100%;
           flex: 0 0 100%;
