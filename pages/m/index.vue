@@ -408,14 +408,28 @@
                 <div class="partners">
                   <div class="title">PARTNERS</div>
                   <ul class="list">
-                    <li>
+                    <li class="full sandbox">
+                      <img
+                          src="@/assets/images/main/img_parteners_logo_sandbox.png"
+                          alt=""
+                          style="width: 228px"
+                      />
+                    </li>
+                    <li class="full ground">
+                      <img
+                          src="@/assets/images/main/img_parteners_logo__groundx.png"
+                          alt=""
+                          style="width: 255px"
+                      />
+                    </li>
+                    <li class="flex-end">
                       <img
                         src="@/assets/images/main/img_parteners_logo_sunmiya.png"
                         alt=""
                         style="width: 127px"
                       />
                     </li>
-                    <li>
+                    <li class="flex-start">
                       <img
                         src="@/assets/images/main/img_parteners_logo_happier_town.png"
                         alt=""
