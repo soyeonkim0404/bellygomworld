@@ -253,7 +253,19 @@
                   alt=""
                   class="b_top"
                 />
-                <!--                <div class="b_mid">
+                <div class="b_mid">
+                  <img
+                      src="@/assets/m_images/main/img_bellyship_middle_en.png"
+                      alt=""
+                      class="b_mid"
+                  />
+                  <a
+                      href="https://discord.gg/bellygom"
+                      target="_blank"
+                      class="button eng"
+                  >discord</a
+                  >
+                </div>
                 <div class="common-util">
                   <div class="title">
                     <span class="label">Bellygom Super Surprise Package Season 1</span>
@@ -307,19 +319,6 @@
                     </ul>
                   </div>
                 </div>
-                <div class="b_mid">
-                  <img
-                    src="@/assets/m_images/main/img_bellyship_middle_en.png"
-                    alt=""
-                    class="b_mid"
-                  />
-                  <a
-                    href="https://discord.gg/bellygom"
-                    target="_blank"
-                    class="button eng"
-                    >discord</a
-                  >
-                </div>-->
                 <div class="level-belly">
                   <div class="box belly">
                     <div class="tit"><span>Belly</span> Bellyship</div>
@@ -480,6 +479,13 @@
                   alt=""
                   class="b_top"
                 />
+                <div class="b_mid">
+                  <img
+                      src="@/assets/m_images/main/img_bellyship_middle.png"
+                      alt=""
+                  />
+                  <a href="https://discord.gg/bellygom" target="_blank" class="button">discord</a>
+                </div>
                 <div class="common-util">
                     <div class="title">
                     <span class="label">
@@ -534,9 +540,7 @@
                         </li>
                       </ul>
                     </div>
-
                 </div>
-                <div class="b_mid">
                 <!--                <div class="b_mid">
                   <img
                       src="@/assets/m_images/main/img_bellyship_middle.png"
