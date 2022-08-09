@@ -189,7 +189,7 @@
               </div>
             </div>
           </section>
-          <section class="section fp-auto-height">
+          <section class="section fp-auto-height bellyship-special">
             <div class="bellyship">
               <template v-if="$store.getters.getLocale === 'ENG'">
                 <div class="b_top">
