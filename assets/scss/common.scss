@@ -933,6 +933,89 @@ body {
       }
     }
   }
+  .common-util {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 370px 0 250px;
+    text-align: center;
+    .title {
+      .label {
+        display: inline-block;
+        padding: 5px 26px;
+        line-height: 1.5;
+        margin: 0 auto;
+        color: #fff;
+        font-size: 16px;
+        background: #4944E4;
+        border-radius: 18px;
+        border: 1px solid #000;
+      }
+      h3 {
+        margin-top: 20px;
+        font-size: 40px;
+        font-weight: normal;
+        line-height: 1.5;
+        letter-spacing: -0.5px;
+        font-family: "Sandoll Odongtong", sans-serif;
+      }
+      .desc {
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 1.5;
+        span {
+          display: inline-block;
+          + span {
+            position: relative;
+            margin-left: 20px;
+            &::before {
+              content: '';
+              position: absolute;
+              width: 1px;
+              height: 14px;
+              background: #000;
+              top: 50%;
+              left: -10px;
+              transform: translateY(-50%);
+            }
+          }
+        }
+      }
+    }
+    .content {
+      ul {
+        display: flex;
+        justify-content: space-between;
+        //width: 1232px;
+        margin-top: 62px;
+        li {
+          flex: 0 0 25%;
+          max-width: 234px;
+          margin: 0 15px;
+          .img-wrap {
+            display: inline-block;
+            width: 200px;
+          }
+          strong {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            height: 66px;
+            margin-top: 42px;
+            font-size: 24px;
+            line-height: 1.5;
+            font-family: "Sandoll Odongtong", sans-serif;
+          }
+          p {
+            margin-top: 15px;
+            font-size: 14px;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
   .nft-wrap {
     position: relative;
     margin-top: 950px;

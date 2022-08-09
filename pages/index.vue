@@ -192,6 +192,63 @@
           <section class="section fp-auto-height bellyship-special">
             <div class="bellyship">
               <template v-if="$store.getters.getLocale === 'ENG'">
+                <img
+                  src="@/assets/images/main/img_bellyship_top_en.png"
+                  alt=""
+                  class="b_top"
+                />
+                <div class="common-util">
+                  <div class="title">
+                    <span class="label">
+                      Bellygom Super Surprise Package Season 1
+                    </span>
+                    <h3>An Amazing Experience for<br/>Bellygom's Friends</h3>
+                    <p class="desc">
+                      <span><strong>Eligibility</strong> All Bellygom NFT holders are eligible</span>
+                      <span><strong>The Plan</strong> It's a one-off</span>
+                    </p>
+                  </div>
+                  <div class="content">
+                    <ul>
+                      <li>
+                        <span class="img-wrap">
+                          <img src="@/assets/images/main/img__bubble_01_eng.png" alt="">
+                        </span>
+                        <strong>Exciting<br/>Lotte World</strong>
+                        <p>Lotte World invites you to Bellygom World this October.<br/>(feat. Family, Friends, Loved ones)</p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img src="@/assets/images/main/img__bubble_02_eng.png" alt="">
+                        </span>
+                        <strong>Limited Edition Bellygom Merch</strong>
+                        <p>Encounter the limited edition<br/>numbered action figures for all holders<br/>in the real world.</p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img src="@/assets/images/main/img__bubble_03_eng.png" alt="">
+                        </span>
+                        <strong>Global<br/>Collab NFTs</strong>
+                        <p>Receive global top tier collaboration airdrop NFTs only for Bellygom holders.</p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img src="@/assets/images/main/img__bubble_04_eng.png" alt="">
+                        </span>
+                        <strong>Invincible Coupon</strong>
+                        <p>Get more special discounts on Bellygom's meticulously curated products in reality.</p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img src="@/assets/images/main/img__bubble_05_eng.png" alt="">
+                        </span>
+                        <strong>Belly pass</strong>
+                        <p>For Bellygom holders who don't want to wait, we will provide seasonal "No Queues Bellygom Pass"</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="b_mid">
                 <div class="b_top">
                   <img
                     src="@/assets/images/main/img_bellyship_top.png"
@@ -376,6 +433,63 @@
                   target="_blank"
                   class="b_top"
                 />
+                <div class="common-util">
+                  <div class="title">
+                    <span class="label">
+                      벨리곰 슈퍼 서프라이즈 패키지 시즌 1
+                    </span>
+                    <h3>벨리곰의 친구들 모두가<br/>누릴 수 있는 놀라운 경험!</h3>
+                    <p class="desc">
+                      <span><strong>자격요건</strong> 모든 벨리곰 NFT 홀더 대상</span>
+                      <span><strong>운영플랜</strong> 1회 진행</span>
+                    </p>
+                  </div>
+                  <div class="content">
+                    <ul>
+                      <li>
+                        <span class="img-wrap">
+                          <img src="@/assets/images/main/img__bubble_01.png" alt="">
+                        </span>
+                        <strong>익사이팅 롯데월드</strong>
+                        <p>롯데월드에서 10월 펼쳐지는 벨리곰의<br/>세계에 여러분을 초대합니다. (feat. 가족, 친구, 연인)</p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img src="@/assets/images/main/img__bubble_02.png" alt="">
+                        </span>
+                        <strong>한정판 넘버링 피규어</strong>
+                        <p>홀더분들에게만 드리는 한정판 넘버링<br/>피규어를 현실 세계에서도 만나보세요.</p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img src="@/assets/images/main/img__bubble_03.png" alt="">
+                        </span>
+                        <strong>글로벌 콜라보 NFT</strong>
+                        <p>오직 벨리곰 홀더분들만에게만 에어드랍해<br/>드리는 글로벌 탑티어 콜라보레이션 NFT를 에어드랍 받아보세요.</p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img src="@/assets/images/main/img__bubble_04.png" alt="">
+                        </span>
+                        <strong>무적 할인권</strong>
+                        <p>벨리곰의 꼼꼼하게 선정한 현실 상품들을<br/>더 특별하게 할인받아 Get하세요.</p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img src="@/assets/images/main/img__bubble_05.png" alt="">
+                        </span>
+                        <strong>벨리 패스</strong>
+                        <p>기다리기 싫어하는 벨리곰 홀더분들에게<br/>시즌 별 ‘줄 안서는 벨리 패스’를<br/>제공해드립니다.</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="b_mid">
+                  <img
+                      src="@/assets/images/main/img_bellyship_middle.png"
+                      alt=""
+                  />
+                  <a href="https://discord.gg/bellygom" target="_blank" class="button">discord</a>
 
                 <div class="level-belly">
                   <div class="belly-dung">
@@ -662,16 +776,16 @@
                   <ul class="list">
                     <li class="half-end">
                       <img
-                        src="@/assets/images/main/img_parteners_logo_sandbox.png"
-                        alt=""
-                        style="width: 470px"
+                          src="@/assets/images/main/img_parteners_logo_sandbox.png"
+                          alt=""
+                          style="width: 470px"
                       />
                     </li>
                     <li class="half-start">
                       <img
-                        src="@/assets/images/main/img_parteners_logo__groundx.png"
-                        alt=""
-                        style="width: 470px"
+                          src="@/assets/images/main/img_parteners_logo__groundx.png"
+                          alt=""
+                          style="width: 470px"
                       />
                     </li>
                     <li>
