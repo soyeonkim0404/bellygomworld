@@ -819,7 +819,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 120px;
+    padding-bottom: 100px;
     .title {
       margin-top: 80px;
       font-family: "Sandoll Odongtong", sans-serif;
@@ -833,25 +833,44 @@ body {
     .list {
       display: flex;
       flex-wrap: wrap;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      border-bottom: none;
       margin-top: 30px;
+      padding: 0 20px;
       li {
         flex: 0 0 50%;
         width: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 0 27px;
-        height: 80px;
-        border-right: 1px solid rgba(255, 255, 255, 0.1);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        &:nth-child(2n) {
-          border-right: none;
+        padding: 0 16px;
+        height: 55px;
+        &.full {
+          width: 100%;
+          flex: 0 0 100%;
+          height: auto;
+          &.sandbox {
+            padding: 20px 45px 10px;
+            img {
+              width: 71.25%;
+            }
+          }
+          &.ground {
+            padding: 20px 45px;
+            img {
+              width: 79.25%;
+            }
+          }
+          :nth-child(3), :nth-child(4)  {
+            padding-top: 20px;
+          }
+        }
+        &.flex-end {
+          justify-content: flex-end;
+        }
+        &.flex-start {
+          justify-content: flex-start;
         }
         img {
           object-fit: cover;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
         }
       }
     }

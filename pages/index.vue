@@ -357,6 +357,20 @@
                 <div class="partners">
                   <div class="title">PARTNERS</div>
                   <ul class="list">
+                    <li class="half-end">
+                      <img
+                          src="@/assets/images/main/img_parteners_logo_sandbox.png"
+                          alt=""
+                          style="width: 470px"
+                      />
+                    </li>
+                    <li class="half-start">
+                      <img
+                          src="@/assets/images/main/img_parteners_logo__groundx.png"
+                          alt=""
+                          style="width: 470px"
+                      />
+                    </li>
                     <li>
                       <img
                         src="@/assets/images/main/img_parteners_logo_sunmiya.png"
