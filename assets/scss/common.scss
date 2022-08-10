@@ -1332,6 +1332,7 @@ body {
           }
           .red {
             font-size: 14px;
+            font-weight: bold;
             line-height: 21px;
             color: #ff0000;
           }
@@ -1345,6 +1346,9 @@ body {
         color: #666;
         & + .condition {
           margin-top: 5px;
+        }
+        .divider {
+          color: #dddddd;
         }
       }
       .hide-mark {
