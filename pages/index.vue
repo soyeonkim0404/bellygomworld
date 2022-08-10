@@ -1853,6 +1853,7 @@ export default {
 }
 
 .main-char-ending {
+  max-width: 700px;
   overflow: hidden;
   border-radius: 40%;
   pointer-events: none;
