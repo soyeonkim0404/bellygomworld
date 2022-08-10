@@ -942,14 +942,13 @@ body {
     .title {
       .label {
         display: inline-block;
-        padding: 5px 26px;
+        padding: 7px 26px 5px;
         line-height: 1.5;
         margin: 0 auto;
         color: #fff;
         font-size: 16px;
         background: #4944e4;
         border-radius: 18px;
-        border: 1px solid #000;
       }
       h3 {
         margin-top: 20px;
@@ -974,9 +973,8 @@ body {
               width: 1px;
               height: 14px;
               background: #000;
-              top: 50%;
-              left: -10px;
-              transform: translateY(-50%);
+              top: 2.5px;
+              left: -11px;
             }
           }
         }
@@ -1005,8 +1003,7 @@ body {
             flex-direction: column;
             align-content: center;
             justify-content: center;
-            height: 66px;
-            margin-top: 42px;
+            margin-top: 40px;
             font-size: 24px;
             line-height: 1.5;
             font-family: "Sandoll Odongtong", sans-serif;
