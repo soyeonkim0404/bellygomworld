@@ -854,12 +854,12 @@ body {
   }
   .bellyship {
     position: relative;
-    /*width: 100%;
+    width: 100%;
     height: auto;
     background-image: url("@/assets/images/main/BELLYSHIP_PC_KOR_NEW.png");
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;*/
+    background-repeat: no-repeat;
     .b_top {
       display: block;
       max-width: 1262px;
@@ -1019,9 +1019,8 @@ body {
   .belly-heart {
     position: relative;
     width: 1130px;
-    height: 440px;
+    height: 660px;
     margin: 0 auto;
-    /*padding-top: 211px;*/
     img {
       position: absolute;
       object-fit: contain;
@@ -1345,6 +1344,22 @@ body {
           margin-top: 5px;
         }
       }
+      .hide-mark {
+        display: none;
+        margin-top: 40px;
+        border-radius: 30px;
+        background: #f9f9f9;
+        text-align: center;
+        p {
+          font-family: "Sandoll Odongtong", sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+          color: #999;
+          text-align: center;
+        }
+      }
       &.belly {
         position: absolute;
         top: 0;
@@ -1354,20 +1369,10 @@ body {
             color: #ff5290;
           }
         }
-        .hide-mark {
-          margin-top: 40px;
-          border-radius: 30px;
-          background: #f9f9f9;
-          padding: 76px 140px;
-          text-align: center;
-          p {
-            font-family: "Sandoll Odongtong", sans-serif;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 24px;
-            color: #999;
-            text-align: center;
+        &.hide {
+          .hide-mark {
+            display: block;
+            padding: 76px 140px;
           }
         }
       }
@@ -1380,20 +1385,10 @@ body {
             color: #c03dfe;
           }
         }
-        .hide-mark {
-          margin-top: 40px;
-          border-radius: 30px;
-          background: #f9f9f9;
-          padding: 45px 140px;
-          text-align: center;
-          p {
-            font-family: "Sandoll Odongtong", sans-serif;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 24px;
-            color: #999;
-            text-align: center;
+        &.hide {
+          .hide-mark {
+            display: block;
+            padding: 45px 140px;
           }
         }
       }
@@ -1406,20 +1401,10 @@ body {
             color: #596aff;
           }
         }
-        .hide-mark {
-          margin-top: 40px;
-          border-radius: 30px;
-          background: #f9f9f9;
-          padding: 45px 140px;
-          text-align: center;
-          p {
-            font-family: "Sandoll Odongtong", sans-serif;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 24px;
-            color: #999;
-            text-align: center;
+        &.hide {
+          .hide-mark {
+            display: block;
+            padding: 45px 140px;
           }
         }
       }
@@ -1432,24 +1417,14 @@ body {
             color: #ff9d43;
           }
         }
-        .hide-mark {
-          margin-top: 40px;
-          border-radius: 30px;
-          background: #f9f9f9;
-          padding: 35px 140px;
-          text-align: center;
-          .lock {
-            width: 140px;
-            height: 140px;
-          }
-          p {
-            font-family: "Sandoll Odongtong", sans-serif;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 24px;
-            color: #999;
-            text-align: center;
+        &.hide {
+          .hide-mark {
+            display: block;
+            padding: 35px 140px;
+            .lock {
+              width: 140px;
+              height: 140px;
+            }
           }
         }
       }
@@ -1462,24 +1437,14 @@ body {
             color: #ff72e0;
           }
         }
-        .hide-mark {
-          margin-top: 40px;
-          border-radius: 30px;
-          background: #f9f9f9;
-          padding: 35px 140px;
-          text-align: center;
-          .lock {
-            width: 140px;
-            height: 140px;
-          }
-          p {
-            font-family: "Sandoll Odongtong", sans-serif;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 24px;
-            color: #999;
-            text-align: center;
+        &.hide {
+          .hide-mark {
+            display: block;
+            padding: 35px 140px;
+            .lock {
+              width: 140px;
+              height: 140px;
+            }
           }
         }
       }
@@ -1492,24 +1457,14 @@ body {
             color: #8988ff;
           }
         }
-        .hide-mark {
-          margin-top: 40px;
-          border-radius: 30px;
-          background: #f9f9f9;
-          padding: 12px 140px;
-          text-align: center;
-          .lock {
-            width: 100px;
-            height: 100px;
-          }
-          p {
-            font-family: "Sandoll Odongtong", sans-serif;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 24px;
-            color: #999;
-            text-align: center;
+        &.hide {
+          .hide-mark {
+            display: block;
+            padding: 12px 140px;
+            .lock {
+              width: 100px;
+              height: 100px;
+            }
           }
         }
       }
@@ -1675,9 +1630,9 @@ body {
   }
 }
 
-.bellyship-special {
+/*.bellyship-special {
   background-image: url("@/assets/images/main/belly_bubble_bg.jpeg ");
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
-}
+}*/
