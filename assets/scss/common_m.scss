@@ -606,7 +606,7 @@ body {
     position: relative;
     width: 100%;
     height: auto;
-    background-image: url("@/assets/m_images/main/BELLYSHIP_MO_BG.png");
+    background-image: url("@/assets/m_images/main/BELLYSHIP_MO_KOR_NEW.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -636,7 +636,7 @@ body {
       }
     }
     &.eng {
-      background-image: url("@/assets/m_images/main/BELLYSHIP_MO_ENG.png");
+      background-image: url("@/assets/m_images/main/BELLYSHIP_MO_ENG_NEW.png");
       .nft-wrap {
         margin-top: 590px;
       }
@@ -650,10 +650,7 @@ body {
     text-align: center;
     .title {
       .label {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 302px;
+        display: inline-block;
         padding: 8px 20px 7px;
         margin: 0 auto;
         color: #fff;
@@ -671,7 +668,7 @@ body {
         font-family: "Sandoll Odongtong", sans-serif;
       }
       .desc {
-        margin: 10px auto 10px 10px;
+        margin: 10px auto 10px 27px;
         text-align: left;
         li {
           position: relative;
@@ -718,6 +715,7 @@ body {
             margin-top: 20px;
             font-size: 24px;
             line-height: 1.5;
+            font-weight: normal;
             font-family: "Sandoll Odongtong", sans-serif;
           }
           p {
@@ -915,7 +913,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 100px;
+    padding-bottom: 120px;
     .title {
       margin-top: 80px;
       font-family: "Sandoll Odongtong", sans-serif;
@@ -937,8 +935,8 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 0 16px;
-        height: 55px;
+        padding: 0 27px;
+        height: 80px;
         &.full {
           width: 100%;
           flex: 0 0 100%;
