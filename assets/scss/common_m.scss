@@ -650,10 +650,7 @@ body {
     text-align: center;
     .title {
       .label {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 302px;
+        display: inline-block;
         padding: 8px 20px 7px;
         margin: 0 auto;
         color: #fff;
@@ -671,7 +668,7 @@ body {
         font-family: "Sandoll Odongtong", sans-serif;
       }
       .desc {
-        margin: 10px auto 10px 10px;
+        margin: 10px auto 10px 27px;
         text-align: left;
         li {
           position: relative;
@@ -718,6 +715,7 @@ body {
             margin-top: 20px;
             font-size: 24px;
             line-height: 1.5;
+            font-weight: normal;
             font-family: "Sandoll Odongtong", sans-serif;
           }
           p {

@@ -256,9 +256,9 @@
                           />
                         </span>
                         <strong>Limited Edition Bellygom Merch</strong>
-                        <p>
+                        <p style="letter-spacing: -0.65px;">
                           Encounter the limited edition<br />numbered action
-                          figures for all holders<br />in the real world.
+                          figures for all holders in the real world.
                         </p>
                       </li>
                       <li>
@@ -512,7 +512,7 @@
                         <strong>익사이팅 롯데월드</strong>
                         <p>
                           롯데월드에서 10월 펼쳐지는 벨리곰의<br />세계에
-                          여러분을 초대합니다. (feat. 가족, 친구, 연인)
+                          여러분을 초대합니다. <br />(feat. 가족, 친구, 연인)
                         </p>
                       </li>
                       <li>
@@ -1631,7 +1631,7 @@ export default {
         afterReBuild: function () {},
         afterResponsive: function (isResponsive) {},
         onScrollOverflow: function (section, slide, position, direction) {
-          // console.log(section, slide, position, direction);
+          //console.log(section, slide, position, direction);
         },
       },
       faqList: [

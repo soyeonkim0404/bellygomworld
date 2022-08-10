@@ -854,12 +854,12 @@ body {
   }
   .bellyship {
     position: relative;
-    /*width: 100%;
+    width: 100%;
     height: auto;
     background-image: url("@/assets/images/main/BELLYSHIP_PC_KOR_NEW.png");
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;*/
+    background-repeat: no-repeat;
     .b_top {
       display: block;
       max-width: 1262px;
@@ -942,14 +942,13 @@ body {
     .title {
       .label {
         display: inline-block;
-        padding: 5px 26px;
+        padding: 7px 26px 5px;
         line-height: 1.5;
         margin: 0 auto;
         color: #fff;
         font-size: 16px;
         background: #4944e4;
         border-radius: 18px;
-        border: 1px solid #000;
       }
       h3 {
         margin-top: 20px;
@@ -974,9 +973,8 @@ body {
               width: 1px;
               height: 14px;
               background: #000;
-              top: 50%;
+              top: 2px;
               left: -10px;
-              transform: translateY(-50%);
             }
           }
         }
@@ -990,7 +988,7 @@ body {
         margin-top: 62px;
         li {
           flex: 0 0 20%;
-          max-width: 228px;
+          max-width: 229px;
           margin: 0 15px;
           .img-wrap {
             display: inline-block;
@@ -1006,6 +1004,7 @@ body {
             font-size: 24px;
             line-height: 1.5;
             font-family: "Sandoll Odongtong", sans-serif;
+            font-weight: normal;
           }
           p {
             margin-top: 15px;
