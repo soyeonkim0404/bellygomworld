@@ -284,7 +284,7 @@
                       >Bellygom Super Surprise Package Season 1</span
                     >
                     <h3>An Amazing Experience<br />for Bellygom's Friends</h3>
-                    <ul class="desc" style="margin: 10px auto 10px 12px;">
+                    <ul class="desc" style="margin: 10px auto 10px 12px">
                       <li>
                         <strong>Eligibility</strong> All Bellygom NFT holders
                         are eligible
@@ -651,8 +651,8 @@
                         입장권 + 깜짝 할인)
                       </li>
                       <li>
-                        벨리곰 시네마 프리미엄 패키지(롯데 시네마 샤롯데 2매
-                        + 스위트콤보, 음료 2개)
+                        벨리곰 시네마 프리미엄 패키지(롯데 시네마 샤롯데 2매 +
+                        스위트콤보, 음료 2개)
                       </li>
                     </ul>
                     <span class="condition">
@@ -660,7 +660,9 @@
                       소유자
                     </span>
                     <span class="condition">
-                      운영플랜: 시그니엘 연 2회(양도 가능)<span class="divider">｜</span>월드 연 2회<span class="divider">｜</span>쇼핑 연
+                      운영플랜: 시그니엘 연 2회(양도 가능)<span class="divider"
+                        >｜</span
+                      >월드 연 2회<span class="divider">｜</span>쇼핑 연
                       4회<span class="divider">｜</span>시네마 연 4회
                     </span>
                   </div>
@@ -682,11 +684,12 @@
                       </li>
                     </ul>
                     <span class="condition">
-                      자격요건: 100명<span class="divider">｜</span>홀릭급 NFT 소유자 or 벨리곰 NFT 300개
-                      이상 소유자
+                      자격요건: 100명<span class="divider">｜</span>홀릭급 NFT
+                      소유자 or 벨리곰 NFT 300개 이상 소유자
                     </span>
                     <span class="condition">
-                      운영플랜: 월드 연 2회<span class="divider">｜</span>쇼핑 연 2회<span class="divider">｜</span>시네마 연 4회
+                      운영플랜: 월드 연 2회<span class="divider">｜</span>쇼핑
+                      연 2회<span class="divider">｜</span>시네마 연 4회
                     </span>
                   </div>
                   <div class="box mega">
@@ -703,10 +706,12 @@
                       </li>
                     </ul>
                     <span class="condition">
-                      자격요건: 500명<span class="divider">｜</span>메가급 NFT 소유자
+                      자격요건: 500명<span class="divider">｜</span>메가급 NFT
+                      소유자
                     </span>
                     <span class="condition">
-                      운영플랜: 쇼핑 연 2회<span class="divider">｜</span>시네마 연 4회
+                      운영플랜: 쇼핑 연 2회<span class="divider">｜</span>시네마
+                      연 4회
                     </span>
                   </div>
                   <div class="box super">
@@ -722,10 +727,12 @@
                       <li>벨리곰 시네마 패키지(롯데 시네마 관람권 2매)</li>
                     </ul>
                     <span class="condition">
-                      자격요건: 1,500명<span class="divider">｜</span>슈퍼급 NFT 소유자
+                      자격요건: 1,500명<span class="divider">｜</span>슈퍼급 NFT
+                      소유자
                     </span>
                     <span class="condition">
-                      운영플랜: 쇼핑 연 2회<span class="divider">｜</span>시네마 연 4회
+                      운영플랜: 쇼핑 연 2회<span class="divider">｜</span>시네마
+                      연 4회
                     </span>
                   </div>
                   <div class="box surprise">
@@ -739,10 +746,12 @@
                       <li>벨리곰 시네마 패키지(롯데 시네마 관람권 2매)</li>
                     </ul>
                     <span class="condition">
-                      자격요건: 3,500명<span class="divider">｜</span>서프라이즈급 NFT 소유자
+                      자격요건: 3,500명<span class="divider">｜</span
+                      >서프라이즈급 NFT 소유자
                     </span>
                     <span class="condition">
-                      운영플랜: 쇼핑 연 1회<span class="divider">｜</span>시네마 연 2회
+                      운영플랜: 쇼핑 연 1회<span class="divider">｜</span>시네마
+                      연 2회
                     </span>
                   </div>
                   <div class="box friend">
@@ -752,7 +761,8 @@
                       <li>벨리곰 시네마 패키지 (롯데 시네마 관람권 2매)</li>
                     </ul>
                     <span class="condition">
-                      자격요건: 4,370명<span class="divider">｜</span>프렌즈급 NFT 소유자
+                      자격요건: 4,370명<span class="divider">｜</span>프렌즈급
+                      NFT 소유자
                     </span>
                     <span class="condition">운영플랜: 시네마 연 2회 </span>
                   </div>
@@ -1000,6 +1010,12 @@
                       <li>Hosting Service Provider: Woori Home Shopping</li>
                       <li>Affiliates & Inquiry: master@lotteimall.com</li>
                       <li>
+                        Business Inquiry :&nbsp;
+                        <a href="mailto:business@bellygom.world">
+                          business@bellygom.world
+                        </a>
+                      </li>
+                      <li>
                         <nuxt-link to="/m/terms" target="_blank">
                           Terms of Service
                         </nuxt-link>
@@ -1015,6 +1031,12 @@
                     <ul class="footer-list">
                       <li>호스팅 서비스 사업자: (주)우리홈쇼핑</li>
                       <li>제휴 및 문의: master@lotteimall.com</li>
+                      <li>
+                        사업문의 :&nbsp;
+                        <a href="mailto:business@bellygom.world">
+                          business@bellygom.world
+                        </a>
+                      </li>
                       <li>
                         <nuxt-link to="/m/terms" target="_blank"
                           >이용약관</nuxt-link

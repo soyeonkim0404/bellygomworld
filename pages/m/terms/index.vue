@@ -535,6 +535,12 @@
               <li>Hosting Service Provider: Woori Home Shopping</li>
               <li>Affiliates & Inquiry: master@lotteimall.com</li>
               <li>
+                Business Inquiry :&nbsp;
+                <a href="mailto:business@bellygom.world">
+                  business@bellygom.world
+                </a>
+              </li>
+              <li>
                 <nuxt-link to="/m/terms" target="_blank">
                   Terms of Service
                 </nuxt-link>
@@ -550,6 +556,12 @@
             <ul class="footer-list">
               <li>호스팅 서비스 사업자: (주)우리홈쇼핑</li>
               <li>제휴 및 문의: master@lotteimall.com</li>
+              <li>
+                사업문의 :&nbsp;
+                <a href="mailto:business@bellygom.world">
+                  business@bellygom.world
+                </a>
+              </li>
               <li>
                 <nuxt-link to="/m/terms" target="_blank">이용약관</nuxt-link>
               </li>
