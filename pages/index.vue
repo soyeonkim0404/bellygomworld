@@ -300,6 +300,30 @@
                           provide seasonal "No Queues Bellygom Pass"
                         </p>
                       </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/images/main/img__bubble_06.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>라이브 커머스 혜택</strong>
+                        <p>
+                          라이브 쇼핑 방송에서 벨리곰 홀더분들에게만<br/>
+                          특별 할인 혜택을 제공해 드립니다.
+                        </p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/images/main/img__bubble_07.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>Comming Soon</strong>
+                        <p>
+                        </p>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -511,21 +535,8 @@
                         </span>
                         <strong>익사이팅 롯데월드</strong>
                         <p>
-                          롯데월드에서 10월 펼쳐지는 벨리곰의<br />세계에
-                          여러분을 초대합니다. <br />(feat. 가족, 친구, 연인)
-                        </p>
-                      </li>
-                      <li>
-                        <span class="img-wrap">
-                          <img
-                            src="@/assets/images/main/img__bubble_02.png"
-                            alt=""
-                          />
-                        </span>
-                        <strong>한정판 넘버링 피규어</strong>
-                        <p>
-                          홀더분들에게만 드리는 한정판 넘버링<br />피규어를 현실
-                          세계에서도 만나보세요.
+                          롯데월드에서 10월에 펼쳐지는 벨리곰의 세계로<br/>
+                          여러분을 초대합니다.(동반인 입장가능)
                         </p>
                       </li>
                       <li>
@@ -537,8 +548,23 @@
                         </span>
                         <strong>글로벌 콜라보 NFT</strong>
                         <p>
-                          오직 벨리곰 홀더분들만에게만 에어드랍해<br />드리는
-                          글로벌 탑티어 콜라보레이션 NFT를 에어드랍 받아보세요.
+                          오직 벨리곰 홀더분들에게만 드리는<br />
+                          글로벌 탑티어 콜라보레이션 NFT,<br />
+                          복셀 형태 벨리곰 NFT를 받아보세요.
+                        </p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/images/main/img__bubble_02.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>한정판 넘버링 피규어</strong>
+                        <p>
+                          홀더분들에게만 드리는 한정판 넘버링 피규어로<br />
+                          현실 세계에서도 벨리곰을 만나보세요.<br />
+                          (단, 5개 이상 NFT 보유 홀더)
                         </p>
                       </li>
                       <li>
@@ -550,8 +576,8 @@
                         </span>
                         <strong>무적 할인권</strong>
                         <p>
-                          벨리곰의 꼼꼼하게 선정한 현실 상품들을<br />더
-                          특별하게 할인받아 Get하세요.
+                          꼼꼼하게 선정한 벨리곰 현실 상품들을<br />
+                          더 특별하게 할인받아 Get하세요.
                         </p>
                       </li>
                       <li>
@@ -563,9 +589,32 @@
                         </span>
                         <strong>벨리 패스</strong>
                         <p>
-                          기다리기 싫어하는 벨리곰 홀더분들에게<br />시즌 별 ‘줄
-                          안서는 벨리 패스’를<br />제공해드립니다.
+                          기다리기 싫어하는 벨리곰 홀더분들에게 시즌 별<br />
+                          ‘줄 안서는 벨리 패스’를 제공해드립니다.
                         </p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/images/main/img__bubble_06.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>라이브 커머스 혜택</strong>
+                        <p>
+                          라이브 쇼핑 방송에서 벨리곰 홀더분들에게만<br/>
+                          특별 할인 혜택을 제공해 드립니다.
+                        </p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/images/main/img__bubble_07.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>Comming Soon</strong>
+                        <p></p>
                       </li>
                     </ul>
                   </div>

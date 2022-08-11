@@ -303,21 +303,8 @@
                         </span>
                         <strong>Exciting<br />Lotte World</strong>
                         <p>
-                          Lotte World invites you to Bellygom World this
-                          October. (feat. Family, Friends, Loved ones)
-                        </p>
-                      </li>
-                      <li>
-                        <span class="img-wrap">
-                          <img
-                            src="@/assets/m_images/main/img__bubble_02_eng.png"
-                            alt=""
-                          />
-                        </span>
-                        <strong>Limited Edition<br />Bellygom Merch</strong>
-                        <p>
-                          Encounter the limited edition numbered action figures
-                          for all holders in the real world.
+                          Lotte World invites you to Bellygom World<br/>
+                          this October.(Partners allowed entry)
                         </p>
                       </li>
                       <li>
@@ -327,10 +314,25 @@
                             alt=""
                           />
                         </span>
-                        <strong>Global Collab NFTs</strong>
+                        <strong>Global Collab<br/>NFTs</strong>
                         <p>
-                          Receive global top tier collaboration airdrop NFTs
-                          only for Bellygom holders.
+                          Given only to Bellygom NFT holders, global<br/>
+                          top tier collaboration NFT.<br/>
+                          Come get your voxel art Bellygom NFT.
+                        </p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/m_images/main/img__bubble_02_eng.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>Limited Edition<br />Bellygom Merch</strong>
+                        <p>
+                          Encounter the limited edition numbered action<br/>
+                          figures for all holders in the real world.<br/>
+                          (Only for NFT holders of 5 or more)
                         </p>
                       </li>
                       <li>
@@ -340,10 +342,10 @@
                             alt=""
                           />
                         </span>
-                        <strong>Invincible Coupon</strong>
+                        <strong>Invincible<br/>Coupon</strong>
                         <p>
-                          Get more special discounts on Bellygom's meticulously
-                          curated products in reality.
+                          Get more special discounts on Bellygom's<br/>
+                          meticulously curated products in reality.
                         </p>
                       </li>
                       <li>
@@ -355,9 +357,33 @@
                         </span>
                         <strong>Belly pass</strong>
                         <p>
-                          For Bellygom holders who don't want to wait, we will
-                          provide seasonal "No Queues Bellygom Pass"
+                          For Bellygom holders who don't want to wait,<br/>
+                          we will provide seasonal "No Queues<br/>
+                          Bellygom Pass"
                         </p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/m_images/main/img__bubble_06_eng.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>Live Commerce</strong>
+                        <p>
+                          There’ll be special Bellygom discounts<br/>
+                          on a live shopping show for holders only.
+                        </p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/m_images/main/img__bubble_07_eng.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>Comming Soon</strong>
+                        <p></p>
                       </li>
                     </ul>
                   </div>
