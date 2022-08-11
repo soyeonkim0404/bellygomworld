@@ -1220,7 +1220,6 @@
           <div class="list-title">1st Whitelist (Guaranteed)</div>
           <ul class="road-list">
             <li>Remaining - 2,000</li>
-            <li>Per Wallet - 1</li>
           </ul>
           <div class="list-title">2nd Whitelist (Competition)</div>
           <ul class="road-list">
@@ -1276,7 +1275,6 @@
           <div class="list-title">1차 확정 화이트리스트 세일</div>
           <ul class="road-list">
             <li>수량 2,000개</li>
-            <li>지갑당 1개</li>
           </ul>
           <div class="list-title">2차 경쟁 화이트리스트 세일</div>
           <ul class="road-list">
