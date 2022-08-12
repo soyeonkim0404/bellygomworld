@@ -313,7 +313,7 @@
                         </span>
                         <strong>Exciting Lotte World</strong>
                         <p>
-                          Lotte World invites you to Bellygom World<br/>
+                          Lotte World invites you to Bellygom World<br />
                           this October. (Partners allowed entry)
                         </p>
                       </li>
@@ -326,19 +326,22 @@
                         </span>
                         <strong>Global Collab NFTs</strong>
                         <p>
-                          Given only to Bellygom NFT holders, global top tier collaboration NFT. Come get your voxel art Bellygom NFT.
+                          Given only to Bellygom NFT holders, global top tier
+                          collaboration NFT. Come get your voxel art Bellygom
+                          NFT.
                         </p>
                       </li>
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/m_images/main/img__bubble_02_eng.png"
-                              alt=""
+                            src="@/assets/m_images/main/img__bubble_02_eng.png"
+                            alt=""
                           />
                         </span>
                         <strong>Limited Edition<br />Bellygom Merch</strong>
                         <p>
-                          Encounter the limited edition numbered action figures for all holders in the real world.<br/>
+                          Encounter the limited edition numbered action figures
+                          for all holders in the real world.<br />
                           (Only for NFT holders of 5 or more)
                         </p>
                       </li>
@@ -349,9 +352,10 @@
                             alt=""
                           />
                         </span>
-                        <strong>Invincible<br/>Coupon</strong>
+                        <strong>Invincible<br />Coupon</strong>
                         <p>
-                          Get more special discounts on Bellygom's meticulously curated products in reality.
+                          Get more special discounts on Bellygom's meticulously
+                          curated products in reality.
                         </p>
                       </li>
                       <li>
@@ -363,26 +367,28 @@
                         </span>
                         <strong>Belly pass</strong>
                         <p>
-                          For Bellygom holders who don't want to wait, we will provide seasonal<br/>"No Queues Bellygom Pass"
+                          For Bellygom holders who don't want to wait, we will
+                          provide seasonal<br />"No Queues Bellygom Pass"
                         </p>
                       </li>
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/m_images/main/img__bubble_06_eng.png"
-                              alt=""
+                            src="@/assets/m_images/main/img__bubble_06_eng.png"
+                            alt=""
                           />
                         </span>
                         <strong>Live Commerce</strong>
                         <p>
-                          There’ll be special Bellygom discounts on a live shopping show for holders only.
+                          There’ll be special Bellygom discounts on a live
+                          shopping show for holders only.
                         </p>
                       </li>
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/m_images/main/img__bubble_07_eng.png"
-                              alt=""
+                            src="@/assets/m_images/main/img__bubble_07_eng.png"
+                            alt=""
                           />
                         </span>
                         <strong>Comming Soon</strong>
@@ -396,10 +402,11 @@
                     <span class="label">
                       Bellygom Super Surprise Package Season 1
                     </span>
-                    <h3>
-                      More Belly,<br />More Surprise
-                    </h3>
-                    <p class="sub-txt">Regularly Updated Belly Benefits,<br/>Only with Belly NFTs</p>
+                    <h3>More Belly,<br />More Surprise</h3>
+                    <p class="sub-txt">
+                      Regularly Updated Belly Benefits,<br />Only with Belly
+                      NFTs
+                    </p>
                   </div>
                   <div class="level-list">
                     <div class="box belly">
@@ -410,16 +417,16 @@
                       </p>
                       <ul class="benefit-list">
                         <li>
-                          Bellygom Signiel Premium Package (Premium Room + Club +
-                          Valet) <span class="red">*Transferable</span>
+                          Bellygom Signiel Premium Package (Premium Room + Club
+                          + Valet) <span class="red">*Transferable</span>
                         </li>
                         <li>
                           Bellygom World Premium Package (Lotte World Hotel
                           Voucher + Magic Pass)
                         </li>
                         <li>
-                          Bellygom Shopping Premium Package (Live Commerce Tickets
-                          for Holders Only + Surprise Discounts)
+                          Bellygom Shopping Premium Package (Live Commerce
+                          Tickets for Holders Only + Surprise Discounts)
                         </li>
                         <li>
                           Bellygom Cinema Premium Package (2 Lotte Cinema
@@ -427,14 +434,14 @@
                         </li>
                       </ul>
                       <span class="condition">
-                      Eligibility: 30 Holders｜Belly Tier NFT Holders or Holders
-                      of 500+ Bellygom NFTs
-                    </span>
+                        Eligibility: 30 Holders｜Belly Tier NFT Holders or
+                        Holders of 500+ Bellygom NFTs
+                      </span>
                       <span class="condition">
-                      The Plan: Lotte Signiel (twice a year)
-                      *Transferable｜Belly World (twice a year)｜Shopping (four
-                      times a year)｜Cinema (four times a year)
-                    </span>
+                        The Plan: Lotte Signiel (twice a year)
+                        *Transferable｜Belly World (twice a year)｜Shopping
+                        (four times a year)｜Cinema (four times a year)
+                      </span>
                     </div>
                     <div class="box holic">
                       <div class="tit"><span>Holic</span> Bellyship</div>
@@ -445,8 +452,8 @@
                           Voucher + Magic Pass)
                         </li>
                         <li>
-                          Bellygom Shopping Premium Package (Live Commerce Tickets
-                          for Holders Only + Surprise Discounts)
+                          Bellygom Shopping Premium Package (Live Commerce
+                          Tickets for Holders Only + Surprise Discounts)
                         </li>
                         <li>
                           Bellygom Cinema Premium Package (2 Lotte Cinema
@@ -454,21 +461,21 @@
                         </li>
                       </ul>
                       <span class="condition">
-                      Eligibility: 100 Holders｜Holic Tier NFT Holders or
-                      Holders of 300+ Bellygom NFTs
-                    </span>
+                        Eligibility: 100 Holders｜Holic Tier NFT Holders or
+                        Holders of 300+ Bellygom NFTs
+                      </span>
                       <span class="condition">
-                      The Plan: Belly World (twice a year)｜Shopping (twice a
-                      year)｜Cinema (four times a year)
-                    </span>
+                        The Plan: Belly World (twice a year)｜Shopping (twice a
+                        year)｜Cinema (four times a year)
+                      </span>
                     </div>
                     <div class="box mega">
                       <div class="tit"><span>Mega</span> Bellyship</div>
                       <p class="sub">Bellygom's Surprising Comfort!</p>
                       <ul class="benefit-list">
                         <li>
-                          Bellygom Shopping Premium Package (Live Commerce Tickets
-                          for Holders Only + Surprise Discounts)
+                          Bellygom Shopping Premium Package (Live Commerce
+                          Tickets for Holders Only + Surprise Discounts)
                         </li>
                         <li>
                           Bellygom Cinema Premium Package (2 Lotte Cinema
@@ -476,12 +483,12 @@
                         </li>
                       </ul>
                       <span class="condition">
-                      Eligibility: 500 Holders｜Mega Tier NFT Holders
-                    </span>
+                        Eligibility: 500 Holders｜Mega Tier NFT Holders
+                      </span>
                       <span class="condition">
-                      The Plan: Shopping (twice a year)｜Cinema (four times a
-                      year)
-                    </span>
+                        The Plan: Shopping (twice a year)｜Cinema (four times a
+                        year)
+                      </span>
                     </div>
                     <div class="box super">
                       <div class="tit"><span>Super</span> Bellyship</div>
@@ -491,18 +498,20 @@
                       </p>
                       <ul class="benefit-list">
                         <li>
-                          Bellygom Shopping Premium Package (Live Commerce Tickets
-                          for Holders Only + Surprise Discounts)
+                          Bellygom Shopping Premium Package (Live Commerce
+                          Tickets for Holders Only + Surprise Discounts)
                         </li>
-                        <li>Bellygom Cinema Package (2 Lotte Cinema Tickets)</li>
+                        <li>
+                          Bellygom Cinema Package (2 Lotte Cinema Tickets)
+                        </li>
                       </ul>
                       <span class="condition">
-                      Eligibility: 1,500 Holders｜Super Tier NFT Holders
-                    </span>
+                        Eligibility: 1,500 Holders｜Super Tier NFT Holders
+                      </span>
                       <span class="condition">
-                      The Plan: Shopping (twice a year)｜Cinema (four times a
-                      year)
-                    </span>
+                        The Plan: Shopping (twice a year)｜Cinema (four times a
+                        year)
+                      </span>
                     </div>
                     <div class="box surprise">
                       <div class="tit"><span>Surprise</span> Bellyship</div>
@@ -511,29 +520,33 @@
                       </p>
                       <ul class="benefit-list">
                         <li>
-                          Bellygom Shopping Premium Package (Live Commerce Tickets
-                          for Holders Only + Surprise Discounts)
+                          Bellygom Shopping Premium Package (Live Commerce
+                          Tickets for Holders Only + Surprise Discounts)
                         </li>
-                        <li>Bellygom Cinema Package (2 Lotte Cinema Tickets)</li>
+                        <li>
+                          Bellygom Cinema Package (2 Lotte Cinema Tickets)
+                        </li>
                       </ul>
                       <span class="condition">
-                      Eligibility: 3,500 Holders｜Surprise Tier NFT Holders
-                    </span>
+                        Eligibility: 3,500 Holders｜Surprise Tier NFT Holders
+                      </span>
                       <span class="condition">
-                      The Plan: Shopping (once a year)｜Cinema (twice a year)
-                    </span>
+                        The Plan: Shopping (once a year)｜Cinema (twice a year)
+                      </span>
                     </div>
                     <div class="box friend">
                       <div class="tit"><span>Friends</span> Bellyship</div>
                       <p class="sub">Double the Fun with Friends!</p>
                       <ul class="benefit-list">
-                        <li>Bellygom Cinema Package (2 Lotte Cinema Tickets)</li>
+                        <li>
+                          Bellygom Cinema Package (2 Lotte Cinema Tickets)
+                        </li>
                       </ul>
                       <span class="condition">
-                      Eligibility: 4,370 Holders｜Friends Tier NFT Holders
-                    </span>
+                        Eligibility: 4,370 Holders｜Friends Tier NFT Holders
+                      </span>
                       <span class="condition"
-                      >The Plan: Cinema (twice a year)</span
+                        >The Plan: Cinema (twice a year)</span
                       >
                     </div>
                   </div>
@@ -573,14 +586,14 @@
                     class="h-5"
                   />
                   <img
-                      src="@/assets/m_images/main/img_heartballoon_06.svg"
-                      alt=""
-                      class="h-6"
+                    src="@/assets/m_images/main/img_heartballoon_06.svg"
+                    alt=""
+                    class="h-6"
                   />
                   <img
-                      src="@/assets/m_images/main/img_heartballoon_07.svg"
-                      alt=""
-                      class="h-7"
+                    src="@/assets/m_images/main/img_heartballoon_07.svg"
+                    alt=""
+                    class="h-7"
                   />
                 </div>
                 <div class="common-util">
@@ -609,21 +622,21 @@
                         </span>
                         <strong>익사이팅 롯데월드</strong>
                         <p>
-                          롯데월드에서 10월에 펼쳐지는 벨리곰의 세계로<br/>
+                          롯데월드에서 10월에 펼쳐지는 벨리곰의 세계로<br />
                           여러분을 초대합니다. (동반인 입장가능)
                         </p>
                       </li>
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/m_images/main/img__bubble_03.png"
-                              alt=""
+                            src="@/assets/m_images/main/img__bubble_03.png"
+                            alt=""
                           />
                         </span>
                         <strong>글로벌 콜라보 NFT</strong>
                         <p>
-                          오직 벨리곰 홀더분들에게만 드리는<br/>
-                          글로벌 탑티어 콜라보레이션 NFT,<br/>
+                          오직 벨리곰 홀더분들에게만 드리는<br />
+                          글로벌 탑티어 콜라보레이션 NFT,<br />
                           복셀 형태 벨리곰 NFT를 받아보세요.
                         </p>
                       </li>
@@ -636,8 +649,8 @@
                         </span>
                         <strong>한정판 넘버링 피규어</strong>
                         <p>
-                          홀더분들에게만 드리는 한정판 넘버링 피규어로
-                          현실 세계에서도 벨리곰을 만나보세요.<br/>
+                          홀더분들에게만 드리는 한정판 넘버링 피규어로 현실
+                          세계에서도 벨리곰을 만나보세요.<br />
                           (단, 5개 이상 NFT 보유 홀더)
                         </p>
                       </li>
@@ -663,26 +676,28 @@
                         </span>
                         <strong>벨리 패스</strong>
                         <p>
-                          기다리기 싫어하는 벨리곰 홀더분들에게 시즌 별<br/>‘줄 안서는 벨리 패스’를 제공해드립니다.
+                          기다리기 싫어하는 벨리곰 홀더분들에게 시즌 별<br />‘줄
+                          안서는 벨리 패스’를 제공해드립니다.
                         </p>
                       </li>
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/m_images/main/img__bubble_06.png"
-                              alt=""
+                            src="@/assets/m_images/main/img__bubble_06.png"
+                            alt=""
                           />
                         </span>
                         <strong>라이브 커머스 혜택</strong>
                         <p>
-                          라이브 쇼핑 방송에서 벨리곰 홀더분들에게만<br/>특별 할인 혜택을 제공해 드립니다.
+                          라이브 쇼핑 방송에서 벨리곰 홀더분들에게만<br />특별
+                          할인 혜택을 제공해 드립니다.
                         </p>
                       </li>
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/m_images/main/img__bubble_07.png"
-                              alt=""
+                            src="@/assets/m_images/main/img__bubble_07.png"
+                            alt=""
                           />
                         </span>
                         <strong>Comming Soon</strong>
@@ -696,10 +711,11 @@
                     <span class="label">
                       벨리곰 슈퍼 서프라이즈 패키지 시즌 1
                     </span>
-                    <h3>
-                      More Belly,<br />More Surprise
-                    </h3>
-                    <p class="sub-txt">계속 업데이트 될,<br/>NFT만으로 누릴 수 있는 Belly Benefit</p>
+                    <h3>More Belly,<br />More Surprise</h3>
+                    <p class="sub-txt">
+                      계속 업데이트 될,<br />NFT만으로 누릴 수 있는 Belly
+                      Benefit
+                    </p>
                   </div>
                   <div class="level-list">
                     <div class="box belly">
@@ -722,18 +738,21 @@
                           입장권 + 깜짝 할인)
                         </li>
                         <li>
-                          벨리곰 시네마 프리미엄 패키지(롯데 시네마 샤롯데 2매
-                          + 스위트콤보, 음료 2개)
+                          벨리곰 시네마 프리미엄 패키지(롯데 시네마 샤롯데 2매 +
+                          스위트콤보, 음료 2개)
                         </li>
                       </ul>
                       <span class="condition">
-                      자격요건: 30명｜벨리급 NFT 소유자 or 벨리곰 NFT 500개 이상
-                      소유자
-                    </span>
+                        자격요건: 30명｜벨리급 NFT 소유자 or 벨리곰 NFT 500개
+                        이상 소유자
+                      </span>
                       <span class="condition">
-                      운영플랜: 시그니엘 연 2회(양도 가능)<span class="divider">｜</span>월드 연 2회<span class="divider">｜</span>쇼핑 연
-                      4회<span class="divider">｜</span>시네마 연 4회
-                    </span>
+                        운영플랜: 시그니엘 연 2회(양도 가능)<span
+                          class="divider"
+                          >｜</span
+                        >월드 연 2회<span class="divider">｜</span>쇼핑 연
+                        4회<span class="divider">｜</span>시네마 연 4회
+                      </span>
                     </div>
                     <div class="box holic">
                       <div class="tit"><span>Holic</span> Bellyship</div>
@@ -753,12 +772,13 @@
                         </li>
                       </ul>
                       <span class="condition">
-                      자격요건: 100명<span class="divider">｜</span>홀릭급 NFT 소유자 or 벨리곰 NFT 300개
-                      이상 소유자
-                    </span>
+                        자격요건: 100명<span class="divider">｜</span>홀릭급 NFT
+                        소유자 or 벨리곰 NFT 300개 이상 소유자
+                      </span>
                       <span class="condition">
-                      운영플랜: 월드 연 2회<span class="divider">｜</span>쇼핑 연 2회<span class="divider">｜</span>시네마 연 4회
-                    </span>
+                        운영플랜: 월드 연 2회<span class="divider">｜</span>쇼핑
+                        연 2회<span class="divider">｜</span>시네마 연 4회
+                      </span>
                     </div>
                     <div class="box mega">
                       <div class="tit"><span>Mega</span> Bellyship</div>
@@ -774,11 +794,13 @@
                         </li>
                       </ul>
                       <span class="condition">
-                      자격요건: 500명<span class="divider">｜</span>메가급 NFT 소유자
-                    </span>
+                        자격요건: 500명<span class="divider">｜</span>메가급 NFT
+                        소유자
+                      </span>
                       <span class="condition">
-                      운영플랜: 쇼핑 연 2회<span class="divider">｜</span>시네마 연 4회
-                    </span>
+                        운영플랜: 쇼핑 연 2회<span class="divider">｜</span
+                        >시네마 연 4회
+                      </span>
                     </div>
                     <div class="box super">
                       <div class="tit"><span>Super</span> Bellyship</div>
@@ -793,11 +815,13 @@
                         <li>벨리곰 시네마 패키지(롯데 시네마 관람권 2매)</li>
                       </ul>
                       <span class="condition">
-                      자격요건: 1,500명<span class="divider">｜</span>슈퍼급 NFT 소유자
-                    </span>
+                        자격요건: 1,500명<span class="divider">｜</span>슈퍼급
+                        NFT 소유자
+                      </span>
                       <span class="condition">
-                      운영플랜: 쇼핑 연 2회<span class="divider">｜</span>시네마 연 4회
-                    </span>
+                        운영플랜: 쇼핑 연 2회<span class="divider">｜</span
+                        >시네마 연 4회
+                      </span>
                     </div>
                     <div class="box surprise">
                       <div class="tit"><span>Surprise</span> Bellyship</div>
@@ -810,11 +834,13 @@
                         <li>벨리곰 시네마 패키지(롯데 시네마 관람권 2매)</li>
                       </ul>
                       <span class="condition">
-                      자격요건: 3,500명<span class="divider">｜</span>서프라이즈급 NFT 소유자
-                    </span>
+                        자격요건: 3,500명<span class="divider">｜</span
+                        >서프라이즈급 NFT 소유자
+                      </span>
                       <span class="condition">
-                      운영플랜: 쇼핑 연 1회<span class="divider">｜</span>시네마 연 2회
-                    </span>
+                        운영플랜: 쇼핑 연 1회<span class="divider">｜</span
+                        >시네마 연 2회
+                      </span>
                     </div>
                     <div class="box friend">
                       <div class="tit"><span>Friends</span> Bellyship</div>
@@ -823,8 +849,9 @@
                         <li>벨리곰 시네마 패키지 (롯데 시네마 관람권 2매)</li>
                       </ul>
                       <span class="condition">
-                      자격요건: 4,370명<span class="divider">｜</span>프렌즈급 NFT 소유자
-                    </span>
+                        자격요건: 4,370명<span class="divider">｜</span>프렌즈급
+                        NFT 소유자
+                      </span>
                       <span class="condition">운영플랜: 시네마 연 2회 </span>
                     </div>
                   </div>
@@ -1050,7 +1077,7 @@
                 <div class="footer-contents">
                   <template v-if="$store.getters.getLocale === 'ENG'">
                     <ul class="footer-list">
-                      <li>CEO Lee, Wan Shin</li>
+                      <li>CEO: Lee, Wan Shin</li>
                       <li>
                         Address: (Yangpyeongdong 5-ga) 10 Yangpyeong-ro 21-gil
                         Yeongdeungpo-gu, Seoul
@@ -1059,7 +1086,12 @@
                     </ul>
                     <ul class="footer-list">
                       <li>Hosting Service Provider: Woori Home Shopping</li>
-                      <li>Affiliates & Inquiry: master@lotteimall.com</li>
+                      <li>
+                        Business Inquiry:&nbsp;
+                        <a href="mailto:business@bellygom.world">
+                          business@bellygom.world
+                        </a>
+                      </li>
                       <li>
                         <nuxt-link to="/m/terms" target="_blank">
                           Terms of Service
@@ -1069,13 +1101,18 @@
                   </template>
                   <template v-else>
                     <ul class="footer-list">
-                      <li>대표 이완신</li>
+                      <li>대표: 이완신</li>
                       <li>주소: 서울특별시 영등포구 양평로21길10(양평동5가)</li>
                       <li>개인정보 보호책임자: 신성빈</li>
                     </ul>
                     <ul class="footer-list">
                       <li>호스팅 서비스 사업자: (주)우리홈쇼핑</li>
-                      <li>제휴 및 문의: master@lotteimall.com</li>
+                      <li>
+                        사업문의:
+                        <a href="mailto:business@bellygom.world" class="mail"
+                          >business@bellygom.world
+                        </a>
+                      </li>
                       <li>
                         <nuxt-link to="/m/terms" target="_blank"
                           >이용약관</nuxt-link
