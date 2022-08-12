@@ -609,7 +609,7 @@ body {
     position: relative;
     width: 100%;
     height: auto;
-/*    background-image: url("@/assets/m_images/main/BELLYSHIP_MO_KOR_NEW.png");
+    /*    background-image: url("@/assets/m_images/main/BELLYSHIP_MO_KOR_NEW.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;*/
@@ -639,7 +639,7 @@ body {
       }
     }
     &.eng {
-    /*  background-image: url("@/assets/m_images/main/BELLYSHIP_MO_ENG_NEW.png");*/
+      /*  background-image: url("@/assets/m_images/main/BELLYSHIP_MO_ENG_NEW.png");*/
       .nft-wrap {
         //margin-top: 590px;
       }
@@ -1033,7 +1033,6 @@ body {
   .level-belly {
     .head-title {
       margin: 100px auto 0px;
-
     }
     .level-list {
       width: 100%;
@@ -1102,10 +1101,32 @@ body {
             color: #dddddd;
           }
         }
+        .hide-mark {
+          display: none;
+          margin-top: 40px;
+          border-radius: 30px;
+          background: #f9f9f9;
+          text-align: center;
+          p {
+            font-family: "Sandoll Odongtong", sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #999;
+            text-align: center;
+          }
+        }
         &.belly {
           .tit {
             span {
               color: #ff5290;
+            }
+          }
+          &.hide {
+            .hide-mark {
+              display: block;
+              padding: 30% 20%;
             }
           }
         }
@@ -1115,11 +1136,23 @@ body {
               color: #c03dfe;
             }
           }
+          &.hide {
+            .hide-mark {
+              display: block;
+              padding: 30% 20%;
+            }
+          }
         }
         &.mega {
           .tit {
             span {
               color: #596aff;
+            }
+          }
+          &.hide {
+            .hide-mark {
+              display: block;
+              padding: 20%;
             }
           }
         }
@@ -1129,11 +1162,23 @@ body {
               color: #ff9d43;
             }
           }
+          &.hide {
+            .hide-mark {
+              display: block;
+              padding: 20%;
+            }
+          }
         }
         &.surprise {
           .tit {
             span {
               color: #ff72e0;
+            }
+          }
+          &.hide {
+            .hide-mark {
+              display: block;
+              padding: 20%;
             }
           }
         }
@@ -1143,9 +1188,81 @@ body {
               color: #8988ff;
             }
           }
+          &.hide {
+            .hide-mark {
+              display: block;
+              padding: 10% 10%;
+              .lock {
+                width: 50%;
+              }
+            }
+          }
+        }
+        &.hide {
+          .benefit-list,
+          .condition {
+            display: none;
+          }
         }
         & + .box {
           margin-top: 20px;
+        }
+      }
+    }
+    &.eng {
+      .level-list {
+        .box {
+          &.belly {
+            &.hide {
+              .hide-mark {
+                display: block;
+                padding: 52% 20%;
+              }
+            }
+          }
+          &.holic {
+            &.hide {
+              .hide-mark {
+                display: block;
+                padding: 38% 20%;
+              }
+            }
+          }
+          &.mega {
+            &.hide {
+              .hide-mark {
+                display: block;
+                padding: 25% 20%;
+              }
+            }
+          }
+          &.super {
+            &.hide {
+              .hide-mark {
+                display: block;
+                padding: 25% 20%;
+              }
+            }
+          }
+          &.surprise {
+            &.hide {
+              .hide-mark {
+                display: block;
+                padding: 25% 20%;
+              }
+            }
+          }
+          &.friend {
+            &.hide {
+              .hide-mark {
+                display: block;
+                padding: 10% 10%;
+                .lock {
+                  width: 50%;
+                }
+              }
+            }
+          }
         }
       }
     }

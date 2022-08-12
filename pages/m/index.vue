@@ -397,7 +397,10 @@
                     </ul>
                   </div>
                 </div>
-                <div class="level-belly">
+                <div
+                  class="level-belly"
+                  :class="{ eng: $store.getters.getLocale === 'ENG' }"
+                >
                   <div class="head-title">
                     <span class="label">
                       Bellygom Super Surprise Package Season 1
@@ -409,7 +412,7 @@
                     </p>
                   </div>
                   <div class="level-list">
-                    <div class="box belly">
+                    <div class="box belly hide">
                       <div class="tit"><span>Belly</span> Bellyship</div>
                       <p class="sub">
                         The Most Exclusively Astonishing Experience of the
@@ -442,8 +445,16 @@
                         *Transferable｜Belly World (twice a year)｜Shopping
                         (four times a year)｜Cinema (four times a year)
                       </span>
+                      <div class="hide-mark">
+                        <img
+                          src="@/assets/images/main/img_lock.svg"
+                          alt=""
+                          class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
-                    <div class="box holic">
+                    <div class="box holic hide">
                       <div class="tit"><span>Holic</span> Bellyship</div>
                       <p class="sub">A Magical Two-day Trip with Bellygom!</p>
                       <ul class="benefit-list">
@@ -468,8 +479,16 @@
                         The Plan: Belly World (twice a year)｜Shopping (twice a
                         year)｜Cinema (four times a year)
                       </span>
+                      <div class="hide-mark">
+                        <img
+                          src="@/assets/images/main/img_lock.svg"
+                          alt=""
+                          class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
-                    <div class="box mega">
+                    <div class="box mega hide">
                       <div class="tit"><span>Mega</span> Bellyship</div>
                       <p class="sub">Bellygom's Surprising Comfort!</p>
                       <ul class="benefit-list">
@@ -489,8 +508,16 @@
                         The Plan: Shopping (twice a year)｜Cinema (four times a
                         year)
                       </span>
+                      <div class="hide-mark">
+                        <img
+                          src="@/assets/images/main/img_lock.svg"
+                          alt=""
+                          class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
-                    <div class="box super">
+                    <div class="box super hide">
                       <div class="tit"><span>Super</span> Bellyship</div>
                       <p class="sub">
                         For Belly friends who want to experience more fun, more
@@ -512,8 +539,16 @@
                         The Plan: Shopping (twice a year)｜Cinema (four times a
                         year)
                       </span>
+                      <div class="hide-mark">
+                        <img
+                          src="@/assets/images/main/img_lock.svg"
+                          alt=""
+                          class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
-                    <div class="box surprise">
+                    <div class="box surprise hide">
                       <div class="tit"><span>Surprise</span> Bellyship</div>
                       <p class="sub">
                         My Very Own Private Secret Shopping Experience!
@@ -533,8 +568,16 @@
                       <span class="condition">
                         The Plan: Shopping (once a year)｜Cinema (twice a year)
                       </span>
+                      <div class="hide-mark">
+                        <img
+                          src="@/assets/images/main/img_lock.svg"
+                          alt=""
+                          class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
-                    <div class="box friend">
+                    <div class="box friend hide">
                       <div class="tit"><span>Friends</span> Bellyship</div>
                       <p class="sub">Double the Fun with Friends!</p>
                       <ul class="benefit-list">
@@ -548,6 +591,14 @@
                       <span class="condition"
                         >The Plan: Cinema (twice a year)</span
                       >
+                      <div class="hide-mark">
+                        <img
+                          src="@/assets/images/main/img_lock.svg"
+                          alt=""
+                          class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -677,7 +728,7 @@
                         <strong>벨리 패스</strong>
                         <p>
                           기다리기 싫어하는 벨리곰 홀더분들에게 시즌 별<br />‘줄
-                          안서는 벨리 패스’를 제공해드립니다.
+                          안서는 벨리 패스’를 제공합니다.
                         </p>
                       </li>
                       <li>
@@ -690,7 +741,7 @@
                         <strong>라이브 커머스 혜택</strong>
                         <p>
                           라이브 쇼핑 방송에서 벨리곰 홀더분들에게만<br />특별
-                          할인 혜택을 제공해 드립니다.
+                          할인 혜택을 제공합니다.
                         </p>
                       </li>
                       <li>
@@ -718,7 +769,7 @@
                     </p>
                   </div>
                   <div class="level-list">
-                    <div class="box belly">
+                    <div class="box belly hide">
                       <div class="tit"><span>Belly</span> Bellyship</div>
                       <p class="sub">
                         아무나 가질 수 없는<br />
@@ -753,8 +804,16 @@
                         >월드 연 2회<span class="divider">｜</span>쇼핑 연
                         4회<span class="divider">｜</span>시네마 연 4회
                       </span>
+                      <div class="hide-mark">
+                        <img
+                          src="@/assets/images/main/img_lock.svg"
+                          alt=""
+                          class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
-                    <div class="box holic">
+                    <div class="box holic hide">
                       <div class="tit"><span>Holic</span> Bellyship</div>
                       <p class="sub">벨리곰과 함께하는 마법같은 1박 2일!</p>
                       <ul class="benefit-list">
@@ -779,8 +838,16 @@
                         운영플랜: 월드 연 2회<span class="divider">｜</span>쇼핑
                         연 2회<span class="divider">｜</span>시네마 연 4회
                       </span>
+                      <div class="hide-mark">
+                        <img
+                          src="@/assets/images/main/img_lock.svg"
+                          alt=""
+                          class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
-                    <div class="box mega">
+                    <div class="box mega hide">
                       <div class="tit"><span>Mega</span> Bellyship</div>
                       <p class="sub">벨리곰이 선사하는 깜짝 놀랄 편안함!</p>
                       <ul class="benefit-list">
@@ -801,8 +868,16 @@
                         운영플랜: 쇼핑 연 2회<span class="divider">｜</span
                         >시네마 연 4회
                       </span>
+                      <div class="hide-mark">
+                        <img
+                          src="@/assets/images/main/img_lock.svg"
+                          alt=""
+                          class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
-                    <div class="box super">
+                    <div class="box super hide">
                       <div class="tit"><span>Super</span> Bellyship</div>
                       <p class="sub">
                         더 자주, 더 많이 경험하고 싶은 벨리친구들을 위해!
@@ -822,8 +897,16 @@
                         운영플랜: 쇼핑 연 2회<span class="divider">｜</span
                         >시네마 연 4회
                       </span>
+                      <div class="hide-mark">
+                        <img
+                          src="@/assets/images/main/img_lock.svg"
+                          alt=""
+                          class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
-                    <div class="box surprise">
+                    <div class="box surprise hide">
                       <div class="tit"><span>Surprise</span> Bellyship</div>
                       <p class="sub">프라이빗한 나만의 비밀 쇼핑 경험!</p>
                       <ul class="benefit-list">
@@ -841,8 +924,16 @@
                         운영플랜: 쇼핑 연 1회<span class="divider">｜</span
                         >시네마 연 2회
                       </span>
+                      <div class="hide-mark">
+                        <img
+                          src="@/assets/images/main/img_lock.svg"
+                          alt=""
+                          class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
-                    <div class="box friend">
+                    <div class="box friend hide">
                       <div class="tit"><span>Friends</span> Bellyship</div>
                       <p class="sub">친구와 함께하면 즐거움이 두배!</p>
                       <ul class="benefit-list">
@@ -853,6 +944,14 @@
                         NFT 소유자
                       </span>
                       <span class="condition">운영플랜: 시네마 연 2회 </span>
+                      <div class="hide-mark">
+                        <img
+                          src="@/assets/images/main/img_lock.svg"
+                          alt=""
+                          class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
                   </div>
                 </div>
