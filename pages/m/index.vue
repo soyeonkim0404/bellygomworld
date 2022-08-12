@@ -245,7 +245,7 @@
               </div>
             </div>
           </section>
-          <section class="section">
+          <section class="section bellyship-special">
             <div
               class="bellyship"
               :class="{ eng: $store.getters.getLocale === 'ENG' }"
@@ -278,14 +278,14 @@
                     class="h-5"
                   />
                   <img
-                      src="@/assets/m_images/main/img_heartballoon_06_en.svg"
-                      alt=""
-                      class="h-5"
+                    src="@/assets/m_images/main/img_heartballoon_06_en.svg"
+                    alt=""
+                    class="h-6"
                   />
                   <img
-                      src="@/assets/m_images/main/img_heartballoon_07_en.svg"
-                      alt=""
-                      class="h-5"
+                    src="@/assets/m_images/main/img_heartballoon_07_en.svg"
+                    alt=""
+                    class="h-7"
                   />
                 </div>
                 <div class="common-util">
@@ -392,7 +392,7 @@
                   </div>
                 </div>
                 <div class="level-belly">
-                  <div class="title">
+                  <div class="head-title">
                     <span class="label">
                       Bellygom Super Surprise Package Season 1
                     </span>
@@ -2117,7 +2117,7 @@ export default {
   border-radius: 40%;
   pointer-events: none;
   position: fixed;
-  top: 2%;
+  top: 3.5%;
   left: 50%;
   width: 100%;
   z-index: 1;

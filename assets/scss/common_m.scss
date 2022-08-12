@@ -606,10 +606,10 @@ body {
     position: relative;
     width: 100%;
     height: auto;
-    background-image: url("@/assets/m_images/main/BELLYSHIP_MO_KOR_NEW.png");
+/*    background-image: url("@/assets/m_images/main/BELLYSHIP_MO_KOR_NEW.png");
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
     padding-top: 90px;
 
     .b_top {
@@ -636,9 +636,9 @@ body {
       }
     }
     &.eng {
-      background-image: url("@/assets/m_images/main/BELLYSHIP_MO_ENG_NEW.png");
+    /*  background-image: url("@/assets/m_images/main/BELLYSHIP_MO_ENG_NEW.png");*/
       .nft-wrap {
-        margin-top: 590px;
+        //margin-top: 590px;
       }
     }
   }
@@ -697,7 +697,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 250px 0 0;
+    margin: 300px 0 0;
     text-align: center;
     .title {
       .label {
@@ -782,7 +782,11 @@ body {
   }
   .nft-wrap {
     position: relative;
-    margin-top: 680px;
+    padding-top: 680px;
+    background-image: url("@/assets/m_images/main/bg_bottom.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     .nft-slider {
       .swiper-container {
         .swiper-slide {
@@ -836,7 +840,7 @@ body {
 
   .loop-text2 {
     position: absolute;
-    top: 125px;
+    top: 770px;
     left: -10px;
     overflow: hidden;
     background: #4944e4;
@@ -1165,39 +1169,46 @@ body {
     }
     .h-1 {
       top: 185px;
-      left: 10px;
-      width: 120px;
+      left: 0.027%;
+      width: 33%;
     }
     .h-2 {
       top: 20px;
       left: 0px;
-      width: 150px;
+      width: 41%;
     }
     .h-3 {
       top: 135px;
-      left: 80px;
-      width: 130px;
-      z-index: 2;
+      left: 22%;
+      z-index: 3;
+      width: 36%;
     }
     .h-4 {
       top: 0px;
-      left: 110px;
-      width: 160px;
+      left: 30%;
+      width: 44%;
+      z-index: 2;
     }
     .h-5 {
       top: 40px;
       right: 5px;
-      width: 120px;
+      width: 33%;
     }
     .h-6 {
       top: 135px;
-      left: 180px;
-      width: 130px;
+      left: 50%;
+      width: 36%;
     }
     .h-7 {
       top: 210px;
-      left: 240px;
-      width: 100px;
+      left: 66%;
+      width: 27%;
     }
+  }
+  .bellyship-special {
+    background-image: url("@/assets/m_images/main/belly_bubble_bg.jpg ");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
   }
 }
