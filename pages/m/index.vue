@@ -2253,7 +2253,7 @@ export default {
   border-radius: 40%;
   pointer-events: none;
   position: fixed;
-  top: 3.5%;
+  top: 300px;
   left: 50%;
   width: 100%;
   z-index: 1;

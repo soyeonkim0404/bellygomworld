@@ -786,10 +786,7 @@ body {
   .nft-wrap {
     position: relative;
     padding-top: 680px;
-    background-image: url("@/assets/m_images/main/bg_bottom.png");
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    background: url("@/assets/m_images/main/bg_bottom.png") no-repeat center/cover;
     .nft-slider {
       .swiper-container {
         .swiper-slide {
@@ -798,6 +795,7 @@ body {
       }
     }
   }
+
   .loop-text {
     position: relative;
     overflow: hidden;
@@ -1326,9 +1324,6 @@ body {
     }
   }
   .bellyship-special {
-    background-image: url("@/assets/m_images/main/belly_bubble_bg.jpg ");
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    background: url("@/assets/m_images/main/belly_bubble_bg.jpg ") no-repeat center/cover;
   }
 }
