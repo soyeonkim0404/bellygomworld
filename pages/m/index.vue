@@ -880,7 +880,7 @@
                     <div class="box super hide">
                       <div class="tit"><span>Super</span> Bellyship</div>
                       <p class="sub">
-                        더 자주, 더 많이 경험하고 싶은 벨리친구들을 위해!
+                        더 자주, 더 많이 경험하고 싶은<br/>벨리친구들을 위해!
                       </p>
                       <ul class="benefit-list">
                         <li>

@@ -281,8 +281,8 @@
                           />
                         </span>
                         <strong>Limited Edition<br />Bellygom Merch</strong>
-                        <p style="width: 284px">
-                          Encounter the limited edition numbered action<br />
+                        <p>
+                          Encounter the limited edition numbered action
                           figures for all holders in the real world.<br />
                           (Only for NFT holders of 5 or more)
                         </p>
@@ -466,7 +466,7 @@
                     <div class="box super hide">
                       <div class="tit"><span>Super</span> Bellyship</div>
                       <p class="sub">
-                        For Belly friends who want to experience more fun, more
+                        For Belly friends who want to experience<br/>more fun, more
                         often!
                       </p>
                       <ul class="benefit-list">
@@ -696,7 +696,7 @@
                             alt=""
                           />
                         </span>
-                        <strong>Comming Soon</strong>
+                        <strong style="margin-top: 37px;">Comming Soon</strong>
                         <p></p>
                       </li>
                     </ul>
