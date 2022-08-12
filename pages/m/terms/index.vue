@@ -534,8 +534,8 @@
             <ul class="footer-list">
               <li>Hosting Service Provider: Woori Home Shopping</li>
               <li>
-                Business Inquiry:&nbsp;
-                <a href="mailto:business@bellygom.world">
+                Business Inquiry:
+                <a href="mailto:business@bellygom.world" class="mail">
                   business@bellygom.world
                 </a>
               </li>
