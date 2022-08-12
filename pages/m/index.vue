@@ -1009,7 +1009,7 @@
                     <ul class="footer-list">
                       <li>Hosting Service Provider: Woori Home Shopping</li>
                       <li>
-                        Business Inquiry :&nbsp;
+                        Business Inquiry:&nbsp;
                         <a href="mailto:business@bellygom.world">
                           business@bellygom.world
                         </a>
@@ -1030,7 +1030,7 @@
                     <ul class="footer-list">
                       <li>호스팅 서비스 사업자: (주)우리홈쇼핑</li>
                       <li>
-                        사업문의 :&nbsp;
+                        사업문의:&nbsp;
                         <a href="mailto:business@bellygom.world">
                           business@bellygom.world
                         </a>
