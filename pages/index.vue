@@ -244,23 +244,11 @@
                         </span>
                         <strong>Exciting<br />Lotte World</strong>
                         <p>
-                          Lotte World invites you to Bellygom World this
-                          October.<br />(feat. Family, Friends, Loved ones)
+                          Lotte World invites you to Bellygom Worl<br/>
+                          this October.(Partners allowed entry)
                         </p>
                       </li>
-                      <li>
-                        <span class="img-wrap">
-                          <img
-                            src="@/assets/images/main/img__bubble_02_eng.png"
-                            alt=""
-                          />
-                        </span>
-                        <strong>Limited Edition Bellygom Merch</strong>
-                        <p style="letter-spacing: -0.65px;">
-                          Encounter the limited edition<br />numbered action
-                          figures for all holders in the real world.
-                        </p>
-                      </li>
+
                       <li>
                         <span class="img-wrap">
                           <img
@@ -268,10 +256,25 @@
                             alt=""
                           />
                         </span>
-                        <strong>Global<br />Collab NFTs</strong>
+                        <strong>Global Collab<br/>NFTs</strong>
                         <p>
-                          Receive global top tier collaboration airdrop NFTs
-                          only for Bellygom holders.
+                          Given only to Bellygom NFT holders, global<br/>
+                          top tier collaboration NFT.<br/>
+                          Come get your voxel art Bellygom NFT.
+                        </p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/images/main/img__bubble_02_eng.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>Limited Edition<br/>Bellygom Merch</strong>
+                        <p style="width: 284px">
+                          Encounter the limited edition numbered action<br/>
+                          figures for all holders in the real world.<br/>
+                          (Only for NFT holders of 5 or more)
                         </p>
                       </li>
                       <li>
@@ -281,10 +284,10 @@
                             alt=""
                           />
                         </span>
-                        <strong>Invincible Coupon</strong>
+                        <strong>Invincible<br/>Coupon</strong>
                         <p>
-                          Get more special discounts on Bellygom's meticulously
-                          curated products in reality.
+                          Get more special discounts on Bellygom's<br/>
+                          meticulously curated products in reality.
                         </p>
                       </li>
                       <li>
@@ -294,29 +297,30 @@
                             alt=""
                           />
                         </span>
-                        <strong style="height: 66px;">Belly pass</strong>
+                        <strong>Belly pass</strong>
                         <p>
-                          For Bellygom holders who don't want to wait, we will
-                          provide seasonal "No Queues Bellygom Pass"
+                          For Bellygom holders who don't want to wait,<br/>
+                          we will provide seasonal "No Queues<br/>
+                          Bellygom Pass"
                         </p>
                       </li>
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/images/main/img__bubble_06.png"
+                              src="@/assets/images/main/img__bubble_06_eng.png"
                               alt=""
                           />
                         </span>
-                        <strong>라이브 커머스 혜택</strong>
+                        <strong>Live Commerce</strong>
                         <p>
-                          라이브 쇼핑 방송에서 벨리곰 홀더분들에게만<br/>
-                          특별 할인 혜택을 제공해 드립니다.
+                          There’ll be special Bellygom discounts<br/>
+                          on a live shopping show for holders only.
                         </p>
                       </li>
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/images/main/img__bubble_07.png"
+                              src="@/assets/images/main/img__bubble_07_eng.png"
                               alt=""
                           />
                         </span>
@@ -509,7 +513,7 @@
                   />
                 </div>
                 <div class="common-util">
-                  <div class="title">
+                  <div class="head-title">
                     <span class="label">
                       벨리곰 슈퍼 서프라이즈 패키지 시즌 1
                     </span>
@@ -620,201 +624,208 @@
                   </div>
                 </div>
                 <div class="level-belly">
-                  <div class="belly-dung">
-                    <img
-                      src="@/assets/images/main/img_bellyship_belly.png"
-                      alt="둥둥"
-                    />
-                  </div>
-                  <div class="box belly">
-                    <div class="tit"><span>Belly</span> Bellyship</div>
-                    <p class="sub">
-                      아무나 가질 수 없는<br />
-                      벨리곰 유니버스의 가장 놀라운 경험!
+                  <div class="head-title">
+                    <span class="label">
+                      벨리곰 슈퍼 서프라이즈 패키지 시즌 1
+                    </span>
+                    <h3>
+                      More Belly, More Surprise
+                    </h3>
+                    <p class="sub-txt">
+                      계속 업데이트 될, NFT만으로 누릴 수 있는 Belly Benefit
                     </p>
-                    <ul class="benefit-list">
-                      <li>
-                        벨리곰 시그니엘 프리미엄 패키지(프리미엄룸 + 클럽 +<br />
-                        발렛) <span class="red">* 양도가능</span>
-                      </li>
-                      <li>
-                        벨리곰 월드 프리미엄 패키지(롯데월드 숙박권 +
-                        매직패스권)
-                      </li>
-                      <li>
-                        벨리곰 쇼핑 프리미엄 패키지(홀더 전용 라이브 커머스
-                        입장권 +<br />
-                        깜짝 할인)
-                      </li>
-                      <li>
-                        벨리곰 시네마 프리미엄 패키지(롯데 시네마 샤롯데 2매
-                        +<br />
-                        스위트콤보, 음료 2개)
-                      </li>
-                    </ul>
-                    <span class="condition">
+                  </div>
+                  <div class="level-list">
+                    <div class="belly-dung">
+                      <img
+                          src="@/assets/images/main/img_bellyship_belly.png"
+                          alt="둥둥"
+                      />
+                    </div>
+                    <div class="box belly">
+                      <div class="tit"><span>Belly</span> Bellyship</div>
+                      <p class="sub">
+                        아무나 가질 수 없는<br />
+                        벨리곰 유니버스의 가장 놀라운 경험!
+                      </p>
+                      <ul class="benefit-list">
+                        <li>
+                          벨리곰 시그니엘 프리미엄 패키지(프리미엄룸 + 클럽 +<br />
+                          발렛) <span class="red">* 양도가능</span>
+                        </li>
+                        <li>
+                          벨리곰 월드 프리미엄 패키지(롯데월드 숙박권 +
+                          매직패스권)
+                        </li>
+                        <li>
+                          벨리곰 쇼핑 프리미엄 패키지(홀더 전용 라이브 커머스
+                          입장권 +<br />
+                          깜짝 할인)
+                        </li>
+                        <li>
+                          벨리곰 시네마 프리미엄 패키지(롯데 시네마 샤롯데 2매
+                          +<br />
+                          스위트콤보, 음료 2개)
+                        </li>
+                      </ul>
+                      <span class="condition">
                       자격요건: 30명<span class="divider">｜</span>벨리급 NFT 소유자 or 벨리곰 NFT 500개 이상
                       소유자
                     </span>
-                    <span class="condition">
+                      <span class="condition">
                       운영플랜: 시그니엘 연 2회(양도 가능)<span class="divider">｜</span>월드 연 2회<span class="divider">｜</span>쇼핑 연
                       4회<span class="divider">｜</span> 시네마 연 4회
                     </span>
-                    <div class="hide-mark">
-                      <img
-                        src="@/assets/images/main/img_lock.svg"
-                        alt=""
-                        class="lock"
-                      />
-                      <p>Comming Soon!</p>
+                      <div class="hide-mark">
+                        <img
+                            src="@/assets/images/main/img_lock.svg"
+                            alt=""
+                            class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
-                  </div>
-                  <div class="box holic hide">
-                    <div class="tit"><span>Holic</span> Bellyship</div>
-                    <p class="sub">벨리곰과 함께하는 마법같은 1박 2일!</p>
-                    <ul class="benefit-list">
-                      <li>
-                        벨리곰 월드 프리미엄 패키지(롯데월드 숙박권 +
-                        매직패스권)
-                      </li>
-                      <li>
-                        벨리곰 쇼핑 프리미엄 패키지(홀더 전용 라이브 커머스
-                        입장권 +<br />
-                        깜짝 할인)
-                      </li>
-                      <li>
-                        벨리곰 시네마 프리미엄 패키지(롯데 시네마 샤롯데 2매
-                        +<br />
-                        스위트콤보, 음료 2개)
-                      </li>
-                    </ul>
-                    <span class="condition">
+                    <div class="box holic hide">
+                      <div class="tit"><span>Holic</span> Bellyship</div>
+                      <p class="sub">벨리곰과 함께하는 마법같은 1박 2일!</p>
+                      <ul class="benefit-list">
+                        <li>
+                          벨리곰 월드 프리미엄 패키지(롯데월드 숙박권 +
+                          매직패스권)
+                        </li>
+                        <li>
+                          벨리곰 쇼핑 프리미엄 패키지(홀더 전용 라이브 커머스
+                          입장권 +<br />
+                          깜짝 할인)
+                        </li>
+                        <li>
+                          벨리곰 시네마 프리미엄 패키지(롯데 시네마 샤롯데 2매
+                          +<br />
+                          스위트콤보, 음료 2개)
+                        </li>
+                      </ul>
+                      <span class="condition">
                       자격요건: 100명<span class="divider">｜</span>홀릭급 NFT 소유자 or 벨리곰 NFT 300개
                       이상<br />
                       소유자
                     </span>
-                    <span class="condition">
+                      <span class="condition">
                       운영플랜: 월드 연 2회<span class="divider">｜</span>쇼핑 연 2회<span class="divider">｜</span>시네마 연 4회
                     </span>
-                    <div class="hide-mark">
-                      <img
-                        src="@/assets/images/main/img_lock.svg"
-                        alt=""
-                        class="lock"
-                      />
-                      <p>Comming Soon!</p>
+                      <div class="hide-mark">
+                        <img
+                            src="@/assets/images/main/img_lock.svg"
+                            alt=""
+                            class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
-                  </div>
-                  <div class="box mega">
-                    <div class="tit"><span>Mega</span> Bellyship</div>
-                    <p class="sub">벨리곰이 선사하는 깜짝 놀랄 편안함!</p>
-                    <ul class="benefit-list">
-                      <li>
-                        벨리곰 쇼핑 프리미엄 패키지(홀더 전용 라이브 커머스
-                        입장권 +<br />깜짝 할인)
-                      </li>
-                      <li>
-                        벨리곰 시네마 프리미엄 패키지(롯데 시네마 샤롯데 2매
-                        +<br />
-                        스위트콤보, 음료 2개)
-                      </li>
-                    </ul>
-                    <span class="condition">
+                    <div class="box mega">
+                      <div class="tit"><span>Mega</span> Bellyship</div>
+                      <p class="sub">벨리곰이 선사하는 깜짝 놀랄 편안함!</p>
+                      <ul class="benefit-list">
+                        <li>
+                          벨리곰 쇼핑 프리미엄 패키지(홀더 전용 라이브 커머스
+                          입장권 +<br />깜짝 할인)
+                        </li>
+                        <li>
+                          벨리곰 시네마 프리미엄 패키지(롯데 시네마 샤롯데 2매
+                          +<br />
+                          스위트콤보, 음료 2개)
+                        </li>
+                      </ul>
+                      <span class="condition">
                       자격요건: 500명<span class="divider">｜</span>메가급 NFT 소유자
                     </span>
-                    <span class="condition">
+                      <span class="condition">
                       운영플랜: 쇼핑 연 2회<span class="divider">｜</span>시네마 연 4회
                     </span>
-                    <div class="hide-mark">
-                      <img
-                        src="@/assets/images/main/img_lock.svg"
-                        alt=""
-                        class="lock"
-                      />
-                      <p>Comming Soon!</p>
+                      <div class="hide-mark">
+                        <img
+                            src="@/assets/images/main/img_lock.svg"
+                            alt=""
+                            class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
-                  </div>
-                  <div class="box super">
-                    <div class="tit"><span>Super</span> Bellyship</div>
-                    <p class="sub">
-                      더 자주, 더 많이 경험하고 싶은 벨리친구들을 위해!
-                    </p>
-                    <ul class="benefit-list">
-                      <li>
-                        벨리곰 쇼핑 프리미엄 패키지(홀더 전용 라이브 커머스
-                        입장권 +<br />
-                        깜짝 할인)
-                      </li>
-                      <li>벨리곰 시네마 패키지(롯데 시네마 관람권 2매)</li>
-                    </ul>
-                    <span class="condition">
+                    <div class="box super">
+                      <div class="tit"><span>Super</span> Bellyship</div>
+                      <p class="sub">
+                        더 자주, 더 많이 경험하고 싶은 벨리친구들을 위해!
+                      </p>
+                      <ul class="benefit-list">
+                        <li>
+                          벨리곰 쇼핑 프리미엄 패키지(홀더 전용 라이브 커머스
+                          입장권 +<br />
+                          깜짝 할인)
+                        </li>
+                        <li>벨리곰 시네마 패키지(롯데 시네마 관람권 2매)</li>
+                      </ul>
+                      <span class="condition">
                       자격요건: 1,500명<span class="divider">｜</span>슈퍼급 NFT 소유자
                     </span>
-                    <span class="condition">
+                      <span class="condition">
                       운영플랜: 쇼핑 연 2회<span class="divider">｜</span>시네마 연 4회
                     </span>
-                    <div class="hide-mark">
-                      <img
-                        src="@/assets/images/main/img_lock.svg"
-                        alt=""
-                        class="lock"
-                      />
-                      <p>Comming Soon!</p>
+                      <div class="hide-mark">
+                        <img
+                            src="@/assets/images/main/img_lock.svg"
+                            alt=""
+                            class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
-                  </div>
-                  <div class="box surprise">
-                    <div class="tit"><span>Surprise</span> Bellyship</div>
-                    <p class="sub">프라이빗한 나만의 비밀 쇼핑 경험!</p>
-                    <ul class="benefit-list">
-                      <li>
-                        벨리곰 쇼핑 프리미엄 패키지(홀더 전용 라이브 커머스
-                        입장권 +<br />
-                        깜짝 할인)
-                      </li>
-                      <li>벨리곰 시네마 패키지(롯데 시네마 관람권 2매)</li>
-                    </ul>
-                    <span class="condition">
+                    <div class="box surprise">
+                      <div class="tit"><span>Surprise</span> Bellyship</div>
+                      <p class="sub">프라이빗한 나만의 비밀 쇼핑 경험!</p>
+                      <ul class="benefit-list">
+                        <li>
+                          벨리곰 쇼핑 프리미엄 패키지(홀더 전용 라이브 커머스
+                          입장권 +<br />
+                          깜짝 할인)
+                        </li>
+                        <li>벨리곰 시네마 패키지(롯데 시네마 관람권 2매)</li>
+                      </ul>
+                      <span class="condition">
                       자격요건: 3,500명 <span class="divider">｜</span>서프라이즈급 NFT 소유자
                     </span>
-                    <span class="condition">
+                      <span class="condition">
                       운영플랜: 쇼핑 연 1회 <span class="divider">｜</span>시네마 연 2회
                     </span>
-                    <div class="hide-mark">
-                      <img
-                        src="@/assets/images/main/img_lock.svg"
-                        alt=""
-                        class="lock"
-                      />
-                      <p>Comming Soon!</p>
+                      <div class="hide-mark">
+                        <img
+                            src="@/assets/images/main/img_lock.svg"
+                            alt=""
+                            class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
-                  </div>
-                  <div class="box friend">
-                    <div class="tit"><span>Friends</span> Bellyship</div>
-                    <p class="sub">친구와 함께하면 즐거움이 두배!</p>
-                    <ul class="benefit-list">
-                      <li>벨리곰 시네마 패키지 (롯데 시네마 관람권 2매)</li>
-                    </ul>
-                    <span class="condition">
+                    <div class="box friend">
+                      <div class="tit"><span>Friends</span> Bellyship</div>
+                      <p class="sub">친구와 함께하면 즐거움이 두배!</p>
+                      <ul class="benefit-list">
+                        <li>벨리곰 시네마 패키지 (롯데 시네마 관람권 2매)</li>
+                      </ul>
+                      <span class="condition">
                       자격요건: 4,370명<span class="divider">｜</span>프렌즈급 NFT 소유자
                     </span>
-                    <span class="condition">운영플랜: 시네마 연 2회 </span>
-                    <div class="hide-mark">
-                      <img
-                        src="@/assets/images/main/img_lock.svg"
-                        alt=""
-                        class="lock"
-                      />
-                      <p>Comming Soon!</p>
+                      <span class="condition">운영플랜: 시네마 연 2회 </span>
+                      <div class="hide-mark">
+                        <img
+                            src="@/assets/images/main/img_lock.svg"
+                            alt=""
+                            class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
                   </div>
                 </div>
                 <div class="season">
-                  <strong>벨리곰 슈퍼 서프라이즈 패키지 시즌 1</strong>
-                  <div class="tit">
-                    More Belly, More Surprise<br />
-                    계속 업데이트 될, NFT만으로 누릴 수 있는<br />
-                    Belly Benefit
-                  </div>
                   <p>* 일부 혜택은 NFT로 에어드랍되어 양도 가능합니다.</p>
                 </div>
               </template>

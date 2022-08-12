@@ -284,7 +284,7 @@
                       >Bellygom Super Surprise Package Season 1</span
                     >
                     <h3>An Amazing Experience<br />for Bellygom's Friends</h3>
-                    <ul class="desc" style="margin: 10px auto 10px 12px;">
+                    <ul class="desc">
                       <li>
                         <strong>Eligibility</strong> All Bellygom NFT holders
                         are eligible
