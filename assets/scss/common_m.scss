@@ -40,6 +40,9 @@ body {
             a {
               text-decoration: underline;
               text-underline-position: under;
+              &.mail {
+                margin-left: 1px;
+              }
             }
             & + li {
               margin-left: 0;
