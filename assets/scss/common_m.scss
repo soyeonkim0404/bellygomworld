@@ -40,6 +40,9 @@ body {
             a {
               text-decoration: underline;
               text-underline-position: under;
+              &.mail {
+                margin-left: 1px;
+              }
             }
             & + li {
               margin-left: 0;
@@ -606,10 +609,12 @@ body {
     position: relative;
     width: 100%;
     height: auto;
-    background-image: url("@/assets/m_images/main/BELLYSHIP_MO_BG.png");
+    /*    background-image: url("@/assets/m_images/main/BELLYSHIP_MO_KOR_NEW.png");
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
+    padding-top: 90px;
+
     .b_top {
       display: block;
       margin: 0 auto;
@@ -633,10 +638,155 @@ body {
         }
       }
     }
+    &.eng {
+      /*  background-image: url("@/assets/m_images/main/BELLYSHIP_MO_ENG_NEW.png");*/
+      .nft-wrap {
+        //margin-top: 590px;
+      }
+    }
   }
-
+  .head-title {
+    text-align: center;
+    .label {
+      display: inline-block;
+      padding: 8px 20px 7px;
+      margin: 0 auto;
+      color: #fff;
+      font-size: 14px;
+      line-height: 1.5;
+      background: #4944e4;
+      border-radius: 18px;
+    }
+    h3 {
+      margin-top: 15px;
+      font-size: 24px;
+      font-weight: normal;
+      line-height: 1.5;
+      letter-spacing: -0.5px;
+      font-family: "Sandoll Odongtong", sans-serif;
+    }
+    .desc {
+      margin: 10px auto 10px 27px;
+      text-align: left;
+      li {
+        position: relative;
+        font-size: 14px;
+        line-height: 1.5;
+        padding-left: 9px;
+        + li {
+          margin-top: 5px;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          width: 4px;
+          height: 4px;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          border-radius: 50%;
+          background: #000;
+        }
+      }
+    }
+    .sub-txt {
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 1.5;
+      font-family: "Sandoll GothicNeoRound", sans-serif;
+    }
+  }
+  .common-util {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 300px 0 0;
+    text-align: center;
+    .title {
+      .label {
+        display: inline-block;
+        padding: 8px 20px 7px;
+        margin: 0 auto;
+        color: #fff;
+        font-size: 14px;
+        line-height: 1.5;
+        background: #4944e4;
+        border-radius: 18px;
+      }
+      h3 {
+        margin-top: 15px;
+        font-size: 24px;
+        font-weight: normal;
+        line-height: 1.5;
+        letter-spacing: -0.5px;
+        font-family: "Sandoll Odongtong", sans-serif;
+      }
+      .desc {
+        margin: 10px auto 10px 27px;
+        text-align: left;
+        li {
+          position: relative;
+          font-size: 14px;
+          line-height: 1.5;
+          padding-left: 9px;
+          + li {
+            margin-top: 5px;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 50%;
+            background: #000;
+          }
+        }
+      }
+    }
+    .content {
+      padding: 0 20px;
+      ul {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        li {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          + li {
+            margin-top: 50px;
+          }
+          .img-wrap {
+            display: inline-block;
+            width: 240px;
+          }
+          strong {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 24px;
+            line-height: 1.5;
+            font-weight: normal;
+            font-family: "Sandoll Odongtong", sans-serif;
+          }
+          p {
+            margin-top: 10px;
+            padding: 0 10px;
+            font-size: 16px;
+            line-height: 1.5;
+            word-break: keep-all;
+          }
+        }
+      }
+    }
+  }
   .nft-wrap {
     position: relative;
+    padding-top: 680px;
+    background: url("@/assets/m_images/main/bg_bottom.png") no-repeat center/cover;
     .nft-slider {
       .swiper-container {
         .swiper-slide {
@@ -645,6 +795,7 @@ body {
       }
     }
   }
+
   .loop-text {
     position: relative;
     overflow: hidden;
@@ -690,7 +841,7 @@ body {
 
   .loop-text2 {
     position: absolute;
-    top: 125px;
+    top: 770px;
     left: -10px;
     overflow: hidden;
     background: #4944e4;
@@ -819,7 +970,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 100px;
+    padding-bottom: 120px;
     .title {
       margin-top: 80px;
       font-family: "Sandoll Odongtong", sans-serif;
@@ -841,8 +992,8 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 0 16px;
-        height: 55px;
+        padding: 0 27px;
+        height: 80px;
         &.full {
           width: 100%;
           flex: 0 0 100%;
@@ -859,7 +1010,8 @@ body {
               width: 79.25%;
             }
           }
-          :nth-child(3), :nth-child(4)  {
+          :nth-child(3),
+          :nth-child(4) {
             padding-top: 20px;
           }
         }
@@ -874,5 +1026,304 @@ body {
         }
       }
     }
+  }
+  /*level-belly*/
+  .level-belly {
+    .head-title {
+      margin: 100px auto 0px;
+    }
+    .level-list {
+      width: 100%;
+      padding: 0 20px;
+      margin-top: 100px;
+      box-sizing: border-box;
+      .box {
+        height: auto;
+        background: $white;
+        padding: 50px 20px;
+        border-radius: 50px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+        .tit {
+          font-family: "Sandoll Odongtong", sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 26px;
+          line-height: 39px;
+        }
+        .sub {
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 27px;
+        }
+        .benefit-list {
+          padding-top: 30px;
+          margin-top: 30px;
+          border-top: 1px solid #ddd;
+          li {
+            position: relative;
+            padding-left: 10px;
+            font-size: 16px;
+            line-height: 24px;
+            &::before {
+              content: "";
+              display: block;
+              position: absolute;
+              width: 4px;
+              height: 4px;
+              border-radius: 100%;
+              background: $black;
+              top: 9px;
+              left: 0;
+            }
+            & + li {
+              margin-top: 10px;
+            }
+            .red {
+              font-size: 14px;
+              font-weight: bold;
+              line-height: 21px;
+              color: #ff0000;
+            }
+          }
+        }
+        .condition {
+          display: block;
+          margin-top: 30px;
+          font-size: 16px;
+          line-height: 24px;
+          color: #666;
+          & + .condition {
+            margin-top: 5px;
+          }
+          .divider {
+            color: #dddddd;
+          }
+        }
+        .hide-mark {
+          display: none;
+          margin-top: 40px;
+          border-radius: 30px;
+          background: #f9f9f9;
+          text-align: center;
+          p {
+            font-family: "Sandoll Odongtong", sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #999;
+            text-align: center;
+          }
+        }
+        &.belly {
+          .tit {
+            span {
+              color: #ff5290;
+            }
+          }
+          &.hide {
+            .hide-mark {
+              display: block;
+              padding: 30% 20%;
+            }
+          }
+        }
+        &.holic {
+          .tit {
+            span {
+              color: #c03dfe;
+            }
+          }
+          &.hide {
+            .hide-mark {
+              display: block;
+              padding: 30% 20%;
+            }
+          }
+        }
+        &.mega {
+          .tit {
+            span {
+              color: #596aff;
+            }
+          }
+          &.hide {
+            .hide-mark {
+              display: block;
+              padding: 20%;
+            }
+          }
+        }
+        &.super {
+          .tit {
+            span {
+              color: #ff9d43;
+            }
+          }
+          &.hide {
+            .hide-mark {
+              display: block;
+              padding: 20%;
+            }
+          }
+        }
+        &.surprise {
+          .tit {
+            span {
+              color: #ff72e0;
+            }
+          }
+          &.hide {
+            .hide-mark {
+              display: block;
+              padding: 20%;
+            }
+          }
+        }
+        &.friend {
+          .tit {
+            span {
+              color: #8988ff;
+            }
+          }
+          &.hide {
+            .hide-mark {
+              display: block;
+              padding: 10% 10%;
+              .lock {
+                width: 50%;
+              }
+            }
+          }
+        }
+        &.hide {
+          .benefit-list,
+          .condition {
+            display: none;
+          }
+        }
+        & + .box {
+          margin-top: 20px;
+        }
+      }
+    }
+    &.eng {
+      .level-list {
+        .box {
+          &.belly {
+            &.hide {
+              .hide-mark {
+                display: block;
+                padding: 52% 20%;
+              }
+            }
+          }
+          &.holic {
+            &.hide {
+              .hide-mark {
+                display: block;
+                padding: 38% 20%;
+              }
+            }
+          }
+          &.mega {
+            &.hide {
+              .hide-mark {
+                display: block;
+                padding: 25% 20%;
+              }
+            }
+          }
+          &.super {
+            &.hide {
+              .hide-mark {
+                display: block;
+                padding: 25% 20%;
+              }
+            }
+          }
+          &.surprise {
+            &.hide {
+              .hide-mark {
+                display: block;
+                padding: 25% 20%;
+              }
+            }
+          }
+          &.friend {
+            &.hide {
+              .hide-mark {
+                display: block;
+                padding: 10% 10%;
+                .lock {
+                  width: 50%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .season {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    margin-top: 100px;
+    p {
+      font-size: 18px;
+      line-height: 27px;
+      opacity: 0.5;
+    }
+  }
+  .belly-heart {
+    position: relative;
+    width: 100%;
+    height: 310px;
+    box-sizing: border-box;
+    img {
+      position: absolute;
+      object-fit: contain;
+    }
+    .h-1 {
+      top: 185px;
+      left: 0.027%;
+      width: 33%;
+    }
+    .h-2 {
+      top: 20px;
+      left: 0px;
+      width: 41%;
+    }
+    .h-3 {
+      top: 135px;
+      left: 22%;
+      z-index: 3;
+      width: 36%;
+    }
+    .h-4 {
+      top: 0px;
+      left: 30%;
+      width: 44%;
+      z-index: 2;
+    }
+    .h-5 {
+      top: 40px;
+      right: 5px;
+      width: 33%;
+    }
+    .h-6 {
+      top: 135px;
+      left: 50%;
+      width: 36%;
+    }
+    .h-7 {
+      top: 210px;
+      left: 66%;
+      width: 27%;
+    }
+  }
+  .bellyship-special {
+    background: url("@/assets/m_images/main/belly_bubble_bg.jpg ") no-repeat center/cover;
   }
 }

@@ -193,9 +193,9 @@ export default {
       } else {
         if (window.confirm("지갑연결을 하시겠습니까?")) {
           try {
-            this.isConnect = true
             const klaytn = window.klaytn; //크롬에 깔린 카이카스 확장프로그램 안에는 klaytn 이 내장되어있다.
             const accounts = await klaytn.enable(); //카이카스 로그인
+            this.isConnect = true
           } catch (err) {
             alert("Kaikas 지갑이 설치되어 있지 않습니다.\n크롬에서 Kaikas 확장 프로그램을 설치해주세요!");
             window.open("https://chrome.google.com/webstore/detail/kaikas/jblndlipeogpafnldhgmapagcccfchpi")
