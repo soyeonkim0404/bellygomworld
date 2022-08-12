@@ -194,29 +194,39 @@
               <template v-if="$store.getters.getLocale === 'ENG'">
                 <div class="belly-heart">
                   <img
-                    src="@/assets/images/main/img_heartballoon_01_en.png"
+                    src="@/assets/images/main/img_heartballoon_01_en.svg"
                     alt=""
                     class="h-1"
                   />
                   <img
-                    src="@/assets/images/main/img_heartballoon_02_en.png"
+                    src="@/assets/images/main/img_heartballoon_02_en.svg"
                     alt=""
                     class="h-2"
                   />
                   <img
-                    src="@/assets/images/main/img_heartballoon_03_en.png"
+                    src="@/assets/images/main/img_heartballoon_03_en.svg"
                     alt=""
                     class="h-3"
                   />
                   <img
-                    src="@/assets/images/main/img_heartballoon_04_en.png"
+                    src="@/assets/images/main/img_heartballoon_04_en.svg"
                     alt=""
                     class="h-4"
                   />
                   <img
-                    src="@/assets/images/main/img_heartballoon_05_en.png"
+                    src="@/assets/images/main/img_heartballoon_05_en.svg"
                     alt=""
                     class="h-5"
+                  />
+                  <img
+                      src="@/assets/images/main/img_heartballoon_06_en.svg"
+                      alt=""
+                      class="h-6"
+                  />
+                  <img
+                      src="@/assets/images/main/img_heartballoon_07_en.svg"
+                      alt=""
+                      class="h-7"
                   />
                 </div>
                 <div class="common-util">
@@ -244,7 +254,7 @@
                         </span>
                         <strong>Exciting<br />Lotte World</strong>
                         <p>
-                          Lotte World invites you to Bellygom Worl<br/>
+                          Lotte World invites you to Bellygom World<br/>
                           this October.(Partners allowed entry)
                         </p>
                       </li>
@@ -327,6 +337,29 @@
                         <strong>Comming Soon</strong>
                         <p>
                         </p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/images/main/img__bubble_06.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>라이브 커머스 혜택</strong>
+                        <p>
+                          라이브 쇼핑 방송에서 벨리곰 홀더분들에게만<br/>
+                          특별 할인 혜택을 제공해 드립니다.
+                        </p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/images/main/img__bubble_07.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>Comming Soon</strong>
+                        <p></p>
                       </li>
                     </ul>
                   </div>
@@ -487,27 +520,27 @@
               <template v-else>
                 <div class="belly-heart">
                   <img
-                    src="@/assets/images/main/img_heartballoon_01.png"
+                    src="@/assets/images/main/img_heartballoon_01.svg"
                     alt=""
                     class="h-1"
                   />
                   <img
-                    src="@/assets/images/main/img_heartballoon_02.png"
+                    src="@/assets/images/main/img_heartballoon_02.svg"
                     alt=""
                     class="h-2"
                   />
                   <img
-                    src="@/assets/images/main/img_heartballoon_03.png"
+                    src="@/assets/images/main/img_heartballoon_03.svg"
                     alt=""
                     class="h-3"
                   />
                   <img
-                    src="@/assets/images/main/img_heartballoon_04.png"
+                    src="@/assets/images/main/img_heartballoon_04.svg"
                     alt=""
                     class="h-4"
                   />
                   <img
-                    src="@/assets/images/main/img_heartballoon_05.png"
+                    src="@/assets/images/main/img_heartballoon_05.svg"
                     alt=""
                     class="h-5"
                   />
