@@ -1364,12 +1364,12 @@
           </ul>
           <div class="list-title">2차 경쟁 화이트리스트 세일</div>
           <ul class="road-list">
-            <li>수량 3,000개</li>
+            <li>수량 4,000개</li>
             <li>트랜잭션당 2개</li>
           </ul>
           <div class="list-title">3차 퍼블릭 세일</div>
           <ul class="road-list">
-            <li>수량:3,900개</li>
+            <li>수량:3,500개</li>
             <li>트랜잭션당 5개</li>
           </ul>
           <div class="notice">
@@ -1662,7 +1662,7 @@ export default {
   components: { Footer },
   data() {
     return {
-      mintingModal: true,
+      mintingModal: false,
       showStoryModal: false,
       currIndi: 1,
       faqShow: false,
@@ -1721,11 +1721,11 @@ export default {
             this.cloudMoved = false;
             document.querySelector(".top-btn").style.opacity = 0;
             document.querySelector(".story-modal-btn").classList.remove("up");
-            document.querySelector(".mint-modal-btn").classList.remove("up");
+            //document.querySelector(".mint-modal-btn").classList.remove("up");
           } else {
             document.querySelector(".top-btn").style.opacity = 1;
             document.querySelector(".story-modal-btn").classList.add("up");
-            document.querySelector(".mint-modal-btn").classList.add("up");
+            //document.querySelector(".mint-modal-btn").classList.add("up");
           }
           const charHeight = (window.innerWidth * 0.375) / 2;
           if (destination.index === 0) {
