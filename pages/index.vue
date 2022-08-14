@@ -1309,12 +1309,12 @@
           </ul>
           <div class="list-title">2nd Whitelist (Competition)</div>
           <ul class="road-list">
-            <li>Remaining - 3,000</li>
+            <li>Remaining - 4,000</li>
             <li>Per Transaction - 2</li>
           </ul>
           <div class="list-title">Public Sale</div>
           <ul class="road-list">
-            <li>Remaining - 3,900</li>
+            <li>Remaining - 3,500</li>
             <li>Per Transaction - 5</li>
           </ul>
           <div class="notice">
