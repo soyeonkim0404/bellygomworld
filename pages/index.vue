@@ -655,12 +655,12 @@
           </ul>
           <div class="list-title">2차 경쟁 화이트리스트 세일</div>
           <ul class="road-list">
-            <li>수량 3,000개</li>
+            <li>수량 4,000개</li>
             <li>트랜잭션당 2개</li>
           </ul>
           <div class="list-title">3차 퍼블릭 세일</div>
           <ul class="road-list">
-            <li>수량:3,900개</li>
+            <li>수량:3,500개</li>
             <li>트랜잭션당 5개</li>
           </ul>
           <div class="notice">
