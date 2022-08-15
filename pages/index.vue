@@ -2,6 +2,28 @@
   <div id="main">
     <div class="inner">
       <client-only>
+        <div class="bubble">
+          <img
+              class="b-1"
+              src="@/assets/images/main/img_bellyship_bubble_01.png"
+              alt=""
+          />
+          <img
+              class="b-2"
+              src="@/assets/images/main/img_bellyship_bubble_02.png"
+              alt=""
+          />
+          <img
+              class="b-3"
+              src="@/assets/images/main/img_bellyship_bubble_03.png"
+              alt=""
+          />
+          <img
+              class="b-4"
+              src="@/assets/images/main/img_bellyship_bubble_04.png"
+              alt=""
+          />
+        </div>
         <div class="wrapper">
           <full-page ref="fullpage" :options="options" id="fullpage">
             <section class="section">
@@ -190,7 +212,7 @@
                 </div>
               </div>
             </section>
-            <section class="section fp-auto-height bellyship-special">
+            <section class="section bellyship-special">
               <div class="bellyship">
                 <template v-if="$store.getters.getLocale === 'ENG'">
                   <div class="belly-heart">
@@ -917,6 +939,131 @@
                   <div class="season">
                     <p>* 일부 혜택은 NFT로 에어드랍되어 양도 가능합니다.</p>
                   </div>
+                  <div class="nft-wrap">
+                    <!--nft 슬라이더-->
+                    <div class="loop-text2">
+                      <div class="text">
+                        <span>&nbsp &middot &nbsp NFT BELLYGOM</span>
+                      </div>
+                    </div>
+                    <div class="nft-image-loop">
+                      <div class="image-item">
+                        <img
+                            src="@/assets/images/main/img_NFT_01.png"
+                            alt=""
+                            class="nft-img"
+                        />
+                        <img
+                            src="@/assets/images/main/img_NFT_02.png"
+                            alt=""
+                            class="nft-img"
+                        />
+                        <img
+                            src="@/assets/images/main/img_NFT_03.png"
+                            alt=""
+                            class="nft-img"
+                        />
+                        <img
+                            src="@/assets/images/main/img_NFT_04.png"
+                            alt=""
+                            class="nft-img"
+                        />
+                        <img
+                            src="@/assets/images/main/img_NFT_05.png"
+                            alt=""
+                            class="nft-img"
+                        />
+                      </div>
+                      <div class="image-item">
+                        <img
+                            src="@/assets/images/main/img_NFT_01.png"
+                            alt=""
+                            class="nft-img"
+                        />
+                        <img
+                            src="@/assets/images/main/img_NFT_02.png"
+                            alt=""
+                            class="nft-img"
+                        />
+                        <img
+                            src="@/assets/images/main/img_NFT_03.png"
+                            alt=""
+                            class="nft-img"
+                        />
+                        <img
+                            src="@/assets/images/main/img_NFT_04.png"
+                            alt=""
+                            class="nft-img"
+                        />
+                        <img
+                            src="@/assets/images/main/img_NFT_05.png"
+                            alt=""
+                            class="nft-img"
+                        />
+                      </div>
+                    </div>
+                    <div class="loop-text">
+                      <div class="text">
+                        <span>&nbsp &middot &nbsp NFT BELLYGOM</span>
+                      </div>
+                    </div>
+
+                    <div class="partners">
+                      <div class="title">PARTNERS</div>
+                      <ul class="list">
+                        <li class="half-end">
+                          <img
+                              src="@/assets/images/main/img_parteners_logo_sandbox.png"
+                              alt=""
+                              style="width: 470px"
+                          />
+                        </li>
+                        <li class="half-start">
+                          <img
+                              src="@/assets/images/main/img_parteners_logo__groundx.png"
+                              alt=""
+                              style="width: 470px"
+                          />
+                        </li>
+                        <li>
+                          <img
+                              src="@/assets/images/main/img_parteners_logo_sunmiya.png"
+                              alt=""
+                              style="width: 300px"
+                          />
+                        </li>
+                        <li>
+                          <img
+                              src="@/assets/images/main/img_parteners_logo_happier_town.png"
+                              alt=""
+                              style="width: 307px"
+                          />
+                        </li>
+                        <li>
+                          <img
+                              src="@/assets/images/main/img_parteners_logo_mimyo.png"
+                              alt=""
+                              style="width: 196px"
+                          />
+                        </li>
+                        <!--                    <li>
+                          <img
+                              src="@/assets/images/main/img_parteners_logo_sandbox.png"
+                              alt=""
+                              style="width: 230px"
+                          />
+                        </li>
+                        <li>
+                          <img
+                            src="@/assets/images/main/img_parteners_logo_stepn.png"
+                            alt=""
+                            style="width: 239px"
+                          />
+                        </li>
+                        <li></li>-->
+                      </ul>
+                    </div>
+                  </div>
                 </template>
 
                 <div class="nft-wrap">
@@ -1110,7 +1257,575 @@
                 </div>
               </div>
             </section>
-            <section class="section fp-auto-height">
+            <section class="section fp-auto-height fixed-bg">
+              <template v-if="$store.getters.getLocale === 'ENG'">
+                <div class="common-util">
+                  <div class="head-title">
+                    <span class="label">
+                      Bellygom Super Surprise Package Season 1
+                    </span>
+                    <h3>An Amazing Experience for<br />Bellygom's Friends</h3>
+                    <p class="desc">
+                      <span
+                      ><strong>Eligibility</strong> All Bellygom NFT holders
+                        are eligible</span
+                      >
+                      <span><strong>The Plan</strong> It's a one-off</span>
+                    </p>
+                  </div>
+                  <div class="content">
+                    <ul>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/images/main/img__bubble_01_eng.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>Exciting<br />Lotte World</strong>
+                        <p>
+                          Lotte World invites you to Bellygom World<br />
+                          this October.(Partners allowed entry)
+                        </p>
+                      </li>
+
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/images/main/img__bubble_03_eng.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>Global Collab<br />NFTs</strong>
+                        <p>
+                          Given only to Bellygom NFT holders, global<br />
+                          top tier collaboration NFT.<br />
+                          Come get your voxel art Bellygom NFT.
+                        </p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/images/main/img__bubble_02_eng.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>Limited Edition<br />Bellygom Merch</strong>
+                        <p>
+                          Encounter the limited edition numbered action
+                          figures for all holders in the real world.<br />
+                          (Only for NFT holders of 5 or more)
+                        </p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/images/main/img__bubble_04_eng.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>Invincible<br />Coupon</strong>
+                        <p>
+                          Get more special discounts on Bellygom's<br />
+                          meticulously curated products in reality.
+                        </p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/images/main/img__bubble_05_eng.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>Belly pass</strong>
+                        <p>
+                          For Bellygom holders who don't want to wait,<br />
+                          we will provide seasonal "No Queues<br />
+                          Bellygom Pass"
+                        </p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/images/main/img__bubble_06_eng.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>Live Commerce</strong>
+                        <p>
+                          There’ll be special Bellygom discounts<br />
+                          on a live shopping show for holders only.
+                        </p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/images/main/img__bubble_07_eng.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>Comming Soon</strong>
+                        <p></p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="level-belly">
+                  <div class="head-title">
+                    <span class="label">
+                      Bellygom Super Surprise Package Season 1
+                    </span>
+                    <h3>More Belly, More Surprise</h3>
+                    <p class="sub-txt">
+                      Regularly Updated Belly Benefits, Only with Belly NFTs
+                    </p>
+                  </div>
+                  <div class="level-list">
+                    <div class="belly-dung">
+                      <img
+                          src="@/assets/images/main/img_bellyship_belly.png"
+                          alt="둥둥"
+                      />
+                    </div>
+                    <div class="box belly hide">
+                      <div class="tit"><span>Belly</span> Bellyship</div>
+                      <p class="sub">
+                        The Most Exclusively Astonishing Experience of<br />
+                        the Bellygom Universe!
+                      </p>
+                      <ul class="benefit-list">
+                        <li>
+                          Bellygom Signiel Premium Package (Premium Room + Club
+                          +<br />
+                          Valet) <span class="red">*Transferable</span>
+                        </li>
+                        <li>
+                          Bellygom World Premium Package (Lotte World Hotel
+                          Voucher + Magic Pass)
+                        </li>
+                        <li>
+                          Bellygom Shopping Premium Package (Live Commerce
+                          Tickets for Holders Only + Surprise Discounts)
+                        </li>
+                        <li>
+                          Bellygom Cinema Premium Package (2 Lotte Cinema
+                          Charlotte Tickets + 2 Sweet combo Drinks)
+                        </li>
+                      </ul>
+                      <span class="condition">
+                        Eligibility: 30 Holders｜Belly Tier NFT Holders or
+                        Holders of 500+ Bellygom NFTs
+                      </span>
+                      <span class="condition">
+                        The Plan: Lotte Signiel (twice a year)
+                        *Transferable｜Belly World (twice a year)｜Shopping
+                        (four times a year)｜Cinema (four times a year)
+                      </span>
+                      <div class="hide-mark">
+                        <img
+                            src="@/assets/images/main/img_lock.svg"
+                            alt=""
+                            class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
+                    </div>
+                    <div class="box holic hide">
+                      <div class="tit"><span>Holic</span> Bellyship</div>
+                      <p class="sub">A Magical Two-day Trip with Bellygom!</p>
+                      <ul class="benefit-list">
+                        <li>
+                          Bellygom World Premium Package (Lotte World Hotel
+                          Voucher + Magic Pass)
+                        </li>
+                        <li>
+                          Bellygom Shopping Premium Package (Live Commerce
+                          Tickets for Holders Only + Surprise Discounts)
+                        </li>
+                        <li>
+                          Bellygom Cinema Premium Package (2 Lotte Cinema
+                          Charlotte Tickets + 2 Sweet combo Drinks)
+                        </li>
+                      </ul>
+                      <span class="condition">
+                        Eligibility: 100 Holders｜Holic Tier NFT Holders or
+                        Holders of 300+ Bellygom NFTs
+                      </span>
+                      <span class="condition">
+                        The Plan: Belly World (twice a year)｜Shopping (twice a
+                        year)｜Cinema (four times a year)
+                      </span>
+                      <div class="hide-mark">
+                        <img
+                            src="@/assets/images/main/img_lock.svg"
+                            alt=""
+                            class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
+                    </div>
+                    <div class="box mega hide">
+                      <div class="tit"><span>Mega</span> Bellyship</div>
+                      <p class="sub">Bellygom's Surprising Comfort!</p>
+                      <ul class="benefit-list">
+                        <li>
+                          Bellygom Shopping Premium Package (Live Commerce
+                          Tickets for Holders Only + Surprise Discounts)
+                        </li>
+                        <li>
+                          Bellygom Cinema Premium Package (2 Lotte Cinema
+                          Charlotte Tickets + 2 Sweet combo Drinks)
+                        </li>
+                      </ul>
+                      <span class="condition">
+                        Eligibility: 500 Holders｜Mega Tier NFT Holders
+                      </span>
+                      <span class="condition">
+                        The Plan: Shopping (twice a year)｜Cinema (four times a
+                        year)
+                      </span>
+                      <div class="hide-mark">
+                        <img
+                            src="@/assets/images/main/img_lock.svg"
+                            alt=""
+                            class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
+                    </div>
+                    <div class="box super hide">
+                      <div class="tit"><span>Super</span> Bellyship</div>
+                      <p class="sub">
+                        For Belly friends who want to experience<br/>more fun, more
+                        often!
+                      </p>
+                      <ul class="benefit-list">
+                        <li>
+                          Bellygom Shopping Premium Package (Live Commerce
+                          Tickets for Holders Only + Surprise Discounts)
+                        </li>
+                        <li>
+                          Bellygom Cinema Package (2 Lotte Cinema Tickets)
+                        </li>
+                      </ul>
+                      <span class="condition">
+                        Eligibility: 1,500 Holders｜Super Tier NFT Holders
+                      </span>
+                      <span class="condition">
+                        The Plan: Shopping (twice a year)｜Cinema (four times a
+                        year)
+                      </span>
+                      <div class="hide-mark">
+                        <img
+                            src="@/assets/images/main/img_lock.svg"
+                            alt=""
+                            class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
+                    </div>
+                    <div class="box surprise hide">
+                      <div class="tit"><span>Surprise</span> Bellyship</div>
+                      <p class="sub">
+                        My Very Own Private Secret Shopping Experience!
+                      </p>
+                      <ul class="benefit-list">
+                        <li>
+                          Bellygom Shopping Premium Package (Live Commerce
+                          Tickets for Holders Only + Surprise Discounts)
+                        </li>
+                        <li>
+                          Bellygom Cinema Package (2 Lotte Cinema Tickets)
+                        </li>
+                      </ul>
+                      <span class="condition">
+                        Eligibility: 3,500 Holders｜Surprise Tier NFT Holders
+                      </span>
+                      <span class="condition">
+                        The Plan: Shopping (once a year)｜Cinema (twice a year)
+                      </span>
+                      <div class="hide-mark">
+                        <img
+                            src="@/assets/images/main/img_lock.svg"
+                            alt=""
+                            class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
+                    </div>
+                    <div class="box friend hide">
+                      <div class="tit"><span>Friends</span> Bellyship</div>
+                      <p class="sub">Double the Fun with Friends!</p>
+                      <ul class="benefit-list">
+                        <li>
+                          Bellygom Cinema Package (2 Lotte Cinema Tickets)
+                        </li>
+                      </ul>
+                      <span class="condition">
+                        Eligibility: 4,370 Holders｜Friends Tier NFT Holders
+                      </span>
+                      <span class="condition"
+                      >The Plan: Cinema (twice a year)</span
+                      >
+                      <div class="hide-mark">
+                        <img
+                            src="@/assets/images/main/img_lock.svg"
+                            alt=""
+                            class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
+                    </div>
+                  </div>
+                  x
+                </div>
+                <div class="season">
+                  <p>* Some benefits are transferable as airdrop NFTs</p>
+                </div>
+                <div class="nft-wrap">
+                  <!--nft 슬라이더-->
+                  <div class="loop-text2">
+                    <div class="text">
+                      <span>&nbsp &middot &nbsp NFT BELLYGOM</span>
+                    </div>
+                  </div>
+                  <div
+                      class="nft-image-loop"
+                  >
+                    <div class="image-item">
+                      <img
+                          src="@/assets/images/main/img_NFT_01_en.png"
+                          alt=""
+                          class="nft-img"
+                      />
+                      <img
+                          src="@/assets/images/main/img_NFT_02_en.png"
+                          alt=""
+                          class="nft-img"
+                      />
+                      <img
+                          src="@/assets/images/main/img_NFT_03_en.png"
+                          alt=""
+                          class="nft-img"
+                      />
+                      <img
+                          src="@/assets/images/main/img_NFT_04_en.png"
+                          alt=""
+                          class="nft-img"
+                      />
+                      <img
+                          src="@/assets/images/main/img_NFT_05_en.png"
+                          alt=""
+                          class="nft-img"
+                      />
+                    </div>
+                    <div class="image-item">
+                      <img
+                          src="@/assets/images/main/img_NFT_01_en.png"
+                          alt=""
+                          class="nft-img"
+                      />
+                      <img
+                          src="@/assets/images/main/img_NFT_02_en.png"
+                          alt=""
+                          class="nft-img"
+                      />
+                      <img
+                          src="@/assets/images/main/img_NFT_03_en.png"
+                          alt=""
+                          class="nft-img"
+                      />
+                      <img
+                          src="@/assets/images/main/img_NFT_04_en.png"
+                          alt=""
+                          class="nft-img"
+                      />
+                      <img
+                          src="@/assets/images/main/img_NFT_05_en.png"
+                          alt=""
+                          class="nft-img"
+                      />
+                    </div>
+                  </div>
+                  <div class="loop-text">
+                    <div class="text">
+                      <span>&nbsp &middot &nbsp NFT BELLYGOM</span>
+                    </div>
+                  </div>
+
+                  <div class="partners">
+                    <div class="title">PARTNERS</div>
+                    <ul class="list">
+                      <li class="half-end">
+                        <img
+                            src="@/assets/images/main/img_parteners_logo_sandbox.png"
+                            alt=""
+                            style="width: 470px"
+                        />
+                      </li>
+                      <li class="half-start">
+                        <img
+                            src="@/assets/images/main/img_parteners_logo__groundx.png"
+                            alt=""
+                            style="width: 470px"
+                        />
+                      </li>
+                      <li>
+                        <img
+                            src="@/assets/images/main/img_parteners_logo_sunmiya.png"
+                            alt=""
+                            style="width: 300px"
+                        />
+                      </li>
+                      <li>
+                        <img
+                            src="@/assets/images/main/img_parteners_logo_happier_town.png"
+                            alt=""
+                            style="width: 307px"
+                        />
+                      </li>
+                      <li>
+                        <img
+                            src="@/assets/images/main/img_parteners_logo_mimyo.png"
+                            alt=""
+                            style="width: 196px"
+                        />
+                      </li>
+                      <!--                    <li>
+                        <img
+                            src="@/assets/images/main/img_parteners_logo_sandbox.png"
+                            alt=""
+                            style="width: 230px"
+                        />
+                      </li>
+                      <li>
+                        <img
+                          src="@/assets/images/main/img_parteners_logo_stepn.png"
+                          alt=""
+                          style="width: 239px"
+                        />
+                      </li>
+                      <li></li>-->
+                    </ul>
+                  </div>
+                </div>
+              </template>
+              <template v-else>
+                <div class="common-util">
+                  <div class="head-title">
+                    <span class="label">
+                      벨리곰 슈퍼 서프라이즈 패키지 시즌 1
+                    </span>
+                    <h3>
+                      벨리곰의 친구들 모두가<br />누릴 수 있는 놀라운 경험!
+                    </h3>
+                    <p class="desc">
+                      <span
+                      ><strong>자격요건</strong> 모든 벨리곰 NFT 홀더
+                        대상</span
+                      >
+                      <span><strong>운영플랜</strong> 1회 진행</span>
+                    </p>
+                  </div>
+                  <div class="content">
+                    <ul>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/images/main/img__bubble_01.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>익사이팅 롯데월드</strong>
+                        <p>
+                          롯데월드에서 10월에 펼쳐지는 벨리곰의 세계로<br />
+                          여러분을 초대합니다.(동반인 입장가능)
+                        </p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/images/main/img__bubble_03.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>글로벌 콜라보 NFT</strong>
+                        <p>
+                          오직 벨리곰 홀더분들에게만 드리는<br />
+                          글로벌 탑티어 콜라보레이션 NFT,<br />
+                          복셀 형태 벨리곰 NFT를 받아보세요.
+                        </p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/images/main/img__bubble_02.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>한정판 넘버링 피규어</strong>
+                        <p>
+                          홀더분들에게만 드리는 한정판 넘버링 피규어로<br />
+                          현실 세계에서도 벨리곰을 만나보세요.<br />
+                          (단, 5개 이상 NFT 보유 홀더)
+                        </p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/images/main/img__bubble_04.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>무적 할인권</strong>
+                        <p>
+                          꼼꼼하게 선정한 벨리곰 현실 상품들을<br />
+                          더 특별하게 할인받아 Get하세요.
+                        </p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/images/main/img__bubble_05.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>벨리 패스</strong>
+                        <p>
+                          기다리기 싫어하는 벨리곰 홀더분들에게 시즌 별<br />
+                          ‘줄 안서는 벨리 패스’를 제공합니다.
+                        </p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/images/main/img__bubble_06.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>라이브 커머스 혜택</strong>
+                        <p>
+                          라이브 쇼핑 방송에서 벨리곰 홀더분들에게만<br />
+                          특별 할인 혜택을 제공합니다.
+                        </p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/images/main/img__bubble_07.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong style="margin-top: 37px;">Comming Soon</strong>
+                        <p></p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+              </template>
+            </section>
+            <section class="section fp-auto-height fixed-bg">
               <Footer />
             </section>
             <div
