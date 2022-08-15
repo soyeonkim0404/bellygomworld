@@ -700,7 +700,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 300px 0 0;
+    margin: 100px 0 0;
     text-align: center;
     .title {
       .label {
@@ -1397,25 +1397,25 @@ body {
         opacity:1;
       }
       .h-1 {
-        transition: 0.5s 1s ease-in;
+        transition: 0.5s 1s ease-in-out;
       }
       .h-2 {
-        transition: 0.5s 1.2s ease-in;
+        transition: 0.5s 1.2s ease-in-out;
       }
       .h-3 {
-        transition: 0.5s 1s ease-in;
+        transition: 0.5s 1s ease-in-out;
       }
       .h-4 {
-        transition: 0.5s 1.2s ease-in;
+        transition: 0.5s 1.2s ease-in-out;
       }
       .h-5 {
-        transition: 0.5s 1.2s ease-in;
+        transition: 0.5s 1.2s ease-in-out;
       }
       .h-6 {
-        transition: 0.5s 1s ease-in;
+        transition: 0.5s 1s ease-in-out;
       }
       .h-7 {
-        transition: 0.5s 1s ease-in;
+        transition: 0.5s 1s ease-in-out;
       }
     }
     .wrapper {

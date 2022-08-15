@@ -2346,22 +2346,22 @@ export default {
   left: 50%;
   width: 100%;
   z-index: 1;
-  transform: translate3d(-50%, -200%, 0);
-  -webkit-transform: translate3d(-50%, -200%, 0);
-  transition: 2s 0s ease-in-out;
-  -webkit-transition: 2s 0s ease-in-out;
+  transform: translate3d(-50%, -70%, 0);
+  -webkit-transform: translate3d(-50%, -70%, 0);
+  transition: 0.8s 0s ease-in-out;
+  -webkit-transition: 0.8s 0s ease-in-out;
   opacity: 0;
 }
 .fp-viewing-bellyShip .main-char-ending {
   opacity: 1;
-  transition: 2s 1.5s ease-in-out;
-  -webkit-transition: 2s 1.5s ease-in-out;
+  -webkit-transition: 0.7s 1.2s ease-in-out;
+  -webkit-transition: 0.7s 1.2s ease-in-out;
   z-index: 3;
   transform: translate3d(-50%, 0%, 0);
   -webkit-transform: translate3d(-50%, 0%, 0);
 }
 .fp-viewing-level-belly .main-char-ending {
-  animation: down 0.5s ease;
+/*  animation: down 0.5s ease;*/
 }
 @keyframes down {
   0% {
