@@ -2038,7 +2038,7 @@ export default {
   border-radius: 40%;
   pointer-events: none;
   position: fixed;
-  top: 61%;
+  top: 30%;
   left: 50%;
   width: 40%;
   z-index: -1;
