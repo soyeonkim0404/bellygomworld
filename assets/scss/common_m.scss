@@ -1276,6 +1276,62 @@ body {
       opacity: 0.5;
     }
   }
+  @keyframes bubble {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(20px);
+    }
+  }
+  .bubble {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0;
+    img {
+      position: absolute;
+      &.b-1 {
+        left: 26.8%;
+        top: 5%;
+        width: 8%;
+        animation: bubble 1.5s 0.3s linear infinite alternate;
+        -webkit-animation: bubble 1.5s 0.3s linear infinite alternate;
+      }
+      &.b-2 {
+        left: 83.5%;
+        top: 9%;
+        width: 15%;
+        animation: bubble 1.5s 0s linear infinite alternate;
+        -webkit-animation: bubble 1.5s 0s linear infinite alternate;
+      }
+      &.b-3 {
+        left: -10%;
+        top: 34%;
+        width: 20%;
+        animation: bubble 1.5s 0.5s linear infinite alternate;
+        -webkit-animation: bubble 1.5s 0.5s linear infinite alternate;
+      }
+      &.b-4 {
+        left: 82%;
+        top: 71%;
+        width: 8%;
+        animation: bubble 1.5s 0.4s linear infinite alternate;
+        -webkit-animation: bubble 1.5s 0.4s linear infinite alternate;
+      }
+      &.b-5 {
+        left: 5.2%;
+        top: 83%;
+        width: 12%;
+        animation: bubble 1.5s 0.4s linear infinite alternate;
+        -webkit-animation: bubble 1.5s 0.4s linear infinite alternate;
+      }
+    }
+  }
   .belly-heart {
     position: relative;
     width: 100%;
@@ -1284,6 +1340,9 @@ body {
     img {
       position: absolute;
       object-fit: contain;
+      transform: translateY(100%);
+      opacity: 0;
+      transition: 0.5s 0.8s ease-in;
     }
     .h-1 {
       top: 185px;
@@ -1325,5 +1384,46 @@ body {
   }
   .bellyship-special {
     background: url("@/assets/m_images/main/belly_bubble_bg.jpg ") no-repeat center/cover;
+  }
+}
+.fp-viewing-bellyShip {
+  .mobile {
+    .belly-heart {
+      img {
+        transform: translateY(0);
+        opacity:1;
+        transition: 0.5s 0.8s ease-in;
+      }
+    }
+    .wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("@/assets/m_images/main/img_bellyship_bg.png");
+      background-size: cover;
+      background-position: center center;
+    }
+    .bubble {
+      opacity: 1;
+    }
+  }
+}
+.fp-viewing-level-belly {
+  .mobile {
+    .wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("@/assets/m_images/main/img_bellyship_bg.png");
+      background-size: cover;
+      background-position: center center;
+    }
+    .bubble {
+      opacity: 1;
+    }
   }
 }

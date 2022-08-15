@@ -45,34 +45,10 @@
             <section class="section">
               <div class="slide" data-anchor="slide1">
                 <div class="contents">
-                  <!--                <div class="firework">
-                    <div class="effect-group">
-                      <span class="effect"></span>
-                      <span class="effect"></span>
-                      <span class="effect"></span>
-                      <span class="effect"></span>
-                    </div>
-                  </div>-->
                   <img
                       src="@/assets/images/main/getbelly_road_ko_1.jpeg"
                       class="roads"
                   />
-                  <!--인터렉션-->
-                  <!--                <img
-                    src="@/assets/images/main/img_get_pinkballoon_motion.png"
-                    alt=""
-                    id="pinkballoon"
-                  />
-                  <img
-                    src="@/assets/images/main/img_get_blueballoon_motion.png"
-                    alt=""
-                    id="blueballoon"
-                  />
-                  <img
-                    src="@/assets/images/main/img_get_arrow_motion.png"
-                    alt=""
-                    id="blueballoon"
-                  />-->
                   <div class="text-con">
                     <template v-if="$store.getters.getLocale === 'ENG'">
                       <div class="item nm1">
