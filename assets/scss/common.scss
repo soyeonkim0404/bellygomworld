@@ -1533,8 +1533,124 @@ body {
       opacity: 0.5;
     }
   }
+  .bellyship-special {
+    /*    background-image: url("@/assets/images/main/belly_bubble_bg.jpeg ");
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;*/
+  }
+  .fixed-bg {
+    /*    background-image: url("@/assets/images/main/belly_bubble_bg.jpeg ");
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;*/
+  }
+}/* pc 끝 */
+/* 벨리십 인터렉션 */
+.fp-viewing-bellyShip {
+  .pc {
+    .belly-heart {
+      img {
+        opacity: 1;
+      }
+      .h-1 {
+        top: 73%;
+        left: 0;
+        animation: heart-bubble1 1.5s linear infinite alternate;
+        -webkit-animation: heart-bubble1 1.5s linear infinite alternate;
+        transition: 0.8s 0.8s ease-in;
+      }
+      .h-2 {
+        top: 44%;
+        left: 13.2%;
+        animation: heart-bubble2 1.5s linear infinite alternate;
+        -webkit-animation: heart-bubble2 1.5s linear infinite alternate;
+        transition: 0.8s 0.9s ease-in;
+      }
+      .h-3 {
+        top: 31%;
+        left: 43.5%;
+        animation: heart-bubble1 1.5s linear infinite alternate;
+        -webkit-animation: heart-bubble1 1.5s linear infinite alternate;
+        transition: 0.8s 1s ease-in;
+      }
+      .h-4 {
+        top: 54%;
+        left: 66%;
+        animation: heart-bubble2 1.5s linear infinite alternate;
+        -webkit-animation: heart-bubble2 1.5s linear infinite alternate;
+        transition: 0.8s 1.1s ease-in;
+      }
+      .h-5 {
+        top: 73%;
+        right: 0;
+        width: 18%;
+        animation: heart-bubble3 1.5s linear infinite alternate;
+        -webkit-animation: heart-bubble3 1.5s linear infinite alternate;
+        transition: 0.8s 1.2s ease-in;
+      }
+    }
+    .wrapper {
+      background-image: url("@/assets/images/main/img_bellyship_bg.png");
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+    .bubble {
+      opacity: 1;
+    }
+  }
 }
-
+.fp-viewing-level-belly {
+  .pc {
+    .wrapper {
+      background-image: url("@/assets/images/main/img_bellyship_bg.png");
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+    .bubble {
+      opacity: 1;
+    }
+    .common-util {
+      .title {
+        opacity: 1;
+        transform: translateY(0);
+        transition: 0.4s 1s ease-in;
+      }
+      .content {
+        li {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        li:nth-child(1) {
+          transition: 0.4s 1.2s ease-in-out;
+        }
+        li:nth-child(2) {
+          transition: 0.4s 1.3s ease-in-out;
+        }
+        li:nth-child(3) {
+          transition: 0.4s 1.4s ease-in-out;
+        }
+        li:nth-child(4) {
+          transition: 0.4s 1.5s ease-in-out;
+        }
+        li:nth-child(5) {
+          transition: 0.4s 1.6s ease-in-out;
+        }
+        li:nth-child(6) {
+          transition: 0.4s 1.7s ease-in-out;
+        }
+        li:nth-child(7) {
+          transition: 0.4s 1.8s ease-in-out;
+        }
+      }
+    }
+  }
+}
+.wrapper {
+  background: none;
+}
 /*animation*/
 @keyframes fireworkLine {
   0% {
