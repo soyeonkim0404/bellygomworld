@@ -984,9 +984,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 510px 0 0;
     text-align: center;
-
+    margin-top: 100px;
     .content {
       padding-top: 10px;
       ul {
@@ -1612,16 +1611,13 @@ body {
         background-attachment: fixed;
         background-repeat: no-repeat;*/
   }
-  .fixed-bg {
-    /*    background-image: url("@/assets/images/main/belly_bubble_bg.jpeg ");
-        background-size: cover;
-        background-attachment: fixed;
-        background-repeat: no-repeat;*/
-  }
 }/* pc 끝 */
 /* 벨리십 인터렉션 */
 .fp-viewing-bellyShip {
   .pc {
+    .wrapper {
+      background: url("@/assets/images/main/BELLYSHIP_PC_fixed_bg.png") no-repeat center/cover;
+    }
     .belly-heart {
       img {
         opacity: 1;
@@ -1663,12 +1659,12 @@ body {
         transition: 0.8s 1.2s ease-in;
       }
     }
-    .wrapper {
+/*    .wrapper {
       background-image: url("@/assets/images/main/img_bellyship_bg.png");
       background-size: cover;
       background-attachment: fixed;
       background-repeat: no-repeat;
-    }
+    }*/
     .bubble {
       opacity: 1;
     }
@@ -1677,10 +1673,7 @@ body {
 .fp-viewing-level-belly {
   .pc {
     .wrapper {
-      background-image: url("@/assets/images/main/img_bellyship_bg.png");
-      background-size: cover;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
+      background: url("@/assets/images/main/BELLYSHIP_PC_fixed_bg.png") no-repeat center/cover;
     }
     .bubble {
       opacity: 1;
@@ -1841,9 +1834,11 @@ body {
   }
 }
 
+/*
 .bellyship-special {
   background-image: url("@/assets/images/main/belly_bubble_bg.jpeg ");
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
+*/
