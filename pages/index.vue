@@ -293,11 +293,7 @@
                   </div>
                 </template>
               </div>
-              <div class="main-char-ending">
-                <div class="fall">
-                  <img src="@/assets/images/char-fall.webp" type="image/webp" />
-                </div>
-              </div>
+
             </section>
             <section class="section fp-auto-height">
               <template v-if="$store.getters.getLocale === 'ENG'">
@@ -1164,6 +1160,11 @@
               </div>
             </div>
           </full-page>
+        </div>
+        <div class="main-char-ending">
+          <div class="fall">
+            <img src="@/assets/images/char-fall.webp" type="image/webp" />
+          </div>
         </div>
       </client-only>
     </div>

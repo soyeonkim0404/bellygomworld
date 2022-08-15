@@ -1616,13 +1616,16 @@ body {
 .fp-viewing-bellyShip {
   .pc {
     .wrapper {
-      background: url("@/assets/images/main/img_bellyship_bg.png") center/cover;
-      width: 100vw;
-      height: 100vh;
-      position: absolute;
-      left: 0;
+      position: fixed;
       top: 0;
-      z-index: -100000;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("@/assets/images/main/img_bellyship_bg.png");
+      background-size: cover;
+      background-position: center center;
+      transform: translateZ(0);
+      will-change: transform;
     }
     .belly-heart {
       img {
@@ -1679,13 +1682,16 @@ body {
 .fp-viewing-level-belly {
   .pc {
     .wrapper {
-      background: url("@/assets/images/main/img_bellyship_bg.png") center/cover;
-      width: 100vw;
-      height: 100vh;
-      position: absolute;
-      left: 0;
+      position: fixed;
       top: 0;
-      z-index: -100000;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("@/assets/images/main/img_bellyship_bg.png");
+      background-size: cover;
+      background-position: center center;
+      transform: translateZ(0);
+      will-change: transform;
     }
     .bubble {
       opacity: 1;
@@ -1727,6 +1733,11 @@ body {
   }
 }
 .wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: none;
 }
 /*animation*/
