@@ -2,29 +2,29 @@
   <div id="main">
     <div class="inner">
       <client-only>
-        <div class="bubble">
-          <img
-              class="b-1"
-              src="@/assets/images/main/img_bellyship_bubble_01.png"
-              alt=""
-          />
-          <img
-              class="b-2"
-              src="@/assets/images/main/img_bellyship_bubble_02.png"
-              alt=""
-          />
-          <img
-              class="b-3"
-              src="@/assets/images/main/img_bellyship_bubble_03.png"
-              alt=""
-          />
-          <img
-              class="b-4"
-              src="@/assets/images/main/img_bellyship_bubble_04.png"
-              alt=""
-          />
-        </div>
         <div class="wrapper">
+          <div class="bubble">
+            <img
+                class="b-1"
+                src="@/assets/images/main/img_bellyship_bubble_01.png"
+                alt=""
+            />
+            <img
+                class="b-2"
+                src="@/assets/images/main/img_bellyship_bubble_02.png"
+                alt=""
+            />
+            <img
+                class="b-3"
+                src="@/assets/images/main/img_bellyship_bubble_03.png"
+                alt=""
+            />
+            <img
+                class="b-4"
+                src="@/assets/images/main/img_bellyship_bubble_04.png"
+                alt=""
+            />
+          </div>
           <full-page ref="fullpage" :options="options" id="fullpage">
             <section class="section">
               <video id="mainBelly" loop muted data-autoplay playsinline>
