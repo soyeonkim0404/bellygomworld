@@ -2037,18 +2037,38 @@ export default {
   border-radius: 40%;
   pointer-events: none;
   position: fixed;
-  top: 4.3%;
+  top: 61%;
   left: 50%;
   width: 40%;
-  z-index: 3;
+  z-index: -1;
   transform: translate3d(-50%, -200%, 0);
   -webkit-transform: translate3d(-50%, -200%, 0);
-  transition: transform 0.5s ease-in-out;
-  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: 2s 0s ease-in-out;
+  -webkit-transition: 2s 0s ease-in-out;
+  opacity: 0;
 }
-.fp-completely.active .main-char-ending {
+.fp-viewing-bellyShip .main-char-ending {
+  opacity: 1;
+  transition: 2s 1.5s ease-in-out;
+  -webkit-transition: 2s 1.5s ease-in-out;
+  z-index: 3;
   transform: translate3d(-50%, 0%, 0);
   -webkit-transform: translate3d(-50%, 0%, 0);
+}
+.fp-viewing-level-belly .main-char-ending {
+  animation: down 0.5s ease;
+}
+@keyframes down {
+  0% {
+    transform: translate3d(-50%, 0%, 0);
+    -webkit-transform: translate3d(-50%, 0%, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(-50%, 50%, 0);
+    -webkit-transform: translate3d(-50%, 50%, 0);
+    opacity: 0;
+  }
 }
 
 .main-char {
