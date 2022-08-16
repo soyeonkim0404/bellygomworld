@@ -404,8 +404,26 @@
                               alt=""
                           />
                         </span>
-                        <strong>Comming Soon</strong>
-                        <p></p>
+                        <strong>Hotel Discounts</strong>
+                        <p>
+                          Once every month! We offer discounts for<br/>
+                          Lotte-affiliated hotels.<br/>
+                          (*Signiel, Lotte Hotel, Lotte City Hotel, L7)
+                        </p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/images/main/img__bubble_08_eng.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>Membership Club</strong>
+                        <p>
+                          Receive 10x more L.POINT than Lotte Home<br/>
+                          Shopping regular members. Get shopping<br/>
+                          coupons (by age group) every month.
+                        </p>
                       </li>
                     </ul>
                   </div>
@@ -797,12 +815,30 @@
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/images/main/img__bubble_07.png"
+                              src="@/assets/images/main/img__bubble_06.png"
                               alt=""
                           />
                         </span>
-                        <strong style="margin-top: 37px;">Comming Soon</strong>
-                        <p></p>
+                        <strong>호텔 할인</strong>
+                        <p>
+                          매월 1회!롯데 계열 호텔에 대한<br/>
+                          객실 할인권을 제공합니다.<br/>
+                          *시그니엘, 롯데호텔, 롯데시티호텔, L7)
+                        </p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/images/main/img__bubble_06.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>벨리곰 멤버십 클럽</strong>
+                        <p>
+                          롯데홈쇼핑 일반 회원 대비<br/>
+                          10배의 L.POINT 적립과 매월 지급되는 연령별<br/>
+                          쇼핑 쿠폰을 받아보세요.
+                        </p>
                       </li>
                     </ul>
                   </div>
