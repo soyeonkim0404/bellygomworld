@@ -558,6 +558,14 @@
                       <span class="condition">
                       The Plan: Lotte Signiel (2x per season) *Transferable, Bellygom World (2x per season), Cinema (4x per season)
                     </span>
+                      <div class="hide-mark">
+                        <img
+                            src="@/assets/images/main/img_lock.svg"
+                            alt=""
+                            class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
                     <div class="box holic hide">
                       <div class="tit"><span>Holic</span> Bellyship</div>
@@ -579,6 +587,14 @@
                       <span class="condition">
                       The Plan: Bellygom World (2x per season), Cinema (4x per season)
                     </span>
+                      <div class="hide-mark">
+                        <img
+                            src="@/assets/images/main/img_lock.svg"
+                            alt=""
+                            class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
                     <div class="box mega hide">
                       <div class="tit"><span>Mega</span> Bellyship</div>
@@ -597,6 +613,14 @@
                       <span class="condition">
                      The Plan: Cinema (3x per season)
                     </span>
+                      <div class="hide-mark">
+                        <img
+                            src="@/assets/images/main/img_lock.svg"
+                            alt=""
+                            class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
                     <div class="box super hide">
                       <div class="tit"><span>Super</span> Bellyship</div>
@@ -616,6 +640,14 @@
                       <span class="condition">
                       The Plan: Cinema (3x per season)
                     </span>
+                      <div class="hide-mark">
+                        <img
+                            src="@/assets/images/main/img_lock.svg"
+                            alt=""
+                            class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
                     <div class="box surprise hide">
                       <div class="tit"><span>Surprise</span> Bellyship</div>
@@ -634,6 +666,14 @@
                       <span class="condition">
                      The Plan: Cinema (2x per season)
                     </span>
+                      <div class="hide-mark">
+                        <img
+                            src="@/assets/images/main/img_lock.svg"
+                            alt=""
+                            class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
                     <div class="box friend hide">
                       <div class="tit"><span>Friends</span> Bellyship</div>
@@ -648,6 +688,14 @@
                       <span class="condition"
                       >The Plan: Cinema (1x per season)</span
                       >
+                      <div class="hide-mark">
+                        <img
+                            src="@/assets/images/main/img_lock.svg"
+                            alt=""
+                            class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
                   </div>
                 </div>
