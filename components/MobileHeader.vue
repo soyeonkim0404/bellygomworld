@@ -184,7 +184,7 @@ export default {
         {
           url: "https://www.instagram.com/bellygom.official/",
           name: "Instagram",
-          imgUrl: require("@/assets/m_images/img_menu_insta.svg"),
+          imgUrl: require("@/assets/m_images/ic_menu_instagram.svg"),
         },
       ],
     };
