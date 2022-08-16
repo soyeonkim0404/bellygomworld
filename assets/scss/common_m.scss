@@ -1415,7 +1415,7 @@ body {
         transform: translateX(0%) translateY(0%);
       }
       .h-1 {
-        transition: 0.5s 0.9s ease-in-out;
+        transition: 0.5s 0.95s ease-in-out;
         img {
           -webkit-animation: heart-bubble-rotate 1.5s 2s linear infinite alternate;
           animation: heart-bubble-rotate 1.5s 2s linear infinite alternate;
@@ -1429,7 +1429,7 @@ body {
         }
       }
       .h-3 {
-        transition: 0.5s 0.9s ease-in-out;
+        transition: 0.5s 0.95s ease-in-out;
         z-index: 2;
         img {
           -webkit-animation: heart-bubble-rotate 1.5s 2.2s linear infinite alternate;
@@ -1452,21 +1452,21 @@ body {
         }
       }
       .h-6 {
-        transition: 0.5s 0.9s ease-in-out;
+        transition: 0.5s 0.95s ease-in-out;
         img {
           -webkit-animation: heart-bubble-rotate 1.5s 1.9s linear infinite alternate;
           animation: heart-bubble-rotate 1.5s 1.9s linear infinite alternate;
         }
       }
       .h-7 {
-        transition: 0.5s 1s ease-in-out;
+        transition: 0.5s 1.1s ease-in-out;
         img {
           -webkit-animation: heart-bubble-rotate 1.5s 2.1s linear infinite alternate;
           animation: heart-bubble-rotate 1.5s 2.1s linear infinite alternate;
         }
       }
       .h-8 {
-        transition: 0.5s 1s ease-in-out;
+        transition: 0.5s 1.1s ease-in-out;
         img {
           -webkit-animation: heart-bubble-rotate 1.5s 2s linear infinite alternate;
           animation: heart-bubble-rotate 1.5s 2s linear infinite alternate;
