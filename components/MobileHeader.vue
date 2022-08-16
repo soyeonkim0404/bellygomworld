@@ -181,6 +181,11 @@ export default {
           name: "YouTube",
           imgUrl: require("@/assets/m_images/img_menu_youtube.svg"),
         },
+        {
+          url: "https://www.instagram.com/bellygom.official/",
+          name: "Instagram",
+          imgUrl: require("@/assets/m_images/img_menu_insta.svg"),
+        },
       ],
     };
   },

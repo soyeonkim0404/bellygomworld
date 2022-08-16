@@ -153,6 +153,10 @@ export default {
           url: "https://youtube.com/channel/UCN9NpIA1d-wB1MsQQfkQnig",
           name: "YouTube",
         },
+        {
+          url: "https://www.instagram.com/bellygom.official/",
+          name: "Instagram",
+        }
       ],
     };
   },
