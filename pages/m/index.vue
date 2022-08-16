@@ -325,7 +325,7 @@
                       </span>
                       <span class="h-8">
                         <img
-                            src="@/assets/m_images/main/img_heartballoon_07_en.svg"
+                            src="@/assets/m_images/main/img_heartballoon_08_en.svg"
                             alt=""
                         />
                       </span>
@@ -1002,7 +1002,7 @@
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/m_images/main/img__bubble_06.png"
+                              src="@/assets/m_images/main/img__bubble_07.png"
                               alt=""
                           />
                         </span>
@@ -1010,13 +1010,13 @@
                         <p>
                           매월 1회!롯데 계열 호텔에 대한<br/>
                           객실 할인권을 제공합니다.<br/>
-                          *시그니엘, 롯데호텔, 롯데시티호텔, L7)
+                          (*시그니엘, 롯데호텔, 롯데시티호텔, L7)
                         </p>
                       </li>
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/m_images/main/img__bubble_06.png"
+                              src="@/assets/m_images/main/img__bubble_08.png"
                               alt=""
                           />
                         </span>
@@ -1614,7 +1614,7 @@
                 transferred to the Public Sale.
               </li>
               <li>
-                The reserved 1,100 pieces allocated to the team will be utilized
+                The reserved 500 pieces allocated to the team will be utilized
                 in partnerships, events, etc.
               </li>
               <li>
@@ -1826,18 +1826,18 @@
         <h2 class="title">FAQ</h2>
       </div>
       <div slot="body">
-        <template v-if="$store.getters.getLocale === 'ENG'">
-          <p class="desc-txt">※ For more details on FAQ, join us on
-            <a class="underline" href="https://discord.gg/bellygom" target="_blank"
-            >Discord</a>.</p>
-        </template>
-        <template v-else>
-          <p class="desc-txt">※ FAQ 상세 내용은 <a class="underline" href="https://discord.gg/bellygom" target="_blank"
-          >디스코드</a>에서 확인할 수 있습니다.</p>
-        </template>
         <div class="content">
           <div class="inner">
             <div class="content-wrap">
+              <template v-if="$store.getters.getLocale === 'ENG'">
+                <p class="desc-txt">※ For more details on FAQ, join us on
+                  <a class="underline" href="https://discord.gg/bellygom" target="_blank"
+                  >Discord</a>.</p>
+              </template>
+              <template v-else>
+                <p class="desc-txt">※ FAQ 상세 내용은 <a class="underline" href="https://discord.gg/bellygom" target="_blank"
+                >디스코드</a>에서 확인할 수 있습니다.</p>
+              </template>
               <AccordionComponent :list="faqList">
                 <template #title="{ item }">
                   <template v-if="$store.getters.getLocale === 'ENG'">

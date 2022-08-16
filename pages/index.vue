@@ -797,10 +797,11 @@
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/images/main/img__bubble_06.png"
+                              src="@/assets/images/main/img__bubble_07.png"
                               alt=""
                           />
                         </span>
+
                         <strong>호텔 할인</strong>
                         <p>
                           매월 1회!롯데 계열 호텔에 대한<br/>
@@ -811,7 +812,7 @@
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/images/main/img__bubble_06.png"
+                              src="@/assets/images/main/img__bubble_08.png"
                               alt=""
                           />
                         </span>
@@ -1366,7 +1367,7 @@
                 transferred to the Public Sale.
               </li>
               <li>
-                The reserved 1,100 pieces allocated to the team will be utilized
+                The reserved 500 pieces allocated to the team will be utilized
                 in partnerships, events, etc.
               </li>
               <li>

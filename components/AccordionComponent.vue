@@ -174,7 +174,7 @@ export default {
       }
     }
     & + .accordion-item {
-      margin-top: 20px;
+      margin-top: 10px;
     }
   }
 }
