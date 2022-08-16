@@ -1740,6 +1740,15 @@
         <h2 class="title">FAQ</h2>
       </div>
       <div slot="body">
+        <template v-if="$store.getters.getLocale === 'ENG'">
+          <p class="desc-txt">※ For more details on FAQ, join us on
+            <a class="underline" href="https://discord.gg/bellygom" target="_blank"
+            >Discord</a>.</p>
+        </template>
+        <template v-else>
+          <p class="desc-txt">※ FAQ 상세 내용은 <a class="underline" href="https://discord.gg/bellygom" target="_blank"
+          >디스코드</a>에서 확인할 수 있습니다.</p>
+        </template>
         <div class="content">
           <div class="inner">
             <div class="content-wrap">

@@ -1442,6 +1442,15 @@
         <h2 class="title">FAQ</h2>
       </div>
       <div slot="body">
+        <template v-if="$store.getters.getLocale === 'ENG'">
+          <p class="desc-txt">※ For more details on FAQ, join us on
+            <a class="underline" href="https://discord.gg/bellygom" target="_blank"
+          >Discord</a>.</p>
+        </template>
+        <template v-else>
+          <p class="desc-txt">※ FAQ 상세 내용은 <a class="underline" href="https://discord.gg/bellygom" target="_blank"
+          >디스코드</a>에서 확인할 수 있습니다.</p>
+        </template>
         <div class="content">
           <div class="inner">
             <div class="content-wrap">
@@ -2031,8 +2040,8 @@ export default {
   z-index: -1;
   transform: translate3d(-50%, -200%, 0);
   -webkit-transform: translate3d(-50%, -200%, 0);
-  transition: 2s 0s ease-in-out;
-  -webkit-transition: 2s 0s ease-in-out;
+  transition: 0.7s 0s ease-in-out;
+  -webkit-transition: 0.7s 0s ease-in-out;
   opacity: 0;
 }
 .fp-viewing-bellyShip .main-char-ending {

@@ -101,6 +101,17 @@ body {
   }
   /*modal*/
   .faq-modal {
+    .desc-txt {
+      margin-bottom: 15px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #555;
+      text-align: center;
+      .underline {
+        text-decoration: underline;
+        text-underline-position: under;
+      }
+    }
     .modal-container {
       background: url("@/assets/m_images/main/faq_bg.png") top left no-repeat;
       background-size: cover;
