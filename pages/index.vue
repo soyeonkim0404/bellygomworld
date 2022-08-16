@@ -387,11 +387,11 @@
                 <div class="level-belly">
                   <div class="head-title">
                     <span class="label">
-                      벨리곰 슈퍼 서프라이즈 패키지 시즌 1
+                      Bellygom Super Surprise Package Season 1
                     </span>
                     <h3>More Belly, More Surprise</h3>
                     <p class="sub-txt">
-                      계속 업데이트 될, NFT만으로 누릴 수 있는 Belly Benefit
+                      Regularly Updated Belly Benefits, Only with Belly NFTs
                     </p>
                   </div>
                   <div class="level-list">
