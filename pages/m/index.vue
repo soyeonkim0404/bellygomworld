@@ -273,93 +273,96 @@
                 </div>
               </div>
             </section>
-            <section class="section bellyship-special">
-              <div
-                  class="bellyship"
-                  :class="{ eng: $store.getters.getLocale === 'ENG' }"
-              >
-                <template v-if="$store.getters.getLocale === 'ENG'">
-                  <div class="belly-heart">
-                    <img
-                        src="@/assets/m_images/main/img_heartballoon_01_en.svg"
-                        alt=""
-                        class="h-1"
-                    />
-                    <img
-                        src="@/assets/m_images/main/img_heartballoon_02_en.svg"
-                        alt=""
-                        class="h-2"
-                    />
-                    <img
-                        src="@/assets/m_images/main/img_heartballoon_03_en.svg"
-                        alt=""
-                        class="h-3"
-                    />
-                    <img
-                        src="@/assets/m_images/main/img_heartballoon_04_en.svg"
-                        alt=""
-                        class="h-4"
-                    />
-                    <img
-                        src="@/assets/m_images/main/img_heartballoon_05_en.svg"
-                        alt=""
-                        class="h-5"
-                    />
-                    <img
-                        src="@/assets/m_images/main/img_heartballoon_06_en.svg"
-                        alt=""
-                        class="h-6"
-                    />
-                    <img
-                        src="@/assets/m_images/main/img_heartballoon_07_en.svg"
-                        alt=""
-                        class="h-7"
-                    />
-                  </div>
-                </template>
-                <template v-else>
-                  <div class="belly-heart">
-                    <img
-                        src="@/assets/m_images/main/img_heartballoon_01.svg"
-                        alt=""
-                        class="h-1"
-                    />
-                    <img
-                        src="@/assets/m_images/main/img_heartballoon_02.svg"
-                        alt=""
-                        class="h-2"
-                    />
-                    <img
-                        src="@/assets/m_images/main/img_heartballoon_03.svg"
-                        alt=""
-                        class="h-3"
-                    />
-                    <img
-                        src="@/assets/m_images/main/img_heartballoon_04.svg"
-                        alt=""
-                        class="h-4"
-                    />
-                    <img
-                        src="@/assets/m_images/main/img_heartballoon_05.svg"
-                        alt=""
-                        class="h-5"
-                    />
-                    <img
-                        src="@/assets/m_images/main/img_heartballoon_06.svg"
-                        alt=""
-                        class="h-6"
-                    />
-                    <img
-                        src="@/assets/m_images/main/img_heartballoon_07.svg"
-                        alt=""
-                        class="h-7"
-                    />
-                  </div>
-                </template>
-              </div>
-            </section>
             <section class="section fp-auto-height">
               <template v-if="$store.getters.getLocale === 'ENG'">
+                <div
+                    class="bellyship"
+                    :class="{ eng: $store.getters.getLocale === 'ENG' }"
+                >
+                  <template v-if="$store.getters.getLocale === 'ENG'">
+                    <div class="belly-heart">
+                      <img
+                          src="@/assets/m_images/main/img_heartballoon_01_en.svg"
+                          alt=""
+                          class="h-1"
+                      />
+                      <img
+                          src="@/assets/m_images/main/img_heartballoon_02_en.svg"
+                          alt=""
+                          class="h-2"
+                      />
+                      <img
+                          src="@/assets/m_images/main/img_heartballoon_03_en.svg"
+                          alt=""
+                          class="h-3"
+                      />
+                      <img
+                          src="@/assets/m_images/main/img_heartballoon_04_en.svg"
+                          alt=""
+                          class="h-4"
+                      />
+                      <img
+                          src="@/assets/m_images/main/img_heartballoon_05_en.svg"
+                          alt=""
+                          class="h-5"
+                      />
+                      <img
+                          src="@/assets/m_images/main/img_heartballoon_06_en.svg"
+                          alt=""
+                          class="h-6"
+                      />
+                      <img
+                          src="@/assets/m_images/main/img_heartballoon_07_en.svg"
+                          alt=""
+                          class="h-7"
+                      />
+                    </div>
+                  </template>
+                  <template v-else>
+                    <div class="belly-heart">
+                      <img
+                          src="@/assets/m_images/main/img_heartballoon_01.svg"
+                          alt=""
+                          class="h-1"
+                      />
+                      <img
+                          src="@/assets/m_images/main/img_heartballoon_02.svg"
+                          alt=""
+                          class="h-2"
+                      />
+                      <img
+                          src="@/assets/m_images/main/img_heartballoon_03.svg"
+                          alt=""
+                          class="h-3"
+                      />
+                      <img
+                          src="@/assets/m_images/main/img_heartballoon_04.svg"
+                          alt=""
+                          class="h-4"
+                      />
+                      <img
+                          src="@/assets/m_images/main/img_heartballoon_05.svg"
+                          alt=""
+                          class="h-5"
+                      />
+                      <img
+                          src="@/assets/m_images/main/img_heartballoon_06.svg"
+                          alt=""
+                          class="h-6"
+                      />
+                      <img
+                          src="@/assets/m_images/main/img_heartballoon_07.svg"
+                          alt=""
+                          class="h-7"
+                      />
+                    </div>
+                  </template>
+                </div>
+                <div class="main-char-ending">
+                  <div class="fall">
+                    <img src="@/assets/m_images/char-fall.webp" type="image/webp" />
+                  </div>
+                </div>
                 <div class="common-util">
                   <div class="title">
                     <span class="label"
@@ -1337,11 +1340,6 @@
               </div>
             </div>
           </full-page>
-        </div>
-        <div class="main-char-ending">
-          <div class="fall">
-            <img src="@/assets/m_images/char-fall.webp" type="image/webp" />
-          </div>
         </div>
       </client-only>
     </div>
@@ -2354,7 +2352,7 @@ export default {
 }
 .fp-viewing-bellyShip .main-char-ending {
   opacity: 1;
-  -webkit-transition: 0.7s 1.2s ease-in-out;
+  transition: 0.7s 1.2s ease-in-out;
   -webkit-transition: 0.7s 1.2s ease-in-out;
   z-index: 3;
   transform: translate3d(-50%, 0%, 0);
