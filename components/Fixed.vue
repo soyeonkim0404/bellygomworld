@@ -12,13 +12,13 @@
       />
       <audio loop ref="audioElm" src="../assets/media/BELLY.mp3"></audio>
     </div>
-    <a
+<!--    <a
       href="https://tnimmogd.bellygom.world"
       target="_blank"
       class="mint-modal-btn"
     >
       <img src="@/assets/images/main/btn_mint.svg" />
-    </a>
+    </a>-->
     <button @click="storyModal" class="story-modal-btn">
       <img
         src="@/assets/images/story_btn.svg"

@@ -445,7 +445,7 @@
                           alt="둥둥"
                       />
                     </div>
-                    <div class="box belly">
+                    <div class="box belly hide">
                       <div class="tit"><span>Belly</span> Bellyship</div>
                       <p class="sub">
                         The Most Exclusively Astonishing Experience of<br />
@@ -472,7 +472,7 @@
                       The Plan: Lotte Signiel (2x per season) *Transferable, Bellygom World (2x per season), Cinema (4x per season)
                     </span>
                     </div>
-                    <div class="box holic">
+                    <div class="box holic hide">
                       <div class="tit"><span>Holic</span> Bellyship</div>
                       <p class="sub">A Magical Two-day Trip with Bellygom!</p>
                       <ul class="benefit-list">
@@ -493,7 +493,7 @@
                       The Plan: Bellygom World (2x per season), Cinema (4x per season)
                     </span>
                     </div>
-                    <div class="box mega">
+                    <div class="box mega hide">
                       <div class="tit"><span>Mega</span> Bellyship</div>
                       <p class="sub">Bellygom's Surprising Comfort!</p>
                       <ul class="benefit-list">
@@ -511,7 +511,7 @@
                      The Plan: Cinema (3x per season)
                     </span>
                     </div>
-                    <div class="box super">
+                    <div class="box super hide">
                       <div class="tit"><span>Super</span> Bellyship</div>
                       <p class="sub">
                         For Belly friends who want to experience more fun, more
@@ -530,7 +530,7 @@
                       The Plan: Cinema (3x per season)
                     </span>
                     </div>
-                    <div class="box surprise">
+                    <div class="box surprise hide">
                       <div class="tit"><span>Surprise</span> Bellyship</div>
                       <p class="sub">
                         My Very Own Private Secret Shopping Experience!
@@ -548,7 +548,7 @@
                      The Plan: Cinema (2x per season)
                     </span>
                     </div>
-                    <div class="box friend">
+                    <div class="box friend hide">
                       <div class="tit"><span>Friends</span> Bellyship</div>
                       <p class="sub">Double the Fun with Friends!</p>
                       <ul class="benefit-list">
@@ -843,7 +843,7 @@
                           alt="둥둥"
                       />
                     </div>
-                    <div class="box belly">
+                    <div class="box belly hide">
                       <div class="tit"><span>Belly</span> Bellyship</div>
                       <p class="sub">
                         아무나 가질 수 없는<br />
@@ -880,7 +880,7 @@
                         <p>Comming Soon!</p>
                       </div>
                     </div>
-                    <div class="box holic">
+                    <div class="box holic hide">
                       <div class="tit"><span>Holic</span> Bellyship</div>
                       <p class="sub">벨리곰과 함께하는 마법같은 1박 2일!</p>
                       <ul class="benefit-list">
@@ -909,7 +909,7 @@
                         <p>Comming Soon!</p>
                       </div>
                     </div>
-                    <div class="box mega">
+                    <div class="box mega hide">
                       <div class="tit"><span>Mega</span> Bellyship</div>
                       <p class="sub">벨리곰이 선사하는 깜짝 놀랄 편안함!</p>
                       <ul class="benefit-list">
@@ -936,7 +936,7 @@
                         <p>Comming Soon!</p>
                       </div>
                     </div>
-                    <div class="box super">
+                    <div class="box super hide">
                       <div class="tit"><span>Super</span> Bellyship</div>
                       <p class="sub">
                         더 자주, 더 많이 경험하고 싶은 벨리친구들을 위해!
@@ -962,7 +962,7 @@
                         <p>Comming Soon!</p>
                       </div>
                     </div>
-                    <div class="box surprise">
+                    <div class="box surprise hide">
                       <div class="tit"><span>Surprise</span> Bellyship</div>
                       <p class="sub">프라이빗한 나만의 비밀 쇼핑 경험!</p>
                       <ul class="benefit-list">
@@ -986,7 +986,7 @@
                         <p>Comming Soon!</p>
                       </div>
                     </div>
-                    <div class="box friend">
+                    <div class="box friend hide">
                       <div class="tit"><span>Friends</span> Bellyship</div>
                       <p class="sub">친구와 함께하면 즐거움이 두배!</p>
                       <ul class="benefit-list">
@@ -1708,7 +1708,7 @@ export default {
   components: { Footer },
   data() {
     return {
-      mintingModal: true,
+      mintingModal: false,
       showStoryModal: false,
       currIndi: 1,
       faqShow: false,
@@ -1767,11 +1767,11 @@ export default {
             this.cloudMoved = false;
             document.querySelector(".top-btn").style.opacity = 0;
             document.querySelector(".story-modal-btn").classList.remove("up");
-            document.querySelector(".mint-modal-btn").classList.remove("up");
+            //document.querySelector(".mint-modal-btn").classList.remove("up");
           } else {
             document.querySelector(".top-btn").style.opacity = 1;
             document.querySelector(".story-modal-btn").classList.add("up");
-            document.querySelector(".mint-modal-btn").classList.add("up");
+            //document.querySelector(".mint-modal-btn").classList.add("up");
           }
           const charHeight = (window.innerWidth * 0.375) / 2;
           if (destination.index === 0) {
