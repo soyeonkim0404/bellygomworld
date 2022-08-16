@@ -1092,20 +1092,12 @@ body {
       }
     }
   }
-  @keyframes heart-bubble-y {
+  @keyframes heart-bubble-rotate {
     0% {
-      transform: translateY(7%);
+      transform:translateX(0) translateY(0)  rotate(0);
     }
     100% {
-      transform: translateY(0);
-    }
-  }
-  @keyframes heart-bubble3 {
-    0% {
-      transform: rotate(0);
-    }
-    100% {
-      transform: rotate(7deg);
+      transform: translateX(0) translateY(7%) rotate(7deg);
     }
   }
   .belly-heart {
@@ -1113,10 +1105,13 @@ body {
     width: 1307px;
     height: 100vh;
     margin: 0 auto;
-    img {
+    span {
       position: absolute;
       object-fit: contain;
       opacity: 0;
+      img {
+        display: inline-block;
+      }
     }
     .h-1 {
       top: 481px;
@@ -1142,14 +1137,14 @@ body {
     }
     .h-4 {
       top: 166px;
-      left: 612px;
+      left: 576px;
       width: 334px;
       transform: translateX(20%) translateY(-100%);
       transition: 0.5s 1.1s ease-in;
     }
     .h-5 {
       top: 326px;
-      left: 803px;
+      left: 777px;
       width: 245px;
       z-index: -1;
       transform: translateX(20%) translateY(-100%);
@@ -1157,17 +1152,26 @@ body {
     }
     .h-6 {
       top: 295px;
-      left: 990px;
+      left: 964px;
       width: 225px;
       transform: translateX(20%) translateY(-100%);
       transition: 0.5s 1.3s ease-in;
     }
     .h-7 {
-      top: 486px;
-      left: 1097px;
-      width: 210px;
+      top: 319px;
+      left: 999px;
+      width: 376px;
       transform: translateX(20%) translateY(-100%);
       transition: 0.5s 1.4s ease-in;
+      z-index: -1;
+    }
+    .h-8 {
+      top: 513px;
+      left: 1021px;
+      width: 224px;
+      transform: translateX(20%) translateY(-100%);
+      transition: 0.5s 1.5s ease-in;
+      z-index: -2;
     }
   }
   .nft-wrap {
@@ -1631,69 +1635,72 @@ body {
 .fp-viewing-bellyShip {
   .pc {
     .wrapper {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
       background-image: url("@/assets/images/main/img_bellyship_bg.png");
       background-size: cover;
       background-position: center center;
     }
    .belly-heart {
-     img {
+     span {
        opacity: 1;
        transform: translateX(0%) translateY(0%);
      }
      .h-1 {
-       top: 481px;
-       left: 0;
-       width: 185px;
        transition: 0.5s 0.8s ease-in-out;
+       img {
+         -webkit-animation: heart-bubble-rotate 1.5s 2s linear infinite alternate;
+         animation: heart-bubble-rotate 1.5s 2s linear infinite alternate;
+       }
      }
-
      .h-2 {
-       top: 307px;
-       left: 82px;
-       width: 240px;
        transition: 0.5s 0.9s ease-in-out;
+       img {
+         -webkit-animation: heart-bubble-rotate 1.5s 2.1s linear infinite alternate;
+         animation: heart-bubble-rotate 1.5s 2.1s linear infinite alternate;
+       }
      }
-
      .h-3 {
-       top: 220px;
-       left: 312px;
-       width: 260px;
-       z-index: 2;
        transition: 0.5s 1s ease-in-out;
+       z-index: 2;
+       img {
+         -webkit-animation: heart-bubble-rotate 1.5s 2.2s linear infinite alternate;
+         animation: heart-bubble-rotate 1.5s 2.2s linear infinite alternate;
+       }
      }
-
      .h-4 {
-       top: 166px;
-       left: 612px;
-       width: 334px;
        transition: 0.5s 1.1s ease-in-out;
+       img {
+         -webkit-animation: heart-bubble-rotate 1.5s 1.9s linear infinite alternate;
+         animation: heart-bubble-rotate 1.5s 1.9s linear infinite alternate;
+       }
      }
-
      .h-5 {
-       top: 326px;
-       left: 803px;
-       width: 245px;
        z-index: -1;
        transition: 0.5s 1.2s ease-in-out;
+       img {
+         -webkit-animation: bubble 1.5s 1.8s linear infinite alternate;
+         animation: heart-bubble-rotate 1.5s 1.8s linear infinite alternate;
+       }
      }
-
      .h-6 {
-       top: 295px;
-       left: 990px;
-       width: 225px;
        transition: 0.5s 1.3s ease-in-out;
+       img {
+         -webkit-animation: heart-bubble-rotate 1.5s 1.9s linear infinite alternate;
+         animation: heart-bubble-rotate 1.5s 1.9s linear infinite alternate;
+       }
      }
-
      .h-7 {
-       top: 486px;
-       left: 1097px;
-       width: 210px;
        transition: 0.5s 1.4s ease-in-out;
+       img {
+         -webkit-animation: heart-bubble-rotate 1.5s 2.1s linear infinite alternate;
+         animation: heart-bubble-rotate 1.5s 2.1s linear infinite alternate;
+       }
+     }
+     .h-8 {
+       transition: 0.5s 1.5s ease-in-out;
+       img {
+         -webkit-animation: heart-bubble-rotate 1.5s 2s linear infinite alternate;
+         animation: heart-bubble-rotate 1.5s 2s linear infinite alternate;
+       }
      }
    }
     .bubble {

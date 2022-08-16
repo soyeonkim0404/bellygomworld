@@ -192,80 +192,106 @@
               <div class="bellyship">
                 <template v-if="$store.getters.getLocale === 'ENG'">
                   <div class="belly-heart">
-                    <img
-                        src="@/assets/images/main/img_heartballoon_01_en.svg"
-                        alt=""
-                        class="h-1"
-                    />
-                    <img
-                        src="@/assets/images/main/img_heartballoon_02_en.svg"
-                        alt=""
-                        class="h-2"
-                    />
-                    <img
-                        src="@/assets/images/main/img_heartballoon_03_en.svg"
-                        alt=""
-                        class="h-3"
-                    />
-                    <img
-                        src="@/assets/images/main/img_heartballoon_04_en.svg"
-                        alt=""
-                        class="h-4"
-                    />
-                    <img
-                        src="@/assets/images/main/img_heartballoon_05_en.svg"
-                        alt=""
-                        class="h-5"
-                    />
-                    <img
-                        src="@/assets/images/main/img_heartballoon_06_en.svg"
-                        alt=""
-                        class="h-6"
-                    />
-                    <img
-                        src="@/assets/images/main/img_heartballoon_07_en.svg"
-                        alt=""
-                        class="h-7"
-                    />
+                    <span class="h-1">
+                      <img
+                          src="@/assets/images/main/img_heartballoon_01_en.svg"
+                          alt=""
+                      />
+                    </span>
+                    <span class="h-2">
+                       <img
+                           src="@/assets/images/main/img_heartballoon_02_en.svg"
+                           alt=""
+                       />
+                    </span>
+                     <span class="h-3">
+                       <img
+                           src="@/assets/images/main/img_heartballoon_03_en.svg"
+                           alt=""
+                       />
+                     </span>
+                      <span class="h-4">
+                         <img
+                             src="@/assets/images/main/img_heartballoon_04_en.svg"
+                             alt=""
+                         />
+                      </span>
+                      <span class="h-5">
+                          <img
+                              src="@/assets/images/main/img_heartballoon_05_en.svg"
+                              alt=""
+                          />
+                      </span>
+                      <span class="h-6">
+                         <img
+                             src="@/assets/images/main/img_heartballoon_06_en.svg"
+                             alt=""
+                         />
+                      </span>
+                      <span class="h-7">
+                        <img
+                            src="@/assets/images/main/img_heartballoon_07_en.svg"
+                            alt=""
+                        />
+                      </span>
+                      <span class="h-8">
+                        <img
+                            src="@/assets/images/main/img_heartballoon_08_en.svg"
+                            alt=""
+                        />
+                      </span>
                   </div>
                 </template>
                 <template v-else>
                   <div class="belly-heart">
-                    <img
-                        src="@/assets/images/main/img_heartballoon_01.svg"
-                        alt=""
-                        class="h-1"
-                    />
-                    <img
-                        src="@/assets/images/main/img_heartballoon_02.svg"
-                        alt=""
-                        class="h-2"
-                    />
-                    <img
-                        src="@/assets/images/main/img_heartballoon_03.svg"
-                        alt=""
-                        class="h-3"
-                    />
-                    <img
-                        src="@/assets/images/main/img_heartballoon_04.svg"
-                        alt=""
-                        class="h-4"
-                    />
-                    <img
-                        src="@/assets/images/main/img_heartballoon_05.svg"
-                        alt=""
-                        class="h-5"
-                    />
-                    <img
-                        src="@/assets/images/main/img_heartballoon_06.svg"
-                        alt=""
-                        class="h-6"
-                    />
-                    <img
-                        src="@/assets/images/main/img_heartballoon_07.svg"
-                        alt=""
-                        class="h-7"
-                    />
+                    <span class="h-1">
+                         <img
+                             src="@/assets/images/main/img_heartballoon_01.svg"
+                             alt=""
+                         />
+                    </span>
+                    <span class="h-2">
+                        <img
+                            src="@/assets/images/main/img_heartballoon_02.svg"
+                            alt=""
+                        />
+                    </span>
+                    <span class="h-3">
+                       <img
+                           src="@/assets/images/main/img_heartballoon_03.svg"
+                           alt=""
+                       />
+                    </span>
+                    <span class="h-4">
+                       <img
+                           src="@/assets/images/main/img_heartballoon_04.svg"
+                           alt=""
+                       />
+                    </span>
+                   <span class="h-5">
+                        <img
+                            src="@/assets/images/main/img_heartballoon_05.svg"
+                            alt=""
+                        />
+                   </span>
+                    <span class="h-6">
+                       <img
+                           src="@/assets/images/main/img_heartballoon_06.svg"
+                           alt=""
+                       />
+                    </span>
+                   <span class="h-7">
+                       <img
+                           src="@/assets/images/main/img_heartballoon_07.svg"
+                           alt=""
+                       />
+                   </span>
+                  <span class="h-8">
+                     <img
+                         src="@/assets/images/main/img_heartballoon_08.svg"
+                         alt=""
+                     />
+                  </span>
                   </div>
                 </template>
               </div>
