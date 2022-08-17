@@ -13,7 +13,7 @@
       <audio loop ref="audioElm" src="../assets/media/BELLY.mp3"></audio>
     </div>
     <a
-      href="https://tnimmogd.bellygom.world"
+      href="https://bellygom.launchpad.xclusive.market/"
       target="_blank"
       class="mint-modal-btn"
     >

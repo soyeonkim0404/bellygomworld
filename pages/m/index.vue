@@ -6,27 +6,27 @@
           <div class="bubble">
             <img
                 class="b-1"
-                src="@/assets/m_images/main/img_bellyship_bubble_01.png"
+                src="@/assets/m_images/main/img_bellyship_bubble_01.svg"
                 alt=""
             />
             <img
                 class="b-2"
-                src="@/assets/m_images/main/img_bellyship_bubble_02.png"
+                src="@/assets/m_images/main/img_bellyship_bubble_02.svg"
                 alt=""
             />
             <img
                 class="b-3"
-                src="@/assets/m_images/main/img_bellyship_bubble_03.png"
+                src="@/assets/m_images/main/img_bellyship_bubble_03.svg"
                 alt=""
             />
             <img
                 class="b-4"
-                src="@/assets/m_images/main/img_bellyship_bubble_04.png"
+                src="@/assets/m_images/main/img_bellyship_bubble_04.svg"
                 alt=""
             />
             <img
                 class="b-5"
-                src="@/assets/m_images/main/img_bellyship_bubble_05.png"
+                src="@/assets/m_images/main/img_bellyship_bubble_05.svg"
                 alt=""
             />
           </div>
@@ -396,7 +396,7 @@
                     >Bellygom Super Surprise Package Season 1</span
                     >
                     <h3>An Amazing Experience<br />for Bellygom's Friends</h3>
-                    <ul class="desc">
+                    <ul class="desc" style="margin: 10px auto 10px 14px;">
                       <li>
                         <strong>Eligibility</strong> All Bellygom NFT holders
                         are eligible
@@ -540,7 +540,7 @@
                       </p>
                       <ul class="benefit-list">
                         <li>
-                          Bellygom Signiel Platinum Package(Premier City View Scenic Bath Room, Lounge access and Breakfast tickets for 2 persons, 1 Valet Service, Swimming Pool & Fitness Center Access)
+                          Bellygom Signiel Platinum Package(Premier City View Scenic Bath Room + Lounge access and Breakfast tickets for 2 persons + 1 Valet Service + Swimming Pool & Fitness Center Access)
                         </li>
                         <li>
                           Bellygom World Premium Package (Lotte Hotel World Voucher + Attractions Pass)
@@ -556,8 +556,16 @@
                      Eligibility: Belly Tier NFT Holders
                     </span>
                       <span class="condition">
-                      The Plan: Lotte Signiel (2x per season) *Transferable, Bellygom World (2x per season), Cinema (4x per season)
+                      The Plan: Lotte Signiel (2x per season) *Transferable<span class="divider">｜</span>Bellygom World (2x per season)<span class="divider">｜</span>Cinema (4x per season)
                     </span>
+                      <div class="hide-mark">
+                        <img
+                            src="@/assets/images/main/img_lock.svg"
+                            alt=""
+                            class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
                     <div class="box holic">
                       <div class="tit"><span>Holic</span> Bellyship</div>
@@ -577,8 +585,16 @@
                       Eligibility: Holic Tier NFT Holders
                     </span>
                       <span class="condition">
-                      The Plan: Bellygom World (2x per season), Cinema (4x per season)
+                      The Plan: Bellygom World (2x per season)<span class="divider">｜</span>Cinema (4x per season)
                     </span>
+                      <div class="hide-mark">
+                        <img
+                            src="@/assets/images/main/img_lock.svg"
+                            alt=""
+                            class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
                     <div class="box mega">
                       <div class="tit"><span>Mega</span> Bellyship</div>
@@ -597,6 +613,14 @@
                       <span class="condition">
                      The Plan: Cinema (3x per season)
                     </span>
+                      <div class="hide-mark">
+                        <img
+                            src="@/assets/images/main/img_lock.svg"
+                            alt=""
+                            class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
                     <div class="box super">
                       <div class="tit"><span>Super</span> Bellyship</div>
@@ -616,6 +640,14 @@
                       <span class="condition">
                       The Plan: Cinema (3x per season)
                     </span>
+                      <div class="hide-mark">
+                        <img
+                            src="@/assets/images/main/img_lock.svg"
+                            alt=""
+                            class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
                     <div class="box surprise">
                       <div class="tit"><span>Surprise</span> Bellyship</div>
@@ -634,6 +666,14 @@
                       <span class="condition">
                      The Plan: Cinema (2x per season)
                     </span>
+                      <div class="hide-mark">
+                        <img
+                            src="@/assets/images/main/img_lock.svg"
+                            alt=""
+                            class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
                     <div class="box friend">
                       <div class="tit"><span>Friends</span> Bellyship</div>
@@ -648,6 +688,14 @@
                       <span class="condition"
                       >The Plan: Cinema (1x per season)</span
                       >
+                      <div class="hide-mark">
+                        <img
+                            src="@/assets/images/main/img_lock.svg"
+                            alt=""
+                            class="lock"
+                        />
+                        <p>Comming Soon!</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1050,7 +1098,7 @@
                       </p>
                       <ul class="benefit-list">
                         <li>
-                          벨리곰 시그니엘 프리미엄 패키지 (프리미어 시티뷰 시닉베스 룸 + 라운지 2인 + 조식 2인 + 발렛 1회 + 수영장 & 피트니스 이용권)
+                          벨리곰 시그니엘 플래티넘 패키지 (프리미어 시티뷰 시닉베스 룸 + 라운지 2인 + 조식 2인 + 발렛 1회 + 수영장 & 피트니스 이용권)
                         </li>
                         <li>
                           벨리곰 월드 프리미엄 패키지 (롯데호텔 월드 숙박권 + 어트랙션 패스권)
@@ -1610,8 +1658,10 @@
                 will also be used in all other rounds.
               </li>
               <li>
-                Unsold quantity from the 1st & 2nd Whitelist Sales will be
-                transferred to the Public Sale.
+                The remaining quantity of the 1st whitelist sale will be reallocated to the 2nd whitelist sale.
+              </li>
+              <li>
+                And what's left of the 2nd whitelist sale will be reallocated to the public sale.
               </li>
               <li>
                 The reserved 500 pieces allocated to the team will be utilized
@@ -1659,13 +1709,16 @@
           <div class="notice">
             <strong>공통 해당 사항</strong>
             <ul class="notice-list">
-              <li>민팅가격은 추후 공지 됩니다.</li>
+              <li>민팅가격은 추후 공지됩니다.</li>
               <li>
                 민팅 확정라운드는 Favor, Klay / 나머지 라운드는 Klay로
                 진행됩니다.
               </li>
               <li>
-                1,2차 화이트리스트 미판매 물량은 퍼블릭 세일로 이전됩니다.
+                1차 확정 화이트리스트 미판매 물량은 2차 화이트리스트 세일로 이전됩니다.
+              </li>
+              <li>
+                2차 경쟁 화이트리스트 미판매 물량은 3차 퍼블릭 세일로 이전됩니다.
               </li>
               <li>
                 팀 물량 500개는 파트너쉽, 이벤트 등 기타 목적으로 활용됩니다.
@@ -1864,7 +1917,7 @@
                     >
                       <span>
                         <img
-                          src="@/assets/images/main/ic_download.png"
+                          src="@/assets/images/main/ic_download.svg"
                           alt=""
                         />PDF Download
                       </span>
@@ -2461,7 +2514,7 @@ export default {
   position: fixed;
   top: 370px;
   left: 50%;
-  width: 100%;
+  width: 85%;
   z-index: 1;
   transform: translate3d(-50%, -70%, 0);
   -webkit-transform: translate3d(-50%, -70%, 0);
