@@ -1005,7 +1005,7 @@ body {
       padding-top: 10px;
       ul {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         flex-wrap: wrap;
         width: 1240px;
         li {
@@ -1016,7 +1016,7 @@ body {
           transition: 0.4s 1.2s ease-in;
           + li {
             margin-left: 44px;
-            &:nth-child(5) {
+            &:nth-child(4n+1) {
               margin-left: 0;
             }
           }
@@ -1117,7 +1117,7 @@ body {
       }
     }
     .h-1 {
-      top: 481px;
+      top: 501px;
       left: 0;
       width: 185px;
       transform: translateX(-20%) translateY(-100%);
@@ -1175,6 +1175,14 @@ body {
       transform: translateX(20%) translateY(-100%);
       transition: 0.5s 1.5s ease-in;
       z-index: -2;
+    }
+    .h-9 {
+      top: 596px;
+      left: 133px;
+      width: 215px;
+      transform: translateX(-20%) translateY(-100%);
+      transition: 0.5s 1.6s ease-in;
+      z-index: -3;
     }
   }
   .nft-wrap {
@@ -1706,6 +1714,13 @@ body {
          animation: heart-bubble-rotate 1.5s 2s linear infinite alternate;
        }
      }
+     .h-9 {
+       transition: 0.5s 0.7s ease-in-out;
+       img {
+         -webkit-animation: heart-bubble-rotate 1.5s 1.8s linear infinite alternate;
+         animation: heart-bubble-rotate 1.5s 1.8s linear infinite alternate;
+       }
+     }
    }
     .bubble {
       opacity: 1;
@@ -1761,6 +1776,9 @@ body {
         }
         li:nth-child(8) {
           transition: 0.4s 1.9s ease-in-out;
+        }
+        li:nth-child(9) {
+          transition: 0.4s 2s ease-in-out;
         }
       }
     }

@@ -240,6 +240,12 @@
                             alt=""
                         />
                       </span>
+                      <span class="h-9">
+                        <img
+                            src="@/assets/images/main/img_heartballoon_09_en.svg"
+                            alt=""
+                        />
+                      </span>
                   </div>
                 </template>
                 <template v-else>
@@ -292,6 +298,12 @@
                          alt=""
                      />
                   </span>
+                  <span class="h-9">
+                     <img
+                         src="@/assets/images/main/img_heartballoon_09.svg"
+                         alt=""
+                     />
+                  </span>
                   </div>
                 </template>
               </div>
@@ -332,7 +344,7 @@
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/images/main/img__bubble_03_eng.png"
+                              src="@/assets/images/main/img__bubble_02_eng.png"
                               alt=""
                           />
                         </span>
@@ -346,7 +358,7 @@
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/images/main/img__bubble_02_eng.png"
+                              src="@/assets/images/main/img__bubble_03_eng.png"
                               alt=""
                           />
                         </span>
@@ -406,8 +418,8 @@
                         </span>
                         <strong>Hotel Discounts</strong>
                         <p>
-                          Once every month! We offer discounts for<br/>
-                          Lotte-affiliated hotels.<br/>
+                          Always receive up to 15% discounts<br/>
+                          at Lotte affiliated hotels.<br/>
                           (*Signiel, Lotte Hotel, Lotte City Hotel, L7)
                         </p>
                       </li>
@@ -423,6 +435,19 @@
                           Receive 10x more L.POINT than Lotte Home<br/>
                           Shopping regular members. Get shopping<br/>
                           coupons (by age group) every month.
+                        </p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/images/main/img__bubble_09_eng.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>Joy of 5,000won</strong>
+                        <p>
+                          Get up to 5,000 L.POINT or<br/>
+                          Lotte GRS mobile coupons each month.
                         </p>
                       </li>
                     </ul>
@@ -679,6 +704,60 @@
                           class="nft-img"
                       />
                     </div>
+                    <div class="image-item">
+                      <img
+                          src="@/assets/images/main/img_NFT_01_en.png"
+                          alt=""
+                          class="nft-img"
+                      />
+                      <img
+                          src="@/assets/images/main/img_NFT_02_en.png"
+                          alt=""
+                          class="nft-img"
+                      />
+                      <img
+                          src="@/assets/images/main/img_NFT_03_en.png"
+                          alt=""
+                          class="nft-img"
+                      />
+                      <img
+                          src="@/assets/images/main/img_NFT_04_en.png"
+                          alt=""
+                          class="nft-img"
+                      />
+                      <img
+                          src="@/assets/images/main/img_NFT_05_en.png"
+                          alt=""
+                          class="nft-img"
+                      />
+                    </div>
+                    <div class="image-item">
+                      <img
+                          src="@/assets/images/main/img_NFT_01_en.png"
+                          alt=""
+                          class="nft-img"
+                      />
+                      <img
+                          src="@/assets/images/main/img_NFT_02_en.png"
+                          alt=""
+                          class="nft-img"
+                      />
+                      <img
+                          src="@/assets/images/main/img_NFT_03_en.png"
+                          alt=""
+                          class="nft-img"
+                      />
+                      <img
+                          src="@/assets/images/main/img_NFT_04_en.png"
+                          alt=""
+                          class="nft-img"
+                      />
+                      <img
+                          src="@/assets/images/main/img_NFT_05_en.png"
+                          alt=""
+                          class="nft-img"
+                      />
+                    </div>
                   </div>
                   <div class="loop-text">
                     <div class="text">
@@ -778,7 +857,7 @@
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/images/main/img__bubble_03.png"
+                              src="@/assets/images/main/img__bubble_02.png"
                               alt=""
                           />
                         </span>
@@ -792,7 +871,7 @@
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/images/main/img__bubble_02.png"
+                              src="@/assets/images/main/img__bubble_03.png"
                               alt=""
                           />
                         </span>
@@ -852,8 +931,7 @@
 
                         <strong>호텔 할인</strong>
                         <p>
-                          매월 1회!롯데 계열 호텔에 대한<br/>
-                          객실 할인권을 제공합니다.<br/>
+                          롯데 계열 호텔 최대 15% 혜택을 상시 제공합니다<br/>
                           (*시그니엘, 롯데호텔, 롯데시티호텔, L7)
                         </p>
                       </li>
@@ -869,6 +947,19 @@
                           롯데홈쇼핑 일반 회원 대비<br/>
                           10배의 L.POINT 적립과 매월 지급되는 연령별<br/>
                           쇼핑 쿠폰을 받아보세요.
+                        </p>
+                      </li>
+                      <li>
+                        <span class="img-wrap">
+                          <img
+                              src="@/assets/images/main/img__bubble_09.png"
+                              alt=""
+                          />
+                        </span>
+                        <strong>5,000원의 행복</strong>
+                        <p>
+                          매월 5,000 L.POINT 또는 롯데GRS(식음료 교환권) 모바일 5,000원<br/>
+                          쿠폰을 제공합니다.
                         </p>
                       </li>
                     </ul>
@@ -1070,54 +1161,54 @@
                   >
                     <div class="image-item">
                       <img
-                          src="@/assets/images/main/img_NFT_01_en.png"
+                          src="@/assets/images/main/img_NFT_01.png"
                           alt=""
                           class="nft-img"
                       />
                       <img
-                          src="@/assets/images/main/img_NFT_02_en.png"
+                          src="@/assets/images/main/img_NFT_02.png"
                           alt=""
                           class="nft-img"
                       />
                       <img
-                          src="@/assets/images/main/img_NFT_03_en.png"
+                          src="@/assets/images/main/img_NFT_03.png"
                           alt=""
                           class="nft-img"
                       />
                       <img
-                          src="@/assets/images/main/img_NFT_04_en.png"
+                          src="@/assets/images/main/img_NFT_04.png"
                           alt=""
                           class="nft-img"
                       />
                       <img
-                          src="@/assets/images/main/img_NFT_05_en.png"
+                          src="@/assets/images/main/img_NFT_05.png"
                           alt=""
                           class="nft-img"
                       />
                     </div>
                     <div class="image-item">
                       <img
-                          src="@/assets/images/main/img_NFT_01_en.png"
+                          src="@/assets/images/main/img_NFT_01.png"
                           alt=""
                           class="nft-img"
                       />
                       <img
-                          src="@/assets/images/main/img_NFT_02_en.png"
+                          src="@/assets/images/main/img_NFT_02.png"
                           alt=""
                           class="nft-img"
                       />
                       <img
-                          src="@/assets/images/main/img_NFT_03_en.png"
+                          src="@/assets/images/main/img_NFT_03.png"
                           alt=""
                           class="nft-img"
                       />
                       <img
-                          src="@/assets/images/main/img_NFT_04_en.png"
+                          src="@/assets/images/main/img_NFT_04.png"
                           alt=""
                           class="nft-img"
                       />
                       <img
-                          src="@/assets/images/main/img_NFT_05_en.png"
+                          src="@/assets/images/main/img_NFT_05.png"
                           alt=""
                           class="nft-img"
                       />
