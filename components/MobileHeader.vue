@@ -161,11 +161,6 @@ export default {
       showLang: false,
       mobileGnbShow: false,
       linkList: [
-        /*{
-          url: "https://opensea.io/",
-          name: "Opensea",
-          imgUrl: require("@/assets/m_images/img_menu_opensea.svg"),
-        },*/
         {
           url: "https://discord.gg/TDYtz2fcSN",
           name: "Discord",
@@ -185,6 +180,11 @@ export default {
           url: "https://www.instagram.com/bellygom.official/",
           name: "Instagram",
           imgUrl: require("@/assets/m_images/ic_menu_instagram.svg"),
+        },
+        {
+          url: "https://opensea.io/collection/bellygom-world-official",
+          name: "Opensea",
+          imgUrl: require("@/assets/m_images/ic_menu_opensea.svg"),
         },
       ],
     };
