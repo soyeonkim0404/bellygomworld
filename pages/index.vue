@@ -453,7 +453,7 @@
                       </p>
                       <ul class="benefit-list">
                         <li>
-                          Bellygom Signiel Platinum Package(Premier City View Scenic Bath Room, Lounge access and Breakfast tickets for 2 persons, 1 Valet Service, Swimming Pool & Fitness Center Access)
+                          Bellygom Signiel Platinum Package(Premier City View Scenic Bath Room + Lounge access and Breakfast tickets for 2 persons + 1 Valet Service + Swimming Pool & Fitness Center Access)
                         </li>
                         <li>
                           Bellygom World Premium Package (Lotte Hotel World Voucher + Attractions Pass)
