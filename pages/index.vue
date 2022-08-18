@@ -2075,7 +2075,13 @@ export default {
       this.storyModal();
     });
   },
+  computed: {
+    test() {
+      return process.env.VUE_API_URL;
+    }
+  },
   mounted() {
+    console.log('mounted', process.env.VUE_API_URL)
     if (this.$mq === "mobile") {
       this.$router.push({ path: "/m" });
     }
