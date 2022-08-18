@@ -1989,7 +1989,7 @@ export default {
   layout: "default",
   data() {
     return {
-      mintingModal: false,
+      mintingModal: true,
       showModal: false,
       showStoryModal: false,
       currIndi: 1,
