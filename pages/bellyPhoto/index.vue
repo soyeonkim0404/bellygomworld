@@ -4,31 +4,14 @@
     <div class="contents">
       <div class="left">
         <InputSearch v-model="keyword" placeholder="#Number" />
-        <div class="filter">
+        <div class="filter" v-if="$mq === 'pc'">
           <div class="con-title">
             Filter
             <button type="button" class="btn-reset">
               <img src="@/assets/images/ic_reset.svg" alt="" />
             </button>
           </div>
-          <AccordionComponent :list="filterList">
-            <template #title="{ item }">
-              {{ item.title }}
-            </template>
-            <template #cont="{ item }">
-              <ul class="check-list">
-                <li v-for="(list, index) in item.list" :key="index">
-                  <InputCheckbox
-                    v-model="filterChkList"
-                    :value="list.value"
-                    :disabled="list.disabled"
-                  >
-                    {{ list.value }}
-                  </InputCheckbox>
-                </li>
-              </ul>
-            </template>
-          </AccordionComponent>
+          <BellyPhotoFilter :list="filterList" :filterChkList="filterChkList" />
         </div>
       </div>
       <div class="right">
@@ -37,12 +20,27 @@
           <div class="sort">
             <div class="toggle">
               <span>MY NFTs</span>
+              <label class="switch">
+                <input type="checkbox" @click="toggleNFT" />
+                <span class="slider round" />
+              </label>
             </div>
-            <div class="select"></div>
+            <div class="select">
+              <SelectBox
+                v-model="selectValue"
+                :items="selectOption"
+                :input_id="'sort'"
+              />
+            </div>
           </div>
         </div>
         <ul class="photo">
-          <li v-for="(item, index) in photoList" :key="index" class="item">
+          <li
+            v-for="(item, index) in photoList"
+            :key="index"
+            class="item"
+            @click="detailNft(item.id)"
+          >
             <span class="lank">Rank {{ item.lank }}</span>
             <span class="image"
               ><img src="@/assets/images/belly_photo_teest.svg"
@@ -53,16 +51,20 @@
         </ul>
       </div>
     </div>
+    <!--    <photoModal />-->
   </div>
 </template>
 
 <script>
+import photoModal from "@/pages/bellyPhoto/modal";
 export default {
   name: "bellyPhoto",
   layout: "bellyPhoto",
+  components: { photoModal },
   data() {
     return {
       keyword: "",
+      myNFT: false,
       filterList: [
         {
           title: "Background",
@@ -91,9 +93,6 @@ export default {
           title: "Body",
           list: [
             {
-              value: "Color",
-            },
-            {
               value: "Animal Print",
             },
             {
@@ -114,63 +113,31 @@ export default {
           title: "Clothes",
           list: [
             { value: "Category0000" },
-            { value: "Category0000" },
-            { value: "Category0000" },
-            { value: "Category0000" },
-            { value: "Category0000" },
-            { value: "Category0000" },
-            { value: "Category0000" },
-            { value: "Category0000" },
-            { value: "Category0000" },
-            { value: "Category0000" },
-            { value: "Category0000" },
-            { value: "Category0000" },
-            { value: "Category0000" },
+            { value: "Category0001" },
+            { value: "Category0002" },
+            { value: "Category0003" },
+            { value: "Category0004" },
+            { value: "Category0005" },
+            { value: "Category0006" },
+            { value: "Category0007" },
+            { value: "Category0008" },
+            { value: "Category0009" },
+            { value: "Category0010" },
+            { value: "Category0011" },
+            { value: "Category0012" },
           ],
         },
         {
           title: "Test0000",
           list: [
             {
-              value: "Color",
+              value: "test1",
             },
             {
-              value: "Nature",
+              value: "test2",
             },
             {
-              value: "Urban",
-            },
-            {
-              value: "Space",
-            },
-            {
-              value: "Fantasy",
-            },
-            {
-              value: "Aura",
-            },
-          ],
-        },
-        {
-          title: "Test1111",
-          list: [
-            {
-              value: "Color",
-            },
-            {
-              value: "Animal Print",
-            },
-            {
-              value: "Steel",
-            },
-            {
-              value: "Cyborg",
-            },
-            {
-              value: "Jewel",
-            },
-            {
-              value: "Golden",
+              value: "test3",
             },
           ],
         },
@@ -178,39 +145,72 @@ export default {
       filterChkList: [],
       photoList: [
         {
+          id: 1,
           lank: 10000,
           nft: "9999",
         },
         {
+          id: 2,
           lank: 9999,
           nft: "8888",
         },
         {
+          id: 3,
           lank: 1,
           nft: "1234",
         },
         {
+          id: 4,
           lank: 100,
           nft: "4985",
         },
         {
+          id: 5,
           lank: 99,
           nft: "2945",
         },
         {
+          id: 6,
           lank: 34,
           nft: "2367",
         },
         {
+          id: 7,
           lank: 3,
           nft: "0987",
         },
         {
+          id: 8,
           lank: 980,
           nft: "3380",
         },
       ],
+      selectValue: "",
+      selectOption: [
+        {
+          kor: "랭킹 순",
+          eng: "Highest Rank",
+        },
+        {
+          kor: "랭킹 역순",
+          eng: "Lowest Rank",
+        },
+        {
+          kor: "번호순",
+          eng: "Ascending",
+        },
+        {
+          kor: "번호 역순",
+          eng: "Descending",
+        },
+      ],
     };
+  },
+  methods: {
+    toggleNFT() {
+      this.myNFT = !this.myNFT;
+    },
+    detailNft() {},
   },
 };
 </script>
@@ -258,67 +258,6 @@ export default {
             height: 24px;
           }
         }
-        ::v-deep .accordion-list {
-          .accordion-item {
-            .title {
-              position: relative;
-              padding: 27px 30px 26px;
-              font-size: 16px;
-              line-height: 21px;
-              border-radius: 0;
-              border-bottom: 1px solid #dddddd;
-              &::before {
-                content: none;
-              }
-              &::after {
-                content: "";
-                display: block;
-                position: absolute;
-                top: 50%;
-                right: 30px;
-                width: 24px;
-                height: 24px;
-                transform: translateY(-50%);
-                background: url("@/assets/images/ic_plus.svg") center no-repeat;
-              }
-              &.active {
-                &::after {
-                  background: url("@/assets/images/ic_minus.svg") center
-                    no-repeat;
-                }
-              }
-            }
-            .accordion-content {
-              .cont {
-                border-radius: 0;
-                padding: 25px 20px 25px 32.5px;
-                border-bottom: 1px solid #dddddd;
-                p {
-                  max-height: 382px;
-                  padding: 0;
-                  border: none;
-                  font-size: 0;
-                  overflow-y: auto;
-                  &::before {
-                    content: none;
-                  }
-                  .check-list {
-                    li {
-                      display: flex;
-                      height: 24px;
-                      & + li {
-                        margin-top: 20px;
-                      }
-                    }
-                  }
-                }
-              }
-            }
-            & + .accordion-item {
-              margin-top: 0;
-            }
-          }
-        }
       }
     }
     .right {
@@ -346,11 +285,69 @@ export default {
           }
         }
         .sort {
+          display: flex;
           .toggle {
+            display: inline-flex;
+            align-items: center;
             span {
+              font-size: 16px;
+              line-height: 21px;
+              color: #000000;
+              font-weight: 700;
+            }
+            .switch {
+              position: relative;
+              display: inline-block;
+              margin-left: 10px;
+              width: 40px;
+              height: 24px;
+              box-sizing: border-box;
+              input {
+                display: none;
+              }
+              .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+                -webkit-transition: 0.4s;
+                transition: 0.4s;
+                &::before {
+                  position: absolute;
+                  content: "";
+                  height: 18px;
+                  width: 18px;
+                  left: 4px;
+                  bottom: 3px;
+                  background-color: #fff;
+                  -webkit-transition: 0.4s;
+                  transition: 0.4s;
+                }
+                &.round {
+                  border-radius: 12px;
+                  &::before {
+                    border-radius: 50%;
+                  }
+                }
+              }
+            }
+            input:checked + .slider {
+              background-color: #101010;
+            }
+            input:focus + .slider {
+              box-shadow: 0 0 1px #101010;
+            }
+            input:checked + .slider:before {
+              -webkit-transform: translateX(14px);
+              -ms-transform: translateX(14px);
+              transform: translateX(14px);
             }
           }
           .select {
+            margin-left: 20px;
           }
         }
       }

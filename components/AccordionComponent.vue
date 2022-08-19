@@ -39,7 +39,7 @@
 <script>
 export default {
   name: "AccordionComponent",
-  props: ["list", "auto"],
+  props: ["list"],
   data() {
     return {
       onContent: [],
@@ -47,20 +47,11 @@ export default {
   },
   methods: {
     openCon(index) {
-      if (this.auto) {
-        if (this.onContent.some((el) => el === index)) {
-          this.onContent = [];
-        } else {
-          this.onContent = [];
-          this.onContent.push(index);
-        }
+      if (this.onContent.some((el) => el === index)) {
+        this.onContent = [];
       } else {
-        const findIndex = this.onContent.findIndex((el) => el === index);
-        if (findIndex !== -1) {
-          this.onContent.splice(findIndex, 1);
-        } else {
-          this.onContent.push(index);
-        }
+        this.onContent = [];
+        this.onContent.push(index);
       }
     },
     sendGaEvent(eventName, event_category) {
