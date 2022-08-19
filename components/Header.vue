@@ -23,28 +23,28 @@
     </div>
     <div class="category">
       <ul class="anchor-nav">
-        <li data-menuanchor="firstSection">
+        <li data-menuanchor="firstSection" @click="navClickFc">
           <a href="#bellyRoad/slide1" title="GET BELLY"
             ><span @click="sendGaEvent('gnb_getBelly', 'GNB')"
               >GET BELLY</span
             ></a
           >
         </li>
-        <li data-menuanchor="secondSection">
+        <li data-menuanchor="secondSection" @click="navClickFc">
           <a href="#bellyRoad/slide3" title="BELLY ROAD"
             ><span @click="sendGaEvent('gnb_bellyRoad', 'GNB')"
               >BELLY ROAD</span
             ></a
           >
         </li>
-        <li data-menuanchor="thirdSection">
+        <li data-menuanchor="thirdSection" @click="navClickFc">
           <a href="#bellyShip" title="BELLY SHIP"
             ><span @click="sendGaEvent('gnb_bellyShip', 'GNB')"
               >BELLY SHIP</span
             ></a
           >
         </li>
-        <li data-menuanchor="fourthSection">
+        <li data-menuanchor="fourthSection" @click="navClickFc">
           <button id="show-modal" @click="faqModal">
             <span @click="sendGaEvent('gnb_bellyFaq', 'GNB')">BELLY FAQ</span>
           </button>
@@ -188,6 +188,17 @@ export default {
       gtag("event", eventName, {
         event_category: event_category,
       });
+    },
+    navClickFc(event) {
+      // siblings.forEach(function (t){
+      //   t.classList.remove('active');
+      // });
+      const siblings = event.currentTarget.parentElement.children;
+      console.log(siblings);
+      Array.from(siblings).forEach(function(t){
+        t.classList.remove('active');
+      });
+      event.currentTarget.classList.add('active');
     },
     async connectKaikas() {
       if (this.isConnect) {
@@ -505,7 +516,7 @@ export default {
 }
 .fp-viewing-bellyRoad-slide1 #head .category{
   .anchor-nav {
-    li:nth-child(1) a{
+    li.active:nth-child(1) a{
       color: #FE3D6B;
       &:after {
         background: #FE3D6B;
@@ -515,7 +526,7 @@ export default {
 }
 .fp-viewing-bellyRoad-slide3 #head .category, .fp-viewing-bellyRoad-slide2 #head .category{
   .anchor-nav {
-    li:nth-child(2) a{
+    li.active:nth-child(2) a{
       color: #FE3D6B;
       &:after {
         background: #FE3D6B;
@@ -525,7 +536,7 @@ export default {
 }
 .fp-viewing-bellyShip #head .category, .fp-viewing-level-belly #head .category{
   .anchor-nav {
-    li:nth-child(3) a{
+    li.active:nth-child(3) a{
       color: #FE3D6B;
       &:after {
         background: #FE3D6B;
