@@ -88,12 +88,13 @@ export default {
   },
   mounted() {
     this.getName();
+    console.log('dfdfd',process.env.VUE_API_URL)
   },
   methods: {
     async getName() {
       const code = this.$route.query.code;
       //if (code === null) return;
-
+      console.log('dfsbfdfbbdffbd',`${process.env.VUE_API_URL}/get_user_id`);
       const url = `${process.env.VUE_API_URL}/get_user_id`; // 디코에 post TODO 주소처리
       console.log(url);
       //디스코드 인증센터
