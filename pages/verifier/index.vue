@@ -77,7 +77,7 @@
 <script>
 export default {
   name: "index",
-  layout: "verifier",
+  layout: "clean",
   data() {
     return {
       wallet_addr: null,
