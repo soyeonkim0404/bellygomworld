@@ -65,7 +65,7 @@
             새로운 소식과 벨리곰 팬을 만나보세요!!
           </span>
           <span class="eng">Join Bellygom NFT Discord community!!</span>
-          <a href="https://discord.gg/TDYtz2fcSN" target="_blank" class="link">
+          <a href="https://discord.com/channels/990785690579128340/990806087936671755" target="_blank" class="link">
             Discord Join
           </a>
         </div>
