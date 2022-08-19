@@ -2,15 +2,12 @@
   <div id="errorWrapper">
     <span class="img-text">
       <div class="txt-wrap">
-         <img v-if="$mq === 'pc'"
-              src="@/assets/images/main/img_error_belly02.png"
-         />
-         <img v-else
-              src="@/assets/m_images/main/img_error_belly02.png"
-         />
-         <p class="txt">
-          2020.11.01 22:00 ~ 2020.11.03 22:00
-         </p>
+        <img
+          v-if="$mq === 'pc'"
+          src="@/assets/images/main/img_error_belly02.png"
+        />
+        <img v-else src="@/assets/m_images/main/img_error_belly02.png" />
+        <p class="txt">2020.11.01 22:00 ~ 2020.11.03 22:00</p>
       </div>
     </span>
   </div>
@@ -18,9 +15,9 @@
 
 <script>
 export default {
-  props: ['error'],
-  layout: 'errorLayout',
-}
+  props: ["error"],
+  layout: "errorLayout",
+};
 </script>
 
 <style scoped lang="scss">

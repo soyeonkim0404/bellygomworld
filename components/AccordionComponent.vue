@@ -30,11 +30,6 @@
           <p>
             <slot name="cont" :item="item"></slot>
           </p>
-          <!--          <div class="download">
-            <a href="javascript:alert('작업중');" class="btn-download"
-              >PDF Download</a
-            >
-          </div>-->
         </div>
       </div>
     </li>
@@ -44,7 +39,7 @@
 <script>
 export default {
   name: "AccordionComponent",
-  props: ["list"],
+  props: ["list", "auto"],
   data() {
     return {
       onContent: [],
@@ -52,11 +47,20 @@ export default {
   },
   methods: {
     openCon(index) {
-      if (this.onContent.some((el) => el === index)) {
-        this.onContent = [];
+      if (this.auto) {
+        if (this.onContent.some((el) => el === index)) {
+          this.onContent = [];
+        } else {
+          this.onContent = [];
+          this.onContent.push(index);
+        }
       } else {
-        this.onContent = [];
-        this.onContent.push(index);
+        const findIndex = this.onContent.findIndex((el) => el === index);
+        if (findIndex !== -1) {
+          this.onContent.splice(findIndex, 1);
+        } else {
+          this.onContent.push(index);
+        }
       }
     },
     sendGaEvent(eventName, event_category) {

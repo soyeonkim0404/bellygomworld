@@ -44,6 +44,9 @@
             ></a
           >
         </li>
+        <li>
+          <nuxt-link to="/bellyPhoto">BELLY PHOTO</nuxt-link>
+        </li>
         <li data-menuanchor="fourthSection">
           <button id="show-modal" @click="faqModal">
             <span @click="sendGaEvent('gnb_bellyFaq', 'GNB')">BELLY FAQ</span>
@@ -81,7 +84,7 @@
             :class="{ on: this.showLang }"
           >
             <span class="txt">
-                {{ $store.getters.getLocale }}
+              {{ $store.getters.getLocale }}
             </span>
           </button>
           <transition name="fade">
@@ -154,8 +157,8 @@ export default {
           name: "Instagram",
         },
         {
-           url: "https://opensea.io/collection/bellygom-world-official",
-           name: "Opensea",
+          url: "https://opensea.io/collection/bellygom-world-official",
+          name: "Opensea",
         },
       ],
     };
@@ -199,12 +202,15 @@ export default {
           try {
             const klaytn = window.klaytn; //크롬에 깔린 카이카스 확장프로그램 안에는 klaytn 이 내장되어있다.
             const accounts = await klaytn.enable(); //카이카스 로그인
-            this.isConnect = true
+            this.isConnect = true;
           } catch (err) {
-            alert("Kaikas 지갑이 설치되어 있지 않습니다.\n크롬에서 Kaikas 확장 프로그램을 설치해주세요!");
-            window.open("https://chrome.google.com/webstore/detail/kaikas/jblndlipeogpafnldhgmapagcccfchpi")
+            alert(
+              "Kaikas 지갑이 설치되어 있지 않습니다.\n크롬에서 Kaikas 확장 프로그램을 설치해주세요!"
+            );
+            window.open(
+              "https://chrome.google.com/webstore/detail/kaikas/jblndlipeogpafnldhgmapagcccfchpi"
+            );
           }
-
         }
       }
     },
@@ -258,7 +264,8 @@ export default {
         li {
           display: inline-flex;
           position: relative;
-          a,button {
+          a,
+          button {
             width: 48px;
             height: 48px;
             display: block;
@@ -340,7 +347,6 @@ export default {
             border-radius: 100%;
             background: $white;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
-
           }
           &.link0 {
             button {
@@ -355,7 +361,7 @@ export default {
                 width: 32px;
                 height: 32px;
                 background: url("@/assets/images/ic_header_kaikas.svg") center
-                no-repeat;
+                  no-repeat;
                 transform: translate(-50%, -50%);
               }
             }
