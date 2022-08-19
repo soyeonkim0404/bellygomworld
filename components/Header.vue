@@ -255,7 +255,7 @@ export default {
             content: '';
             width: 0;
             height: 2px;
-            background: #000;
+            background: #333;
             transition: width 250ms ease-in-out;
             transform-origin: 0% 0;
           }
