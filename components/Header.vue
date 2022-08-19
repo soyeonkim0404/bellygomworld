@@ -503,7 +503,7 @@ export default {
     }
   }
 }
-.fp-viewing-bellyRoad-slide1 #head .category ,.fp-viewing-bellyRoad-slide2 #head .category{
+.fp-viewing-bellyRoad-slide1 #head .category{
   .anchor-nav {
     li:nth-child(1) a{
       color: #FE3D6B;
@@ -513,7 +513,7 @@ export default {
     }
   }
 }
-.fp-viewing-bellyRoad-slide3 #head .category{
+.fp-viewing-bellyRoad-slide3 #head .category, .fp-viewing-bellyRoad-slide2 #head .category{
   .anchor-nav {
     li:nth-child(2) a{
       color: #FE3D6B;
