@@ -52,7 +52,7 @@
       </ul>
       <div class="etc-link">
         <ul class="sns">
-          <li class="link0">
+          <li class="link0" :class="{ active: isConnect }" >
             <button @click="connectKaikas()">지갑연결</button>
           </li>
           <li class="link1" @click="sendGaEvent('gnb_shop', 'GNB')">
@@ -240,6 +240,9 @@ export default {
     .anchor-nav {
       li {
         display: inline-flex;
+        span {
+          line-height: 27px;
+        }
         a,
         button {
           font-size: 18px;
@@ -247,6 +250,18 @@ export default {
           font-weight: 400;
           padding: 10px 20px;
           color: #333333;
+          &:after {
+            display:block;
+            content: '';
+            width: 0;
+            height: 2px;
+            background: #000;
+            transition: width 250ms ease-in-out;
+            transform-origin: 0% 0;
+          }
+          &:hover:after {
+            width: 100%;
+          }
         }
       }
     }
@@ -343,6 +358,19 @@ export default {
 
           }
           &.link0 {
+            &.active {
+              button {
+                &::after {
+                  content: "";
+                  position: absolute;
+                  top: 28px;
+                  left: 34px;
+                  width: 20px;
+                  height: 20px;
+                  background: url("@/assets/images/ic_20_connect.svg") center;
+                }
+              }
+            }
             button {
               position: relative;
               text-indent: -9999em;
@@ -471,6 +499,36 @@ export default {
             transform: translateX(-50%);
           }
         }
+      }
+    }
+  }
+}
+.fp-viewing-bellyRoad-slide1 #head .category ,.fp-viewing-bellyRoad-slide2 #head .category{
+  .anchor-nav {
+    li:nth-child(1) a{
+      color: #FE3D6B;
+      &:after {
+        background: #FE3D6B;
+      }
+    }
+  }
+}
+.fp-viewing-bellyRoad-slide3 #head .category{
+  .anchor-nav {
+    li:nth-child(2) a{
+      color: #FE3D6B;
+      &:after {
+        background: #FE3D6B;
+      }
+    }
+  }
+}
+.fp-viewing-bellyShip #head .category, .fp-viewing-level-belly #head .category{
+  .anchor-nav {
+    li:nth-child(3) a{
+      color: #FE3D6B;
+      &:after {
+        background: #FE3D6B;
       }
     }
   }

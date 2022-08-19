@@ -1906,7 +1906,10 @@ export default {
           } else if (destination.index === 3) {
             this.charClass = "s3";
           }
-
+          console.log('위치 destination', destination.index)
+          document.querySelectorAll('.anchor-nav li a').forEach(function(nav){
+            nav.classList.remove('active');
+          });
           if (destination.index === 0) {
             this.cloudMoved = false;
             document.querySelector(".top-btn").style.opacity = 0;
@@ -1921,16 +1924,19 @@ export default {
           if (destination.index === 0) {
             this.charTop = "translate(-50%,-100%)";
           } else if (destination.index === 1) {
+            document.querySelector('.anchor-nav li:first-child a').classList.add('active');
             const t =
               window.innerHeight * 1 + window.innerHeight / 2 - charHeight;
             this.charTop = "translate(-50%," + t + "px)";
           } else if (destination.index === 2) {
+            document.querySelector('.anchor-nav li:nth-child(2) a').classList.add('active');
             const t =
               window.innerHeight * 3 -
               (window.innerWidth / 16) * 9 * 0.28 -
               charHeight;
             this.charTop = "translate(-50%," + t + "px)";
           } else if (destination.index === 3) {
+            document.querySelector('.anchor-nav li:nth-child(3) a').classList.add('active');
             console.log(document.querySelector(".bellyship").offsetHeight);
             const t =
               window.innerHeight * 4 - window.innerHeight * 0.6 - charHeight;
@@ -1938,6 +1944,7 @@ export default {
           }
 
           if (destination.index === 4) {
+            document.querySelector('.anchor-nav li:nth-child(3) a').classList.add('active');
             document.getElementById("fixed").style.display = "none";
           } else {
             setTimeout(() => {
