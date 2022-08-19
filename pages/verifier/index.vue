@@ -184,7 +184,7 @@ export default {
   width: 100%;
   min-height: 100vh;
   padding: 20px;
-  //background: url("@/assets/images/discode_holder_bg.jpeg") center center / cover no-repeat;
+  background: url("@/assets/images/discode_holder_bg.jpeg") center center / cover no-repeat;
   box-sizing: border-box;
   overflow-x: hidden;
 
@@ -221,7 +221,7 @@ export default {
       &::before {
         width: 48px;
         height: 48px;
-        //background: url("@/assets/images/discode_holder_pop_close.svg") no-repeat center;
+        background: url("@/assets/images/discode_holder_pop_close.svg") no-repeat center;
       }
     }
   }
@@ -349,7 +349,7 @@ export default {
         margin-top: 30px;
         padding: 30px;
         box-sizing: border-box;
-        //background-image: url("@/assets/images/discode_logo.svg");
+        background-image: url("@/assets/images/discode_logo.svg");
         background-size: 105px 86px;
         background-position: right 70px;
         background-repeat: no-repeat;
