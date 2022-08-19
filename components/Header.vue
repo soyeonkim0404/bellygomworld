@@ -137,10 +137,6 @@ export default {
       showModal: false,
       isConnect: false,
       linkList: [
-        /*{
-          url: "https://opensea.io/",
-          name: "Opensea",
-        },*/
         {
           url: "https://discord.gg/TDYtz2fcSN",
           name: "Discord",
@@ -156,7 +152,11 @@ export default {
         {
           url: "https://www.instagram.com/bellygom.official/",
           name: "Instagram",
-        }
+        },
+        {
+           url: "https://opensea.io/collection/bellygom-world-official",
+           name: "Opensea",
+        },
       ],
     };
   },

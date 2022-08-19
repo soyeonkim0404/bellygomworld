@@ -931,7 +931,7 @@
 
                         <strong>호텔 할인</strong>
                         <p>
-                          롯데 계열 호텔 최대 15% 혜택을 상시 제공합니다<br/>
+                          롯데 계열 호텔 최대 15% 혜택을 상시 제공합니다.<br/>
                           (*시그니엘, 롯데호텔, 롯데시티호텔, L7)
                         </p>
                       </li>
@@ -1852,7 +1852,7 @@ export default {
   components: { Footer },
   data() {
     return {
-      mintingModal: true,
+      mintingModal: false,
       showStoryModal: false,
       currIndi: 1,
       faqShow: false,
@@ -1911,11 +1911,11 @@ export default {
             this.cloudMoved = false;
             document.querySelector(".top-btn").style.opacity = 0;
             document.querySelector(".story-modal-btn").classList.remove("up");
-            document.querySelector(".mint-modal-btn").classList.remove("up");
+            //document.querySelector(".mint-modal-btn").classList.remove("up");
           } else {
             document.querySelector(".top-btn").style.opacity = 1;
             document.querySelector(".story-modal-btn").classList.add("up");
-            document.querySelector(".mint-modal-btn").classList.add("up");
+            //document.querySelector(".mint-modal-btn").classList.add("up");
           }
           const charHeight = (window.innerWidth * 0.375) / 2;
           if (destination.index === 0) {
@@ -1937,7 +1937,7 @@ export default {
             this.charTop = "translate(-50%," + -t + "px)";
           }
 
-          if (destination.index === 4) {
+          if (destination.index === 5) {
             document.getElementById("fixed").style.display = "none";
           } else {
             setTimeout(() => {
