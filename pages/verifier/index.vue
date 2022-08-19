@@ -101,6 +101,7 @@ export default {
       try {
         const res = await fetch(url, {
           method: "POST",
+          mode:'cors',
           headers: {
             "Content-Type": "application/json",
           },
@@ -149,6 +150,7 @@ export default {
         const url = `${process.env.VUE_API_URL}/api_discord_connect`;  //TODO
         const res = await fetch(url, {
           method: "POST",
+          mode:'cors',
           headers: {
             "Content-Type": "application/json",
           },
