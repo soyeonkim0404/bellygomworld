@@ -36,7 +36,7 @@
                 <span class="name">벨리곰 NFT 보유 수</span>
                 <span class="num">0</span>
               </div>
-              <a href="https://opensea.io/collection/Bellygom-World-Official" target="_blank" class="btn">벨리곰 NFT 구매</a>
+              <a href="https://opensea.io/collection/bellygom-world-official" target="_blank" class="btn">벨리곰 NFT 구매</a>
             </template>
           </div>
         </div>
