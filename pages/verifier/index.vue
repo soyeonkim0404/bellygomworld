@@ -122,6 +122,7 @@ export default {
       } else {
         if (!window.klaytn.networkVersion) {
           window.location.reload();
+          location.reload();
           return;
         }else{
           this.getName();
