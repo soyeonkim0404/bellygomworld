@@ -1,8 +1,14 @@
 <template>
   <div class="wrap">
     <div class="contents">
-      <img src="@/assets/images/discord_holder_logo.svg" alt="logo" class="logo" />
-      <button type="button" class="btn-sign" @click="connectKaikas">SIGN</button>
+      <img
+        src="@/assets/images/discord_holder_logo.svg"
+        alt="logo"
+        class="logo"
+      />
+      <button type="button" class="btn-sign" @click="connectKaikas">
+        SIGN
+      </button>
       <!-- <button type="button" class="btn-sign" @click="showHolder">홀더</button> -->
       <!--modal-->
       <modal v-if="holderModal" @close="closeHolder" class="modal">
@@ -21,7 +27,12 @@
                 <span class="name">벨리곰 NFT 보유 수</span>
                 <span class="num">{{ nftNum }}</span>
               </div>
-              <a href="https://discord.com/invite/TDYtz2fcSN" target="_blank" class="btn">커뮤니티 이동</a>
+              <a
+                href="https://discord.com/invite/TDYtz2fcSN"
+                target="_blank"
+                class="btn"
+                >커뮤니티 이동</a
+              >
             </template>
             <template v-else>
               <p class="desc">
@@ -36,7 +47,12 @@
                 <span class="name">벨리곰 NFT 보유 수</span>
                 <span class="num">0</span>
               </div>
-              <a href="https://opensea.io/collection/bellygom-world-official" target="_blank" class="btn">벨리곰 NFT 구매</a>
+              <a
+                href="https://opensea.io/collection/bellygom-world-official"
+                target="_blank"
+                class="btn"
+                >벨리곰 NFT 구매</a
+              >
             </template>
           </div>
         </div>
@@ -65,7 +81,11 @@
             새로운 소식과 벨리곰 팬을 만나보세요!!
           </span>
           <span class="eng">Join Bellygom NFT Discord community!!</span>
-          <a href="https://discord.com/channels/990785690579128340/990806087936671755" target="_blank" class="link">
+          <a
+            href="https://discord.com/channels/990785690579128340/990806087936671755"
+            target="_blank"
+            class="link"
+          >
             Discord Join
           </a>
         </div>
@@ -87,21 +107,28 @@ export default {
     };
   },
   mounted() {
-    if (!window.klaytn) {
-      alert("Kaikas 지갑이 설치되어 있지 않습니다.\n크롬에서 Kaikas 확장 프로그램을 설치해주세요!");
-      window.open("https://chrome.google.com/webstore/detail/kaikas/jblndlipeogpafnldhgmapagcccfchpi")
-      return;
-    }else{
-      // if (!window.klaytn.networkVersion) {
-      //   window.location.reload();
-      //   return;
-      // }else{
-      //   this.getName();
-      //   return;
-      // }
-    }
+    this.kaikasConnetVerifier()
   },
   methods: {
+    async kaikasConnetVerifier() {
+      if (!window.klaytn) {
+        alert(
+          "Kaikas 지갑이 설치되어 있지 않습니다.\n크롬에서 Kaikas 확장 프로그램을 설치해주세요!"
+        );
+        window.open(
+          "https://chrome.google.com/webstore/detail/kaikas/jblndlipeogpafnldhgmapagcccfchpi"
+        );
+        return;
+      } else {
+        if (!window.klaytn.networkVersion) {
+          window.location.reload();
+          return;
+        }else{
+          this.getName();
+          return;
+        }
+      }
+    },
     async getName() {
       const code = this.$route.query.code;
       //if (code === null) return;
@@ -115,17 +142,15 @@ export default {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            code
+            code,
           }),
         });
 
-
         const userData = await res.json();
-        this.discord_user_id = userData.userID   
+        this.discord_user_id = userData.userID;
       } catch (error) {
         console.log(error);
       }
-
     },
     showHolder() {
       this.holderModal = true;
@@ -133,15 +158,19 @@ export default {
     closeHolder() {
       this.holderModal = false;
     },
-    
+
     async connectKaikas() {
       try {
         const klaytn = await window.klaytn; //크롬에 깔린 카이카스 확장프로그램 안에는 klaytn 이 내장되어있다.
         const accounts = await klaytn.enable(); //카이카스 로그인
         this.wallet_addr = accounts[0];
       } catch (err) {
-        alert("Kaikas 지갑이 설치되어 있지 않습니다.\n크롬에서 Kaikas 확장 프로그램을 설치해주세요!");
-        window.open("https://chrome.google.com/webstore/detail/kaikas/jblndlipeogpafnldhgmapagcccfchpi")
+        alert(
+          "Kaikas 지갑이 설치되어 있지 않습니다.\n크롬에서 Kaikas 확장 프로그램을 설치해주세요!"
+        );
+        window.open(
+          "https://chrome.google.com/webstore/detail/kaikas/jblndlipeogpafnldhgmapagcccfchpi"
+        );
       }
       this.signatureHandler();
     },
@@ -150,13 +179,16 @@ export default {
       console.log(this.discord_user_id);
       try {
         const caver = await window.caver;
-        const sig = await caver.klay.sign("BellyGom Holder Verify", this.wallet_addr);
+        const sig = await caver.klay.sign(
+          "BellyGom Holder Verify",
+          this.wallet_addr
+        );
         const v = `0x` + sig.substring(2).substring(128, 130);
         const r = `0x` + sig.substring(2).substring(0, 64);
         const s = `0x` + sig.substring(2).substring(64, 128);
         const signature = [v, r, s];
 
-        const url = `${process.env.VUE_API_URL}/api_discord_connect`;  //TODO
+        const url = `${process.env.VUE_API_URL}/api_discord_connect`; //TODO
         const res = await fetch(url, {
           method: "POST",
           headers: {
@@ -164,22 +196,22 @@ export default {
           },
           body: JSON.stringify({
             wallet_addr: this.wallet_addr,
-            discord_user_id: this.discord_user_id, 
-            signature
+            discord_user_id: this.discord_user_id,
+            signature,
           }),
         });
 
         const resData = await res.json();
         console.log("resData", resData);
         if (resData.code === 200) {
-          this.nftNum = resData.count
+          this.nftNum = resData.count;
           this.holderModal = true;
         } else {
           this.nftNum = 0;
           this.holderModal = true;
         }
       } catch (error) {
-        alert('홀더인증이 실패하였습니다.');
+        alert("홀더인증이 실패하였습니다.");
       }
     },
   },
@@ -195,7 +227,8 @@ export default {
   width: 100%;
   min-height: 100vh;
   padding: 20px;
-  background: url("@/assets/images/discode_holder_bg.jpeg") center center / cover no-repeat;
+  background: url("@/assets/images/discode_holder_bg.jpeg") center center /
+    cover no-repeat;
   box-sizing: border-box;
   overflow-x: hidden;
 
@@ -232,7 +265,8 @@ export default {
       &::before {
         width: 48px;
         height: 48px;
-        background: url("@/assets/images/discode_holder_pop_close.svg") no-repeat center;
+        background: url("@/assets/images/discode_holder_pop_close.svg")
+          no-repeat center;
       }
     }
   }
@@ -265,7 +299,7 @@ export default {
       text-align: center;
       font-weight: 700;
 
-      &+span {
+      & + span {
         margin-top: 15px;
       }
     }
