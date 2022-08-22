@@ -92,13 +92,13 @@ export default {
       window.open("https://chrome.google.com/webstore/detail/kaikas/jblndlipeogpafnldhgmapagcccfchpi")
       return;
     }else{
-      if (!window.klaytn.networkVersion) {
-        location.reload();
-        return;
-      }else{
-        this.getName();
-        return;
-      }
+      // if (!window.klaytn.networkVersion) {
+      //   window.location.reload();
+      //   return;
+      // }else{
+      //   this.getName();
+      //   return;
+      // }
     }
   },
   methods: {
