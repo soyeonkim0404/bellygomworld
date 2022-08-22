@@ -120,8 +120,8 @@ export default {
         );
         return;
       } else {
-        console.log(window.klaytn.networkVersion);
-        console.log(window.klaytn.networkVersion==='loading');
+        // console.log(window.klaytn.networkVersion);
+        // console.log(window.klaytn.networkVersion==='loading'); 처음에 kaikas 못불러오면 로딩뜰때도있음 
         if (window.klaytn.networkVersion === undefined || window.klaytn.networkVersion==='loading') {
           window.location.reload();
           location.reload();
