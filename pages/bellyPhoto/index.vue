@@ -2,7 +2,7 @@
   <div class="wrap">
     <h2 class="sub-title">BELLY PHOTO</h2>
     <div class="contents">
-      <div class="left">
+      <div class="section1">
         <InputSearch v-model="keyword" placeholder="#Number" />
         <div class="filter" v-if="$mq === 'pc'">
           <div class="con-title">
@@ -13,12 +13,15 @@
           </div>
           <BellyPhotoFilter :list="filterList" :filterChkList="filterChkList" />
         </div>
+        <button class="mobile-filter" v-if="$mq === 'mobile'">
+          <img src="@/assets/images/ic-mobile-filter.svg" alt="" />
+        </button>
       </div>
-      <div class="right">
+      <div class="section2">
         <div class="top">
           <div class="total"><span>10,000</span> Items</div>
           <div class="sort">
-            <div class="toggle">
+            <div class="toggle" v-if="$mq === 'pc'">
               <span>MY NFTs</span>
               <label class="switch">
                 <input type="checkbox" @click="toggleNFT" />
@@ -26,43 +29,148 @@
               </label>
             </div>
             <div class="select">
-              <SelectBox
-                v-model="selectValue"
-                :items="selectOption"
-                :input_id="'sort'"
-              />
+              <SelectBox :items="selectOption" :default="'랭킹 순'" />
             </div>
           </div>
         </div>
-        <ul class="photo">
-          <li
-            v-for="(item, index) in photoList"
-            :key="index"
-            class="item"
-            @click="detailNft(item.id)"
-          >
-            <span class="lank">Rank {{ item.lank }}</span>
-            <span class="image"
-              ><img src="@/assets/images/belly_photo_teest.svg"
-            /></span>
-            <span class="info">Bellygom #{{ item.nft }}</span>
-            <span class="border"></span>
-          </li>
-        </ul>
+        <template v-if="myNFT">
+          <!--my nft 토글 on :: 지갑연결이 안되어 있을 경우-->
+          <div class="photo-box">
+            <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
+              Please, Connect Kaikas wallet to see your Bellygom NFTs.
+            </p>
+            <p class="desc" v-else>
+              보유 중인 벨리곰 NFT를 확인하려면 카이카스 지갑 연동이 필요해요!
+            </p>
+            <button class="btn-wallet">CONNECT WALLET</button>
+          </div>
+          <!--my nft 토글 on :: nft 노 존재-->
+          <button class="connect-wallet">
+            <img src="@/assets/images/ic-kaikas.svg" />
+            OXA89...664
+          </button>
+          <div class="photo-box">
+            <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
+              You don’t have any Bellygom NFT.
+            </p>
+            <p class="desc" v-else>
+              보유하고 계신 Bellygom NFT가 존재하지 않습니다.
+            </p>
+            <a
+              href="https://opensea.io/collection/bellygom-world-official"
+              target="_blank"
+              class="btn-wallet"
+              ><img src="@/assets/images/belly-photo-detail-opensea.svg" />Buy
+              on OpenSea</a
+            >
+          </div>
+        </template>
+        <template v-else>
+          <template v-if="photoList.length === 0">
+            <!--미 검색시 -->
+            <div class="photo-box">
+              <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
+                No Matching Bellygom Found.
+              </p>
+              <p class="desc" v-else>
+                검색하신 조건의 벨리곰NFT를 찾지 못했습니다.
+              </p>
+            </div>
+          </template>
+          <template v-else>
+            <ul class="photo" v-if="photoList.length !== 0">
+              <li
+                v-for="(item, index) in photoList"
+                :key="index"
+                class="item"
+                @click="detailNft(item)"
+              >
+                <span class="lank">Rank {{ item.lank }}</span>
+                <span class="image">
+                  <img src="@/assets/images/belly_photo_teest.svg" />
+                </span>
+                <span class="info">Bellygom #{{ item.nft }}</span>
+                <span class="border"></span>
+              </li>
+            </ul>
+          </template>
+        </template>
       </div>
     </div>
-    <!--    <photoModal />-->
+
+    <modal v-if="modalShow" @close="modalHide" class="detail-nft">
+      <div slot="header"></div>
+      <div slot="body">
+        <div class="inner">
+          <div class="nft-thumb">
+            <img src="@/assets/images/belly-photo-detail.svg" class="thumb" />
+            <button class="btn-opensea">
+              <img src="@/assets/images/belly-photo-detail-opensea.svg" />
+              View on OpenSea
+            </button>
+          </div>
+          <div class="nft-info">
+            <div class="top">
+              <span :class="`flag-${modalSeq.flag}`">{{ modalSeq.flag }}</span>
+              <div class="nft-title">Bellygom #{{ modalSeq.nft }}</div>
+            </div>
+            <div class="contents">
+              <div class="number">
+                <div class="col">
+                  <span class="tit">Ranking</span>
+                  <span class="data">{{ modalSeq.lank }}</span>
+                </div>
+                <div class="col">
+                  <span class="tit">Score</span>
+                  <span class="data">7777.00</span>
+                </div>
+              </div>
+              <div class="property">
+                <span class="tit">Properties</span>
+                <ul class="list">
+                  <li>
+                    <span class="sub">Background</span>
+                    <span class="desc">Ice Mountain Nature</span>
+                  </li>
+                  <li>
+                    <span class="sub">Body</span>
+                    <span class="desc">Aluminium Steel</span>
+                  </li>
+                  <li>
+                    <span class="sub">Clothes</span>
+                    <span class="desc">Black White Print Tshirt</span>
+                  </li>
+                  <li>
+                    <span class="sub">Background</span>
+                    <span class="desc">Ice Mountain Nature</span>
+                  </li>
+                  <li>
+                    <span class="sub">Body</span>
+                    <span class="desc">Aluminium Steel</span>
+                  </li>
+                  <li>
+                    <span class="sub">Clothes</span>
+                    <span class="desc">Black White Print Tshirt</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div slot="footer"></div>
+    </modal>
   </div>
 </template>
 
 <script>
-import photoModal from "@/pages/bellyPhoto/modal";
 export default {
   name: "bellyPhoto",
   layout: "bellyPhoto",
-  components: { photoModal },
   data() {
     return {
+      kaikas: "0x7c6C70AB930E5637f5F862629A67D47C3403cC34",
+      modalShow: false,
       keyword: "",
       myNFT: false,
       filterList: [
@@ -114,7 +222,7 @@ export default {
           list: [
             { value: "Category0000" },
             { value: "Category0001" },
-            { value: "Category0002" },
+            { value: "Hot heart sunglasses" },
             { value: "Category0003" },
             { value: "Category0004" },
             { value: "Category0005" },
@@ -148,43 +256,52 @@ export default {
           id: 1,
           lank: 10000,
           nft: "9999",
+          flag: "Mega",
         },
         {
           id: 2,
           lank: 9999,
           nft: "8888",
+          flag: "Belly",
         },
         {
           id: 3,
           lank: 1,
           nft: "1234",
+          flag: "Holic",
         },
         {
           id: 4,
           lank: 100,
           nft: "4985",
+          flag: "Super",
         },
         {
           id: 5,
           lank: 99,
           nft: "2945",
+          flag: "Surprise",
         },
         {
           id: 6,
           lank: 34,
           nft: "2367",
+          flag: "Friends",
         },
         {
           id: 7,
           lank: 3,
           nft: "0987",
+          flag: "Friends",
         },
         {
           id: 8,
           lank: 980,
           nft: "3380",
+          flag: "Holic",
         },
       ],
+      modalSeq: "",
       selectValue: "",
       selectOption: [
         {
@@ -210,7 +327,13 @@ export default {
     toggleNFT() {
       this.myNFT = !this.myNFT;
     },
-    detailNft() {},
+    detailNft(item) {
+      this.modalShow = true;
+      this.modalSeq = item;
+    },
+    modalHide() {
+      this.modalShow = false;
+    },
   },
 };
 </script>
@@ -221,6 +344,9 @@ export default {
   max-width: 1260px;
   margin: 0 auto;
   padding-top: 110px;
+  .mobile & {
+    padding-top: 60px;
+  }
   .sub-title {
     margin-top: 120px;
     text-align: center;
@@ -229,11 +355,16 @@ export default {
     font-weight: 400;
     font-size: 80px;
     line-height: 104px;
+    .mobile & {
+      margin-top: 50px;
+      font-size: 30px;
+      line-height: 39px;
+    }
   }
   .contents {
     display: flex;
     margin: 80px 0;
-    .left {
+    .section1 {
       display: flex;
       width: 100%;
       max-width: 297px;
@@ -254,13 +385,14 @@ export default {
           font-weight: 700;
           border-bottom: 1px solid #dddddd;
           .btn-reset {
+            background: transparent;
             width: 24px;
             height: 24px;
           }
         }
       }
     }
-    .right {
+    .section2 {
       display: flex;
       width: 100%;
       max-width: 939px;
@@ -335,10 +467,9 @@ export default {
               }
             }
             input:checked + .slider {
-              background-color: #101010;
+              background-color: #4944e4;
             }
             input:focus + .slider {
-              box-shadow: 0 0 1px #101010;
             }
             input:checked + .slider:before {
               -webkit-transform: translateX(14px);
@@ -407,6 +538,345 @@ export default {
             &:hover {
               transition: border 0.3s ease 0s;
               border: 4px solid #4944e4;
+            }
+          }
+        }
+      }
+    }
+    .mobile & {
+      margin: 10px 0 0;
+      padding: 0 20px;
+      width: 100%;
+      flex-wrap: wrap;
+      overflow: hidden;
+      box-sizing: border-box;
+      .section1 {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+        height: 40px;
+        padding: 11px 0 11px 20px;
+        margin: 0;
+        box-sizing: border-box;
+        vertical-align: middle;
+        border-radius: 25px;
+        border: none;
+        background: #ffffff;
+        box-shadow: 0 4px 10px rgb(0 0 0 / 3%);
+        ::v-deep .input-search {
+          width: calc(100% - 54px);
+          height: 100%;
+          input {
+            height: 100%;
+            padding: 0;
+            box-shadow: none;
+            border-radius: 0;
+            font-size: 14px;
+            line-height: 18px;
+          }
+          .icon {
+            right: 10px;
+          }
+        }
+        .mobile-filter {
+          position: relative;
+          width: 54px;
+          &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 1px;
+            height: 16px;
+            background: rgba(0, 0, 0, 0.3);
+            transform: translateY(-50%);
+          }
+          img {
+            width: 24px;
+            height: 24px;
+            object-fit: cover;
+          }
+        }
+      }
+      .section2 {
+        margin: 32px 0 0;
+        max-width: 100%;
+        .top {
+          height: auto;
+          .total {
+            font-size: 14px;
+            line-height: 18px;
+          }
+          .sort {
+            .select {
+              margin: 0;
+              ::v-deep .custom-select {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                min-width: 94px;
+                height: 24px;
+                line-height: 24px;
+                .selected {
+                  padding: 0 25px 0 0;
+                  background: none;
+                  box-shadow: none;
+                  font-size: 14px;
+                  line-height: 18px;
+                  &::before {
+                    top: -2px;
+                    right: 0;
+                  }
+                }
+                .items {
+                  top: 30px;
+                  padding: 17px 20px;
+                  border-radius: 15px;
+                  .item {
+                    display: flex;
+                    align-items: center;
+                    height: 36px;
+                    font-size: 14px;
+                    line-height: 14px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .photo {
+          grid-template-columns: repeat(2, 1fr);
+          grid-column-gap: 10px;
+          grid-row-gap: 20px;
+        }
+      }
+    }
+  }
+}
+
+[class^="btn-"] {
+  background: #4944e4;
+  color: #ffffff;
+  border-radius: 20px;
+}
+
+.connect-wallet {
+  position: relative;
+  width: 208px;
+  height: 52px;
+  background: #fff;
+  border-radius: 25px;
+  margin-top: 20px;
+  img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    background: url("@/assets/images/ic-kaikas-close.svg") center no-repeat;
+  }
+}
+
+.photo-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 365px;
+  margin-top: 20px;
+  border: 2px dashed rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  .desc {
+    display: block;
+    font-size: 18px;
+    line-height: 27px;
+  }
+  [class^="btn-"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    height: 60px;
+    margin-top: 28px;
+    font-weight: 700;
+    font-size: 20px;
+    img {
+      width: 22.5px;
+      height: 22.5px;
+      margin-right: 8.75px;
+    }
+  }
+}
+
+/*modal*/
+.detail-nft {
+  ::v-deep .modal-container {
+    position: relative;
+    width: 1170px;
+    height: auto;
+    padding: 40px;
+    border-radius: 50px;
+    .modal-body {
+      .inner {
+        display: flex;
+        .nft-thumb {
+          flex: 0 0 460px;
+          width: 460px;
+          .thumb {
+            width: 460px;
+            height: 460px;
+            border-radius: 20px;
+          }
+          .btn-opensea {
+            width: 100%;
+            height: 80px;
+            font-size: 24px;
+            line-height: 36px;
+            margin-top: 24px;
+            img {
+              width: 40px;
+              height: 40px;
+              object-fit: cover;
+            }
+          }
+        }
+        .nft-info {
+          flex: 1 1 auto;
+          margin-left: 40px;
+          .top {
+            [class^="flag-"] {
+              display: inline-block;
+              width: auto;
+              height: 30px;
+              padding: 4px 15px;
+              border-radius: 15px;
+              background: #ffffff;
+              box-sizing: border-box;
+              font-size: 14px;
+              line-height: 22px;
+              border: 2px solid;
+              font-weight: 700;
+              &[class*="Mega"] {
+                border-color: #596aff;
+                color: #596aff;
+              }
+              &[class*="Belly"] {
+                border-color: #ff5290;
+                color: #ff5290;
+              }
+              &[class*="Holic"] {
+                border-color: #c03dfe;
+                color: #c03dfe;
+              }
+              &[class*="Super"] {
+                border-color: #ff9d43;
+                color: #ff9d43;
+              }
+              &[class*="Surprise"] {
+                border-color: #ff72e0;
+                color: #ff72e0;
+              }
+              &[class*="Friends"] {
+                border-color: #8988ff;
+                color: #8988ff;
+              }
+            }
+            .nft-title {
+              margin-top: 10px;
+              font-family: "Sandoll Odongtong", sans-serif;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 34px;
+              line-height: 51px;
+            }
+          }
+          .contents {
+            display: block;
+            margin: 30px 0 0;
+            .tit {
+              display: block;
+              font-size: 18px;
+              line-height: 27px;
+              color: #555;
+              font-weight: 700;
+            }
+            .number {
+              display: flex;
+              .col {
+                flex: 0 0 50%;
+                .data {
+                  display: block;
+                  margin-top: 5px;
+                  font-size: 30px;
+                  line-height: 45px;
+                  color: #000;
+                  font-weight: 700;
+                }
+              }
+            }
+            .property {
+              margin-top: 30px;
+              .list {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                margin-top: 10px;
+                li {
+                  background: #f5f5f5;
+                  border-radius: 20px;
+                  padding: 20px;
+                  .sub {
+                    display: block;
+                    font-size: 14px;
+                    line-height: 21px;
+                    color: #999;
+                  }
+                  .desc {
+                    display: block;
+                    font-size: 18px;
+                    line-height: 27px;
+                    font-weight: 700;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .mobile & {
+    ::v-deep .modal-container {
+      border-radius: 0;
+      padding: 0;
+      .modal-body {
+        padding: 0;
+        .inner {
+          flex-direction: column;
+          .nft-thumb {
+            flex: none;
+            width: 100%;
+            img {
+              width: 100%;
+              height: auto;
+              border-radius: 0;
+            }
+            .btn-opensea {
+              position: fixed;
+              bottom: 0;
+              left: 0;
             }
           }
         }

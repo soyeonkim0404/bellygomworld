@@ -1,66 +1,111 @@
 <template>
-  <span class="select-inner">
-    <select v-bind:id="input_id" v-on:input="updateValue($event.target.value)">
-      <option v-for="(item, index) in items" :value="index">
+  <div class="custom-select">
+    <div class="selected" :class="{ open: open }" @click="open = !open">
+      {{ selected }}
+    </div>
+    <div class="items" :class="{ selectHide: !open }">
+      <div
+        v-for="(item, index) in items"
+        :key="index"
+        @click="
+          selected = $store.getters.getLocale === 'ENG' ? item.eng : item.kor;
+          open = false;
+          $emit('input', selected);
+        "
+        class="item"
+      >
         <template v-if="$store.getters.getLocale === 'ENG'">
           {{ item.eng }}
         </template>
         <template v-else>
           {{ item.kor }}
         </template>
-      </option>
-    </select>
-  </span>
+      </div>
+    </div>
+  </div>
 </template>
 <script>
 export default {
   name: "SelectBox",
   data() {
-    return {};
+    return {
+      selected: this.default
+        ? this.default
+        : this.items.length > 0
+        ? this.items.forEach((e) => {
+            $store.getters.getLocale === "ENG" ? e.eng : e.kor;
+          })
+        : null,
+      open: false,
+    };
   },
-  props: ["value", "items", "input_id"],
-  methods: {
-    updateValue(value) {
-      this.$emit("input", value);
-    },
+  props: ["value", "items", "default"],
+  mounted() {
+    this.$emit("input", this.selected);
   },
 };
 </script>
 <style lang="scss" scoped>
-.select-inner {
+.custom-select {
   position: relative;
-  display: block;
-  background: $white;
-  border-radius: 25px;
-  select {
+  width: auto;
+  min-width: 165px;
+  text-align: left;
+  outline: none;
+  height: 50px;
+  line-height: 50px;
+  .selected {
     position: relative;
-    width: auto;
-    height: 50px;
-    padding: 15px 50px 14px 20px;
-    min-width: auto;
-    border: none;
-    background: transparent;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    font-size: 16px;
-    line-height: 21px;
-    outline: none !important;
-    color: #000;
     font-family: "Sandoll GothicNeoRound", sans-serif;
     font-weight: 700;
-    option {
+    background: $white;
+    font-size: 16px;
+    line-height: 21px;
+    border-radius: 25px;
+    color: $black;
+    cursor: pointer;
+    user-select: none;
+    padding: 15px 50px 14px 20px;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 3%);
+    &:before {
+      content: "";
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 20px;
+      height: 20px;
+      background: url("@/assets/images/ic_24_arrow_down.svg") no-repeat center;
+    }
+    &.open {
+      &:before {
+        transform: rotate(180deg);
+      }
     }
   }
-  &:before {
-    content: "";
+  .items {
+    background: $white;
+    border-radius: 25px;
+    padding: 15px 50px 14px 20px;
+    overflow: hidden;
     position: absolute;
-    top: 50%;
-    right: 15px;
-    width: 20px;
-    height: 20px;
-    background: url("@/assets/images/ic_24_arrow_down.svg") no-repeat center;
-    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    z-index: 1;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 3%);
+    margin-top: 10px;
+    .item {
+      color: $black;
+      cursor: pointer;
+      user-select: none;
+      font-size: 16px;
+      line-height: 50px;
+      &:hover {
+      }
+    }
   }
+}
+
+.selectHide {
+  display: none;
 }
 </style>

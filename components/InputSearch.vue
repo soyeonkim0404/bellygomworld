@@ -7,10 +7,9 @@
       :disabled="disabled"
       :placeholder="placeholder"
       maxlength="4"
+      oninput="maxLengthCheck(value)"
     />
-    <i class="icon">
-      <img src="@/assets/images/ic_search.svg" alt="searchIcon" />
-    </i>
+    <i class="icon" />
   </span>
 </template>
 
@@ -33,6 +32,12 @@ export default {
           this.$emit("input", event.target.value);
         },
       };
+    },
+    maxLengthCheck(object) {
+      console.log(object);
+      if (object.value.length > object.maxLength) {
+        object.value = object.value.slice(0, object.maxLength);
+      }
     },
   },
 };
@@ -81,6 +86,10 @@ export default {
     height: 24px;
     transform: translateY(-50%);
     cursor: pointer;
+    background: url("@/assets/images/ic_search.svg") center no-repeat;
+    .mobile & {
+      background: url("@/assets/images/ic_search_bk.svg") center no-repeat;
+    }
   }
 }
 </style>
