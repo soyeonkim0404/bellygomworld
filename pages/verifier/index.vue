@@ -87,7 +87,19 @@ export default {
     };
   },
   mounted() {
-    this.getName();
+    if (!window.klaytn) {
+      alert("Kaikas 지갑이 설치되어 있지 않습니다.\n크롬에서 Kaikas 확장 프로그램을 설치해주세요!");
+      window.open("https://chrome.google.com/webstore/detail/kaikas/jblndlipeogpafnldhgmapagcccfchpi")
+      return;
+    }else{
+      if (!window.klaytn.networkVersion) {
+        location.reload();
+        return;
+      }else{
+        this.getName();
+        return;
+      }
+    }
   },
   methods: {
     async getName() {
