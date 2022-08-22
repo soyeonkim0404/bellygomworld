@@ -121,7 +121,8 @@ export default {
         return;
       } else {
         console.log(window.klaytn.networkVersion);
-        if (window.klaytn.networkVersion === undefined ) {
+        console.log(window.klaytn.networkVersion==='loading');
+        if (window.klaytn.networkVersion === undefined || window.klaytn.networkVersion==='loading') {
           window.location.reload();
           location.reload();
           return;
