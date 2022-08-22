@@ -120,7 +120,7 @@ export default {
         );
         return;
       } else {
-        if (!window.klaytn.networkVersion) {
+        if (window.klaytn.networkVersion ===undefined ) {
           window.location.reload();
           location.reload();
           return;
