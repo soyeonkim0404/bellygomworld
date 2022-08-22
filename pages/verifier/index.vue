@@ -206,9 +206,12 @@ export default {
         if (resData.code === 200) {
           this.nftNum = resData.count;
           this.holderModal = true;
-        } else {
+        }else if(resData.code === -1){
           this.nftNum = 0;
           this.holderModal = true;
+        } 
+        else {
+          alert("홀더등록의 실패하였습니다.");
         }
       } catch (error) {
         alert("홀더인증이 실패하였습니다.");
