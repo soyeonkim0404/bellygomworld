@@ -88,15 +88,13 @@ export default {
   },
   mounted() {
     this.getName();
-    console.log('dfdfd',process.env.VUE_API_URL)
   },
   methods: {
     async getName() {
       const code = this.$route.query.code;
       //if (code === null) return;
-      console.log('dfsbfdfbbdffbd',`${process.env.VUE_API_URL}/get_user_id`);
       const url = `${process.env.VUE_API_URL}/get_user_id`; // 디코에 post TODO 주소처리
-      console.log(url);
+      // console.log(url);
       //디스코드 인증센터
       try {
         const res = await fetch(url, {
@@ -126,7 +124,7 @@ export default {
     
     async connectKaikas() {
       try {
-        const klaytn = window.klaytn; //크롬에 깔린 카이카스 확장프로그램 안에는 klaytn 이 내장되어있다.
+        const klaytn = await window.klaytn; //크롬에 깔린 카이카스 확장프로그램 안에는 klaytn 이 내장되어있다.
         const accounts = await klaytn.enable(); //카이카스 로그인
         this.wallet_addr = accounts[0];
       } catch (err) {
