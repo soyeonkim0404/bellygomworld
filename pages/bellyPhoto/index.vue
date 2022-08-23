@@ -7,7 +7,7 @@
         <div class="filter" v-if="$mq === 'pc'">
           <div class="con-title">
             Filter
-            <button type="button" class="btn-reset">
+            <button type="button" class="btn-reset" @click="resetFilter()">
               <img src="@/assets/images/ic_reset.svg" alt="" />
             </button>
           </div>
@@ -29,7 +29,14 @@
               </label>
             </div>
             <div class="select">
-              <SelectBox :items="selectOption" :default="selectOptionDft" />
+              <SelectBox
+                :items="selectOption"
+                :default="
+                  $store.getters.getLocale === 'ENG'
+                    ? selectOptionDft.eng
+                    : selectOptionDft.kor
+                "
+              />
             </div>
           </div>
         </div>
@@ -329,7 +336,6 @@ export default {
         },
       ],
       modalSeq: "",
-      selectValue: "",
       selectOption: [
         {
           kor: "랭킹 순",
@@ -361,15 +367,21 @@ export default {
     detailNft(item) {
       this.modalShow = true;
       this.modalSeq = item;
+      document.body.style.overflow = "hidden";
     },
     modalHide() {
       this.modalShow = false;
+      document.body.style.overflow = "";
     },
     mbFilterHide() {
       this.mbFilterShow = false;
     },
     mbFilter() {
       this.mbFilterShow = true;
+    },
+    resetFilter() {
+      this.filterChkList = [];
+      this.$nuxt.$emit("closeFilter");
     },
   },
 };

@@ -35,6 +35,11 @@ export default {
       onContent: [],
     };
   },
+  created() {
+    this.$nuxt.$on("closeFilter", () => {
+      this.onContent = [];
+    });
+  },
   methods: {
     openCon(index) {
       const findIndex = this.onContent.findIndex((el) => el === index);

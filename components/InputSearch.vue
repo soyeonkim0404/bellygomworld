@@ -7,7 +7,6 @@
       :disabled="disabled"
       :placeholder="placeholder"
       maxlength="4"
-      oninput="maxLengthCheck(value)"
     />
     <i class="icon" />
   </span>
@@ -29,15 +28,15 @@ export default {
       return {
         ...this.$listeners,
         input: (event) => {
+          if (event.target.maxLength !== -1) {
+            event.target.value = event.target.value.slice(
+              0,
+              event.target.maxLength
+            );
+          }
           this.$emit("input", event.target.value);
         },
       };
-    },
-    maxLengthCheck(object) {
-      console.log(object);
-      if (object.value.length > object.maxLength) {
-        object.value = object.value.slice(0, object.maxLength);
-      }
     },
   },
 };

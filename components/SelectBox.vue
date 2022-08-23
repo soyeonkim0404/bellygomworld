@@ -34,10 +34,7 @@ export default {
   name: "SelectBox",
   data() {
     return {
-      selected:
-        this.$store.getters.getLocale === "ENG"
-          ? this.default.eng
-          : this.default.kor,
+      selected: this.default,
       open: false,
     };
   },
