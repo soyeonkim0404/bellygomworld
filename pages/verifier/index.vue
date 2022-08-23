@@ -28,7 +28,7 @@
                 <span class="num">{{ nftNum }}</span>
               </div>
               <a
-                href="https://discord.com/invite/TDYtz2fcSN"
+                href="https://discord.com/channels/990785690579128340/990806087936671755"
                 target="_blank"
                 class="btn"
                 >커뮤니티 이동</a
