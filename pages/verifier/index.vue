@@ -112,12 +112,12 @@ export default {
   methods: {
     async kaikasConnetVerifier() {
       if (!window.klaytn) {
-        alert(
-          "Kaikas 지갑이 설치되어 있지 않습니다.\n크롬에서 Kaikas 확장 프로그램을 설치해주세요!"
-        );
-        window.open(
-          "https://chrome.google.com/webstore/detail/kaikas/jblndlipeogpafnldhgmapagcccfchpi"
-        );
+        // alert(
+        //   "Kaikas 지갑이 설치되어 있지 않습니다.\n크롬에서 Kaikas 확장 프로그램을 설치해주세요!"
+        // );
+        // window.open(
+        //   "https://chrome.google.com/webstore/detail/kaikas/jblndlipeogpafnldhgmapagcccfchpi"
+        // );
         return;
       } else {
         // console.log(window.klaytn.networkVersion);
