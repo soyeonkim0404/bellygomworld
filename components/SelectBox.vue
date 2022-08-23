@@ -14,14 +14,13 @@
         :key="index"
         v-model = "selected"
         @click="
-          open = false;
-          selected = $store.getters.getLocale === 'ENG' ? item.eng : item.kor;
-          selectItem(item.value);
+
+          selectItem(item);
         "
         class="item"
       >
         <label>
-          <input type="button"
+          <input type="hidden"
           :value="item.value"
           />
           <template v-if="$store.getters.getLocale === 'ENG'">
@@ -54,8 +53,10 @@ export default {
   props: ["value", "items", "default"],
   methods: {
     selectItem(el) {
-      this.$emit("change", el);
-      this.$emit('input', el);
+      this.selected = this.$store.getters.getLocale === 'ENG' ? el.eng : el.kor;
+      this.open = false;
+      this.$emit("change", el.value);
+      this.$emit('input', el.value);
     }
   },
   mounted() {
@@ -116,6 +117,14 @@ export default {
       user-select: none;
       font-size: 16px;
       line-height: 50px;
+      width: 141px;
+      box-sizing: border-box;
+      label {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+      }
       &:hover {
       }
     }
