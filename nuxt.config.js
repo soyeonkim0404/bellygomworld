@@ -1,5 +1,9 @@
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  env :{
+    VUE_API_URL : process.env.VUE_API_URL
+  },
   head: {
     title: "BELLYGOM",
     htmlAttrs: {
@@ -141,6 +145,7 @@ export default {
     // https://go.nuxtjs.dev/eslint
     //'@nuxtjs/eslint-module',
     "@nuxtjs/style-resources",
+    '@nuxtjs/dotenv'
   ],
   modules: [
     "nuxt-fullpage.js",
