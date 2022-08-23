@@ -22,8 +22,8 @@ env
 
 yarn install
 
-yarn build_dev
+yarn build_stage
 
-nohup yarn start_dev >/dev/null 2>&1 &
+nohup yarn start_stage >/dev/null 2>&1 &
 
 echo "NODE RUN..... END"
