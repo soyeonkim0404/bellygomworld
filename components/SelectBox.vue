@@ -1,5 +1,10 @@
 <template>
-  <div class="custom-select">
+  <div
+    :class="{
+      customSelect: true,
+      eng: $store.getters.getLocale === 'ENG' && $mq === 'mobile',
+    }"
+  >
     <div class="selected" :class="{ open: open }" @click="open = !open">
       {{ selected }}
     </div>
@@ -29,13 +34,10 @@ export default {
   name: "SelectBox",
   data() {
     return {
-      selected: this.default
-        ? this.default
-        : this.items.length > 0
-        ? this.items.forEach((e) => {
-            $store.getters.getLocale === "ENG" ? e.eng : e.kor;
-          })
-        : null,
+      selected:
+        this.$store.getters.getLocale === "ENG"
+          ? this.default.eng
+          : this.default.kor,
       open: false,
     };
   },
@@ -46,7 +48,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.custom-select {
+.customSelect {
   position: relative;
   width: auto;
   min-width: 165px;
@@ -86,7 +88,6 @@ export default {
     background: $white;
     border-radius: 25px;
     padding: 15px 50px 14px 20px;
-    overflow: hidden;
     position: absolute;
     left: 0;
     right: 0;

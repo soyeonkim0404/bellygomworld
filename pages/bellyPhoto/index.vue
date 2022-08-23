@@ -13,7 +13,7 @@
           </div>
           <BellyPhotoFilter :list="filterList" :filterChkList="filterChkList" />
         </div>
-        <button class="mobile-filter" v-if="$mq === 'mobile'">
+        <button class="mobile-filter" v-if="$mq === 'mobile'" @click="mbFilter">
           <img src="@/assets/images/ic-mobile-filter.svg" alt="" />
         </button>
       </div>
@@ -29,7 +29,7 @@
               </label>
             </div>
             <div class="select">
-              <SelectBox :items="selectOption" :default="'랭킹 순'" />
+              <SelectBox :items="selectOption" :default="selectOptionDft" />
             </div>
           </div>
         </div>
@@ -90,12 +90,19 @@
                   <img src="@/assets/images/belly_photo_teest.svg" />
                 </span>
                 <span class="info">Bellygom #{{ item.nft }}</span>
-                <span class="border"></span>
+                <span class="border" v-if="$mq === 'pc'"></span>
               </li>
             </ul>
           </template>
         </template>
       </div>
+    </div>
+
+    <div class="mobile-fix" v-show="$mq === 'mobile'">
+      <p v-if="$store.getters.getLocale === 'ENG'">
+        Check your own NFTs on the Chrome browser in PC.
+      </p>
+      <p v-else>MY NFT는 PC 크롬 브라우저에서 확인할 수 있습니다.</p>
     </div>
 
     <modal v-if="modalShow" @close="modalHide" class="detail-nft">
@@ -104,10 +111,12 @@
         <div class="inner">
           <div class="nft-thumb">
             <img src="@/assets/images/belly-photo-detail.svg" class="thumb" />
-            <button class="btn-opensea">
-              <img src="@/assets/images/belly-photo-detail-opensea.svg" />
-              View on OpenSea
-            </button>
+            <div class="button-wrap">
+              <button class="btn-opensea">
+                <img src="@/assets/images/belly-photo-detail-opensea.svg" />
+                View on OpenSea
+              </button>
+            </div>
           </div>
           <div class="nft-info">
             <div class="top">
@@ -160,6 +169,23 @@
       </div>
       <div slot="footer"></div>
     </modal>
+
+    <modal v-if="mbFilterShow" @close="mbFilterHide" class="mobile-filter">
+      <div slot="header">
+        <div class="modal-title">Filter</div>
+      </div>
+      <div slot="body">
+        <BellyPhotoFilter :list="filterList" :filterChkList="filterChkList" />
+      </div>
+      <div slot="footer">
+        <div class="fix-wrap">
+          <button class="reset">
+            <img src="@/assets/images/ic_24_refresh_w.svg" />
+          </button>
+          <button class="btn-done">DONE</button>
+        </div>
+      </div>
+    </modal>
   </div>
 </template>
 
@@ -171,6 +197,7 @@ export default {
     return {
       kaikas: "0x7c6C70AB930E5637f5F862629A67D47C3403cC34",
       modalShow: false,
+      mbFilterShow: false,
       keyword: "",
       myNFT: false,
       filterList: [
@@ -321,6 +348,10 @@ export default {
           eng: "Descending",
         },
       ],
+      selectOptionDft: {
+        kor: "랭킹 순",
+        eng: "Highest Rank",
+      },
     };
   },
   methods: {
@@ -333,6 +364,12 @@ export default {
     },
     modalHide() {
       this.modalShow = false;
+    },
+    mbFilterHide() {
+      this.mbFilterShow = false;
+    },
+    mbFilter() {
+      this.mbFilterShow = true;
     },
   },
 };
@@ -507,7 +544,6 @@ export default {
             top: 10px;
             left: 10px;
             background: #fff;
-            height: 40px;
             padding: 15px;
             border-radius: 20px;
             font-size: 14px;
@@ -545,7 +581,7 @@ export default {
     }
     .mobile & {
       margin: 10px 0 0;
-      padding: 0 20px;
+      padding: 0 20px 80px;
       width: 100%;
       flex-wrap: wrap;
       overflow: hidden;
@@ -614,14 +650,18 @@ export default {
           .sort {
             .select {
               margin: 0;
-              ::v-deep .custom-select {
+              ::v-deep .customSelect {
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
                 min-width: 94px;
                 height: 24px;
                 line-height: 24px;
+                &.eng {
+                  min-width: 126px;
+                }
                 .selected {
+                  width: 100%;
                   padding: 0 25px 0 0;
                   background: none;
                   box-shadow: none;
@@ -633,6 +673,7 @@ export default {
                   }
                 }
                 .items {
+                  margin-top: 0;
                   top: 30px;
                   padding: 17px 20px;
                   border-radius: 15px;
@@ -643,6 +684,19 @@ export default {
                     font-size: 14px;
                     line-height: 14px;
                   }
+                  &::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    top: -7px;
+                    left: 50%;
+                    border-bottom: 9px solid #ffffff;
+                    border-left: 7px solid transparent;
+                    border-right: 7px solid transparent;
+                    transform: translateX(-50%);
+                  }
                 }
               }
             }
@@ -652,6 +706,16 @@ export default {
           grid-template-columns: repeat(2, 1fr);
           grid-column-gap: 10px;
           grid-row-gap: 20px;
+          .item {
+            border-radius: 20px;
+            .lank {
+              padding: 8px 10px;
+              font-size: 12px;
+            }
+            .info {
+              padding: 10px 15px;
+            }
+          }
         }
       }
     }
@@ -715,6 +779,17 @@ export default {
       width: 22.5px;
       height: 22.5px;
       margin-right: 8.75px;
+    }
+  }
+  .mobile & {
+    height: auto;
+    border: none;
+    padding: 104px 0 0;
+    margin: 0;
+    .desc {
+      text-align: center;
+      font-size: 16px;
+      line-height: 21px;
     }
   }
 }
@@ -845,6 +920,7 @@ export default {
                   }
                   .desc {
                     display: block;
+                    margin-top: 5px;
                     font-size: 18px;
                     line-height: 27px;
                     font-weight: 700;
@@ -861,6 +937,9 @@ export default {
     ::v-deep .modal-container {
       border-radius: 0;
       padding: 0;
+      .modal-default-button {
+        position: fixed;
+      }
       .modal-body {
         padding: 0;
         .inner {
@@ -873,12 +952,148 @@ export default {
               height: auto;
               border-radius: 0;
             }
-            .btn-opensea {
+            .button-wrap {
               position: fixed;
               bottom: 0;
               left: 0;
+              width: 100%;
+              background: #ffffff;
+              padding: 20px;
+              box-sizing: border-box;
+              box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.1);
+              .btn-opensea {
+                margin-top: 0;
+                font-size: 16px;
+                line-height: 24px;
+                height: 56px;
+                img {
+                  width: 20px;
+                  height: 20px;
+                }
+              }
             }
           }
+          .nft-info {
+            flex: none;
+            margin: 0;
+            padding: 30px 20px 140px;
+            .contents {
+              padding: 0;
+              .tit {
+                font-size: 16px;
+                line-height: 24px;
+              }
+              .number {
+                .col {
+                  .data {
+                    font-size: 24px;
+                    line-height: 36px;
+                  }
+                }
+              }
+              .property {
+                .list {
+                  li {
+                    border-radius: 10px;
+                    .desc {
+                      font-size: 14px;
+                      line-height: 21px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mobile-fix {
+  position: fixed;
+  width: 100%;
+  padding: 12px 10px;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.9);
+  p {
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: #555;
+  }
+}
+
+.mobile-filter {
+  ::v-deep .modal-container {
+    .modal-default-button {
+      position: fixed;
+    }
+    .modal-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      padding: 23px 20px;
+      box-sizing: border-box;
+      border-bottom: 1px solid #ccc;
+      background: #fff;
+      z-index: 2;
+      .modal-title {
+        font-family: "Sandoll Odongtong", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 33px;
+      }
+    }
+    .modal-body {
+      padding: 80px 0 100px;
+      .acc-filter {
+        .list {
+          .item {
+            .contents {
+              padding: 20px 20px;
+              background: #fafafa;
+              .check-list {
+                max-height: 200px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .modal-footer {
+      .fix-wrap {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background: #ffffff;
+        padding: 20px;
+        box-sizing: border-box;
+        box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.1);
+        .reset {
+          width: 56px;
+          height: 56px;
+          border-radius: 15px;
+          background: #999999;
+          img {
+            width: 24px;
+            height: 24px;
+            object-fit: cover;
+          }
+        }
+        .btn-done {
+          width: calc(100% - 66px);
+          height: 56px;
+          border-radius: 15px;
         }
       }
     }

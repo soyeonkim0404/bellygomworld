@@ -1633,81 +1633,6 @@
         </template>
       </div>
     </modal>
-    <!--FAQ MODAL-->
-    <modal
-      v-if="faqShow"
-      @faqModal="faqModal"
-      @close="closeFaq"
-      class="faq-modal"
-    >
-      <div slot="header">
-        <h2 class="title">FAQ</h2>
-      </div>
-      <div slot="body">
-        <template v-if="$store.getters.getLocale === 'ENG'">
-          <p class="desc-txt">
-            ※ For more details on FAQ, join us on
-            <a
-              class="underline"
-              href="https://discord.gg/bellygom"
-              target="_blank"
-              >Discord</a
-            >.
-          </p>
-        </template>
-        <template v-else>
-          <p class="desc-txt">
-            ※ FAQ 상세 내용은
-            <a
-              class="underline"
-              href="https://discord.gg/bellygom"
-              target="_blank"
-              >디스코드</a
-            >에서 확인할 수 있습니다.
-          </p>
-        </template>
-        <div class="content">
-          <div class="inner">
-            <div class="content-wrap">
-              <AccordionComponent :list="faqList">
-                <template #title="{ item }">
-                  <template v-if="$store.getters.getLocale === 'ENG'">
-                    {{ item.engTitle }}
-                  </template>
-                  <template v-else>
-                    {{ item.title }}
-                  </template>
-                </template>
-                <template #cont="{ item }">
-                  <template v-if="$store.getters.getLocale === 'ENG'">
-                    {{ item.engCont }}
-                  </template>
-                  <template v-else>
-                    {{ item.cont }}
-                  </template>
-                  <span class="pdf" v-if="item.pdf">
-                    <button
-                      @click="
-                        downloadPdf(item.pdf, $store.getters.getLocale);
-                        sendGaEvent('bf_faq' + item.pdf + '_file', 'BR');
-                      "
-                      class="pdf-btn"
-                    >
-                      <span>
-                        <img
-                          src="@/assets/images/main/ic_download.svg"
-                          alt=""
-                        />PDF Download
-                      </span>
-                    </button>
-                  </span>
-                </template>
-              </AccordionComponent>
-            </div>
-          </div>
-        </div>
-      </div>
-    </modal>
     <!--STORY MODAL-->
     <modal
       v-if="showStoryModal"
@@ -1910,7 +1835,6 @@ export default {
       mintingModal: false,
       showStoryModal: false,
       currIndi: 1,
-      faqShow: false,
       showInf: false,
       showRoad1: false,
       showRoad2: false,
@@ -2048,86 +1972,6 @@ export default {
           // console.log(section, slide, position, direction);
         },
       },
-      faqList: [
-        {
-          title: "벨리곰 NFT는 어떤 블록체인을 이용해?",
-          engTitle: "What blockchain does Bellygom NFT use?",
-          cont: "벨리곰 NFT는 클레이튼(Klaytn) 블록체인을 이용하고 있어!",
-          engCont: "Bellygom NFT uses the Klaytn blockchain!",
-          faqIndex: 1,
-        },
-        {
-          title: "카이카스 지갑은 어떻게 만드는거야?",
-          engTitle: "How do I make a Kaikas Wallet?",
-          cont: "다운받기 눌러봐! 더 상세하게 설명해줄게!",
-          engCont:
-            "Download the pdf file for a detailed step-by-step guide on creating a Kaikas Wallet.",
-          pdf: 2,
-          faqIndex: 2,
-        },
-        {
-          title: "오픈씨는 어떻게 이용하는거야?",
-          engTitle: "How do you use opensea?",
-          cont: "다운받기 눌러봐!  더 상세하게 설명해줄게!",
-          engCont:
-            "Download the pdf file for a detailed step-by-step guide on using OpenSea.",
-          pdf: 3,
-          faqIndex: 3,
-        },
-        {
-          title: "Klip 지갑으로 민팅 할 수 있어?",
-          engTitle: "Can I mint with a Klip wallet?",
-          cont: "카이카스 지갑만 지원하고 있어!",
-          engCont: "For now, only Kaikas wallets are supported.",
-          faqIndex: 4,
-        },
-        {
-          title: "Klip 지갑으로 전송 시, 벨리곰 NFT를 확인할 수 있어?",
-          engTitle:
-            "Can I check the Bellygom NFT when transferring to my Klip wallet?",
-          cont: "확인할 수 없어! 카이카스 지갑을 이용해줘!",
-          engCont: "Can't confirm! Please use Kaikas wallet!",
-          faqIndex: 5,
-        },
-        {
-          title: "리빌은 어떻게 하는거야?",
-          engTitle: "How does the ‘Reveal’ work?",
-          cont: "9월 1일 (목) 자동으로 리빌이 진행돼!",
-          engCont:
-            "On September 1st (Thursday), the Reveal will happen automatically!",
-          faqIndex: 6,
-        },
-        {
-          title: "랭킹은 어떻게 확인 할 수 있어?",
-          engTitle: "How do I check the ranking?",
-          cont: "추후에 다시 공지해 줄게! 9월을 넘기지는 않을 거야!",
-          engCont: "We'll keep you posted! (No longer than September)",
-          faqIndex: 7,
-        },
-        {
-          title: "디스코드, 트위터에 어떻게 참여할 수 있어?",
-          engTitle: "How can I join the Bellygom Discord, Twitter channels?",
-          cont: "채널은 홈페이지 우측 상단 링크 아이콘을 눌러서 참여할 수 있어!",
-          engCont:
-            "You can join the channels by clicking the linked icons at the top right corner of the homepage.",
-          faqIndex: 8,
-        },
-        {
-          title: "2차 판매 수수료가 있어?",
-          engTitle: "Are there any secondary sales fees?",
-          cont: "2차 판매 수수료는 7.5%야!",
-          engCont: "Secondary sales commission is 7.5%!",
-          faqIndex: 9,
-        },
-        {
-          title: "벨리곰NFT는 저작권 활용할 수 있어?",
-          engTitle: "Can Bellygom NFTs be copyrighted?",
-          cont: "Road1에는 소유권만 인정하고 있어. 그렇지만 Road2에는 NFT 사업권을 사용할 수 있어!",
-          engCont:
-            "Road1 only recognizes ownership. However, you can use NFT licenses for Road2!",
-          faqIndex: 10,
-        },
-      ],
       swiperOption: {
         slidesPerView: 4,
         spaceBetween: 30,
@@ -2170,14 +2014,6 @@ export default {
     }
   },
   methods: {
-    faqModal() {
-      this.$refs.fullpage.api.setAllowScrolling(false);
-      this.faqShow = true;
-    },
-    closeFaq() {
-      this.$refs.fullpage.api.setAllowScrolling(true);
-      this.faqShow = false;
-    },
     roadModal1() {
       this.$refs.fullpage.api.setAllowScrolling(false);
       this.showRoad1 = true;

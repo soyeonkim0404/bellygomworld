@@ -62,6 +62,7 @@ export default {
         border-bottom: 1px solid #dddddd;
         text-align: left;
         font-weight: 700;
+        color: #000;
         &::after {
           content: "";
           display: block;
