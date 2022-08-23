@@ -8,26 +8,32 @@
     <div class="selected" :class="{ open: open }" @click="open = !open">
       {{ selected }}
     </div>
-    <div class="items" :class="{ selectHide: !open }">
-      <button
+    <ul class="items" :class="{ selectHide: !open }">
+      <li
         v-for="(item, index) in items"
         :key="index"
+        v-model = "selected"
         @click="
-          selected = $store.getters.getLocale === 'ENG' ? item.eng : item.kor;
           open = false;
-          selectItem(selected);
-
+          selected = $store.getters.getLocale === 'ENG' ? item.eng : item.kor;
+          selectItem(item.value);
         "
         class="item"
       >
-        <template v-if="$store.getters.getLocale === 'ENG'">
-          {{ item.eng }}
-        </template>
-        <template v-else>
-          {{ item.kor }}
-        </template>
-      </button>
-    </div>
+        <label>
+          <input type="button"
+          :value="item.value"
+          />
+          <template v-if="$store.getters.getLocale === 'ENG'">
+            {{ item.eng }}
+          </template>
+          <template v-else>
+            {{ item.kor }}
+          </template>
+        </label>
+
+      </li>
+    </ul>
   </div>
 </template>
 <script>

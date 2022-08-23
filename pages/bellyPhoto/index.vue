@@ -27,7 +27,7 @@
       </div>
       <div class="section2">
         <div class="top">
-          <div class="total"><span>10,000</span> Items</div>
+          <div class="total"><span>{{ pager.totalItems }}</span> Items</div>
           <div class="sort">
             <div class="toggle" v-if="$mq === 'pc'">
               <span>MY NFTs</span>
@@ -41,6 +41,7 @@
                   :items="orderBy.list"
                   :default="orderBy.list[0]"
                   @change="resetFetch"
+                  v-model="orderBy.selected"
               />
             </div>
           </div>
@@ -92,16 +93,16 @@
           <template v-else>
             <ul class="photo" v-if="photoList.length !== 0">
               <li
-                v-for="(item, index) in photoList"
-                :key="index"
+                v-for="item in data"
+                :key="item.id"
                 class="item"
                 @click="detailNft(item)"
               >
-                <span class="lank">Rank {{ item.lank }}</span>
+                <span class="lank">Rank {{ item.rank }}</span>
                 <span class="image">
-                  <img src="@/assets/images/belly_photo_teest.svg" />
+                  <img :src="item.image" :alt="item.id" />
                 </span>
-                <span class="info">Bellygom #{{ item.nft }}</span>
+                <span class="info">Bellygom #{{ item.id }}</span>
                 <span class="border" v-if="$mq === 'pc'"></span>
               </li>
             </ul>
