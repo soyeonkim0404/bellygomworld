@@ -9,13 +9,14 @@
       {{ selected }}
     </div>
     <div class="items" :class="{ selectHide: !open }">
-      <div
+      <button
         v-for="(item, index) in items"
         :key="index"
         @click="
           selected = $store.getters.getLocale === 'ENG' ? item.eng : item.kor;
           open = false;
-          $emit('input', selected);
+          selectItem(selected);
+
         "
         class="item"
       >
@@ -25,7 +26,7 @@
         <template v-else>
           {{ item.kor }}
         </template>
-      </div>
+      </button>
     </div>
   </div>
 </template>
@@ -41,7 +42,16 @@ export default {
       open: false,
     };
   },
+  model: {
+    event: "change",
+  },
   props: ["value", "items", "default"],
+  methods: {
+    selectItem(el) {
+      this.$emit("change", el);
+      this.$emit('input', el);
+    }
+  },
   mounted() {
     this.$emit("input", this.selected);
   },

@@ -15,6 +15,7 @@
                 v-model="value.selected"
                 :value="check"
                 :disabled="list.disabled"
+                @change="changeInput"
               >
                 {{ check }}
               </InputCheckbox>
@@ -35,6 +36,9 @@ export default {
       onContent: [],
     };
   },
+  model: {
+    event: "change",
+  },
   methods: {
     openCon(index) {
       const findIndex = this.onContent.findIndex((el) => el === index);
@@ -44,6 +48,9 @@ export default {
         this.onContent.push(index);
       }
     },
+    changeInput() {
+      this.$emit("change");
+    }
   },
 };
 </script>

@@ -18,6 +18,7 @@
           <BellyPhotoFilter
               :list="filter"
               :filterChkList="filterChkList"
+              @change="resetFetch"
           />
         </div>
         <button class="mobile-filter" v-if="$mq === 'mobile'" @click="mbFilter">
@@ -668,6 +669,7 @@ export default {
   },
   methods: {
     resetFetch() {
+      console.log('dfdf')
       this.data = [];
       this.page = 1;
       this.$fetch();
