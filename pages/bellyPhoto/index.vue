@@ -3,7 +3,11 @@
     <h2 class="sub-title">BELLY PHOTO</h2>
     <div class="contents">
       <div class="section1">
-        <InputSearch v-model="keyword" placeholder="#Number" />
+        <InputSearch
+            v-model="keyword"
+            placeholder="#Number"
+            @input="resetFetch"
+        />
         <div class="filter" v-if="$mq === 'pc'">
           <div class="con-title">
             Filter
@@ -344,7 +348,7 @@ export default {
           { value: "3", kor: "번호 순", eng: "Ascending" },
           { value: "4", kor: "번호 역순", eng: "Descending" },
         ],
-        selected: "1",
+        selected: { value: "1", kor: "랭킹 순", eng: "Highest Rank"},
       },
       /*-----------------*/
       filter: {
