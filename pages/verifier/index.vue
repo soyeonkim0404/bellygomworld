@@ -207,7 +207,7 @@ export default {
         const resData = await res.json();
         console.log("resData", resData);
        if(this.discord_user_id===undefined){
-           alert("홀더인증이 실패하였습니다.");
+           alert("홀더 인증에 실패하였습니다.");
            return;
         }
         if (resData.code === 200) {
@@ -217,10 +217,10 @@ export default {
           this.nftNum = 0;
           this.holderModal = true;
         }else {
-          alert("홀더등록의 실패하였습니다.");
+          alert("홀더 인증에 실패하였습니다.");
         }
       } catch (error) {
-        alert("홀더인증이 실패하였습니다.");
+        alert("홀더 인증에 실패하였습니다.");
       }
     },
   },
