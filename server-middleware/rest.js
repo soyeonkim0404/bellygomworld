@@ -27,7 +27,7 @@ app.get("/", (req, res, next) => {
 
   // orderBy
   function compare(a, b) {
-    const key = ["1", "3"].includes(req.query.orderBy) ? "rank" : "id";
+    const key = ["1", "2"].includes(req.query.orderBy) ? "rank" : "id";
     if (a[key] < b[key]) return -1;
     if (a[key] < b[key]) return 1;
     return 0;
