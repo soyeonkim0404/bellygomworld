@@ -19,19 +19,22 @@
                 반갑습니다! 벨리곰 NFT 홀더들이<br />
                 커뮤니티에서 기다리고 있어요!
               </p>
+              <p class="desc eng">
+                Welcome! The Bellygom NFT Holders Community Has Been<br/>Expecting You!
+              </p>
               <div class="box">
-                <span class="name">지갑주소</span>
+                <span class="name">Wallet Address</span>
                 <span class="token">{{ wallet_addr }}</span>
               </div>
               <div class="box nft">
-                <span class="name">벨리곰 NFT 보유 수</span>
+                <span class="name">No. of Bellygom NFTs Owned</span>
                 <span class="num">{{ nftNum }}</span>
               </div>
               <a
                 href="https://discord.com/channels/990785690579128340/990806087936671755"
                 target="_blank"
                 class="btn"
-                >커뮤니티 이동</a
+                >Enter the Community</a
               >
             </template>
             <template v-else>
@@ -39,19 +42,23 @@
                 홀더가 아닙니다.<br />
                 벨리곰 NFT 구매 후 인증이 가능합니다.
               </p>
+              <p class="desc eng">
+                Sorry, you're currently not a Bellygom NFT holder.<br/>
+                Please try again after buying one.
+              </p>
               <div class="box">
-                <span class="name">지갑주소</span>
+                <span class="name">Wallet Address</span>
                 <span class="token">{{ wallet_addr }}</span>
               </div>
               <div class="box nft">
-                <span class="name">벨리곰 NFT 보유 수</span>
+                <span class="name">No. of Bellygom NFTs Owned</span>
                 <span class="num">0</span>
               </div>
               <a
                 href="https://opensea.io/collection/bellygom-world-official"
                 target="_blank"
                 class="btn"
-                >벨리곰 NFT 구매</a
+                >Buy a Bellygom NFT</a
               >
             </template>
           </div>
@@ -292,6 +299,13 @@ export default {
     font-size: 24px;
     line-height: 36px;
     font-weight: 700;
+    &.eng {
+      font-size: 18px;
+      font-weight: normal;
+      line-height: 28px;
+      color: #999;
+      margin-top: 10px;
+    }
   }
 
   .box {
