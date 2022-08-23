@@ -11,7 +11,10 @@
               <img src="@/assets/images/ic_reset.svg" alt="" />
             </button>
           </div>
-          <BellyPhotoFilter :list="filterList" :filterChkList="filterChkList" />
+          <BellyPhotoFilter
+              :list="filter"
+              :filterChkList="filterChkList"
+          />
         </div>
         <button class="mobile-filter" v-if="$mq === 'mobile'" @click="mbFilter">
           <img src="@/assets/images/ic-mobile-filter.svg" alt="" />
@@ -29,7 +32,11 @@
               </label>
             </div>
             <div class="select">
-              <SelectBox :items="selectOption" :default="selectOptionDft" />
+              <SelectBox
+                  :items="orderBy.list"
+                  :default="orderBy.list[0]"
+                  @change="resetFetch"
+              />
             </div>
           </div>
         </div>
@@ -330,27 +337,14 @@ export default {
       ],
       modalSeq: "",
       selectValue: "",
-      selectOption: [
-        {
-          kor: "랭킹 순",
-          eng: "Highest Rank",
-        },
-        {
-          kor: "랭킹 역순",
-          eng: "Lowest Rank",
-        },
-        {
-          kor: "번호순",
-          eng: "Ascending",
-        },
-        {
-          kor: "번호 역순",
-          eng: "Descending",
-        },
-      ],
-      selectOptionDft: {
-        kor: "랭킹 순",
-        eng: "Highest Rank",
+      orderBy: {
+        list: [
+          { value: "1", kor: "랭킹 순", eng: "Highest Rank"},
+          { value: "2", kor: "랭킹 역순", eng: "Lowest Rank" },
+          { value: "3", kor: "번호 순", eng: "Ascending" },
+          { value: "4", kor: "번호 역순", eng: "Descending" },
+        ],
+        selected: "1",
       },
       /*-----------------*/
       filter: {
@@ -637,15 +631,6 @@ export default {
           list: ["None", "Strongmin kongz"],
           selected: [],
         },
-      },
-      orderBy: {
-        list: [
-          { value: "1", label: "랭킹 순" },
-          { value: "2", label: "랭킹 역순" },
-          { value: "3", label: "번호 순" },
-          { value: "4", label: "번호 역순" },
-        ],
-        selected: "1",
       },
       data: [],
       page: 1,
