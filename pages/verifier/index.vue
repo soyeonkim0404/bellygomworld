@@ -214,7 +214,7 @@ export default {
         const resData = await res.json();
         console.log("resData", resData);
        if(this.discord_user_id===undefined){
-           alert("홀더 인증에 실패하였습니다.");
+           alert("홀더 인증에 실패하였습니다.\n브라우저 닫은 뒤, 다시 디스코드 링크를 클릭해 접속해주세요.");
            return;
         }
         if (resData.code === 200) {
@@ -224,10 +224,10 @@ export default {
           this.nftNum = 0;
           this.holderModal = true;
         }else {
-          alert("홀더 인증에 실패하였습니다.");
+          alert("홀더 인증에 실패하였습니다.\n브라우저 닫은 뒤, 다시 디스코드 링크를 클릭해 접속해주세요.");
         }
       } catch (error) {
-        alert("홀더 인증에 실패하였습니다.");
+        alert("홀더 인증에 실패하였습니다.\n브라우저 닫은 뒤, 다시 디스코드 링크를 클릭해 접속해주세요.");
       }
     },
   },
