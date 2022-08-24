@@ -11,7 +11,10 @@
         <div class="filter" v-if="$mq === 'pc'">
           <div class="con-title">
             Filter
-            <button type="button" class="btn-reset">
+            <button type="button"
+                    class="btn-reset"
+                    @click="refreshFetch"
+            >
               <img src="@/assets/images/ic_reset.svg" alt="" />
             </button>
           </div>
@@ -105,8 +108,8 @@
                   v-if="photoList.length !== 0"
               >
                 <li
-                    v-for="item in data"
-                    :key="item.id"
+                    v-for="(item, index) in data"
+                    :key="index"
                     class="item"
                     @click="detailNft(item)"
                 >
@@ -672,7 +675,6 @@ export default {
           ...filter,
           orderBy: this.orderBy.selected,
           keyword: this.keyword,
-
           page: this.page,
           pageSize: this.pageSize,
         },
@@ -695,6 +697,16 @@ export default {
       this.$fetch();
     },
     resetFetch() {
+      this.data = [];
+      this.page = 1;
+      this.$fetch();
+    },
+    refreshFetch() {
+      console.log('리프레시')
+      for (const [key, value] of Object.entries(this.filter)) {
+        value.selected = [];
+      }
+      console.log(this.filter)
       this.data = [];
       this.page = 1;
       this.$fetch();
