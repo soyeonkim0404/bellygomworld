@@ -36,8 +36,10 @@ export default {
       onContent: [],
     };
   },
-  model: {
-    event: "change",
+  created() {
+    this.$nuxt.$on("closeFilter", () => {
+      this.onContent = [];
+    });
   },
   methods: {
     openCon(index) {
@@ -91,7 +93,7 @@ export default {
         padding: 25px 20px 25px 32.5px;
         border-bottom: 1px solid #dddddd;
         .check-list {
-          max-height: 382px;
+          max-height: 342px;
           overflow-y: auto;
           li {
             display: flex;

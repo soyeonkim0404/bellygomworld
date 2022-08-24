@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="{
+      :class="{
       customSelect: true,
       eng: $store.getters.getLocale === 'ENG' && $mq === 'mobile',
     }"
@@ -10,18 +10,18 @@
     </div>
     <ul class="items" :class="{ selectHide: !open }">
       <li
-        v-for="(item, index) in items"
-        :key="index"
-        v-model = "selected"
-        @click="
+          v-for="(item, index) in items"
+          :key="index"
+          v-model = "selected"
+          @click="
 
           selectItem(item);
         "
-        class="item"
+          class="item"
       >
         <label>
           <input type="hidden"
-          :value="item.value"
+                 :value="item.value"
           />
           <template v-if="$store.getters.getLocale === 'ENG'">
             {{ item.eng }}
@@ -41,9 +41,9 @@ export default {
   data() {
     return {
       selected:
-        this.$store.getters.getLocale === "ENG"
-          ? this.default.eng
-          : this.default.kor,
+          this.$store.getters.getLocale === "ENG"
+              ? this.default.eng
+              : this.default.kor,
       open: false,
     };
   },

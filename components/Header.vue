@@ -44,7 +44,7 @@
             ></a
           >
         </li>
-        <li>
+        <li @click="navClickFc">
           <nuxt-link to="/bellyPhoto">BELLY PHOTO</nuxt-link>
         </li>
         <li data-menuanchor="fourthSection" @click="navClickFc">

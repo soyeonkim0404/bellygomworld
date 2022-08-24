@@ -3,9 +3,10 @@
     <h2 class="sub-title">BELLY PHOTO</h2>
     <div class="contents">
       <div class="section1">
+        <InputSearch v-model="keyword" placeholder="Number" />
         <InputSearch
             v-model="keyword"
-            placeholder="#Number"
+            placeholder="Number"
             @input="resetFetch"
         />
         <div class="filter" v-if="$mq === 'pc'">
@@ -14,7 +15,7 @@
             <button type="button"
                     class="btn-reset"
                     @click="refreshFetch"
-            >
+            ><!--resetFilter-->
               <img src="@/assets/images/ic_reset.svg" alt="" />
             </button>
           </div>
@@ -141,7 +142,7 @@
             <img src="@/assets/images/belly-photo-detail.svg" class="thumb" />
             <div class="button-wrap">
               <button class="btn-opensea">
-                <img src="@/assets/images/belly-photo-detail-opensea.svg" />
+                <i class="icon" />
                 View on OpenSea
               </button>
             </div>
@@ -159,7 +160,7 @@
                 </div>
                 <div class="col">
                   <span class="tit">Score</span>
-                  <span class="data">7777.00</span>
+                  <span class="data">7777</span>
                 </div>
               </div>
               <div class="property">
@@ -207,7 +208,7 @@
       </div>
       <div slot="footer">
         <div class="fix-wrap">
-          <button class="reset">
+          <button class="reset" @click="resetFilter">
             <img src="@/assets/images/ic_24_refresh_w.svg" />
           </button>
           <button class="btn-done">DONE</button>
@@ -718,15 +719,21 @@ export default {
     detailNft(item) {
       this.modalShow = true;
       this.modalSeq = item;
+      document.body.style.overflow = "hidden";
     },
     modalHide() {
       this.modalShow = false;
+      document.body.style.overflow = "";
     },
     mbFilterHide() {
       this.mbFilterShow = false;
     },
     mbFilter() {
       this.mbFilterShow = true;
+    },
+    resetFilter() {
+      this.filterChkList = [];
+      this.$nuxt.$emit("closeFilter");
     },
     formatToPrice(value) {
       return `${value.toFixed(0)}`;
@@ -791,6 +798,11 @@ export default {
             background: transparent;
             width: 24px;
             height: 24px;
+            transform: rotate(0deg);
+            &:focus {
+              transform: rotate(360deg);
+              transition: transform 0.8s ease 0s;
+            }
           }
         }
       }
@@ -892,7 +904,6 @@ export default {
         gap: 24px;
         margin-top: 20px;
         overflow: auto;
-
         .item {
           flex-direction: column;
           -webkit-box-pack: justify;
@@ -1179,6 +1190,13 @@ export default {
     height: auto;
     padding: 40px;
     border-radius: 50px;
+    .modal-default-button {
+      &::before {
+        width: 48px;
+        height: 48px;
+        background-size: 100%;
+      }
+    }
     .modal-body {
       .inner {
         display: flex;
@@ -1191,6 +1209,9 @@ export default {
             border-radius: 20px;
           }
           .btn-opensea {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 100%;
             height: 80px;
             font-size: 24px;
@@ -1200,6 +1221,14 @@ export default {
               width: 40px;
               height: 40px;
               object-fit: cover;
+              margin-right: 3px;
+            }
+            .icon {
+              width: 40px;
+              height: 40px;
+              background: url("@/assets/images/belly-photo-detail-opensea.svg")
+                center no-repeat;
+              margin-right: 3px;
             }
           }
         }
@@ -1211,7 +1240,7 @@ export default {
               display: inline-block;
               width: auto;
               height: 30px;
-              padding: 4px 15px;
+              padding: 3px 15px 4px;
               border-radius: 15px;
               background: #ffffff;
               box-sizing: border-box;
@@ -1274,6 +1303,9 @@ export default {
                   line-height: 45px;
                   color: #000;
                   font-weight: 700;
+                }
+                &:nth-child(2) {
+                  padding-left: 20px;
                 }
               }
             }
@@ -1343,9 +1375,13 @@ export default {
                 font-size: 16px;
                 line-height: 24px;
                 height: 56px;
-                img {
+                border-radius: 15px;
+                .icon {
                   width: 20px;
                   height: 20px;
+                  background: url("@/assets/images/ic_20_opensea_round.svg")
+                    center no-repeat;
+                  margin-right: 4px;
                 }
               }
             }
@@ -1354,6 +1390,12 @@ export default {
             flex: none;
             margin: 0;
             padding: 30px 20px 140px;
+            .top {
+              .nft-title {
+                font-size: 26px;
+                line-height: 39px;
+              }
+            }
             .contents {
               padding: 0;
               .tit {
@@ -1371,8 +1413,10 @@ export default {
               .property {
                 .list {
                   li {
+                    padding: 15px;
                     border-radius: 10px;
                     .desc {
+                      max-width: 80%;
                       font-size: 14px;
                       line-height: 21px;
                     }
@@ -1465,6 +1509,13 @@ export default {
             width: 24px;
             height: 24px;
             object-fit: cover;
+            transform: rotate(0deg);
+          }
+          &:focus {
+            img {
+              transform: rotate(360deg);
+              transition: transform 0.8s ease 0s;
+            }
           }
         }
         .btn-done {

@@ -1,13 +1,13 @@
 <template>
   <span :class="{ 'input-search': true, disabled: disabled }">
     <input
-      type="number"
-      :value="value"
-      v-on="listeners"
-      :disabled="disabled"
-      :placeholder="placeholder"
-      maxlength="4"
-      v-bind="$attrs"
+        type="number"
+        :value="value"
+        v-on="listeners"
+        :disabled="disabled"
+        :placeholder="placeholder"
+        maxlength="4"
+        v-bind="$attrs"
     />
     <i class="icon" />
   </span>
@@ -89,6 +89,7 @@ export default {
     line-height: 21px;
     font-weight: 700;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    outline: none;
     &:hover,
     &:focus {
     }
