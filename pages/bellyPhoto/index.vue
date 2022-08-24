@@ -27,7 +27,14 @@
       </div>
       <div class="section2">
         <div class="top">
-          <div class="total"><span>{{ pager.totalItems }}</span> Items</div>
+
+          <div class="total"><span>
+                <animated-number
+                    :value="pager.totalItems || 0"
+                    :duration="500"
+                    :formatValue="formatToPrice"
+                />
+          </span> Items</div>
           <div class="sort">
             <div class="toggle" v-if="$mq === 'pc'">
               <span>MY NFTs</span>
@@ -91,21 +98,26 @@
             </div>
           </template>
           <template v-else>
-            <ul class="photo" v-if="photoList.length !== 0">
-              <li
-                v-for="item in data"
-                :key="item.id"
-                class="item"
-                @click="detailNft(item)"
+              <transition-group
+                  name="photo"
+                  class="photo"
+                  tag="ul"
+                  v-if="photoList.length !== 0"
               >
-                <span class="lank">Rank {{ item.rank }}</span>
-                <span class="image">
+                <li
+                    v-for="item in data"
+                    :key="item.id"
+                    class="item"
+                    @click="detailNft(item)"
+                >
+                  <span class="lank">Rank {{ item.rank }}</span>
+                  <span class="image">
                   <img :src="item.image" :alt="item.id" />
                 </span>
-                <span class="info">Bellygom #{{ item.id }}</span>
-                <span class="border" v-if="$mq === 'pc'"></span>
-              </li>
-            </ul>
+                  <span class="info">Bellygom #{{ item.id }}</span>
+                  <span class="border" v-if="$mq === 'pc'"></span>
+                </li>
+              </transition-group>
           </template>
         </template>
       </div>
@@ -203,9 +215,13 @@
 </template>
 
 <script>
+import AnimatedNumber from "animated-number-vue";
 export default {
   name: "bellyPhoto",
   layout: "bellyPhoto",
+  components: {
+    AnimatedNumber,
+  },
   data() {
     return {
       kaikas: "0x7c6C70AB930E5637f5F862629A67D47C3403cC34",
@@ -641,7 +657,8 @@ export default {
       data: [],
       page: 1,
       pager: {},
-      pageSize: 20,
+      pageSize: 40,
+      loading: false,
     };
   },
   async fetch() {
@@ -669,6 +686,14 @@ export default {
     }
   },
   methods: {
+    infiniteHandler() {
+      if (this.pager.totalPages <= this.page) return;
+      const contentHeight = document.querySelector("#app").offsetHeight;
+      const windowHeight = window.innerHeight;
+      const scrollY = window.scrollY;
+      if (contentHeight - windowHeight * 3 > scrollY && !this.loading) return;
+      this.$fetch();
+    },
     resetFetch() {
       console.log('dfdf')
       this.data = [];
@@ -691,6 +716,15 @@ export default {
     mbFilter() {
       this.mbFilterShow = true;
     },
+    formatToPrice(value) {
+      return `${value.toFixed(0)}`;
+    },
+  },
+  mounted() {
+    window.addEventListener("scroll", this.infiniteHandler);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.infiniteHandler);
   },
 };
 </script>
@@ -846,6 +880,7 @@ export default {
         gap: 24px;
         margin-top: 20px;
         overflow: auto;
+
         .item {
           flex-direction: column;
           -webkit-box-pack: justify;
@@ -856,6 +891,14 @@ export default {
           overflow: hidden;
           background: #fff;
           box-sizing: border-box;
+          transition: 0.35s ease-in;
+          &.photo-enter,
+          &.photo-leave-to {
+            opacity: 0;
+          }
+          &.photo-leave-to {
+            transition-duration: 0s;
+          }
           .lank {
             font-family: "Sandoll Odongtong", sans-serif;
             font-style: normal;
@@ -871,6 +914,8 @@ export default {
           }
           .image {
             width: 100%;
+            height: 297px;
+            display: inline-block;
           }
           .info {
             position: relative;
