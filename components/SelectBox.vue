@@ -14,7 +14,6 @@
           :key="index"
           v-model = "selected"
           @click="
-
           selectItem(item);
         "
           class="item"

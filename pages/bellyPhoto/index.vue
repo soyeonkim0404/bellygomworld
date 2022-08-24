@@ -3,7 +3,6 @@
     <h2 class="sub-title">BELLY PHOTO</h2>
     <div class="contents">
       <div class="section1">
-        <InputSearch v-model="keyword" placeholder="Number" />
         <InputSearch
             v-model="keyword"
             placeholder="Number"
