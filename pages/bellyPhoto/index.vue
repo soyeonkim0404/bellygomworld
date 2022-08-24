@@ -3,7 +3,11 @@
     <h2 class="sub-title">BELLY PHOTO</h2>
     <div class="contents">
       <div class="section1">
-        <InputSearch v-model="keyword" placeholder="#Number" />
+        <InputSearch
+            v-model="keyword"
+            placeholder="#Number"
+            @input="resetFetch"
+        />
         <div class="filter" v-if="$mq === 'pc'">
           <div class="con-title">
             Filter
@@ -11,7 +15,11 @@
               <img src="@/assets/images/ic_reset.svg" alt="" />
             </button>
           </div>
-          <BellyPhotoFilter :list="filterList" :filterChkList="filterChkList" />
+          <BellyPhotoFilter
+              :list="filter"
+              :filterChkList="filterChkList"
+              @change="resetFetch"
+          />
         </div>
         <button class="mobile-filter" v-if="$mq === 'mobile'" @click="mbFilter">
           <img src="@/assets/images/ic-mobile-filter.svg" alt="" />
@@ -19,7 +27,7 @@
       </div>
       <div class="section2">
         <div class="top">
-          <div class="total"><span>10,000</span> Items</div>
+          <div class="total"><span>{{ pager.totalItems }}</span> Items</div>
           <div class="sort">
             <div class="toggle" v-if="$mq === 'pc'">
               <span>MY NFTs</span>
@@ -29,7 +37,12 @@
               </label>
             </div>
             <div class="select">
-              <SelectBox :items="selectOption" :default="selectOptionDft" />
+              <SelectBox
+                  :items="orderBy.list"
+                  :default="orderBy.list[0]"
+                  @change="resetFetch"
+                  v-model="orderBy.selected"
+              />
             </div>
           </div>
         </div>
@@ -80,16 +93,16 @@
           <template v-else>
             <ul class="photo" v-if="photoList.length !== 0">
               <li
-                v-for="(item, index) in photoList"
-                :key="index"
+                v-for="item in data"
+                :key="item.id"
                 class="item"
                 @click="detailNft(item)"
               >
-                <span class="lank">Rank {{ item.lank }}</span>
+                <span class="lank">Rank {{ item.rank }}</span>
                 <span class="image">
-                  <img src="@/assets/images/belly_photo_teest.svg" />
+                  <img :src="item.image" :alt="item.id" />
                 </span>
-                <span class="info">Bellygom #{{ item.nft }}</span>
+                <span class="info">Bellygom #{{ item.id }}</span>
                 <span class="border" v-if="$mq === 'pc'"></span>
               </li>
             </ul>
@@ -330,31 +343,338 @@ export default {
       ],
       modalSeq: "",
       selectValue: "",
-      selectOption: [
-        {
-          kor: "랭킹 순",
-          eng: "Highest Rank",
-        },
-        {
-          kor: "랭킹 역순",
-          eng: "Lowest Rank",
-        },
-        {
-          kor: "번호순",
-          eng: "Ascending",
-        },
-        {
-          kor: "번호 역순",
-          eng: "Descending",
-        },
-      ],
-      selectOptionDft: {
-        kor: "랭킹 순",
-        eng: "Highest Rank",
+      orderBy: {
+        list: [
+          { value: "1", kor: "랭킹 순", eng: "Highest Rank"},
+          { value: "2", kor: "랭킹 역순", eng: "Lowest Rank" },
+          { value: "3", kor: "번호 순", eng: "Ascending" },
+          { value: "4", kor: "번호 역순", eng: "Descending" },
+        ],
+        selected: { value: "1", kor: "랭킹 순", eng: "Highest Rank"},
       },
+      /*-----------------*/
+      filter: {
+        Background: {
+          list: [
+            "Angel",
+            "Baby Pink",
+            "Black",
+            "Burgundy",
+            "Combination",
+            "Devil",
+            "Dino",
+            "Gashina",
+            "Ghost",
+            "Gray",
+            "Green",
+            "Heroine",
+            "Ivory",
+            "Khaki",
+            "LALALAY",
+            "Navy",
+            "Neon Green",
+            "Neon Light Green",
+            "Neon Orange",
+            "Neon Pink",
+            "Neon Yellow",
+            "Noir",
+            "Orange",
+            "Pajamas",
+            "Pporappippam",
+            "Siren",
+            "Tail",
+            "Turquoise",
+            "Ultramarine",
+            "Witch",
+            "World Tour",
+            "You can't sit with us",
+          ],
+          selected: [],
+        },
+        Wing: {
+          list: [
+            "None",
+            "Angel Wings",
+            "Angel Wings Black",
+            "Devil Wings Black",
+            "Devil Wings Red",
+          ],
+          selected: [],
+        },
+        Body: {
+          list: ["Body", "Ghost Body"],
+          selected: [],
+        },
+        Necklace: {
+          list: [
+            "None",
+            "Combination Necklace",
+            "Crown Necklace",
+            "LALALAY Necklace",
+            "Noir Necklace",
+            "Pporappippam Necklace",
+            "Siren Necklace",
+            "Y Necklace",
+            "You can't sit with us Necklace",
+          ],
+          selected: [],
+        },
+        Makeup: {
+          list: [
+            "Combination Makeup",
+            "Dino Makeup",
+            "Gashina Makeup",
+            "Ghost Makeup",
+            "Heroine Makeup",
+            "LALALAY Makeup",
+            "Noir Makeup",
+            "Siren Makeup",
+            "Tail Makeup",
+            "Witch Makeup",
+            "World Tour Makeup",
+            "You can't sit with us Makeup",
+            "pporappippam Makeup",
+          ],
+          selected: [],
+        },
+        Sticker: {
+          list: ["None", "Pink heart sticker"],
+          selected: [],
+        },
+        Dress: {
+          list: [
+            "Angel Costume",
+            "Black Blazer Dress",
+            "Black Knit",
+            "Black Pajamas",
+            "Blue Blazer Dress",
+            "Blue Dress",
+            "Blue Frill Dress",
+            "Blue Pajamas",
+            "Blue Polo Shirt",
+            "Burgundy Polo Shirt",
+            "Cardigan Dress",
+            "Chain Leather Suit",
+            "Combination Black Dress",
+            "Combination Green Dress",
+            "Combination Original Dress",
+            "Combination Pink Dress",
+            "Combination Purple Dress",
+            "Combination Red Dress",
+            "Denim Jacket",
+            "Devil Costume",
+            "Dino Costume",
+            "Floral Pattern Dress",
+            "Fur Crop Top",
+            "Gashina Dress",
+            "Ghost Costume",
+            "Gray Frill Dress",
+            "Gray Suit",
+            "Green Blazer Dress",
+            "Green Fur Jacket",
+            "Green Knit",
+            "Green Pajamas",
+            "Heroine Black Dress",
+            "Heroine Green Dress",
+            "Heroine Original Dress",
+            "Heroine Pink Dress",
+            "Heroine Purple Dress",
+            "Heroine Red Dress",
+            "Initial Shirt",
+            "Ivory Fur Jacket",
+            "Ivory Knit",
+            "Knit Sleeveless",
+            "LALALAY Dress",
+            "Lace Vest",
+            "Leather Jacket",
+            "Leather Turtleneck Suit",
+            "Lemon Polo Shirt",
+            "Noir Dress",
+            "Original Frill Dress",
+            "Pink Blazer Dress",
+            "Pink Fur Jacket",
+            "Pink Knit",
+            "Pink Pajamas",
+            "Pink Polo Shirt",
+            "Polo Sweatshirt",
+            "Pporappippam Dress",
+            "Purple Blazer Dress",
+            "Purple Frill Dress",
+            "Purple Pajamas",
+            "Rainbow Sweatshirt",
+            "Red Blazer Dress",
+            "Red Frill Dress",
+            "Red Sunglasses Sleeveless",
+            "Siren Dress",
+            "Sky Polo Shirt",
+            "Stained Blue Jacket",
+            "Striped Coral Knit",
+            "Striped Green Knit",
+            "Striped Ivory Knit",
+            "Striped Pink Knit",
+            "TAIL Dress",
+            "White Glitter Dress",
+            "White Pajamas",
+            "White Shirt",
+            "Witch Cloak",
+            "World Tour Black Dress",
+            "World Tour Blue Dress",
+            "World Tour Green Dress",
+            "World Tour Original Dress",
+            "World Tour Pink Dress",
+            "World Tour Purple Dress",
+            "Yellow Pajamas",
+            "Yellow Polo Shirt",
+            "You can't sit with us Dress",
+          ],
+          selected: [],
+        },
+        Eyes: {
+          list: [
+            "Combination Eyes",
+            "Gashina Eyes",
+            "Heroine Eyes",
+            "LALALAY Eyes",
+            "Noir Eyes",
+            "Pink Eyes",
+            "Pporappippam Eyes",
+            "Siren Eyes",
+            "Tail Blue Sky Eyes",
+            "World Tour Eyes",
+            "Yellow Eyes",
+            "You can't sit with us Eyes",
+          ],
+          selected: [],
+        },
+        Lipline: {
+          list: ["None", "Lipline"],
+          selected: [],
+        },
+        Hair: {
+          list: [
+            "None",
+            "Blonde Wavy Hair",
+            "Bloned Hair",
+            "Bobbed Hair",
+            "Combination Hair",
+            "Gashina Hair",
+            "Half Bun Hair",
+            "Heroine Hair",
+            "LALALAY Twin tails",
+            "Low Twin tail",
+            "Noir Hair",
+            "Pporappippam Hair",
+            "Purple Pucca Hair",
+            "Purple Twin tail",
+            "Short Twin tail",
+            "Siren Hair",
+            "Tail Cat Mask with Hair",
+            "Wavy Ponytail",
+            "Witch Hair",
+            "World Tour Hair",
+            "You can't sit with us Hair",
+          ],
+          selected: [],
+        },
+        Earring: {
+          list: [
+            "None",
+            "Combination Earring",
+            "Flower Earring",
+            "Gashina Earring",
+            "Heroine Earring",
+            "LALALAY Earring",
+            "Pearl Earrings",
+            "Porappippam Earring",
+            "Purple Earrings",
+            "Rainbow Earring",
+            "Ruby Earring",
+            "Siren Earring",
+            "Tail Pin Earring",
+            "World Tour Earring",
+            "You can't sit with us Earring",
+          ],
+          selected: [],
+        },
+        Head: {
+          list: [
+            "None",
+            "Angel Ring",
+            "Beret",
+            "Black Cat mask",
+            "Black Headband",
+            "Black Ribbon",
+            "Butterfly Headband",
+            "Cat Ears",
+            "Circlet",
+            "Crown",
+            "Cyberpunk Mask",
+            "Devil Horns",
+            "Fire Ring",
+            "Flower Hairpin",
+            "Flower Headband",
+            "Gashina Headband",
+            "Kiss Headband",
+            "LALALAY Headband",
+            "Pearl Hairpin",
+            "Pink Headband",
+            "Purple Cat mask",
+            "Rabbit Ears",
+            "Red Crown",
+            "Red Hat",
+            "Siren Hair tie",
+            "Veil",
+            "Witch Hat",
+            "You can't sit with us Ribbon",
+          ],
+          selected: [],
+        },
+        Kongz_R: {
+          list: ["None", "Doo2 kongz"],
+          selected: [],
+        },
+        Kongz_L: {
+          list: ["None", "Strongmin kongz"],
+          selected: [],
+        },
+      },
+      data: [],
+      page: 1,
+      pager: {},
+      pageSize: 20,
     };
   },
+  async fetch() {
+    try {
+      const filter = {};
+      for (const [key, value] of Object.entries(this.filter)) {
+        filter[key] = value.selected.join();
+      }
+      const { data: response } = await this.$axios.get("/apiBellyPhoto", {
+        params: {
+          ...filter,
+          orderBy: this.orderBy.selected,
+          keyword: this.keyword,
+
+          page: this.page,
+          pageSize: this.pageSize,
+        },
+      });
+      console.log(response)
+      this.pager = response.pager;
+      this.data = this.data.concat(response.pageOfItems);
+      this.page++;
+    } catch (e) {
+      console.log(e);
+    }
+  },
   methods: {
+    resetFetch() {
+      console.log('dfdf')
+      this.data = [];
+      this.page = 1;
+      this.$fetch();
+    },
     toggleNFT() {
       this.myNFT = !this.myNFT;
     },

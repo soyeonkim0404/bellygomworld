@@ -74,7 +74,6 @@ export default {
   layout: "bellyPhoto",
   data() {
     return {
-      infiniteId: +new Date(),
       filter: {
         Background: {
           list: [
@@ -371,10 +370,166 @@ export default {
       },
       data: [],
       page: 1,
-      keyword: "",
       pager: {},
       pageSize: 54,
       loading: false,
+      kaikas: "0x7c6C70AB930E5637f5F862629A67D47C3403cC34",
+      modalShow: false,
+      mbFilterShow: false,
+      keyword: "",
+      myNFT: false,
+      filterList: [
+        {
+          title: "Background",
+          list: [
+            {
+              value: "Color",
+            },
+            {
+              value: "Nature",
+            },
+            {
+              value: "Urban",
+            },
+            {
+              value: "Space",
+            },
+            {
+              value: "Fantasy",
+            },
+            {
+              value: "Aura",
+            },
+          ],
+        },
+        {
+          title: "Body",
+          list: [
+            {
+              value: "Animal Print",
+            },
+            {
+              value: "Steel",
+            },
+            {
+              value: "Cyborg",
+            },
+            {
+              value: "Jewel",
+            },
+            {
+              value: "Golden",
+            },
+          ],
+        },
+        {
+          title: "Clothes",
+          list: [
+            { value: "Category0000" },
+            { value: "Category0001" },
+            { value: "Hot heart sunglasses" },
+            { value: "Category0003" },
+            { value: "Category0004" },
+            { value: "Category0005" },
+            { value: "Category0006" },
+            { value: "Category0007" },
+            { value: "Category0008" },
+            { value: "Category0009" },
+            { value: "Category0010" },
+            { value: "Category0011" },
+            { value: "Category0012" },
+          ],
+        },
+        {
+          title: "Test0000",
+          list: [
+            {
+              value: "test1",
+            },
+            {
+              value: "test2",
+            },
+            {
+              value: "test3",
+            },
+          ],
+        },
+      ],
+      filterChkList: [],
+      photoList: [
+        {
+          id: 1,
+          lank: 10000,
+          nft: "9999",
+          flag: "Mega",
+        },
+        {
+          id: 2,
+          lank: 9999,
+          nft: "8888",
+          flag: "Belly",
+        },
+        {
+          id: 3,
+          lank: 1,
+          nft: "1234",
+          flag: "Holic",
+        },
+        {
+          id: 4,
+          lank: 100,
+          nft: "4985",
+          flag: "Super",
+        },
+        {
+          id: 5,
+          lank: 99,
+          nft: "2945",
+          flag: "Surprise",
+        },
+        {
+          id: 6,
+          lank: 34,
+          nft: "2367",
+          flag: "Friends",
+        },
+        {
+          id: 7,
+          lank: 3,
+          nft: "0987",
+          flag: "Friends",
+        },
+        {
+          id: 8,
+          lank: 980,
+          nft: "3380",
+          flag: "Holic",
+        },
+      ],
+      modalSeq: "",
+      selectValue: "",
+      selectOption: [
+        {
+          kor: "랭킹 순",
+          eng: "Highest Rank",
+        },
+        {
+          kor: "랭킹 역순",
+          eng: "Lowest Rank",
+        },
+        {
+          kor: "번호순",
+          eng: "Ascending",
+        },
+        {
+          kor: "번호 역순",
+          eng: "Descending",
+        },
+      ],
+      selectOptionDft: {
+        kor: "랭킹 순",
+        eng: "Highest Rank",
+      },
     };
   },
   mounted() {
@@ -400,6 +555,7 @@ export default {
           pageSize: this.pageSize,
         },
       });
+      console.log(response)
       this.pager = response.pager;
       this.data = this.data.concat(response.pageOfItems);
       this.page++;

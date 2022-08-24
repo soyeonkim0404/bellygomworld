@@ -8,25 +8,31 @@
     <div class="selected" :class="{ open: open }" @click="open = !open">
       {{ selected }}
     </div>
-    <div class="items" :class="{ selectHide: !open }">
-      <div
+    <ul class="items" :class="{ selectHide: !open }">
+      <li
         v-for="(item, index) in items"
         :key="index"
+        v-model = "selected"
         @click="
-          selected = $store.getters.getLocale === 'ENG' ? item.eng : item.kor;
-          open = false;
-          $emit('input', selected);
+
+          selectItem(item);
         "
         class="item"
       >
-        <template v-if="$store.getters.getLocale === 'ENG'">
-          {{ item.eng }}
-        </template>
-        <template v-else>
-          {{ item.kor }}
-        </template>
-      </div>
-    </div>
+        <label>
+          <input type="hidden"
+          :value="item.value"
+          />
+          <template v-if="$store.getters.getLocale === 'ENG'">
+            {{ item.eng }}
+          </template>
+          <template v-else>
+            {{ item.kor }}
+          </template>
+        </label>
+
+      </li>
+    </ul>
   </div>
 </template>
 <script>
@@ -41,7 +47,18 @@ export default {
       open: false,
     };
   },
+  model: {
+    event: "change",
+  },
   props: ["value", "items", "default"],
+  methods: {
+    selectItem(el) {
+      this.selected = this.$store.getters.getLocale === 'ENG' ? el.eng : el.kor;
+      this.open = false;
+      this.$emit("change", el.value);
+      this.$emit('input', el.value);
+    }
+  },
   mounted() {
     this.$emit("input", this.selected);
   },
@@ -100,6 +117,14 @@ export default {
       user-select: none;
       font-size: 16px;
       line-height: 50px;
+      width: 141px;
+      box-sizing: border-box;
+      label {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+      }
       &:hover {
       }
     }

@@ -1,22 +1,23 @@
 <template>
   <div class="acc-filter">
     <ul class="list">
-      <li class="item" v-for="(item, index) in list" :key="index">
+      <li class="item" v-for="(value, name, index) in list" :key="index">
         <button
           :class="{ title: true, active: onContent.some((el) => index === el) }"
           @click="openCon(index)"
         >
-          {{ item.title }}
+          {{ name }}
         </button>
         <div class="contents" v-if="onContent.some((el) => index === el)">
           <ul class="check-list">
-            <li v-for="(list, index) in item.list" :key="index">
+            <li v-for="check in value.list" :key="check">
               <InputCheckbox
-                v-model="filterChkList"
-                :value="list.value"
+                v-model="value.selected"
+                :value="check"
                 :disabled="list.disabled"
+                @change="changeInput"
               >
-                {{ list.value }}
+                {{ check }}
               </InputCheckbox>
             </li>
           </ul>
@@ -35,6 +36,9 @@ export default {
       onContent: [],
     };
   },
+  model: {
+    event: "change",
+  },
   methods: {
     openCon(index) {
       const findIndex = this.onContent.findIndex((el) => el === index);
@@ -44,6 +48,9 @@ export default {
         this.onContent.push(index);
       }
     },
+    changeInput() {
+      this.$emit("change");
+    }
   },
 };
 </script>
