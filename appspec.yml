@@ -14,27 +14,23 @@ files:
 #    type:
 #      - file
 hooks:
-#  ApplicationStop:
-#    - location: shell/00.permissionSet.sh
-#      timeout: 60
-#      runas: ec2-user
-#  BeforeInstall:
-#    - location:
-#  AfterInstall:
-#    - location: shell/10.copySource.sh
-#      timeout: 60
-#      runas: root
-##    - location: shell/11.syncS3.sh
-##      timeout: 300
-##      runas: ec2-user
-#    - location: shell/12.cfCacheInvalidate.sh
-#      timeout: 120
-#      runas: root
+  ApplicationStop:
+    - location: shell/100.ApplicationStop.sh
+      timeout: 60
+      runas: root
+  #  BeforeInstall:
+  #    - location: shell/110.BeforeInstall.sh
+  #      timeout: 60
+  #      runas: root
+  #  AfterInstall:
+  #    - location: shell/120.AfterInstall.sh
+  #      timeout: 60
+  #      runas: root
   ApplicationStart:
-    - location: shell/99.runAll.sh
+    - location: shell/130.ApplicationStart.sh
       timeout: 300
       runas: root
 #  ValidateService:
-#    - location: shell/30.healthCheck.sh
-#      timeout: 3600
-#      runas: ec2-user
+#    - location: shell/140.ValidateService.sh
+#      timeout: 300
+#      runas: root
