@@ -695,7 +695,6 @@ export default {
       this.$fetch();
     },
     resetFetch() {
-      console.log('dfdf')
       this.data = [];
       this.page = 1;
       this.$fetch();

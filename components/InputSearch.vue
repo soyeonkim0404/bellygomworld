@@ -7,7 +7,7 @@
       :disabled="disabled"
       :placeholder="placeholder"
       maxlength="4"
-      oninput="maxLengthCheck(value)"
+      v-bind="$attrs"
     />
     <i class="icon" />
   </span>
@@ -16,6 +16,7 @@
 <script>
 export default {
   name: "InputSearch",
+  inheritAttrs: false,
   props: {
     value: {
       type: String,
@@ -23,14 +24,49 @@ export default {
     },
     disabled: Boolean,
     placeholder: String,
+    lazy: {
+      type: Boolean,
+      default: false,
+    },
+
+  },
+  model: {
+    prop: "value",
+    event: "formChange",
+  },
+
+  methods: {
+    formChange(event) {
+      if (event.target.maxLength !== -1) {
+        event.target.value = event.target.value.slice(
+            0,
+            event.target.maxLength
+        );
+      }
+      this.$emit("formChange", event.target.value);
+    },
+
   },
   computed: {
     listeners() {
       return {
         ...this.$listeners,
         input: (event) => {
-          this.$emit("input", event.target.value);
+          if (!this.lazy) {
+            this.formChange(event);
+          }
+          if (event.target.type === "date") {
+            //console.log(event.target.value);
+          }
+          this.$emit("input", event);
         },
+        change: (event) => {
+          if (this.lazy) {
+            this.formChange(event);
+          }
+          this.$emit("change", event);
+        },
+
       };
     },
     maxLengthCheck(object) {
