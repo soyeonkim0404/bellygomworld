@@ -711,6 +711,7 @@ export default {
       this.data = [];
       this.page = 1;
       this.$fetch();
+      this.$nuxt.$emit("closeFilter");
     },
     toggleNFT() {
       this.myNFT = !this.myNFT;
