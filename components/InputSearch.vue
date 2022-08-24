@@ -55,9 +55,6 @@ export default {
           if (!this.lazy) {
             this.formChange(event);
           }
-          if (event.target.type === "date") {
-            //console.log(event.target.value);
-          }
           this.$emit("input", event);
         },
         change: (event) => {
@@ -68,12 +65,6 @@ export default {
         },
 
       };
-    },
-    maxLengthCheck(object) {
-      console.log(object);
-      if (object.value.length > object.maxLength) {
-        object.value = object.value.slice(0, object.maxLength);
-      }
     },
   },
 };

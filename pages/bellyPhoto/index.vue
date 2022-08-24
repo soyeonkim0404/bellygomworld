@@ -105,11 +105,11 @@
                   name="photo"
                   class="photo"
                   tag="ul"
-                  v-if="photoList.length !== 0"
+
               >
                 <li
-                    v-for="(item, index) in data"
-                    :key="index"
+                    v-for="(item) in data"
+                    :key="item.id"
                     class="item"
                     @click="detailNft(item)"
                 >
@@ -664,6 +664,7 @@ export default {
       loading: false,
     };
   },
+  fetchDelay: 0,
   async fetch() {
     try {
       const filter = {};
