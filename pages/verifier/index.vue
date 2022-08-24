@@ -19,19 +19,22 @@
                 반갑습니다! 벨리곰 NFT 홀더들이<br />
                 커뮤니티에서 기다리고 있어요!
               </p>
+              <p class="desc eng">
+                Welcome! The Bellygom NFT Holders Community Has Been<br/>Expecting You!
+              </p>
               <div class="box">
-                <span class="name">지갑주소</span>
+                <span class="name">Wallet Address</span>
                 <span class="token">{{ wallet_addr }}</span>
               </div>
               <div class="box nft">
-                <span class="name">벨리곰 NFT 보유 수</span>
+                <span class="name">No. of Bellygom NFTs Owned</span>
                 <span class="num">{{ nftNum }}</span>
               </div>
               <a
                 href="https://discord.com/channels/990785690579128340/990806087936671755"
                 target="_blank"
                 class="btn"
-                >커뮤니티 이동</a
+                >Enter the Community</a
               >
             </template>
             <template v-else>
@@ -39,19 +42,23 @@
                 홀더가 아닙니다.<br />
                 벨리곰 NFT 구매 후 인증이 가능합니다.
               </p>
+              <p class="desc eng">
+                Sorry, you're currently not a Bellygom NFT holder.<br/>
+                Please try again after buying one.
+              </p>
               <div class="box">
-                <span class="name">지갑주소</span>
+                <span class="name">Wallet Address</span>
                 <span class="token">{{ wallet_addr }}</span>
               </div>
               <div class="box nft">
-                <span class="name">벨리곰 NFT 보유 수</span>
+                <span class="name">No. of Bellygom NFTs Owned</span>
                 <span class="num">0</span>
               </div>
               <a
                 href="https://opensea.io/collection/bellygom-world-official"
                 target="_blank"
                 class="btn"
-                >벨리곰 NFT 구매</a
+                >Buy a Bellygom NFT</a
               >
             </template>
           </div>
@@ -112,12 +119,12 @@ export default {
   methods: {
     async kaikasConnetVerifier() {
       if (!window.klaytn) {
-        alert(
-          "Kaikas 지갑이 설치되어 있지 않습니다.\n크롬에서 Kaikas 확장 프로그램을 설치해주세요!"
-        );
-        window.open(
-          "https://chrome.google.com/webstore/detail/kaikas/jblndlipeogpafnldhgmapagcccfchpi"
-        );
+        // alert(
+        //   "Kaikas 지갑이 설치되어 있지 않습니다.\n크롬에서 Kaikas 확장 프로그램을 설치해주세요!"
+        // );
+        // window.open(
+        //   "https://chrome.google.com/webstore/detail/kaikas/jblndlipeogpafnldhgmapagcccfchpi"
+        // );
         return;
       } else {
         // console.log(window.klaytn.networkVersion);
@@ -206,18 +213,21 @@ export default {
 
         const resData = await res.json();
         console.log("resData", resData);
+       if(this.discord_user_id===undefined){
+           alert("홀더 인증에 실패하였습니다.\n브라우저 닫은 뒤, 다시 디스코드 링크를 클릭해 접속해주세요.");
+           return;
+        }
         if (resData.code === 200) {
           this.nftNum = resData.count;
           this.holderModal = true;
         }else if(resData.code === -1){
           this.nftNum = 0;
           this.holderModal = true;
-        } 
-        else {
-          alert("홀더등록의 실패하였습니다.");
+        }else {
+          alert("홀더 인증에 실패하였습니다.\n브라우저 닫은 뒤, 다시 디스코드 링크를 클릭해 접속해주세요.");
         }
       } catch (error) {
-        alert("홀더인증이 실패하였습니다.");
+        alert("홀더 인증에 실패하였습니다.\n브라우저 닫은 뒤, 다시 디스코드 링크를 클릭해 접속해주세요.");
       }
     },
   },
@@ -289,6 +299,13 @@ export default {
     font-size: 24px;
     line-height: 36px;
     font-weight: 700;
+    &.eng {
+      font-size: 18px;
+      font-weight: normal;
+      line-height: 28px;
+      color: #999;
+      margin-top: 10px;
+    }
   }
 
   .box {
