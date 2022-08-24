@@ -61,6 +61,7 @@ export default {
     line-height: 21px;
     font-weight: 700;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    outline: none;
     &:hover,
     &:focus {
     }

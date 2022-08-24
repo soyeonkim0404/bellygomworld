@@ -28,4 +28,16 @@ export default {
     overflow-x: auto;
   }
 }
+
+::v-deep #head {
+  .pc & {
+    background: #fff5fb;
+  }
+  .category .anchor-nav li .nuxt-link-active {
+    color: #fe3d6b;
+    &::after {
+      background: #fe3d6b;
+    }
+  }
+}
 </style>

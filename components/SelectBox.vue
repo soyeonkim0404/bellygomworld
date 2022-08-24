@@ -6,25 +6,44 @@
     }"
   >
     <div class="selected" :class="{ open: open }" @click="open = !open">
-      {{ selected }}
+      <template v-if="!selected">
+        <template v-if="$store.getters.getLocale === 'ENG'">
+          {{ dft.eng }}
+        </template>
+        <template v-else>{{ dft.kor }}</template>
+      </template>
+      <template v-else>
+        <template v-if="$store.getters.getLocale === 'ENG'">
+          {{ selected.eng }}
+        </template>
+        <template v-else>
+          {{ selected.kor }}
+        </template>
+      </template>
     </div>
     <div class="items" :class="{ selectHide: !open }">
       <div
         v-for="(item, index) in items"
         :key="index"
         @click="
-          selected = $store.getters.getLocale === 'ENG' ? item.eng : item.kor;
+          selected = item;
+          dft = '';
           open = false;
           $emit('input', selected);
         "
-        class="item"
+        :class="{
+          item: true,
+          sel:
+            selected.kor === item.kor ||
+            selected.eng === item.eng ||
+            dft.kor === item.kor ||
+            dft.eng === item.eng,
+        }"
       >
-        <template v-if="$store.getters.getLocale === 'ENG'">
-          {{ item.eng }}
-        </template>
-        <template v-else>
-          {{ item.kor }}
-        </template>
+        <template v-if="$store.getters.getLocale === 'ENG'">{{
+          item.eng
+        }}</template>
+        <template v-else>{{ item.kor }}</template>
       </div>
     </div>
   </div>
@@ -34,11 +53,12 @@ export default {
   name: "SelectBox",
   data() {
     return {
-      selected: this.default,
+      selected: "",
+      dft: this.default,
       open: false,
     };
   },
-  props: ["value", "items", "default"],
+  props: ["items", "default"],
   mounted() {
     this.$emit("input", this.selected);
   },
@@ -74,6 +94,7 @@ export default {
       width: 20px;
       height: 20px;
       background: url("@/assets/images/ic_24_arrow_down.svg") no-repeat center;
+      transition: all 0.5s ease-in-out;
     }
     &.open {
       &:before {
@@ -84,7 +105,7 @@ export default {
   .items {
     background: $white;
     border-radius: 25px;
-    padding: 15px 50px 14px 20px;
+    padding: 15px 20px 14px 20px;
     position: absolute;
     left: 0;
     right: 0;
@@ -92,11 +113,15 @@ export default {
     box-shadow: 0 4px 10px rgb(0 0 0 / 3%);
     margin-top: 10px;
     .item {
-      color: $black;
+      color: rgba(0, 0, 0, 0.4);
       cursor: pointer;
       user-select: none;
       font-size: 16px;
       line-height: 50px;
+      font-weight: 700;
+      &.sel {
+        color: $black;
+      }
       &:hover {
       }
     }
