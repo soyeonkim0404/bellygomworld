@@ -67,8 +67,7 @@ export default {
 <style lang="scss" scoped>
 .customSelect {
   position: relative;
-  width: auto;
-  min-width: 165px;
+  width: 165px;
   text-align: left;
   outline: none;
   height: 50px;
@@ -84,7 +83,7 @@ export default {
     color: $black;
     cursor: pointer;
     user-select: none;
-    padding: 15px 50px 14px 20px;
+    padding: 15px 35px 14px 20px;
     box-shadow: 0 4px 10px rgb(0 0 0 / 3%);
     &:before {
       content: "";
