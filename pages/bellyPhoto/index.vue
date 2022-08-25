@@ -104,7 +104,6 @@
                   name="photo"
                   class="photo"
                   tag="ul"
-
               >
                 <li
                     v-for="(item) in data"
@@ -112,7 +111,7 @@
                     class="item"
                     @click="detailNft(item)"
                 >
-                  <span class="lank">Rank {{ item.rank }}</span>
+                  <span class="rank">Rank {{ item.rank }}</span>
                   <span class="image">
                   <img :src="item.image" :alt="item.id" />
                 </span>
@@ -693,6 +692,9 @@ export default {
     }
   },
   methods: {
+    numberFormat(val){
+      return String(val).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    },
     infiniteHandler() {
       if (this.pager.totalPages <= this.page) return;
       const contentHeight = document.querySelector("#app").offsetHeight;
@@ -745,8 +747,9 @@ export default {
       this.$nuxt.$emit("closeFilter");
     },
     formatToPrice(value) {
-      return `${value.toFixed(0)}`;
-    },
+      const num = Number(value).toFixed(0)
+      return `${Number(num).toLocaleString()}`;
+    }
   },
   mounted() {
     window.addEventListener("scroll", this.infiniteHandler);
@@ -929,9 +932,9 @@ export default {
             opacity: 0;
           }
           &.photo-leave-to {
-            transition-duration: 0s;
+            transition: 0.35s ease-in;
           }
-          .lank {
+          .rank {
             font-family: "Sandoll Odongtong", sans-serif;
             font-style: normal;
             font-weight: 400;
