@@ -55,7 +55,7 @@
       </ul>
       <div class="etc-link">
         <ul class="sns">
-          <li class="link0" :class="{ active: isConnect }">
+          <li class="link0" :class="{ active: $store.getters.getConnect === 'is-connect' }">
             <button @click="connectKaikas()">지갑연결</button>
           </li>
           <li class="link1" @click="sendGaEvent('gnb_shop', 'GNB')">
@@ -327,6 +327,15 @@ export default {
       .substring(0, 2);
     return { lang: browserLang };
   },
+  mounted() {
+    let connect = this.getCookie("b_connect");
+
+    if (connect && connect === "is-connect") {
+      this.$store.commit("setConnect");
+    } else {
+      this.$store.commit("setNoConnect");
+    }
+  },
   methods: {
     faqModal() {
       this.faqShow = true;
@@ -364,16 +373,16 @@ export default {
       event.currentTarget.classList.add("active");
     },
     async connectKaikas() {
-      if (this.isConnect) {
+      if (this.$store.getters.getConnect === 'is-connect') {
         if (window.confirm("지갑연결을 해제하시겠습니까?")) {
-          this.isConnect = false;
+          this.$store.commit("setNoConnect");
         }
       } else {
         if (window.confirm("지갑연결을 하시겠습니까?")) {
           try {
             const klaytn = window.klaytn; //크롬에 깔린 카이카스 확장프로그램 안에는 klaytn 이 내장되어있다.
             const accounts = await klaytn.enable(); //카이카스 로그인
-            this.isConnect = true;
+            this.$store.commit("setConnect");
           } catch (err) {
             alert(
               "Kaikas 지갑이 설치되어 있지 않습니다.\n크롬에서 Kaikas 확장 프로그램을 설치해주세요!"

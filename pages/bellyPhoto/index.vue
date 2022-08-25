@@ -57,55 +57,67 @@
           </div>
         </div>
         <template v-if="myNFT">
-          <!--my nft 토글 on :: 지갑연결이 안되어 있을 경우-->
-          <div class="photo-box">
-            <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
-              Please, Connect Kaikas wallet to see your Bellygom NFTs.
-            </p>
-            <p class="desc" v-else>
-              보유 중인 벨리곰 NFT를 확인하려면 카이카스 지갑 연동이 필요해요!
-            </p>
-            <button class="btn-wallet" @click="findMyNFT">CONNECT WALLET</button>
-          </div>
-          <!--my nft 토글 on :: nft 노 존재-->
-          <button class="connect-wallet">
-            <img src="@/assets/images/ic-kaikas.svg" />
-            OXA89...664
-          </button>
-          <div class="photo-box">
-            <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
-              You don’t have any Bellygom NFT.
-            </p>
-            <p class="desc" v-else>
-              보유하고 계신 Bellygom NFT가 존재하지 않습니다.
-            </p>
-            <a
-              href="https://opensea.io/collection/bellygom-world-official"
-              target="_blank"
-              class="btn-wallet"
-              ><img src="@/assets/images/belly-photo-detail-opensea.svg" />Buy
-              on OpenSea</a
-            >
-          </div>
-          <transition-group
-              name="photo"
-              class="photo"
-              tag="ul"
-          >
-            <li
-                v-for="(item,index) in myNftData"
-                :key="index"
-                class="item"
-                @click="detailNft(item[0])"
-            >
-              <span class="rank">Rank {{ item[0].rank }}</span>
-              <span class="image">
+          <!-- nft 커넥트 전 -->
+          <template v-if="!connectNft">
+            <div class="photo-box">
+              <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
+                Please, Connect Kaikas wallet to see your Bellygom NFTs.
+              </p>
+              <p class="desc" v-else>
+                보유 중인 벨리곰 NFT를 확인하려면 카이카스 지갑 연동이 필요해요!
+              </p>
+              <button class="btn-wallet" @click="findMyNFT">CONNECT WALLET</button>
+            </div>
+          </template>
+          <!-- nft 커넥트 후 -->
+          <template v-else>
+            <!-- nft 커넥트 후 - no data -->
+            <template v-if="myNftData === []">
+              <div class="no-nft">
+                <button class="connect-wallet">
+                  <img src="@/assets/images/ic-kaikas.svg" />
+                  OXA89...664
+                </button>
+                <div class="photo-box">
+                  <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
+                    You don’t have any Bellygom NFT.
+                  </p>
+                  <p class="desc" v-else>
+                    보유하고 계신 Bellygom NFT가 존재하지 않습니다.
+                  </p>
+                  <a
+                      href="https://opensea.io/collection/bellygom-world-official"
+                      target="_blank"
+                      class="btn-wallet"
+                  ><img src="@/assets/images/belly-photo-detail-opensea.svg" />Buy
+                    on OpenSea</a
+                  >
+                </div>
+              </div>
+            </template>
+            <!-- nft 커넥트 후 - 데이터 있음 -->
+            <template v-else>
+              <transition-group
+                  name="photo"
+                  class="photo"
+                  tag="ul"
+              >
+                <li
+                    v-for="(item,index) in myNftData"
+                    :key="index"
+                    class="item"
+                    @click="detailNft(item[0])"
+                >
+                  <span class="rank">Rank {{ item[0].rank }}</span>
+                  <span class="image">
                   <img :src="item[0].image" :alt="item[0].id" />
                 </span>
-              <span class="info">Bellygom #{{ item[0].id }}</span>
-              <span class="border" v-if="$mq === 'pc'"></span>
-            </li>
-          </transition-group>
+                  <span class="info">Bellygom #{{ item[0].id }}</span>
+                  <span class="border" v-if="$mq === 'pc'"></span>
+                </li>
+              </transition-group>
+            </template>
+          </template>
         </template>
         <template v-else>
           <template v-if="data.length === 0">
@@ -252,6 +264,7 @@ export default {
       kaikas: "0x7c6C70AB930E5637f5F862629A67D47C3403cC34",
       modalShow: false,
       mbFilterShow: false,
+      connectNft: false,
       keyword: "",
       myNFT: false,
       filterList: [
@@ -724,29 +737,36 @@ export default {
         nftTokenIdArray.push(await contractInstance.methods.tokenOfOwnerByIndex(klaytn.selectedAddress, i).call());
       }
       console.log('nftTokenIdArray',nftTokenIdArray);
-      const filter = {};
-      for (const [key, value] of Object.entries(this.filter)) {
-        filter[key] = value.selected.join();
+      await this.fetchMyNft(nftTokenIdArray);
+    },
+    async fetchMyNft(id) {
+      try {
+        this.connectNft = true;
+
+        const filter = {};
+        for (const [key, value] of Object.entries(this.filter)) {
+          filter[key] = value.selected.join();
+        }
+        const { data: response } = await this.$axios.get("/apiBellyPhoto", {
+          params: {
+            ...filter,
+            orderBy: this.orderBy.selected,
+            keyword: this.keyword,
+            page: '1',
+            pageSize: '10000',
+          },
+        });
+        const myNftArray = [];
+        id.forEach((item)=>{
+          myNftArray.push(response.pageOfItems.filter((e)=>{
+            return e.id == item.padStart(4, '0');
+          }));
+        })
+        console.log('마이nft데이터',myNftArray)
+        this.myNftData = myNftArray;
+      } catch (e) {
+        console.log(e);
       }
-      const { data: response } = await this.$axios.get("/apiBellyPhoto", {
-        params: {
-          ...filter,
-          orderBy: this.orderBy.selected,
-          keyword: this.keyword,
-          page: '1',
-          pageSize: '10000',
-        },
-      });
-      console.log(response);
-      nftTokenIdArray = ['1000', '0001', '0900', '0056', '0057', '0058'];
-      const myNftArray = [];
-      nftTokenIdArray.forEach((token)=>{
-        myNftArray.push(response.pageOfItems.filter((e)=>{
-          return e.id == token;
-        }));
-      })
-      console.log('마이nft데이터',myNftArray)
-      this.myNftData = myNftArray;
     },
     infiniteHandler() {
       if(this.myNFT) {

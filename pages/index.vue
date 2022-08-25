@@ -1958,6 +1958,14 @@ export default {
     }
 
     let locale = this.getCookie("b_locale");
+    let connect = this.getCookie("b_connect");
+
+    if (connect && connect === "is-connect") {
+      this.$store.commit("setConnect");
+    } else {
+      this.$store.commit("setNoConnect");
+    }
+
     if (locale && locale === "KOR") {
       this.$store.commit("setKOR");
     } else {

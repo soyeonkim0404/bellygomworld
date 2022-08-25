@@ -3,12 +3,15 @@ import Vuex from 'vuex'
 const store = () => new Vuex.Store({
 
   state: {
-    locale: 'KOR'
+    locale: 'KOR',
+    connect: 'no-connect',
   },
   getters: {
     getLocale (state) {
-
       return state.locale;
+    },
+    getConnect (state) {
+      return state.connect;
     }
   },
   mutations: {
@@ -19,6 +22,14 @@ const store = () => new Vuex.Store({
     setKOR (state) {
       document.cookie = "b_locale=KOR;";
        state.locale = 'KOR';
+    },
+    setConnect (state) {
+      document.cookie = "b_connect=is-connect";
+      state.connect = 'b_connect=is-connect';
+    },
+    setNoConnect (state) {
+      document.cookie = "b_connect=no-connect";
+      state.connect = 'b_connect=no-connect';
     }
   }
 })
