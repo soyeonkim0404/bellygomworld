@@ -65,7 +65,7 @@
             <p class="desc" v-else>
               보유 중인 벨리곰 NFT를 확인하려면 카이카스 지갑 연동이 필요해요!
             </p>
-            <button class="btn-wallet">CONNECT WALLET</button>
+            <button class="btn-wallet" @click="findMyNFT">CONNECT WALLET</button>
           </div>
           <!--my nft 토글 on :: nft 노 존재-->
           <button class="connect-wallet">
@@ -87,6 +87,25 @@
               on OpenSea</a
             >
           </div>
+          <transition-group
+              name="photo"
+              class="photo"
+              tag="ul"
+          >
+            <li
+                v-for="(item,index) in myNftData"
+                :key="index"
+                class="item"
+                @click="detailNft(item[0])"
+            >
+              <span class="rank">Rank {{ item[0].rank }}</span>
+              <span class="image">
+                  <img :src="item[0].image" :alt="item[0].id" />
+                </span>
+              <span class="info">Bellygom #{{ item[0].id }}</span>
+              <span class="border" v-if="$mq === 'pc'"></span>
+            </li>
+          </transition-group>
         </template>
         <template v-else>
           <template v-if="data.length === 0">
@@ -221,6 +240,7 @@
 
 <script>
 import AnimatedNumber from "animated-number-vue";
+import myNft from "@/server-middleware/myNft.json";
 export default {
   name: "bellyPhoto",
   layout: "bellyPhoto",
@@ -665,6 +685,7 @@ export default {
       pageSize: 40,
       loading: false,
       detailNftInfo: {},
+      myNftData: [],
     };
   },
   fetchDelay: 0,
@@ -692,10 +713,45 @@ export default {
     }
   },
   methods: {
-    numberFormat(val){
-      return String(val).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    async findMyNFT() {
+      const klaytn = window.klaytn; //크롬에 깔린 카이카스 확장프로그램 안에는 klaytn 이 내장되어있다.
+      const accounts = await klaytn.enable(); //카이카스 로그인
+      let nftTokenIdArray = [];
+      const contractInstance = window.caver.contract.create(myNft, "0x141637b601d0fc907c0acb8ae5060ee22bb7b3f6"); //컨트렉트 매니저 객체 생성
+      console.log(contractInstance);
+      let countNFT = await contractInstance.methods.balanceOf(klaytn.selectedAddress).call()
+      for (let i = 0; i < countNFT; i++){
+        nftTokenIdArray.push(await contractInstance.methods.tokenOfOwnerByIndex(klaytn.selectedAddress, i).call());
+      }
+      console.log('nftTokenIdArray',nftTokenIdArray);
+      const filter = {};
+      for (const [key, value] of Object.entries(this.filter)) {
+        filter[key] = value.selected.join();
+      }
+      const { data: response } = await this.$axios.get("/apiBellyPhoto", {
+        params: {
+          ...filter,
+          orderBy: this.orderBy.selected,
+          keyword: this.keyword,
+          page: '1',
+          pageSize: '10000',
+        },
+      });
+      console.log(response);
+      nftTokenIdArray = ['1000', '0001', '0900', '0056', '0057', '0058'];
+      const myNftArray = [];
+      nftTokenIdArray.forEach((token)=>{
+        myNftArray.push(response.pageOfItems.filter((e)=>{
+          return e.id == token;
+        }));
+      })
+      console.log('마이nft데이터',myNftArray)
+      this.myNftData = myNftArray;
     },
     infiniteHandler() {
+      if(this.myNFT) {
+        return
+      }
       if (this.pager.totalPages <= this.page) return;
       const contentHeight = document.querySelector("#app").offsetHeight;
       const windowHeight = window.innerHeight;
