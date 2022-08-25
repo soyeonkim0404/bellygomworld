@@ -89,8 +89,7 @@
           </div>
         </template>
         <template v-else>
-          <template v-if="photoList.length === 0">
-            <!--미 검색시 -->
+          <template v-if="data.length === 0">
             <div class="photo-box">
               <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
                 No Matching Bellygom Found.
