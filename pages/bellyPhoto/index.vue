@@ -14,7 +14,7 @@
             <button type="button"
                     class="btn-reset"
                     @click="refreshFetch"
-            ><!--resetFilter-->
+            >
               <img src="@/assets/images/ic_reset.svg" alt="" />
             </button>
           </div>
@@ -138,7 +138,7 @@
       <div slot="body">
         <div class="inner">
           <div class="nft-thumb">
-            <img src="@/assets/images/belly-photo-detail.svg" class="thumb" />
+            <img :src="detailNftInfo.image" class="thumb" />
             <div class="button-wrap">
               <button class="btn-opensea">
                 <i class="icon" />
@@ -149,17 +149,17 @@
           <div class="nft-info">
             <div class="top">
               <span :class="`flag-${modalSeq.flag}`">{{ modalSeq.flag }}</span>
-              <div class="nft-title">Bellygom #{{ modalSeq.nft }}</div>
+              <div class="nft-title">Bellygom #{{ detailNftInfo.id }}</div>
             </div>
             <div class="contents">
               <div class="number">
                 <div class="col">
                   <span class="tit">Ranking</span>
-                  <span class="data">{{ modalSeq.lank }}</span>
+                  <span class="data">{{ detailNftInfo.rank }}</span>
                 </div>
                 <div class="col">
                   <span class="tit">Score</span>
-                  <span class="data">7777</span>
+                  <span class="data">{{ detailNftInfo.score }}</span>
                 </div>
               </div>
               <div class="property">
@@ -167,27 +167,27 @@
                 <ul class="list">
                   <li>
                     <span class="sub">Background</span>
-                    <span class="desc">Ice Mountain Nature</span>
+                    <span class="desc">{{ detailNftInfo.Background }}</span>
                   </li>
                   <li>
                     <span class="sub">Body</span>
-                    <span class="desc">Aluminium Steel</span>
+                    <span class="desc">{{ detailNftInfo.Body }}</span>
                   </li>
                   <li>
                     <span class="sub">Clothes</span>
-                    <span class="desc">Black White Print Tshirt</span>
+                    <span class="desc">{{ detailNftInfo.Dress }}</span>
                   </li>
                   <li>
-                    <span class="sub">Background</span>
-                    <span class="desc">Ice Mountain Nature</span>
+                    <span class="sub">Head</span>
+                    <span class="desc">{{ detailNftInfo.Head }}</span>
                   </li>
                   <li>
-                    <span class="sub">Body</span>
-                    <span class="desc">Aluminium Steel</span>
+                    <span class="sub">Acc</span>
+                    <span class="desc">{{ detailNftInfo.Necklace }}</span>
                   </li>
                   <li>
-                    <span class="sub">Clothes</span>
-                    <span class="desc">Black White Print Tshirt</span>
+                    <span class="sub">Special</span>
+                    <span class="desc">Shower robe green</span>
                   </li>
                 </ul>
               </div>
@@ -575,7 +575,7 @@ export default {
             "Blonde Wavy Hair",
             "Bloned Hair",
             "Bobbed Hair",
-            "Combination Hair",
+            "Combination Hair",-
             "Gashina Hair",
             "Half Bun Hair",
             "Heroine Hair",
@@ -662,6 +662,7 @@ export default {
       pager: {},
       pageSize: 40,
       loading: false,
+      detailNftInfo: {},
     };
   },
   fetchDelay: 0,
@@ -703,11 +704,9 @@ export default {
       this.$fetch();
     },
     refreshFetch() {
-      console.log('리프레시')
       for (const [key, value] of Object.entries(this.filter)) {
         value.selected = [];
       }
-      console.log(this.filter)
       this.data = [];
       this.page = 1;
       this.$fetch();
@@ -719,6 +718,8 @@ export default {
     detailNft(item) {
       this.modalShow = true;
       this.modalSeq = item;
+      this.detailNftInfo = item;
+      console.log('디테일', this.detailNftInfo)
       document.body.style.overflow = "hidden";
     },
     modalHide() {
