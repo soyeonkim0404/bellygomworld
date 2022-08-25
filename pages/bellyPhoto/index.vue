@@ -198,19 +198,23 @@
       <div slot="footer"></div>
     </modal>
 
-    <modal v-if="mbFilterShow" @close="mbFilterHide" class="mobile-filter">
+    <modal v-if="mbFilterShow" @close="mbModalClose" class="mobile-filter">
       <div slot="header">
         <div class="modal-title">Filter</div>
       </div>
       <div slot="body">
-        <BellyPhotoFilter :list="filterList" :filterChkList="filterChkList" />
+        <BellyPhotoFilter
+            :list="filter"
+            :filterChkList="filterChkList"
+            @change="resetFetch"
+        />
       </div>
       <div slot="footer">
         <div class="fix-wrap">
           <button class="reset" @click="resetFilter">
             <img src="@/assets/images/ic_24_refresh_w.svg" />
           </button>
-          <button class="btn-done">DONE</button>
+          <button class="btn-done" @click="mbModalDone">DONE</button>
         </div>
       </div>
     </modal>
@@ -722,12 +726,17 @@ export default {
       console.log('디테일', this.detailNftInfo)
       document.body.style.overflow = "hidden";
     },
+    mbModalDone() {
+      this.mbFilterShow = false;
+    },
+    mbModalClose() {
+      this.refreshFetch()
+      this.mbFilterShow = false;
+    },
     modalHide() {
       this.modalShow = false;
+
       document.body.style.overflow = "";
-    },
-    mbFilterHide() {
-      this.mbFilterShow = false;
     },
     mbFilter() {
       this.mbFilterShow = true;
