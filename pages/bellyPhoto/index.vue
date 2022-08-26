@@ -58,7 +58,7 @@
         </div>
         <template v-if="myNFT">
           <!-- nft 커넥트 전 -->
-          <template v-if="!connectNft">
+          <template v-if="$store.getters.getConnect === 'no-connect'">
             <div class="photo-box">
               <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
                 Please, Connect Kaikas wallet to see your Bellygom NFTs.
@@ -72,7 +72,7 @@
           <!-- nft 커넥트 후 -->
           <template v-else>
             <!-- nft 커넥트 후 - no data -->
-            <template v-if="myNftData === []">
+            <template v-if="$store.getters.getMyNftData === []">
               <div class="no-nft">
                 <button class="connect-wallet">
                   <img src="@/assets/images/ic-kaikas.svg" />
@@ -103,8 +103,8 @@
                   tag="ul"
               >
                 <li
-                    v-for="(item,index) in myNftData"
-                    :key="index"
+                    v-for="(item,index) in $store.getters.getMyNftData"
+                    :key="index"s
                     class="item"
                     @click="detailNft(item[0])"
                 >
@@ -727,17 +727,16 @@ export default {
   },
   methods: {
     async findMyNFT() {
-      const klaytn = window.klaytn; //크롬에 깔린 카이카스 확장프로그램 안에는 klaytn 이 내장되어있다.
+      await this.$store.dispatch('callMyNftData');
+    /*  const klaytn = window.klaytn; //크롬에 깔린 카이카스 확장프로그램 안에는 klaytn 이 내장되어있다.
       const accounts = await klaytn.enable(); //카이카스 로그인
       let nftTokenIdArray = [];
       const contractInstance = window.caver.contract.create(myNft, "0x141637b601d0fc907c0acb8ae5060ee22bb7b3f6"); //컨트렉트 매니저 객체 생성
-      console.log(contractInstance);
       let countNFT = await contractInstance.methods.balanceOf(klaytn.selectedAddress).call()
       for (let i = 0; i < countNFT; i++){
         nftTokenIdArray.push(await contractInstance.methods.tokenOfOwnerByIndex(klaytn.selectedAddress, i).call());
       }
-      console.log('nftTokenIdArray',nftTokenIdArray);
-      await this.fetchMyNft(nftTokenIdArray);
+      await this.fetchMyNft(nftTokenIdArray);*/
     },
     async fetchMyNft(id) {
       try {

@@ -1962,8 +1962,10 @@ export default {
 
     if (connect && connect === "is-connect") {
       this.$store.commit("setConnect");
+      this.$store.dispatch('callMyNftData');
     } else {
       this.$store.commit("setNoConnect");
+      this.$store.commit("setRefreshMyNftData");
     }
 
     if (locale && locale === "KOR") {
@@ -1971,6 +1973,7 @@ export default {
     } else {
       this.$store.commit("setENG");
     }
+    console.log('스토어', this.$store)
   },
   methods: {
     roadModal1() {
