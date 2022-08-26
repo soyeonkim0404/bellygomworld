@@ -427,7 +427,21 @@ export default {
     align-items: center;
     .anchor-nav {
       li {
+        position: relative;
         display: inline-flex;
+        &:nth-child(4) {
+          margin-left: 61px;
+          &:before {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 20px;
+            background: #333333;
+            opacity: 0.5;
+            left: -30px;
+            top: 8px;
+          }
+        }
         span {
           line-height: 27px;
         }
