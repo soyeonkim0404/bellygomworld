@@ -4,7 +4,7 @@
     <div class="contents">
       <div class="section1">
         <InputSearch
-            v-model="keyword"
+            v-model="$store.getters.getKeyword"
             placeholder="Number"
             @input="resetFetch"
         />
@@ -19,7 +19,7 @@
             </button>
           </div>
           <BellyPhotoFilter
-              :list="filter"
+              :list="$store.getters.getFilter"
               :filterChkList="filterChkList"
               @change="resetFetch"
           />
@@ -30,14 +30,26 @@
       </div>
       <div class="section2">
         <div class="top">
-
-          <div class="total"><span>
+          <div class="total">
+            <template v-if="!this.myNFT">
+              <span>
                 <animated-number
-                    :value="pager.totalItems || 0"
+                    :value="$store.getters.getPager.totalItems || 0"
                     :duration="500"
                     :formatValue="formatToPrice"
                 />
-          </span> Items</div>
+              </span> Items
+            </template>
+            <template v-else>
+              <span>
+                <animated-number
+                    :value="$store.getters.getMyNftData.length"
+                    :duration="500"
+                    :formatValue="formatToPrice"
+                />
+              </span> Items
+            </template>
+          </div>
           <div class="sort">
             <div class="toggle" v-if="$mq === 'pc'">
               <span>MY NFTs</span>
@@ -48,10 +60,10 @@
             </div>
             <div class="select">
               <SelectBox
-                  :items="orderBy.list"
-                  :default="orderBy.list[0]"
+                  :items="$store.getters.getOderBy.list"
+                  :default="$store.getters.getOderBy.list[0]"
                   @change="resetFetch"
-                  v-model="orderBy.selected"
+                  v-model="$store.getters.getOderBy.selected"
               />
             </div>
           </div>
@@ -103,8 +115,8 @@
                   tag="ul"
               >
                 <li
-                    v-for="(item,index) in $store.getters.getMyNftData"
-                    :key="index"s
+                    v-for="(item) in $store.getters.getMyNftData"
+                    :key="item[0].id"
                     class="item"
                     @click="detailNft(item[0])"
                 >
@@ -120,7 +132,7 @@
           </template>
         </template>
         <template v-else>
-          <template v-if="data.length === 0">
+          <template v-if="$store.getters.getData.length === 0">
             <div class="photo-box">
               <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
                 No Matching Bellygom Found.
@@ -137,7 +149,7 @@
                   tag="ul"
               >
                 <li
-                    v-for="(item) in data"
+                    v-for="(item) in $store.getters.getData"
                     :key="item.id"
                     class="item"
                     @click="detailNft(item)"
@@ -702,76 +714,18 @@ export default {
     };
   },
   fetchDelay: 0,
-  async fetch() {
-    try {
-      const filter = {};
-      for (const [key, value] of Object.entries(this.filter)) {
-        filter[key] = value.selected.join();
-      }
-      const { data: response } = await this.$axios.get("/apiBellyPhoto", {
-        params: {
-          ...filter,
-          orderBy: this.orderBy.selected,
-          keyword: this.keyword,
-          page: this.page,
-          pageSize: this.pageSize,
-        },
-      });
-      console.log(response)
-      this.pager = response.pager;
-      this.data = this.data.concat(response.pageOfItems);
-      this.page++;
-    } catch (e) {
-      console.log(e);
-    }
+  async fetch () {
+    await this.$store.dispatch('fetch')
   },
   methods: {
     async findMyNFT() {
       await this.$store.dispatch('callMyNftData');
-    /*  const klaytn = window.klaytn; //크롬에 깔린 카이카스 확장프로그램 안에는 klaytn 이 내장되어있다.
-      const accounts = await klaytn.enable(); //카이카스 로그인
-      let nftTokenIdArray = [];
-      const contractInstance = window.caver.contract.create(myNft, "0x141637b601d0fc907c0acb8ae5060ee22bb7b3f6"); //컨트렉트 매니저 객체 생성
-      let countNFT = await contractInstance.methods.balanceOf(klaytn.selectedAddress).call()
-      for (let i = 0; i < countNFT; i++){
-        nftTokenIdArray.push(await contractInstance.methods.tokenOfOwnerByIndex(klaytn.selectedAddress, i).call());
-      }
-      await this.fetchMyNft(nftTokenIdArray);*/
-    },
-    async fetchMyNft(id) {
-      try {
-        this.connectNft = true;
-
-        const filter = {};
-        for (const [key, value] of Object.entries(this.filter)) {
-          filter[key] = value.selected.join();
-        }
-        const { data: response } = await this.$axios.get("/apiBellyPhoto", {
-          params: {
-            ...filter,
-            orderBy: this.orderBy.selected,
-            keyword: this.keyword,
-            page: '1',
-            pageSize: '10000',
-          },
-        });
-        const myNftArray = [];
-        id.forEach((item)=>{
-          myNftArray.push(response.pageOfItems.filter((e)=>{
-            return e.id == item.padStart(4, '0');
-          }));
-        })
-        console.log('마이nft데이터',myNftArray)
-        this.myNftData = myNftArray;
-      } catch (e) {
-        console.log(e);
-      }
     },
     infiniteHandler() {
       if(this.myNFT) {
         return
       }
-      if (this.pager.totalPages <= this.page) return;
+      if (this.$store.getters.getPager.totalPages <= this.$store.getters.getPage) return;
       const contentHeight = document.querySelector("#app").offsetHeight;
       const windowHeight = window.innerHeight;
       const scrollY = window.scrollY;
@@ -779,8 +733,10 @@ export default {
       this.$fetch();
     },
     resetFetch() {
-      this.data = [];
-      this.page = 1;
+   /*   this.data = [];
+      this.page = 1;*/
+      this.$store.commit('resetData')
+      this.$store.commit('resetPage')
       this.$fetch();
     },
     refreshFetch() {
@@ -811,7 +767,6 @@ export default {
     },
     modalHide() {
       this.modalShow = false;
-
       document.body.style.overflow = "";
     },
     mbFilter() {
