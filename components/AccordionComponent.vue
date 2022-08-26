@@ -30,11 +30,6 @@
           <p>
             <slot name="cont" :item="item"></slot>
           </p>
-          <!--          <div class="download">
-            <a href="javascript:alert('작업중');" class="btn-download"
-              >PDF Download</a
-            >
-          </div>-->
         </div>
       </div>
     </li>

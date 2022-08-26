@@ -1,8 +1,7 @@
-
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
-  env :{
-    VUE_API_URL : process.env.VUE_API_URL
+  env: {
+    VUE_API_URL: process.env.VUE_API_URL,
   },
   head: {
     title: "BELLYGOM",
@@ -140,14 +139,19 @@ export default {
   ],
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
+  serverMiddleware: [
+    { path: "/apiBellyPhoto", handler: "~/server-middleware/rest.js" },
+  ],
+
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     //'@nuxtjs/eslint-module',
     "@nuxtjs/style-resources",
-    '@nuxtjs/dotenv'
+    "@nuxtjs/dotenv",
   ],
   modules: [
+    "@nuxtjs/axios",
     "nuxt-fullpage.js",
     "@nuxtjs/axios",
     "@nuxtjs/style-resources",
@@ -171,7 +175,7 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: "/",
+    proxy: true,
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

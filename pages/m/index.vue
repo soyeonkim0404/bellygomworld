@@ -5,58 +5,58 @@
         <div class="wrapper">
           <div class="bubble">
             <img
-                class="b-1"
-                src="@/assets/m_images/main/img_bellyship_bubble_01.svg"
-                alt=""
+              class="b-1"
+              src="@/assets/m_images/main/img_bellyship_bubble_01.svg"
+              alt=""
             />
             <img
-                class="b-2"
-                src="@/assets/m_images/main/img_bellyship_bubble_02.svg"
-                alt=""
+              class="b-2"
+              src="@/assets/m_images/main/img_bellyship_bubble_02.svg"
+              alt=""
             />
             <img
-                class="b-3"
-                src="@/assets/m_images/main/img_bellyship_bubble_03.svg"
-                alt=""
+              class="b-3"
+              src="@/assets/m_images/main/img_bellyship_bubble_03.svg"
+              alt=""
             />
             <img
-                class="b-4"
-                src="@/assets/m_images/main/img_bellyship_bubble_04.svg"
-                alt=""
+              class="b-4"
+              src="@/assets/m_images/main/img_bellyship_bubble_04.svg"
+              alt=""
             />
             <img
-                class="b-5"
-                src="@/assets/m_images/main/img_bellyship_bubble_05.svg"
-                alt=""
+              class="b-5"
+              src="@/assets/m_images/main/img_bellyship_bubble_05.svg"
+              alt=""
             />
           </div>
           <full-page ref="fullpage" :options="options" id="fullpage">
             <section class="section">
               <img
-                  src="/power_saving.png"
-                  alt=""
-                  style="object-fit: cover; width: 100%; height: 100%"
+                src="/power_saving.png"
+                alt=""
+                style="object-fit: cover; width: 100%; height: 100%"
               />
               <video
-                  ref="mainBelly"
-                  id="mainBelly"
-                  loop
-                  muted
-                  data-autoplay
-                  playsinline
-                  preload="auto"
+                ref="mainBelly"
+                id="mainBelly"
+                loop
+                muted
+                data-autoplay
+                playsinline
+                preload="auto"
               >
                 <source
-                    src="@/assets/media/m_belly.mp4"
-                    type="video/mp4"
-                    poster="/power_saving.png"
+                  src="@/assets/media/m_belly.mp4"
+                  type="video/mp4"
+                  poster="/power_saving.png"
                 />
               </video>
             </section>
             <div
-                class="cloud-wrapper ignore"
-                @click="videoPlay()"
-                :class="{ moved: cloudMoved }"
+              class="cloud-wrapper ignore"
+              @click="videoPlay()"
+              :class="{ moved: cloudMoved }"
             >
               <img src="@/assets/m_images/main/img_keyvisual_01.png" />
             </div>
@@ -72,29 +72,29 @@
               <div class="slide fp-noscroll" data-anchor="slide1">
                 <div class="contents">
                   <img
-                      class="roads"
-                      src="@/assets/m_images/main/getbelly_road_ko_1.png"
+                    class="roads"
+                    src="@/assets/m_images/main/getbelly_road_ko_1.png"
                   />
                   <div class="text-con">
                     <div
-                        v-swiper:mySwiper="swiperOption"
-                        class="swiper-container cloud"
+                      v-swiper:mySwiper="swiperOption"
+                      class="swiper-container cloud"
                     >
                       <div class="swiper-wrapper">
                         <div class="swiper-slide">
                           <div class="item">
                             <img
-                                src="@/assets/m_images/main/cloud_01.png"
-                                alt=""
+                              src="@/assets/m_images/main/cloud_01.png"
+                              alt=""
                             />
                             <div class="txt">
-                            <span
+                              <span
                                 class="sale"
                                 v-if="$store.getters.getLocale === 'ENG'"
-                            >1st Whitelist Sale</span
-                            >
+                                >1st Whitelist Sale</span
+                              >
                               <span class="sale" v-else
-                              >1차 화이트리스트 세일</span
+                                >1차 화이트리스트 세일</span
                               >
                               <span class="date">2022.08.17</span>
                               <span class="date">8:00 pm</span>
@@ -104,17 +104,17 @@
                         <div class="swiper-slide">
                           <div class="item">
                             <img
-                                src="@/assets/m_images/main/cloud_02.png"
-                                alt=""
+                              src="@/assets/m_images/main/cloud_02.png"
+                              alt=""
                             />
                             <div class="txt">
-                            <span
+                              <span
                                 class="sale"
                                 v-if="$store.getters.getLocale === 'ENG'"
-                            >2nd Whitelist Sale</span
-                            >
+                                >2nd Whitelist Sale</span
+                              >
                               <span class="sale" v-else
-                              >2차 화이트리스트 세일</span
+                                >2차 화이트리스트 세일</span
                               >
                               <span class="date">2022.08.17</span>
                               <span class="date">10:00 pm</span>
@@ -124,15 +124,15 @@
                         <div class="swiper-slide">
                           <div class="item">
                             <img
-                                src="@/assets/m_images/main/cloud_03.png"
-                                alt=""
+                              src="@/assets/m_images/main/cloud_03.png"
+                              alt=""
                             />
                             <div class="txt">
-                            <span
+                              <span
                                 class="sale"
                                 v-if="$store.getters.getLocale === 'ENG'"
-                            >Public Sale</span
-                            >
+                                >Public Sale</span
+                              >
                               <span class="sale" v-else>퍼블릭 세일</span>
                               <span class="date">2022.08.18</span>
                               <span class="date">8:00 pm</span>
@@ -142,56 +142,56 @@
                       </div>
                       <!-- pagination -->
                       <div
-                          class="swiper-pagination swiper-pagination-1"
-                          slot="pagination"
+                        class="swiper-pagination swiper-pagination-1"
+                        slot="pagination"
                       ></div>
                     </div>
                   </div>
                   <button
-                      class="info-btn"
-                      @click="
-                    showInfo();
-                    sendGaEvent('M_' + 'gb_icon', 'GB');
-                  "
+                    class="info-btn"
+                    @click="
+                      showInfo();
+                      sendGaEvent('M_' + 'gb_icon', 'GB');
+                    "
                   />
                 </div>
               </div>
               <div class="slide fp-noscroll" data-anchor="slide2">
                 <div class="contents">
                   <img
-                      class="roads"
-                      src="@/assets/m_images/main/getbelly_road_ko_2.png"
+                    class="roads"
+                    src="@/assets/m_images/main/getbelly_road_ko_2.png"
                   />
                 </div>
               </div>
               <div class="slide fp-noscroll" data-anchor="slide3">
                 <div class="contents">
                   <img
-                      class="roads"
-                      src="@/assets/m_images/main/getbelly_road_ko_3.png"
+                    class="roads"
+                    src="@/assets/m_images/main/getbelly_road_ko_3.png"
                   />
                   <div class="text-con">
                     <div
-                        v-swiper:mySwiper2="swiperOption2"
-                        class="swiper-container"
+                      v-swiper:mySwiper2="swiperOption2"
+                      class="swiper-container"
                     >
                       <div class="swiper-wrapper">
                         <div class="swiper-slide">
                           <button
-                              class="item2"
-                              @click="
-                            roadModal1();
-                            sendGaEvent('M_' + 'br_rd1_more', 'BR');
-                          "
+                            class="item2"
+                            @click="
+                              roadModal1();
+                              sendGaEvent('M_' + 'br_rd1_more', 'BR');
+                            "
                           >
                             <img
-                                src="@/assets/m_images/main/img_road_balloon01.png"
+                              src="@/assets/m_images/main/img_road_balloon01.png"
                             />
                             <div class="txt">
                               <span class="road">ROAD 1</span>
                               <div
-                                  v-if="$store.getters.getLocale === 'ENG'"
-                                  class="title"
+                                v-if="$store.getters.getLocale === 'ENG'"
+                                class="title"
                               >
                                 Bellygom<br />
                                 Emerges!
@@ -206,18 +206,20 @@
                         </div>
                         <div class="swiper-slide">
                           <button
-                              class="item2"
-                              @click="
-                            roadModal2();
-                            sendGaEvent('M_' + 'br_rd2_more', 'BR');
-                          "
+                            class="item2"
+                            @click="
+                              roadModal2();
+                              sendGaEvent('M_' + 'br_rd2_more', 'BR');
+                            "
                           >
                             <img
-                                src="@/assets/m_images/main/img_road_balloon02.png"
+                              src="@/assets/m_images/main/img_road_balloon02.png"
                             />
                             <div class="txt road2">
                               <span class="road">ROAD 2</span>
-                              <template v-if="$store.getters.getLocale === 'ENG'">
+                              <template
+                                v-if="$store.getters.getLocale === 'ENG'"
+                              >
                                 <div class="title">
                                   Bellygom<br />
                                   Surprises!
@@ -235,18 +237,20 @@
                         </div>
                         <div class="swiper-slide">
                           <button
-                              class="item2"
-                              @click="
-                            roadModal3();
-                            sendGaEvent('M_' + 'br_rd3_more', 'BR');
-                          "
+                            class="item2"
+                            @click="
+                              roadModal3();
+                              sendGaEvent('M_' + 'br_rd3_more', 'BR');
+                            "
                           >
                             <img
-                                src="@/assets/m_images/main/img_road_balloon03.png"
+                              src="@/assets/m_images/main/img_road_balloon03.png"
                             />
                             <div class="txt">
                               <span class="road">ROAD 3</span>
-                              <template v-if="$store.getters.getLocale === 'ENG'">
+                              <template
+                                v-if="$store.getters.getLocale === 'ENG'"
+                              >
                                 <div class="title">
                                   BellyWorld<br />
                                   Opening
@@ -265,8 +269,8 @@
                       </div>
                       <!-- pagination -->
                       <div
-                          class="swiper-pagination swiper-pagination-2"
-                          slot="pagination"
+                        class="swiper-pagination swiper-pagination-2"
+                        slot="pagination"
                       ></div>
                     </div>
                   </div>
@@ -276,63 +280,63 @@
             <section class="section fp-auto-height">
               <template v-if="$store.getters.getLocale === 'ENG'">
                 <div
-                    class="bellyship"
-                    :class="{ eng: $store.getters.getLocale === 'ENG' }"
+                  class="bellyship"
+                  :class="{ eng: $store.getters.getLocale === 'ENG' }"
                 >
                   <template v-if="$store.getters.getLocale === 'ENG'">
                     <div class="belly-heart">
                       <span class="h-1">
-                           <img
-                               src="@/assets/m_images/main/img_heartballoon_01_en.svg"
-                               alt=""
-                           />
+                        <img
+                          src="@/assets/m_images/main/img_heartballoon_01_en.svg"
+                          alt=""
+                        />
                       </span>
                       <span class="h-2">
-                         <img
-                             src="@/assets/m_images/main/img_heartballoon_02_en.svg"
-                             alt=""
-                         />
+                        <img
+                          src="@/assets/m_images/main/img_heartballoon_02_en.svg"
+                          alt=""
+                        />
                       </span>
                       <span class="h-3">
-                          <img
-                              src="@/assets/m_images/main/img_heartballoon_03_en.svg"
-                              alt=""
-                          />
+                        <img
+                          src="@/assets/m_images/main/img_heartballoon_03_en.svg"
+                          alt=""
+                        />
                       </span>
                       <span class="h-4">
-                          <img
-                              src="@/assets/m_images/main/img_heartballoon_04_en.svg"
-                              alt=""
-                          />
+                        <img
+                          src="@/assets/m_images/main/img_heartballoon_04_en.svg"
+                          alt=""
+                        />
                       </span>
                       <span class="h-5">
                         <img
-                            src="@/assets/m_images/main/img_heartballoon_05_en.svg"
-                            alt=""
+                          src="@/assets/m_images/main/img_heartballoon_05_en.svg"
+                          alt=""
                         />
                       </span>
                       <span class="h-6">
                         <img
-                            src="@/assets/m_images/main/img_heartballoon_06_en.svg"
-                            alt=""
+                          src="@/assets/m_images/main/img_heartballoon_06_en.svg"
+                          alt=""
                         />
                       </span>
                       <span class="h-7">
                         <img
-                            src="@/assets/m_images/main/img_heartballoon_07_en.svg"
-                            alt=""
+                          src="@/assets/m_images/main/img_heartballoon_07_en.svg"
+                          alt=""
                         />
                       </span>
                       <span class="h-8">
                         <img
-                            src="@/assets/m_images/main/img_heartballoon_08_en.svg"
-                            alt=""
+                          src="@/assets/m_images/main/img_heartballoon_08_en.svg"
+                          alt=""
                         />
                       </span>
                       <span class="h-9">
                         <img
-                            src="@/assets/m_images/main/img_heartballoon_09_en.svg"
-                            alt=""
+                          src="@/assets/m_images/main/img_heartballoon_09_en.svg"
+                          alt=""
                         />
                       </span>
                     </div>
@@ -340,75 +344,77 @@
                   <template v-else>
                     <div class="belly-heart">
                       <span class="h-1">
-                         <img
-                             src="@/assets/m_images/main/img_heartballoon_01.svg"
-                             alt=""
-                         />
-
+                        <img
+                          src="@/assets/m_images/main/img_heartballoon_01.svg"
+                          alt=""
+                        />
                       </span>
                       <span class="h-2">
-                         <img
-                             src="@/assets/m_images/main/img_heartballoon_02.svg"
-                             alt=""
-                         />
+                        <img
+                          src="@/assets/m_images/main/img_heartballoon_02.svg"
+                          alt=""
+                        />
                       </span>
-                     <span class="h-3">
-                         <img
-                             src="@/assets/m_images/main/img_heartballoon_03.svg"
-                             alt=""
-                         />
-                     </span>
+                      <span class="h-3">
+                        <img
+                          src="@/assets/m_images/main/img_heartballoon_03.svg"
+                          alt=""
+                        />
+                      </span>
                       <span class="h-4">
-                         <img
-                             src="@/assets/m_images/main/img_heartballoon_04.svg"
-                             alt=""
-                         />
+                        <img
+                          src="@/assets/m_images/main/img_heartballoon_04.svg"
+                          alt=""
+                        />
                       </span>
                       <span class="h-5">
-                         <img
-                             src="@/assets/m_images/main/img_heartballoon_05.svg"
-                             alt=""
-                         />
+                        <img
+                          src="@/assets/m_images/main/img_heartballoon_05.svg"
+                          alt=""
+                        />
                       </span>
                       <span class="h-6">
-                       <img
-                           src="@/assets/m_images/main/img_heartballoon_06.svg"
-                           alt=""
-                       />
+                        <img
+                          src="@/assets/m_images/main/img_heartballoon_06.svg"
+                          alt=""
+                        />
                       </span>
                       <span class="h-7">
-                         <img
-                             src="@/assets/m_images/main/img_heartballoon_07.svg"
-                             alt=""
-                         />
+                        <img
+                          src="@/assets/m_images/main/img_heartballoon_07.svg"
+                          alt=""
+                        />
                       </span>
                       <span class="h-8">
-                         <img
-                             src="@/assets/m_images/main/img_heartballoon_08.svg"
-                             alt=""
-                         />
+                        <img
+                          src="@/assets/m_images/main/img_heartballoon_08.svg"
+                          alt=""
+                        />
                       </span>
                       <span class="h-9">
-                         <img
-                             src="@/assets/m_images/main/img_heartballoon_09.svg"
-                             alt=""
-                         />
+                        <img
+                          src="@/assets/m_images/main/img_heartballoon_09.svg"
+                          alt=""
+                        />
                       </span>
                     </div>
                   </template>
                 </div>
                 <div class="main-char-ending">
                   <div class="fall">
-                    <img src="@/assets/m_images/char-fall.webp" type="image/webp" />
+                    <img
+                      src="@/assets/m_images/char-fall.webp"
+                      type="image/webp"
+                    />
                   </div>
                 </div>
                 <div class="common-util">
                   <div class="title">
                     <span class="label"
-                    >Bellygom Super Surprise Package Season 1</span
+                      >Bellygom Super Surprise Package Season 1</span
                     >
                     <h3>An Amazing Experience<br />for Bellygom's Friends</h3>
-                    <ul class="desc" style="margin: 10px auto 10px 14px;">
+                    <ul class="desc" style="margin: 10px auto 10px 14px">
                       <li>
                         <strong>Eligibility</strong> All Bellygom NFT holders
                         are eligible
@@ -421,8 +427,8 @@
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/m_images/main/img__bubble_01_eng.png"
-                              alt=""
+                            src="@/assets/m_images/main/img__bubble_01_eng.png"
+                            alt=""
                           />
                         </span>
                         <strong>Exciting Lotte World</strong>
@@ -434,8 +440,8 @@
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/m_images/main/img__bubble_03_eng.png"
-                              alt=""
+                            src="@/assets/m_images/main/img__bubble_03_eng.png"
+                            alt=""
                           />
                         </span>
                         <strong>Global Collab NFTs</strong>
@@ -448,8 +454,8 @@
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/m_images/main/img__bubble_02_eng.png"
-                              alt=""
+                            src="@/assets/m_images/main/img__bubble_02_eng.png"
+                            alt=""
                           />
                         </span>
                         <strong>Limited Edition<br />Bellygom Merch</strong>
@@ -462,8 +468,8 @@
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/m_images/main/img__bubble_04_eng.png"
-                              alt=""
+                            src="@/assets/m_images/main/img__bubble_04_eng.png"
+                            alt=""
                           />
                         </span>
                         <strong>Invincible<br />Coupon</strong>
@@ -475,8 +481,8 @@
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/m_images/main/img__bubble_05_eng.png"
-                              alt=""
+                            src="@/assets/m_images/main/img__bubble_05_eng.png"
+                            alt=""
                           />
                         </span>
                         <strong>Belly pass</strong>
@@ -488,8 +494,8 @@
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/m_images/main/img__bubble_06_eng.png"
-                              alt=""
+                            src="@/assets/m_images/main/img__bubble_06_eng.png"
+                            alt=""
                           />
                         </span>
                         <strong>Live Commerce</strong>
@@ -501,41 +507,41 @@
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/images/main/img__bubble_07_eng.png"
-                              alt=""
+                            src="@/assets/images/main/img__bubble_07_eng.png"
+                            alt=""
                           />
                         </span>
                         <strong>Hotel Discounts</strong>
                         <p>
-                          Always receive up to 15% discounts at Lotte<br/>
-                          affiliated hotels. (*Signiel, Lotte Hotel, Lotte<br/>
+                          Always receive up to 15% discounts at Lotte<br />
+                          affiliated hotels. (*Signiel, Lotte Hotel, Lotte<br />
                           City Hotel, L7)
                         </p>
                       </li>
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/images/main/img__bubble_08_eng.png"
-                              alt=""
+                            src="@/assets/images/main/img__bubble_08_eng.png"
+                            alt=""
                           />
                         </span>
                         <strong>Membership Club</strong>
                         <p>
-                          Receive 10x more L.POINT than Lotte Home<br/>
-                          Shopping regular members. Get shopping<br/>
+                          Receive 10x more L.POINT than Lotte Home<br />
+                          Shopping regular members. Get shopping<br />
                           coupons (by age group) every month.
                         </p>
                       </li>
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/images/main/img__bubble_09_eng.png"
-                              alt=""
+                            src="@/assets/images/main/img__bubble_09_eng.png"
+                            alt=""
                           />
                         </span>
                         <strong>Joy of 5,000 won</strong>
                         <p>
-                          Get up to 5,000 L.POINT or Lotte GRS mobile<br/>
+                          Get up to 5,000 L.POINT or Lotte GRS mobile<br />
                           coupons each month.
                         </p>
                       </li>
@@ -543,8 +549,8 @@
                   </div>
                 </div>
                 <div
-                    class="level-belly"
-                    :class="{ eng: $store.getters.getLocale === 'ENG' }"
+                  class="level-belly"
+                  :class="{ eng: $store.getters.getLocale === 'ENG' }"
                 >
                   <div class="head-title">
                     <span class="label">
@@ -565,29 +571,38 @@
                       </p>
                       <ul class="benefit-list">
                         <li>
-                          Bellygom Signiel Platinum Package(Premier City View Scenic Bath Room + Lounge access and Breakfast tickets for 2 persons + 1 Valet Service + Swimming Pool & Fitness Center Access)
+                          Bellygom Signiel Platinum Package(Premier City View
+                          Scenic Bath Room + Lounge access and Breakfast tickets
+                          for 2 persons + 1 Valet Service + Swimming Pool &
+                          Fitness Center Access)
                         </li>
                         <li>
-                          Bellygom World Premium Package (Lotte Hotel World Voucher + Attractions Pass)
+                          Bellygom World Premium Package (Lotte Hotel World
+                          Voucher + Attractions Pass)
                         </li>
                         <li>
-                          Bellygom Holders Exclusive Live Commerce Ticket + Belly Discount Coupon
+                          Bellygom Holders Exclusive Live Commerce Ticket +
+                          Belly Discount Coupon
                         </li>
                         <li>
-                          Bellygom Cinema Premium Package (2 Lotte Cinema Charlotte Tickets + 2 Sweet combo Drinks)
+                          Bellygom Cinema Premium Package (2 Lotte Cinema
+                          Charlotte Tickets + 2 Sweet combo Drinks)
                         </li>
                       </ul>
                       <span class="condition">
-                     Eligibility: Belly Tier NFT Holders
-                    </span>
+                        Eligibility: Belly Tier NFT Holders
+                      </span>
                       <span class="condition">
-                      The Plan: Lotte Signiel (2x per season) *Transferable<span class="divider">｜</span>Bellygom World (2x per season)<span class="divider">｜</span>Cinema (4x per season)
-                    </span>
+                        The Plan: Lotte Signiel (2x per season)
+                        *Transferable<span class="divider">｜</span>Bellygom
+                        World (2x per season)<span class="divider">｜</span
+                        >Cinema (4x per season)
+                      </span>
                       <div class="hide-mark">
                         <img
-                            src="@/assets/images/main/img_lock.svg"
-                            alt=""
-                            class="lock"
+                          src="@/assets/images/main/img_lock.svg"
+                          alt=""
+                          class="lock"
                         />
                         <p>Comming Soon!</p>
                       </div>
@@ -597,26 +612,32 @@
                       <p class="sub">A Magical Two-day Trip with Bellygom!</p>
                       <ul class="benefit-list">
                         <li>
-                          Bellygom World Premium Package (Lotte Hotel World Voucher + Attractions Pass)
+                          Bellygom World Premium Package (Lotte Hotel World
+                          Voucher + Attractions Pass)
                         </li>
                         <li>
-                          Bellygom Holders Exclusive Live Commerce Ticket + Holic Discount Coupon
+                          Bellygom Holders Exclusive Live Commerce Ticket +
+                          Holic Discount Coupon
                         </li>
                         <li>
-                          Bellygom Cinema Premium Package (2 Lotte Cinema Charlotte Tickets)
+                          Bellygom Cinema Premium Package (2 Lotte Cinema
+                          Charlotte Tickets)
                         </li>
                       </ul>
                       <span class="condition">
-                      Eligibility: Holic Tier NFT Holders
-                    </span>
+                        Eligibility: Holic Tier NFT Holders
+                      </span>
                       <span class="condition">
-                      The Plan: Bellygom World (2x per season)<span class="divider">｜</span>Cinema (4x per season)
-                    </span>
+                        The Plan: Bellygom World (2x per season)<span
+                          class="divider"
+                          >｜</span
+                        >Cinema (4x per season)
+                      </span>
                       <div class="hide-mark">
                         <img
-                            src="@/assets/images/main/img_lock.svg"
-                            alt=""
-                            class="lock"
+                          src="@/assets/images/main/img_lock.svg"
+                          alt=""
+                          class="lock"
                         />
                         <p>Comming Soon!</p>
                       </div>
@@ -626,23 +647,25 @@
                       <p class="sub">Bellygom's Surprising Comfort!</p>
                       <ul class="benefit-list">
                         <li>
-                          Bellygom Holders Exclusive Live Commerce Ticket + Mega Discount Coupon
+                          Bellygom Holders Exclusive Live Commerce Ticket + Mega
+                          Discount Coupon
                         </li>
                         <li>
-                          Bellygom Cinema Premium Package (2 Lotte Cinema Charlotte Tickets)
+                          Bellygom Cinema Premium Package (2 Lotte Cinema
+                          Charlotte Tickets)
                         </li>
                       </ul>
                       <span class="condition">
-                      Eligibility: Mega Tier NFT Holders
-                     </span>
+                        Eligibility: Mega Tier NFT Holders
+                      </span>
                       <span class="condition">
-                     The Plan: Cinema (3x per season)
-                    </span>
+                        The Plan: Cinema (3x per season)
+                      </span>
                       <div class="hide-mark">
                         <img
-                            src="@/assets/images/main/img_lock.svg"
-                            alt=""
-                            class="lock"
+                          src="@/assets/images/main/img_lock.svg"
+                          alt=""
+                          class="lock"
                         />
                         <p>Comming Soon!</p>
                       </div>
@@ -655,21 +678,24 @@
                       </p>
                       <ul class="benefit-list">
                         <li>
-                          Bellygom Holders Exclusive Live Commerce Ticket + Super Discount Coupon
+                          Bellygom Holders Exclusive Live Commerce Ticket +
+                          Super Discount Coupon
                         </li>
-                        <li>Bellygom Cinema Package (2 Lotte Cinema Tickets)</li>
+                        <li>
+                          Bellygom Cinema Package (2 Lotte Cinema Tickets)
+                        </li>
                       </ul>
                       <span class="condition">
-                     Eligibility: Super Tier NFT Holders
-                    </span>
+                        Eligibility: Super Tier NFT Holders
+                      </span>
                       <span class="condition">
-                      The Plan: Cinema (3x per season)
-                    </span>
+                        The Plan: Cinema (3x per season)
+                      </span>
                       <div class="hide-mark">
                         <img
-                            src="@/assets/images/main/img_lock.svg"
-                            alt=""
-                            class="lock"
+                          src="@/assets/images/main/img_lock.svg"
+                          alt=""
+                          class="lock"
                         />
                         <p>Comming Soon!</p>
                       </div>
@@ -681,21 +707,24 @@
                       </p>
                       <ul class="benefit-list">
                         <li>
-                          Bellygom Holders Exclusive Live Commerce Ticket + Surprise Discount Coupon
+                          Bellygom Holders Exclusive Live Commerce Ticket +
+                          Surprise Discount Coupon
                         </li>
-                        <li>Bellygom Cinema Package (2 Lotte Cinema Tickets)</li>
+                        <li>
+                          Bellygom Cinema Package (2 Lotte Cinema Tickets)
+                        </li>
                       </ul>
                       <span class="condition">
-                      Eligibility:  Surprise Tier NFT Holders
-                    </span>
+                        Eligibility: Surprise Tier NFT Holders
+                      </span>
                       <span class="condition">
-                     The Plan: Cinema (2x per season)
-                    </span>
+                        The Plan: Cinema (2x per season)
+                      </span>
                       <div class="hide-mark">
                         <img
-                            src="@/assets/images/main/img_lock.svg"
-                            alt=""
-                            class="lock"
+                          src="@/assets/images/main/img_lock.svg"
+                          alt=""
+                          class="lock"
                         />
                         <p>Comming Soon!</p>
                       </div>
@@ -704,20 +733,25 @@
                       <div class="tit"><span>Friends</span> Bellyship</div>
                       <p class="sub">Double the Fun with Friends!</p>
                       <ul class="benefit-list">
-                        <li>Bellygom Holders Exclusive Live Commerce Ticket + Friends Discount Coupon</li>
-                        <li>Bellygom Cinema Package (2 Lotte Cinema Tickets)</li>
+                        <li>
+                          Bellygom Holders Exclusive Live Commerce Ticket +
+                          Friends Discount Coupon
+                        </li>
+                        <li>
+                          Bellygom Cinema Package (2 Lotte Cinema Tickets)
+                        </li>
                       </ul>
                       <span class="condition">
-                     Eligibility: Friends Tier NFT Holders
-                    </span>
+                        Eligibility: Friends Tier NFT Holders
+                      </span>
                       <span class="condition"
-                      >The Plan: Cinema (1x per season)</span
+                        >The Plan: Cinema (1x per season)</span
                       >
                       <div class="hide-mark">
                         <img
-                            src="@/assets/images/main/img_lock.svg"
-                            alt=""
-                            class="lock"
+                          src="@/assets/images/main/img_lock.svg"
+                          alt=""
+                          class="lock"
                         />
                         <p>Comming Soon!</p>
                       </div>
@@ -737,61 +771,59 @@
                       <span>&nbsp &middot &nbsp NFT BELLYGOM</span>
                     </div>
                   </div>
-                  <div
-                      class="nft-image-loop"
-                  >
+                  <div class="nft-image-loop">
                     <div class="image-item">
                       <img
-                          src="@/assets/m_images/main/img_NFT_01_en.png"
-                          alt=""
-                          class="nft-img"
+                        src="@/assets/m_images/main/img_NFT_01_en.png"
+                        alt=""
+                        class="nft-img"
                       />
                       <img
-                          src="@/assets/m_images/main/img_NFT_02_en.png"
-                          alt=""
-                          class="nft-img"
+                        src="@/assets/m_images/main/img_NFT_02_en.png"
+                        alt=""
+                        class="nft-img"
                       />
                       <img
-                          src="@/assets/m_images/main/img_NFT_03_en.png"
-                          alt=""
-                          class="nft-img"
+                        src="@/assets/m_images/main/img_NFT_03_en.png"
+                        alt=""
+                        class="nft-img"
                       />
                       <img
-                          src="@/assets/m_images/main/img_NFT_04_en.png"
-                          alt=""
-                          class="nft-img"
+                        src="@/assets/m_images/main/img_NFT_04_en.png"
+                        alt=""
+                        class="nft-img"
                       />
                       <img
-                          src="@/assets/m_images/main/img_NFT_05_en.png"
-                          alt=""
-                          class="nft-img"
+                        src="@/assets/m_images/main/img_NFT_05_en.png"
+                        alt=""
+                        class="nft-img"
                       />
                     </div>
                     <div class="image-item">
                       <img
-                          src="@/assets/m_images/main/img_NFT_01_en.png"
-                          alt=""
-                          class="nft-img"
+                        src="@/assets/m_images/main/img_NFT_01_en.png"
+                        alt=""
+                        class="nft-img"
                       />
                       <img
-                          src="@/assets/m_images/main/img_NFT_02_en.png"
-                          alt=""
-                          class="nft-img"
+                        src="@/assets/m_images/main/img_NFT_02_en.png"
+                        alt=""
+                        class="nft-img"
                       />
                       <img
-                          src="@/assets/m_images/main/img_NFT_03_en.png"
-                          alt=""
-                          class="nft-img"
+                        src="@/assets/m_images/main/img_NFT_03_en.png"
+                        alt=""
+                        class="nft-img"
                       />
                       <img
-                          src="@/assets/m_images/main/img_NFT_04_en.png"
-                          alt=""
-                          class="nft-img"
+                        src="@/assets/m_images/main/img_NFT_04_en.png"
+                        alt=""
+                        class="nft-img"
                       />
                       <img
-                          src="@/assets/m_images/main/img_NFT_05_en.png"
-                          alt=""
-                          class="nft-img"
+                        src="@/assets/m_images/main/img_NFT_05_en.png"
+                        alt=""
+                        class="nft-img"
                       />
                     </div>
                   </div>
@@ -806,37 +838,37 @@
                     <ul class="list">
                       <li class="full sandbox">
                         <img
-                            src="@/assets/images/main/img_parteners_logo_sandbox.png"
-                            alt=""
-                            style="width: 228px"
+                          src="@/assets/images/main/img_parteners_logo_sandbox.png"
+                          alt=""
+                          style="width: 228px"
                         />
                       </li>
                       <li class="full ground">
                         <img
-                            src="@/assets/images/main/img_parteners_logo__groundx.png"
-                            alt=""
-                            style="width: 255px"
+                          src="@/assets/images/main/img_parteners_logo__groundx.png"
+                          alt=""
+                          style="width: 255px"
                         />
                       </li>
                       <li class="flex-end">
                         <img
-                            src="@/assets/images/main/img_parteners_logo_sunmiya.png"
-                            alt=""
-                            style="width: 127px"
+                          src="@/assets/images/main/img_parteners_logo_sunmiya.png"
+                          alt=""
+                          style="width: 127px"
                         />
                       </li>
                       <li class="flex-start">
                         <img
-                            src="@/assets/images/main/img_parteners_logo_happier_town.png"
-                            alt=""
-                            style="width: 131px"
+                          src="@/assets/images/main/img_parteners_logo_happier_town.png"
+                          alt=""
+                          style="width: 131px"
                         />
                       </li>
                       <li>
                         <img
-                            src="@/assets/images/main/img_parteners_logo_mimyo.png"
-                            alt=""
-                            style="width: 83px"
+                          src="@/assets/images/main/img_parteners_logo_mimyo.png"
+                          alt=""
+                          style="width: 83px"
                         />
                       </li>
                       <li></li>
@@ -861,63 +893,63 @@
               </template>
               <template v-else>
                 <div
-                    class="bellyship"
-                    :class="{ eng: $store.getters.getLocale === 'ENG' }"
+                  class="bellyship"
+                  :class="{ eng: $store.getters.getLocale === 'ENG' }"
                 >
                   <template v-if="$store.getters.getLocale === 'ENG'">
                     <div class="belly-heart">
                       <span class="h-1">
-                           <img
-                               src="@/assets/m_images/main/img_heartballoon_01_en.svg"
-                               alt=""
-                           />
+                        <img
+                          src="@/assets/m_images/main/img_heartballoon_01_en.svg"
+                          alt=""
+                        />
                       </span>
                       <span class="h-2">
-                         <img
-                             src="@/assets/m_images/main/img_heartballoon_02_en.svg"
-                             alt=""
-                         />
+                        <img
+                          src="@/assets/m_images/main/img_heartballoon_02_en.svg"
+                          alt=""
+                        />
                       </span>
                       <span class="h-3">
-                          <img
-                              src="@/assets/m_images/main/img_heartballoon_03_en.svg"
-                              alt=""
-                          />
+                        <img
+                          src="@/assets/m_images/main/img_heartballoon_03_en.svg"
+                          alt=""
+                        />
                       </span>
                       <span class="h-4">
-                          <img
-                              src="@/assets/m_images/main/img_heartballoon_04_en.svg"
-                              alt=""
-                          />
+                        <img
+                          src="@/assets/m_images/main/img_heartballoon_04_en.svg"
+                          alt=""
+                        />
                       </span>
                       <span class="h-5">
                         <img
-                            src="@/assets/m_images/main/img_heartballoon_05_en.svg"
-                            alt=""
+                          src="@/assets/m_images/main/img_heartballoon_05_en.svg"
+                          alt=""
                         />
                       </span>
                       <span class="h-6">
                         <img
-                            src="@/assets/m_images/main/img_heartballoon_06_en.svg"
-                            alt=""
+                          src="@/assets/m_images/main/img_heartballoon_06_en.svg"
+                          alt=""
                         />
                       </span>
                       <span class="h-7">
                         <img
-                            src="@/assets/m_images/main/img_heartballoon_07_en.svg"
-                            alt=""
+                          src="@/assets/m_images/main/img_heartballoon_07_en.svg"
+                          alt=""
                         />
                       </span>
                       <span class="h-8">
                         <img
-                            src="@/assets/m_images/main/img_heartballoon_08_en.svg"
-                            alt=""
+                          src="@/assets/m_images/main/img_heartballoon_08_en.svg"
+                          alt=""
                         />
                       </span>
                       <span class="h-9">
                         <img
-                            src="@/assets/m_images/main/img_heartballoon_09_en.svg"
-                            alt=""
+                          src="@/assets/m_images/main/img_heartballoon_09_en.svg"
+                          alt=""
                         />
                       </span>
                     </div>
@@ -925,66 +957,68 @@
                   <template v-else>
                     <div class="belly-heart">
                       <span class="h-1">
-                         <img
-                             src="@/assets/m_images/main/img_heartballoon_01.svg"
-                             alt=""
-                         />
-
+                        <img
+                          src="@/assets/m_images/main/img_heartballoon_01.svg"
+                          alt=""
+                        />
                       </span>
                       <span class="h-2">
-                         <img
-                             src="@/assets/m_images/main/img_heartballoon_02.svg"
-                             alt=""
-                         />
+                        <img
+                          src="@/assets/m_images/main/img_heartballoon_02.svg"
+                          alt=""
+                        />
                       </span>
                       <span class="h-3">
-                         <img
-                             src="@/assets/m_images/main/img_heartballoon_03.svg"
-                             alt=""
-                         />
-                     </span>
+                        <img
+                          src="@/assets/m_images/main/img_heartballoon_03.svg"
+                          alt=""
+                        />
+                      </span>
                       <span class="h-4">
-                         <img
-                             src="@/assets/m_images/main/img_heartballoon_04.svg"
-                             alt=""
-                         />
+                        <img
+                          src="@/assets/m_images/main/img_heartballoon_04.svg"
+                          alt=""
+                        />
                       </span>
                       <span class="h-5">
-                         <img
-                             src="@/assets/m_images/main/img_heartballoon_05.svg"
-                             alt=""
-                         />
+                        <img
+                          src="@/assets/m_images/main/img_heartballoon_05.svg"
+                          alt=""
+                        />
                       </span>
                       <span class="h-6">
-                       <img
-                           src="@/assets/m_images/main/img_heartballoon_06.svg"
-                           alt=""
-                       />
+                        <img
+                          src="@/assets/m_images/main/img_heartballoon_06.svg"
+                          alt=""
+                        />
                       </span>
                       <span class="h-7">
-                         <img
-                             src="@/assets/m_images/main/img_heartballoon_07.svg"
-                             alt=""
-                         />
+                        <img
+                          src="@/assets/m_images/main/img_heartballoon_07.svg"
+                          alt=""
+                        />
                       </span>
                       <span class="h-8">
-                         <img
-                             src="@/assets/m_images/main/img_heartballoon_08.svg"
-                             alt=""
-                         />
+                        <img
+                          src="@/assets/m_images/main/img_heartballoon_08.svg"
+                          alt=""
+                        />
                       </span>
                       <span class="h-9">
-                         <img
-                             src="@/assets/m_images/main/img_heartballoon_09.svg"
-                             alt=""
-                         />
+                        <img
+                          src="@/assets/m_images/main/img_heartballoon_09.svg"
+                          alt=""
+                        />
                       </span>
                     </div>
                   </template>
                 </div>
                 <div class="main-char-ending">
                   <div class="fall">
-                    <img src="@/assets/m_images/char-fall.webp" type="image/webp" />
+                    <img
+                      src="@/assets/m_images/char-fall.webp"
+                      type="image/webp"
+                    />
                   </div>
                 </div>
                 <div class="common-util">
@@ -1007,8 +1041,8 @@
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/m_images/main/img__bubble_01.png"
-                              alt=""
+                            src="@/assets/m_images/main/img__bubble_01.png"
+                            alt=""
                           />
                         </span>
                         <strong>익사이팅 롯데월드</strong>
@@ -1020,8 +1054,8 @@
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/m_images/main/img__bubble_03.png"
-                              alt=""
+                            src="@/assets/m_images/main/img__bubble_03.png"
+                            alt=""
                           />
                         </span>
                         <strong>글로벌 콜라보 NFT</strong>
@@ -1034,8 +1068,8 @@
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/m_images/main/img__bubble_02.png"
-                              alt=""
+                            src="@/assets/m_images/main/img__bubble_02.png"
+                            alt=""
                           />
                         </span>
                         <strong>한정판 넘버링 피규어</strong>
@@ -1048,8 +1082,8 @@
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/m_images/main/img__bubble_04.png"
-                              alt=""
+                            src="@/assets/m_images/main/img__bubble_04.png"
+                            alt=""
                           />
                         </span>
                         <strong>무적 할인권</strong>
@@ -1061,8 +1095,8 @@
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/m_images/main/img__bubble_05.png"
-                              alt=""
+                            src="@/assets/m_images/main/img__bubble_05.png"
+                            alt=""
                           />
                         </span>
                         <strong>벨리 패스</strong>
@@ -1074,8 +1108,8 @@
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/m_images/main/img__bubble_06.png"
-                              alt=""
+                            src="@/assets/m_images/main/img__bubble_06.png"
+                            alt=""
                           />
                         </span>
                         <strong>라이브 커머스 혜택</strong>
@@ -1087,40 +1121,40 @@
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/m_images/main/img__bubble_07.png"
-                              alt=""
+                            src="@/assets/m_images/main/img__bubble_07.png"
+                            alt=""
                           />
                         </span>
                         <strong>호텔 할인</strong>
                         <p>
-                          롯데 계열 호텔 최대 15% 혜택을 상시 제공합니다.<br/>
+                          롯데 계열 호텔 최대 15% 혜택을 상시 제공합니다.<br />
                           (*시그니엘, 롯데호텔, 롯데시티호텔, L7)
                         </p>
                       </li>
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/m_images/main/img__bubble_08.png"
-                              alt=""
+                            src="@/assets/m_images/main/img__bubble_08.png"
+                            alt=""
                           />
                         </span>
                         <strong>벨리곰 멤버십 클럽</strong>
                         <p>
-                          롯데홈쇼핑 일반 회원 대비<br/>
-                          10배의 L.POINT 적립과 매월 지급되는 연령별<br/>
+                          롯데홈쇼핑 일반 회원 대비<br />
+                          10배의 L.POINT 적립과 매월 지급되는 연령별<br />
                           쇼핑 쿠폰을 받아보세요.
                         </p>
                       </li>
                       <li>
                         <span class="img-wrap">
                           <img
-                              src="@/assets/m_images/main/img__bubble_09.png"
-                              alt=""
+                            src="@/assets/m_images/main/img__bubble_09.png"
+                            alt=""
                           />
                         </span>
                         <strong>5,000원의 행복</strong>
                         <p>
-                          매월 5,000 L.POINT 또는<br/>롯데GRS(식음료 교환권)
+                          매월 5,000 L.POINT 또는<br />롯데GRS(식음료 교환권)
                           모바일 5,000원 쿠폰을 제공합니다.
                         </p>
                       </li>
@@ -1147,16 +1181,20 @@
                       </p>
                       <ul class="benefit-list">
                         <li>
-                          벨리곰 시그니엘 플래티넘 패키지 (프리미어 시티뷰 시닉베스 룸 + 라운지 2인 + 조식 2인 + 발렛 1회 + 수영장 & 피트니스 이용권)
+                          벨리곰 시그니엘 플래티넘 패키지 (프리미어 시티뷰
+                          시닉베스 룸 + 라운지 2인 + 조식 2인 + 발렛 1회 +
+                          수영장 & 피트니스 이용권)
                         </li>
                         <li>
-                          벨리곰 월드 프리미엄 패키지 (롯데호텔 월드 숙박권 + 어트랙션 패스권)
+                          벨리곰 월드 프리미엄 패키지 (롯데호텔 월드 숙박권 +
+                          어트랙션 패스권)
                         </li>
                         <li>
                           벨리곰 홀더 전용 라이브 커머스 입장권 + ‘벨리 할인권’
                         </li>
                         <li>
-                          벨리곰 시네마 프리미엄 패키지 (롯데 시네마 샤롯데 2매 + 스위트콤보, 음료 2개)
+                          벨리곰 시네마 프리미엄 패키지 (롯데 시네마 샤롯데 2매
+                          + 스위트콤보, 음료 2개)
                         </li>
                       </ul>
                       <span class="condition">
@@ -1165,13 +1203,15 @@
                       <span class="condition">
                         운영플랜: 시그니엘 시즌 내 2회(양도 가능)<span
                           class="divider"
-                      >｜</span
-                      >월드 시즌 내 2회<span class="divider">｜</span>시네마 시즌 내 4회</span>
+                          >｜</span
+                        >월드 시즌 내 2회<span class="divider">｜</span>시네마
+                        시즌 내 4회</span
+                      >
                       <div class="hide-mark">
                         <img
-                            src="@/assets/images/main/img_lock.svg"
-                            alt=""
-                            class="lock"
+                          src="@/assets/images/main/img_lock.svg"
+                          alt=""
+                          class="lock"
                         />
                         <p>Comming Soon!</p>
                       </div>
@@ -1181,7 +1221,8 @@
                       <p class="sub">벨리곰과 함께하는 마법같은 1박 2일!</p>
                       <ul class="benefit-list">
                         <li>
-                          벨리곰 월드 프리미엄 패키지 (롯데호텔 월드 숙박권 + 어트랙션 패스권)
+                          벨리곰 월드 프리미엄 패키지 (롯데호텔 월드 숙박권 +
+                          어트랙션 패스권)
                         </li>
                         <li>
                           벨리곰 홀더 전용 라이브 커머스 입장권 + ‘홀릭 할인권’
@@ -1194,13 +1235,14 @@
                         자격요건: 홀릭급 NFT 소유자
                       </span>
                       <span class="condition">
-                        운영플랜: 월드 시즌 내 2회<span class="divider">｜</span>시네마 시즌 내 4회
+                        운영플랜: 월드 시즌 내 2회<span class="divider">｜</span
+                        >시네마 시즌 내 4회
                       </span>
                       <div class="hide-mark">
                         <img
-                            src="@/assets/images/main/img_lock.svg"
-                            alt=""
-                            class="lock"
+                          src="@/assets/images/main/img_lock.svg"
+                          alt=""
+                          class="lock"
                         />
                         <p>Comming Soon!</p>
                       </div>
@@ -1213,21 +1255,22 @@
                           벨리곰 홀더 전용 라이브 커머스 입장권 + ‘메가 할인권’
                         </li>
                         <li>
-                          벨리곰 시네마 프리미엄 패키지 (롯데 시네마 샤롯데 2매 + 스위트콤보, 음료 2개)
+                          벨리곰 시네마 프리미엄 패키지 (롯데 시네마 샤롯데 2매
+                          + 스위트콤보, 음료 2개)
                         </li>
                       </ul>
                       <span class="condition">
                         자격요건: 메가급 NFT 소유자
                       </span>
                       <span class="condition">
-                        운영플랜: <span class="divider">｜</span
-                      >시네마 시즌 내 3회
+                        운영플랜: <span class="divider">｜</span>시네마 시즌 내
+                        3회
                       </span>
                       <div class="hide-mark">
                         <img
-                            src="@/assets/images/main/img_lock.svg"
-                            alt=""
-                            class="lock"
+                          src="@/assets/images/main/img_lock.svg"
+                          alt=""
+                          class="lock"
                         />
                         <p>Comming Soon!</p>
                       </div>
@@ -1251,9 +1294,9 @@
                       </span>
                       <div class="hide-mark">
                         <img
-                            src="@/assets/images/main/img_lock.svg"
-                            alt=""
-                            class="lock"
+                          src="@/assets/images/main/img_lock.svg"
+                          alt=""
+                          class="lock"
                         />
                         <p>Comming Soon!</p>
                       </div>
@@ -1263,7 +1306,8 @@
                       <p class="sub">프라이빗한 나만의 비밀 쇼핑 경험!</p>
                       <ul class="benefit-list">
                         <li>
-                          벨리곰 홀더 전용 라이브 커머스 입장권 + ‘서프라이즈 할인권’
+                          벨리곰 홀더 전용 라이브 커머스 입장권 + ‘서프라이즈
+                          할인권’
                         </li>
                         <li>벨리곰 시네마 패키지 (롯데 시네마 관람권 2매)</li>
                       </ul>
@@ -1275,9 +1319,9 @@
                       </span>
                       <div class="hide-mark">
                         <img
-                            src="@/assets/images/main/img_lock.svg"
-                            alt=""
-                            class="lock"
+                          src="@/assets/images/main/img_lock.svg"
+                          alt=""
+                          class="lock"
                         />
                         <p>Comming Soon!</p>
                       </div>
@@ -1286,18 +1330,23 @@
                       <div class="tit"><span>Friends</span> Bellyship</div>
                       <p class="sub">친구와 함께하면 즐거움이 두배!</p>
                       <ul class="benefit-list">
-                        <li>벨리곰 홀더 전용 라이브 커머스 입장권 + ‘프렌즈 할인권’</li>
+                        <li>
+                          벨리곰 홀더 전용 라이브 커머스 입장권 + ‘프렌즈
+                          할인권’
+                        </li>
                         <li>벨리곰 시네마 패키지 (롯데 시네마 관람권 2매)</li>
                       </ul>
                       <span class="condition">
                         자격요건: 프렌즈급 NFT 소유자
                       </span>
-                      <span class="condition">운영플랜: 시네마 시즌 내 1회 </span>
+                      <span class="condition"
+                        >운영플랜: 시네마 시즌 내 1회
+                      </span>
                       <div class="hide-mark">
                         <img
-                            src="@/assets/images/main/img_lock.svg"
-                            alt=""
-                            class="lock"
+                          src="@/assets/images/main/img_lock.svg"
+                          alt=""
+                          class="lock"
                         />
                         <p>Comming Soon!</p>
                       </div>
@@ -1320,56 +1369,56 @@
                   <div class="nft-image-loop">
                     <div class="image-item">
                       <img
-                          src="@/assets/m_images/main/img_NFT_01.png"
-                          alt=""
-                          class="nft-img"
+                        src="@/assets/m_images/main/img_NFT_01.png"
+                        alt=""
+                        class="nft-img"
                       />
                       <img
-                          src="@/assets/m_images/main/img_NFT_02.png"
-                          alt=""
-                          class="nft-img"
+                        src="@/assets/m_images/main/img_NFT_02.png"
+                        alt=""
+                        class="nft-img"
                       />
                       <img
-                          src="@/assets/m_images/main/img_NFT_03.png"
-                          alt=""
-                          class="nft-img"
+                        src="@/assets/m_images/main/img_NFT_03.png"
+                        alt=""
+                        class="nft-img"
                       />
                       <img
-                          src="@/assets/m_images/main/img_NFT_04.png"
-                          alt=""
-                          class="nft-img"
+                        src="@/assets/m_images/main/img_NFT_04.png"
+                        alt=""
+                        class="nft-img"
                       />
                       <img
-                          src="@/assets/m_images/main/img_NFT_05.png"
-                          alt=""
-                          class="nft-img"
+                        src="@/assets/m_images/main/img_NFT_05.png"
+                        alt=""
+                        class="nft-img"
                       />
                     </div>
                     <div class="image-item">
                       <img
-                          src="@/assets/m_images/main/img_NFT_01.png"
-                          alt=""
-                          class="nft-img"
+                        src="@/assets/m_images/main/img_NFT_01.png"
+                        alt=""
+                        class="nft-img"
                       />
                       <img
-                          src="@/assets/m_images/main/img_NFT_02.png"
-                          alt=""
-                          class="nft-img"
+                        src="@/assets/m_images/main/img_NFT_02.png"
+                        alt=""
+                        class="nft-img"
                       />
                       <img
-                          src="@/assets/m_images/main/img_NFT_03.png"
-                          alt=""
-                          class="nft-img"
+                        src="@/assets/m_images/main/img_NFT_03.png"
+                        alt=""
+                        class="nft-img"
                       />
                       <img
-                          src="@/assets/m_images/main/img_NFT_04.png"
-                          alt=""
-                          class="nft-img"
+                        src="@/assets/m_images/main/img_NFT_04.png"
+                        alt=""
+                        class="nft-img"
                       />
                       <img
-                          src="@/assets/m_images/main/img_NFT_05.png"
-                          alt=""
-                          class="nft-img"
+                        src="@/assets/m_images/main/img_NFT_05.png"
+                        alt=""
+                        class="nft-img"
                       />
                     </div>
                   </div>
@@ -1385,37 +1434,37 @@
                     <ul class="list">
                       <li class="full sandbox">
                         <img
-                            src="@/assets/images/main/img_parteners_logo_sandbox.png"
-                            alt=""
-                            style="width: 228px"
+                          src="@/assets/images/main/img_parteners_logo_sandbox.png"
+                          alt=""
+                          style="width: 228px"
                         />
                       </li>
                       <li class="full ground">
                         <img
-                            src="@/assets/images/main/img_parteners_logo__groundx.png"
-                            alt=""
-                            style="width: 255px"
+                          src="@/assets/images/main/img_parteners_logo__groundx.png"
+                          alt=""
+                          style="width: 255px"
                         />
                       </li>
                       <li class="flex-end">
                         <img
-                            src="@/assets/images/main/img_parteners_logo_sunmiya.png"
-                            alt=""
-                            style="width: 127px"
+                          src="@/assets/images/main/img_parteners_logo_sunmiya.png"
+                          alt=""
+                          style="width: 127px"
                         />
                       </li>
                       <li class="flex-start">
                         <img
-                            src="@/assets/images/main/img_parteners_logo_happier_town.png"
-                            alt=""
-                            style="width: 131px"
+                          src="@/assets/images/main/img_parteners_logo_happier_town.png"
+                          alt=""
+                          style="width: 131px"
                         />
                       </li>
                       <li>
                         <img
-                            src="@/assets/images/main/img_parteners_logo_mimyo.png"
-                            alt=""
-                            style="width: 83px"
+                          src="@/assets/images/main/img_parteners_logo_mimyo.png"
+                          alt=""
+                          style="width: 83px"
                         />
                       </li>
                       <li></li>
@@ -1428,18 +1477,18 @@
               <footer>
                 <div class="inner">
                   <div
-                      class="footer-logo"
-                      v-if="$store.getters.getLocale === 'ENG'"
+                    class="footer-logo"
+                    v-if="$store.getters.getLocale === 'ENG'"
                   >
                     <img
-                        src="@/assets/m_images/main/footer_logo_en.svg"
-                        alt="footer-logo"
+                      src="@/assets/m_images/main/footer_logo_en.svg"
+                      alt="footer-logo"
                     />
                   </div>
                   <div class="footer-logo" v-else>
                     <img
-                        src="@/assets/m_images/main/footer_logo.svg"
-                        alt="footer-logo"
+                      src="@/assets/m_images/main/footer_logo.svg"
+                      alt="footer-logo"
                     />
                   </div>
                   <div class="footer-contents">
@@ -1470,7 +1519,9 @@
                     <template v-else>
                       <ul class="footer-list">
                         <li>대표: 이완신</li>
-                        <li>주소: 서울특별시 영등포구 양평로21길10(양평동5가)</li>
+                        <li>
+                          주소: 서울특별시 영등포구 양평로21길10(양평동5가)
+                        </li>
                         <li>개인정보 보호책임자: 신성빈</li>
                       </ul>
                       <ul class="footer-list">
@@ -1478,12 +1529,12 @@
                         <li>
                           사업문의:
                           <a href="mailto:business@bellygom.world" class="mail"
-                          >business@bellygom.world
+                            >business@bellygom.world
                           </a>
                         </li>
                         <li>
                           <nuxt-link to="/m/terms" target="_blank"
-                          >이용약관</nuxt-link
+                            >이용약관</nuxt-link
                           >
                         </li>
                       </ul>
@@ -1492,11 +1543,11 @@
                     <p class="copyright">
                       Copyright Ⓒ
                       <span class="logo">
-                      <img
+                        <img
                           src="@/assets/m_images/img_footer_logo_bellygom.svg"
                           alt="footer-logo"
-                      />
-                    </span>
+                        />
+                      </span>
                       All rights reserved.
                     </p>
                   </div>
@@ -1504,10 +1555,10 @@
               </footer>
             </section>
             <div
-                class="main-char ignore"
-                :class="charClass"
-                :style="{ top: charTop }"
-                ref="mainChar"
+              class="main-char ignore"
+              :class="charClass"
+              :style="{ top: charTop }"
+              ref="mainChar"
             >
               <div class="fall">
                 <img src="@/assets/m_images/char-fall.webp" type="image/webp" />
@@ -1707,10 +1758,12 @@
                 will also be used in all other rounds.
               </li>
               <li>
-                The remaining quantity of the 1st whitelist sale will be reallocated to the 2nd whitelist sale.
+                The remaining quantity of the 1st whitelist sale will be
+                reallocated to the 2nd whitelist sale.
               </li>
               <li>
-                And what's left of the 2nd whitelist sale will be reallocated to the public sale.
+                And what's left of the 2nd whitelist sale will be reallocated to
+                the public sale.
               </li>
               <li>
                 The reserved 500 pieces allocated to the team will be utilized
@@ -1764,10 +1817,12 @@
                 진행됩니다.
               </li>
               <li>
-                1차 확정 화이트리스트 미판매 물량은 2차 화이트리스트 세일로 이전됩니다.
+                1차 확정 화이트리스트 미판매 물량은 2차 화이트리스트 세일로
+                이전됩니다.
               </li>
               <li>
-                2차 경쟁 화이트리스트 미판매 물량은 3차 퍼블릭 세일로 이전됩니다.
+                2차 경쟁 화이트리스트 미판매 물량은 3차 퍼블릭 세일로
+                이전됩니다.
               </li>
               <li>
                 팀 물량 500개는 파트너쉽, 이벤트 등 기타 목적으로 활용됩니다.
@@ -1796,189 +1851,6 @@
         </template>
       </div>
     </modal>
-
-    <!--STORY MODAL-->
-    <modal v-if="showStoryModal" @close="closeStoryModal" class="story-modal">
-      <div slot="header">STORY<br />BOOK</div>
-      <div slot="body">
-        <div class="story">
-          <div id="st_1" class="box" :class="{ on: currIndi === 1 }">
-            <img
-              src="@/assets/images/main/img_storybook_bellygom01.png"
-              class="left-img"
-            />
-            <template v-if="$store.getters.getLocale === 'ENG'">
-              <div class="txt eng">
-                <h3>
-                  Bellygom was born in a Haunted House. Here's how it happened…
-                </h3>
-                <p>
-                  One day, a little boy who visited the haunted house
-                  accidentally dropped a bubble gumball. In it, this cute
-                  Bellygom was born.<br />
-                  <br />
-                  Bellygom likes to bring excitement to people by surprising
-                  them. However, due to Belly's insatiable appetite and cuteness
-                  overload, Bellygom is kicked out, as that image does not fit
-                  the haunted house.
-                </p>
-              </div>
-            </template>
-            <template v-else>
-              <div class="txt">
-                <h3>벨리곰, 유령의 집에서 태어나다</h3>
-                <p class="first">
-                  어느 날, 유령의 집에 놀러 온 꼬마가 흘린 풍선껌, 그 속에서
-                  커여운 벨리곰이 탄생했다.
-                </p>
-                <p>
-                  벨리곰은 사람들을 놀래키며 행복을 주는 일을 좋아하지만, 넘치는
-                  식탐과 귀여운 외모가 유령의 집에 어울리지 않는다며 쫓겨나게
-                  된다.
-                </p>
-              </div>
-            </template>
-          </div>
-          <div id="st_2" class="box" :class="{ on: currIndi === 2 }">
-            <img
-              src="@/assets/images/main/img_storybook_bellygom02.png"
-              class="left-img"
-            />
-            <div class="txt eng" v-if="$store.getters.getLocale === 'ENG'">
-              <h3>Soon, Bellygom moves into Belly Villa.</h3>
-              <p>
-                Bellygom continues to surprise people here and there, despite
-                having been banished from the haunted house. Although, people
-                aren't as responsive to Bellygom's pranks as they used to
-                be...<br /><br />
-                When Bellygom - wandering aimlessly, down in the dumps - sat on
-                a box for a moment and was deep in thought, a cute little kitty
-                emerged from the box! Feeling excited again, at the sight of
-                this miracle, Bellygom adopts Kitty and they move into Belly
-                Villa together.
-              </p>
-            </div>
-            <div class="txt" v-else>
-              <h3>벨리빌라에 입주하다</h3>
-              <p class="first">
-                유령의 집에서 쫓겨난 후 벨리곰은 서프라이즈를 계속하지만
-                사람들은 예전만큼 벨리곰의 장난에 반응하지 않는다.
-              </p>
-              <p>
-                풀이 죽어 떠돌던 벨리곰이 잠시 박스 위에 앉아 고민에 잠겨있던
-                순간, 박스 속에서 등장한 꼬냥이!
-              </p>
-              <p>
-                귀여운 꼬냥이의 모습에 다시 행복을 느낀 벨리곰은 꼬냥이를 따라가
-                벨리빌라에 입주한다.
-              </p>
-            </div>
-          </div>
-          <div id="st_3" class="box" :class="{ on: currIndi === 3 }">
-            <img
-              src="@/assets/images/main/img_storybook_bellygom03.png"
-              class="left-img"
-            />
-            <div class="txt eng" v-if="$store.getters.getLocale === 'ENG'">
-              <h3>Bellygom now has 10,000 mysterious powers!</h3>
-              <p>
-                One day, Bellygom finds a vending machine, in front of the
-                villa, with a strange vibe. The gluttonous Bellygom takes a
-                gumball from the vending machine and begins chewing... Suddenly,
-                there's a transformation in Belly's body, resulting in 10,000
-                unique surprise-powers!
-              </p>
-            </div>
-            <div class="txt" v-else>
-              <h3>1만 개의 신비로운 힘이 생긴 벨리곰!</h3>
-              <p class="first">
-                어느 날, 벨리곰은 벨리빌라 앞에서 신비로운 기운이 느껴지는
-                자판기를 발견한다.
-              </p>
-              <p>
-                식탐 많은 벨리곰이 자판기 속 껌을 꺼내어 씹기 시작하자, 1만 개의
-                서프라이즈 능력이 생겨나는데...
-              </p>
-            </div>
-          </div>
-          <div id="st_4" class="box" :class="{ on: currIndi === 4 }">
-            <img
-              src="@/assets/images/main/img_storybook_bellygom04.png"
-              class="left-img"
-            />
-            <div class="txt eng" v-if="$store.getters.getLocale === 'ENG'">
-              <h3>
-                Oh, Bellygom - now with 10,000 mysterious abilities - what kinds
-                of surprises will you bring to the people?
-              </h3>
-            </div>
-            <div class="txt" v-else>
-              <h3>
-                1만 개의 신비로운 능력을 얻은 벨리곰은 어떤 서프라이즈를 가져다
-                줄까?
-              </h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </modal>
-    <!--FAQ MODAL-->
-    <modal v-if="showModal" @close="closeModal" class="faq-modal">
-      <div slot="header">
-        <h2 class="title">FAQ</h2>
-      </div>
-      <div slot="body">
-        <div class="content">
-          <div class="inner">
-            <div class="content-wrap">
-              <template v-if="$store.getters.getLocale === 'ENG'">
-                <p class="desc-txt">※ For more details on FAQ, join us on
-                  <a class="underline" href="https://discord.gg/bellygom" target="_blank"
-                  >Discord</a>.</p>
-              </template>
-              <template v-else>
-                <p class="desc-txt">※ FAQ 상세 내용은 <a class="underline" href="https://discord.gg/bellygom" target="_blank"
-                >디스코드</a>에서 확인할 수 있습니다.</p>
-              </template>
-              <AccordionComponent :list="faqList">
-                <template #title="{ item }">
-                  <template v-if="$store.getters.getLocale === 'ENG'">
-                    {{ item.engTitle }}
-                  </template>
-                  <template v-else>
-                    {{ item.title }}
-                  </template>
-                </template>
-                <template #cont="{ item }">
-                  <template v-if="$store.getters.getLocale === 'ENG'">
-                    {{ item.engCont }}
-                  </template>
-                  <template v-else>
-                    {{ item.cont }}
-                  </template>
-                  <span class="pdf" v-if="item.pdf">
-                    <button
-                      @click="
-                        downloadPdf(item.pdf, $store.getters.getLocale);
-                        sendGaEvent('M_' + 'bf_faq' + item.pdf + '_file', 'BR');
-                      "
-                      class="pdf-btn"
-                    >
-                      <span>
-                        <img
-                          src="@/assets/images/main/ic_download.svg"
-                          alt=""
-                        />PDF Download
-                      </span>
-                    </button>
-                  </span>
-                </template>
-              </AccordionComponent>
-            </div>
-          </div>
-        </div>
-      </div>
-    </modal>
   </div>
 </template>
 
@@ -1990,8 +1862,6 @@ export default {
   data() {
     return {
       mintingModal: false,
-      showModal: false,
-      showStoryModal: false,
       currIndi: 1,
       mySwiper: null,
       mySwiper2: null,
@@ -2020,7 +1890,14 @@ export default {
         scrollHorizontally: true,
         scrollHorizontallyKey:
           "YmVsbHlnb20ud29ybGRfaktDYzJOeWIyeHNTRzl5YVhwdmJuUmhiR3g1NFN6",
-        anchors: ["getBelly", "falling", "bellyRoad", "bellyShip","level-belly", "footer"],
+        anchors: [
+          "getBelly",
+          "falling",
+          "bellyRoad",
+          "bellyShip",
+          "level-belly",
+          "footer",
+        ],
         afterResize: (width, height) => {
           // alert("The sections have finished resizing");
           this.$refs.fullpage.api.rebuid();
@@ -2135,102 +2012,16 @@ export default {
           delay: 2000,
         },*/
       },
-      faqList: [
-        {
-          title: "벨리곰 NFT는 어떤 블록체인을 이용해?",
-          engTitle: "What blockchain does Bellygom NFT use?",
-          cont: "벨리곰 NFT는 클레이튼(Klaytn) 블록체인을 이용하고 있어!",
-          engCont: "Bellygom NFT uses the Klaytn blockchain!",
-          faqIndex: 1,
-        },
-        {
-          title: "카이카스 지갑은 어떻게 만드는거야?",
-          engTitle: "How do I make a Kaikas Wallet?",
-          cont: "다운받기 눌러봐! 더 상세하게 설명해줄게!",
-          engCont:
-            "Download the PDF file for a detailed step-by-step guide on creating a Kaikas Wallet.",
-          pdf: 2,
-          faqIndex: 2,
-        },
-        {
-          title: "오픈씨는 어떻게 이용하는거야?",
-          engTitle: "How do I use opensea?",
-          cont: "다운받기 눌러봐!  더 상세하게 설명해줄게!",
-          engCont:
-            "Download the PDF file for a detailed step-by-step guide on using OpenSea.",
-          pdf: 3,
-          faqIndex: 3,
-        },
-        {
-          title: "Klip 지갑으로 민팅 할 수 있어?",
-          engTitle: "Can I mint with a Klip wallet?",
-          cont: "카이카스 지갑만 지원하고 있어!",
-          engCont: "For now, only Kaikas wallets are supported.",
-          faqIndex: 4,
-        },
-        {
-          title: "Klip 지갑으로 전송 시, 벨리곰 NFT를 확인할 수 있어?",
-          engTitle:
-            "Can I check the Bellygom NFT when transferring to my Klip wallet?",
-          cont: "확인할 수 없어! 카이카스 지갑을 이용해줘!",
-          engCont: "Can't confirm! Please use Kaikas wallet!",
-          faqIndex: 5,
-        },
-        {
-          title: "리빌은 어떻게 하는거야?",
-          engTitle:
-              "How does the ‘Reveal’ work?",
-          cont: "9월 1일 (목) 자동으로 리빌이 진행돼!",
-          engCont: "On September 1st (Thursday), the Reveal will happen automatically!",
-          faqIndex: 6,
-        },
-        {
-          title: "랭킹은 어떻게 확인 할 수 있어?",
-          engTitle:
-              "How do I check the ranking?",
-          cont: "추후에 다시 공지해 줄게! 9월을 넘기지는 않을 거야!",
-          engCont: "We'll keep you posted! (No longer than September)",
-          faqIndex: 7,
-        },
-        {
-          title: "디스코드, 트위터에 어떻게 참여할 수 있어?",
-          engTitle:
-              "How can I join the Bellygom Discord, Twitter channels?",
-          cont: "채널은 홈페이지 우측 상단 링크 아이콘을 눌러서 참여할 수 있어!",
-          engCont: "You can join the channels by clicking the linked icons at the top right corner of the homepage.",
-          faqIndex: 8,
-        },
-        {
-          title: "2차 판매 수수료가 있어?",
-          engTitle: "Are there any secondary sales fees?",
-          cont: "2차 판매 수수료는 7.5%야!",
-          engCont: "Secondary sales commission is 7.5%!",
-          faqIndex: 9,
-        },
-        {
-          title: "벨리곰NFT는 저작권 활용할 수 있어?",
-          engTitle: "Can Bellygom NFTs be copyrighted?",
-          cont: "Road1에는 소유권만 인정하고 있어. 그렇지만 Road2에는 NFT 사업권을 사용할 수 있어!",
-          engCont:
-            "Road1 only recognizes ownership. However, you can use NFT licenses for Road2!",
-          faqIndex: 10,
-        },
-      ],
     };
   },
   created() {
     this.$nuxt.$on("scrollLock", (data) => {
       this.$refs.fullpage.api.setAllowScrolling(data);
     });
-    this.$nuxt.$on("storyModal", () => {
-      this.storyModal();
-    });
-    this.$nuxt.$on("faqModal", () => {
-      this.faqModal();
-    });
   },
   mounted() {
     let locale = this.getCookie("b_locale");
+
     if (locale && locale === "KOR") {
       this.$store.commit("setKOR");
     } else {
@@ -2322,14 +2113,6 @@ export default {
     videoPlay() {
       this.$refs.mainBelly.play();
     },
-    closeModal() {
-      this.$refs.fullpage.api.setAllowScrolling(true);
-      this.showModal = false;
-    },
-    closeStoryModal() {
-      this.$refs.fullpage.api.setAllowScrolling(true);
-      this.showStoryModal = false;
-    },
     mintModal() {
       this.$refs.fullpage.api.setAllowScrolling(false);
       this.mintingModal = true;
@@ -2338,34 +2121,12 @@ export default {
       this.$refs.fullpage.api.setAllowScrolling(true);
       this.mintingModal = false;
     },
-    storySlideNext() {
-      this.currIndi++;
-      if (this.currIndi > 4) this.currIndi = 4;
-    },
-    storySlidePrev() {
-      this.currIndi--;
-      if (this.currIndi < 1) this.currIndi = 1;
-    },
     sendGaEvent(eventName, event_category) {
       console.log(eventName + "|||||||" + event_category);
       gtag("event", eventName, {
         event_category: event_category,
       });
     },
-    /*textLoop() {
-      let wrapWidth = document.querySelector(".loop-holder").offsetWidth;
-      console.log(wrapWidth);
-      const ele = document.querySelector(".loop-holder .loop-holder__text");
-      gsap.to(ele, {
-        duration: 5,
-        repeat: -1,
-        ease: "none",
-        x: "+=500",
-        modifiers: {
-          x: gsap.utils.unitize((x) => parseFloat(x) % 500),
-        },
-      });
-    },*/
   },
 };
 </script>
@@ -2580,7 +2341,7 @@ export default {
   -webkit-transform: translate3d(-50%, 0%, 0);
 }
 .fp-viewing-level-belly .main-char-ending {
-/*  animation: down 0.5s ease;*/
+  /*  animation: down 0.5s ease;*/
 }
 @keyframes down {
   0% {

@@ -29,8 +29,8 @@
           @click="openLang"
           :class="{ on: this.showLang }"
         >
-           <span class="txt">
-              {{ $store.getters.getLocale }}
+          <span class="txt">
+            {{ $store.getters.getLocale }}
           </span>
         </button>
         <transition name="fade">
@@ -87,7 +87,7 @@
               @click="sendGaEvent('M_' + 'gnb_getBelly', 'GNB')"
             >
               <a
-                href="#bellyRoad/slide1"
+                href="/m/#bellyRoad/slide1"
                 title="GET BELLY"
                 @click="openMobileGnb"
                 >GET BELLY</a
@@ -98,7 +98,7 @@
               @click="sendGaEvent('M_' + 'gnb_bellyRoad', 'GNB')"
             >
               <a
-                href="#bellyRoad/slide3"
+                href="/m/#bellyRoad/slide3"
                 title="BELLY ROAD"
                 @click="openMobileGnb"
                 >BELLY ROAD</a
@@ -108,9 +108,12 @@
               data-menuanchor="thirdSection"
               @click="sendGaEvent('M_' + 'gnb_bellyShip', 'GNB')"
             >
-              <a href="#bellyShip" title="BELLY SHIP" @click="openMobileGnb"
+              <a href="/m/#bellyShip" title="BELLY SHIP" @click="openMobileGnb"
                 >BELLY SHIP</a
               >
+            </li>
+            <li>
+              <nuxt-link to="/bellyPhoto">BELLY PHOTO</nuxt-link>
             </li>
             <li data-menuanchor="fourthSection">
               <button
@@ -142,6 +145,202 @@
         </div>
       </div>
     </transition>
+
+    <!--STORY MODAL-->
+    <modal v-if="showStoryModal" @close="closeStoryModal" class="story-modal">
+      <div slot="header">STORY<br />BOOK</div>
+      <div slot="body">
+        <div class="story">
+          <div id="st_1" class="box" :class="{ on: currIndi === 1 }">
+            <img
+              src="@/assets/images/main/img_storybook_bellygom01.png"
+              class="left-img"
+            />
+            <template v-if="$store.getters.getLocale === 'ENG'">
+              <div class="txt eng">
+                <h3>
+                  Bellygom was born in a Haunted House. Here's how it happened…
+                </h3>
+                <p>
+                  One day, a little boy who visited the haunted house
+                  accidentally dropped a bubble gumball. In it, this cute
+                  Bellygom was born.<br />
+                  <br />
+                  Bellygom likes to bring excitement to people by surprising
+                  them. However, due to Belly's insatiable appetite and cuteness
+                  overload, Bellygom is kicked out, as that image does not fit
+                  the haunted house.
+                </p>
+              </div>
+            </template>
+            <template v-else>
+              <div class="txt">
+                <h3>벨리곰, 유령의 집에서 태어나다</h3>
+                <p class="first">
+                  어느 날, 유령의 집에 놀러 온 꼬마가 흘린 풍선껌, 그 속에서
+                  커여운 벨리곰이 탄생했다.
+                </p>
+                <p>
+                  벨리곰은 사람들을 놀래키며 행복을 주는 일을 좋아하지만, 넘치는
+                  식탐과 귀여운 외모가 유령의 집에 어울리지 않는다며 쫓겨나게
+                  된다.
+                </p>
+              </div>
+            </template>
+          </div>
+          <div id="st_2" class="box" :class="{ on: currIndi === 2 }">
+            <img
+              src="@/assets/images/main/img_storybook_bellygom02.png"
+              class="left-img"
+            />
+            <div class="txt eng" v-if="$store.getters.getLocale === 'ENG'">
+              <h3>Soon, Bellygom moves into Belly Villa.</h3>
+              <p>
+                Bellygom continues to surprise people here and there, despite
+                having been banished from the haunted house. Although, people
+                aren't as responsive to Bellygom's pranks as they used to
+                be...<br /><br />
+                When Bellygom - wandering aimlessly, down in the dumps - sat on
+                a box for a moment and was deep in thought, a cute little kitty
+                emerged from the box! Feeling excited again, at the sight of
+                this miracle, Bellygom adopts Kitty and they move into Belly
+                Villa together.
+              </p>
+            </div>
+            <div class="txt" v-else>
+              <h3>벨리빌라에 입주하다</h3>
+              <p class="first">
+                유령의 집에서 쫓겨난 후 벨리곰은 서프라이즈를 계속하지만
+                사람들은 예전만큼 벨리곰의 장난에 반응하지 않는다.
+              </p>
+              <p>
+                풀이 죽어 떠돌던 벨리곰이 잠시 박스 위에 앉아 고민에 잠겨있던
+                순간, 박스 속에서 등장한 꼬냥이!
+              </p>
+              <p>
+                귀여운 꼬냥이의 모습에 다시 행복을 느낀 벨리곰은 꼬냥이를 따라가
+                벨리빌라에 입주한다.
+              </p>
+            </div>
+          </div>
+          <div id="st_3" class="box" :class="{ on: currIndi === 3 }">
+            <img
+              src="@/assets/images/main/img_storybook_bellygom03.png"
+              class="left-img"
+            />
+            <div class="txt eng" v-if="$store.getters.getLocale === 'ENG'">
+              <h3>Bellygom now has 10,000 mysterious powers!</h3>
+              <p>
+                One day, Bellygom finds a vending machine, in front of the
+                villa, with a strange vibe. The gluttonous Bellygom takes a
+                gumball from the vending machine and begins chewing... Suddenly,
+                there's a transformation in Belly's body, resulting in 10,000
+                unique surprise-powers!
+              </p>
+            </div>
+            <div class="txt" v-else>
+              <h3>1만 개의 신비로운 힘이 생긴 벨리곰!</h3>
+              <p class="first">
+                어느 날, 벨리곰은 벨리빌라 앞에서 신비로운 기운이 느껴지는
+                자판기를 발견한다.
+              </p>
+              <p>
+                식탐 많은 벨리곰이 자판기 속 껌을 꺼내어 씹기 시작하자, 1만 개의
+                서프라이즈 능력이 생겨나는데...
+              </p>
+            </div>
+          </div>
+          <div id="st_4" class="box" :class="{ on: currIndi === 4 }">
+            <img
+              src="@/assets/images/main/img_storybook_bellygom04.png"
+              class="left-img"
+            />
+            <div class="txt eng" v-if="$store.getters.getLocale === 'ENG'">
+              <h3>
+                Oh, Bellygom - now with 10,000 mysterious abilities - what kinds
+                of surprises will you bring to the people?
+              </h3>
+            </div>
+            <div class="txt" v-else>
+              <h3>
+                1만 개의 신비로운 능력을 얻은 벨리곰은 어떤 서프라이즈를 가져다
+                줄까?
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </modal>
+    <!--FAQ MODAL-->
+    <modal v-if="showModal" @close="closeModal" class="faq-modal">
+      <div slot="header">
+        <h2 class="title">FAQ</h2>
+      </div>
+      <div slot="body">
+        <template v-if="$store.getters.getLocale === 'ENG'">
+          <p class="desc-txt">
+            ※ For more details on FAQ, join us on
+            <a
+              class="underline"
+              href="https://discord.gg/bellygom"
+              target="_blank"
+              >Discord</a
+            >.
+          </p>
+        </template>
+        <template v-else>
+          <p class="desc-txt">
+            ※ FAQ 상세 내용은
+            <a
+              class="underline"
+              href="https://discord.gg/bellygom"
+              target="_blank"
+              >디스코드</a
+            >에서 확인할 수 있습니다.
+          </p>
+        </template>
+        <div class="content">
+          <div class="inner">
+            <div class="content-wrap">
+              <AccordionComponent :list="faqList">
+                <template #title="{ item }">
+                  <template v-if="$store.getters.getLocale === 'ENG'">
+                    {{ item.engTitle }}
+                  </template>
+                  <template v-else>
+                    {{ item.title }}
+                  </template>
+                </template>
+                <template #cont="{ item }">
+                  <template v-if="$store.getters.getLocale === 'ENG'">
+                    {{ item.engCont }}
+                  </template>
+                  <template v-else>
+                    {{ item.cont }}
+                  </template>
+                  <span class="pdf" v-if="item.pdf">
+                    <button
+                      @click="
+                        downloadPdf(item.pdf, $store.getters.getLocale);
+                        sendGaEvent('M_' + 'bf_faq' + item.pdf + '_file', 'BR');
+                      "
+                      class="pdf-btn"
+                    >
+                      <span>
+                        <img
+                          src="@/assets/images/main/ic_download.svg"
+                          alt=""
+                        />PDF Download
+                      </span>
+                    </button>
+                  </span>
+                </template>
+              </AccordionComponent>
+            </div>
+          </div>
+        </div>
+      </div>
+    </modal>
   </header>
 </template>
 
@@ -157,15 +356,12 @@ export default {
   },
   data() {
     return {
+      showModal: false,
+      showStoryModal: false,
       isShow: false,
       showLang: false,
       mobileGnbShow: false,
       linkList: [
-        /*{
-          url: "https://opensea.io/",
-          name: "Opensea",
-          imgUrl: require("@/assets/m_images/img_menu_opensea.svg"),
-        },*/
         {
           url: "https://discord.gg/TDYtz2fcSN",
           name: "Discord",
@@ -186,6 +382,91 @@ export default {
           name: "Instagram",
           imgUrl: require("@/assets/m_images/ic_menu_instagram.svg"),
         },
+        {
+          url: "https://opensea.io/collection/bellygom-world-official",
+          name: "Opensea",
+          imgUrl: require("@/assets/m_images/ic_menu_opensea.svg"),
+        },
+      ],
+      faqList: [
+        {
+          title: "벨리곰 NFT는 어떤 블록체인을 이용해?",
+          engTitle: "What blockchain does Bellygom NFT use?",
+          cont: "벨리곰 NFT는 클레이튼(Klaytn) 블록체인을 이용하고 있어!",
+          engCont: "Bellygom NFT uses the Klaytn blockchain!",
+          faqIndex: 1,
+        },
+        {
+          title: "카이카스 지갑은 어떻게 만드는거야?",
+          engTitle: "How do I make a Kaikas Wallet?",
+          cont: "다운받기 눌러봐! 더 상세하게 설명해줄게!",
+          engCont:
+            "Download the PDF file for a detailed step-by-step guide on creating a Kaikas Wallet.",
+          pdf: 2,
+          faqIndex: 2,
+        },
+        {
+          title: "오픈씨는 어떻게 이용하는거야?",
+          engTitle: "How do I use opensea?",
+          cont: "다운받기 눌러봐!  더 상세하게 설명해줄게!",
+          engCont:
+            "Download the PDF file for a detailed step-by-step guide on using OpenSea.",
+          pdf: 3,
+          faqIndex: 3,
+        },
+        {
+          title: "Klip 지갑으로 민팅 할 수 있어?",
+          engTitle: "Can I mint with a Klip wallet?",
+          cont: "카이카스 지갑만 지원하고 있어!",
+          engCont: "For now, only Kaikas wallets are supported.",
+          faqIndex: 4,
+        },
+        {
+          title: "Klip 지갑으로 전송 시, 벨리곰 NFT를 확인할 수 있어?",
+          engTitle:
+            "Can I check the Bellygom NFT when transferring to my Klip wallet?",
+          cont: "확인할 수 없어! 카이카스 지갑을 이용해줘!",
+          engCont: "Can't confirm! Please use Kaikas wallet!",
+          faqIndex: 5,
+        },
+        {
+          title: "리빌은 어떻게 하는거야?",
+          engTitle: "How does the ‘Reveal’ work?",
+          cont: "9월 1일 (목) 자동으로 리빌이 진행돼!",
+          engCont:
+            "On September 1st (Thursday), the Reveal will happen automatically!",
+          faqIndex: 6,
+        },
+        {
+          title: "랭킹은 어떻게 확인 할 수 있어?",
+          engTitle: "How do I check the ranking?",
+          cont: "추후에 다시 공지해 줄게! 9월을 넘기지는 않을 거야!",
+          engCont: "We'll keep you posted! (No longer than September)",
+          faqIndex: 7,
+        },
+        {
+          title: "디스코드, 트위터에 어떻게 참여할 수 있어?",
+          engTitle: "How can I join the Bellygom Discord, Twitter channels?",
+          cont: "채널은 홈페이지 우측 상단 링크 아이콘을 눌러서 참여할 수 있어!",
+          engCont:
+            "You can join the channels by clicking the linked icons at the top right corner of the homepage.",
+          faqIndex: 8,
+        },
+        {
+          title: "2차 판매 수수료가 있어?",
+          engTitle: "Are there any secondary sales fees?",
+          cont: "2차 판매 수수료는 7.5%야!",
+          engCont: "Secondary sales commission is 7.5%!",
+          faqIndex: 9,
+        },
+        {
+          title: "벨리곰NFT는 저작권 활용할 수 있어?",
+          engTitle: "Can Bellygom NFTs be copyrighted?",
+          cont: "Road1에는 소유권만 인정하고 있어. 그렇지만 Road2에는 NFT 사업권을 사용할 수 있어!",
+          engCont:
+            "Road1 only recognizes ownership. However, you can use NFT licenses for Road2!",
+          faqIndex: 10,
+        },
       ],
     };
   },
@@ -204,13 +485,15 @@ export default {
       this.showLang = !this.showLang;
     },
     storyModal(eventName, event_category) {
-      this.$nuxt.$emit("storyModal");
+      this.scrollLock(false);
+      this.showStoryModal = true;
       gtag("event", eventName, {
         event_category: event_category,
       });
     },
     faqModal(eventName, event_category) {
-      this.$nuxt.$emit("faqModal");
+      this.scrollLock(false);
+      this.showModal = true;
       gtag("event", eventName, {
         event_category: event_category,
       });
@@ -220,6 +503,14 @@ export default {
       this.mobileGnbShow
         ? e.target.classList.add("open")
         : e.target.classList.remove("open");
+    },
+    closeModal() {
+      this.scrollLock(true);
+      this.showModal = false;
+    },
+    closeStoryModal() {
+      this.scrollLock(true);
+      this.showStoryModal = false;
     },
     sendGaEvent(eventName, event_category) {
       console.log(eventName + "|||||||" + event_category);
