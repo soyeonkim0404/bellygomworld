@@ -223,6 +223,19 @@
                       </div>
                     </button>
                   </div>
+                  <!--motion object-->
+                  <img
+                    src="@/assets/images/main/img_road_cloud1.svg"
+                    id="load-cloud1"
+                  />
+                  <img
+                    src="@/assets/images/main/img_road_cloud2.svg"
+                    id="load-cloud2"
+                  />
+                  <img
+                    src="@/assets/images/main/img_road_cloud3.svg"
+                    id="load-cloud3"
+                  />
                 </div>
               </div>
             </section>
@@ -2269,9 +2282,79 @@ export default {
 }
 
 /*slide 1 pink balloon*/
+
+@keyframes pinkballoon {
+  0% {
+    transform: translateY(163px) rotate(16deg);
+  }
+  100% {
+    transform: translateY(183px) rotate(-16deg);
+  }
+}
+
+@keyframes blueballoon {
+  0% {
+    transform: translateY(399px) rotate(-8deg);
+  }
+  100% {
+    transform: translateY(405px) rotate(8deg);
+  }
+}
+
+@keyframes pinkplane {
+  0% {
+    transform: translateX(-40px) translateY(10px);
+  }
+  50% {
+    transform: translateX(30px) translateY(-10px);
+  }
+  100% {
+    transform: translateX(10px) translateY(-20px);
+  }
+}
+
+@keyframes blueplane {
+  0% {
+    transform: translateX(64%) translateY(29%);
+  }
+  50% {
+    transform: translateX(69%) translateY(25%);
+  }
+  100% {
+    transform: translateX(54%) translateY(19%);
+  }
+}
+
+@keyframes arrowMotion {
+  0% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes cloud {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes cloud2 {
+  0% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 #pinkballoon {
-  width: 129px;
-  height: 192px;
+  width: 8.55%;
+  height: 25.3%;
   z-index: 9;
   position: absolute;
   top: 0;
@@ -2302,33 +2385,6 @@ export default {
   left: 36.33%;
   -webkit-animation: arrowMotion 1s infinite alternate ease-in-out;
   animation: arrowMotion 1s infinite alternate ease-in-out;
-}
-
-@keyframes pinkballoon {
-  0% {
-    transform: translateY(163px) rotate(16deg);
-  }
-  100% {
-    transform: translateY(183px) rotate(-16deg);
-  }
-}
-
-@keyframes blueballoon {
-  0% {
-    transform: translateY(399px) rotate(-8deg);
-  }
-  100% {
-    transform: translateY(405px) rotate(8deg);
-  }
-}
-
-@keyframes arrowMotion {
-  0% {
-    transform: translateY(20px);
-  }
-  100% {
-    transform: translateY(0);
-  }
 }
 
 #pinkplane {
@@ -2397,36 +2453,36 @@ export default {
   animation: cloud 2s infinite alternate ease-in-out;
 }
 
-@keyframes pinkplane {
-  0% {
-    transform: translateX(-40px) translateY(10px);
-  }
-  50% {
-    transform: translateX(30px) translateY(-10px);
-  }
-  100% {
-    transform: translateX(10px) translateY(-20px);
-  }
+#load-cloud1 {
+  width: 210px;
+  height: 104px;
+  z-index: 9;
+  position: absolute;
+  top: 8%;
+  left: 11%;
+  -webkit-animation: cloud 2s infinite alternate ease-in-out;
+  animation: cloud 2s infinite alternate ease-in-out;
 }
 
-@keyframes blueplane {
-  0% {
-    transform: translateX(64%) translateY(29%);
-  }
-  50% {
-    transform: translateX(69%) translateY(25%);
-  }
-  100% {
-    transform: translateX(54%) translateY(19%);
-  }
+#load-cloud2 {
+  width: 167px;
+  height: 87px;
+  z-index: 9;
+  position: absolute;
+  top: 34%;
+  right: 9%;
+  -webkit-animation: cloud2 2s infinite alternate ease-in-out;
+  animation: cloud2 2s infinite alternate ease-in-out;
 }
 
-@keyframes cloud {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(20px);
-  }
+#load-cloud3 {
+  width: 182px;
+  height: 94px;
+  z-index: 9;
+  position: absolute;
+  top: 11%;
+  right: 1%;
+  -webkit-animation: cloud 2s infinite alternate ease-in-out;
+  animation: cloud 2s infinite alternate ease-in-out;
 }
 </style>
