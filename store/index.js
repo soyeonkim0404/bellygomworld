@@ -349,17 +349,15 @@ const store = () => new Vuex.Store({
        state.locale = 'KOR';
     },
     setConnect (state) {
-      document.cookie = "b_connect=is-connect";
       state.connect = 'is-connect';
     },
     setNoConnect (state) {
-      document.cookie = "b_connect=no-connect";
       state.connect = 'no-connect';
     },
     setMyNftData(state, payload){
       state.myNftData = payload;
     },
-    setRefreshMyNftData(state){
+    setResetMyNftData(state){
       state.myNftData = [];
     },
     setPager(state,payload){
@@ -381,7 +379,6 @@ const store = () => new Vuex.Store({
   actions: {
     async fetch({commit, state}) {
       try {
-        console.log('dfdfdd')
         const filter = {};
         for (const [key, value] of Object.entries(state.filter)) {
           filter[key] = value.selected.join();
@@ -407,13 +404,11 @@ const store = () => new Vuex.Store({
       if (getters.getConnect === 'is-connect') {
         if (window.confirm("지갑연결을 해제하시겠습니까?")) {
           commit("setNoConnect");
+          commit("setResetMyNftData");
         }
       } else {
         if (window.confirm("지갑연결을 하시겠습니까?")) {
           try {
-            console.log('callMyNftData')
-            console.log(myNft);
-            console.log(window)
             const klaytn = window.klaytn; //크롬에 깔린 카이카스 확장프로그램 안에는 klaytn 이 내장되어있다.
             const accounts = await klaytn.enable(); //카이카스 로그인
             let nftTokenIdArray = [];

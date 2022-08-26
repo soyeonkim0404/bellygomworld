@@ -328,9 +328,8 @@ export default {
     return { lang: browserLang };
   },
   mounted() {
-    let connect = this.getCookie("b_connect");
 
-    if (connect && connect === "is-connect") {
+    if (this.$store.getters.getConnect === "is-connect") {
       this.$store.commit("setConnect");
     } else {
       this.$store.commit("setNoConnect");
