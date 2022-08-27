@@ -2041,7 +2041,7 @@ export default {
 
     if (this.$store.getters.getConnect === 'is-connect') {
       this.$store.commit("setConnect");
-      this.$store.dispatch('fetchMyNftData');
+      this.$store.dispatch('fetchMyWallet');
     } else {
       this.$store.commit("setNoConnect");
       this.$store.commit("setResetMyNftData");
