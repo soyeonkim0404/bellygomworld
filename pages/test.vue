@@ -370,7 +370,7 @@ export default {
     for (const [key, value] of Object.entries(this.filter)) {
       filter[key] = value.selected.join()
     }
-    const { data: response } = await this.$axios.get('/api2', {
+    const { data: response } = await this.$axios.get(`${process.env.BASE_URL}/api2`, {
       params: {
         ...filter,
         orderBy: this.orderBy.selected,

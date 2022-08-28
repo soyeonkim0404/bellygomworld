@@ -43,6 +43,8 @@ app.get("/", (req, res, next) => {
     return a.name.includes(req.query.keyword);
   });
 
+  console.log(req.query)
+
   const page = parseInt(req.query.page) || 1;
   const pageSize = parseInt(req.query.pageSize) || 10;
   const pager = paginate(items.length, page, pageSize);

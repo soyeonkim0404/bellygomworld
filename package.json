@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt --dotenv .env.development",
+    "dev": "nuxt --dotenv .env.local",
     "build": "nuxt build --dotenv .env.development",
     "start": "nuxt start --dotenv .env.production",
     "build_dev": "nuxt build --dotenv .env.development",

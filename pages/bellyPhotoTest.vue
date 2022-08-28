@@ -540,13 +540,13 @@ export default {
   },
   async fetch() {
     try {
-      console.log(1);
       this.loading = true;
       const filter = {};
       for (const [key, value] of Object.entries(this.filter)) {
         filter[key] = value.selected.join();
       }
-      const { data: response } = await this.$axios.get("/apiBellyPhoto", {
+      console.log(process.env.VUE_API_URL, process.env.BASE_URL)
+      const { data: response } = await this.$axios.get(`${process.env.BASE_URL}/apiBellyPhoto`, {
         params: {
           ...filter,
           orderBy: this.orderBy.selected,
@@ -555,7 +555,6 @@ export default {
           pageSize: this.pageSize,
         },
       });
-      console.log(response)
       this.pager = response.pager;
       this.data = this.data.concat(response.pageOfItems);
       this.page++;
