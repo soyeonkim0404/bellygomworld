@@ -21,6 +21,9 @@ data.forEach((item) => {
 logger.level = "debug";
 
 app.get("/", (req, res, next) => {
+  logger.debug('----------------------------------------------------------------------------------------------------------------');
+  logger.debug(process.server);
+  logger.debug(process.client);
   logger.debug(data[0]);
   logger.debug(data.length);
   // filter
