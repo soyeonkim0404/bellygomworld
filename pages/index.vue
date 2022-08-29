@@ -2037,16 +2037,14 @@ export default {
     if (this.$mq === "mobile") {
       this.$router.push({ path: "/m" });
     }
-
     let locale = this.getCookie("b_locale");
-    let connect = this.getCookie("b_connect");
 
-    if (connect && connect === "is-connect") {
+    if (this.$store.getters.getConnect === 'is-connect') {
       this.$store.commit("setConnect");
-      this.$store.dispatch('callMyNftData');
+      this.$store.dispatch('fetchMyWallet');
     } else {
       this.$store.commit("setNoConnect");
-      this.$store.commit("setRefreshMyNftData");
+      this.$store.commit("setResetMyNftData");
     }
 
     if (locale && locale === "KOR") {
@@ -2054,7 +2052,6 @@ export default {
     } else {
       this.$store.commit("setENG");
     }
-    console.log('스토어', this.$store)
   },
   methods: {
     roadModal1() {

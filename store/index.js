@@ -349,17 +349,15 @@ const store = () => new Vuex.Store({
        state.locale = 'KOR';
     },
     setConnect (state) {
-      document.cookie = "b_connect=is-connect";
       state.connect = 'is-connect';
     },
     setNoConnect (state) {
-      document.cookie = "b_connect=no-connect";
       state.connect = 'no-connect';
     },
     setMyNftData(state, payload){
       state.myNftData = payload;
     },
-    setRefreshMyNftData(state){
+    setResetMyNftData(state){
       state.myNftData = [];
     },
     setPager(state,payload){
@@ -381,7 +379,6 @@ const store = () => new Vuex.Store({
   actions: {
     async fetch({commit, state}) {
       try {
-        console.log('dfdfdd')
         const filter = {};
         for (const [key, value] of Object.entries(state.filter)) {
           filter[key] = value.selected.join();
@@ -403,50 +400,52 @@ const store = () => new Vuex.Store({
         console.log(e);
       }
     },
-    async callMyNftData ({commit,state,getters}) {
+    async fetchMyWallet({commit,state}) {
+      const klaytn = window.klaytn; //크롬에 깔린 카이카스 확장프로그램 안에는 klaytn 이 내장되어있다.
+      const accounts = await klaytn.enable(); //카이카스 로그인
+      let nftTokenIdArray = [];
+      const contractInstance = window.caver.contract.create(myNft, "0x141637b601d0fc907c0acb8ae5060ee22bb7b3f6"); //컨트렉트 매니저 객체 생성
+      let countNFT = await contractInstance.methods.balanceOf(klaytn.selectedAddress).call()
+      for (let i = 0; i < countNFT; i++){
+        nftTokenIdArray.push(await contractInstance.methods.tokenOfOwnerByIndex(klaytn.selectedAddress, i).call());
+      }
+      console.log('nftTokenIdArray',nftTokenIdArray);
+      const filter = {};
+      for (const [key, value] of Object.entries(state.filter)) {
+        filter[key] = value.selected.join();
+      }
+      const { data: response } = await this.$axios.get("/apiBellyPhoto", {
+        params: {
+          ...filter,
+          orderBy: state.selected,
+          keyword: state.keyword,
+          page: '1',
+          pageSize: '10000',
+        },
+      });
+      const myNftArray = [];
+      console.log('아이디',nftTokenIdArray)
+      nftTokenIdArray.forEach((item)=>{
+        myNftArray.push(response.pageOfItems.filter((e)=>{
+          return e.id == item.padStart(4, '0');
+        }));
+      })
+      console.log('마이nft데이터',myNftArray)
+      commit('setMyNftData',myNftArray);
+      commit("setConnect");
+    },
+    async callMyNftData ({commit, getters, dispatch}) {
       if (getters.getConnect === 'is-connect') {
         if (window.confirm("지갑연결을 해제하시겠습니까?")) {
           commit("setNoConnect");
+          commit("setResetMyNftData");
         }
       } else {
         if (window.confirm("지갑연결을 하시겠습니까?")) {
           try {
-            console.log('callMyNftData')
-            console.log(myNft);
-            console.log(window)
-            const klaytn = window.klaytn; //크롬에 깔린 카이카스 확장프로그램 안에는 klaytn 이 내장되어있다.
-            const accounts = await klaytn.enable(); //카이카스 로그인
-            let nftTokenIdArray = [];
-            const contractInstance = window.caver.contract.create(myNft, "0x141637b601d0fc907c0acb8ae5060ee22bb7b3f6"); //컨트렉트 매니저 객체 생성
-            let countNFT = await contractInstance.methods.balanceOf(klaytn.selectedAddress).call()
-            for (let i = 0; i < countNFT; i++){
-              nftTokenIdArray.push(await contractInstance.methods.tokenOfOwnerByIndex(klaytn.selectedAddress, i).call());
-            }
-            console.log('nftTokenIdArray',nftTokenIdArray);
-            const filter = {};
-            for (const [key, value] of Object.entries(state.filter)) {
-              filter[key] = value.selected.join();
-            }
-            const { data: response } = await this.$axios.get("/apiBellyPhoto", {
-              params: {
-                ...filter,
-                orderBy: state.selected,
-                keyword: state.keyword,
-                page: '1',
-                pageSize: '10000',
-              },
-            });
-            const myNftArray = [];
-            console.log('아이디',nftTokenIdArray)
-            nftTokenIdArray.forEach((item)=>{
-              myNftArray.push(response.pageOfItems.filter((e)=>{
-                return e.id == item.padStart(4, '0');
-              }));
-            })
-            console.log('마이nft데이터',myNftArray)
-            commit('setMyNftData',myNftArray);
-            commit("setConnect");
+            dispatch('fetchMyWallet')
           } catch (err) {
+            console.log(err)
             alert(
                 "Kaikas 지갑이 설치되어 있지 않습니다.\n크롬에서 Kaikas 확장 프로그램을 설치해주세요!"
             );

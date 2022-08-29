@@ -84,12 +84,13 @@
           <!-- nft 커넥트 후 -->
           <template v-else>
             <!-- nft 커넥트 후 - no data -->
+            <button class="connect-wallet" @click="$store.dispatch('callMyNftData')">
+              <img src="@/assets/images/ic-kaikas.svg" />
+              OXA89...664
+            </button>
             <template v-if="$store.getters.getMyNftData === []">
               <div class="no-nft">
-                <button class="connect-wallet">
-                  <img src="@/assets/images/ic-kaikas.svg" />
-                  OXA89...664
-                </button>
+
                 <div class="photo-box">
                   <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
                     You don’t have any Bellygom NFT.
