@@ -4,10 +4,10 @@
     <div class="contents">
       <div class="section1">
         <InputSearch
-            v-model="$store.getters.getKeyword"
+            v-model="$store.state.keyword"
             placeholder="Number"
             @input="resetFetch"
-        />
+          />
         <div class="filter" v-if="$mq === 'pc'">
           <div class="con-title">
             Filter

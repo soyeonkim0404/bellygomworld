@@ -46,6 +46,7 @@ app.get("/", (req, res, next) => {
   });
 
   console.log(req.query)
+  console.log(items.length)
 
   const page = parseInt(req.query.page) || 1;
   const pageSize = parseInt(req.query.pageSize) || 10;
