@@ -9,7 +9,9 @@ data.forEach((item) => {
     item[attr.trait_type] = attr.value;
   });
 });
+
 app.get("/", (req, res, next) => {
+  console.log(data.length)
   // filter
   const filter = {};
   for (const [key, value] of Object.entries(req.query)) {
