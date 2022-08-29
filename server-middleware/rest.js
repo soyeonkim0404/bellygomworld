@@ -1,11 +1,12 @@
 import paginate from "jw-paginate";
 const log4js = require("log4js");
-const logger = log4js.getLogger();
 
 log4js.configure({
-  appenders: { cheese: { type: "file", filename: "/app/cheese.log" } },
+  appenders: { cheese: { type: "file", filename: "cheese.log" } },
   categories: { default: { appenders: ["cheese"], level: "debug" } },
 });
+
+const logger = log4js.getLogger("cheese");
 
 const data = require('./testData.json');
 const express = require("express");
@@ -20,6 +21,7 @@ data.forEach((item) => {
 logger.level = "debug";
 
 app.get("/", (req, res, next) => {
+  logger.debug(data[0]);
   logger.debug(data.length);
   // filter
   const filter = {};
