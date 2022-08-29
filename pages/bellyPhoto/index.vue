@@ -747,7 +747,7 @@ export default {
       }
     },
     refreshFetch() {
-      for (const [key, value] of Object.entries(this.filter)) {
+      for (const [key, value] of Object.entries(this.$store.getters.getFilter)) {
         value.selected = [];
       }
       this.data = [];

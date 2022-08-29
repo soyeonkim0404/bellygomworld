@@ -1900,7 +1900,7 @@ export default {
         ],
         afterResize: (width, height) => {
           // alert("The sections have finished resizing");
-          this.$refs.fullpage.api.rebuid();
+          this.$refs.fullpage.api.rebuild();
         },
         afterLoad: (origin, destination, direction) => {
           this.$refs.fullpage.api.setAllowScrolling(true);

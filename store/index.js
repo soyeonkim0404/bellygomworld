@@ -8,7 +8,8 @@ const store = () =>
       connect: "no-connect",
       myNftData: [],
       data: [],
-      nftTokenIdArray: [],
+      klaytnAddress: "",
+      klaytnAddressLast: "",
       filter: {
         Background: {
           list: [
@@ -303,6 +304,7 @@ const store = () =>
         ],
         selected: "1",
       },
+      myNft: [],
       keyword: "",
       page: 1,
       pager: {},
@@ -339,6 +341,12 @@ const store = () =>
       getData(state) {
         return state.data;
       },
+      getKlaytnAddress(state) {
+        return state.klaytnAddress;
+      },
+      getKlaytnAddressLast(state) {
+        return state.klaytnAddressLast;
+      },
     },
     mutations: {
       setENG(state) {
@@ -355,11 +363,8 @@ const store = () =>
       setNoConnect(state) {
         state.connect = "no-connect";
       },
-      setMyNftData(state, payload) {
-        state.myNftData = payload;
-      },
-      setResetMyNftData(state) {
-        state.myNftData = [];
+      setMyNft(state, payload) {
+        state.myNft = payload;
       },
       setPager(state, payload) {
         state.pager = payload;
@@ -379,6 +384,10 @@ const store = () =>
       setNftTokenIdArray(state, payload) {
         state.setNftTokenIdArray = payload;
       },
+      setKlaytnAddress(state, payload) {
+        state.klaytnAddress = payload;
+        state.klaytnAddressLast = payload.slice(-3, payload.length);
+      },
     },
     actions: {
       async fetch({ commit, state }) {
@@ -394,6 +403,7 @@ const store = () =>
               keyword: state.keyword,
               page: state.page,
               pageSize: state.pageSize,
+              id: state.myNft.join(),
             },
           });
           console.log(response);
@@ -404,63 +414,57 @@ const store = () =>
           console.log(e);
         }
       },
-      async fetchMyNft({ commit, state }) {
-        const filter = {};
-        for (const [key, value] of Object.entries(state.filter)) {
-          filter[key] = value.selected.join();
-        }
-        const { data: response } = await this.$axios.get("/apiBellyPhoto", {
-          params: {
-            ...filter,
-            orderBy: state.selected,
-            keyword: state.keyword,
-            page: "1",
-            pageSize: "10000",
-          },
-        });
-        console.log(response);
-        commit("setMyNftData", response);
-        return response.pageOfItems;
-      },
       async fetchMyWallet({ commit, dispatch }) {
-        const klaytn = window.klaytn; //크롬에 깔린 카이카스 확장프로그램 안에는 klaytn 이 내장되어있다.
-        const accounts = await klaytn.enable(); //카이카스 로그인
-        let nftTokenIdArray = [];
-        const contractInstance = window.caver.contract.create(
-          myNft,
-          "0x141637b601d0fc907c0acb8ae5060ee22bb7b3f6"
-        ); //컨트렉트 매니저 객체 생성
-        let countNFT = await contractInstance.methods
-          .balanceOf(klaytn.selectedAddress)
-          .call();
-        for (let i = 0; i < countNFT; i++) {
-          nftTokenIdArray.push(
-            await contractInstance.methods
-              .tokenOfOwnerByIndex(klaytn.selectedAddress, i)
-              .call()
-          );
+        if (
+          window.klaytn.networkVersion === undefined ||
+          window.klaytn.networkVersion === "loading"
+        ) {
+          window.location.reload();
+          location.reload();
+          return;
         }
-
-        console.log("nftTokenIdArray", nftTokenIdArray);
 
         try {
-          const response = await dispatch("fetchMyNft");
-          const myNftArray = [];
-          console.log("아이디", nftTokenIdArray);
-          nftTokenIdArray.forEach((item) => {
-            myNftArray.push(
-              response.filter((e) => {
-                if (e.id) {
-                  return e.id == item.padStart(4, "0");
-                }
-              })
-            );
-          });
+          const klaytn = window.klaytn; //크롬에 깔린 카이카스 확장프로그램 안에는 klaytn 이 내장되어있다.
+          const accounts = await klaytn.enable(); //카이카스 로그인
 
-          commit("setNftTokenIdArray", nftTokenIdArray);
-          console.log("마이nft데이터", myNftArray);
-          commit("setMyNftData", myNftArray);
+          let nftTokenIdArray = [];
+          const contractInstance = window.caver.contract.create(
+            myNft,
+            "0x141637b601d0fc907c0acb8ae5060ee22bb7b3f6"
+          ); //컨트렉트 매니저 객체 생성
+          let countNFT = await contractInstance.methods
+            .balanceOf(klaytn.selectedAddress)
+            .call();
+          for (let i = 0; i < countNFT; i++) {
+            nftTokenIdArray.push(
+              await contractInstance.methods
+                .tokenOfOwnerByIndex(klaytn.selectedAddress, i)
+                .call()
+            );
+          }
+          console.log("nftTokenIdArray", nftTokenIdArray);
+
+          // const response = await dispatch("fetchMyNft");
+          // const myNftArray = [];
+          // console.log("아이디", nftTokenIdArray);
+          // console.log("response", response[0].id);
+          // nftTokenIdArray.forEach((item) => {
+          //   myNftArray.push(
+          //     response.filter((e) => {
+          //       if (e.id) {
+          //         return e.id == item.padStart(4, "0");
+          //       }
+          //     })[0]
+          //   );
+          // });
+          nftTokenIdArray = nftTokenIdArray.map((el) => {
+            return el.padStart(4, "0");
+          });
+          commit("setKlaytnAddress", klaytn.selectedAddress);
+          commit("setMyNft", nftTokenIdArray);
           commit("setConnect");
+          await dispatch("fetch");
         } catch (err) {
           console.log(err);
         }
@@ -469,7 +473,7 @@ const store = () =>
         if (getters.getConnect === "is-connect") {
           if (window.confirm("지갑연결을 해제하시겠습니까?")) {
             commit("setNoConnect");
-            commit("setResetMyNftData");
+            commit("setMyNft", []);
           }
         } else {
           if (window.confirm("지갑연결을 하시겠습니까?")) {
