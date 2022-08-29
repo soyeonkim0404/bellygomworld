@@ -24,6 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use((req, res, next) => {
   req.queryData = url.parse(req.url, true).query;
+  logger.debug({ queryData: req.queryData });
   next();
 });
 
@@ -33,10 +34,11 @@ app.get("/", (req, res, next) => {
       "----------------------------------------------------------------------------------------------------------------"
     );
     logger.debug({ query: req.query });
+    logger.debug({ queryData: req.queryData });
 
     // filter
     const filter = {};
-    for (const [key, value] of Object.entries(req.query)) {
+    for (const [key, value] of Object.entries(req.queryData)) {
       if (["page", "pageSize", "keyword", "orderBy"].includes(key)) continue;
       if (value === "") continue;
       filter[key] = value.split(",");
@@ -52,26 +54,26 @@ app.get("/", (req, res, next) => {
 
     // orderBy
     function compare(a, b) {
-      const key = ["1", "2"].includes(req.query.orderBy) ? "rank" : "id";
+      const key = ["1", "2"].includes(req.queryData.orderBy) ? "rank" : "id";
       if (a[key] < b[key]) return -1;
       if (a[key] < b[key]) return 1;
       return 0;
     }
     items.sort(compare);
     // orderBy 역순 정렬
-    if (["2", "4"].includes(req.query.orderBy)) {
+    if (["2", "4"].includes(req.queryData.orderBy)) {
       items.reverse();
     }
 
     // keyword
-    if (req.query.keyword) {
+    if (req.queryData.keyword) {
       items = items.filter((a) => {
-        return a.name.includes(req.query.keyword);
+        return a.name.includes(req.queryData.keyword);
       });
     }
 
-    const page = parseInt(req.query.page) || 1;
-    const pageSize = parseInt(req.query.pageSize) || 10;
+    const page = parseInt(req.queryData.page) || 1;
+    const pageSize = parseInt(req.queryData.pageSize) || 10;
 
     logger.debug(items.length);
     logger.debug(page);
