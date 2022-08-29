@@ -8,6 +8,7 @@ const store = () => new Vuex.Store({
     connect: 'no-connect',
     myNftData: [],
     data: [],
+    nftTokenIdArray: [],
     filter: {
       Background: {
         list: [
@@ -375,6 +376,9 @@ const store = () => new Vuex.Store({
     setPage(state){
       state.page++;
     },
+    setNftTokenIdArray(state,payload)  {
+      state.setNftTokenIdArray = payload;
+    }
   },
   actions: {
     async fetch({commit, state}) {
@@ -400,7 +404,25 @@ const store = () => new Vuex.Store({
         console.log(e);
       }
     },
-    async fetchMyWallet({commit,state}) {
+    async fetchMyNft({commit,state}) {
+        const filter = {};
+        for (const [key, value] of Object.entries(state.filter)) {
+          filter[key] = value.selected.join();
+        }
+        const { data: response } = await this.$axios.get("/apiBellyPhoto", {
+          params: {
+            ...filter,
+            orderBy: state.selected,
+            keyword: state.keyword,
+            page: '1',
+            pageSize: '10000',
+          },
+        });
+        console.log(response)
+        commit('setMyNftData', response)
+        return response.pageOfItems
+    },
+    async fetchMyWallet({commit,dispatch}) {
       const klaytn = window.klaytn; //크롬에 깔린 카이카스 확장프로그램 안에는 klaytn 이 내장되어있다.
       const accounts = await klaytn.enable(); //카이카스 로그인
       let nftTokenIdArray = [];
@@ -409,30 +431,28 @@ const store = () => new Vuex.Store({
       for (let i = 0; i < countNFT; i++){
         nftTokenIdArray.push(await contractInstance.methods.tokenOfOwnerByIndex(klaytn.selectedAddress, i).call());
       }
+
       console.log('nftTokenIdArray',nftTokenIdArray);
-      const filter = {};
-      for (const [key, value] of Object.entries(state.filter)) {
-        filter[key] = value.selected.join();
+
+      try {
+        const response = await dispatch('fetchMyNft')
+        const myNftArray = [];
+        console.log('아이디',nftTokenIdArray)
+        nftTokenIdArray.forEach((item)=>{
+          myNftArray.push(response.filter((e)=>{
+            if(e.id) {
+              return e.id == item.padStart(4, '0');
+            }
+          }));
+        })
+
+        commit('setNftTokenIdArray',nftTokenIdArray);
+        console.log('마이nft데이터',myNftArray)
+        commit('setMyNftData',myNftArray);
+        commit("setConnect");
+      } catch (err) {
+        console.log(err)
       }
-      const { data: response } = await this.$axios.get("/apiBellyPhoto", {
-        params: {
-          ...filter,
-          orderBy: state.selected,
-          keyword: state.keyword,
-          page: '1',
-          pageSize: '10000',
-        },
-      });
-      const myNftArray = [];
-      console.log('아이디',nftTokenIdArray)
-      nftTokenIdArray.forEach((item)=>{
-        myNftArray.push(response.pageOfItems.filter((e)=>{
-          return e.id == item.padStart(4, '0');
-        }));
-      })
-      console.log('마이nft데이터',myNftArray)
-      commit('setMyNftData',myNftArray);
-      commit("setConnect");
     },
     async callMyNftData ({commit, getters, dispatch}) {
       if (getters.getConnect === 'is-connect') {
