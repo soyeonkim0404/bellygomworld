@@ -56,7 +56,7 @@
       <div class="etc-link">
         <ul class="sns">
           <li class="link0" :class="{ 'active': $store.getters.getConnect === 'is-connect' }">
-            <button @click="connectKaikas()">지갑연결</button>
+            <button @click="$store.dispatch('callMyNftData')">지갑연결</button>
           </li>
           <li class="link1" @click="sendGaEvent('gnb_shop', 'GNB')">
             <a href="https://bellygom.com/" target="_blank"></a>
@@ -370,9 +370,6 @@ export default {
         t.classList.remove("active");
       });
       event.currentTarget.classList.add("active");
-    },
-    async connectKaikas() {
-      await this.$store.dispatch('callMyNftData');
     },
   },
 };
