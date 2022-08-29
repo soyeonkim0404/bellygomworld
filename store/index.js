@@ -10,7 +10,6 @@ const store = () => new Vuex.Store({
     data: [],
     klaytnAddress: '',
     klaytnAddressLast: '',
-    nftTokenIdArray: [],
     filter: {
       Background: {
         list: [
@@ -441,17 +440,18 @@ const store = () => new Vuex.Store({
         location.reload();
         return;
       }
-      const klaytn = window.klaytn; //크롬에 깔린 카이카스 확장프로그램 안에는 klaytn 이 내장되어있다.
-      const accounts = await klaytn.enable(); //카이카스 로그인
 
-      let nftTokenIdArray = [];
-      const contractInstance = window.caver.contract.create(myNft, "0x141637b601d0fc907c0acb8ae5060ee22bb7b3f6"); //컨트렉트 매니저 객체 생성
-      let countNFT = await contractInstance.methods.balanceOf(klaytn.selectedAddress).call()
-      for (let i = 0; i < countNFT; i++){
-        nftTokenIdArray.push(await contractInstance.methods.tokenOfOwnerByIndex(klaytn.selectedAddress, i).call());
-      }
-      console.log('nftTokenIdArray',nftTokenIdArray);
       try {
+        const klaytn = window.klaytn; //크롬에 깔린 카이카스 확장프로그램 안에는 klaytn 이 내장되어있다.
+        const accounts = await klaytn.enable(); //카이카스 로그인
+
+        let nftTokenIdArray = [];
+        const contractInstance = window.caver.contract.create(myNft, "0x141637b601d0fc907c0acb8ae5060ee22bb7b3f6"); //컨트렉트 매니저 객체 생성
+        let countNFT = await contractInstance.methods.balanceOf(klaytn.selectedAddress).call()
+        for (let i = 0; i < countNFT; i++){
+          nftTokenIdArray.push(await contractInstance.methods.tokenOfOwnerByIndex(klaytn.selectedAddress, i).call());
+        }
+        console.log('nftTokenIdArray',nftTokenIdArray);
         const response = await dispatch('fetchMyNft')
         const myNftArray = [];
         console.log('아이디',nftTokenIdArray)
@@ -464,7 +464,6 @@ const store = () => new Vuex.Store({
           })[0]);
         })
         commit('setKlaytnAddress',klaytn.selectedAddress);
-        commit('setNftTokenIdArray',nftTokenIdArray);
         commit('setMyNftData',myNftArray);
         commit("setConnect");
       } catch (err) {

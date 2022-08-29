@@ -119,7 +119,7 @@
                 <li
                     v-for="(item) in $store.getters.getMyNftData"
                     :key="item.id"
-                    class="item"
+                    class="photo-item"
                     @click="detailNft(item)"
                 >
                   <span class="rank">Rank {{ item.rank }}</span>
@@ -153,7 +153,7 @@
                 <li
                     v-for="(item) in $store.getters.getData"
                     :key="item.id"
-                    class="item"
+                    class="photo-item"
                     @click="detailNft(item)"
                 >
                   <span class="rank">Rank {{ item.rank }}</span>
@@ -953,7 +953,7 @@ export default {
         gap: 24px;
         margin-top: 20px;
         overflow: auto;
-        .item {
+        .photo-item {
           flex-direction: column;
           -webkit-box-pack: justify;
           justify-content: space-between;
@@ -963,12 +963,13 @@ export default {
           overflow: hidden;
           background: #fff;
           box-sizing: border-box;
+          opacity: 1;
           transition: 0.35s ease-in;
-          &.photo-enter,
-          &.photo-leave-to {
+          .photo-enter,
+          .photo-leave-to {
             opacity: 0;
           }
-          &.photo-leave-to {
+          .photo-leave-to {
             transition: 0.35s ease-in;
           }
           .rank {

@@ -361,11 +361,7 @@ export default {
       });
     },
     navClickFc(event) {
-      // siblings.forEach(function (t){
-      //   t.classList.remove('active');
-      // });
       const siblings = event.currentTarget.parentElement.children;
-      console.log(siblings);
       Array.from(siblings).forEach(function (t) {
         t.classList.remove("active");
       });
