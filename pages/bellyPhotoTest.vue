@@ -546,7 +546,7 @@ export default {
         filter[key] = value.selected.join();
       }
       console.log(process.env.VUE_API_URL, process.env.BASE_URL)
-      const { data: response } = await this.$axios.get(`${process.env.BASE_URL}/apiBellyPhoto`, {
+      const { data: response } = await this.$axios.get(`/apiBellyPhoto`, {
         params: {
           ...filter,
           orderBy: this.orderBy.selected,

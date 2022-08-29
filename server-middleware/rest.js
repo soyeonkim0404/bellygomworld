@@ -1,5 +1,6 @@
 import paginate from "jw-paginate";
-import data from "./testData.json";
+
+const data = require('./testData.json');
 
 const express = require("express");
 const app = express();
