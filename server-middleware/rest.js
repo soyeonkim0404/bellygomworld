@@ -33,6 +33,7 @@ app.get("/", (req, res, next) => {
     if (value === "") continue;
     filter[key] = value.split(",");
   }
+
   let items = data.filter((a) => {
     const val = [];
     for (const [key, value] of Object.entries(filter)) {
@@ -40,6 +41,8 @@ app.get("/", (req, res, next) => {
     }
     return !val.includes(false);
   });
+
+  logger.debug(items[0].name);
 
   // orderBy
   function compare(a, b) {
@@ -54,15 +57,25 @@ app.get("/", (req, res, next) => {
     items.reverse();
   }
 
+  logger.debug(items[0].name);
+
   // keyword
   items = items.filter((a) => {
     return a.name.includes(req.query.keyword);
   });
 
-  console.log(req.query)
+
+  logger.debug(req.query);
+
 
   const page = parseInt(req.query.page) || 1;
   const pageSize = parseInt(req.query.pageSize) || 10;
+
+
+  logger.debug(items.length);
+  logger.debug(page);
+  logger.debug(pageSize);
+
   const pager = paginate(items.length, page, pageSize);
   const pageOfItems = items.slice(pager.startIndex, pager.endIndex + 1);
   return res.json({
