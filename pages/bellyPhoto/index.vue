@@ -4,24 +4,21 @@
     <div class="contents">
       <div class="section1">
         <InputSearch
-            v-model="$store.state.keyword"
-            placeholder="Number"
-            @input="resetFetch"
-          />
+          v-model="$store.state.keyword"
+          placeholder="Number"
+          @input="resetFetch"
+        />
         <div class="filter" v-if="$mq === 'pc'">
           <div class="con-title">
             Filter
-            <button type="button"
-                    class="btn-reset"
-                    @click="refreshFetch"
-            >
+            <button type="button" class="btn-reset" @click="refreshFetch">
               <img src="@/assets/images/ic_reset.svg" alt="" />
             </button>
           </div>
           <BellyPhotoFilter
-              :list="$store.getters.getFilter"
-              :filterChkList="filterChkList"
-              @change="resetFetch"
+            :list="$store.getters.getFilter"
+            :filterChkList="filterChkList"
+            @change="resetFetch"
           />
         </div>
         <button class="mobile-filter" v-if="$mq === 'mobile'" @click="mbFilter">
@@ -34,20 +31,22 @@
             <template v-if="!this.myNFT">
               <span>
                 <animated-number
-                    :value="$store.getters.getPager.totalItems || 0"
-                    :duration="500"
-                    :formatValue="formatToPrice"
+                  :value="$store.getters.getPager.totalItems || 0"
+                  :duration="500"
+                  :formatValue="formatToPrice"
                 />
-              </span> Items
+              </span>
+              Items
             </template>
             <template v-else>
               <span>
                 <animated-number
-                    :value="$store.getters.getMyNftData.length"
-                    :duration="500"
-                    :formatValue="formatToPrice"
+                  :value="$store.getters.getMyNftData.length"
+                  :duration="500"
+                  :formatValue="formatToPrice"
                 />
-              </span> Items
+              </span>
+              Items
             </template>
           </div>
           <div class="sort">
@@ -60,10 +59,10 @@
             </div>
             <div class="select">
               <SelectBox
-                  :items="$store.getters.getOderBy.list"
-                  :default="$store.getters.getOderBy.list[0]"
-                  @change="resetFetch"
-                  v-model="$store.getters.getOderBy.selected"
+                :items="$store.getters.getOderBy.list"
+                :default="$store.getters.getOderBy.list[0]"
+                @change="resetFetch"
+                v-model="$store.getters.getOderBy.selected"
               />
             </div>
           </div>
@@ -78,20 +77,26 @@
               <p class="desc" v-else>
                 보유 중인 벨리곰 NFT를 확인하려면 카이카스 지갑 연동이 필요해요!
               </p>
-              <button class="btn-wallet" @click="findMyNFT">CONNECT WALLET</button>
+              <button class="btn-wallet" @click="findMyNFT">
+                CONNECT WALLET
+              </button>
             </div>
           </template>
           <!-- nft 커넥트 후 -->
           <template v-else>
             <!-- nft 커넥트 후 - no data -->
-            <button class="connect-wallet" @click="$store.dispatch('callMyNftData')">
+            <button
+              class="connect-wallet"
+              @click="$store.dispatch('callMyNftData')"
+            >
               <img src="@/assets/images/ic-kaikas.svg" />
               <span class="first">{{ $store.getters.getKlaytnAddress }}</span>
-              <span class="last">{{ $store.getters.getKlaytnAddressLast }}</span>
+              <span class="last">{{
+                $store.getters.getKlaytnAddressLast
+              }}</span>
             </button>
             <template v-if="$store.getters.getMyNftData === []">
               <div class="no-nft">
-
                 <div class="photo-box">
                   <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
                     You don’t have any Bellygom NFT.
@@ -100,32 +105,29 @@
                     보유하고 계신 Bellygom NFT가 존재하지 않습니다.
                   </p>
                   <a
-                      href="https://opensea.io/collection/bellygom-world-official"
-                      target="_blank"
-                      class="btn-wallet"
-                  ><img src="@/assets/images/belly-photo-detail-opensea.svg" />Buy
-                    on OpenSea</a
+                    href="https://opensea.io/collection/bellygom-world-official"
+                    target="_blank"
+                    class="btn-wallet"
+                    ><img
+                      src="@/assets/images/belly-photo-detail-opensea.svg"
+                    />Buy on OpenSea</a
                   >
                 </div>
               </div>
             </template>
             <!-- nft 커넥트 후 - 데이터 있음 -->
             <template v-else>
-              <transition-group
-                  name="photo"
-                  class="photo"
-                  tag="ul"
-              >
+              <transition-group name="photo" class="photo" tag="ul">
                 <li
-                    v-for="(item) in $store.getters.getMyNftData"
-                    :key="item.id"
-                    class="photo-item"
-                    @click="detailNft(item)"
+                  v-for="item in $store.getters.getData"
+                  :key="item.id"
+                  class="photo-item"
+                  @click="detailNft(item)"
                 >
                   <span class="rank">Rank {{ item.rank }}</span>
                   <span class="image">
-                  <img :src="item.image" :alt="item.id" />
-                </span>
+                    <img :src="item.image" :alt="item.id" />
+                  </span>
                   <span class="info">Bellygom #{{ item.id }}</span>
                   <span class="border" v-if="$mq === 'pc'"></span>
                 </li>
@@ -145,25 +147,21 @@
             </div>
           </template>
           <template v-else>
-              <transition-group
-                  name="photo"
-                  class="photo"
-                  tag="ul"
+            <transition-group name="photo" class="photo" tag="ul">
+              <li
+                v-for="item in $store.getters.getData"
+                :key="item.id"
+                class="photo-item"
+                @click="detailNft(item)"
               >
-                <li
-                    v-for="(item) in $store.getters.getData"
-                    :key="item.id"
-                    class="photo-item"
-                    @click="detailNft(item)"
-                >
-                  <span class="rank">Rank {{ item.rank }}</span>
-                  <span class="image">
+                <span class="rank">Rank {{ item.rank }}</span>
+                <span class="image">
                   <img :src="item.image" :alt="item.id" />
                 </span>
-                  <span class="info">Bellygom #{{ item.id }}</span>
-                  <span class="border" v-if="$mq === 'pc'"></span>
-                </li>
-              </transition-group>
+                <span class="info">Bellygom #{{ item.id }}</span>
+                <span class="border" v-if="$mq === 'pc'"></span>
+              </li>
+            </transition-group>
           </template>
         </template>
       </div>
@@ -247,9 +245,9 @@
       </div>
       <div slot="body">
         <BellyPhotoFilter
-            :list="filter"
-            :filterChkList="filterChkList"
-            @change="resetFetch"
+          :list="filter"
+          :filterChkList="filterChkList"
+          @change="resetFetch"
         />
       </div>
       <div slot="footer">
@@ -716,18 +714,21 @@ export default {
     };
   },
   fetchDelay: 0,
-  async fetch () {
-    await this.$store.dispatch('fetch')
+  async fetch() {
+    await this.$store.dispatch("fetch");
   },
   methods: {
     async findMyNFT() {
-      await this.$store.dispatch('callMyNftData');
+      await this.$store.dispatch("callMyNftData");
     },
     infiniteHandler() {
-      if(this.myNFT) {
-        return
+      if (this.myNFT) {
+        return;
       }
-      if (this.$store.getters.getPager.totalPages <= this.$store.getters.getPage) return;
+      if (
+        this.$store.getters.getPager.totalPages <= this.$store.getters.getPage
+      )
+        return;
       const contentHeight = document.querySelector("#app").offsetHeight;
       const windowHeight = window.innerHeight;
       const scrollY = window.scrollY;
@@ -735,19 +736,16 @@ export default {
       this.$fetch();
     },
     resetFetch() {
-   /*   this.data = [];
+      /*   this.data = [];
       this.page = 1;*/
-      this.$store.commit('resetData')
-      this.$store.commit('resetPage')
-
-      if(this.myNFT) {
-        this.$store.dispatch('fetchMyWallet');
-      } else {
-        this.$fetch();
-      }
+      this.$store.commit("resetData");
+      this.$store.commit("resetPage");
+      this.$fetch();
     },
     refreshFetch() {
-      for (const [key, value] of Object.entries(this.$store.getters.getFilter)) {
+      for (const [key, value] of Object.entries(
+        this.$store.getters.getFilter
+      )) {
         value.selected = [];
       }
       this.data = [];
@@ -762,14 +760,14 @@ export default {
       this.modalShow = true;
       this.modalSeq = item;
       this.detailNftInfo = item;
-      console.log('디테일', this.detailNftInfo)
+      console.log("디테일", this.detailNftInfo);
       document.body.style.overflow = "hidden";
     },
     mbModalDone() {
       this.mbFilterShow = false;
     },
     mbModalClose() {
-      this.refreshFetch()
+      this.refreshFetch();
       this.mbFilterShow = false;
     },
     modalHide() {
@@ -1187,7 +1185,6 @@ export default {
       text-overflow: ellipsis;
     }
     &.last {
-
     }
   }
   img {
