@@ -58,7 +58,7 @@ app.get("/", (req, res, next) => {
       items.reverse();
     }
 
-    logger.debug(items[0]?.name);
+    logger.debug({keyword:req.query.keyword});
 
     // keyword
     if (req.query.keyword){
@@ -79,7 +79,7 @@ app.get("/", (req, res, next) => {
 
     const pager = paginate(items.length, page, pageSize);
     const pageOfItems = items.slice(pager.startIndex, pager.endIndex + 1);
-    logger.debug(pager);
+    logger.debug({pager:pager});
     return res.json({
       pager,
       pageOfItems: pager.totalPages < page ? [] : pageOfItems,
