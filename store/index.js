@@ -450,17 +450,16 @@ const store = () => new Vuex.Store({
         const response = await dispatch('fetchMyNft')
         const myNftArray = [];
         console.log('아이디',nftTokenIdArray)
+        console.log('response',response[0].id)
         nftTokenIdArray.forEach((item)=>{
           myNftArray.push(response.filter((e)=>{
             if(e.id) {
               return e.id == item.padStart(4, '0');
             }
-          }));
+          })[0]);
         })
-        console.log('klaytn.selectedAddress',klaytn.selectedAddress)
         commit('setKlaytnAddress',klaytn.selectedAddress);
         commit('setNftTokenIdArray',nftTokenIdArray);
-        console.log('마이nft데이터',myNftArray)
         commit('setMyNftData',myNftArray);
         commit("setConnect");
       } catch (err) {

@@ -117,15 +117,15 @@
               >
                 <li
                     v-for="(item) in $store.getters.getMyNftData"
-                    :key="item[0].id"
+                    :key="item.id"
                     class="item"
-                    @click="detailNft(item[0])"
+                    @click="detailNft(item)"
                 >
-                  <span class="rank">Rank {{ item[0].rank }}</span>
+                  <span class="rank">Rank {{ item.rank }}</span>
                   <span class="image">
-                  <img :src="item[0].image" :alt="item[0].id" />
+                  <img :src="item.image" :alt="item.id" />
                 </span>
-                  <span class="info">Bellygom #{{ item[0].id }}</span>
+                  <span class="info">Bellygom #{{ item.id }}</span>
                   <span class="border" v-if="$mq === 'pc'"></span>
                 </li>
               </transition-group>
@@ -738,7 +738,12 @@ export default {
       this.page = 1;*/
       this.$store.commit('resetData')
       this.$store.commit('resetPage')
-      this.$fetch();
+
+      if(this.myNFT) {
+        this.$store.dispatch('fetchMyWallet');
+      } else {
+        this.$fetch();
+      }
     },
     refreshFetch() {
       for (const [key, value] of Object.entries(this.filter)) {
