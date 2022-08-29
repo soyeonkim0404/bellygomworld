@@ -60,13 +60,14 @@ app.get("/", (req, res, next) => {
   logger.debug(items[0].name);
 
   // keyword
-  items = items.filter((a) => {
-    return a.name.includes(req.query.keyword);
-  });
 
+  if (req.query.keyword){
+    items = items.filter((a) => {
+      return a.name.includes(req.query.keyword);
+    });
+  }
 
   logger.debug(req.query);
-
 
   const page = parseInt(req.query.page) || 1;
   const pageSize = parseInt(req.query.pageSize) || 10;
