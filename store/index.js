@@ -9,6 +9,7 @@ const store = () => new Vuex.Store({
     myNftData: [],
     data: [],
     klaytnAddress: '',
+    klaytnAddressLast: '',
     nftTokenIdArray: [],
     filter: {
       Background: {
@@ -342,6 +343,9 @@ const store = () => new Vuex.Store({
     },
     getKlaytnAddress(state) {
       return state.klaytnAddress;
+    },
+    getKlaytnAddressLast(state) {
+      return state.klaytnAddressLast;
     }
   },
   mutations: {
@@ -385,6 +389,7 @@ const store = () => new Vuex.Store({
     },
     setKlaytnAddress(state,payload) {
       state.klaytnAddress = payload;
+      state.klaytnAddressLast = payload.slice(-3,payload.length);
     }
   },
   actions: {

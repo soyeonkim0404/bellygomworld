@@ -86,7 +86,8 @@
             <!-- nft 커넥트 후 - no data -->
             <button class="connect-wallet" @click="$store.dispatch('callMyNftData')">
               <img src="@/assets/images/ic-kaikas.svg" />
-              {{ $store.getters.getKlaytnAddress }}
+              <span class="first">{{ $store.getters.getKlaytnAddress }}</span>
+              <span class="last">{{ $store.getters.getKlaytnAddressLast }}</span>
             </button>
             <template v-if="$store.getters.getMyNftData === []">
               <div class="no-nft">
@@ -1165,12 +1166,29 @@ export default {
 }
 
 .connect-wallet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   width: 208px;
   height: 52px;
   background: #fff;
   border-radius: 25px;
   margin-top: 20px;
+  span {
+    display: inline-block;
+    font-family: "Sandoll GothicNeoRound", sans-serif;
+    font-size: 18px;
+    &.first {
+      width: 95px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    &.last {
+
+    }
+  }
   img {
     width: 20px;
     height: 20px;
