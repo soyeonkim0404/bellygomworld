@@ -25,6 +25,7 @@ app.get("/", (req, res, next) => {
 
 
     logger.debug('----------------------------------------------------------------------------------------------------------------');
+    logger.debug({'req':req});
     logger.debug({'query':req.query});
     logger.debug(data.length);
     // filter
@@ -71,7 +72,6 @@ app.get("/", (req, res, next) => {
 
     const page = parseInt(req.query.page) || 1;
     const pageSize = parseInt(req.query.pageSize) || 10;
-
 
     logger.debug(items.length);
     logger.debug(page);
