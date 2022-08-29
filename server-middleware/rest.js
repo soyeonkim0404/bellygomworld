@@ -22,6 +22,11 @@ logger.level = "debug";
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use((req, res, next) => {
+  req.queryData = url.parse(req.url, true).query;
+  next();
+});
+
 app.get("/", (req, res, next) => {
   try {
     logger.debug(
