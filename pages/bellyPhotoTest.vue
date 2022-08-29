@@ -545,7 +545,7 @@ export default {
       for (const [key, value] of Object.entries(this.filter)) {
         filter[key] = value.selected.join();
       }
-      console.log(process.env.VUE_API_URL, process.env.BASE_URL)
+      console.log(process.env.VUE_API_URL, process.env.BASE_URL);
       const { data: response } = await this.$axios.get(`/apiBellyPhoto`, {
         params: {
           ...filter,
@@ -553,6 +553,7 @@ export default {
           keyword: this.keyword,
           page: this.page,
           pageSize: this.pageSize,
+          id: ["0001", "0011", "0002"].join(),
         },
       });
       this.pager = response.pager;
