@@ -8,6 +8,7 @@ const store = () => new Vuex.Store({
     connect: 'no-connect',
     myNftData: [],
     data: [],
+    klaytnAddress: '',
     nftTokenIdArray: [],
     filter: {
       Background: {
@@ -337,7 +338,10 @@ const store = () => new Vuex.Store({
       return state.pageSize;
     },
     getData(state) {
-      return state.data
+      return state.data;
+    },
+    getKlaytnAddress(state) {
+      return state.klaytnAddress;
     }
   },
   mutations: {
@@ -378,6 +382,9 @@ const store = () => new Vuex.Store({
     },
     setNftTokenIdArray(state,payload)  {
       state.setNftTokenIdArray = payload;
+    },
+    setKlaytnAddress(state,payload) {
+      state.klaytnAddress = payload;
     }
   },
   actions: {
@@ -423,17 +430,22 @@ const store = () => new Vuex.Store({
         return response.pageOfItems
     },
     async fetchMyWallet({commit,dispatch}) {
+
+      if (window.klaytn.networkVersion === undefined || window.klaytn.networkVersion==='loading') {
+        window.location.reload();
+        location.reload();
+        return;
+      }
       const klaytn = window.klaytn; //크롬에 깔린 카이카스 확장프로그램 안에는 klaytn 이 내장되어있다.
       const accounts = await klaytn.enable(); //카이카스 로그인
+
       let nftTokenIdArray = [];
       const contractInstance = window.caver.contract.create(myNft, "0x141637b601d0fc907c0acb8ae5060ee22bb7b3f6"); //컨트렉트 매니저 객체 생성
       let countNFT = await contractInstance.methods.balanceOf(klaytn.selectedAddress).call()
       for (let i = 0; i < countNFT; i++){
         nftTokenIdArray.push(await contractInstance.methods.tokenOfOwnerByIndex(klaytn.selectedAddress, i).call());
       }
-
       console.log('nftTokenIdArray',nftTokenIdArray);
-
       try {
         const response = await dispatch('fetchMyNft')
         const myNftArray = [];
@@ -445,7 +457,8 @@ const store = () => new Vuex.Store({
             }
           }));
         })
-
+        console.log('klaytn.selectedAddress',klaytn.selectedAddress)
+        commit('setKlaytnAddress',klaytn.selectedAddress);
         commit('setNftTokenIdArray',nftTokenIdArray);
         console.log('마이nft데이터',myNftArray)
         commit('setMyNftData',myNftArray);

@@ -86,7 +86,7 @@
             <!-- nft 커넥트 후 - no data -->
             <button class="connect-wallet" @click="$store.dispatch('callMyNftData')">
               <img src="@/assets/images/ic-kaikas.svg" />
-              OXA89...664
+              {{ $store.getters.getKlaytnAddress }}
             </button>
             <template v-if="$store.getters.getMyNftData === []">
               <div class="no-nft">
