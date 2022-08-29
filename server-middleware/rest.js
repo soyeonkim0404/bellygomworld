@@ -78,6 +78,7 @@ app.get("/", (req, res, next) => {
 
   const pager = paginate(items.length, page, pageSize);
   const pageOfItems = items.slice(pager.startIndex, pager.endIndex + 1);
+  logger.debug(pager);
   return res.json({
     pager,
     pageOfItems: pager.totalPages < page ? [] : pageOfItems,
