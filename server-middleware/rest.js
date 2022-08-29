@@ -34,7 +34,6 @@ app.get("/", (req, res, next) => {
       "----------------------------------------------------------------------------------------------------------------"
     );
     logger.debug({ query: req.query });
-    logger.debug({ queryData: req.queryData });
 
     // filter
     const filter = {};
@@ -75,10 +74,6 @@ app.get("/", (req, res, next) => {
 
     const page = parseInt(req.queryData.page) || 1;
     const pageSize = parseInt(req.queryData.pageSize) || 10;
-
-    logger.debug(items.length);
-    logger.debug(page);
-    logger.debug(pageSize);
 
     const pager = paginate(items.length, page, pageSize);
     const pageOfItems = items.slice(pager.startIndex, pager.endIndex + 1);
