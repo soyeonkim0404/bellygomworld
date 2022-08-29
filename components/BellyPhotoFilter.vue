@@ -30,7 +30,7 @@
 <script>
 export default {
   name: "BellyPhotoFilter",
-  props: ["list", "filterChkList"],
+  props: ["list"],
   data() {
     return {
       onContent: [],
@@ -52,7 +52,7 @@ export default {
     },
     changeInput() {
       this.$emit("change");
-    }
+    },
   },
 };
 </script>
