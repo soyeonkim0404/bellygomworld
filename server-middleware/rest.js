@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use((req, res, next) => {
   req.queryData = url.parse(req.url, true).query;
-  logger.debug({ queryData: req.queryData });
+  logger.debug({ queryDat2a: url.parse(req.url, true).query.Background });
   next();
 });
 
@@ -39,6 +39,7 @@ app.get("/", (req, res, next) => {
     // filter
     const filter = {};
     for (const [key, value] of Object.entries(req.queryData)) {
+      logger.debug(key);
       if (["page", "pageSize", "keyword", "orderBy"].includes(key)) continue;
       if (value === "") continue;
       filter[key] = value.split(",");
