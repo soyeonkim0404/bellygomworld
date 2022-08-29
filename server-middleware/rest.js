@@ -1,6 +1,6 @@
 import paginate from "jw-paginate";
 const log4js = require("log4js");
-
+const url = require("url");
 log4js.configure({
   appenders: { cheese: { type: "file", filename: "cheese.log" } },
   categories: { default: { appenders: ["cheese"], level: "debug" } },
@@ -8,7 +8,7 @@ log4js.configure({
 
 const logger = log4js.getLogger("cheese");
 
-const data = require('./testData.json');
+const data = require("./testData.json");
 const express = require("express");
 const app = express();
 
@@ -22,12 +22,12 @@ logger.level = "debug";
 
 app.get("/", (req, res, next) => {
   try {
+    req.query = url.parse(req.url, true).query;
+    logger.debug(
+      "----------------------------------------------------------------------------------------------------------------"
+    );
+    logger.debug({ query: req.query });
 
-
-    logger.debug('----------------------------------------------------------------------------------------------------------------');
-    logger.debug({'req':req});
-    logger.debug({'query':req.query});
-    logger.debug(data.length);
     // filter
     const filter = {};
     for (const [key, value] of Object.entries(req.query)) {
@@ -35,7 +35,7 @@ app.get("/", (req, res, next) => {
       if (value === "") continue;
       filter[key] = value.split(",");
     }
-    logger.debug({'filter':filter})
+    logger.debug({ filter: filter });
     let items = data.filter((a) => {
       const val = [];
       for (const [key, value] of Object.entries(filter)) {
@@ -43,8 +43,6 @@ app.get("/", (req, res, next) => {
       }
       return !val.includes(false);
     });
-
-    logger.debug(items[0]?.name);
 
     // orderBy
     function compare(a, b) {
@@ -59,16 +57,12 @@ app.get("/", (req, res, next) => {
       items.reverse();
     }
 
-    logger.debug({keyword:req.query.keyword});
-
     // keyword
-    if (req.query.keyword){
+    if (req.query.keyword) {
       items = items.filter((a) => {
         return a.name.includes(req.query.keyword);
       });
     }
-
-    logger.debug(req.query);
 
     const page = parseInt(req.query.page) || 1;
     const pageSize = parseInt(req.query.pageSize) || 10;
@@ -79,7 +73,7 @@ app.get("/", (req, res, next) => {
 
     const pager = paginate(items.length, page, pageSize);
     const pageOfItems = items.slice(pager.startIndex, pager.endIndex + 1);
-    logger.debug({pager:pager});
+    logger.debug({ pager: pager });
     return res.json({
       pager,
       pageOfItems: pager.totalPages < page ? [] : pageOfItems,
