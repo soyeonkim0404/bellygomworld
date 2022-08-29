@@ -413,12 +413,12 @@ export default {
       selectValue: "",
       orderBy: {
         list: [
-          { value: "1", kor: "랭킹 순", eng: "Highest Rank"},
+          { value: "1", kor: "랭킹 순", eng: "Highest Rank" },
           { value: "2", kor: "랭킹 역순", eng: "Lowest Rank" },
           { value: "3", kor: "번호 순", eng: "Ascending" },
           { value: "4", kor: "번호 역순", eng: "Descending" },
         ],
-        selected: { value: "1", kor: "랭킹 순", eng: "Highest Rank"},
+        selected: "1",
       },
       /*-----------------*/
       filter: {
@@ -624,8 +624,8 @@ export default {
             "Blonde Wavy Hair",
             "Bloned Hair",
             "Bobbed Hair",
-            "Combination Hair",-
-            "Gashina Hair",
+            "Combination Hair",
+            -"Gashina Hair",
             "Half Bun Hair",
             "Heroine Hair",
             "LALALAY Twin tails",
@@ -784,9 +784,9 @@ export default {
       this.$nuxt.$emit("closeFilter");
     },
     formatToPrice(value) {
-      const num = Number(value).toFixed(0)
+      const num = Number(value).toFixed(0);
       return `${Number(num).toLocaleString()}`;
-    }
+    },
   },
   mounted() {
     window.addEventListener("scroll", this.infiniteHandler);

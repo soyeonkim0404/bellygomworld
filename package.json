@@ -27,6 +27,7 @@
     "fullpage.js": "3.1.2",
     "gsap": "^3.10.4",
     "jw-paginate": "^1.0.4",
+    "log4js": "^6.6.1",
     "nuxt": "^2.15.8",
     "nuxt-fullpage.js": "0.0.3",
     "nuxt-mq": "^2.0.2",
