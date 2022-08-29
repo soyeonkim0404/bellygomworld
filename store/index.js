@@ -427,7 +427,6 @@ const store = () =>
         try {
           const klaytn = window.klaytn; //크롬에 깔린 카이카스 확장프로그램 안에는 klaytn 이 내장되어있다.
           const accounts = await klaytn.enable(); //카이카스 로그인
-
           let nftTokenIdArray = [];
           const contractInstance = window.caver.contract.create(
             myNft,
@@ -443,24 +442,11 @@ const store = () =>
                 .call()
             );
           }
-          console.log("nftTokenIdArray", nftTokenIdArray);
 
-          // const response = await dispatch("fetchMyNft");
-          // const myNftArray = [];
-          // console.log("아이디", nftTokenIdArray);
-          // console.log("response", response[0].id);
-          // nftTokenIdArray.forEach((item) => {
-          //   myNftArray.push(
-          //     response.filter((e) => {
-          //       if (e.id) {
-          //         return e.id == item.padStart(4, "0");
-          //       }
-          //     })[0]
-          //   );
-          // });
           nftTokenIdArray = nftTokenIdArray.map((el) => {
             return el.padStart(4, "0");
           });
+          console.log("mynft", nftTokenIdArray);
           commit("setKlaytnAddress", klaytn.selectedAddress);
           commit("setMyNft", nftTokenIdArray);
           commit("setConnect");
@@ -478,6 +464,8 @@ const store = () =>
         } else {
           if (window.confirm("지갑연결을 하시겠습니까?")) {
             try {
+              commit("resetData");
+              commit("resetPage");
               dispatch("fetchMyWallet");
             } catch (err) {
               console.log(err);

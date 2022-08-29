@@ -28,26 +28,14 @@
       <div class="section2">
         <div class="top">
           <div class="total">
-            <template v-if="!this.myNFT">
-              <span>
-                <animated-number
-                  :value="$store.getters.getPager.totalItems || 0"
-                  :duration="500"
-                  :formatValue="formatToPrice"
-                />
-              </span>
-              Items
-            </template>
-            <template v-else>
-              <span>
-                <animated-number
-                  :value="$store.getters.getMyNftData.length"
-                  :duration="500"
-                  :formatValue="formatToPrice"
-                />
-              </span>
-              Items
-            </template>
+            <span>
+              <animated-number
+                :value="$store.getters.getPager.totalItems || 0"
+                :duration="500"
+                :formatValue="formatToPrice"
+              />
+            </span>
+            Items
           </div>
           <div class="sort">
             <div class="toggle" v-if="$mq === 'pc'">
@@ -740,7 +728,11 @@ export default {
       this.page = 1;*/
       this.$store.commit("resetData");
       this.$store.commit("resetPage");
-      this.$fetch();
+      if (this.myNft) {
+        this.$fetch();
+      } else {
+        this.$store.dispatch("fetchMyWallet");
+      }
     },
     refreshFetch() {
       for (const [key, value] of Object.entries(
@@ -755,6 +747,13 @@ export default {
     },
     toggleNFT() {
       this.myNFT = !this.myNFT;
+      if (this.myNFT) {
+        if (this.$store.state.klaytnAddress !== "") {
+          this.findMyNFT();
+        }
+      } else {
+        this.$fetch();
+      }
     },
     detailNft(item) {
       this.modalShow = true;
