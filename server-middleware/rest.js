@@ -1,7 +1,9 @@
 import paginate from "jw-paginate";
+const log4js = require("log4js");
+const logger = log4js.getLogger();
+
 
 const data = require('./testData.json');
-
 const express = require("express");
 const app = express();
 
@@ -11,8 +13,11 @@ data.forEach((item) => {
   });
 });
 
+
+logger.level = "debug";
+
 app.get("/", (req, res, next) => {
-  console.log(data.length)
+  logger.debug(data.length);
   // filter
   const filter = {};
   for (const [key, value] of Object.entries(req.query)) {
