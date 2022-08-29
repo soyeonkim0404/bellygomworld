@@ -19,10 +19,11 @@ data.forEach((item) => {
 });
 
 logger.level = "debug";
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res, next) => {
   try {
-    req.query = url.parse(req.url, true).query;
     logger.debug(
       "----------------------------------------------------------------------------------------------------------------"
     );
