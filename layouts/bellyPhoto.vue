@@ -2,7 +2,7 @@
   <div id="app" :class="$mq" class="belly-photo">
     <Header v-if="$mq === 'pc'" />
     <MobileHeader v-else />
-    <a href="#getBelly" class="top-btn" @click="topBtn">
+    <a href="#" class="top-btn" @click="topBtn">
       <img src="@/assets/images/top_btn.svg" />
     </a>
     <Nuxt />
@@ -16,7 +16,8 @@ export default {
     window.addEventListener("scroll", this.topBtnShow);
   },
   methods: {
-    topBtn() {
+    topBtn(e) {
+      e.preventDefault();
       window.scrollTo({ top: 0, behavior: "smooth" });
     },
     topBtnShow() {
