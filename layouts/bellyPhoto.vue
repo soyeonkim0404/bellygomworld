@@ -74,6 +74,7 @@ export default {
     height: 88px;
     border-radius: 100%;
     opacity: 0;
+    z-index: 1000;
   }
   .mobile & {
     position: fixed;

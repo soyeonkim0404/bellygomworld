@@ -613,7 +613,6 @@ export default {
       document.body.style.overflow = "hidden";
     },
     mbModalDone() {
-      const filter = {};
       this.mbFilterShow = false;
     },
     mbModalClose() {
@@ -625,9 +624,9 @@ export default {
       document.body.style.overflow = "";
     },
     mbFilter() {
-      for (const [key, value] of Object.entries(this.filter)) {
+      /*      for (const [key, value] of Object.entries(this.filter)) {
         value.selected = [];
-      }
+      }*/
       this.mbFilterShow = true;
     },
     resetFilter() {

@@ -18,6 +18,8 @@ const express = require("express");
 const app = express();
 
 data.forEach((item) => {
+  /*  let value = item.name.subString(item.name.indexOf("#") + 1);
+  item.push(`'id': ${value}`);*/
   item.attributes.forEach((attr) => {
     item[attr.trait_type] = attr.value;
   });

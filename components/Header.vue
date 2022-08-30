@@ -329,7 +329,8 @@ export default {
   },
 
   mounted() {
-    if (this.$store.state.connect) {
+    let connect = this.getCookie("b_connect");
+    if (connect && connect === "YES" && this.$store.state.connect) {
       this.$store.commit("setConnect");
     } else {
       this.$store.commit("setNoConnect");
