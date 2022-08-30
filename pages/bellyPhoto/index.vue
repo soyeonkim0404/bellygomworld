@@ -629,10 +629,6 @@ export default {
       }*/
       this.mbFilterShow = true;
     },
-    resetFilter() {
-      this.filterChkList = [];
-      this.$nuxt.$emit("closeFilter");
-    },
     formatToPrice(value) {
       const num = Number(value).toFixed(0);
       return `${Number(num).toLocaleString()}`;

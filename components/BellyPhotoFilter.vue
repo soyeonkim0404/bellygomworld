@@ -4,12 +4,17 @@
       <li class="item" v-for="(value, name, index) in list" :key="index">
         <button
           :class="{ title: true, active: onContent.some((el) => index === el) }"
+          @click="openCon(index, value)"
           ref="btn"
-          @click="openCon(index)"
         >
           {{ name }}
         </button>
-        <div class="contents" v-if="onContent.some((el) => index === el)">
+        <div
+          class="contents"
+          v-if="
+            onContent.some((el) => index === el) || value.selected.length > 0
+          "
+        >
           <ul class="check-list">
             <li v-for="check in value.list" :key="check">
               <InputCheckbox
@@ -45,10 +50,10 @@ export default {
   methods: {
     openCon(index) {
       const findIndex = this.onContent.findIndex((el) => el === index);
-      if (findIndex !== -1) {
-        this.onContent.splice(findIndex, 1);
-      } else {
+      if (findIndex === -1) {
         this.onContent.push(index);
+      } else {
+        this.onContent.splice(findIndex, 1);
       }
     },
     changeInput() {
