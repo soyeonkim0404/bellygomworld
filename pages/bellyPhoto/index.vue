@@ -4,25 +4,18 @@
     <div class="contents">
       <div class="section1">
         <InputSearch
-            v-model="keyword"
-            placeholder="Number"
-            @input="resetFetch"
+          v-model="keyword"
+          placeholder="Number"
+          @input="resetFetch"
         />
         <div class="filter" v-if="$mq === 'pc'">
           <div class="con-title">
             Filter
-            <button type="button"
-                    class="btn-reset"
-                    @click="refreshFetch"
-            ><!--resetFilter-->
+            <button type="button" class="btn-reset" @click="refreshFetch">
               <img src="@/assets/images/ic_reset.svg" alt="" />
             </button>
           </div>
-          <BellyPhotoFilter
-              :list="filter"
-              :filterChkList="filterChkList"
-              @change="resetFetch"
-          />
+          <BellyPhotoFilter :list="filter" @change="resetFetch" />
         </div>
         <button class="mobile-filter" v-if="$mq === 'mobile'" @click="mbFilter">
           <img src="@/assets/images/ic-mobile-filter.svg" alt="" />
@@ -30,14 +23,16 @@
       </div>
       <div class="section2">
         <div class="top">
-
-          <div class="total"><span>
-                <animated-number
-                    :value="pager.totalItems || 0"
-                    :duration="500"
-                    :formatValue="formatToPrice"
-                />
-          </span> Items</div>
+          <div class="total">
+            <span>
+              <animated-number
+                :value="pager.totalItems || 0"
+                :duration="500"
+                :formatValue="formatToPrice"
+              />
+            </span>
+            Items
+          </div>
           <div class="sort">
             <div class="toggle" v-if="$mq === 'pc'">
               <span>MY NFTs</span>
@@ -48,30 +43,45 @@
             </div>
             <div class="select">
               <SelectBox
-                  :items="orderBy.list"
-                  :default="orderBy.list[0]"
-                  @change="resetFetch"
-                  v-model="orderBy.selected"
+                :items="orderBy.list"
+                :default="orderBy.list[0]"
+                @change="resetFetch"
+                v-model="orderBy.selected"
               />
             </div>
           </div>
         </div>
-        <template v-if="myNFT">
-          <!--my nft 토글 on :: 지갑연결이 안되어 있을 경우-->
-          <div class="photo-box">
-            <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
-              Please, Connect Kaikas wallet to see your Bellygom NFTs.
-            </p>
-            <p class="desc" v-else>
-              보유 중인 벨리곰 NFT를 확인하려면 카이카스 지갑 연동이 필요해요!
-            </p>
-            <button class="btn-wallet">CONNECT WALLET</button>
-          </div>
-          <!--my nft 토글 on :: nft 노 존재-->
-          <button class="connect-wallet">
-            <img src="@/assets/images/ic-kaikas.svg" />
-            OXA89...664
-          </button>
+
+        <button
+          v-if="$store.state.connect === 'is-connect' && myNFT"
+          class="connect-wallet"
+          @click="$store.dispatch('callMyNftData')"
+        >
+          <img src="@/assets/images/ic-kaikas.svg" alt="kaikas" />
+          <span class="first">{{ $store.state.klaytnAddress }}</span>
+          <span class="last">{{ $store.state.klaytnAddressLast }}</span>
+        </button>
+
+        <!-- 지갑연동 버튼// -->
+        <div
+          v-if="myNFT && $store.state.connect !== 'is-connect'"
+          class="photo-box"
+        >
+          <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
+            Please, Connect Kaikas wallet to see your Bellygom NFTs.
+          </p>
+          <p class="desc" v-else>
+            보유 중인 벨리곰 NFT를 확인하려면 카이카스 지갑 연동이 필요해요!
+          </p>
+          <button class="btn-wallet" @click="findMyNFT">CONNECT WALLET</button>
+        </div>
+        <!-- //지갑연동 버튼 -->
+
+        <!-- My NFT 없음// -->
+        <div
+          v-else-if="myNFT && $store.state.myNft.length === 0"
+          class="no-nft"
+        >
           <div class="photo-box">
             <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
               You don’t have any Bellygom NFT.
@@ -87,42 +97,41 @@
               on OpenSea</a
             >
           </div>
-        </template>
-        <template v-else>
-          <template v-if="photoList.length === 0">
-            <!--미 검색시 -->
-            <div class="photo-box">
-              <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
-                No Matching Bellygom Found.
-              </p>
-              <p class="desc" v-else>
-                검색하신 조건의 벨리곰NFT를 찾지 못했습니다.
-              </p>
-            </div>
-          </template>
-          <template v-else>
-              <transition-group
-                  name="photo"
-                  class="photo"
-                  tag="ul"
+        </div>
+        <!-- //My NFT 없음 -->
 
-              >
-                <li
-                    v-for="(item) in data"
-                    :key="item.id"
-                    class="item"
-                    @click="detailNft(item)"
-                >
-                  <span class="lank">Rank {{ item.rank }}</span>
-                  <span class="image">
-                  <img :src="item.image" :alt="item.id" />
-                </span>
-                  <span class="info">Bellygom #{{ item.id }}</span>
-                  <span class="border" v-if="$mq === 'pc'"></span>
-                </li>
-              </transition-group>
-          </template>
+        <!-- list// -->
+        <template v-else-if="data.length">
+          <transition-group name="photo" class="photo" tag="ul">
+            <li
+              v-for="item in data"
+              :key="item.id"
+              class="photo-item"
+              @click="detailNft(item)"
+            >
+              <span class="rank">Rank {{ item.rank }}</span>
+              <span class="image">
+                <img :src="item.image" :alt="item.id" />
+              </span>
+              <span class="info">Bellygom #{{ item.id }}</span>
+              <span class="border" v-if="$mq === 'pc'"></span>
+            </li>
+          </transition-group>
         </template>
+        <!-- //list -->
+
+        <!-- no-data// -->
+        <template v-else>
+          <div class="photo-box">
+            <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
+              No Matching Bellygom Found.
+            </p>
+            <p class="desc" v-else>
+              검색하신 조건의 벨리곰NFT를 찾지 못했습니다.
+            </p>
+          </div>
+        </template>
+        <!-- //no-data -->
       </div>
     </div>
 
@@ -138,7 +147,7 @@
       <div slot="body">
         <div class="inner">
           <div class="nft-thumb">
-            <img src="@/assets/images/belly-photo-detail.svg" class="thumb" />
+            <img :src="detailNftInfo.image" class="thumb" />
             <div class="button-wrap">
               <button class="btn-opensea">
                 <i class="icon" />
@@ -149,17 +158,17 @@
           <div class="nft-info">
             <div class="top">
               <span :class="`flag-${modalSeq.flag}`">{{ modalSeq.flag }}</span>
-              <div class="nft-title">Bellygom #{{ modalSeq.nft }}</div>
+              <div class="nft-title">Bellygom #{{ detailNftInfo.id }}</div>
             </div>
             <div class="contents">
               <div class="number">
                 <div class="col">
                   <span class="tit">Ranking</span>
-                  <span class="data">{{ modalSeq.lank }}</span>
+                  <span class="data">{{ detailNftInfo.rank }}</span>
                 </div>
                 <div class="col">
                   <span class="tit">Score</span>
-                  <span class="data">7777</span>
+                  <span class="data">{{ detailNftInfo.score }}</span>
                 </div>
               </div>
               <div class="property">
@@ -167,27 +176,27 @@
                 <ul class="list">
                   <li>
                     <span class="sub">Background</span>
-                    <span class="desc">Ice Mountain Nature</span>
+                    <span class="desc">{{ detailNftInfo.Background }}</span>
                   </li>
                   <li>
                     <span class="sub">Body</span>
-                    <span class="desc">Aluminium Steel</span>
+                    <span class="desc">{{ detailNftInfo.Body }}</span>
                   </li>
                   <li>
                     <span class="sub">Clothes</span>
-                    <span class="desc">Black White Print Tshirt</span>
+                    <span class="desc">{{ detailNftInfo.Dress }}</span>
                   </li>
                   <li>
-                    <span class="sub">Background</span>
-                    <span class="desc">Ice Mountain Nature</span>
+                    <span class="sub">Head</span>
+                    <span class="desc">{{ detailNftInfo.Head }}</span>
                   </li>
                   <li>
-                    <span class="sub">Body</span>
-                    <span class="desc">Aluminium Steel</span>
+                    <span class="sub">Acc</span>
+                    <span class="desc">{{ detailNftInfo.Necklace }}</span>
                   </li>
                   <li>
-                    <span class="sub">Clothes</span>
-                    <span class="desc">Black White Print Tshirt</span>
+                    <span class="sub">Special</span>
+                    <span class="desc">Shower robe green</span>
                   </li>
                 </ul>
               </div>
@@ -198,19 +207,19 @@
       <div slot="footer"></div>
     </modal>
 
-    <modal v-if="mbFilterShow" @close="mbFilterHide" class="mobile-filter">
+    <modal v-if="mbFilterShow" @close="mbModalClose" class="mobile-filter">
       <div slot="header">
         <div class="modal-title">Filter</div>
       </div>
       <div slot="body">
-        <BellyPhotoFilter :list="filterList" :filterChkList="filterChkList" />
+        <BellyPhotoFilter :list="filter" @change="resetFetch" />
       </div>
       <div slot="footer">
         <div class="fix-wrap">
           <button class="reset" @click="resetFilter">
             <img src="@/assets/images/ic_24_refresh_w.svg" />
           </button>
-          <button class="btn-done">DONE</button>
+          <button class="btn-done" @click="mbModalDone">DONE</button>
         </div>
       </div>
     </modal>
@@ -219,6 +228,7 @@
 
 <script>
 import AnimatedNumber from "animated-number-vue";
+import myNft from "@/server-middleware/myNft.json";
 export default {
   name: "bellyPhoto",
   layout: "bellyPhoto",
@@ -230,146 +240,20 @@ export default {
       kaikas: "0x7c6C70AB930E5637f5F862629A67D47C3403cC34",
       modalShow: false,
       mbFilterShow: false,
+      connectNft: false,
       keyword: "",
       myNFT: false,
-      filterList: [
-        {
-          title: "Background",
-          list: [
-            {
-              value: "Color",
-            },
-            {
-              value: "Nature",
-            },
-            {
-              value: "Urban",
-            },
-            {
-              value: "Space",
-            },
-            {
-              value: "Fantasy",
-            },
-            {
-              value: "Aura",
-            },
-          ],
-        },
-        {
-          title: "Body",
-          list: [
-            {
-              value: "Animal Print",
-            },
-            {
-              value: "Steel",
-            },
-            {
-              value: "Cyborg",
-            },
-            {
-              value: "Jewel",
-            },
-            {
-              value: "Golden",
-            },
-          ],
-        },
-        {
-          title: "Clothes",
-          list: [
-            { value: "Category0000" },
-            { value: "Category0001" },
-            { value: "Hot heart sunglasses" },
-            { value: "Category0003" },
-            { value: "Category0004" },
-            { value: "Category0005" },
-            { value: "Category0006" },
-            { value: "Category0007" },
-            { value: "Category0008" },
-            { value: "Category0009" },
-            { value: "Category0010" },
-            { value: "Category0011" },
-            { value: "Category0012" },
-          ],
-        },
-        {
-          title: "Test0000",
-          list: [
-            {
-              value: "test1",
-            },
-            {
-              value: "test2",
-            },
-            {
-              value: "test3",
-            },
-          ],
-        },
-      ],
       filterChkList: [],
-      photoList: [
-        {
-          id: 1,
-          lank: 10000,
-          nft: "9999",
-          flag: "Mega",
-        },
-        {
-          id: 2,
-          lank: 9999,
-          nft: "8888",
-          flag: "Belly",
-        },
-        {
-          id: 3,
-          lank: 1,
-          nft: "1234",
-          flag: "Holic",
-        },
-        {
-          id: 4,
-          lank: 100,
-          nft: "4985",
-          flag: "Super",
-        },
-        {
-          id: 5,
-          lank: 99,
-          nft: "2945",
-          flag: "Surprise",
-        },
-        {
-          id: 6,
-          lank: 34,
-          nft: "2367",
-          flag: "Friends",
-        },
-        {
-          id: 7,
-          lank: 3,
-          nft: "0987",
-          flag: "Friends",
-        },
-        {
-          id: 8,
-          lank: 980,
-          nft: "3380",
-          flag: "Holic",
-        },
-      ],
       modalSeq: "",
-      selectValue: "",
+
       orderBy: {
         list: [
-          { value: "1", kor: "랭킹 순", eng: "Highest Rank"},
+          { value: "1", kor: "랭킹 순", eng: "Highest Rank" },
           { value: "2", kor: "랭킹 역순", eng: "Lowest Rank" },
           { value: "3", kor: "번호 순", eng: "Ascending" },
           { value: "4", kor: "번호 역순", eng: "Descending" },
         ],
-        selected: { value: "1", kor: "랭킹 순", eng: "Highest Rank"},
+        selected: "1",
       },
       /*-----------------*/
       filter: {
@@ -576,7 +460,7 @@ export default {
             "Bloned Hair",
             "Bobbed Hair",
             "Combination Hair",
-            "Gashina Hair",
+            -"Gashina Hair",
             "Half Bun Hair",
             "Heroine Hair",
             "LALALAY Twin tails",
@@ -662,6 +546,8 @@ export default {
       pager: {},
       pageSize: 40,
       loading: false,
+      detailNftInfo: {},
+      myNftId: [],
     };
   },
   fetchDelay: 0,
@@ -671,6 +557,7 @@ export default {
       for (const [key, value] of Object.entries(this.filter)) {
         filter[key] = value.selected.join();
       }
+      console.log(" this.$store.state.myNft", this.$store.state.myNft);
       const { data: response } = await this.$axios.get("/apiBellyPhoto", {
         params: {
           ...filter,
@@ -678,9 +565,9 @@ export default {
           keyword: this.keyword,
           page: this.page,
           pageSize: this.pageSize,
+          id: this.myNFT ? this.$store.state.myNft.join() : "All",
         },
       });
-      console.log(response)
       this.pager = response.pager;
       this.data = this.data.concat(response.pageOfItems);
       this.page++;
@@ -688,7 +575,19 @@ export default {
       console.log(e);
     }
   },
+  watch: {
+    // myNFT: (val) => {
+    //   console.log(val)
+    //   if (!val) {
+    //     this.resetFetch();
+    //   }
+    // },
+  },
   methods: {
+    async findMyNFT() {
+      await this.$store.dispatch("callMyNftData");
+      await this.resetFetch();
+    },
     infiniteHandler() {
       if (this.pager.totalPages <= this.page) return;
       const contentHeight = document.querySelector("#app").offsetHeight;
@@ -703,29 +602,33 @@ export default {
       this.$fetch();
     },
     refreshFetch() {
-      console.log('리프레시')
       for (const [key, value] of Object.entries(this.filter)) {
         value.selected = [];
       }
-      console.log(this.filter)
-      this.data = [];
-      this.page = 1;
-      this.$fetch();
+      this.resetFetch();
+      this.$nuxt.$emit("closeFilter");
     },
     toggleNFT() {
       this.myNFT = !this.myNFT;
+      this.resetFetch();
     },
     detailNft(item) {
       this.modalShow = true;
       this.modalSeq = item;
+      this.detailNftInfo = item;
+      console.log("디테일", this.detailNftInfo);
       document.body.style.overflow = "hidden";
+    },
+    mbModalDone() {
+      this.mbFilterShow = false;
+    },
+    mbModalClose() {
+      this.refreshFetch();
+      this.mbFilterShow = false;
     },
     modalHide() {
       this.modalShow = false;
       document.body.style.overflow = "";
-    },
-    mbFilterHide() {
-      this.mbFilterShow = false;
     },
     mbFilter() {
       this.mbFilterShow = true;
@@ -735,7 +638,8 @@ export default {
       this.$nuxt.$emit("closeFilter");
     },
     formatToPrice(value) {
-      return `${value.toFixed(0)}`;
+      const num = Number(value).toFixed(0);
+      return `${Number(num).toLocaleString()}`;
     },
   },
   mounted() {
@@ -903,7 +807,7 @@ export default {
         gap: 24px;
         margin-top: 20px;
         overflow: auto;
-        .item {
+        .photo-item {
           flex-direction: column;
           -webkit-box-pack: justify;
           justify-content: space-between;
@@ -913,15 +817,16 @@ export default {
           overflow: hidden;
           background: #fff;
           box-sizing: border-box;
+          opacity: 1;
           transition: 0.35s ease-in;
-          &.photo-enter,
-          &.photo-leave-to {
+          .photo-enter,
+          .photo-leave-to {
             opacity: 0;
           }
-          &.photo-leave-to {
-            transition-duration: 0s;
+          .photo-leave-to {
+            transition: 0.35s ease-in;
           }
-          .lank {
+          .rank {
             font-family: "Sandoll Odongtong", sans-serif;
             font-style: normal;
             font-weight: 400;
@@ -1116,12 +1021,28 @@ export default {
 }
 
 .connect-wallet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   width: 208px;
   height: 52px;
   background: #fff;
   border-radius: 25px;
   margin-top: 20px;
+  span {
+    display: inline-block;
+    font-family: "Sandoll GothicNeoRound", sans-serif;
+    font-size: 18px;
+    &.first {
+      width: 95px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    &.last {
+    }
+  }
   img {
     width: 20px;
     height: 20px;

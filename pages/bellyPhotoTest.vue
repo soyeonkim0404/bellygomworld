@@ -540,22 +540,22 @@ export default {
   },
   async fetch() {
     try {
-      console.log(1);
       this.loading = true;
       const filter = {};
       for (const [key, value] of Object.entries(this.filter)) {
         filter[key] = value.selected.join();
       }
-      const { data: response } = await this.$axios.get("/apiBellyPhoto", {
+      console.log(process.env.VUE_API_URL, process.env.BASE_URL);
+      const { data: response } = await this.$axios.get(`/apiBellyPhoto`, {
         params: {
           ...filter,
           orderBy: this.orderBy.selected,
           keyword: this.keyword,
           page: this.page,
           pageSize: this.pageSize,
+          id: ["0001", "0011", "0002"].join(),
         },
       });
-      console.log(response)
       this.pager = response.pager;
       this.data = this.data.concat(response.pageOfItems);
       this.page++;

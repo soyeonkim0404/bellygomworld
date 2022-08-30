@@ -2,6 +2,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   env: {
     VUE_API_URL: process.env.VUE_API_URL,
+    BASE_URL: process.env.BASE_URL,
   },
   head: {
     title: "BELLYGOM",
@@ -139,6 +140,8 @@ export default {
   ],
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
+  ssr: true,
+  target: 'server',
   serverMiddleware: [
     { path: "/apiBellyPhoto", handler: "~/server-middleware/rest.js" },
   ],
@@ -208,7 +211,7 @@ export default {
   /*eslint false*/
   lintOnSave: false,
   server: {
-    host: "0.0.0.0",
+    //host: "0.0.0.0",
   },
   chainWebpack: (config) => {
     config.module

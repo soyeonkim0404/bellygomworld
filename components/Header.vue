@@ -55,8 +55,8 @@
       </ul>
       <div class="etc-link">
         <ul class="sns">
-          <li class="link0" :class="{ active: isConnect }">
-            <button @click="connectKaikas()">지갑연결</button>
+          <li class="link0" :class="{ 'active': $store.getters.getConnect === 'is-connect' }">
+            <button @click="$store.dispatch('callMyNftData')">지갑연결</button>
           </li>
           <li class="link1" @click="sendGaEvent('gnb_shop', 'GNB')">
             <a href="https://bellygom.com/" target="_blank"></a>
@@ -327,6 +327,14 @@ export default {
       .substring(0, 2);
     return { lang: browserLang };
   },
+  mounted() {
+
+    if (this.$store.getters.getConnect === "is-connect") {
+      this.$store.commit("setConnect");
+    } else {
+      this.$store.commit("setNoConnect");
+    }
+  },
   methods: {
     faqModal() {
       this.faqShow = true;
@@ -353,37 +361,11 @@ export default {
       });
     },
     navClickFc(event) {
-      // siblings.forEach(function (t){
-      //   t.classList.remove('active');
-      // });
       const siblings = event.currentTarget.parentElement.children;
-      console.log(siblings);
       Array.from(siblings).forEach(function (t) {
         t.classList.remove("active");
       });
       event.currentTarget.classList.add("active");
-    },
-    async connectKaikas() {
-      if (this.isConnect) {
-        if (window.confirm("지갑연결을 해제하시겠습니까?")) {
-          this.isConnect = false;
-        }
-      } else {
-        if (window.confirm("지갑연결을 하시겠습니까?")) {
-          try {
-            const klaytn = window.klaytn; //크롬에 깔린 카이카스 확장프로그램 안에는 klaytn 이 내장되어있다.
-            const accounts = await klaytn.enable(); //카이카스 로그인
-            this.isConnect = true;
-          } catch (err) {
-            alert(
-              "Kaikas 지갑이 설치되어 있지 않습니다.\n크롬에서 Kaikas 확장 프로그램을 설치해주세요!"
-            );
-            window.open(
-              "https://chrome.google.com/webstore/detail/kaikas/jblndlipeogpafnldhgmapagcccfchpi"
-            );
-          }
-        }
-      }
     },
   },
 };
@@ -416,7 +398,21 @@ export default {
     align-items: center;
     .anchor-nav {
       li {
+        position: relative;
         display: inline-flex;
+        &:nth-child(4) {
+          margin-left: 61px;
+          &:before {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 20px;
+            background: #333333;
+            opacity: 0.5;
+            left: -30px;
+            top: 8px;
+          }
+        }
         span {
           line-height: 27px;
         }
