@@ -141,7 +141,7 @@ export default {
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
   ssr: true,
-  target: 'server',
+  target: "server",
   serverMiddleware: [
     { path: "/apiBellyPhoto", handler: "~/server-middleware/rest.js" },
   ],
@@ -211,7 +211,7 @@ export default {
   /*eslint false*/
   lintOnSave: false,
   server: {
-    //host: "0.0.0.0",
+    host: "0.0.0.0",
   },
   chainWebpack: (config) => {
     config.module

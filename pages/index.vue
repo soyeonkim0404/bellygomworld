@@ -111,13 +111,19 @@
                       </div>
                     </template>
                   </div>
-                  <button
-                    class="info-btn"
-                    @click="
-                      showInfo();
-                      sendGaEvent('gb_icon', 'GB');
-                    "
-                  />
+                  <div class="info-pop-area">
+                    <button
+                      class="info-btn"
+                      @click="
+                        showInfo();
+                        sendGaEvent('gb_icon', 'GB');
+                      "
+                    />
+                    <img
+                      src="@/assets/images/main/img_get_arrow_motion.svg"
+                      id="arrowMotion"
+                    />
+                  </div>
                   <!--motion object-->
                   <img
                     src="@/assets/images/main/img_get_pinkballoon_motion.svg"
@@ -127,16 +133,12 @@
                     src="@/assets/images/main/img_get_blueballoon_motion.svg"
                     id="blueballoon"
                   />
-                  <img
-                    src="@/assets/images/main/img_get_arrow_motion.svg"
-                    id="arrowMotion"
-                  />
                 </div>
               </div>
               <div class="slide" data-anchor="slide2">
                 <div class="contents">
                   <img
-                    src="@/assets/images/main/getbelly_road_ko_2.jpeg"
+                    src="@/assets/images/main/getbelly&road_ko_2_motion.png"
                     class="roads"
                   />
                   <!--motion object-->
@@ -169,7 +171,7 @@
               <div class="slide" data-anchor="slide3">
                 <div class="contents">
                   <img
-                    src="@/assets/images/main/getbelly_road_ko_3.jpeg"
+                    src="@/assets/images/main/getbelly&road_ko_3_motion.png"
                     class="roads"
                   />
                   <div class="text-con">
@@ -2402,11 +2404,11 @@ export default {
 }
 
 #arrowMotion {
-  width: 1.9%;
+  width: 20%;
   z-index: 9;
   position: absolute;
-  bottom: 25.5%;
-  left: 36.33%;
+  top: 0;
+  left: 43%;
   -webkit-animation: cloud2 1s infinite alternate ease-in-out;
   animation: cloud2 1s infinite alternate ease-in-out;
 }
@@ -2438,8 +2440,8 @@ export default {
   position: absolute;
   top: 35%;
   left: 10%;
-  -webkit-animation: cloud 2s infinite alternate ease-in-out;
-  animation: cloud 2s infinite alternate ease-in-out;
+  -webkit-animation: cloud2 2s infinite alternate ease-in-out;
+  animation: cloud2 2s infinite alternate ease-in-out;
 }
 
 #cloud2 {
@@ -2458,8 +2460,8 @@ export default {
   position: absolute;
   top: 41%;
   left: 53%;
-  -webkit-animation: cloud 2s infinite alternate ease-in-out;
-  animation: cloud 2s infinite alternate ease-in-out;
+  -webkit-animation: cloud2 2s infinite alternate ease-in-out;
+  animation: cloud2 2s infinite alternate ease-in-out;
 }
 
 #cloud4 {
@@ -2555,9 +2557,9 @@ export default {
 
 .cloud-wrapper .obj .l2 {
   position: absolute;
-  width: 1795px;
+  width: 100%;
   right: 0;
-  bottom: -165px;
+  bottom: -10%;
   -webkit-animation: moveUpTo 1.5s infinite alternate linear;
   animation: moveUpTo 1.5s infinite alternate linear;
 }
@@ -2565,7 +2567,7 @@ export default {
   position: absolute;
   width: 100%;
   left: 0;
-  bottom: -190px;
+  bottom: -13%;
   -webkit-animation: moveDownTo 1.5s infinite alternate linear;
   animation: moveDownTo 1.5s infinite alternate linear;
 }
