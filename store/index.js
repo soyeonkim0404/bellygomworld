@@ -72,7 +72,7 @@ const store = () =>
       },
     },
     actions: {
-      async fetchMyWallet({ commit, dispatch }) {
+      async fetchMyWallet({ commit }) {
         if (
           window.klaytn.networkVersion === undefined ||
           window.klaytn.networkVersion === "loading"
@@ -115,14 +115,14 @@ const store = () =>
       async callMyNftData({ commit, getters, dispatch }) {
         if (getters.getConnect === "is-connect") {
           if (window.confirm("지갑연결을 해제하시겠습니까?")) {
-            commit("setNoConnect");
             commit("setMyNft", []);
+            commit("setNoConnect");
           }
         } else {
           if (window.confirm("지갑연결을 하시겠습니까?")) {
             try {
-              commit("resetData");
-              commit("resetPage");
+              commit("setMyNft", []);
+              //commit("resetPage");
               dispatch("fetchMyWallet");
             } catch (err) {
               console.log(err);

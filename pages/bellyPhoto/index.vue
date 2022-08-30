@@ -53,7 +53,7 @@
         </div>
 
         <button
-          v-if="$store.state.connect === 'is-connect'"
+          v-if="$store.state.connect === 'is-connect' && myNFT"
           class="connect-wallet"
           @click="$store.dispatch('callMyNftData')"
         >
@@ -557,6 +557,7 @@ export default {
       for (const [key, value] of Object.entries(this.filter)) {
         filter[key] = value.selected.join();
       }
+      console.log(" this.$store.state.myNft", this.$store.state.myNft);
       const { data: response } = await this.$axios.get("/apiBellyPhoto", {
         params: {
           ...filter,
