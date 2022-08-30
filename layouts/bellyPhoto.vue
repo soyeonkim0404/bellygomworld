@@ -28,7 +28,6 @@ export default {
       } else {
         document.querySelector(".top-btn").style.opacity = 0;
       }
-      console.log(contentHeight, windowHeight, scrollY);
     },
   },
   destroyed() {

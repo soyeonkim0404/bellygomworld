@@ -2077,8 +2077,9 @@ export default {
       this.$router.push({ path: "/m" });
     }
     let locale = this.getCookie("b_locale");
+    let connect = this.getCookie("b_connect");
 
-    if (this.$store.getters.getConnect === "is-connect") {
+    if (connect && connect === "YES" && this.$store.state.connect) {
       this.$store.commit("setConnect");
       this.$store.dispatch("fetchMyWallet");
     } else {

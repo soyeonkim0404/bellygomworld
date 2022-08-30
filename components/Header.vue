@@ -55,10 +55,7 @@
       </ul>
       <div class="etc-link">
         <ul class="sns">
-          <li
-            class="link0"
-            :class="{ active: $store.getters.getConnect === 'is-connect' }"
-          >
+          <li class="link0" :class="{ active: $store.state.connect }">
             <button @click="setWallet">지갑연결</button>
           </li>
           <li class="link1" @click="sendGaEvent('gnb_shop', 'GNB')">
@@ -332,7 +329,7 @@ export default {
   },
 
   mounted() {
-    if (this.$store.getters.getConnect === "is-connect") {
+    if (this.$store.state.connect) {
       this.$store.commit("setConnect");
     } else {
       this.$store.commit("setNoConnect");

@@ -5,7 +5,7 @@ const store = () =>
   new Vuex.Store({
     state: {
       locale: "KOR",
-      connect: "no-connect",
+      connect: false,
       klaytnAddress: "",
       klaytnAddressLast: "",
       myNft: [],
@@ -13,9 +13,6 @@ const store = () =>
     getters: {
       getLocale(state) {
         return state.locale;
-      },
-      getConnect(state) {
-        return state.connect;
       },
       getMyNft(state) {
         return state.myNft;
@@ -37,10 +34,12 @@ const store = () =>
         state.locale = "KOR";
       },
       setConnect(state) {
-        state.connect = "is-connect";
+        document.cookie = "b_connect=YES;";
+        state.connect = true;
       },
       setNoConnect(state) {
-        state.connect = "no-connect";
+        document.cookie = "b_connect=NO;";
+        state.connect = false;
       },
       setMyNft(state, payload) {
         state.myNft = payload;
@@ -92,7 +91,7 @@ const store = () =>
         }
       },
       async callMyNftData({ commit, getters, dispatch, state }) {
-        if (getters.getConnect === "is-connect") {
+        if (state.connect) {
           if (window.confirm("지갑연결을 해제하시겠습니까?")) {
             commit("setMyNft", []);
             console.log("myNft", state.myNft);

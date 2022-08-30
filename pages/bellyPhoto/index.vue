@@ -24,9 +24,7 @@
       <div class="section2">
         <div class="top">
           <div class="total">
-            <template
-              v-if="$store.getters.getConnect !== 'is-connect' && myNFT"
-            >
+            <template v-if="!$store.state.connect && myNFT">
               <span>0</span>
             </template>
             <template v-else>
@@ -60,7 +58,7 @@
         </div>
 
         <button
-          v-if="$store.state.connect === 'is-connect' && myNFT"
+          v-if="$store.state.connect && myNFT"
           class="connect-wallet"
           @click="resetWallet"
         >
@@ -70,10 +68,7 @@
         </button>
 
         <!-- 지갑연동 버튼// -->
-        <div
-          v-if="myNFT && $store.state.connect !== 'is-connect'"
-          class="photo-box"
-        >
+        <div v-if="myNFT && !$store.state.connect" class="photo-box">
           <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
             Please, Connect Kaikas wallet to see your Bellygom NFTs.
           </p>
@@ -630,6 +625,9 @@ export default {
       document.body.style.overflow = "";
     },
     mbFilter() {
+      for (const [key, value] of Object.entries(this.filter)) {
+        value.selected = [];
+      }
       this.mbFilterShow = true;
     },
     resetFilter() {
