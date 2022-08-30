@@ -4,6 +4,7 @@
       <li class="item" v-for="(value, name, index) in list" :key="index">
         <button
           :class="{ title: true, active: onContent.some((el) => index === el) }"
+          ref="btn"
           @click="openCon(index)"
         >
           {{ name }}

@@ -221,7 +221,7 @@
       </div>
       <div slot="footer">
         <div class="fix-wrap">
-          <button class="reset" @click="resetFilter">
+          <button class="reset" @click="refreshFetch">
             <img src="@/assets/images/ic_24_refresh_w.svg" />
           </button>
           <button class="btn-done" @click="mbModalDone">DONE</button>
@@ -577,21 +577,10 @@ export default {
       console.log(e);
     }
   },
-  watch: {
-    // myNFT: (val) => {
-    //   console.log(val)
-    //   if (!val) {
-    //     this.resetFetch();
-    //   }
-    // },
-  },
   methods: {
     async findMyNFT() {
-      console.log(1);
       await this.$store.dispatch("callMyNftData");
-      console.log(2);
       await this.resetFetch();
-      console.log(3);
     },
     resetWallet() {
       this.$store.dispatch("callMyNftData");
@@ -629,6 +618,7 @@ export default {
       document.body.style.overflow = "hidden";
     },
     mbModalDone() {
+      const filter = {};
       this.mbFilterShow = false;
     },
     mbModalClose() {
@@ -653,6 +643,8 @@ export default {
   },
   mounted() {
     window.addEventListener("scroll", this.infiniteHandler);
+    window.addEventListener("scroll", this.topBtn);
+
     this.$nuxt.$on("fetchWallet", async () => {
       await this.$store.dispatch("callMyNftData");
       this.data = [];
