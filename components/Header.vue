@@ -55,8 +55,11 @@
       </ul>
       <div class="etc-link">
         <ul class="sns">
-          <li class="link0" :class="{ 'active': $store.getters.getConnect === 'is-connect' }">
-            <button @click="$store.dispatch('callMyNftData')">지갑연결</button>
+          <li
+            class="link0"
+            :class="{ active: $store.getters.getConnect === 'is-connect' }"
+          >
+            <button @click="setWallet">지갑연결</button>
           </li>
           <li class="link1" @click="sendGaEvent('gnb_shop', 'GNB')">
             <a href="https://bellygom.com/" target="_blank"></a>
@@ -327,8 +330,8 @@ export default {
       .substring(0, 2);
     return { lang: browserLang };
   },
-  mounted() {
 
+  mounted() {
     if (this.$store.getters.getConnect === "is-connect") {
       this.$store.commit("setConnect");
     } else {
@@ -336,6 +339,9 @@ export default {
     }
   },
   methods: {
+    setWallet() {
+      this.$nuxt.$emit("resetFetch222");
+    },
     faqModal() {
       this.faqShow = true;
     },
@@ -403,7 +409,7 @@ export default {
         &:nth-child(4) {
           margin-left: 61px;
           &:before {
-            content: '';
+            content: "";
             position: absolute;
             width: 1px;
             height: 20px;

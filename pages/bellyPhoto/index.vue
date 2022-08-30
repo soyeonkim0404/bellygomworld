@@ -24,13 +24,20 @@
       <div class="section2">
         <div class="top">
           <div class="total">
-            <span>
-              <animated-number
-                :value="pager.totalItems || 0"
-                :duration="500"
-                :formatValue="formatToPrice"
-              />
-            </span>
+            <template
+              v-if="$store.getters.getConnect !== 'is-connect' && myNFT"
+            >
+              <span>0</span>
+            </template>
+            <template v-else>
+              <span>
+                <animated-number
+                  :value="pager.totalItems || 0"
+                  :duration="500"
+                  :formatValue="formatToPrice"
+                />
+              </span>
+            </template>
             Items
           </div>
           <div class="sort">
@@ -55,7 +62,7 @@
         <button
           v-if="$store.state.connect === 'is-connect' && myNFT"
           class="connect-wallet"
-          @click="$store.dispatch('callMyNftData')"
+          @click="resetWallet"
         >
           <img src="@/assets/images/ic-kaikas.svg" alt="kaikas" />
           <span class="first">{{ $store.state.klaytnAddress }}</span>
@@ -121,16 +128,14 @@
         <!-- //list -->
 
         <!-- no-data// -->
-        <template v-else>
-          <div class="photo-box">
-            <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
-              No Matching Bellygom Found.
-            </p>
-            <p class="desc" v-else>
-              검색하신 조건의 벨리곰NFT를 찾지 못했습니다.
-            </p>
-          </div>
-        </template>
+        <div v-else class="photo-box">
+          <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
+            No Matching Bellygom Found.
+          </p>
+          <p class="desc" v-else>
+            검색하신 조건의 벨리곰NFT를 찾지 못했습니다.
+          </p>
+        </div>
         <!-- //no-data -->
       </div>
     </div>
@@ -585,8 +590,15 @@ export default {
   },
   methods: {
     async findMyNFT() {
+      console.log(1);
       await this.$store.dispatch("callMyNftData");
+      console.log(2);
       await this.resetFetch();
+      console.log(3);
+    },
+    resetWallet() {
+      this.$store.dispatch("callMyNftData");
+      this.resetFetch();
     },
     infiniteHandler() {
       if (this.pager.totalPages <= this.page) return;
@@ -642,8 +654,16 @@ export default {
       return `${Number(num).toLocaleString()}`;
     },
   },
+  created() {},
   mounted() {
     window.addEventListener("scroll", this.infiniteHandler);
+    this.$nuxt.$on("resetFetch222", async () => {
+      console.log("파이드아앙");
+      await this.$store.dispatch("callMyNftData");
+      this.data = [];
+      this.page = 1;
+      await this.$fetch();
+    });
   },
   destroyed() {
     window.removeEventListener("scroll", this.infiniteHandler);
