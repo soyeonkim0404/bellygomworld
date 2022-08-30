@@ -340,7 +340,7 @@ export default {
   },
   methods: {
     setWallet() {
-      this.$nuxt.$emit("resetFetch222");
+      this.$nuxt.$emit("fetchWallet");
     },
     faqModal() {
       this.faqShow = true;

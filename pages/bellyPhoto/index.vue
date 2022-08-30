@@ -250,7 +250,6 @@ export default {
       myNFT: false,
       filterChkList: [],
       modalSeq: "",
-
       orderBy: {
         list: [
           { value: "1", kor: "랭킹 순", eng: "Highest Rank" },
@@ -260,7 +259,6 @@ export default {
         ],
         selected: "1",
       },
-      /*-----------------*/
       filter: {
         Background: {
           list: [
@@ -465,7 +463,7 @@ export default {
             "Bloned Hair",
             "Bobbed Hair",
             "Combination Hair",
-            -"Gashina Hair",
+            "Gashina Hair",
             "Half Bun Hair",
             "Heroine Hair",
             "LALALAY Twin tails",
@@ -562,7 +560,6 @@ export default {
       for (const [key, value] of Object.entries(this.filter)) {
         filter[key] = value.selected.join();
       }
-      console.log(" this.$store.state.myNft", this.$store.state.myNft);
       const { data: response } = await this.$axios.get("/apiBellyPhoto", {
         params: {
           ...filter,
@@ -654,11 +651,9 @@ export default {
       return `${Number(num).toLocaleString()}`;
     },
   },
-  created() {},
   mounted() {
     window.addEventListener("scroll", this.infiniteHandler);
-    this.$nuxt.$on("resetFetch222", async () => {
-      console.log("파이드아앙");
+    this.$nuxt.$on("fetchWallet", async () => {
       await this.$store.dispatch("callMyNftData");
       this.data = [];
       this.page = 1;
