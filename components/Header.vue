@@ -337,8 +337,10 @@ export default {
     }
   },
   methods: {
-    setWallet() {
-      this.$nuxt.$emit("fetchWallet");
+    async setWallet() {
+      await this.$nuxt.$emit("fetchWallet");
+      await this.$store.dispatch("callMyNftData");
+      console.log(2);
     },
     faqModal() {
       this.faqShow = true;

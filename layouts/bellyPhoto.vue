@@ -78,7 +78,7 @@ export default {
   }
   .mobile & {
     position: fixed;
-    bottom: 18px;
+    bottom: 35px;
     right: 20px;
     width: 44px;
     height: 44px;

@@ -639,7 +639,6 @@ export default {
     window.addEventListener("scroll", this.topBtn);
 
     this.$nuxt.$on("fetchWallet", async () => {
-      await this.$store.dispatch("callMyNftData");
       this.data = [];
       this.page = 1;
       await this.$fetch();
