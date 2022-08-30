@@ -966,11 +966,11 @@ export default {
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
-                min-width: 94px;
+                width: 94px;
                 height: 24px;
                 line-height: 24px;
                 &.eng {
-                  min-width: 126px;
+                  width: 126px;
                 }
                 .selected {
                   width: 100%;
@@ -1018,9 +1018,12 @@ export default {
           grid-template-columns: repeat(2, 1fr);
           grid-column-gap: 10px;
           grid-row-gap: 20px;
-          .item {
+          .photo-item {
             border-radius: 20px;
-            .lank {
+            .image {
+              height: auto;
+            }
+            .rank {
               padding: 8px 10px;
               font-size: 12px;
             }

@@ -58,7 +58,28 @@
               @click="videoPlay()"
               :class="{ moved: cloudMoved }"
             >
-              <img src="@/assets/m_images/main/img_keyvisual_01.png" />
+              <div class="obj">
+                <img
+                  src="@/assets/m_images/main/img_keyvisual_l1.png"
+                  class="ml1"
+                />
+                <img
+                  src="@/assets/m_images/main/img_keyvisual_l2.png"
+                  class="ml2"
+                />
+                <img
+                  src="@/assets/m_images/main/img_keyvisual_l3.png"
+                  class="ml3"
+                />
+                <img
+                  src="@/assets/m_images/main/img_keyvisual_l4.png"
+                  class="ml4"
+                />
+                <img
+                  src="@/assets/m_images/main/img_keyvisual_l5_ghost.png"
+                  class="ml5"
+                />
+              </div>
             </div>
             <section class="section">
               <div class="second">
@@ -66,6 +87,10 @@
                 <div class="sec-cloud">
                   <img src="@/assets/m_images/main/img_keyvisual_cloud.png" />
                 </div>
+                <img
+                  src="@/assets/m_images/main/img_keyvisual_gocat.png"
+                  class="sky-cat"
+                />
               </div>
             </section>
             <section class="section">
@@ -2295,22 +2320,23 @@ export default {
   left: 0;
   width: 100%;
   z-index: 3;
-
   height: 0;
 }
 .cloud-wrapper.moved {
   padding-top: -10%;
 }
-.cloud-wrapper > img {
+.cloud-wrapper .obj {
   position: absolute;
   transition: transform 0.5s ease-in-out;
   -webkit-transition: transform 0.5s ease-in-out;
   width: 100%;
+  height: 100vh;
+  left: 0;
   top: 0;
   transform: translateY(-69%);
   -webkit-transform: translateY(-69%);
 }
-.cloud-wrapper.moved > img {
+.cloud-wrapper.moved .obj {
   transform: translateY(-100%);
   -webkit-transform: translateY(-100%);
 }
@@ -2464,5 +2490,87 @@ export default {
   background: #000 !important;
   width: 20px !important;
   border-radius: 4px !important;
+}
+
+.cloud-wrapper .obj {
+}
+.cloud-wrapper .obj .ml1 {
+  position: absolute;
+  width: 25.5%;
+  top: 8%;
+  right: 0;
+}
+.cloud-wrapper .obj .ml2 {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 14%;
+  -webkit-animation: moveDownTo 1.5s infinite alternate linear;
+  animation: moveDownTo 1.5s infinite alternate linear;
+}
+.cloud-wrapper .obj .ml3 {
+  position: absolute;
+  width: 54.5%;
+  left: 0;
+  top: 32.5%;
+  -webkit-animation: moveUpTo 1.5s infinite alternate linear;
+  animation: moveUpTo 1.5s infinite alternate linear;
+}
+.cloud-wrapper .obj .ml4 {
+  position: absolute;
+  width: 90%;
+  right: 0;
+  top: 25%;
+  -webkit-animation: moveDownTo 1.5s infinite alternate linear;
+  animation: moveDownTo 1.5s infinite alternate linear;
+}
+.cloud-wrapper .obj .ml5 {
+  position: absolute;
+  width: 35%;
+  right: 15%;
+  top: 45%;
+}
+
+@keyframes moveUpTo {
+  0% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveDownTo {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(15px);
+  }
+}
+
+@keyframes cat {
+  0% {
+    transform: translateY(40px) rotate(20deg);
+  }
+  50% {
+    transform: translateY(20px) rotate(20deg);
+  }
+  80% {
+    transform: translateY(10px) rotate(-10deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(-10deg);
+  }
+}
+
+.sky-cat {
+  width: 142px;
+  position: absolute;
+  top: 70%;
+  right: 6%;
+  transform-origin: left top;
+  -webkit-animation: cat 3s infinite alternate ease-in-out;
+  animation: cat 3s infinite alternate ease-in-out;
 }
 </style>

@@ -32,7 +32,32 @@
               </video>
             </section>
             <div class="cloud-wrapper ignore" :class="{ moved: cloudMoved }">
-              <img src="@/assets/images/main/img_keyvisual_01.png" />
+              <div class="obj">
+                <img
+                  src="@/assets/images/main/img_keyvisual_l1_rides_01.png"
+                  class="no-ani"
+                />
+                <img
+                  src="@/assets/images/main/img_keyvisual_l1_bellygom_02.png"
+                  class="l1"
+                />
+                <img
+                  src="@/assets/images/main/img_keyvisual_l2.png"
+                  class="l2"
+                />
+                <img
+                  src="@/assets/images/main/img_keyvisual_l3.png"
+                  class="l3"
+                />
+                <img
+                  src="@/assets/images/main/img_keyvisual_l4.png"
+                  class="l4"
+                />
+                <img
+                  src="@/assets/images/main/img_keyvisual_l5_ghost.png"
+                  class="l5"
+                />
+              </div>
             </div>
             <section class="section">
               <div class="second">
@@ -40,13 +65,14 @@
                 <div class="sec-cloud">
                   <img src="@/assets/images/main/img_keyvisual_cloud.png" />
                 </div>
+                <img src="@/assets/images/main/sky_cat.png" class="sky-cat" />
               </div>
             </section>
             <section class="section">
               <div class="slide" data-anchor="slide1">
                 <div class="contents">
                   <img
-                    src="@/assets/images/main/getbelly_road_ko_1.jpeg"
+                    src="@/assets/images/main/getbelly&road_info_motion.png"
                     class="roads"
                   />
                   <div class="text-con">
@@ -223,6 +249,19 @@
                       </div>
                     </button>
                   </div>
+                  <!--motion object-->
+                  <img
+                    src="@/assets/images/main/img_road_cloud1.svg"
+                    id="load-cloud1"
+                  />
+                  <img
+                    src="@/assets/images/main/img_road_cloud2.svg"
+                    id="load-cloud2"
+                  />
+                  <img
+                    src="@/assets/images/main/img_road_cloud3.svg"
+                    id="load-cloud3"
+                  />
                 </div>
               </div>
             </section>
@@ -2153,16 +2192,18 @@ export default {
 .cloud-wrapper.moved {
   padding-top: -10%;
 }
-.cloud-wrapper > img {
+.cloud-wrapper .obj {
   position: absolute;
   transition: transform 0.5s ease-in-out;
   -webkit-transition: transform 0.5s ease-in-out;
   width: 100%;
-  top: 0%;
-  transform: translateY(-69%);
-  -webkit-transform: translateY(-69%);
+  height: 100vh;
+  left: 0;
+  bottom: 0;
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
 }
-.cloud-wrapper.moved > img {
+.cloud-wrapper.moved .obj {
   transform: translateY(-100%);
   -webkit-transform: translateY(-100%);
 }
@@ -2277,132 +2318,23 @@ export default {
 }
 
 /*slide 1 pink balloon*/
-#pinkballoon {
-  width: 129px;
-  height: 192px;
-  z-index: 9;
-  position: absolute;
-  top: 0;
-  left: 10%;
-  transform: rotate(-8deg);
-  -webkit-animation: pinkballoon 3s infinite alternate ease-in-out;
-  animation: pinkballoon 3s infinite alternate ease-in-out;
-}
-
-#blueballoon {
-  width: 77px;
-  height: 116px;
-  z-index: 9;
-  position: absolute;
-  top: 0;
-  right: 10%;
-  transform: rotate(4deg);
-  -webkit-animation: blueballoon 3s infinite alternate ease-in-out;
-  animation: blueballoon 3s infinite alternate ease-in-out;
-}
-
-#arrowMotion {
-  width: 36px;
-  height: 54px;
-  z-index: 9;
-  position: absolute;
-  bottom: 25.5%;
-  left: 36.33%;
-  -webkit-animation: arrowMotion 1s infinite alternate ease-in-out;
-  animation: arrowMotion 1s infinite alternate ease-in-out;
-}
 
 @keyframes pinkballoon {
   0% {
-    transform: translateY(163px) rotate(16deg);
+    transform: translateY(5px) rotate(16deg);
   }
   100% {
-    transform: translateY(183px) rotate(-16deg);
+    transform: translateY(20px) rotate(-16deg);
   }
 }
 
 @keyframes blueballoon {
   0% {
-    transform: translateY(399px) rotate(-8deg);
+    transform: translateY(5px) rotate(-8deg);
   }
   100% {
-    transform: translateY(405px) rotate(8deg);
+    transform: translateY(20px) rotate(8deg);
   }
-}
-
-@keyframes arrowMotion {
-  0% {
-    transform: translateY(20px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-#pinkplane {
-  width: 85px;
-  height: 49px;
-  z-index: 9;
-  position: absolute;
-  top: 34%;
-  left: 45%;
-  -webkit-animation: pinkplane 3s linear infinite alternate;
-  animation: pinkplane 3s linear infinite alternate;
-}
-
-#blueplane {
-  width: 60.38px;
-  height: 34.61px;
-  z-index: 9;
-  position: absolute;
-  top: 19%;
-  left: 54%;
-  -webkit-animation: blueplane 2s 0.5s linear infinite alternate;
-  animation: blueplane 2s 0.5s linear infinite alternate;
-}
-
-#cloud1 {
-  width: 182px;
-  height: 94px;
-  z-index: 9;
-  position: absolute;
-  top: 35%;
-  left: 10%;
-  -webkit-animation: cloud 2s infinite alternate ease-in-out;
-  animation: cloud 2s infinite alternate ease-in-out;
-}
-
-#cloud2 {
-  width: 228px;
-  height: 113px;
-  z-index: 9;
-  position: absolute;
-  top: 13%;
-  left: 30%;
-  -webkit-animation: cloud 2s infinite alternate ease-in-out;
-  animation: cloud 2s infinite alternate ease-in-out;
-}
-
-#cloud3 {
-  width: 189px;
-  height: 98px;
-  z-index: 9;
-  position: absolute;
-  top: 41%;
-  left: 53%;
-  -webkit-animation: cloud 2s infinite alternate ease-in-out;
-  animation: cloud 2s infinite alternate ease-in-out;
-}
-
-#cloud4 {
-  width: 252px;
-  height: 130px;
-  z-index: 9;
-  position: absolute;
-  top: 24%;
-  left: 75%;
-  -webkit-animation: cloud 2s infinite alternate ease-in-out;
-  animation: cloud 2s infinite alternate ease-in-out;
 }
 
 @keyframes pinkplane {
@@ -2419,13 +2351,13 @@ export default {
 
 @keyframes blueplane {
   0% {
-    transform: translateX(64%) translateY(29%);
+    transform: translateX(-20px) translateY(10px);
   }
   50% {
-    transform: translateX(69%) translateY(25%);
+    transform: translateX(10px) translateY(-10px);
   }
   100% {
-    transform: translateX(54%) translateY(19%);
+    transform: translateX(5px) translateY(-20px);
   }
 }
 
@@ -2436,5 +2368,258 @@ export default {
   100% {
     transform: translateY(20px);
   }
+}
+
+@keyframes cloud2 {
+  0% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+#pinkballoon {
+  width: 6%;
+  z-index: 9;
+  position: absolute;
+  top: 12%;
+  left: 16%;
+  transform: rotate(-8deg);
+  -webkit-animation: pinkballoon 3s infinite alternate ease-in-out;
+  animation: pinkballoon 3s infinite alternate ease-in-out;
+}
+
+#blueballoon {
+  width: 3%;
+  z-index: 9;
+  position: absolute;
+  top: 35%;
+  right: 10%;
+  transform: rotate(4deg);
+  -webkit-animation: blueballoon 3s infinite alternate ease-in-out;
+  animation: blueballoon 3s infinite alternate ease-in-out;
+}
+
+#arrowMotion {
+  width: 1.9%;
+  z-index: 9;
+  position: absolute;
+  bottom: 25.5%;
+  left: 36.33%;
+  -webkit-animation: cloud2 1s infinite alternate ease-in-out;
+  animation: cloud2 1s infinite alternate ease-in-out;
+}
+
+#pinkplane {
+  width: 4.5%;
+  z-index: 9;
+  position: absolute;
+  top: 34%;
+  left: 45%;
+  -webkit-animation: pinkplane 3s linear infinite alternate;
+  animation: pinkplane 3s linear infinite alternate;
+}
+
+#blueplane {
+  width: 3.15%;
+  height: auto;
+  z-index: 9;
+  position: absolute;
+  top: 29%;
+  left: 54%;
+  -webkit-animation: blueplane 3s 0.5s linear infinite alternate;
+  animation: blueplane 3s 0.5s linear infinite alternate;
+}
+
+#cloud1 {
+  width: 9.5%;
+  z-index: 9;
+  position: absolute;
+  top: 35%;
+  left: 10%;
+  -webkit-animation: cloud 2s infinite alternate ease-in-out;
+  animation: cloud 2s infinite alternate ease-in-out;
+}
+
+#cloud2 {
+  width: 11.9%;
+  z-index: 9;
+  position: absolute;
+  top: 13%;
+  left: 28%;
+  -webkit-animation: cloud 2s infinite alternate ease-in-out;
+  animation: cloud 2s infinite alternate ease-in-out;
+}
+
+#cloud3 {
+  width: 9.8%;
+  z-index: 9;
+  position: absolute;
+  top: 41%;
+  left: 53%;
+  -webkit-animation: cloud 2s infinite alternate ease-in-out;
+  animation: cloud 2s infinite alternate ease-in-out;
+}
+
+#cloud4 {
+  width: 13.1%;
+  z-index: 9;
+  position: absolute;
+  top: 24%;
+  left: 75%;
+  -webkit-animation: cloud 2s infinite alternate ease-in-out;
+  animation: cloud 2s infinite alternate ease-in-out;
+}
+
+#load-cloud1 {
+  width: 10.95%;
+  z-index: 9;
+  position: absolute;
+  top: 8%;
+  left: 11%;
+  -webkit-animation: cloud 2s infinite alternate ease-in-out;
+  animation: cloud 2s infinite alternate ease-in-out;
+}
+
+#load-cloud2 {
+  width: 8.4%;
+  z-index: 9;
+  position: absolute;
+  top: 34%;
+  right: 9%;
+  -webkit-animation: cloud2 2s infinite alternate ease-in-out;
+  animation: cloud2 2s infinite alternate ease-in-out;
+}
+
+#load-cloud3 {
+  width: 9.5%;
+  z-index: 9;
+  position: absolute;
+  top: 11%;
+  right: 1%;
+  -webkit-animation: cloud 2s infinite alternate ease-in-out;
+  animation: cloud 2s infinite alternate ease-in-out;
+}
+
+@keyframes cat {
+  0% {
+    transform: translateY(40px) rotate(20deg);
+  }
+  50% {
+    transform: translateY(20px) rotate(20deg);
+  }
+  80% {
+    transform: translateY(10px) rotate(-10deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(-10deg);
+  }
+}
+
+.sky-cat {
+  width: 222px;
+  position: absolute;
+  top: 60%;
+  left: 65%;
+  transform-origin: left top;
+  -webkit-animation: cat 3s infinite alternate ease-in-out;
+  animation: cat 3s infinite alternate ease-in-out;
+}
+
+.cloud-wrapper .obj .l1 {
+  position: absolute;
+  width: 225px;
+  height: auto;
+  right: -90px;
+  bottom: 22.5%;
+  transform-origin: left top;
+  -webkit-animation: mainBelly 3s infinite ease-in-out;
+  animation: mainBellyIn 3s infinite ease-in-out;
+}
+
+@keyframes mainBellyIn {
+  0% {
+    transform: translateX(100%) translateY(150%);
+  }
+  60% {
+    transform: translateX(0) translateY(0);
+  }
+  75% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(100%) translateY(150%);
+  }
+}
+
+.cloud-wrapper .obj .l2 {
+  position: absolute;
+  width: 1795px;
+  right: 0;
+  bottom: -165px;
+  -webkit-animation: moveUpTo 1.5s infinite alternate linear;
+  animation: moveUpTo 1.5s infinite alternate linear;
+}
+.cloud-wrapper .obj .l3 {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -190px;
+  -webkit-animation: moveDownTo 1.5s infinite alternate linear;
+  animation: moveDownTo 1.5s infinite alternate linear;
+}
+.cloud-wrapper .obj .l4 {
+  position: absolute;
+  width: 1050px;
+  bottom: -317px;
+  right: 10%;
+  -webkit-animation: moveDownTo 1.5s infinite alternate linear;
+  animation: moveDownTo 1.5s infinite alternate linear;
+}
+.cloud-wrapper .obj .l5 {
+  position: absolute;
+  width: 215px;
+  right: 21%;
+  bottom: -106px;
+}
+.cloud-wrapper .obj .no-ani {
+  position: absolute;
+  width: 282px;
+  right: 0;
+  bottom: 22.5%;
+}
+
+@keyframes moveUpTo {
+  0% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveDownTo {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(30px);
+  }
+}
+
+.section .slide .contents:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    #ceedff 0%,
+    rgba(206, 237, 255, 0) 89.15%
+  );
 }
 </style>
