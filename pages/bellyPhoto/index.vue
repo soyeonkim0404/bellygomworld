@@ -945,6 +945,8 @@ export default {
           .total {
             font-size: 14px;
             line-height: 18px;
+            white-space: nowrap;
+            display: inline-block;
           }
           .sort {
             .select {
