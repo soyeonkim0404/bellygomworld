@@ -20,7 +20,8 @@
                 커뮤니티에서 기다리고 있어요!
               </p>
               <p class="desc eng">
-                Welcome! The Bellygom NFT Holders Community Has Been<br/>Expecting You!
+                Welcome! The Bellygom NFT Holders Community Has Been<br />Expecting
+                You!
               </p>
               <div class="box">
                 <span class="name">Wallet Address</span>
@@ -39,11 +40,11 @@
             </template>
             <template v-else>
               <p class="desc">
-                홀더가 아닙니다.<br />
+                홀더가 아닙니다. <br />
                 벨리곰 NFT 구매 후 인증이 가능합니다.
               </p>
               <p class="desc eng">
-                Sorry, you're currently not a Bellygom NFT holder.<br/>
+                Sorry, you're currently not a Bellygom NFT holder.<br />
                 Please try again after buying one.
               </p>
               <div class="box">
@@ -114,7 +115,7 @@ export default {
     };
   },
   mounted() {
-    this.kaikasConnetVerifier()
+    this.kaikasConnetVerifier();
   },
   methods: {
     async kaikasConnetVerifier() {
@@ -128,12 +129,15 @@ export default {
         return;
       } else {
         // console.log(window.klaytn.networkVersion);
-        // console.log(window.klaytn.networkVersion==='loading'); 처음에 kaikas 못불러오면 로딩뜰때도있음 
-        if (window.klaytn.networkVersion === undefined || window.klaytn.networkVersion==='loading') {
+        // console.log(window.klaytn.networkVersion==='loading'); 처음에 kaikas 못불러오면 로딩뜰때도있음
+        if (
+          window.klaytn.networkVersion === undefined ||
+          window.klaytn.networkVersion === "loading"
+        ) {
           window.location.reload();
           location.reload();
           return;
-        }else{
+        } else {
           this.getName();
           return;
         }
@@ -213,21 +217,27 @@ export default {
 
         const resData = await res.json();
         console.log("resData", resData);
-       if(this.discord_user_id===undefined){
-           alert("홀더 인증에 실패하였습니다.\n브라우저 닫은 뒤, 다시 디스코드 링크를 클릭해 접속해주세요.");
-           return;
+        if (this.discord_user_id === undefined) {
+          alert(
+            "홀더 인증에 실패하였습니다.\n브라우저 닫은 뒤, 다시 디스코드 링크를 클릭해 접속해주세요."
+          );
+          return;
         }
         if (resData.code === 200) {
           this.nftNum = resData.count;
           this.holderModal = true;
-        }else if(resData.code === -1){
+        } else if (resData.code === -1) {
           this.nftNum = 0;
           this.holderModal = true;
-        }else {
-          alert("홀더 인증에 실패하였습니다.\n브라우저 닫은 뒤, 다시 디스코드 링크를 클릭해 접속해주세요.");
+        } else {
+          alert(
+            "홀더 인증에 실패하였습니다.\n브라우저 닫은 뒤, 다시 디스코드 링크를 클릭해 접속해주세요."
+          );
         }
       } catch (error) {
-        alert("홀더 인증에 실패하였습니다.\n브라우저 닫은 뒤, 다시 디스코드 링크를 클릭해 접속해주세요.");
+        alert(
+          "홀더 인증에 실패하였습니다.\n브라우저 닫은 뒤, 다시 디스코드 링크를 클릭해 접속해주세요."
+        );
       }
     },
   },
