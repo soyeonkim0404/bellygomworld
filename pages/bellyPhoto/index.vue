@@ -842,6 +842,7 @@ export default {
             width: 100%;
             height: 297px;
             display: inline-block;
+            background: #f9e7f1;
           }
           .info {
             position: relative;
@@ -1006,12 +1007,11 @@ export default {
               position: relative;
               width: 100%;
               height: auto;
-              background-color: skyblue;
               &:after {
                 display: block;
                 content: "";
                 padding-bottom: 100%;
-                background: red;
+                background: #f9e7f1;
               }
               img {
                 position: absolute;
@@ -1025,6 +1025,7 @@ export default {
             .rank {
               padding: 8px 10px;
               font-size: 12px;
+              z-index: 2;
             }
             .info {
               padding: 10px 15px;
