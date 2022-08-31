@@ -2458,7 +2458,6 @@ export default {
   -webkit-animation: cloud2 2s infinite alternate ease-in-out;
   animation: cloud2 2s infinite alternate ease-in-out;
 }
-
 #cloud2 {
   width: 11.9%;
   z-index: 9;
