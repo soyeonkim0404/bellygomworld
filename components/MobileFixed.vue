@@ -10,13 +10,13 @@
         "
       />
       <audio loop ref="audioElm" src="../assets/media/BELLY.mp3" />
-      <Lottie
+      <!--      <Lottie
         :options="defaultOptions"
         :height="68"
         :width="105"
         v-on:animCreated="handleAnimation"
         class="music_on"
-      />
+      />-->
     </div>
 
     <a href="#getBelly" class="top-btn"
