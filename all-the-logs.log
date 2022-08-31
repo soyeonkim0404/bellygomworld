@@ -1,0 +1,44 @@
+[2022-08-31T16:09:20.102] [DEBUG] cheese - ----------------------------------------------------------------------------------------------------------------
+[2022-08-31T16:09:20.102] [DEBUG] cheese - {
+  query: {
+    Background: '',
+    Body: '',
+    Clothes: '',
+    Head: '',
+    Acc: '',
+    Special: '',
+    orderBy: '1',
+    keyword: '',
+    page: '1',
+    pageSize: '40',
+    id: 'All'
+  }
+}
+[2022-08-31T16:09:20.103] [DEBUG] cheese - Background
+[2022-08-31T16:09:20.103] [DEBUG] cheese - Body
+[2022-08-31T16:09:20.103] [DEBUG] cheese - Clothes
+[2022-08-31T16:09:20.103] [DEBUG] cheese - Head
+[2022-08-31T16:09:20.103] [DEBUG] cheese - Acc
+[2022-08-31T16:09:20.103] [DEBUG] cheese - Special
+[2022-08-31T16:09:20.103] [DEBUG] cheese - orderBy
+[2022-08-31T16:09:20.103] [DEBUG] cheese - keyword
+[2022-08-31T16:09:20.103] [DEBUG] cheese - page
+[2022-08-31T16:09:20.103] [DEBUG] cheese - pageSize
+[2022-08-31T16:09:20.103] [DEBUG] cheese - id
+[2022-08-31T16:09:20.103] [DEBUG] cheese - { filter: {} }
+[2022-08-31T16:09:20.105] [DEBUG] cheese - {
+  pager: {
+    totalItems: 8263,
+    currentPage: 1,
+    pageSize: 40,
+    totalPages: 207,
+    startPage: 1,
+    endPage: 10,
+    startIndex: 0,
+    endIndex: 39,
+    pages: [
+      1, 2, 3, 4,  5,
+      6, 7, 8, 9, 10
+    ]
+  }
+}
