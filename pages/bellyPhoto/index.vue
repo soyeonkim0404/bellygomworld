@@ -24,13 +24,18 @@
       <div class="section2">
         <div class="top">
           <div class="total">
-            <span>
-              <animated-number
-                :value="pager.totalItems || 0"
-                :duration="500"
-                :formatValue="formatToPrice"
-              />
-            </span>
+            <template v-if="!$store.state.connect && myNFT">
+              <span>0</span>
+            </template>
+            <template v-else>
+              <span>
+                <animated-number
+                  :value="pager.totalItems || 0"
+                  :duration="500"
+                  :formatValue="formatToPrice"
+                />
+              </span>
+            </template>
             Items
           </div>
           <div class="sort">
@@ -53,9 +58,9 @@
         </div>
 
         <button
-          v-if="$store.state.connect === 'is-connect' && myNFT"
+          v-if="$store.state.connect && myNFT"
           class="connect-wallet"
-          @click="$store.dispatch('callMyNftData')"
+          @click="resetWallet"
         >
           <img src="@/assets/images/ic-kaikas.svg" alt="kaikas" />
           <span class="first">{{ $store.state.klaytnAddress }}</span>
@@ -63,10 +68,7 @@
         </button>
 
         <!-- 지갑연동 버튼// -->
-        <div
-          v-if="myNFT && $store.state.connect !== 'is-connect'"
-          class="photo-box"
-        >
+        <div v-if="myNFT && !$store.state.connect" class="photo-box">
           <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
             Please, Connect Kaikas wallet to see your Bellygom NFTs.
           </p>
@@ -121,16 +123,14 @@
         <!-- //list -->
 
         <!-- no-data// -->
-        <template v-else>
-          <div class="photo-box">
-            <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
-              No Matching Bellygom Found.
-            </p>
-            <p class="desc" v-else>
-              검색하신 조건의 벨리곰NFT를 찾지 못했습니다.
-            </p>
-          </div>
-        </template>
+        <div v-else class="photo-box">
+          <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
+            No Matching Bellygom Found.
+          </p>
+          <p class="desc" v-else>
+            검색하신 조건의 벨리곰NFT를 찾지 못했습니다.
+          </p>
+        </div>
         <!-- //no-data -->
       </div>
     </div>
@@ -216,7 +216,7 @@
       </div>
       <div slot="footer">
         <div class="fix-wrap">
-          <button class="reset" @click="resetFilter">
+          <button class="reset" @click="refreshFetch">
             <img src="@/assets/images/ic_24_refresh_w.svg" />
           </button>
           <button class="btn-done" @click="mbModalDone">DONE</button>
@@ -245,7 +245,6 @@ export default {
       myNFT: false,
       filterChkList: [],
       modalSeq: "",
-
       orderBy: {
         list: [
           { value: "1", kor: "랭킹 순", eng: "Highest Rank" },
@@ -255,7 +254,6 @@ export default {
         ],
         selected: "1",
       },
-      /*-----------------*/
       filter: {
         Background: {
           list: [
@@ -460,7 +458,7 @@ export default {
             "Bloned Hair",
             "Bobbed Hair",
             "Combination Hair",
-            -"Gashina Hair",
+            "Gashina Hair",
             "Half Bun Hair",
             "Heroine Hair",
             "LALALAY Twin tails",
@@ -557,7 +555,6 @@ export default {
       for (const [key, value] of Object.entries(this.filter)) {
         filter[key] = value.selected.join();
       }
-      console.log(" this.$store.state.myNft", this.$store.state.myNft);
       const { data: response } = await this.$axios.get("/apiBellyPhoto", {
         params: {
           ...filter,
@@ -575,18 +572,14 @@ export default {
       console.log(e);
     }
   },
-  watch: {
-    // myNFT: (val) => {
-    //   console.log(val)
-    //   if (!val) {
-    //     this.resetFetch();
-    //   }
-    // },
-  },
   methods: {
     async findMyNFT() {
       await this.$store.dispatch("callMyNftData");
       await this.resetFetch();
+    },
+    resetWallet() {
+      this.$store.dispatch("callMyNftData");
+      this.resetFetch();
     },
     infiniteHandler() {
       if (this.pager.totalPages <= this.page) return;
@@ -631,11 +624,10 @@ export default {
       document.body.style.overflow = "";
     },
     mbFilter() {
+      /*      for (const [key, value] of Object.entries(this.filter)) {
+        value.selected = [];
+      }*/
       this.mbFilterShow = true;
-    },
-    resetFilter() {
-      this.filterChkList = [];
-      this.$nuxt.$emit("closeFilter");
     },
     formatToPrice(value) {
       const num = Number(value).toFixed(0);
@@ -644,6 +636,13 @@ export default {
   },
   mounted() {
     window.addEventListener("scroll", this.infiniteHandler);
+    window.addEventListener("scroll", this.topBtn);
+
+    this.$nuxt.$on("fetchWallet", async () => {
+      this.data = [];
+      this.page = 1;
+      await this.$fetch();
+    });
   },
   destroyed() {
     window.removeEventListener("scroll", this.infiniteHandler);
@@ -843,6 +842,7 @@ export default {
             width: 100%;
             height: 297px;
             display: inline-block;
+            background: #f9e7f1;
           }
           .info {
             position: relative;
@@ -938,6 +938,8 @@ export default {
           .total {
             font-size: 14px;
             line-height: 18px;
+            white-space: nowrap;
+            display: inline-block;
           }
           .sort {
             .select {
@@ -999,13 +1001,31 @@ export default {
           grid-column-gap: 10px;
           grid-row-gap: 20px;
           .photo-item {
+            box-sizing: border-box;
             border-radius: 20px;
             .image {
+              position: relative;
+              width: 100%;
               height: auto;
+              &:after {
+                display: block;
+                content: "";
+                padding-bottom: 100%;
+                background: #f9e7f1;
+              }
+              img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
             }
             .rank {
               padding: 8px 10px;
               font-size: 12px;
+              z-index: 2;
             }
             .info {
               padding: 10px 15px;

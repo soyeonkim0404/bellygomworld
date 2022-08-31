@@ -5,7 +5,7 @@ const store = () =>
   new Vuex.Store({
     state: {
       locale: "KOR",
-      connect: "no-connect",
+      connect: false,
       klaytnAddress: "",
       klaytnAddressLast: "",
       myNft: [],
@@ -14,32 +14,8 @@ const store = () =>
       getLocale(state) {
         return state.locale;
       },
-      getConnect(state) {
-        return state.connect;
-      },
-      getMyNftData(state) {
-        return state.myNftData;
-      },
-      getFilter(state) {
-        return state.filter;
-      },
-      getOderBy(state) {
-        return state.orderBy;
-      },
-      getKeyword(state) {
-        return state.keyword;
-      },
-      getPage(state) {
-        return state.page;
-      },
-      getPager(state) {
-        return state.pager;
-      },
-      getPageSize(state) {
-        return state.pageSize;
-      },
-      getData(state) {
-        return state.data;
+      getMyNft(state) {
+        return state.myNft;
       },
       getKlaytnAddress(state) {
         return state.klaytnAddress;
@@ -58,10 +34,12 @@ const store = () =>
         state.locale = "KOR";
       },
       setConnect(state) {
-        state.connect = "is-connect";
+        document.cookie = "b_connect=YES;";
+        state.connect = true;
       },
       setNoConnect(state) {
-        state.connect = "no-connect";
+        document.cookie = "b_connect=NO;";
+        state.connect = false;
       },
       setMyNft(state, payload) {
         state.myNft = payload;
@@ -112,18 +90,18 @@ const store = () =>
           console.log(err);
         }
       },
-      async callMyNftData({ commit, getters, dispatch }) {
-        if (getters.getConnect === "is-connect") {
+      async callMyNftData({ commit, getters, dispatch, state }) {
+        if (state.connect) {
           if (window.confirm("지갑연결을 해제하시겠습니까?")) {
             commit("setMyNft", []);
+            console.log("myNft", state.myNft);
             commit("setNoConnect");
           }
         } else {
           if (window.confirm("지갑연결을 하시겠습니까?")) {
             try {
               commit("setMyNft", []);
-              //commit("resetPage");
-              dispatch("fetchMyWallet");
+              await dispatch("fetchMyWallet");
             } catch (err) {
               console.log(err);
               alert(
