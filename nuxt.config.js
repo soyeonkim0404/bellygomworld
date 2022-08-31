@@ -137,7 +137,6 @@ export default {
       ssr: false,
     },
     { src: "~plugins/fullpage", mode: "client" },
-    { src: "~/plugins/lottie", mode: "client" },
   ],
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
