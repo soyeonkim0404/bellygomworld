@@ -13,13 +13,11 @@ log4js.configure({
   categories: { default: { appenders: ["everything"], level: "debug" } },
 });
 const logger = log4js.getLogger("cheese");
-const data = require("./testData.json");
+const data = require("./photoData.json");
 const express = require("express");
 const app = express();
 
 data.forEach((item) => {
-  /*  let value = item.name.subString(item.name.indexOf("#") + 1);
-  item.push(`'id': ${value}`);*/
   item.attributes.forEach((attr) => {
     item[attr.trait_type] = attr.value;
   });
