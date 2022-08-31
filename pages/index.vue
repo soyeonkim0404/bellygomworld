@@ -2407,7 +2407,7 @@ export default {
   width: 20%;
   z-index: 9;
   position: absolute;
-  top: 0;
+  top: -15%;
   left: 43%;
   -webkit-animation: cloud2 1s infinite alternate ease-in-out;
   animation: cloud2 1s infinite alternate ease-in-out;
@@ -2419,8 +2419,8 @@ export default {
   position: absolute;
   top: 34%;
   left: 45%;
-  -webkit-animation: pinkplane 3s linear infinite alternate;
-  animation: pinkplane 3s linear infinite alternate;
+  -webkit-animation: pinkplane 3s ease-in-out infinite alternate;
+  animation: pinkplane 3s ease-in-out infinite alternate;
 }
 
 #blueplane {

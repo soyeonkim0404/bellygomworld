@@ -10,9 +10,9 @@
           sendGaEvent('flt_bgmOn', 'FLT');
         "
       />
-      <audio loop ref="audioElm" src="../assets/media/BELLY.mp3"></audio>
+      <audio loop ref="audioElm" src="../assets/media/BELLY.mp3" />
     </div>
-<!--    <a
+    <!--    <a
       href="https://bellygom.launchpad.xclusive.market/"
       target="_blank"
       class="mint-modal-btn"
