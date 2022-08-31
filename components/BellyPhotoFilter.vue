@@ -40,19 +40,22 @@ export default {
     };
   },
   created() {
-    let i = 0;
-    for (const key in this.list) {
-      if (this.list[key].selected.length > 0) {
-        this.onContent.push(i);
-      }
-      i++;
-    }
+    this.createdOpenCon();
     this.$nuxt.$on("closeFilter", () => {
       this.onContent = [];
     });
   },
   mounted() {},
   methods: {
+    createdOpenCon() {
+      let i = 0;
+      for (const key in this.list) {
+        if (this.list[key].selected.length > 0) {
+          this.onContent.push(i);
+        }
+        i++;
+      }
+    },
     openCon(index) {
       const findIndex = this.onContent.findIndex((el) => el === index);
       if (findIndex === -1) {
