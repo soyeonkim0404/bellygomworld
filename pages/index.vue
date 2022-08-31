@@ -2341,25 +2341,39 @@ export default {
 
 @keyframes pinkplane {
   0% {
-    transform: translateX(-40px) translateY(10px);
+    transform: translateX(-70px) translateY(-10px);
+    opacity: 1;
   }
-  50% {
-    transform: translateX(30px) translateY(-10px);
+  30% {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
+  85% {
+    transform: translateX(200px) translateY(-50px);
+    opacity: 0.75;
   }
   100% {
-    transform: translateX(10px) translateY(-20px);
+    transform: translateX(200px) translateY(-50px);
+    opacity: 0;
   }
 }
 
 @keyframes blueplane {
   0% {
-    transform: translateX(-20px) translateY(10px);
+    transform: translateX(-50px) translateY(-10px);
+    opacity: 1;
   }
-  50% {
-    transform: translateX(10px) translateY(-10px);
+  30% {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
+  85% {
+    transform: translateX(150px) translateY(-70px);
+    opacity: 0.75;
   }
   100% {
-    transform: translateX(5px) translateY(-20px);
+    transform: translateX(150px) translateY(-70px);
+    opacity: 0;
   }
 }
 
@@ -2419,8 +2433,8 @@ export default {
   position: absolute;
   top: 34%;
   left: 45%;
-  -webkit-animation: pinkplane 3s ease-in-out infinite alternate;
-  animation: pinkplane 3s ease-in-out infinite alternate;
+  -webkit-animation: pinkplane 6s 0.5s linear infinite;
+  animation: pinkplane 6s 0.5s linear infinite;
 }
 
 #blueplane {
@@ -2428,10 +2442,10 @@ export default {
   height: auto;
   z-index: 9;
   position: absolute;
-  top: 29%;
-  left: 54%;
-  -webkit-animation: blueplane 3s 0.5s linear infinite alternate;
-  animation: blueplane 3s 0.5s linear infinite alternate;
+  top: 25%;
+  left: 53%;
+  -webkit-animation: blueplane 6s 0.5s linear infinite;
+  animation: blueplane 6s 0.5s linear infinite;
 }
 
 #cloud1 {
@@ -2506,16 +2520,16 @@ export default {
 
 @keyframes cat {
   0% {
-    transform: translateY(40px) rotate(20deg);
+    transform: translateY(0) rotate(10deg);
   }
-  50% {
-    transform: translateY(20px) rotate(20deg);
+  25% {
+    transform: translateY(-20px) rotate(10deg);
   }
-  80% {
-    transform: translateY(10px) rotate(-10deg);
+  75% {
+    transform: translateY(-80px) rotate(-10deg);
   }
   100% {
-    transform: translateY(0px) rotate(-10deg);
+    transform: translateY(-100px) rotate(-10deg);
   }
 }
 
@@ -2524,9 +2538,9 @@ export default {
   position: absolute;
   top: 60%;
   left: 65%;
-  transform-origin: left top;
-  -webkit-animation: cat 3s infinite alternate ease-in-out;
-  animation: cat 3s infinite alternate ease-in-out;
+  transform-origin: top left;
+  -webkit-animation: cat 2.5s infinite alternate ease-in-out;
+  animation: cat 2.5s infinite alternate ease-in-out;
 }
 
 .cloud-wrapper .obj .l1 {

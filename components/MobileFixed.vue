@@ -1,16 +1,22 @@
 <template>
   <!--S : Fixed Contents-->
   <div id="fixed">
-    <div class="audio">
+    <div class="audio" ref="audio">
       <button
         class="sound_btn"
-        ref="soundClick"
         @click="
           play();
           sendGaEvent('flt_bgmOn', 'FLT');
         "
       />
-      <audio loop ref="audioElm" src="../assets/media/BELLY.mp3"></audio>
+      <audio loop ref="audioElm" src="../assets/media/BELLY.mp3" />
+      <Lottie
+        :options="defaultOptions"
+        :height="68"
+        :width="105"
+        v-on:animCreated="handleAnimation"
+        class="music_on"
+      />
     </div>
 
     <a href="#getBelly" class="top-btn"
@@ -204,22 +210,32 @@
 </template>
 
 <script>
+import Lottie from "@/components/Lottie.vue";
+import * as animationData from "@/assets/json/m_btn_music_on.json";
 export default {
   name: "Fixed",
+  components: {
+    Lottie,
+  },
   data() {
     return {
       showStoryModal: false,
       currIndi: 1,
+      defaultOptions: { animationData: animationData },
+      animationSpeed: 1,
     };
   },
   methods: {
+    handleAnimation(anim) {
+      this.anim = anim;
+    },
     play() {
       const audio = this.$refs.audioElm;
       if (audio.paused) {
-        this.$refs.soundClick.classList.add("play");
+        this.$refs.audio.classList.add("play");
         audio.play();
       } else {
-        this.$refs.soundClick.classList.remove("play");
+        this.$refs.audio.classList.remove("play");
         audio.pause();
       }
     },
@@ -256,50 +272,34 @@ export default {
 <style scoped lang="scss">
 /*fixed Content*/
 #fixed {
-  .sound_btn {
-    position: fixed;
-    bottom: 20px;
-    left: 15px;
-    z-index: 99;
-    width: 70px;
-    height: 40px;
-    border-radius: 30px;
-    background: #ffffff;
-    box-shadow: 0 4px 10px rgb(0 0 0 / 3%);
-    &::before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 5px;
-      left: 5px;
-      width: 30px;
-      height: 30px;
-      background-image: url("@/assets/m_images/sound_belly.svg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      transition: all 0.3s;
-    }
-    &::after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 10px;
-      right: 9px;
-      width: 21px;
-      height: 21px;
-      background-image: url("@/assets/m_images/player.svg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      transition: all 0.3s;
-    }
-    &.play {
-      &::before {
-        background-image: url("@/assets/m_images/sound_belly_2.svg");
+  .mobile & {
+    .audio {
+      .sound_btn {
+        position: fixed;
+        bottom: 30px;
+        left: 0;
+        z-index: 100;
+        width: 105px;
+        height: 68px;
+        background: url("@/assets/m_images/music_off.png") center no-repeat;
+        background-size: 100%;
       }
-      &::after {
-        background-image: url("@/assets/m_images/stop.svg");
+      .music_on {
+        position: fixed;
+        bottom: 30px;
+        left: 0;
+        z-index: 99;
+        opacity: 0;
+      }
+      &.play {
+        .sound_btn {
+          opacity: 0;
+          transition: opacity 0.5s 0.5s ease;
+        }
+        .music_on {
+          opacity: 1;
+          transition: opacity 0.5s 0.5s ease;
+        }
       }
     }
   }

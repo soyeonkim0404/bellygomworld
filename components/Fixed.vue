@@ -1,53 +1,59 @@
 <template>
-  <!--S : Fixed Contents-->
   <div id="fixed">
-    <div class="audio">
+    <div class="audio" ref="audio">
       <button
         class="sound_btn"
-        ref="soundClick"
         @click="
           play();
           sendGaEvent('flt_bgmOn', 'FLT');
         "
       />
       <audio loop ref="audioElm" src="../assets/media/BELLY.mp3" />
+      <Lottie
+        :options="defaultOptions"
+        :height="100"
+        :width="150"
+        v-on:animCreated="handleAnimation"
+        class="music_on"
+      />
     </div>
-    <!--    <a
-      href="https://bellygom.launchpad.xclusive.market/"
-      target="_blank"
-      class="mint-modal-btn"
-    >
-      <img src="@/assets/images/main/btn_mint.svg" />
-    </a>-->
     <button @click="storyModal" class="story-modal-btn">
       <img
         src="@/assets/images/story_btn.svg"
         @click="sendGaEvent('flt_bellyStory', 'FLT')"
       />
     </button>
-    <!--top btn-->
     <a href="#getBelly" class="top-btn">
       <img src="@/assets/images/top_btn.svg" />
     </a>
-    <!--top btn-->
   </div>
-  <!--E : Fixed Contents-->
 </template>
 
 <script>
+import Lottie from "@/components/Lottie.vue";
+import * as animationData from "@/assets/json/pc_btn_music_on.json";
 export default {
   name: "Fixed",
+  components: {
+    Lottie,
+  },
   data() {
-    return {};
+    return {
+      defaultOptions: { animationData: animationData },
+      animationSpeed: 1,
+    };
   },
   methods: {
+    handleAnimation(anim) {
+      this.anim = anim;
+    },
     play() {
       const audio = this.$refs.audioElm;
       if (audio.paused) {
-        this.$refs.soundClick.classList.add("play");
+        this.$refs.audio.classList.add("play");
         audio.play();
       } else {
-        this.$refs.soundClick.classList.remove("play");
+        this.$refs.audio.classList.remove("play");
         audio.pause();
       }
     },
@@ -68,52 +74,35 @@ export default {
 </script>
 
 <style scoped lang="scss">
-/*fixed Content*/
 #fixed {
-  .sound_btn {
-    position: fixed;
-    bottom: 50px;
-    left: 50px;
-    z-index: 99;
-    width: 120px;
-    height: 70px;
-    border-radius: 35px;
-    background: $white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
-    &::before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      width: 50px;
-      height: 50px;
-      background-image: url("@/assets/images/sound_belly.svg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      transition: all 0.3s;
-    }
-    &::after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 19px;
-      right: 18px;
-      width: 32px;
-      height: 32px;
-      background-image: url("@/assets/images/player.svg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      transition: all 0.3s;
-    }
-    &.play {
-      &::before {
-        background-image: url("@/assets/images/sound_belly_2.svg");
+  .pc & {
+    .audio {
+      .sound_btn {
+        position: fixed;
+        bottom: 50px;
+        left: 50px;
+        z-index: 100;
+        width: 150px;
+        height: 100px;
+        background: url("@/assets/images/music_off.png") center no-repeat;
+        background-size: 100%;
       }
-      &::after {
-        background-image: url("@/assets/images/stop.svg");
+      .music_on {
+        position: fixed;
+        bottom: 50px;
+        left: 50px;
+        z-index: 99;
+        opacity: 0;
+      }
+      &.play {
+        .sound_btn {
+          opacity: 0;
+          transition: opacity 0.5s 0.5s ease;
+        }
+        .music_on {
+          opacity: 1;
+          transition: opacity 0.5s 0.5s ease;
+        }
       }
     }
   }
