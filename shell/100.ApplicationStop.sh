@@ -9,4 +9,3 @@ rm -rf /app/world_deploy/*
 
 # 03. index.html 복사
 #cp -R /app/world_deploy/index.html /app/world/
-
