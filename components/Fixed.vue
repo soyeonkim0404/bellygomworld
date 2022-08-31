@@ -9,13 +9,13 @@
         "
       />
       <audio loop ref="audioElm" src="../assets/media/BELLY.mp3" />
-      <Lottie
+      <!--      <Lottie
         :options="defaultOptions"
         :height="100"
         :width="150"
         v-on:animCreated="handleAnimation"
         class="music_on"
-      />
+      />-->
     </div>
     <button @click="storyModal" class="story-modal-btn">
       <img
