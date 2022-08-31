@@ -3,25 +3,22 @@
     <ul class="list">
       <li class="item" v-for="(value, name, index) in list" :key="index">
         <button
-          :class="{ title: true, active: onContent.some((el) => index === el) }"
+          :class="{
+            title: true,
+            active: onContent.some((el) => index === el),
+          }"
           @click="openCon(index, value)"
-          ref="btn"
         >
           {{ name }}
         </button>
-        <div
-          class="contents"
-          v-if="
-            onContent.some((el) => index === el) || value.selected.length > 0
-          "
-        >
+        <div class="contents" v-if="onContent.some((el) => index === el)">
           <ul class="check-list">
             <li v-for="check in value.list" :key="check">
               <InputCheckbox
                 v-model="value.selected"
                 :value="check"
                 :disabled="list.disabled"
-                @change="changeInput"
+                @change="changeInput(index, value)"
               >
                 {{ check }}
               </InputCheckbox>
@@ -43,11 +40,22 @@ export default {
     };
   },
   created() {
+    this.createdOpenCon();
     this.$nuxt.$on("closeFilter", () => {
       this.onContent = [];
     });
   },
+  mounted() {},
   methods: {
+    createdOpenCon() {
+      let i = 0;
+      for (const key in this.list) {
+        if (this.list[key].selected.length > 0) {
+          this.onContent.push(i);
+        }
+        i++;
+      }
+    },
     openCon(index) {
       const findIndex = this.onContent.findIndex((el) => el === index);
       if (findIndex === -1) {
@@ -56,7 +64,11 @@ export default {
         this.onContent.splice(findIndex, 1);
       }
     },
-    changeInput() {
+    changeInput(index, value) {
+      const findIndex = this.onContent.findIndex((el) => el === index);
+      if (value.selected.length > 0) {
+        console.log(findIndex, "selected 있다");
+      }
       this.$emit("change");
     },
   },

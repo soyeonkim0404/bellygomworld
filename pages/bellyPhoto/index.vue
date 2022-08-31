@@ -1000,9 +1000,27 @@ export default {
           grid-column-gap: 10px;
           grid-row-gap: 20px;
           .photo-item {
+            box-sizing: border-box;
             border-radius: 20px;
             .image {
+              position: relative;
+              width: 100%;
               height: auto;
+              background-color: skyblue;
+              &:after {
+                display: block;
+                content: "";
+                padding-bottom: 100%;
+                background: red;
+              }
+              img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
             }
             .rank {
               padding: 8px 10px;
