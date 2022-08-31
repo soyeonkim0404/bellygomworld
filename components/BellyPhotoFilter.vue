@@ -53,14 +53,6 @@ export default {
   },
   mounted() {},
   methods: {
-    aa(value) {
-      if (this.state) {
-        return value.selected.length > 0;
-      } else {
-        return false;
-      }
-      this.state = false;
-    },
     openCon(index) {
       const findIndex = this.onContent.findIndex((el) => el === index);
       if (findIndex === -1) {
