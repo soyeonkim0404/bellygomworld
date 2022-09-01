@@ -103,23 +103,21 @@
         <!-- //My NFT 없음 -->
 
         <!-- list// -->
-        <template v-else-if="data.length">
-          <transition-group name="photo" class="photo" tag="ul">
-            <li
-              v-for="item in data"
-              :key="item.id"
-              class="photo-item"
-              @click="detailNft(item)"
-            >
-              <span class="rank">Rank {{ item.rank }}</span>
-              <span class="image">
-                <img :src="item.image" :alt="item.id" />
-              </span>
-              <span class="info">Bellygom #{{ item.id }}</span>
-              <span class="border" v-if="$mq === 'pc'"></span>
-            </li>
-          </transition-group>
-        </template>
+        <transition-group v-else-if="data" name="photo" class="photo" tag="ul">
+          <li
+            v-for="item in data"
+            :key="item.id"
+            class="photo-item"
+            @click="detailNft(item)"
+          >
+            <span class="rank">Rank {{ item.rank }}</span>
+            <span class="image">
+              <img :src="item.image" :alt="item.id" />
+            </span>
+            <span class="info">Bellygom #{{ item.id }}</span>
+            <span class="border" v-if="$mq === 'pc'"></span>
+          </li>
+        </transition-group>
         <!-- //list -->
 
         <!-- no-data// -->
@@ -805,6 +803,7 @@ export default {
         gap: 24px;
         margin-top: 20px;
         overflow: auto;
+
         .photo-item {
           flex-direction: column;
           -webkit-box-pack: justify;
@@ -817,12 +816,13 @@ export default {
           box-sizing: border-box;
           opacity: 1;
           transition: 0.35s ease-in;
-          .photo-enter,
-          .photo-leave-to {
+          &.photo-leave-to,
+          &.photo-leave-active {
             opacity: 0;
+            //transform: translateY(-30px);
           }
-          .photo-leave-to {
-            transition: 0.35s ease-in;
+          &.photo-leave-active {
+            transition-delay: 0s;
           }
           .rank {
             font-family: "Sandoll Odongtong", sans-serif;
