@@ -147,7 +147,9 @@
       <div slot="body">
         <div class="inner">
           <div class="nft-thumb">
-            <img :src="detailNftInfo.image" class="thumb" />
+            <span>
+              <img :src="detailNftInfo.image" class="thumb" />
+            </span>
             <div class="button-wrap">
               <button class="btn-opensea">
                 <i class="icon" />
@@ -843,7 +845,11 @@ export default {
             width: 100%;
             height: 297px;
             display: inline-block;
-            background: #f9e7f1;
+            background: linear-gradient(
+              238.96deg,
+              #f9e2ee 27.25%,
+              #fff9fc 98.56%
+            );
           }
           .info {
             position: relative;
@@ -1012,7 +1018,11 @@ export default {
                 display: block;
                 content: "";
                 padding-bottom: 100%;
-                background: #f9e7f1;
+                background: linear-gradient(
+                  238.96deg,
+                  #f9e2ee 27.25%,
+                  #fff9fc 98.56%
+                );
               }
               img {
                 position: absolute;
@@ -1147,10 +1157,37 @@ export default {
         .nft-thumb {
           flex: 0 0 460px;
           width: 460px;
-          .thumb {
-            width: 460px;
-            height: 460px;
-            border-radius: 20px;
+          background: linear-gradient(
+            238.96deg,
+            #f9e2ee 27.25%,
+            #fff9fc 98.56%
+          );
+          .pc & {
+            background: none;
+          }
+          span {
+            display: inline-block;
+            position: relative;
+            padding-top: 100%;
+            background: linear-gradient(
+              238.96deg,
+              #f9e2ee 27.25%,
+              #fff9fc 98.56%
+            );
+            overflow: hidden;
+            .pc & {
+              width: 460px;
+              height: 460px;
+              border-radius: 20px;
+            }
+            .thumb {
+              position: absolute;
+              object-fit: contain;
+              height: 100%;
+              width: 100%;
+              top: 0;
+              left: 0;
+            }
           }
           .btn-opensea {
             display: flex;
@@ -1298,13 +1335,6 @@ export default {
         .inner {
           flex-direction: column;
           .nft-thumb {
-            flex: none;
-            width: 100%;
-            img {
-              width: 100%;
-              height: auto;
-              border-radius: 0;
-            }
             .button-wrap {
               position: fixed;
               bottom: 0;
