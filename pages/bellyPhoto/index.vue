@@ -68,68 +68,73 @@
         </button>
 
         <!-- 지갑연동 버튼// -->
-        <div v-if="myNFT && !$store.state.connect" class="photo-box">
-          <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
-            Please, Connect Kaikas wallet to see your Bellygom NFTs.
-          </p>
-          <p class="desc" v-else>
-            보유 중인 벨리곰 NFT를 확인하려면 카이카스 지갑 연동이 필요해요!
-          </p>
-          <button class="btn-wallet" @click="findMyNFT">CONNECT WALLET</button>
-        </div>
-        <!-- //지갑연동 버튼 -->
 
-        <!-- My NFT 없음// -->
-        <div
-          v-else-if="myNFT && $store.state.myNft.length === 0"
-          class="no-nft"
-        >
-          <div class="photo-box">
+        <transition name="photo" mode="out-in">
+          <div v-if="myNFT && !$store.state.connect" class="photo-box">
             <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
-              You don’t have any Bellygom NFT.
+              Please, Connect Kaikas wallet to see your Bellygom NFTs.
             </p>
             <p class="desc" v-else>
-              보유하고 계신 Bellygom NFT가 존재하지 않습니다.
+              보유 중인 벨리곰 NFT를 확인하려면 카이카스 지갑 연동이 필요해요!
             </p>
-            <a
-              href="https://opensea.io/collection/bellygom-world-official"
-              target="_blank"
-              class="btn-wallet"
-              ><img src="@/assets/images/belly-photo-detail-opensea.svg" />Buy
-              on OpenSea</a
-            >
+            <button class="btn-wallet" @click="findMyNFT">
+              CONNECT WALLET
+            </button>
           </div>
-        </div>
-        <!-- //My NFT 없음 -->
+          <!-- //지갑연동 버튼 -->
 
-        <!-- list// -->
-        <transition-group v-else-if="data" name="photo" class="photo" tag="ul">
-          <li
-            v-for="item in data"
-            :key="item.id"
-            class="photo-item"
-            @click="detailNft(item)"
+          <!-- My NFT 없음// -->
+          <div
+            v-else-if="myNFT && $store.state.myNft.length === 0"
+            class="no-nft"
           >
-            <span class="rank">Rank {{ item.rank }}</span>
-            <span class="image">
-              <img :src="item.image" :alt="item.id" />
-            </span>
-            <span class="info">Bellygom #{{ item.id }}</span>
-            <span class="border" v-if="$mq === 'pc'"></span>
-          </li>
-        </transition-group>
-        <!-- //list -->
+            <div class="photo-box">
+              <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
+                You don’t have any Bellygom NFT.
+              </p>
+              <p class="desc" v-else>
+                보유하고 계신 Bellygom NFT가 존재하지 않습니다.
+              </p>
+              <a
+                href="https://opensea.io/collection/bellygom-world-official"
+                target="_blank"
+                class="btn-wallet"
+                ><img src="@/assets/images/belly-photo-detail-opensea.svg" />Buy
+                on OpenSea</a
+              >
+            </div>
+          </div>
+          <!-- //My NFT 없음 -->
 
-        <!-- no-data// -->
-        <div v-else class="photo-box">
-          <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
-            No Matching Bellygom Found.
-          </p>
-          <p class="desc" v-else>
-            검색하신 조건의 벨리곰NFT를 찾지 못했습니다.
-          </p>
-        </div>
-        <!-- //no-data -->
+          <!-- list// -->
+          <ul class="photo" v-else-if="data.length">
+            <li
+              v-for="item in data"
+              :key="item.id"
+              class="photo-item"
+              @click="detailNft(item)"
+            >
+              <span class="rank">Rank {{ item.rank }}</span>
+              <span class="image">
+                <img :src="item.image" :alt="item.id" />
+              </span>
+              <span class="info">Bellygom #{{ item.id }}</span>
+              <span class="border" v-if="$mq === 'pc'"></span>
+            </li>
+          </ul>
+          <!-- //list -->
+
+          <!-- no-data// -->
+          <div v-else class="photo-box">
+            <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
+              No Matching Bellygom Found.
+            </p>
+            <p class="desc" v-else>
+              검색하신 조건의 벨리곰NFT를 찾지 못했습니다.
+            </p>
+          </div>
+          <!-- //no-data -->
+        </transition>
       </div>
     </div>
 
@@ -796,6 +801,7 @@ export default {
           }
         }
       }
+
       .photo {
         width: 100%;
         display: grid;
@@ -803,7 +809,15 @@ export default {
         gap: 24px;
         margin-top: 20px;
         overflow: auto;
+        transition: opacity 0.3s ease-in 0s;
+        &.photo-enter,
+        &.photo-leave-to {
+          opacity: 0;
+        }
 
+        &.photo-leave-to {
+          transition-duration: 0s;
+        }
         .photo-item {
           flex-direction: column;
           -webkit-box-pack: justify;
@@ -814,16 +828,14 @@ export default {
           overflow: hidden;
           background: #fff;
           box-sizing: border-box;
-          opacity: 1;
-          transition: 0.35s ease-in;
-          &.photo-leave-to,
-          &.photo-leave-active {
-            opacity: 0;
-            //transform: translateY(-30px);
-          }
-          &.photo-leave-active {
-            transition-delay: 0s;
-          }
+          //&.photo-leave-to,
+          //&.photo-leave-active {
+          //  opacity: 0;
+          //  //transform: translateY(-30px);
+          //}
+          //&.photo-leave-active {
+          //  transition-delay: 0s;
+          //}
           .rank {
             font-family: "Sandoll Odongtong", sans-serif;
             font-style: normal;
