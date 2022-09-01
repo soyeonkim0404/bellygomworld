@@ -2531,7 +2531,7 @@ export default {
 
 .cloud-wrapper .obj .l1 {
   position: absolute;
-  width: 225px;
+  width: 11%;
   height: auto;
   right: -90px;
   bottom: 22.5%;
@@ -2625,7 +2625,7 @@ export default {
   );
 }
 
-@media (min-width: 2560px) {
+@media (min-width: 2000px) {
   .cloud-wrapper .obj .l2 {
     bottom: -23%;
   }
@@ -2640,6 +2640,10 @@ export default {
   .cloud-wrapper .obj .l5 {
     width: 246px;
     right: 25%;
+  }
+
+  .cloud-wrapper .obj .l1 {
+    bottom: 20.5%;
   }
 }
 </style>

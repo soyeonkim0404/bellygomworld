@@ -212,7 +212,7 @@ export default {
   /*eslint false*/
   lintOnSave: false,
   server: {
-    //host: "0.0.0.0",
+    host: "0.0.0.0",
   },
   chainWebpack: (config) => {
     config.module
