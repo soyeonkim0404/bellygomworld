@@ -9,6 +9,13 @@
         "
       />
       <audio loop ref="audioElm" src="../assets/media/BELLY.mp3" />
+      <Lottie
+          :options="defaultOptions"
+          :height="100"
+          :width="150"
+          v-on:animCreated="handleAnimation"
+          class="music_on"
+      />
     </div>
     <button @click="storyModal" class="story-modal-btn">
       <img
@@ -23,12 +30,23 @@
 </template>
 
 <script>
+import Lottie from "@/components/Lottie.vue";
+import * as animationData from "@/assets/json/pc_btn_music_on.json";
 export default {
   name: "Fixed",
+  components: {
+    Lottie,
+  },
   data() {
-    return {};
+    return {
+      defaultOptions: { animationData: animationData },
+      animationSpeed: 1,
+    };
   },
   methods: {
+    handleAnimation(anim) {
+      this.anim = anim;
+    },
     play() {
       const audio = this.$refs.audioElm;
       if (audio.paused) {
@@ -68,6 +86,24 @@ export default {
         height: 100px;
         background: url("@/assets/images/music_off.png") center no-repeat;
         background-size: 100%;
+      }
+
+      .music_on {
+        position: fixed;
+        bottom: 50px;
+        left: 50px;
+        z-index: 99;
+        opacity: 0;
+      }
+      &.play {
+        .sound_btn {
+          opacity: 0;
+          transition: opacity 0.5s 0.5s ease;
+        }
+        .music_on {
+          opacity: 1;
+          transition: opacity 0.5s 0.5s ease;
+        }
       }
     }
   }

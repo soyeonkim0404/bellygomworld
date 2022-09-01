@@ -10,6 +10,13 @@
         "
       />
       <audio loop ref="audioElm" src="../assets/media/BELLY.mp3" />
+      <Lottie
+        :options="defaultOptions"
+        :height="68"
+        :width="105"
+        v-on:animCreated="handleAnimation"
+        class="music_on"
+      />
     </div>
 
     <a href="#getBelly" class="top-btn"
@@ -203,15 +210,25 @@
 </template>
 
 <script>
+import Lottie from "@/components/Lottie.vue";
+import * as animationData from "@/assets/json/m_btn_music_on.json";
 export default {
   name: "Fixed",
+  components: {
+    Lottie,
+  },
   data() {
     return {
       showStoryModal: false,
       currIndi: 1,
+      defaultOptions: { animationData: animationData },
+      animationSpeed: 1,
     };
   },
   methods: {
+    handleAnimation(anim) {
+      this.anim = anim;
+    },
     play() {
       const audio = this.$refs.audioElm;
       if (audio.paused) {
@@ -266,6 +283,23 @@ export default {
         height: 68px;
         background: url("@/assets/m_images/music_off.png") center no-repeat;
         background-size: 100%;
+      }
+      .music_on {
+        position: fixed;
+        bottom: 30px;
+        left: 0;
+        z-index: 99;
+        opacity: 0;
+      }
+      &.play {
+        .sound_btn {
+          opacity: 0;
+          transition: opacity 0.5s 0.5s ease;
+        }
+        .music_on {
+          opacity: 1;
+          transition: opacity 0.5s 0.5s ease;
+        }
       }
     }
   }
