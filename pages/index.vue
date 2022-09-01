@@ -2343,15 +2343,11 @@ export default {
 @keyframes pinkplane {
   0% {
     transform: translateX(-70px) translateY(-10px);
-    opacity: 1;
+    opacity: 0;
   }
-  30% {
+  50% {
     transform: translateX(0) translateY(0);
     opacity: 1;
-  }
-  85% {
-    transform: translateX(200px) translateY(-50px);
-    opacity: 0.75;
   }
   100% {
     transform: translateX(200px) translateY(-50px);
@@ -2362,15 +2358,11 @@ export default {
 @keyframes blueplane {
   0% {
     transform: translateX(-50px) translateY(-10px);
-    opacity: 1;
+    opacity: 0;
   }
-  30% {
+  50% {
     transform: translateX(0) translateY(0);
     opacity: 1;
-  }
-  85% {
-    transform: translateX(150px) translateY(-70px);
-    opacity: 0.75;
   }
   100% {
     transform: translateX(150px) translateY(-70px);
@@ -2434,19 +2426,18 @@ export default {
   position: absolute;
   top: 34%;
   left: 45%;
-  -webkit-animation: pinkplane 6s 0.5s linear infinite;
+  webkit-animation: pinkplane 6s 0.5s linear infinite;
   animation: pinkplane 6s 0.5s linear infinite;
 }
 
 #blueplane {
   width: 3.15%;
-  height: auto;
   z-index: 9;
   position: absolute;
   top: 25%;
   left: 53%;
-  -webkit-animation: blueplane 6s 0.5s linear infinite;
-  animation: blueplane 6s 0.5s linear infinite;
+  webkit-animation: blueplane 6s linear infinite;
+  animation: blueplane 6s linear infinite;
 }
 
 #cloud1 {
@@ -2523,12 +2514,6 @@ export default {
   0% {
     transform: translateY(0) rotate(10deg);
   }
-  25% {
-    transform: translateY(-20px) rotate(10deg);
-  }
-  75% {
-    transform: translateY(-80px) rotate(-10deg);
-  }
   100% {
     transform: translateY(-100px) rotate(-10deg);
   }
@@ -2540,7 +2525,7 @@ export default {
   top: 60%;
   left: 65%;
   transform-origin: top left;
-  -webkit-animation: cat 2.5s infinite alternate ease-in-out;
+  /*-webkit-animation: cat 2.5s infinite alternate ease-in-out;*/
   animation: cat 2.5s infinite alternate ease-in-out;
 }
 

@@ -406,7 +406,7 @@ export default {
         position: relative;
         display: inline-flex;
         &:nth-child(4) {
-          margin-left: 61px;
+          margin-left: 21px;
           &:before {
             content: "";
             position: absolute;
@@ -414,7 +414,7 @@ export default {
             height: 20px;
             background: #333333;
             opacity: 0.5;
-            left: -30px;
+            left: -11px;
             top: 8px;
           }
         }
@@ -435,7 +435,7 @@ export default {
             height: 2px;
             background: #333;
             transition: width 250ms ease-in-out;
-            transform-origin: 0% 0;
+            transform-origin: 0 0;
           }
           &:hover:after {
             width: 100%;
