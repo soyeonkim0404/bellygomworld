@@ -87,6 +87,7 @@ export default {
         background: url("@/assets/images/music_off.png") center no-repeat;
         background-size: 100%;
       }
+
       .music_on {
         position: fixed;
         bottom: 50px;
