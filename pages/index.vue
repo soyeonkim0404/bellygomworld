@@ -2574,7 +2574,7 @@ export default {
   position: absolute;
   width: 100%;
   right: 0;
-  bottom: -10%;
+  bottom: -13%;
   -webkit-animation: moveUpTo 1.5s infinite alternate linear;
   animation: moveUpTo 1.5s infinite alternate linear;
 }
@@ -2582,7 +2582,7 @@ export default {
   position: absolute;
   width: 100%;
   left: 0;
-  bottom: -13%;
+  bottom: -16%;
   -webkit-animation: moveDownTo 1.5s infinite alternate linear;
   animation: moveDownTo 1.5s infinite alternate linear;
 }
@@ -2638,5 +2638,23 @@ export default {
     #ceedff 0%,
     rgba(206, 237, 255, 0) 89.15%
   );
+}
+
+@media (min-width: 2560px) {
+  .cloud-wrapper .obj .l2 {
+    bottom: -23%;
+  }
+  .cloud-wrapper .obj .l3 {
+    bottom: -27%;
+  }
+  .cloud-wrapper .obj .l4 {
+    width: 1100px;
+    bottom: -328px;
+    right: 20%;
+  }
+  .cloud-wrapper .obj .l5 {
+    width: 246px;
+    right: 25%;
+  }
 }
 </style>
