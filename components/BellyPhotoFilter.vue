@@ -65,9 +65,6 @@ export default {
       }
     },
     changeInput(index, value) {
-      const findIndex = this.onContent.findIndex((el) => el === index);
-      if (value.selected.length > 0) {
-      }
       this.$emit("change");
     },
   },

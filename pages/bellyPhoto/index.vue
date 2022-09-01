@@ -612,7 +612,6 @@ export default {
       this.modalShow = true;
       this.modalSeq = item;
       this.detailNftInfo = item;
-      console.log("디테일", this.detailNftInfo);
       document.body.style.overflow = "hidden";
     },
     mbModalDone() {
@@ -627,9 +626,6 @@ export default {
       document.body.style.overflow = "";
     },
     mbFilter() {
-      /*      for (const [key, value] of Object.entries(this.filter)) {
-        value.selected = [];
-      }*/
       this.mbFilterShow = true;
     },
     formatToPrice(value) {
