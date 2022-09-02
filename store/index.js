@@ -57,8 +57,7 @@ const store = () =>
         let countNFT = await contractInstance.methods
           .balanceOf(klaytn.selectedAddress)
           .call();
-
-        console.log(1);
+        commit("setConnect");
         for (let i = 0; i < countNFT; i++) {
           nftTokenIdArray.push(
             await contractInstance.methods
@@ -67,15 +66,13 @@ const store = () =>
           );
         }
 
-        console.log(2);
-
         nftTokenIdArray = nftTokenIdArray.map((el) => {
           return el.padStart(4, "0");
         });
         console.log("mynft", klaytn.selectedAddress);
         commit("setKlaytnAddress", klaytn.selectedAddress);
         commit("setMyNft", nftTokenIdArray);
-        commit("setConnect");
+
       },
       async fetchMyWallet({ dispatch }, payload) {
         console.log("fetchMyWallet");
