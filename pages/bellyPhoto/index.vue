@@ -6,7 +6,7 @@
         <InputSearch
           v-model="keyword"
           placeholder="Number"
-          @input="resetFetch"
+          @input="inputFetch($event)"
         />
         <div class="filter" v-if="$mq === 'pc'">
           <div class="con-title">
@@ -155,7 +155,9 @@
             </span>
             <div class="button-wrap">
               <a
-                :href="`https://opensea.io/assets/klaytn/0xce70eef5adac126c37c8bc0c1228d48b70066d03/${detailNftInfo.id}`"
+                :href="`https://opensea.io/assets/klaytn/0xce70eef5adac126c37c8bc0c1228d48b70066d03/${parseInt(
+                  detailNftInfo.id
+                )}`"
                 target="_blank"
                 class="btn-opensea"
               >
@@ -627,6 +629,11 @@ export default {
       await this.$store.dispatch("callMyNftData");
       await this.resetFetch();
     },
+    inputFetch($event) {
+      if (!isNaN($event.data)) {
+        this.resetFetch();
+      }
+    },
     resetWallet() {
       this.$store.dispatch("callMyNftData");
       this.resetFetch();
@@ -681,6 +688,7 @@ export default {
     },
   },
   mounted() {
+    this.$store.dispatch("fetchMyDataArray");
     window.addEventListener("scroll", this.infiniteHandler);
     window.addEventListener("scroll", this.topBtn);
 

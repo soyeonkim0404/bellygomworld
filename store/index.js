@@ -34,11 +34,9 @@ const store = () =>
         state.locale = "KOR";
       },
       setConnect(state) {
-        document.cookie = "b_connect=YES;";
         state.connect = true;
       },
       setNoConnect(state) {
-        document.cookie = "b_connect=NO;";
         state.connect = false;
       },
       setMyNft(state, payload) {
@@ -50,7 +48,33 @@ const store = () =>
       },
     },
     actions: {
-      async fetchMyWallet({ commit }) {
+      async fetchMyDataArray({ commit }) {
+        let nftTokenIdArray = [];
+        const contractInstance = window.caver.contract.create(
+          myNft,
+          "0x141637b601d0fc907c0acb8ae5060ee22bb7b3f6"
+        ); //컨트렉트 매니저 객체 생성
+        console.log("test");
+        let countNFT = await contractInstance.methods
+          .balanceOf(klaytn.selectedAddress)
+          .call();
+        for (let i = 0; i < countNFT; i++) {
+          nftTokenIdArray.push(
+            await contractInstance.methods
+              .tokenOfOwnerByIndex(klaytn.selectedAddress, i)
+              .call()
+          );
+        }
+
+        nftTokenIdArray = nftTokenIdArray.map((el) => {
+          return el.padStart(4, "0");
+        });
+        console.log("mynft", klaytn.selectedAddress);
+        commit("setKlaytnAddress", klaytn.selectedAddress);
+        commit("setMyNft", nftTokenIdArray);
+        commit("setConnect");
+      },
+      async fetchMyWallet({ dispatch }, payload) {
         if (
           window.klaytn.networkVersion === undefined ||
           window.klaytn.networkVersion === "loading"
@@ -59,33 +83,13 @@ const store = () =>
           location.reload();
           return;
         }
-
         try {
           const klaytn = window.klaytn; //크롬에 깔린 카이카스 확장프로그램 안에는 klaytn 이 내장되어있다.
           const accounts = await klaytn.enable(); //카이카스 로그인
-          let nftTokenIdArray = [];
-          const contractInstance = window.caver.contract.create(
-            myNft,
-            "0x141637b601d0fc907c0acb8ae5060ee22bb7b3f6"
-          ); //컨트렉트 매니저 객체 생성
-          let countNFT = await contractInstance.methods
-            .balanceOf(klaytn.selectedAddress)
-            .call();
-          for (let i = 0; i < countNFT; i++) {
-            nftTokenIdArray.push(
-              await contractInstance.methods
-                .tokenOfOwnerByIndex(klaytn.selectedAddress, i)
-                .call()
-            );
-          }
-
-          nftTokenIdArray = nftTokenIdArray.map((el) => {
-            return el.padStart(4, "0");
-          });
-          console.log("mynft", nftTokenIdArray);
-          commit("setKlaytnAddress", klaytn.selectedAddress);
-          commit("setMyNft", nftTokenIdArray);
-          commit("setConnect");
+          console.log(accounts);
+          setTimeout(async () => {
+            await dispatch("fetchMyDataArray");
+          }, 800);
         } catch (err) {
           console.log(err);
         }

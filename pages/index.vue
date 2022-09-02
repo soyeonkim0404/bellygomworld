@@ -2075,6 +2075,7 @@ export default {
     });
   },
   mounted() {
+    this.$store.dispatch("fetchMyWallet", { main: "main" });
     if (this.$mq === "mobile") {
       this.$router.push({ path: "/m" });
     }
