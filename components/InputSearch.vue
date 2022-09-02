@@ -36,7 +36,8 @@ export default {
 
   methods: {
     formChange(event) {
-      event.target.value = parseInt(event.target.value) || "";
+      const regex = /[^0-9]/g; // 숫자가 아닌 문자열을 선택하는 정규식
+      event.target.value = event.target.value.replace(regex, "");
       if (event.target.maxLength !== -1) {
         event.target.value = event.target.value.slice(
           0,
