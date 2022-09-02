@@ -1,13 +1,13 @@
 <template>
   <span :class="{ 'input-search': true, disabled: disabled }">
     <input
-        type="number"
-        :value="value"
-        v-on="listeners"
-        :disabled="disabled"
-        :placeholder="placeholder"
-        maxlength="4"
-        v-bind="$attrs"
+      type="number"
+      :value="value"
+      v-on="listeners"
+      :disabled="disabled"
+      :placeholder="placeholder"
+      maxlength="4"
+      v-bind="$attrs"
     />
     <i class="icon" />
   </span>
@@ -28,7 +28,6 @@ export default {
       type: Boolean,
       default: false,
     },
-
   },
   model: {
     prop: "value",
@@ -37,15 +36,17 @@ export default {
 
   methods: {
     formChange(event) {
+      if (!event.target.value) {
+        event.target.value = parseInt(event.target.value);
+      }
       if (event.target.maxLength !== -1) {
         event.target.value = event.target.value.slice(
-            0,
-            event.target.maxLength
+          0,
+          event.target.maxLength
         );
       }
       this.$emit("formChange", event.target.value);
     },
-
   },
   computed: {
     listeners() {
@@ -63,7 +64,6 @@ export default {
           }
           this.$emit("change", event);
         },
-
       };
     },
   },

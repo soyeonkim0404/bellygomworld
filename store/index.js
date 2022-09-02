@@ -57,6 +57,8 @@ const store = () =>
         let countNFT = await contractInstance.methods
           .balanceOf(klaytn.selectedAddress)
           .call();
+
+        console.log(1);
         for (let i = 0; i < countNFT; i++) {
           nftTokenIdArray.push(
             await contractInstance.methods
@@ -64,6 +66,8 @@ const store = () =>
               .call()
           );
         }
+
+        console.log(2);
 
         nftTokenIdArray = nftTokenIdArray.map((el) => {
           return el.padStart(4, "0");
@@ -74,6 +78,7 @@ const store = () =>
         commit("setConnect");
       },
       async fetchMyWallet({ dispatch }, payload) {
+        console.log("fetchMyWallet");
         if (
           window.klaytn.networkVersion === undefined ||
           window.klaytn.networkVersion === "loading"
@@ -86,12 +91,21 @@ const store = () =>
           const klaytn = window.klaytn; //크롬에 깔린 카이카스 확장프로그램 안에는 klaytn 이 내장되어있다.
           const accounts = await klaytn.enable(); //카이카스 로그인
           console.log(accounts);
-          setTimeout(async () => {
-            await dispatch("fetchMyDataArray");
-          }, 800);
+          console.log("setTimeout start");
+          await dispatch("test");
+          console.log("setTimeout end");
         } catch (err) {
           console.log(err);
         }
+      },
+      async test({ dispatch }) {
+        return new Promise((res, rej) => {
+          setTimeout(async () => {
+            console.log("setTimeout ing");
+            await dispatch("fetchMyDataArray");
+            res();
+          }, 1000);
+        });
       },
       async callMyNftData({ commit, getters, dispatch, state }) {
         if (state.connect) {
@@ -100,6 +114,7 @@ const store = () =>
             commit("setNoConnect");
           }
         } else {
+          console.log("callMyNftData");
           if (window.confirm("지갑연결을 하시겠습니까?")) {
             try {
               commit("setMyNft", []);

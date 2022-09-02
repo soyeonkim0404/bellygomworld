@@ -1,5 +1,6 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  loading: "~/components/LoadingBar.vue",
   env: {
     VUE_API_URL: process.env.VUE_API_URL,
     BASE_URL: process.env.BASE_URL,
