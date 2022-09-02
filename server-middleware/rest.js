@@ -13,7 +13,7 @@ log4js.configure({
   categories: { default: { appenders: ["everything"], level: "debug" } },
 });
 const logger = log4js.getLogger("cheese");
-const data = require("./photoData.json");
+const data = require("./photoDataMinify.json");
 const express = require("express");
 const app = express();
 
