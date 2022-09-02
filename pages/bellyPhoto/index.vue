@@ -562,9 +562,6 @@ export default {
             "White Angel Wing",
             "Black Angel Wing",
             "Gold Angel Wing",
-            "Small Bat Wing",
-            "Big Bat Wing",
-            "Purple Point Wing",
             "Black Armor",
             "Green Armor",
             "Mint Armor",
@@ -632,6 +629,8 @@ export default {
     inputFetch($event) {
       if (!isNaN($event.data)) {
         this.resetFetch();
+      } else {
+        $event.data.slice(0, 1);
       }
     },
     resetWallet() {
