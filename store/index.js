@@ -34,9 +34,12 @@ const store = () =>
         state.locale = "KOR";
       },
       setConnect(state) {
+        console.log("111", state.connect);
         state.connect = true;
+        console.log(222, state.connect);
       },
       setNoConnect(state) {
+        console.log("sfasfdasdfasf");
         state.connect = false;
       },
       setMyNft(state, payload) {
@@ -49,10 +52,17 @@ const store = () =>
     },
     actions: {
       async fetchMyDataArray({ commit }) {
+        console.log(213123123123, window.klaytn.selectedAddress);
+        if (window.klaytn.selectedAddress) {
+          commit("setConnect");
+        }
+
         let nftTokenIdArray = [];
         const contractInstance = window.caver.contract.create(
           myNft,
           "0xce70eef5adac126c37c8bc0c1228d48b70066d03"
+          // "0x7f4614801F7B1dD5a9077A9528Eb08776da193c6" 개발
+          // "0xce70eef5adac126c37c8bc0c1228d48b70066d03" 상용
         ); //컨트렉트 매니저 객체 생성
         let countNFT = await contractInstance.methods
           .balanceOf(klaytn.selectedAddress)
@@ -72,12 +82,13 @@ const store = () =>
         nftTokenIdArray = nftTokenIdArray.map((el) => {
           return el.padStart(4, "0");
         });
-        console.log("mynft", klaytn.selectedAddress);
+
         commit("setKlaytnAddress", klaytn.selectedAddress);
         commit("setMyNft", nftTokenIdArray);
-        commit("setConnect");
       },
-      async fetchMyWallet({ dispatch }, payload) {
+      async fetchMyWallet({ dispatch, commit }, payload) {
+        console.log(window.klaytn.selectedAddress);
+
         console.log("fetchMyWallet");
         if (
           window.klaytn.networkVersion === undefined ||
@@ -88,11 +99,15 @@ const store = () =>
           return;
         }
         try {
-          const klaytn = window.klaytn; //크롬에 깔린 카이카스 확장프로그램 안에는 klaytn 이 내장되어있다.
-          const accounts = await klaytn.enable(); //카이카스 로그인
-          console.log(accounts);
-          console.log("setTimeout start");
-          await dispatch("test");
+          if (!payload?.init) {
+            const klaytn = window.klaytn; //크롬에 깔린 카이카스 확장프로그램 안에는 klaytn 이 내장되어있다.
+            const accounts = await klaytn.enable(); //카이카스 로그인
+
+            commit("setConnect");
+          }
+          if (!payload?.myNFT) {
+            await dispatch("test");
+          }
           console.log("setTimeout end");
         } catch (err) {
           console.log(err);
@@ -107,9 +122,10 @@ const store = () =>
           }, 1000);
         });
       },
-      async callMyNftData({ commit, getters, dispatch, state }) {
+      async callMyNftData({ commit, getters, dispatch, state }, payload) {
         if (state.connect) {
           if (window.confirm("지갑연결을 해제하시겠습니까?")) {
+            this.$cookies.set("connect", false);
             commit("setMyNft", []);
             commit("setNoConnect");
           }
@@ -117,8 +133,9 @@ const store = () =>
           console.log("callMyNftData");
           if (window.confirm("지갑연결을 하시겠습니까?")) {
             try {
+              this.$cookies.set("connect", true);
               commit("setMyNft", []);
-              await dispatch("fetchMyWallet");
+              await dispatch("fetchMyWallet", payload);
             } catch (err) {
               console.log(err);
               alert(

@@ -21,6 +21,7 @@
     "@nuxtjs/i18n": "^7.2.2",
     "animated-number-vue": "^1.0.0",
     "axios": "^0.27.2",
+    "cookie-universal-nuxt": "^2.2.2",
     "core-js": "^3.19.3",
     "express": "^4.18.1",
     "file-loader": "^6.2.0",

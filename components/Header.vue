@@ -328,18 +328,13 @@ export default {
     return { lang: browserLang };
   },
 
-  mounted() {
-    let connect = this.getCookie("b_connect");
-    if (connect && connect === "YES" && this.$store.state.connect) {
-      this.$store.commit("setConnect");
-    } else {
-      this.$store.commit("setNoConnect");
-    }
-  },
   methods: {
     async setWallet() {
-      await this.$store.dispatch("callMyNftData");
-      await this.$nuxt.$emit("fetchWallet");
+      await this.$store.dispatch("callMyNftData", { myNFT: true });
+      if (this.$route.path === "/bellyPhoto") {
+        console.log("header fetchWallet");
+        await this.$nuxt.$emit("fetchWallet");
+      }
     },
     faqModal() {
       this.faqShow = true;

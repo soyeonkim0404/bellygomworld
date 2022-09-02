@@ -155,6 +155,7 @@ export default {
     "@nuxtjs/dotenv",
   ],
   modules: [
+    "cookie-universal-nuxt",
     "@nuxtjs/axios",
     "nuxt-fullpage.js",
     "@nuxtjs/axios",

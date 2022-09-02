@@ -695,9 +695,19 @@ export default {
       this.resetFetch();
       this.$nuxt.$emit("closeFilter");
     },
-    toggleNFT() {
+    async toggleNFT() {
       this.myNFT = !this.myNFT;
-      this.resetFetch();
+
+      if (this.$store.state.connect && this.$store.state.myNft.length === 0) {
+        this.$nuxt.$loading.start();
+        this.data = [];
+        this.page = 1;
+        await this.$store.dispatch("fetchMyWallet", { init: true });
+        await this.resetFetch();
+        this.$nuxt.$loading.finish();
+      } else {
+        this.resetFetch();
+      }
     },
     detailNft(item) {
       this.modalShow = true;
@@ -725,7 +735,10 @@ export default {
     },
   },
   mounted() {
-    this.$store.dispatch("fetchMyDataArray");
+    console.log("photo mounted");
+    if (this.$cookies.get("connect")) {
+      this.$store.dispatch("fetchMyDataArray");
+    }
     window.addEventListener("scroll", this.infiniteHandler);
     window.addEventListener("scroll", this.topBtn);
 

@@ -2074,20 +2074,22 @@ export default {
     });
   },
   mounted() {
-    this.$store.dispatch("fetchMyDataArray");
+    if (this.$cookies.get("connect")) {
+      this.$store.dispatch("fetchMyDataArray");
+    }
     if (this.$mq === "mobile") {
       this.$router.push({ path: "/m" });
     }
     let locale = this.getCookie("b_locale");
-    let connect = this.getCookie("b_connect");
-
-    if (connect && connect === "YES" && this.$store.state.connect) {
-      this.$store.commit("setConnect");
-      this.$store.dispatch("fetchMyDataArray");
-    } else {
-      this.$store.commit("setNoConnect");
-      this.$store.commit("setMyNft", []);
-    }
+    // let connect = this.getCookie("b_connect");
+    //
+    // if (connect && connect === "YES" && this.$store.state.connect) {
+    //   this.$store.commit("setConnect");
+    //   this.$store.dispatch("fetchMyDataArray");
+    // } else {
+    //   this.$store.commit("setNoConnect");
+    //   this.$store.commit("setMyNft", []);
+    // }
 
     if (locale && locale === "KOR") {
       this.$store.commit("setKOR");
