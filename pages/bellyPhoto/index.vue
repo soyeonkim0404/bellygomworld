@@ -867,15 +867,7 @@ export default {
           selected: [],
         },
         Grade: {
-          list: [
-            "Belly",
-            "Holic",
-            "Mega",
-            "Mega",
-            "Super",
-            "Surprise",
-            "Friends",
-          ],
+          list: ["Belly", "Holic", "Mega", "Super", "Surprise", "Friends"],
           selected: [],
         },
       },
