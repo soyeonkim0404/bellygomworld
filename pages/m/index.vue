@@ -2553,12 +2553,6 @@ export default {
   0% {
     transform: translateY(40px) rotate(20deg);
   }
-  50% {
-    transform: translateY(20px) rotate(20deg);
-  }
-  80% {
-    transform: translateY(10px) rotate(-10deg);
-  }
   100% {
     transform: translateY(0px) rotate(-10deg);
   }

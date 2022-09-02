@@ -68,43 +68,46 @@
         </button>
 
         <!-- 지갑연동 버튼// -->
-        <div v-if="myNFT && !$store.state.connect" class="photo-box">
-          <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
-            Please, Connect Kaikas wallet to see your Bellygom NFTs.
-          </p>
-          <p class="desc" v-else>
-            보유 중인 벨리곰 NFT를 확인하려면 카이카스 지갑 연동이 필요해요!
-          </p>
-          <button class="btn-wallet" @click="findMyNFT">CONNECT WALLET</button>
-        </div>
-        <!-- //지갑연동 버튼 -->
 
-        <!-- My NFT 없음// -->
-        <div
-          v-else-if="myNFT && $store.state.myNft.length === 0"
-          class="no-nft"
-        >
-          <div class="photo-box">
+        <transition name="photo" mode="out-in">
+          <div v-if="myNFT && !$store.state.connect" class="photo-box">
             <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
-              You don’t have any Bellygom NFT.
+              Please, Connect Kaikas wallet to see your Bellygom NFTs.
             </p>
             <p class="desc" v-else>
-              보유하고 계신 Bellygom NFT가 존재하지 않습니다.
+              보유 중인 벨리곰 NFT를 확인하려면 카이카스 지갑 연동이 필요해요!
             </p>
-            <a
-              href="https://opensea.io/collection/bellygom-world-official"
-              target="_blank"
-              class="btn-wallet"
-              ><img src="@/assets/images/belly-photo-detail-opensea.svg" />Buy
-              on OpenSea</a
-            >
+            <button class="btn-wallet" @click="findMyNFT">
+              CONNECT WALLET
+            </button>
           </div>
-        </div>
-        <!-- //My NFT 없음 -->
+          <!-- //지갑연동 버튼 -->
 
-        <!-- list// -->
-        <template v-else-if="data.length">
-          <transition-group name="photo" class="photo" tag="ul">
+          <!-- My NFT 없음// -->
+          <div
+            v-else-if="myNFT && $store.state.myNft.length === 0"
+            class="no-nft"
+          >
+            <div class="photo-box">
+              <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
+                You don’t have any Bellygom NFT.
+              </p>
+              <p class="desc" v-else>
+                보유하고 계신 Bellygom NFT가 존재하지 않습니다.
+              </p>
+              <a
+                href="https://opensea.io/collection/bellygom-world-official"
+                target="_blank"
+                class="btn-wallet"
+                ><img src="@/assets/images/belly-photo-detail-opensea.svg" />Buy
+                on OpenSea</a
+              >
+            </div>
+          </div>
+          <!-- //My NFT 없음 -->
+
+          <!-- list// -->
+          <ul class="photo" v-else-if="data.length">
             <li
               v-for="item in data"
               :key="item.id"
@@ -118,20 +121,20 @@
               <span class="info">Bellygom #{{ item.id }}</span>
               <span class="border" v-if="$mq === 'pc'"></span>
             </li>
-          </transition-group>
-        </template>
-        <!-- //list -->
+          </ul>
+          <!-- //list -->
 
-        <!-- no-data// -->
-        <div v-else class="photo-box">
-          <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
-            No Matching Bellygom Found.
-          </p>
-          <p class="desc" v-else>
-            검색하신 조건의 벨리곰NFT를 찾지 못했습니다.
-          </p>
-        </div>
-        <!-- //no-data -->
+          <!-- no-data// -->
+          <div v-else class="photo-box">
+            <p class="desc" v-if="$store.getters.getLocale === 'ENG'">
+              No Matching Bellygom Found.
+            </p>
+            <p class="desc" v-else>
+              검색하신 조건의 벨리곰NFT를 찾지 못했습니다.
+            </p>
+          </div>
+          <!-- //no-data -->
+        </transition>
       </div>
     </div>
 
@@ -147,7 +150,9 @@
       <div slot="body">
         <div class="inner">
           <div class="nft-thumb">
-            <img :src="detailNftInfo.image" class="thumb" />
+            <span>
+              <img :src="detailNftInfo.image" class="thumb" />
+            </span>
             <div class="button-wrap">
               <button class="btn-opensea">
                 <i class="icon" />
@@ -944,7 +949,6 @@ export default {
       this.modalShow = true;
       this.modalSeq = item;
       this.detailNftInfo = item;
-      console.log("디테일", this.detailNftInfo);
       document.body.style.overflow = "hidden";
     },
     mbModalDone() {
@@ -959,9 +963,6 @@ export default {
       document.body.style.overflow = "";
     },
     mbFilter() {
-      /*      for (const [key, value] of Object.entries(this.filter)) {
-        value.selected = [];
-      }*/
       this.mbFilterShow = true;
     },
     formatToPrice(value) {
@@ -1134,6 +1135,7 @@ export default {
           }
         }
       }
+
       .photo {
         width: 100%;
         display: grid;
@@ -1141,6 +1143,15 @@ export default {
         gap: 24px;
         margin-top: 20px;
         overflow: auto;
+        transition: opacity 0.3s ease-in 0s;
+        &.photo-enter,
+        &.photo-leave-to {
+          opacity: 0;
+        }
+
+        &.photo-leave-to {
+          transition-duration: 0s;
+        }
         .photo-item {
           flex-direction: column;
           -webkit-box-pack: justify;
@@ -1151,15 +1162,14 @@ export default {
           overflow: hidden;
           background: #fff;
           box-sizing: border-box;
-          opacity: 1;
-          transition: 0.35s ease-in;
-          .photo-enter,
-          .photo-leave-to {
-            opacity: 0;
-          }
-          .photo-leave-to {
-            transition: 0.35s ease-in;
-          }
+          //&.photo-leave-to,
+          //&.photo-leave-active {
+          //  opacity: 0;
+          //  //transform: translateY(-30px);
+          //}
+          //&.photo-leave-active {
+          //  transition-delay: 0s;
+          //}
           .rank {
             font-family: "Sandoll Odongtong", sans-serif;
             font-style: normal;
@@ -1177,7 +1187,11 @@ export default {
             width: 100%;
             height: 297px;
             display: inline-block;
-            background: #f9e7f1;
+            background: linear-gradient(
+              238.96deg,
+              #f9e2ee 27.25%,
+              #fff9fc 98.56%
+            );
           }
           .info {
             position: relative;
@@ -1346,7 +1360,11 @@ export default {
                 display: block;
                 content: "";
                 padding-bottom: 100%;
-                background: #f9e7f1;
+                background: linear-gradient(
+                  238.96deg,
+                  #f9e2ee 27.25%,
+                  #fff9fc 98.56%
+                );
               }
               img {
                 position: absolute;
@@ -1481,10 +1499,37 @@ export default {
         .nft-thumb {
           flex: 0 0 460px;
           width: 460px;
-          .thumb {
-            width: 460px;
-            height: 460px;
-            border-radius: 20px;
+          background: linear-gradient(
+            238.96deg,
+            #f9e2ee 27.25%,
+            #fff9fc 98.56%
+          );
+          .pc & {
+            background: none;
+          }
+          span {
+            display: inline-block;
+            position: relative;
+            padding-top: 100%;
+            background: linear-gradient(
+              238.96deg,
+              #f9e2ee 27.25%,
+              #fff9fc 98.56%
+            );
+            overflow: hidden;
+            .pc & {
+              width: 460px;
+              height: 460px;
+              border-radius: 20px;
+            }
+            .thumb {
+              position: absolute;
+              object-fit: contain;
+              height: 100%;
+              width: 100%;
+              top: 0;
+              left: 0;
+            }
           }
           .btn-opensea {
             display: flex;
@@ -1632,13 +1677,6 @@ export default {
         .inner {
           flex-direction: column;
           .nft-thumb {
-            flex: none;
-            width: 100%;
-            img {
-              width: 100%;
-              height: auto;
-              border-radius: 0;
-            }
             .button-wrap {
               position: fixed;
               bottom: 0;

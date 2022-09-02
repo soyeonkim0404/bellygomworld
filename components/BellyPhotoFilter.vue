@@ -65,10 +65,6 @@ export default {
       }
     },
     changeInput(index, value) {
-      const findIndex = this.onContent.findIndex((el) => el === index);
-      if (value.selected.length > 0) {
-        console.log(findIndex, "selected 있다");
-      }
       this.$emit("change");
     },
   },

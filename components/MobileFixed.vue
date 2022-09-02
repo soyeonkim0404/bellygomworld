@@ -276,7 +276,7 @@ export default {
     .audio {
       .sound_btn {
         position: fixed;
-        bottom: 30px;
+        bottom: 13px;
         left: 0;
         z-index: 100;
         width: 105px;
