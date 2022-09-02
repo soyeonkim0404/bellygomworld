@@ -1971,7 +1971,6 @@ export default {
           } else if (destination.index === 3) {
             this.charClass = "s3";
           }
-          console.log("위치 destination", destination.index);
           document.querySelectorAll(".anchor-nav li a").forEach(function (nav) {
             nav.classList.remove("active");
           });
@@ -2075,7 +2074,7 @@ export default {
     });
   },
   mounted() {
-    this.$store.dispatch("fetchMyWallet", { main: "main" });
+    this.$store.dispatch("fetchMyDataArray");
     if (this.$mq === "mobile") {
       this.$router.push({ path: "/m" });
     }
@@ -2084,7 +2083,7 @@ export default {
 
     if (connect && connect === "YES" && this.$store.state.connect) {
       this.$store.commit("setConnect");
-      this.$store.dispatch("fetchMyWallet");
+      this.$store.dispatch("fetchMyDataArray");
     } else {
       this.$store.commit("setNoConnect");
       this.$store.commit("setMyNft", []);

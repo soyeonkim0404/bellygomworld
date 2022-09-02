@@ -52,9 +52,8 @@ const store = () =>
         let nftTokenIdArray = [];
         const contractInstance = window.caver.contract.create(
           myNft,
-          "0x141637b601d0fc907c0acb8ae5060ee22bb7b3f6"
+          "0xce70eef5adac126c37c8bc0c1228d48b70066d03"
         ); //컨트렉트 매니저 객체 생성
-        console.log("test");
         let countNFT = await contractInstance.methods
           .balanceOf(klaytn.selectedAddress)
           .call();
@@ -98,7 +97,6 @@ const store = () =>
         if (state.connect) {
           if (window.confirm("지갑연결을 해제하시겠습니까?")) {
             commit("setMyNft", []);
-            console.log("myNft", state.myNft);
             commit("setNoConnect");
           }
         } else {
