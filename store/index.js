@@ -52,7 +52,7 @@ const store = () =>
         let nftTokenIdArray = [];
         const contractInstance = window.caver.contract.create(
           myNft,
-          "0xce70eef5adac126c37c8bc0c1228d48b70066d03"
+          "0x7f4614801F7B1dD5a9077A9528Eb08776da193c6"
         ); //컨트렉트 매니저 객체 생성
         let countNFT = await contractInstance.methods
           .balanceOf(klaytn.selectedAddress)

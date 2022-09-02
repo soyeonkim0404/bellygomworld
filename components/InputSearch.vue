@@ -1,7 +1,7 @@
 <template>
   <span :class="{ 'input-search': true, disabled: disabled }">
     <input
-      type="number"
+      type="text"
       :value="value"
       v-on="listeners"
       :disabled="disabled"
@@ -36,9 +36,7 @@ export default {
 
   methods: {
     formChange(event) {
-      if (!event.target.value) {
-        event.target.value = parseInt(event.target.value);
-      }
+      event.target.value = parseInt(event.target.value) || "";
       if (event.target.maxLength !== -1) {
         event.target.value = event.target.value.slice(
           0,

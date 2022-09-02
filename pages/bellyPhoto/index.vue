@@ -621,14 +621,7 @@ export default {
           selected: [],
         },
         Grade: {
-          list: [
-            "Belly",
-            "Holic",
-            "Mega",
-            "Super",
-            "Surprise",
-            "Friends"
-          ],
+          list: ["Belly", "Holic", "Mega", "Super", "Surprise", "Friends"],
           selected: [],
         },
       },
@@ -667,8 +660,11 @@ export default {
   },
   methods: {
     async findMyNFT() {
+      this.$nuxt.$loading.start();
       await this.$store.dispatch("callMyNftData");
+      console.log(2222);
       await this.resetFetch();
+      this.$nuxt.$loading.finish();
     },
     inputFetch($event) {
       if (!isNaN($event.data)) {
