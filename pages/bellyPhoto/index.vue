@@ -154,10 +154,13 @@
               <img :src="detailNftInfo.image" class="thumb" />
             </span>
             <div class="button-wrap">
-              <button class="btn-opensea">
-                <i class="icon" />
-                View on OpenSea
-              </button>
+              <a
+                :href="`https://opensea.io/assets/klaytn/0xce70eef5adac126c37c8bc0c1228d48b70066d03/${detailNftInfo.id}`"
+                target="_blank"
+                class="btn-opensea"
+              >
+                <i class="icon" />View on OpenSea</a
+              >
             </div>
           </div>
           <div class="nft-info">
