@@ -116,7 +116,7 @@
             >
               <span class="rank">Rank {{ item.rank }}</span>
               <span class="image">
-                <img :src="item.image" :alt="item.id" />
+                <img :src="item.image2" :alt="item.id" />
               </span>
               <span class="info">Bellygom #{{ item.id }}</span>
               <span class="border" v-if="$mq === 'pc'"></span>
@@ -151,7 +151,7 @@
         <div class="inner">
           <div class="nft-thumb">
             <span>
-              <img :src="detailNftInfo.image" class="thumb" />
+              <img :src="detailNftInfo.image2" class="thumb" />
             </span>
             <div class="button-wrap">
               <a
@@ -1207,24 +1207,20 @@ export default {
       .inner {
         display: flex;
         .nft-thumb {
-          flex: 0 0 460px;
-          width: 460px;
-          background: linear-gradient(
-            238.96deg,
-            #f9e2ee 27.25%,
-            #fff9fc 98.56%
-          );
           .pc & {
+            flex: 0 0 460px;
+            width: 460px;
             background: none;
           }
           span {
             display: inline-block;
+            width: 100%;
             position: relative;
             padding-top: 100%;
             background: linear-gradient(
               238.96deg,
               #f9e2ee 27.25%,
-              #fff9fc 98.56%
+              #fff9fc 100%
             );
             overflow: hidden;
             .pc & {
