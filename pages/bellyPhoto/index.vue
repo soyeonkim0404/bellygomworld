@@ -1519,6 +1519,7 @@ export default {
   left: 0;
   box-sizing: border-box;
   background: rgba(255, 255, 255, 0.9);
+  z-index: 4;
   p {
     font-size: 13px;
     line-height: 16px;

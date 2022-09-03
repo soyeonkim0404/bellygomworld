@@ -126,6 +126,7 @@ export default {
     z-index: 1;
     box-shadow: 0 4px 10px rgb(0 0 0 / 3%);
     margin-top: 10px;
+    z-index: 3;
     .item {
       cursor: pointer;
       user-select: none;
