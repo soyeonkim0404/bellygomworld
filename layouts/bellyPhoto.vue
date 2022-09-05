@@ -2,10 +2,10 @@
   <div id="app" :class="$mq" class="belly-photo">
     <Header v-if="$mq === 'pc'" />
     <MobileHeader v-else />
+    <Nuxt />
     <a href="#" class="top-btn" @click="topBtn">
       <img src="@/assets/images/top_btn.svg" />
     </a>
-    <Nuxt />
   </div>
 </template>
 

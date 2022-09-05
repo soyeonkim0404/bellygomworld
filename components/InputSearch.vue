@@ -119,4 +119,15 @@ export default {
     }
   }
 }
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input:focus {
+    font-size: 16px;
+  }
+}
+@supports (-webkit-overflow-scrolling: touch) {
+  /* CSS specific to iOS devices */
+  input:focus {
+    font-size: 16px !important;
+  }
+}
 </style>
