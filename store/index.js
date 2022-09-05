@@ -106,14 +106,14 @@ const store = () =>
             commit("setConnect");
           }
           if (!payload?.myNFT) {
-            await dispatch("test");
+            await dispatch("makePromise");
           }
           console.log("setTimeout end");
         } catch (err) {
           console.log(err);
         }
       },
-      async test({ dispatch }) {
+      async makePromise({ dispatch }) {
         return new Promise((res, rej) => {
           setTimeout(async () => {
             console.log("setTimeout ing");

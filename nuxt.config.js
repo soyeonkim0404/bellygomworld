@@ -12,7 +12,11 @@ export default {
     },
     meta: [
       { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        name: "viewport",
+        content:
+          "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0",
+      },
       { hid: "description", name: "description", content: "" },
       { name: "format-detection", content: "telephone=no" },
       {
@@ -213,7 +217,7 @@ export default {
   /*eslint false*/
   lintOnSave: false,
   server: {
-    //host: "0.0.0.0",
+    host: "0.0.0.0",
   },
   chainWebpack: (config) => {
     config.module
