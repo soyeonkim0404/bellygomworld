@@ -930,14 +930,6 @@ export default {
           overflow: hidden;
           background: #fff;
           box-sizing: border-box;
-          //&.photo-leave-to,
-          //&.photo-leave-active {
-          //  opacity: 0;
-          //  //transform: translateY(-30px);
-          //}
-          //&.photo-leave-active {
-          //  transition-delay: 0s;
-          //}
           .rank {
             font-family: "Sandoll Odongtong", sans-serif;
             font-style: normal;
@@ -946,7 +938,7 @@ export default {
             top: 10px;
             left: 10px;
             background: #fff;
-            padding: 15px;
+            padding: 13px 15px;
             border-radius: 20px;
             font-size: 14px;
             color: #000;
@@ -1304,6 +1296,7 @@ export default {
             font-size: 24px;
             line-height: 36px;
             margin-top: 24px;
+            font-weight: 700;
             img {
               width: 40px;
               height: 40px;
