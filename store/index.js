@@ -52,7 +52,6 @@ const store = () =>
     },
     actions: {
       async fetchMyDataArray({ commit }) {
-        console.log(213123123123, window.klaytn.selectedAddress);
         if (window.klaytn.selectedAddress) {
           commit("setConnect");
         }

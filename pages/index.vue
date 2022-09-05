@@ -2081,15 +2081,6 @@ export default {
       this.$router.push({ path: "/m" });
     }
     let locale = this.getCookie("b_locale");
-    // let connect = this.getCookie("b_connect");
-    //
-    // if (connect && connect === "YES" && this.$store.state.connect) {
-    //   this.$store.commit("setConnect");
-    //   this.$store.dispatch("fetchMyDataArray");
-    // } else {
-    //   this.$store.commit("setNoConnect");
-    //   this.$store.commit("setMyNft", []);
-    // }
 
     if (locale && locale === "KOR") {
       this.$store.commit("setKOR");
