@@ -45,7 +45,7 @@
           >
         </li>
         <li @click="navClickFc">
-          <nuxt-link to="/bellyPhoto">BELLY PHOTO</nuxt-link>
+          <nuxt-link to="/bellyPhoto"><span>BELLY PHOTO</span></nuxt-link>
         </li>
         <li data-menuanchor="fourthSection" @click="navClickFc">
           <button id="show-modal" @click="faqModal">
@@ -374,7 +374,7 @@ export default {
 <style scoped lang="scss">
 #head {
   width: 100%;
-  min-width: 1000px;
+  min-width: 1260px;
   height: 110px;
   position: fixed;
   display: flex;
@@ -410,7 +410,7 @@ export default {
             background: #333333;
             opacity: 0.5;
             left: -11px;
-            top: 8px;
+            top: 12px;
           }
         }
         span {
@@ -708,8 +708,7 @@ export default {
     }
   }
 }
-
-@media (max-width: 1000px) {
+@media (max-width: 1314px) {
   #head .category .anchor-nav li a,
   #head .category .anchor-nav li button {
     padding: 10px;
